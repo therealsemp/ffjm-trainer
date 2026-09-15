@@ -52,17 +52,29 @@ function validateRichContent(value, fieldPath, errors, baseDir) {
   }
 }
 
-function checkSourcePath(value, fieldPath, errors, baseDir) {
-  if (typeof value !== "string" || value === "") {
-    fail(errors, fieldPath, "must be a non-empty string path")
+// A source reference is { path, page, position: { x, y } }. `page` and
+// `position` locate roughly where this question starts in the PDF — used
+// to jump the PDF viewer there (e.g. "#page=N&zoom=100,x,y") instead of
+// always opening at page 1. Best-effort: exploratory feature, not load-bearing
+// for anything else, so we validate shape but don't chase sub-pixel accuracy.
+function checkSourceRef(value, fieldPath, errors, baseDir) {
+  if (typeof value !== "object" || value === null) {
+    fail(errors, fieldPath, "must be an object ({ path, page, position })")
     return
   }
-  if (path.isAbsolute(value)) {
-    fail(errors, fieldPath, "must be a relative path (relative to this question file's own directory), not absolute")
-    return
+  if (typeof value.path !== "string" || value.path === "") {
+    fail(errors, fieldPath + ".path", "must be a non-empty string path")
+  } else if (path.isAbsolute(value.path)) {
+    fail(errors, fieldPath + ".path", "must be a relative path (relative to this question file's own directory), not absolute")
+  } else if (!existsSync(path.join(baseDir, value.path))) {
+    fail(errors, fieldPath + ".path", `file not found: ${value.path} (relative to ${baseDir})`)
   }
-  if (!existsSync(path.join(baseDir, value))) {
-    fail(errors, fieldPath, `file not found: ${value} (relative to ${baseDir})`)
+  if (!Number.isInteger(value.page) || value.page < 1) fail(errors, fieldPath + ".page", "must be a positive integer")
+  if (typeof value.position !== "object" || value.position === null) {
+    fail(errors, fieldPath + ".position", "must be an object ({ x, y })")
+  } else {
+    if (typeof value.position.x !== "number") fail(errors, fieldPath + ".position.x", "must be a number")
+    if (typeof value.position.y !== "number") fail(errors, fieldPath + ".position.y", "must be a number")
   }
 }
 
@@ -76,11 +88,11 @@ export function validateQuestion(q, errors, baseDir) {
   if (typeof q.sourceFiles !== "object" || q.sourceFiles === null) {
     fail(errors, "sourceFiles", "must be an object")
   } else {
-    checkSourcePath(q.sourceFiles.statement, "sourceFiles.statement", errors, baseDir)
+    checkSourceRef(q.sourceFiles.statement, "sourceFiles.statement", errors, baseDir)
     if (!Array.isArray(q.sourceFiles.detailedSolutions) || q.sourceFiles.detailedSolutions.length === 0) {
-      fail(errors, "sourceFiles.detailedSolutions", "must be a non-empty array of string paths")
+      fail(errors, "sourceFiles.detailedSolutions", "must be a non-empty array of source refs")
     } else {
-      q.sourceFiles.detailedSolutions.forEach((p, i) => checkSourcePath(p, `sourceFiles.detailedSolutions[${i}]`, errors, baseDir))
+      q.sourceFiles.detailedSolutions.forEach((ref, i) => checkSourceRef(ref, `sourceFiles.detailedSolutions[${i}]`, errors, baseDir))
     }
   }
 

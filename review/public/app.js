@@ -117,8 +117,27 @@ function needsSolutionCountNotice(categories) {
   return categories.some((c) => c !== "CE" && c !== "CM")
 }
 
+// Changing only the fragment (#page=...) of an <iframe> src that otherwise
+// stays the same doesn't reload the embedded PDF viewer in most browsers —
+// it's treated as an in-page anchor jump. Blanking the iframe first forces a
+// real reload, so switching questions (same PDF, different #page=) actually
+// re-opens at the new position instead of leaving the old page displayed.
+//
+// Navigating to "about:blank" is itself asynchronous: a fixed short delay
+// (e.g. requestAnimationFrame) races it and intermittently loses — the real
+// src gets set before the blank page actually finished loading, and the
+// browser drops it. Wait for the blank page's own `load` event instead, and
+// guard with a token in case another question is selected before that fires.
+let pdfLoadToken = 0
 function switchPdf(url, tabs, activeIndex) {
-  pdfFrame.src = url
+  const token = ++pdfLoadToken
+  const onBlankLoaded = () => {
+    pdfFrame.removeEventListener("load", onBlankLoaded)
+    if (token === pdfLoadToken) pdfFrame.src = url
+  }
+  pdfFrame.addEventListener("load", onBlankLoaded)
+  pdfFrame.src = "about:blank"
+
   pdfTabs.innerHTML = ""
   tabs.forEach((tab, i) => {
     const btn = document.createElement("button")

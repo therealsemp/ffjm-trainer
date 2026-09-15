@@ -30,6 +30,12 @@ Un fichier JSON par question (pas par examen) : plus simple à valider unitairem
 Une figure (schéma, image) est un fichier PNG à part, posé à côté du JSON, référencé par son seul nom de fichier (`imageUrl`) — jamais en base64 dans le JSON (voir la discussion archivée sur ce choix : lisibilité par les outils qui lisent/écrivent ces fichiers, taille, pas de duplication quand une figure sert à la fois dans l'énoncé et la correction).
 
 ```ts
+type SourceRef = {
+  path: string      // chemin relatif au fichier JSON lui-même
+  page: number       // page PDF (1-indexée) où la question commence
+  position: { x: number; y: number }   // position estimée sur cette page (en points PDF), pour cadrer le visualiseur
+}
+
 type RichContent = {
   // texte + markdown + LaTeX inline (\( ... \)) + références à des figures
   markdown: string
@@ -48,9 +54,14 @@ type Question = {
   phase: "qf" | "sf" | "fn"
   examTitle?: string
   sourceFiles: {
-    statement: string             // chemin relatif au fichier JSON lui-même
-    detailedSolutions: string[]   // idem ; peut contenir 2 sources à synthétiser
+    statement: SourceRef
+    detailedSolutions: SourceRef[]   // peut contenir 2 sources à synthétiser
   }
+  // `page`/`position` servent à l'outil de revue (cadrer le PDF sur la bonne
+  // question) — expérimental (fiabilité du positionnement pas garantie selon
+  // le navigateur), et volontairement dans `sourceFiles` : rien ne garantit
+  // que ces champs remontent jusqu'au modèle consommé par /app plus tard, à
+  // rediscuter à ce moment-là.
 
   id: string
   number: number                  // numéro de la question dans l'examen

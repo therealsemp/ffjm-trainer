@@ -40,13 +40,19 @@ function readQuestion(file) {
   return JSON.parse(readFileSync(path.join(NEEDS_REVIEW, file), "utf8"))
 }
 
-// sourceFiles paths are relative to the question file's own directory, e.g.
+// sourceFiles.*.path is relative to the question file's own directory, e.g.
 // "../raw/2026/2026_qf_statement.pdf" — turn that into a URL our /raw static
-// route can serve.
-function sourcePathToUrl(relPath) {
-  const resolved = path.resolve(NEEDS_REVIEW, relPath)
+// route can serve, and append the page/position as a standard PDF "Open
+// Parameters" fragment so the viewer opens roughly where this question is,
+// instead of always at page 1. `page=N` is well supported by browsers'
+// built-in PDF viewers; the `zoom=100,x,y` part (positioning) is a bonus —
+// support for it is inconsistent, page-level is the part we can rely on.
+function sourceRefToUrl(ref) {
+  const resolved = path.resolve(NEEDS_REVIEW, ref.path)
   const fromRaw = path.relative(RAW, resolved)
-  return "/raw/" + fromRaw.split(path.sep).map(encodeURIComponent).join("/")
+  const url = "/raw/" + fromRaw.split(path.sep).map(encodeURIComponent).join("/")
+  const fragment = ref.position ? `page=${ref.page}&zoom=100,${ref.position.x},${ref.position.y}` : `page=${ref.page}`
+  return `${url}#${fragment}`
 }
 
 function allFigureImageUrls(q) {
@@ -90,8 +96,8 @@ app.get("/api/questions/:file", (req, res) => {
 
   const q = readQuestion(file)
   const pdfUrls = {
-    statement: sourcePathToUrl(q.sourceFiles.statement),
-    detailedSolutions: q.sourceFiles.detailedSolutions.map(sourcePathToUrl),
+    statement: sourceRefToUrl(q.sourceFiles.statement),
+    detailedSolutions: q.sourceFiles.detailedSolutions.map(sourceRefToUrl),
   }
   res.json({ question: q, pdfUrls })
 })

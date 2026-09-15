@@ -32,7 +32,7 @@ Outil d'entraînement aux épreuves du Championnat des Jeux Mathématiques (FFJM
 
 ## Règles d'affichage (UI)
 
-- **Règle du nombre de solutions** : depuis au moins 2003, chaque épreuve FFJM affiche après la fin de la catégorie CM une consigne du type *"Pour qu'un problème soit complètement résolu, vous devez donner le nombre de ses solutions, et donner la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une."* Ce n'est pas une donnée propre à un exercice ou à une année : c'est une règle générale du concours. Elle doit être affichée par l'application elle-même (pas stockée en base) dès qu'un exercice présenté concerne une catégorie strictement supérieure à CM (c'est-à-dire dès que `categories` contient autre chose que `CE`/`CM`).
+- **Règle du nombre de solutions** : depuis au moins 2003, chaque épreuve FFJM affiche après la fin de la catégorie CM une consigne du type *"Pour qu'un problème soit complètement résolu, vous devez donner le nombre de ses solutions, et donner la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une."* Ce n'est pas une donnée propre à un exercice ou à une année : c'est une règle générale du concours. Elle doit être affichée par l'application elle-même (pas stockée en base) dès que le **tier natif** de l'exercice présenté est strictement supérieur à CM, c'est-à-dire dès que `tier` (voir modèle de données) vaut `C1`, `C2`, `L1/GP` ou `L2/HC` — pas `CE` ni `CM`. Attention à ne pas se baser sur `categories` pour cette règle : en format cumulatif, un exercice de tier CE peut très bien apparaître dans `categories` de toutes les catégories (C1, C2... y ont aussi accès), ce qui déclencherait la consigne à tort.
 
 ## Hors scope v1
 

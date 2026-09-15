@@ -18,7 +18,13 @@ Trouvé en pratique lors de la revue de 2026-qf : la tendance naturelle est de "
 
 5. **Conserver la mise en forme du sens du PDF**, pas juste le texte : gras (`**Réponse : ...**`), italique (titres d'articles/livres cités en référence), tableaux (markdown table quand le PDF en a un).
 
-6. **Après une transcription, se relire en cherchant spécifiquement** : des listes aplaties, du texte résumé plutôt que transcrit, des figures manquantes ou coupées, des figures ajoutées qui ne sont pas dans la source. Ce sont les erreurs récurrentes identifiées jusqu'ici.
+6. **`categories` : toujours trié dans l'ordre canonique**, jamais dans l'ordre où le PDF les cite. L'ordre est `CE < CM < C1 < C2 < L1 < GP < L2 < HC` (voir `shared/categories.mjs`, source de vérité pour cet ordre — ne pas le redéfinir ailleurs). `validate.mjs` le vérifie et rejette un tableau mal trié.
+
+7. **Toujours renseigner `tier`**, la catégorie "native" de la question — dérivée automatiquement (`tierForCategories(categories)` dans `shared/categories.mjs`), pas à choisir à la main. C'est la catégorie de rang le plus bas dans `categories`, avec L1/GP et L2/HC fusionnés en un seul palier (`"L1/GP"`, `"L2/HC"`) puisqu'ils sont toujours co-terminaux sur tous les examens échantillonnés jusqu'ici. `tier` ne remplace pas `categories` : sur un examen à démarrage échelonné par catégorie (voir point suivant), une catégorie peut avoir accès à une question sans que ce soit sa catégorie native — seul `categories` garde cette info.
+
+8. **Ne jamais supposer que "toutes les catégories démarrent à la question 1".** C'est vrai pour les examens récents (vérifié identique sur 2018, 2020, 2026 — table explicite dans le PDF avec la mention *"Toutes les catégories commencent à partir du problème n°1"*), mais **faux** sur au moins 2003 (demi-finale), où CE fait 1-5, CM fait 3-8 (pas 1-8), C1 fait 5-11, etc. — des fenêtres décalées, pas un simple cumulatif depuis la question 1. Certaines années plus anciennes (2013 vérifié) n'ont même **aucune information de catégorie** dans le PDF de sujet — dans ce cas, ne pas inventer une structure : laisser `categories`/`tier` non déterminés et le signaler plutôt que de deviner.
+
+9. **Après une transcription, se relire en cherchant spécifiquement** : des listes aplaties, du texte résumé plutôt que transcrit, des figures manquantes ou coupées, des figures ajoutées qui ne sont pas dans la source, un `categories` mal trié ou un `tier` incohérent. Ce sont les erreurs récurrentes identifiées jusqu'ici.
 
 ## Pourquoi ce document et pas un script
 

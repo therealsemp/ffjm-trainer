@@ -69,9 +69,17 @@ type Question = {
   coefficient: number
   coefficientSource: "explicit" | "derived-from-number" | "derived-from-order"
   categories: ("CE" | "CM" | "C1" | "C2" | "L1" | "L2" | "GP" | "HC")[]
-  // Les catégories FFJM sont cumulatives (CE fait les questions 1-5, CM 1-8, etc.)
-  // — categories liste donc toutes les catégories concernées par CETTE question,
-  // déduit des marqueurs "FIN CATÉGORIE X" du PDF source, pas un simple cutoff.
+  // Toutes les catégories ayant accès à CETTE question, déduit du PDF source
+  // (marqueurs "FIN CATÉGORIE X", table explicite, etc. — la structure varie
+  // selon les années, voir ingest/TRANSCRIPTION-GUIDE.md). Toujours trié dans
+  // l'ordre canonique CE < CM < C1 < C2 < L1 < GP < L2 < HC (shared/categories.mjs).
+
+  tier: "CE" | "CM" | "C1" | "C2" | "L1/GP" | "L2/HC"
+  // Catégorie "native" de la question — dérivée de categories (son entrée de
+  // rang le plus bas), pas saisie à la main. Pratique pour un affichage ou un
+  // filtre simple ("les questions de niveau CM"), mais ne remplace pas
+  // categories : sur un examen à démarrage échelonné par catégorie, une
+  // catégorie peut avoir accès à une question sans que ce soit son tier.
 
   statement: RichContent
   answer: {

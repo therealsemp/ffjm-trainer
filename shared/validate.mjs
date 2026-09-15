@@ -3,7 +3,7 @@
 // per question — each file is self-contained: it carries its own
 // year/champNumber/phase/sourceFiles rather than inheriting them from a
 // parent exam file). Shape follows docs/technical-architecture.md, extended
-// with title/number/coefficient/categories.
+// with title/number/coefficient/categories/tier (see shared/categories.mjs).
 //
 // Used by both /ingest (before a question leaves needs-review) and the
 // future /review tool (before promoting a question to validated).
@@ -12,9 +12,10 @@
 
 import { readFileSync, existsSync } from "node:fs"
 import path from "node:path"
+import { CANONICAL_ORDER, TIERS, isCanonicallySorted, tierForCategories } from "./categories.mjs"
 
 const PHASES = ["qf", "sf", "fn"]
-const CATEGORIES = ["CE", "CM", "C1", "C2", "L1", "L2", "GP", "HC"]
+const CATEGORIES = CANONICAL_ORDER
 const ANSWER_TYPES = ["exact-numeric", "exact-text", "open"]
 const COEFFICIENT_SOURCES = ["explicit", "derived-from-number", "derived-from-order"]
 
@@ -107,6 +108,14 @@ export function validateQuestion(q, errors, baseDir) {
   } else {
     for (const c of q.categories) {
       if (!CATEGORIES.includes(c)) fail(errors, "categories", `unknown category "${c}"`)
+    }
+    if (!isCanonicallySorted(q.categories)) {
+      fail(errors, "categories", `must be sorted in canonical order (${CANONICAL_ORDER.join(" < ")})`)
+    }
+    if (!TIERS.includes(q.tier)) {
+      fail(errors, "tier", `must be one of ${TIERS.join(", ")}`)
+    } else if (isCanonicallySorted(q.categories) && q.tier !== tierForCategories(q.categories)) {
+      fail(errors, "tier", `inconsistent with categories: expected "${tierForCategories(q.categories)}" (lowest-ranked entry of categories), got "${q.tier}"`)
     }
   }
 

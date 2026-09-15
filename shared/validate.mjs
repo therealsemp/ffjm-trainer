@@ -66,7 +66,7 @@ function checkSourcePath(value, fieldPath, errors, baseDir) {
   }
 }
 
-function validateQuestion(q, errors, baseDir) {
+export function validateQuestion(q, errors, baseDir) {
   // Exam-level fields, denormalized into every question file.
   if (!Number.isInteger(q.year)) fail(errors, "year", "must be an integer")
   if (!PHASES.includes(q.phase)) fail(errors, "phase", `must be one of ${PHASES.join(", ")}`)
@@ -141,4 +141,8 @@ function main() {
   process.exit(anyFailed ? 1 : 0)
 }
 
-main()
+// Only run as a CLI when executed directly (`node shared/validate.mjs ...`),
+// not when imported as a module (e.g. by /review's server).
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main()
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ffjm-trainer-review",
+  "version": "1.0.0",
+  "description": "Local tool to review extracted questions against their source PDF and promote them to data/validated",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

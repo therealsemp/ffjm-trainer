@@ -1,0 +1,63 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 24,
+        "y": 252
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 133.3,
+          "y": 586.7
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-13",
+  "number": 13,
+  "title": "Jetons à retourner",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Un plateau 3 × 3 comporte neuf jetons qui sont blancs d'un côté et noirs de l'autre. En partant d'une position choisie au hasard, le but du jeu est que tous les jetons aient leur face noire visible. Un coup autorisé consiste à retourner d'un seul coup trois jetons alignés, soit sur la même ligne, soit sur la même colonne, soit sur la même diagonale.\n\n**Combien de coups au minimum faudra-t-il pour Amel et pour Sofia ?**\n\nRépondez 0 si c'est impossible à partir de la position de départ proposée.\n\n![figure](figure:2026-qf-13-grids)",
+    "figures": [
+      {
+        "id": "2026-qf-13-grids",
+        "description": "Deux plateaux 3×3 de jetons noirs/blancs, positions de départ pour Amel et pour Sofia.",
+        "imageUrl": "q13_fig-grids.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "4 (Amel) et 0, impossible (Sofia)"
+  },
+  "correction": {
+    "markdown": "Notons 0 (resp. 1) un jeton noir (resp. blanc).\n\nUn coup autorisé revient à inverser trois jetons alignés. Il y en a alors 8 puisque autant d'alignements de trois jetons : \\(a\\), \\(b\\) et \\(c\\) pour les lignes, \\(A\\), \\(B\\) et \\(C\\) pour les colonnes, \\(D\\) pour la diagonale descendante et \\(d\\) pour celle montante.\n\nL'état d'un jeton dépend de la parité du nombre de coups, indépendamment de leur ordre puisque l'addition est commutative : l'état de départ sera inversé ssi le nombre de coups est impair.\n\nVoici le tableau d'état des 9 cases.\n\n| D↘ | A↓ | B↓ | C↓ |\n|---|---|---|---|\n| a→ | \\(a+A+D\\) | \\(a+B\\) | \\(a+C+d\\) |\n| b→ | \\(b+A\\) | \\(b+B+D+d\\) | \\(b+C\\) |\n| c→ | \\(c+A+d\\) | \\(c+B\\) | \\(c+C+D\\) |\n| d↗ | | | |\n\nOpérer deux fois un même coup s'annule : cherchant un minimum de coups, cela amène naturellement à raisonner modulo 2.\n\nComme \\(0+0 \\equiv 0 \\equiv 1+1\\), cela revient à « égaler » le tableau d'état et la position de départ pour que tous les jetons deviennent noirs.\n\n**Pour Amel, la position de départ est :**\n\n| 0 | 1 | 0 |\n|---|---|---|\n| 1 | 1 | 0 |\n| 1 | 1 | 1 |\n\nCela fournit un système de neuf relations :\n- (1) \\(a+A+D \\equiv 0\\)\n- (2) \\(a+B \\equiv 1\\)\n- (3) \\(a+C+d \\equiv 0\\)\n- (4) \\(b+A \\equiv 1\\)\n- (5) \\(b+B+D+d \\equiv 1\\)\n- (6) \\(b+C \\equiv 0\\)\n- (7) \\(c+A+d \\equiv 1\\)\n- (8) \\(c+B \\equiv 1\\)\n- (9) \\(c+C+D \\equiv 1\\)\n\nAvec huit inconnues, exprimons tout en fonction d'un paramètre, \\(a\\) par exemple :\n- (2) donne \\(B \\equiv 1-a\\)\n- (8) donne \\(c \\equiv 1-B \\equiv a\\)\n- (4)+(7) donne \\(b+c+d \\equiv 0\\)\n- (5)+(8) donne \\(D \\equiv 0\\)\n- (9) donne \\(C \\equiv 1-c-D \\equiv 1-a\\)\n- (3) donne alors \\(d \\equiv a+C \\equiv 1\\), d'où \\(b \\equiv c+d \\equiv 1-a\\)\n- (4) donne enfin \\(A \\equiv 1-b \\equiv a\\)\n\nN'ayant pas utilisé les neuf relations, on vérifie que les résultats sont compatibles avec le système initial.\n\nRésumons tout cela dans un tableau selon que \\(a \\equiv 0\\) ou 1 :\n\n| a | b≡1−a | c≡a | d≡1 | A≡a | B≡1−a | C≡1−a | D≡0 |\n|---|---|---|---|---|---|---|---|\n| 0 | 1 | 0 | 1 | 0 | 1 | 1 | 0 |\n| 1 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |\n\nCela fournit deux solutions minimales en quatre coups.\n\nVoici une illustration de la séquence \\(dbBC\\) réalisée par Olivier Miakinen :\n\n![figure](figure:2026-qf-13-illustration)\n\n**Pour Sofia, la position de départ est :**\n\n| 0 | 1 | 0 |\n|---|---|---|\n| 1 | 0 | 1 |\n| 1 | 1 | 1 |\n\nCertaines relations sont liées, par exemple la somme des quatre nombres au milieu des côtés (2)+(4)+(6)+(8) et celle de deux nombres opposés d'une même diagonale (1)+(9) ou (3)+(7) sont toutes trois congrues à \\(a+c+A+C\\).\n\nCela se traduit ici par \\(0 \\equiv 1\\), d'où une impossibilité.\n\n**Réponse : 4 et 0.**",
+    "figures": [
+      {
+        "id": "2026-qf-13-illustration",
+        "description": "Illustration de la séquence de 4 coups (d, b, B, C) pour Amel, réalisée par Olivier Miakinen, montrant l'évolution du plateau à chaque étape.",
+        "imageUrl": "q13_fig-illustration.png"
+      }
+    ]
+  }
+}

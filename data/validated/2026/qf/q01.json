@@ -40,7 +40,7 @@
   ],
   "tier": "CE",
   "statement": {
-    "markdown": "Un chocolatier prépare une boîte de chocolats pour ses clients. Il utilise une boîte carrée de 7 cm de côté, dans laquelle il souhaite ranger des chocolats carrés de 2 cm de côté.\n\nTous les chocolats doivent être placés à plat, sans empilement, et doivent tenir entièrement dans la boîte.\n\nQuel est le nombre maximal de chocolats qu'il peut ranger dans cette boîte ?"
+    "markdown": "Un chocolatier prépare une boîte de chocolats pour ses clients. Il utilise une boîte carrée de 7 cm de côté, dans laquelle il souhaite ranger des chocolats carrés de 2 cm de côté.\n\nTous les chocolats doivent être placés à plat, sans empilement, et doivent tenir entièrement dans la boîte.\n\n**Quel est le nombre maximal de chocolats qu'il peut ranger dans cette boîte ?**"
   },
   "answer": {
     "type": "exact-numeric",

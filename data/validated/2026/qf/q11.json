@@ -1,0 +1,50 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 310.7,
+        "y": 670
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 133.3,
+          "y": 350
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-11",
+  "number": 11,
+  "title": "Les âges croisés",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un père fêtera son anniversaire le 1er mai, et sa fille fêtera le sien le 31 mai. Le 2 mai, l'âge du père en années sera égal à l'âge de sa fille en mois.\n\nOn sait que le père avait au moins 25 ans et au plus 45 ans au moment de la naissance de sa fille.\n\n**Quel âge (en années) avait-il exactement au moment de cette naissance ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 32 ou 43"
+  },
+  "correction": {
+    "markdown": "Soit \\(a\\) l'âge du père à la naissance de sa fille.\n\nLe 2 mai de l'année de ses \\(f\\) ans, cette dernière aura \\(12f - 1\\) mois, tandis que son père aura \\(a+f\\) années depuis la veille.\n\nD'où la relation \\(a+f = 12f - 1\\), ou encore \\(a = 11f - 1\\).\n\nComme \\(25 \\leqslant a \\leqslant 45\\), il vient \\(3 \\leqslant f \\leqslant 4\\), soit les deux valeurs \\(a = 32\\) ou \\(43\\).\n\n**Réponse : 2 solutions, 32 ou 43.**"
+  }
+}

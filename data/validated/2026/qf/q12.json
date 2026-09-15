@@ -1,0 +1,49 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 24,
+        "y": 75.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 133.3,
+          "y": 472
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-12",
+  "number": 12,
+  "title": "L'escalier roulant",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Lorsque Mathias prend cet escalier roulant descendant, en restant immobile sur la première marche du haut, il met 25 secondes pour arriver en bas.\n\nLorsqu'il prend le même escalier en descendant les marches à une allure constante, il ne met que 10 secondes pour arriver en bas.\n\n**S'il prend l'escalier roulant à contresens, combien de temps mettra-t-il pour arriver en haut, sachant que sur un escalier fixe sa vitesse en montant est égale aux 4/5 de sa vitesse en descendant ?**\n\nRépondez 0 si vous pensez que sa vitesse en montée ne lui permet pas d'arriver en haut."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "125"
+  },
+  "correction": {
+    "markdown": "En prenant 1 m/s comme vitesse de l'escalier, on fixe sa longueur à 25 m.\n\nLa vitesse en descente sur l'escalier roulant vaut \\(1 + d = \\frac{25}{10}\\) où \\(d = 1,5\\) m/s est la vitesse propre de Mathias en descente.\n\nIl montera à contresens à la vitesse de \\(\\frac{4}{5}d - 1 = 0,2 > 0\\) : il arrivera en haut en \\(\\frac{25}{0,2} = 125\\) s.\n\n**Réponse : 125.**"
+  }
+}

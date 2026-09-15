@@ -1,0 +1,50 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 310.7,
+        "y": 423.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 133.3,
+          "y": 412
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-9",
+  "number": 9,
+  "title": "Les dates d'Annie Versaire",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Annie a coché douze dates sur son calendrier 2025 : 1er janvier, 2 février, 3 mars, 5 avril, 7 mai, ... Ces dates sont formées, dans l'ordre, du nombre 1 suivi des nombres premiers et des mois consécutifs.\n\n**Quelle date sera cochée au mois de décembre ?**\n\nRépondez 0 si vous pensez que c'est impossible. On rappelle qu'un nombre premier est un nombre admettant exactement deux diviseurs positifs (1 et lui-même)."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "31/12"
+  },
+  "correction": {
+    "markdown": "On construit un tableau où pour le mois \\(i \\in \\{1,\\dots,12\\}\\), le jour est \\(p_i\\), le \\(i\\)-ème nombre de la suite réunissant 1 et les nombres premiers. Fort heureusement le onzième nombre premier \\(p_{12} = 31\\) reste compatible avec un numéro de jour du mois de décembre.\n\n| Mois | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| Jour | 1 | 2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 |\n\n**Réponse : 31/12.**"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 24,
+        "y": 610.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 133.3,
+          "y": 398.7
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-15",
+  "number": 15,
+  "title": "Sa revue préférée",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Mathias a détaché les agrafes de sa revue préférée, qui compte moins de 100 pages assemblées en un seul cahier, et les quadruples pages (imprimées au recto et au verso) se sont éparpillées. Il a devant lui une des feuilles et voit une double page dont le produit des numéros est égal à 900.\n\n**Quel est le produit des numéros de pages figurant au verso de cette double page ?**\n\nToutes les pages de la revue sont numérotées dans l'ordre à partir de 1.\n\n![figure](figure:2026-qf-15-sheet)",
+    "figures": [
+      {
+        "id": "2026-qf-15-sheet",
+        "description": "Feuille dépliée d'un cahier agrafé imprimé recto-verso : une double page visible (exemple numéros 6 et 7) et son verso (numéros 4 et 9).",
+        "imageUrl": "q15_fig-sheet.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 874 ou 910"
+  },
+  "correction": {
+    "markdown": "La revue comporte \\(4f < 100\\) pages où \\(f\\) est le nombre de feuilles.\n\nMathias voit deux numéros \\(p\\) pair, à gauche, et \\(i\\) impair, à droite, tels que leur somme est un invariant d'une double page, \\(p+i = 4f+1\\), et leur produit vaut 900, \\(pi = 900 = 2^2 3^2 5^2\\). Le verso de cette double page porte alors les numéros \\(p-1\\) et \\(i+1\\).\n\nPosons \\(p = 4j\\), puisque \\(p\\) pair porte tous les facteurs 2. D'où \\(i = \\frac{900}{p} = \\frac{225}{j}\\).\n\n\\(p+i = 4f+1\\) implique \\(i \\equiv 1 \\pmod 4\\). Puisque \\(ij = 225\\), il vient alors \\(j \\equiv 1 \\pmod 4\\). Nous avons \\(j < 25\\) car \\(p < 100\\), et \\(\\frac94 < j\\) car \\(i < 100\\).\n\nIl existe deux diviseurs de \\(225 = 3^2 5^2\\) congrus à 1 modulo 4 et compris entre 3 et 24 :\n\n| j | p=4j | i=225/j | (p-1)(i+1) |\n|---|---|---|---|\n| 5 | 20 | 45 | 874 |\n| 9 | 36 | 25 | 910 |\n\n**Réponse : 2 solutions, 874 ou 910.**"
+  }
+}

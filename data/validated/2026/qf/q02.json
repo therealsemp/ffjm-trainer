@@ -40,7 +40,7 @@
   ],
   "tier": "CE",
   "statement": {
-    "markdown": "En additionnant les trois nombres qui entourent chaque triangle, on doit toujours trouver 26.\n\nPlacez les nombres 7, 8, 9 et 11 dans les cases vides.\n\n![figure](figure:2026-qf-2-hat)",
+    "markdown": "En additionnant les trois nombres qui entourent chaque triangle, on doit toujours trouver 26.\n\n**Placez les nombres 7, 8, 9 et 11 dans les cases vides.**\n\n![figure](figure:2026-qf-2-hat)",
     "figures": [
       {
         "id": "2026-qf-2-hat",

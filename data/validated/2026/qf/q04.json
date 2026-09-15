@@ -1,0 +1,59 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 24,
+        "y": 397.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 133.3,
+          "y": 258.7
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-4",
+  "number": 4,
+  "title": "Les intrus",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Parmi ces cinq nombres, trois se déduisent l'un de l'autre en les tournant (rotation) ou en les retournant (symétrie). **Quels sont les deux intrus ?**\n\n![figure](figure:2026-qf-4-numbers)",
+    "figures": [
+      {
+        "id": "2026-qf-4-numbers",
+        "description": "Les cinq nombres 15182, 18152, 28151, 58121, 58151 affichés dans une police de type afficheur digital (chiffres segmentés) — la forme graphique des chiffres est le point du problème (rotation/symétrie visuelle), une transcription en texte perd cet effet.",
+        "imageUrl": "q04_fig-numbers.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "18152 et 58151"
+  },
+  "correction": {
+    "markdown": "On identifie que 28151 est l'image de 15182 par rotation, et 58121 est l'image de 28151 par symétrie : par élimination les deux autres sont donc les intrus.\n\nVariante en repérant directement les deux intrus :\n- 1 et 8 sont invariants par rotation ou symétrie : seul 18152 présente un 8 entouré de deux 1.\n- 2 et 5 sont invariants par rotation, mais sont l'image de l'autre par symétrie : seul 58151 présente deux 5, alors que les autres ont {2, 5}.\n\n**Réponse : 18152 et 58151.**"
+  }
+}

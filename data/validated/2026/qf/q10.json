@@ -1,0 +1,50 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 310.7,
+        "y": 553.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 133.3,
+          "y": 570.7
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-10",
+  "number": 10,
+  "title": "Diviseurs",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Max remarque que le nombre 24 et son retourné 42 ont ensemble au moins un diviseur commun différent de 1 : le nombre 6.\n\n**Combien y a-t-il de paires de nombres à deux chiffres AB et BA qui ont au moins un diviseur positif commun différent de 1 ?**\n\nNote : A et B sont deux chiffres différents non nuls."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "16"
+  },
+  "correction": {
+    "markdown": "Parmi les \\(C_9^2 = 36\\) paires \\(\\{\\overline{AB},\\overline{BA}\\}\\) avec \\(1 \\leqslant A < B \\leqslant 9\\), dénombrons celles ayant un nombre premier \\(p\\) comme diviseur commun.\n\nRemarque : \\(p \\neq 11\\) car sinon nous aurions \\(A = B\\).\n\nÀ l'aide des critères de divisibilité, on a :\n- (2) 2 divise \\(\\overline{AB}\\) et \\(\\overline{BA}\\) ssi A et B sont pairs\n- (3) 3 divise \\(\\overline{AB}\\) et \\(\\overline{BA}\\) ssi \\(A+B\\) est un multiple de 3\n\nDans les autres cas, \\(p\\), différent de 2, 3 ou 11, divise \\(\\overline{BA} - \\overline{AB} = 9(B-A)\\) donc \\(B-A\\), et \\(\\overline{BA} + \\overline{AB} = 11(A+B)\\) donc \\(A+B\\). Ainsi il divise leur somme et leur différence, et étant impair, il divise donc A et B. Puisque \\(B > A \\geqslant p\\), alors \\(9 \\geqslant B \\geqslant 2p\\) : aucun p premier ne convient. Donc 1 est le seul diviseur commun dans les autres cas.\n\nOn recense alors 16 cas avec \\(p>1\\), récapitulés dans le tableau suivant :\n\n| A \\\\ B | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n|---|---|---|---|---|---|---|---|---|\n| 1 | 3 | 1 | 1 | 3 | 1 | 1 | 3 | 1 |\n| 2 | - | 1 | 2 | 1 | 2 | 3 | 2 | 1 |\n| 3 | - | - | 1 | 1 | 3 | 1 | 1 | 3 |\n| 4 | - | - | - | 3 | 2 | 1 | 2 | 1 |\n| 5 | - | - | - | - | 1 | 3 | 1 | 1 |\n| 6 | - | - | - | - | - | 1 | 2 | 3 |\n| 7 | - | - | - | - | - | - | 3 | 1 |\n| 8 | - | - | - | - | - | - | - | 1 |\n\n**Réponse : 16.**"
+  }
+}

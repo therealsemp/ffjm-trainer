@@ -1,0 +1,53 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 310.7,
+        "y": 433.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 12,
+        "position": {
+          "x": 133.3,
+          "y": 271.3
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-18",
+  "number": 18,
+  "title": "Le bois du père Lucien",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Le Père Lucien possède un bois triangulaire ACE divisé en trois parcelles ABD, BDE et BCE, tel que :\n- les angles ABD et ACE sont droits ;\n- BD = DE = 1 km ;\n- l'aire du triangle ABD est double de celle du triangle BCE.\n\n**Quelle est la mesure de CE ?**\n\nOn donnera la réponse arrondie au mètre le plus proche et si nécessaire on prendra 1,732 pour √3.\n\n![figure](figure:2026-qf-18-triangle)",
+    "figures": [
+      {
+        "id": "2026-qf-18-triangle",
+        "description": "Triangle ACE avec B sur (AC) et D sur (AE), formant les parcelles ABD, BDE, BCE ; angles droits en B (dans ABD) et en C (dans ACE) ; BD = DE = 1 km.",
+        "imageUrl": "q18_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1366"
+  },
+  "correction": {
+    "markdown": "Les triangles rectangles ADB et AEC, semblables, vérifient \\((R)\\ \\sin\\hat A = \\frac{DB}{AD} = \\frac{EC}{AE}\\).\n\nLe triangle BDE est isocèle en D car \\(DB = 1 = DE\\), d'où \\(2\\widehat{DEB} = 180 - \\widehat{BDE} = \\widehat{ADB} = \\widehat{AEC}\\) : (BE) est donc la bissectrice de \\(\\widehat{AEC}\\), et B est équidistant de (EA) et (EC).\n\nLes deux triangles BAD et BEC ont ainsi des hauteurs issues de B égales : l'aire de BAD étant le double de celle de BEC, il en résulte que les bases relatives à B vérifient \\(AD = 2 \\times CE\\).\n\n\\((R)\\) devient alors \\(\\frac{1}{2h} = \\frac{h}{2h+1}\\) avec \\(CE = h\\), ou encore \\(2h^2 - 2h - 1 = 0\\), admettant \\(h = \\frac{1+\\sqrt3}{2}\\) pour unique racine positive.\n\nFinalement \\(h \\approx 1,366\\) km avec la valeur approchée donnée dans l'énoncé.\n\nVariante (suggérée par Vincent Lefèvre, sans utiliser BD=DE) : en posant \\(r = \\frac{AC}{AB} = \\frac{CE}{BD} > 1\\) le rapport d'homothétie, on a \\(\\frac{BC}{AB} = r-1\\), d'où \\(\\frac{BC \\times CE}{AC \\times BD} = r(r-1)\\) exprime le ratio de l'aire du triangle BCE par celle de ABD, soit \\(\\frac12\\) d'après l'énoncé. Comme \\(BD=1\\), \\(CE=r\\) est donc racine de l'équation \\(r^2-r-\\frac12=0\\).\n\n**Réponse : 1 366 mètres.**"
+  }
+}

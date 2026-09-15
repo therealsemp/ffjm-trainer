@@ -1,0 +1,51 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 24,
+        "y": 553.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 133.3,
+          "y": 511.3
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-6",
+  "number": 6,
+  "title": "Ma recette",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Ma recette d'œufs brouillés pour 4 personnes demande d'utiliser 60 g de beurre, 12 œufs et 6 cuillères à soupe de lait. Malheureusement je n'ai que 10 œufs. **Combien vais-je utiliser de beurre et de lait pour respecter les proportions ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "50 g de beurre et 5 cuillères de lait"
+  },
+  "correction": {
+    "markdown": "On passe de 12 à 10 œufs avec un coefficient de proportionnalité \\(\\frac{10}{12} = \\frac{5}{6}\\).\n\nOn détermine ainsi la quantité de beurre, \\(60 \\times \\frac{5}{6} = 50\\), puis de lait, \\(6 \\times \\frac{5}{6} = 5\\).\n\n**Réponse : 50 g de beurre et 5 cuillères à soupe de lait.**"
+  }
+}

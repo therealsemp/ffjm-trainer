@@ -1,0 +1,51 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 310.7,
+        "y": 126.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 133.3,
+          "y": 258
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-8",
+  "number": 8,
+  "title": "Le train mexicain",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Dans le jeu « Le train mexicain », on utilise des pièces de dominos toutes différentes. Chaque demi-domino porte un nombre de points allant de 0 à 10.\n\nMax utilise uniquement les dominos dont au moins un des deux côtés porte un nombre de points égal à 0, 2 ou 6. Il veut construire la plus longue suite possible de dominos, en suivant la règle du jeu de dominos : deux demi-dominos qui se touchent doivent porter le même nombre de points.\n\n**Quel est le plus grand nombre de dominos qu'il peut poser ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "24"
+  },
+  "correction": {
+    "markdown": "Il y a 30 dominos dont un demi-domino est parmi 0, 2 ou 6 car dans \\(11 \\times 3\\) on compte deux fois les trois dominos 0-2, 0-6 et 2-6.\n\nDans un train mexicain hors extrémités, chaque nombre apparaîtra un nombre pair de fois. Chacun des trois nombres 0, 2 et 6 apparaît 12 fois (11+1 avec le double), pair, tandis que chacun des huit autres nombres apparaît 3 fois, impair.\n\nAinsi le train possède au plus \\(30 - 8 + 2 = 24\\) dominos, maximum atteint avec 1-6 6-6 6-2 2-2 2-0 0-1 1-2 2-3 3-0 0-4 4-6 6-5 5-0 0-7 7-2 2-8 8-0 0-9 9-6 6-10 10-0 0-0 0-6 6-3, par exemple.\n\n**Réponse : 24.**"
+  }
+}

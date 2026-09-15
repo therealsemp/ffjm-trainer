@@ -1,0 +1,51 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 24,
+        "y": 650
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 133.3,
+          "y": 590.7
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-7",
+  "number": 7,
+  "title": "À la chasse aux œufs",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Claude possède 4 poules et il ramasse les œufs chaque soir.\n\nLa première pond un œuf tous les jours. La deuxième pond un œuf tous les deux jours. La troisième pond un œuf tous les 3 jours et la 4e pond un œuf tous les 4 jours.\n\nClaude a pu ramasser 4 œufs pondus le jour même le 1er octobre.\n\n**Quel jour pourra-t-il de nouveau ramasser 4 œufs ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "13 octobre"
+  },
+  "correction": {
+    "markdown": "On construit un tableau indiquant les jours de ponte (notés P) :\n\n| Poule \\\\ Jour | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| 1 | P | P | P | P | P | P | P | P | P | P | P | P | P |\n| 2 | P | | P | | P | | P | | P | | P | | P |\n| 3 | P | | | P | | | P | | | P | | | P |\n| 4 | P | | | | P | | | | P | | | | P |\n\nVariante pour les moins jeunes : cela se reproduira dans \\(\\mathrm{PPCM}(1,2,3,4) = 12\\) jours, donc le 13.\n\n**Réponse : 13 octobre.**"
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+
+# Raw scraped page cache and downloaded source PDFs: large, and the PDFs are
+# FFJM copyrighted content — not meant to be published in this public repo.
+pipeline/cache/

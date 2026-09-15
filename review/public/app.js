@@ -122,13 +122,6 @@ function escapeHtml(s) {
   return div.innerHTML
 }
 
-// Mirrors the UI rule in docs/functional-spec.md: the FFJM "give the number
-// of solutions" instruction is shown whenever a question applies to a
-// category above CM, not stored as per-question data.
-function needsSolutionCountNotice(categories) {
-  return categories.some((c) => c !== "CE" && c !== "CM")
-}
-
 // Changing only the fragment (#page=...) of an <iframe> src that otherwise
 // stays the same doesn't reload the embedded PDF viewer in most browsers —
 // it's treated as an in-page anchor jump. Blanking the iframe first forces a
@@ -190,9 +183,10 @@ async function selectQuestion({ year, phase, file }) {
       ${q.examTitle ?? ""} ${q.champNumber ? `· ${q.champNumber}e championnat` : ""}
     </div>
     <h2 class="q-title">${q.number}. ${escapeHtml(q.title ?? "")} <small style="color:#888;font-weight:normal">(coef. ${q.coefficient}, ${q.coefficientSource})</small></h2>
-    <div class="meta-row">${q.categories.map((c) => `<span class="badge">${c}</span>`).join("")}</div>
-
-    ${needsSolutionCountNotice(q.categories) ? `<div class="general-instructions">Pour qu'un problème soit complètement résolu, donnez le nombre de ses solutions, et donnez la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une.</div>` : ""}
+    <div class="meta-row">
+      <span class="badge badge-tier">tier ${escapeHtml(q.tier ?? "?")}</span>
+      ${q.categories.map((c) => `<span class="badge">${c}</span>`).join("")}
+    </div>
 
     <div class="section-label">Énoncé</div>
     ${renderRichContent(q.statement, assetBase)}

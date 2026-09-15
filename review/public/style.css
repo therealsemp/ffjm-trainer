@@ -78,14 +78,12 @@ body {
   font-size: 11px;
   margin-right: 4px;
 }
-.general-instructions {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-size: 13px;
-  font-style: italic;
-  margin: 12px 0;
+/* Must come after .badge so its colors override (equal specificity, source
+   order decides) — this badge always has both classes: class="badge badge-tier". */
+.badge-tier {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
 }
 
 h2.q-title { margin: 4px 0 12px; }

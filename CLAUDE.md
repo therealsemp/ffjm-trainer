@@ -5,6 +5,7 @@ Guidance for Claude Code when working in this repository.
 ## Rules
 
 1. **Never run `git commit` (or any command that creates a commit).** The user commits everything themselves. Stage changes or leave them in the working tree if helpful, but do not commit — not even when asked to "save progress" or similar unless the user explicitly says the word "commit".
+2. **Before transcribing a PDF (statement/correction) into a question JSON, read `ingest/TRANSCRIPTION-GUIDE.md`.** There's no deterministic extraction script — the transcription is done by reading the PDF directly and writing the JSON by hand, and that guide documents recurring mistakes (flattened lists, condensed reasoning, missed figures) to avoid repeating.
 
 ## Project
 
@@ -19,8 +20,8 @@ Current phase: building the PDF ingestion pipeline that turns official FFJM arch
   /raw          → PDF sources FFJM, per year (committed)
   /needs-review → questions extracted and awaiting human review (local only, gitignored)
   /validated    → validated questions, one JSON file per question (committed) — source of truth
-/ingest         → PDF → JSON conversion tooling (Node; own package.json/deps)
-/review         → validation tool: small local server + UI to review needs-review against raw, then promote to validated (not built yet)
+/ingest         → PDF → JSON conversion tooling (Node; own package.json/deps); see TRANSCRIPTION-GUIDE.md
+/review         → validation tool: small local server + UI to review needs-review against raw, then promote to validated
 /shared         → code used by both /ingest and /review (e.g. shared/validate.mjs)
 /app            → the deployed static site (not built yet)
 /docs           → functional-spec.md and technical-architecture.md

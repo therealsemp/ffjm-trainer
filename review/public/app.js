@@ -8,6 +8,7 @@ const pdfFrame = document.getElementById("pdf-frame")
 const pdfTabs = document.getElementById("pdf-tabs")
 
 let currentQuestion = null // { year, phase, file }
+let orderedQuestions = [] // flat list, same order as rendered in the sidebar
 
 // Questions live at data/needs-review/{year}/{phase}/{file} — this string
 // identifies one uniquely, for dataset attributes and API URLs alike.
@@ -27,6 +28,7 @@ async function loadQuestionList() {
     groups.get(key).push(q)
   }
 
+  orderedQuestions = []
   for (const [examLabel, items] of groups) {
     const group = document.createElement("div")
     group.className = "exam-group"
@@ -36,6 +38,7 @@ async function loadQuestionList() {
 
     items.sort((a, b) => a.number - b.number)
     for (const q of items) {
+      orderedQuestions.push(q)
       const btn = document.createElement("button")
       btn.className = "question-item"
       btn.textContent = `${q.number}. ${q.title ?? "(sans titre)"}`
@@ -212,16 +215,27 @@ validateBtn.addEventListener("click", async () => {
   const data = await res.json()
 
   if (res.ok && data.ok) {
-    validateStatus.textContent = "Validé ✓ — déplacé vers data/validated"
-    validateStatus.className = "ok"
-    currentQuestion = null
-    questionView.hidden = true
-    emptyState.hidden = false
-    loadQuestionList()
+    // The validated question disappears from the list, so whatever was next
+    // after it shifts into its old index — select that one automatically
+    // instead of dropping back to the empty state after every validation.
+    const idx = orderedQuestions.findIndex((q) => questionKey(q) === questionKey(currentQuestion))
+    await loadQuestionList()
+    const next = orderedQuestions[idx]
+    if (next) {
+      await selectQuestion(next)
+      validateStatus.textContent = "Validé ✓ — question suivante chargée"
+      validateStatus.className = "ok"
+    } else {
+      currentQuestion = null
+      questionView.hidden = true
+      emptyState.hidden = false
+    }
   } else {
     validateStatus.className = "error"
     validateStatus.textContent = (data.errors ?? [data.error ?? "erreur inconnue"]).join(" · ")
   }
 })
 
-loadQuestionList()
+loadQuestionList().then(() => {
+  if (orderedQuestions[0]) selectQuestion(orderedQuestions[0])
+})

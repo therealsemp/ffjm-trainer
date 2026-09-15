@@ -1,7 +1,12 @@
 # Needs review
 
-Questions extracted from `../raw/` by `/ingest`, waiting on human review against the source PDF before they're trusted. One JSON file per question, plus a PNG per figure it references — same shape as `../validated/`.
+Questions extracted from `../raw/` by `/ingest`, waiting on human review against the source PDF before they're trusted. Layout mirrors `../raw/` and `../validated/`:
 
-This directory's content is **not committed**: the `.json` and `.png` files here are local, temporary working state (see `.gitignore` at the repo root). Only this README is tracked, so the directory's purpose survives a fresh clone even when it's empty.
+```
+{year}/{phase}/qNN.json
+{year}/{phase}/qNN_fig-<name>.png   (one per figure the question references)
+```
 
-Once a question is reviewed and correct, it moves to `../validated/` (currently a manual step; the `/review` tool will do this from a UI once it exists).
+This directory's content is **not committed**: the `.json` and `.png` files here are local, temporary working state (see `.gitignore` at the repo root — `data/needs-review/**/*.json` and `**/*.png`, so this applies at any depth). Only this README is tracked, so the directory's purpose survives a fresh clone even when it's empty.
+
+Once a question is reviewed and correct, use the **Valider** button in the `/review` tool — it re-runs `shared/validate.mjs` and, if it passes, moves the question (JSON + figures) to the matching `../validated/{year}/{phase}/` folder.

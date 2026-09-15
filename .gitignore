@@ -4,5 +4,5 @@ node_modules/
 # of truth. Once a question is validated it's moved to data/validated/,
 # which is committed. The directory itself (and its README) stays tracked;
 # only the generated content is ignored.
-data/needs-review/*.json
-data/needs-review/*.png
+data/needs-review/**/*.json
+data/needs-review/**/*.png

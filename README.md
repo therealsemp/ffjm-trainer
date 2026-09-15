@@ -16,9 +16,9 @@ En cours de construction, dans cet ordre volontaire :
 
 ```
 /data
-  /raw          PDF sources FFJM, par année (committé)
-  /needs-review questions extraites, en attente de revue humaine (local, non commité)
-  /validated    questions validées, une par fichier JSON (committé) — source de vérité
+  /raw          PDF sources FFJM, rangés {année}/{phase}/ (committé)
+  /needs-review questions extraites, en attente de revue humaine, {année}/{phase}/qNN.json (local, non commité)
+  /validated    questions validées, {année}/{phase}/qNN.json (committé) — source de vérité
 /ingest         conversion PDF → JSON (Node, dépendances propres à cet outil)
 /review         outil de revue/validation : petit serveur local + UI
 /shared         code utilisé à la fois par /ingest et /review (ex: validate.mjs)
@@ -60,7 +60,7 @@ C'est un outil de développement, pas une fonctionnalité de l'application final
 ## Valider une question en ligne de commande
 
 ```bash
-node shared/validate.mjs data/needs-review/*.json
+node shared/validate.mjs data/needs-review/*/*/*.json
 ```
 
 Vérifie la structure du JSON, la présence des catégories/coefficients, et que chaque figure/PDF source référencé (`imageUrl`, `sourceFiles`) existe bien à l'emplacement relatif indiqué. C'est la même validation que celle utilisée par le bouton "Valider" de l'outil de revue — utile pour vérifier plusieurs fichiers d'un coup sans passer par l'interface.

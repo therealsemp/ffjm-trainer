@@ -3,13 +3,16 @@
 // them next to their source PDF, and promotes a question (its JSON + figure
 // PNGs) to data/validated once it passes validation and looks right.
 //
+// Questions live nested as data/{needs-review,validated}/{year}/{phase}/qNN.json
+// (mirrors data/raw/{year}/{phase}/), with figure PNGs alongside.
+//
 // This is dev tooling, not part of the deployed app — it only runs on the
 // reviewer's machine.
 //
 // Usage: node server.mjs [port]
 
 import express from "express"
-import { readFileSync, writeFileSync, readdirSync, existsSync, renameSync, unlinkSync } from "node:fs"
+import { readFileSync, readdirSync, existsSync, mkdirSync, renameSync, statSync } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { validateQuestion } from "../shared/validate.mjs"
@@ -22,33 +25,56 @@ const RAW = path.join(ROOT, "data", "raw")
 
 const PORT = parseInt(process.argv[2] || "5175", 10)
 
-// Bare filename only (no path separators, no "..") — every file we touch
-// lives directly inside NEEDS_REVIEW, so this is enough to rule out traversal.
-const SAFE_NAME = /^[A-Za-z0-9._-]+$/
+const SAFE_FILE = /^[A-Za-z0-9._-]+$/
+const PHASES = ["qf", "sf", "fn"]
 
 function isSafeName(name) {
-  return typeof name === "string" && SAFE_NAME.test(name) && !name.includes("..")
+  return typeof name === "string" && SAFE_FILE.test(name) && !name.includes("..")
+}
+function isYear(value) {
+  return /^\d{4}$/.test(value)
+}
+function isPhase(value) {
+  return PHASES.includes(value)
+}
+
+// { year, phase, file } -> absolute directory containing that question, after
+// validating each segment (guards against path traversal via route params).
+function questionDir(year, phase) {
+  if (!isYear(year) || !isPhase(phase)) return null
+  return path.join(NEEDS_REVIEW, year, phase)
 }
 
 function listQuestionFiles() {
-  return readdirSync(NEEDS_REVIEW)
-    .filter((f) => f.endsWith(".json"))
-    .sort()
+  const results = []
+  if (!existsSync(NEEDS_REVIEW)) return results
+  for (const year of readdirSync(NEEDS_REVIEW)) {
+    const yearPath = path.join(NEEDS_REVIEW, year)
+    if (!isYear(year) || !statSync(yearPath).isDirectory()) continue
+    for (const phase of readdirSync(yearPath)) {
+      const phasePath = path.join(yearPath, phase)
+      if (!isPhase(phase) || !statSync(phasePath).isDirectory()) continue
+      for (const file of readdirSync(phasePath)) {
+        if (file.endsWith(".json")) results.push({ year, phase, file })
+      }
+    }
+  }
+  return results.sort((a, b) => (a.year + a.phase + a.file).localeCompare(b.year + b.phase + b.file))
 }
 
-function readQuestion(file) {
-  return JSON.parse(readFileSync(path.join(NEEDS_REVIEW, file), "utf8"))
+function readQuestion(dir, file) {
+  return JSON.parse(readFileSync(path.join(dir, file), "utf8"))
 }
 
 // sourceFiles.*.path is relative to the question file's own directory, e.g.
-// "../raw/2026/2026_qf_statement.pdf" — turn that into a URL our /raw static
-// route can serve, and append the page/position as a standard PDF "Open
-// Parameters" fragment so the viewer opens roughly where this question is,
-// instead of always at page 1. `page=N` is well supported by browsers'
-// built-in PDF viewers; the `zoom=100,x,y` part (positioning) is a bonus —
-// support for it is inconsistent, page-level is the part we can rely on.
-function sourceRefToUrl(ref) {
-  const resolved = path.resolve(NEEDS_REVIEW, ref.path)
+// "../../../raw/2026/qf/2026_qf_statement.pdf" — turn that into a URL our
+// /raw static route can serve, and append the page/position as a standard
+// PDF "Open Parameters" fragment so the viewer opens roughly where this
+// question is, instead of always at page 1. `page=N` is well supported by
+// browsers' built-in PDF viewers; the `zoom=100,x,y` part (positioning) is a
+// bonus — support for it is inconsistent, page-level is the part we can rely on.
+function sourceRefToUrl(ref, dir) {
+  const resolved = path.resolve(dir, ref.path)
   const fromRaw = path.relative(RAW, resolved)
   const url = "/raw/" + fromRaw.split(path.sep).map(encodeURIComponent).join("/")
   const fragment = ref.position ? `page=${ref.page}&zoom=100,${ref.position.x},${ref.position.y}` : `page=${ref.page}`
@@ -72,14 +98,14 @@ app.use("/assets", express.static(NEEDS_REVIEW))
 app.use("/raw", express.static(RAW))
 
 app.get("/api/questions", (req, res) => {
-  const summaries = listQuestionFiles().map((file) => {
-    const q = readQuestion(file)
+  const summaries = listQuestionFiles().map(({ year, phase, file }) => {
+    const q = readQuestion(questionDir(year, phase), file)
     return {
+      year,
+      phase,
       file,
-      year: q.year,
-      phase: q.phase,
-      number: q.number,
       id: q.id,
+      number: q.number,
       title: q.title,
       coefficient: q.coefficient,
       categories: q.categories,
@@ -88,29 +114,31 @@ app.get("/api/questions", (req, res) => {
   res.json(summaries)
 })
 
-app.get("/api/questions/:file", (req, res) => {
-  const { file } = req.params
-  if (!isSafeName(file) || !file.endsWith(".json")) return res.status(400).json({ error: "invalid filename" })
-  const filePath = path.join(NEEDS_REVIEW, file)
+app.get("/api/questions/:year/:phase/:file", (req, res) => {
+  const { year, phase, file } = req.params
+  const dir = questionDir(year, phase)
+  if (!dir || !isSafeName(file) || !file.endsWith(".json")) return res.status(400).json({ error: "invalid path" })
+  const filePath = path.join(dir, file)
   if (!existsSync(filePath)) return res.status(404).json({ error: "not found" })
 
-  const q = readQuestion(file)
+  const q = readQuestion(dir, file)
   const pdfUrls = {
-    statement: sourceRefToUrl(q.sourceFiles.statement),
-    detailedSolutions: q.sourceFiles.detailedSolutions.map(sourceRefToUrl),
+    statement: sourceRefToUrl(q.sourceFiles.statement, dir),
+    detailedSolutions: q.sourceFiles.detailedSolutions.map((ref) => sourceRefToUrl(ref, dir)),
   }
   res.json({ question: q, pdfUrls })
 })
 
-app.post("/api/questions/:file/validate", (req, res) => {
-  const { file } = req.params
-  if (!isSafeName(file) || !file.endsWith(".json")) return res.status(400).json({ error: "invalid filename" })
-  const filePath = path.join(NEEDS_REVIEW, file)
+app.post("/api/questions/:year/:phase/:file/validate", (req, res) => {
+  const { year, phase, file } = req.params
+  const dir = questionDir(year, phase)
+  if (!dir || !isSafeName(file) || !file.endsWith(".json")) return res.status(400).json({ error: "invalid path" })
+  const filePath = path.join(dir, file)
   if (!existsSync(filePath)) return res.status(404).json({ error: "not found" })
 
-  const q = readQuestion(file)
+  const q = readQuestion(dir, file)
   const errors = []
-  validateQuestion(q, errors, NEEDS_REVIEW)
+  validateQuestion(q, errors, dir)
   if (errors.length > 0) {
     return res.status(422).json({ ok: false, errors })
   }
@@ -120,11 +148,13 @@ app.post("/api/questions/:file/validate", (req, res) => {
     if (!isSafeName(img)) return res.status(400).json({ error: `unsafe image filename: ${img}` })
   }
 
-  // Move the JSON and every figure PNG it references into validated/.
-  renameSync(filePath, path.join(VALIDATED, file))
+  const validatedDir = path.join(VALIDATED, year, phase)
+  mkdirSync(validatedDir, { recursive: true })
+
+  renameSync(filePath, path.join(validatedDir, file))
   for (const img of imageFiles) {
-    const from = path.join(NEEDS_REVIEW, img)
-    if (existsSync(from)) renameSync(from, path.join(VALIDATED, img))
+    const from = path.join(dir, img)
+    if (existsSync(from)) renameSync(from, path.join(validatedDir, img))
   }
 
   res.json({ ok: true })

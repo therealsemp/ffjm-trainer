@@ -1,0 +1,58 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 24,
+        "y": 118.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 133.3,
+          "y": 260
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-1",
+  "number": 1,
+  "title": "Le défi du chocolatier",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "L2",
+    "GP",
+    "HC"
+  ],
+  "statement": {
+    "markdown": "Un chocolatier prépare une boîte de chocolats pour ses clients. Il utilise une boîte carrée de 7 cm de côté, dans laquelle il souhaite ranger des chocolats carrés de 2 cm de côté.\n\nTous les chocolats doivent être placés à plat, sans empilement, et doivent tenir entièrement dans la boîte.\n\nQuel est le nombre maximal de chocolats qu'il peut ranger dans cette boîte ?"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "9"
+  },
+  "correction": {
+    "markdown": "On peut placer \\(\\lfloor \\frac{7}{2} \\rfloor = 3\\) carrés de chocolat le long d'un côté, soit \\(3 \\times 3 = 9\\) dans une boîte carrée de côté 7.\n\n![figure](figure:2026-qf-1-grid)\n\nComplément pour les moins jeunes : 12 est un majorant avec une considération d'aires \\(\\frac{7^2}{2^2} = 12,25\\), mais la preuve que 9 est le maximum est loin d'être triviale puisqu'un carré de chocolat supplémentaire nécessiterait une boîte carrée de côté \\(6 + \\sqrt{2}\\), compris entre 7 et 8.\n\nRéférences et prolongements :\n- Empilement de carrés dans un carré\n- *Packing 10 or 11 Unit Squares in a Square*\n- *Squares in Squares*\n- *Packing Unit Squares in Squares: A Survey and New Results*\n\n**Réponse : 9.**",
+    "figures": [
+      {
+        "id": "2026-qf-1-grid",
+        "description": "Boîte carrée 7×7 avec une grille 3×3 de carrés de chocolat de 2×2 placés dans le coin, illustrant la disposition optimale.",
+        "imageUrl": "q01_fig-grid.png"
+      }
+    ]
+  }
+}

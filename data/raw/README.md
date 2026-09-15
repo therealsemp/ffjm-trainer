@@ -15,7 +15,7 @@ Retrieved: 2026-09-15.
 ## Naming convention
 
 ```
-raw/{year}/{year}_{phase}_{type}.pdf
+raw/{year}/{phase}/{year}_{phase}_{type}.pdf
 ```
 
 - `phase`: `qf` | `sf` | `fn`
@@ -34,4 +34,4 @@ Coverage isn't uniform — this reflects real gaps in what FFJM published/archiv
 - **2000** did have an `fn` entry, but with no detailed solution — excluded.
 - **2001** has a "finale régionale" phase instead of "finale nationale" — excluded (different phase, not in scope).
 
-Full per-file provenance (source URL, championship number, detected phase label) is recorded in `../manifests/manifest.json`.
+(The original per-file provenance manifest — source URL, championship number, detected phase label — was a one-shot scraping artifact and has since been deleted; this README is what's kept as the record of scope and gaps.)

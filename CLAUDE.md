@@ -17,14 +17,16 @@ Current phase: building the PDF ingestion pipeline that turns official FFJM arch
 
 ```
 /data
-  /raw          → PDF sources FFJM, per year (committed)
-  /needs-review → questions extracted and awaiting human review (local only, gitignored)
-  /validated    → validated questions, one JSON file per question (committed) — source of truth
+  /raw          → PDF sources FFJM, {year}/{phase}/ (committed)
+  /needs-review → questions extracted and awaiting human review, {year}/{phase}/qNN.json (local only, gitignored)
+  /validated    → validated questions, {year}/{phase}/qNN.json (committed) — source of truth
 /ingest         → PDF → JSON conversion tooling (Node; own package.json/deps); see TRANSCRIPTION-GUIDE.md
 /review         → validation tool: small local server + UI to review needs-review against raw, then promote to validated
 /shared         → code used by both /ingest and /review (e.g. shared/validate.mjs)
 /app            → the deployed static site (not built yet)
 /docs           → functional-spec.md and technical-architecture.md
 ```
+
+All three areas under `/data` share the same `{year}/{phase}/` layout (sized for the eventual scale — potentially 1000+ question files, unworkable flat in one directory). `raw/` keeps full descriptive filenames (`2026_qf_statement.pdf`) since those are source files that may travel outside their directory; `needs-review/`/`validated/` use short filenames (`q01.json`, `q01_fig-grid.png`) since the path already carries year/phase and these files never leave their directory.
 
 `/data` belongs to no single tool: `/ingest` writes to `needs-review`, `/review` reads `needs-review`+`raw` and promotes to `validated`, `/app` reads `validated` at build time. Validation state is which directory a file is in, not a field inside the JSON.

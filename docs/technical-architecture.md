@@ -102,14 +102,16 @@ Approche hybride, itérative :
 ```
 /app        → site React/Vite (le produit déployé), lit data/validated/ au build
 /data
-  /raw          → PDF sources FFJM (committé)
-  /needs-review → questions extraites en attente de revue (local, gitignoré)
-  /validated    → questions validées (committé) — source de vérité pour /app
+  /raw          → PDF sources FFJM (committé), rangés {année}/{phase}/
+  /needs-review → questions extraites en attente de revue (local, gitignoré), rangées {année}/{phase}/qNN.json
+  /validated    → questions validées (committé) — source de vérité pour /app, même rangement {année}/{phase}/qNN.json
 /ingest     → PDF → JSON : extraction de figures, etc. (Node, dépendances propres)
-/review     → outil de revue/validation (à construire) : petit serveur local + UI
+/review     → outil de revue/validation : petit serveur local + UI
 /shared     → code utilisé par /ingest et /review (ex: shared/validate.mjs)
 /docs       → specs (ce document et functional-spec.md)
 ```
+
+Les trois zones de `/data` partagent la même arborescence `{année}/{phase}/` — pensé pour l'échelle visée (~20 ans × 3 phases × ~18-27 questions ≈ plus d'un millier de fichiers à terme, ingérable à plat dans un seul répertoire). Dans `raw/`, les noms de fichiers restent complets et auto-descriptifs (`2026_qf_statement.pdf`) car ce sont des sources qui peuvent être déplacées/partagées hors contexte. Dans `needs-review/`/`validated/`, les noms sont courts (`q01.json`, `q01_fig-grid.png`) car le chemin porte déjà l'année et la phase — pas besoin de répéter ce préfixe sur des fichiers dérivés qui ne vivent jamais en dehors de leur dossier.
 
 `/data` n'appartient à aucun des outils : `/ingest` y écrit (`needs-review`), `/review` y lit et promeut (`needs-review` → `validated`), `/app` y lit (`validated`) au build.
 

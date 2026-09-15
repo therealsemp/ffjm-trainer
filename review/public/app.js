@@ -7,7 +7,13 @@ const validateStatus = document.getElementById("validate-status")
 const pdfFrame = document.getElementById("pdf-frame")
 const pdfTabs = document.getElementById("pdf-tabs")
 
-let currentFile = null
+let currentQuestion = null // { year, phase, file }
+
+// Questions live at data/needs-review/{year}/{phase}/{file} — this string
+// identifies one uniquely, for dataset attributes and API URLs alike.
+function questionKey({ year, phase, file }) {
+  return `${year}/${phase}/${file}`
+}
 
 async function loadQuestionList() {
   const res = await fetch("/api/questions")
@@ -33,8 +39,8 @@ async function loadQuestionList() {
       const btn = document.createElement("button")
       btn.className = "question-item"
       btn.textContent = `${q.number}. ${q.title ?? "(sans titre)"}`
-      btn.dataset.file = q.file
-      btn.addEventListener("click", () => selectQuestion(q.file))
+      btn.dataset.key = questionKey(q)
+      btn.addEventListener("click", () => selectQuestion(q))
       group.appendChild(btn)
     }
     listEl.appendChild(group)
@@ -76,7 +82,10 @@ function reinsertMath(html, rendered) {
 // listed in the figures array with no inline reference. Handle both: swap
 // inline placeholders for the real asset URL, then append any figure that
 // was never referenced inline as its own block at the end.
-function renderRichContent(section) {
+// assetBase is "{year}/{phase}" — figures live at data/needs-review/{year}/{phase}/
+// alongside their question's JSON, so imageUrl (a bare filename) is resolved
+// against it to build the /assets URL.
+function renderRichContent(section, assetBase) {
   if (!section) return ""
   let markdown = section.markdown
   const referencedIds = new Set()
@@ -86,7 +95,7 @@ function renderRichContent(section) {
     const placeholder = `figure:${fig.id}`
     if (markdown.includes(placeholder)) {
       referencedIds.add(fig.id)
-      markdown = markdown.replaceAll(placeholder, `/assets/${encodeURIComponent(fig.imageUrl)}`)
+      markdown = markdown.replaceAll(placeholder, `/assets/${assetBase}/${encodeURIComponent(fig.imageUrl)}`)
     }
   }
 
@@ -96,7 +105,7 @@ function renderRichContent(section) {
   const unreferenced = (section.figures ?? []).filter((f) => f.imageUrl && !referencedIds.has(f.id))
   for (const fig of unreferenced) {
     html += `<figure class="extra-figure">
-      <img src="/assets/${encodeURIComponent(fig.imageUrl)}" alt="${escapeHtml(fig.description ?? fig.id)}" />
+      <img src="/assets/${assetBase}/${encodeURIComponent(fig.imageUrl)}" alt="${escapeHtml(fig.description ?? fig.id)}" />
       <figcaption>${escapeHtml(fig.description ?? fig.id)}</figcaption>
     </figure>`
   }
@@ -148,14 +157,16 @@ function switchPdf(url, tabs, activeIndex) {
   })
 }
 
-async function selectQuestion(file) {
-  currentFile = file
+async function selectQuestion({ year, phase, file }) {
+  currentQuestion = { year, phase, file }
+  const key = questionKey(currentQuestion)
   document.querySelectorAll(".question-item").forEach((el) => {
-    el.classList.toggle("active", el.dataset.file === file)
+    el.classList.toggle("active", el.dataset.key === key)
   })
 
-  const res = await fetch(`/api/questions/${encodeURIComponent(file)}`)
+  const res = await fetch(`/api/questions/${year}/${phase}/${encodeURIComponent(file)}`)
   const { question: q, pdfUrls } = await res.json()
+  const assetBase = `${year}/${phase}`
 
   emptyState.hidden = true
   questionView.hidden = false
@@ -181,28 +192,29 @@ async function selectQuestion(file) {
     ${needsSolutionCountNotice(q.categories) ? `<div class="general-instructions">Pour qu'un problème soit complètement résolu, donnez le nombre de ses solutions, et donnez la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une.</div>` : ""}
 
     <div class="section-label">Énoncé</div>
-    ${renderRichContent(q.statement)}
+    ${renderRichContent(q.statement, assetBase)}
 
     <div class="section-label">Réponse attendue</div>
     <div class="answer-box"><strong>${q.answer.type}</strong>${q.answer.value !== undefined ? `: ${escapeHtml(String(q.answer.value))}` : ""}</div>
 
     <div class="section-label">Correction</div>
-    ${renderRichContent(q.correction)}
+    ${renderRichContent(q.correction, assetBase)}
   `
 }
 
 validateBtn.addEventListener("click", async () => {
-  if (!currentFile) return
+  if (!currentQuestion) return
   validateStatus.textContent = "Validation…"
   validateStatus.className = ""
 
-  const res = await fetch(`/api/questions/${encodeURIComponent(currentFile)}/validate`, { method: "POST" })
+  const { year, phase, file } = currentQuestion
+  const res = await fetch(`/api/questions/${year}/${phase}/${encodeURIComponent(file)}/validate`, { method: "POST" })
   const data = await res.json()
 
   if (res.ok && data.ok) {
     validateStatus.textContent = "Validé ✓ — déplacé vers data/validated"
     validateStatus.className = "ok"
-    currentFile = null
+    currentQuestion = null
     questionView.hidden = true
     emptyState.hidden = false
     loadQuestionList()

@@ -25,53 +25,82 @@ Ce choix découle directement de la contrainte fonctionnelle « pas de comptes, 
 
 ## Modèle de données
 
-Fichiers JSON générés par le pipeline, consommés au build du site.
+Un fichier JSON par question (pas par examen) : plus simple à valider unitairement, et cohérent avec le principe « l'état, c'est le répertoire, pas un champ » (voir plus bas). Chaque fichier est auto-suffisant : les informations d'examen (année, phase...) sont dénormalisées dans chaque question plutôt que factorisées dans un fichier parent.
+
+Une figure (schéma, image) est un fichier PNG à part, posé à côté du JSON, référencé par son seul nom de fichier (`imageUrl`) — jamais en base64 dans le JSON (voir la discussion archivée sur ce choix : lisibilité par les outils qui lisent/écrivent ces fichiers, taille, pas de duplication quand une figure sert à la fois dans l'énoncé et la correction).
 
 ```ts
 type RichContent = {
   // texte + markdown + LaTeX inline (\( ... \)) + références à des figures
   markdown: string
-  figures?: { id: string; svg?: string; imageUrl?: string }[]
+  figures?: {
+    id: string
+    description?: string
+    svg?: string
+    imageUrl?: string   // nom de fichier seul, le PNG vit à côté du JSON
+  }[]
 }
 
-type Exercise = {
-  id: string
-  category: "CE" | "CM" | "C1" | "C2" | "L1" | "L2" | "GP" | ...
+type Question = {
+  // Dénormalisé depuis l'examen source (un exercice = un fichier autonome)
   year: number
-  round: string          // tour / session
-  theme?: string          // réservé, non exploité en v1
+  champNumber: number | null
+  phase: "qf" | "sf" | "fn"
+  examTitle?: string
+  sourceFiles: {
+    statement: string             // chemin relatif au fichier JSON lui-même
+    detailedSolutions: string[]   // idem ; peut contenir 2 sources à synthétiser
+  }
+
+  id: string
+  number: number                  // numéro de la question dans l'examen
+  title?: string
+  coefficient: number
+  coefficientSource: "explicit" | "derived-from-number" | "derived-from-order"
+  categories: ("CE" | "CM" | "C1" | "C2" | "L1" | "L2" | "GP" | "HC")[]
+  // Les catégories FFJM sont cumulatives (CE fait les questions 1-5, CM 1-8, etc.)
+  // — categories liste donc toutes les catégories concernées par CETTE question,
+  // déduit des marqueurs "FIN CATÉGORIE X" du PDF source, pas un simple cutoff.
 
   statement: RichContent
   answer: {
     type: "exact-numeric" | "exact-text" | "open"
-    value?: string | number   // absent si type = "open"
+    value?: string | number   // absent seulement si type = "open"
   }
   correction: RichContent
-
-  status: "draft" | "needs-review" | "validated"
-  confidence?: number     // score du pipeline d'extraction, pour prioriser la revue
 }
 ```
 
+Pas de champ `status`/`confidence` dans le JSON : l'état de validation est porté par l'emplacement du fichier (voir plus bas), pas par une donnée qu'on pourrait oublier de mettre à jour.
+
+Règle d'affichage dérivée du modèle, pas stockée dedans : la consigne FFJM sur le nombre de solutions à donner (présente sur toutes les épreuves depuis au moins 2003) doit être affichée par l'app dès qu'une question a une catégorie strictement supérieure à CM — voir `functional-spec.md`.
+
 ## Pipeline d'import (le composant le plus complexe du projet)
 
-Objectif : transformer les PDF d'annales FFJM (sujets + corrigés séparés) en exercices structurés conformes au modèle ci-dessus.
+Objectif : transformer les PDF d'annales FFJM (sujets + corrigés séparés) en questions structurées conformes au modèle ci-dessus.
 
 Approche hybride, itérative :
 
-1. **Extraction automatisée assistée par IA** : lecture des pages de PDF (texte + mise en page + figures) et transcription directe vers `RichContent` structuré, avec un **score de confiance** par exercice extrait.
-2. **File de revue humaine**, priorisée par confiance croissante (les cas les moins fiables en premier) : relecture et correction manuelle, changement de `status` vers `validated`.
-3. **Boucle d'amélioration** : les corrections manuelles servent de référence (exemples, ajustements de prompt) pour améliorer la qualité des lots d'extraction suivants.
-4. Le pipeline vit dans `/pipeline`, complètement séparé du site déployé. Son output validé (fichiers `/data/*.json`) est ce que le site consomme — pas les PDF sources ni les scripts d'extraction.
+1. **Extraction assistée par IA** (`/ingest`) : lecture directe des PDF (texte, mise en page, figures) et transcription vers le modèle `Question` — un fichier JSON par question, écrit dans `data/needs-review/`. Les figures/schémas sont extraits en PNG à partir du rendu réel du PDF (`pdfjs-dist` + `@napi-rs/canvas`, coordonnées de recadrage repérées visuellement), pas reconstruits à la main — plus fiable qu'une reconstruction SVG approximative. Quand une phase a plusieurs solutions détaillées sources, elles sont toutes lues et synthétisées en une seule correction (la plus claire/complète) ; un désaccord réel entre sources est signalé explicitement plutôt que résolu silencieusement.
+2. **Revue humaine** (outil à venir dans `/review`) : comparaison du JSON rendu (texte + maths + figures) au PDF source, correction si besoin, puis déplacement du fichier vers `data/validated/`.
+3. **État = emplacement du fichier**, pas un champ : `data/needs-review/` (local, non commité) → `data/validated/` (source de vérité, commitée). Pas de registre séparé « PDF déjà traités » à maintenir : ça se calcule à la demande en comparant `data/raw/` à `data/validated/`.
+4. **Boucle d'amélioration** : les corrections faites pendant la revue humaine servent de référence pour améliorer la qualité des lots d'extraction suivants.
 
 ## Structure du dépôt
 
 ```
-/app        → site React/Vite (le produit déployé)
-/data       → exercices validés (JSON), source de vérité consommée par /app au build
-/pipeline   → scripts d'extraction/transcription + outillage de revue, exécutés hors-ligne
+/app        → site React/Vite (le produit déployé), lit data/validated/ au build
+/data
+  /raw          → PDF sources FFJM (committé)
+  /needs-review → questions extraites en attente de revue (local, gitignoré)
+  /validated    → questions validées (committé) — source de vérité pour /app
+/ingest     → PDF → JSON : extraction de figures, etc. (Node, dépendances propres)
+/review     → outil de revue/validation (à construire) : petit serveur local + UI
+/shared     → code utilisé par /ingest et /review (ex: shared/validate.mjs)
 /docs       → specs (ce document et functional-spec.md)
 ```
+
+`/data` n'appartient à aucun des outils : `/ingest` y écrit (`needs-review`), `/review` y lit et promeut (`needs-review` → `validated`), `/app` y lit (`validated`) au build.
 
 ## Hors scope v1 (rappel technique)
 

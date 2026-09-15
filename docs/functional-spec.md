@@ -30,6 +30,10 @@ Outil d'entraînement aux épreuves du Championnat des Jeux Mathématiques (FFJM
    - Si la réponse attendue est simple et univoque (numérique ou texte exact) → **auto-correction** automatique.
    - Sinon → **auto-évaluation** : la correction est affichée et l'utilisateur indique lui-même s'il avait juste (comme dans un système de type Anki).
 
+## Règles d'affichage (UI)
+
+- **Règle du nombre de solutions** : depuis au moins 2003, chaque épreuve FFJM affiche après la fin de la catégorie CM une consigne du type *"Pour qu'un problème soit complètement résolu, vous devez donner le nombre de ses solutions, et donner la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une."* Ce n'est pas une donnée propre à un exercice ou à une année : c'est une règle générale du concours. Elle doit être affichée par l'application elle-même (pas stockée en base) dès qu'un exercice présenté concerne une catégorie strictement supérieure à CM (c'est-à-dire dès que `categories` contient autre chose que `CE`/`CM`).
+
 ## Hors scope v1
 
 Explicitement écarté ou reporté à une itération future :

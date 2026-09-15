@@ -1,0 +1,17 @@
+{
+  "name": "ffjm-trainer-ingest",
+  "version": "1.0.0",
+  "description": "PDF (FFJM archives) -> structured question JSON conversion tooling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.9",
+    "pdfjs-dist": "^6.3.289"
+  }
+}

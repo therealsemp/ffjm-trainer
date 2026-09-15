@@ -1,0 +1,58 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 24,
+        "y": 226.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 133.3,
+          "y": 508
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-2",
+  "number": 2,
+  "title": "Le chapeau de l'année",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "L2",
+    "GP",
+    "HC"
+  ],
+  "statement": {
+    "markdown": "En additionnant les trois nombres qui entourent chaque triangle, on doit toujours trouver 26.\n\nPlacez les nombres 7, 8, 9 et 11 dans les cases vides.\n\n![figure](figure:2026-qf-2-hat)",
+    "figures": [
+      {
+        "id": "2026-qf-2-hat",
+        "description": "Trois triangles adjacents en forme de chapeau, partageant des sommets. Valeurs déjà présentes : triangle de gauche 12 et 6 ; triangle du milieu 6 ; triangle de droite 10. Un sommet est partagé entre le triangle du milieu et celui de droite. Cases vides à compléter avec 7, 8, 9, 11 de sorte que chaque triangle somme à 26.",
+        "imageUrl": "q02_fig-hat.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "8, 11, 9, 7"
+  },
+  "correction": {
+    "markdown": "Le triangle de gauche se complète avec \\(26 - 12 - 6 = 8\\).\n\nAu milieu il faut réaliser \\(26 - 6 = 20 = 11 + 9\\) et à droite \\(26 - 10 = 9 + 7\\). Une fois placé le 9 en commun, on place 7 et 11, achevant le chapeau.\n\nVariante pour les moins jeunes : si \\(c\\) désigne le nombre central, alors il vérifie \\(26 + c + 26 = 6 + \\cdots + 12\\), d'où \\(c = 63 - 52 = 11\\) et on complète le reste par différence.\n\n**Réponse : 8, 11, 9, 7.**"
+  }
+}

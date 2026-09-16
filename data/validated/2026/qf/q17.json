@@ -1,0 +1,70 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 310.7,
+        "y": 262
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 133.3,
+          "y": 570.7
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-17",
+  "number": 17,
+  "title": "Une drôle de tablette",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Cette drôle de tablette de chocolat est composée d'un grand carré de 7 cm de côté, entouré de 392 petits carrés de 1 cm de côté. On casse la tablette en deux le long d'une ligne droite qui ne suit pas le quadrillage. La découpe est faite de telle sorte que le nombre de carrés coupés en deux soit maximal. Après cette découpe, le carré central se trouve coupé en deux morceaux, un petit et un grand.\n\n**Quel est le supremum (plus petit majorant) de l'aire du plus petit de ces deux morceaux ?**\n\nOn donnera la réponse en cm² sous forme de fraction irréductible, ou on répondra 0 si la découpe est impossible en respectant les conditions.\n\n![figure](figure:2026-qf-17-tablet)",
+    "figures": [
+      {
+        "id": "2026-qf-17-tablet",
+        "description": "Tablette carrée 21×21 (en cm) avec un carré central grisé de 7×7 (de coordonnées 7 à 14 sur chaque axe), traversée par une ligne de découpe.",
+        "imageUrl": "q17_fig-tablet.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "7/8"
+  },
+  "correction": {
+    "markdown": "Soit la tablette \\(T = [0;21]^2\\) pavée de carrés unitaires, et le carré central \\(C = [7;14]^2\\).\n\nUne coupe optimale est une droite \\(D\\) traversant \\(T\\) en passant par \\(C\\), et maximisant le nombre de carreaux coupés.\n\n**Lemme : nombre maximal de carrés traversés dans un rectangle \\(a \\times b\\)**\n\nDans un rectangle \\(a \\times b\\) pavé de carrés unitaires, une droite traverse au maximum \\(a+b-1\\) carreaux unitaires.\n\nPreuve :\n\n- Considérons le premier carré touché par la droite sur un bord du rectangle.\n- Chaque fois que la droite franchit une ligne intérieure horizontale ou verticale, un nouveau carré est ajouté.\n- Le maximum \\(a+b-1\\) est atteint si la droite franchit toutes les lignes intérieures, jamais simultanément (jamais passant par un sommet du quadrillage).\n- Une perturbation infinitésimale garantit toujours ce scénario (continuité).\n\nPour \\(T\\) sans \\(C\\), le lemme donne un maximum théorique de 41.\n\nMontrons que pour \\(T\\) avec \\(C\\), le maximum est de 31 carreaux (hors \\(C\\) qui compte pour 1).\n\nRemarque : une perturbation infinitésimale de la droite \\(y = \\frac{x}{2}\\) qui tangente \\(C\\) illustre que 31 est atteignable.\n\nEn utilisant une rotation ou une réflexion, sans perte de généralité on peut supposer que \\(D\\) possède une pente positive comprise entre 0 et 1.\n\n**Étude du carré central \\(C\\)**\n\nOn distingue deux cas selon les côtés traversés.\n\n- Côtés opposés (ex. ouest vers est)\n  - soient les carreaux \\(0 \\leqslant a \\leqslant b \\leqslant c \\leqslant d \\leqslant 20\\) traversés aux abscisses \\(x=0, 7, 14\\) et 21\n  - le nombre de carreaux traversés est \\(n = 7+b-a+7+d-c = 14+b-a+d-c\\)\n  - comme \\(a \\leqslant b \\leqslant a+7\\) et \\(c \\leqslant d \\leqslant c+7\\) (pente entre 0 et 1), on obtient \\(14 \\leqslant n \\leqslant 28\\)\n\nConclusion : toute droite traversant \\(C\\) par des côtés opposés ne peut jamais atteindre le maximum 31.\n\n**Réduction à une droite issue d'un coin par translation et rotation**\n\n- Toute droite traversant \\(T\\) peut être translatée dans une direction orthogonale pour couper un carré de coin, sans diminuer le nombre de carrés traversés.\n- Dans le cas où après translation elle ne couperait plus \\(C\\), on la pivote autour du point en bordure de coin, afin qu'elle retraverse \\(C\\), cela augmente le nombre de carrés traversés.\n\nRetour à l'étude du carré central \\(C\\) avec le deuxième cas.\n\n- Consécutifs (ex. sud en est)\n  - Soit une droite \\(D\\) d'équation \\(f(x) = mx+p\\) qui traverse le petit carré \\([0;1]^2\\)\n  - Elle traverse \\(C\\) par le côté sud, d'où \\(7 \\leqslant f^{-1}(7) < 14\\)\n  - Elle sort de \\(C\\) par le côté est, d'où \\(7 < f(14) \\leqslant 14\\)\n  - Le nombre de petits carrés traversés dans \\(T\\) vaut \\(21 + \\lceil f(21) \\rceil - 1\\)\n  - Le nombre de petits carrés traversés dans \\(C\\) vaut \\(\\lceil 14 - f^{-1}(7) \\rceil + \\lceil f(14) - 7 \\rceil - 1\\)\n  - Ainsi \\(c(m,p) = 21 + \\lceil 21m+p \\rceil - \\left\\lceil 14 - \\frac{7-p}{m} \\right\\rceil - \\lceil 14m+p-7 \\rceil\\) est le nombre de petits carrés traversés dans \\(T \\setminus C\\)\n  - À l'aide d'une simulation numérique, \\(\\max c(m,p) = 31\\)\n\n![figure](figure:2026-qf-17-plot1)\n\n  - Le plus petit morceau est alors un triangle rectangle de base \\(14 - \\frac{7-p}{m}\\) et de hauteur \\(14m+p-7\\)\n  - Il a pour aire \\(a(m,p) = \\frac{(14m+p-7)^2}{2m}\\)\n  - À l'aide d'une simulation numérique, \\(\\sup a(m,p) = \\frac78\\) parmi l'ensemble des droites vérifiant \\(\\max c(m,p) = 31\\)\n\n![figure](figure:2026-qf-17-plot2)\n\n**Supremum de l'aire du plus petit des deux morceaux**\n\nElle correspond à une position limite passant par deux sommets, par exemple \\((\\epsilon;0)\\) et \\((21;12+\\delta)\\) qui tendent vers \\((0;0)\\) et \\((21;12)\\) : le plus petit morceau est alors un triangle rectangle de côtés \\(\\frac74\\) et 1.\n\nExemple avec \\(m=0,5715\\) et \\(p=-0,001\\), l'aire vaut 0,874890639.\n\n![figure](figure:2026-qf-17-optimal-cut)\n\n**Réponse : \\(\\frac78\\).**",
+    "figures": [
+      {
+        "id": "2026-qf-17-plot1",
+        "description": "Graphique de simulation numérique (heatmap) illustrant max c(m,p) selon les paramètres m et p de la droite de découpe.",
+        "imageUrl": "q17_fig-plot1.png"
+      },
+      {
+        "id": "2026-qf-17-plot2",
+        "description": "Graphique de simulation numérique (heatmap) illustrant sup a(m,p) selon les paramètres m et p, parmi les droites vérifiant max c(m,p) = 31.",
+        "imageUrl": "q17_fig-plot2.png"
+      },
+      {
+        "id": "2026-qf-17-optimal-cut",
+        "description": "Quadrillage illustrant la découpe optimale : carré central grisé, carreaux traversés en bleu, droite de coupe en rouge sur la diagonale théorique en noir.",
+        "imageUrl": "q17_fig-optimal-cut.png"
+      }
+    ]
+  }
+}

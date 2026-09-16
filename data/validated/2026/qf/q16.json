@@ -1,0 +1,67 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 310.7,
+        "y": 54.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": {
+          "x": 133.3,
+          "y": 130
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-16",
+  "number": 16,
+  "title": "Michel astique sa voiture",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "En astiquant sa voiture dans son garage, Michel découvre une planche avec huit clous placés comme sur le dessin et un élastique tendu entre ces clous tel que :\n- l'élastique touche chaque clou une unique fois,\n- l'élastique ne se croise pas lui-même.\n\n**De combien de façons différentes l'élastique peut-il ainsi être tendu ?**\n\nPar exemple, avec quatre clous placés comme ci-dessous, il n'y a que trois possibilités.\n\n![figure](figure:2026-qf-16-nails) ![figure](figure:2026-qf-16-example)",
+    "figures": [
+      {
+        "id": "2026-qf-16-nails",
+        "description": "Planche avec huit clous disposés selon un pentagone régulier avec trois clous supplémentaires à l'intérieur, formant un triangle isocèle.",
+        "imageUrl": "q16_fig-nails.png"
+      },
+      {
+        "id": "2026-qf-16-example",
+        "description": "Exemple avec quatre clous et les trois façons possibles de tendre un élastique non croisé les touchant tous.",
+        "imageUrl": "q16_fig-example.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "71"
+  },
+  "correction": {
+    "markdown": "Nous cherchons le nombre de polygones non croisés dont les sommets sont les huit clous.\n\nLa figure, formée d'un triangle isocèle en le centre d'un pentagone régulier, présente une symétrie selon un axe vertical, du centre vers le sommet bas du pentagone, exploitons-la.\n\nPlusieurs façons d'aborder ce dénombrement, un point commun étant ordre et méthode.\n\nRemarque : deux sommets voisins du pentagone sont nécessairement reliés directement (au sens sans passer auparavant par un sommet non voisin) par une ligne brisée. Dans le cas contraire, cette dernière isolerait deux sous-ensembles non vides de clous situés de part et d'autre, ce qui aboutirait à une impossibilité (croisement ou clous isolés).\n\nLe pentagone ne peut être formé complètement sans exclure les trois clous intérieurs, d'où au moins un côté absent.\n\nChaque clou intérieur reliant deux sommets du pentagone, nécessairement voisins d'après la remarque plus haut, cela ôte le côté formé par ces deux sommets : comme il y a trois clous intérieurs, cela fait au plus trois côtés absents.\n\nNumérotons les côtés du pentagone dans le sens trigonométrique de 0 (le seul perpendiculaire à l'axe de symétrie) à 4.\n\nChaque sommet du polygone étant de degré 2, on peut fixer un sommet du pentagone et conditionner selon les deux côtés issus de ce dernier, en limitant les cas à l'aide de la remarque plus haut.\n\nLe tableau suivant recense 44 configurations selon le rang des côtés absents, soit un total après symétrie de 71 configurations.\n\n![figure](figure:2026-qf-16-configurations)\n\n**Réponse : 71.**",
+    "figures": [
+      {
+        "id": "2026-qf-16-configurations",
+        "description": "Table complète (rangs absents, schémas des configurations, facteur de symétrie, total) recensant les 71 configurations.",
+        "imageUrl": "q16_fig-configurations.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "qf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/qf/2026_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 24,
+        "y": 433.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/qf/2026_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 133.3,
+          "y": 550.7
+        }
+      }
+    ]
+  },
+  "id": "2026-qf-14",
+  "number": 14,
+  "title": "Rapporteur",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le rapporteur de Mathilde a la forme d'un demi-disque de diamètre 12 cm. Il peut être rangé à plat dans une boîte carrée.\n\n**Quelle est, au minimum, la longueur du côté de cette boîte ?**\n\nSi nécessaire on prendra 1,4142 pour \\(\\sqrt{2}\\), et on donnera la réponse en cm arrondie au centième.\n\n![figure](figure:2026-qf-14-protractor)",
+    "figures": [
+      {
+        "id": "2026-qf-14-protractor",
+        "description": "Demi-disque de diamètre 12 cm (rapporteur) posé de biais dans une boîte carrée, avec un point de tangence G sur le côté gauche de la boîte.",
+        "imageUrl": "q14_fig-protractor.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "10,24"
+  },
+  "correction": {
+    "markdown": "Par symétrie, orientons le rapporteur de centre O avec son sommet le plus haut S à gauche, et raisonnons d'abord avec une boîte rectangulaire, de dimensions minimales si le rapporteur est totalement en contact avec elle.\n\nG, le point de contact à gauche, est un point de tangence, c'est-à-dire que (OG) est perpendiculaire au côté gauche.\n\nCe dernier a pour longueur \\(s(t) = 6(1+\\sin t)\\) avec \\(t = \\widehat{SOG} \\in [0;\\frac{\\pi}{2}]\\).\n\nDe même, le côté bas a pour longueur \\(c(t) = 6(1+\\cos t)\\).\n\n![figure](figure:2026-qf-14-square-box)\n\nUne boîte carrée aura alors pour côté le maximum des deux et sera d'aire minimale lorsque les deux longueurs seront égales.\n\nEn effet la boîte carrée a pour côté :\n\n- la longueur \\(c(t) \\geqslant c\\left(\\frac{\\pi}{4}\\right)\\) pour \\(0 \\leqslant t \\leqslant \\frac{\\pi}{4}\\)\n- la longueur \\(s(t) \\geqslant s\\left(\\frac{\\pi}{4}\\right)\\) pour \\(\\frac{\\pi}{4} \\leqslant t \\leqslant \\frac{\\pi}{2}\\)\n\nLa longueur minimum s'obtient pour \\(t = \\frac{\\pi}{4}\\), comme suggéré par la figure de l'énoncé, et vaut alors \\(6\\left(1+\\frac{\\sqrt2}{2}\\right) = 6+3\\sqrt2 \\approx 10,2426\\) avec la valeur approchée donnée dans l'énoncé, qu'on arrondit au centième à 10,24.\n\nRemarque : physiquement il vaudrait mieux arrondir par excès, car avec 10,24 le rapporteur ne rentrerait pas dans la boîte.\n\n**Réponse : 10,24 cm.**",
+    "figures": [
+      {
+        "id": "2026-qf-14-square-box",
+        "description": "Rapporteur (demi-disque) inscrit dans un carré, avec le centre O, le sommet S, le point de tangence G sur le côté gauche, l'angle t = SÔG, et le point B en bas où le demi-cercle touche le côté bas.",
+        "imageUrl": "q14_fig-square-box.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 42.5, "y": 1134.2 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 2,
+        "position": { "x": 200.7, "y": 928.4 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 2,
+        "position": { "x": 75.1, "y": 515.3 }
+      }
+    ]
+  },
+  "id": "2026-fn-7",
+  "number": 7,
+  "title": "Une drôle d’addition",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Dans cette addition, ✪, ✜ et ⊙ remplacent 3 chiffres différents.\n\n**Ecrivez le nombre ✜✜ avec des vrais chiffres.**\n\n![figure](figure:2026-fn-7-addition)",
+    "figures": [
+      {
+        "id": "2026-fn-7-addition",
+        "description": "Addition posée à deux termes : ✪✪ + ✜✜ = 1✪⊙, où ✪, ✜ et ⊙ remplacent chacun un chiffre différent.",
+        "imageUrl": "q07_fig-addition.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "99" },
+  "correction": {
+    "markdown": "En raisonnant sur les dizaines, nous avons \\(r + \\text{✪} + \\text{✜} = 10 + \\text{✪}\\) où \\(r = 0\\) ou \\(1\\) désigne la retenue au niveau des unités : \\(\\text{✜} = 10 - r\\) impose \\(r = 1\\) et donc \\(\\text{✜} = 9\\).\n\nVariante par encadrement : l’addition s’écrit aussi \\(\\text{✜✜} = 1\\,\\text{⊙} - \\text{✪✪} = 100 + \\text{⊙} - \\text{✪}\\). Ce dernier est compris entre \\(100 + 0 - 9 = 91\\) et \\(100 + 9 - 0 = 109\\), et vaut donc 99, seul nombre à deux chiffres identiques.\n\nVariante pour les plus jeunes, par essai : \\(\\text{✪} = 1\\) entraîne \\(\\text{✜} = 9\\) car sinon il resterait un nombre à deux chiffres d’un côté et un nombre supérieur à 100 de l’autre ; \\(11 + 99 = 110\\) convient, on tient 99 comme solution, on s’arrête là.\n\n**Réponse : 99.**"
+  }
+}

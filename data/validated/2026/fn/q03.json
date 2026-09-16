@@ -1,0 +1,46 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 42.5, "y": 380.2 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 1,
+        "position": { "x": 75.1, "y": 841.5 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 1,
+        "position": { "x": 200.7, "y": 961.6 }
+      }
+    ]
+  },
+  "id": "2026-fn-3",
+  "number": 3,
+  "title": "Les cartes de Cécile",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Cécile a trois cartes portant les nombres 3, 6 et 9. Le 6 peut être retourné pour former le nombre 399. En retournant le 9, on peut lire 366.\n\n**En comptant les exemples de l’énoncé, combien de nombres différents Cécile peut-elle former en posant ces trois cartes les unes à côté des autres ?**\n\n![figure](figure:2026-fn-3-cartes)",
+    "figures": [
+      {
+        "id": "2026-fn-3-cartes",
+        "description": "Trois cartes portant les nombres 3, 6 et 9.",
+        "imageUrl": "q03_fig-cartes.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "12" },
+  "correction": {
+    "markdown": "Si 3 est le chiffre des centaines, on peut avoir 366 ; 369 ; 396 ou 399.\n\nSi 3 est le chiffre des dizaines, on peut avoir 636 ; 639 ; 936 ou 939.\n\nSi 3 est le chiffre des unités, on peut avoir 663 ; 693 ; 963 ou 993.\n\nOn peut former **12 nombres** différents."
+  }
+}

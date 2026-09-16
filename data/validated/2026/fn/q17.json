@@ -1,0 +1,53 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 461.4, "y": 463.9 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 7,
+        "position": { "x": 200.7, "y": 520.1 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 6,
+        "position": { "x": 75.1, "y": 68.2 }
+      }
+    ]
+  },
+  "id": "2026-fn-17",
+  "number": 17,
+  "title": "Collage",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Gérard réalise un collage sur un carré de côté 26 cm. Il colle un premier triangle équilatéral A dont un coté coïncide avec un côté du carré. Il colle ensuite un second triangle équilatéral B coincé entre le triangle A et un côté du carré. Il termine son collage avec un triangle équilatéral C en contact avec un sommet du triangle B, un côté du triangle A et un côté du carré comme le montre la figure.\n\n![figure](figure:2026-fn-17-triangles)\n\n**Quelle est l’aire du triangle C ?**\n\nOn prendra 1,73205 pour \\(\\sqrt{3}\\) et on donnera la réponse en cm², arrondie au centième.",
+    "figures": [
+      {
+        "id": "2026-fn-17-triangles",
+        "description": "Carré de côté 26 cm avec le triangle équilatéral A (grand, à la base), le triangle B (en haut à gauche) et le triangle C (en haut à droite, grisé) coincé entre eux.",
+        "imageUrl": "q17_fig-triangles.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "57,54" },
+  "correction": {
+    "markdown": "Voici une solution géométrique inspirée par Michel Criton, limitant les calculs. On raisonne d’abord sur un carré unité.\n\n![figure](figure:2026-fn-17-sol-construction)\n\nOn prolonge la droite (BE) qui coupe [DC] en G, puis on abaisse la hauteur [FK] issue de F dans le triangle FGI (aussi dans le triangle équilatéral EFG).\n\nLes triangles FCH et KFI sont alors superposables : ce sont deux triangles rectangles ayant même hypoténuse et même angle \\(\\alpha\\) car \\(\\widehat{KFI} + \\widehat{HFC} = 180° - \\widehat{GFK} - \\widehat{IFH} = 180° - 30° - 60° = 90°\\).\n\nLa hauteur du triangle équilatéral ABE vaut \\(\\frac{\\sqrt{3}}{2}\\) et celle du triangle équilatéral EFG vaut \\(1 - \\frac{\\sqrt{3}}{2} = FK = CH = GF\\frac{\\sqrt{3}}{2}\\), d’où \\(GF = \\frac{2\\sqrt{3}}{3} - 1\\).\n\n\\(FC = \\frac{1 - GF}{2} = 1 - \\frac{\\sqrt{3}}{3}\\) traduit la symétrie par rapport à la médiatrice de [AB].\n\nCalcul alternatif : \\(FC = 1 - FD\\) avec \\(FD = \\tan 30° = \\frac{\\sqrt{3}}{3}\\) dans le triangle ADF rectangle en D.\n\nD’où \\(FH^2 = FC^2 + CH^2 = \\left(1 - \\frac{\\sqrt{3}}{3}\\right)^2 + \\left(1 - \\frac{\\sqrt{3}}{2}\\right)^2 = \\frac{37}{12} - \\frac{5\\sqrt{3}}{3}\\) par le théorème de Pythagore.\n\nVariante de Clément Martin : l’image de (EI) par la rotation de centre F et d’angle 60° est (EH), d’où (EH) parallèle à (DC) et H a même ordonnée que E dans le repère orthonormé d’origine A, tel que \\(B(1;0)\\) et \\(D(0;1)\\) ; comme \\(F\\left(\\frac{\\sqrt{3}}{3};1\\right)\\) et \\(H\\left(1;\\frac{\\sqrt{3}}{2}\\right)\\), on retrouve directement l’expression de \\(FH^2\\).\n\nL’aire du triangle équilatéral FHI vaut alors \\(\\mathscr{A} = FH^2\\frac{\\sqrt{3}}{4} = \\frac{37\\sqrt{3}}{48} - \\frac{5}{4}\\).\n\nAvec un carré de côté 26, cette aire vaut \\(26^2\\mathscr{A} = 169\\left(3\\sqrt{3} + \\frac{\\sqrt{3}}{12} - 5\\right) \\approx 57{,}542\\) avec l’approximation donnée dans l’énoncé.\n\n**Réponse : 57,54.**",
+    "figures": [
+      {
+        "id": "2026-fn-17-sol-construction",
+        "description": "Carré ADCB avec le triangle A B E (base grise), et la construction auxiliaire menant au triangle F H I (sommet grisé) : points G, F, K, E, I, H et l'angle α marqué à deux endroits.",
+        "imageUrl": "q17_fig-sol-construction.png"
+      }
+    ]
+  }
+}

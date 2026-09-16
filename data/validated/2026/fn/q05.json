@@ -1,0 +1,46 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 42.5, "y": 757.0 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 2,
+        "position": { "x": 200.7, "y": 495.1 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 2,
+        "position": { "x": 75.1, "y": 68.2 }
+      }
+    ]
+  },
+  "id": "2026-fn-5",
+  "number": 5,
+  "title": "L'année illuminée",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Pour écrire l’année 2026, on utilise 22 allumettes (les chiffres sont formés comme sur le modèle avec des allumettes).\n\n**Pour pouvoir écrire n’importe quelle année entre 2000 et 2100, combien d’allumettes sont-elles nécessaires au minimum ?**\n\n![figure](figure:2026-fn-5-digits)",
+    "figures": [
+      {
+        "id": "2026-fn-5-digits",
+        "description": "Les dix chiffres de 0 à 9 représentés en style afficheur à allumettes (segments droits), sur deux rangées de cinq.",
+        "imageUrl": "q05_fig-digits.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "25" },
+  "correction": {
+    "markdown": "Pour pouvoir réaliser n’importe quelle année, cherchons la ou les années nécessitant un maximum d’allumettes.\n\nÉcartons 2100 car elle nécessite \\(5 + 2 + 6 + 6 = 19\\) allumettes, moins que 2026. L’année commencera donc par 20.\n\n8 étant le chiffre nécessitant le plus d’allumettes (7), l’année 2088 est maximale avec \\(5 + 6 + 7 + 7 = 25\\).\n\n**Réponse : 25.**"
+  }
+}

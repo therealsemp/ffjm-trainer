@@ -1,0 +1,39 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 458.0, "y": 1118.2 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 4,
+        "position": { "x": 200.7, "y": 844.9 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 3,
+        "position": { "x": 75.1, "y": 938.6 }
+      }
+    ]
+  },
+  "id": "2026-fn-12",
+  "number": 12,
+  "title": "20 × 26",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "\\(20 \\times 26 = 520.\\)\n\n**Entre 2027 et 9999, quelle année \\(\\overline{ABCD}\\) sera telle que \\(\\overline{AB} \\times \\overline{CD} = 20 \\times 26\\) ?**"
+  },
+  "answer": { "type": "exact-text", "value": "4 solutions : 2620, 4013, 5210 ou 6508" },
+  "correction": {
+    "markdown": "\\(20 \\times 26 = 2^3 \\times 5 \\times 13\\) possède \\((3+1)(1+1)(1+1) = 16\\) diviseurs.\n\nParmi les huit produits, isolons les quatre avec au moins un facteur à deux chiffres : \\(8 \\times 65 = 10 \\times 52 = 13 \\times 40 = 20 \\times 26\\).\n\nNous vérifions alors la condition requise sur \\(20 \\leqslant \\overline{AB} \\leqslant 99\\) sans retenir 2026.\n\nRemarque : rien n’empêchant \\(\\overline{CD}\\) de commencer par 0, on retient 6508.\n\n**Réponse : 4 solutions, 2620, 4013, 5210 ou 6508.**"
+  }
+}

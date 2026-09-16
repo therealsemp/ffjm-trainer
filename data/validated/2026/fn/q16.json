@@ -1,0 +1,46 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 461.4, "y": 68.0 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 6,
+        "position": { "x": 200.7, "y": 846.1 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 5,
+        "position": { "x": 75.1, "y": 257.6 }
+      }
+    ]
+  },
+  "id": "2026-fn-16",
+  "number": 16,
+  "title": "Les chemins de Lucien",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "![figure](figure:2026-fn-16-map)\n\nLe plan ci-dessus est celui de la ville de Lu-Pian. Lucien a trouvé un grand nombre de flèches coudées de deux types (virage à droite ou à gauche). À l’aide de ces flèches, il veut construire un chemin continu allant du point A au point B de telle sorte que :\n\n- le départ de la première flèche soit sur A, le départ de chaque autre flèche coïncide avec la pointe de la flèche précédente, et la pointe de la dernière flèche soit sur B ;\n- chaque flèche repose exactement sur trois petits segments du réseau, quelle que soit son orientation ;\n- aucune flèche n’occupe le même petit segment du réseau qu’une autre flèche.\n\n**S’il veut utiliser le plus petit nombre possible de flèches, combien de chemins différents pourra-t-il construire ?**",
+    "figures": [
+      {
+        "id": "2026-fn-16-map",
+        "description": "Plan quadrillé de la ville de Lu-Pian avec le point de départ A en bas à gauche, le point d'arrivée B en haut à droite, et deux flèches coudées données en exemple au-dessus de la grille.",
+        "imageUrl": "q16_fig-map.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "50" },
+  "correction": {
+    "markdown": "Tout chemin minimal de A vers B combine 12 segments horizontaux et 7 verticaux dans un certain ordre (sans sortir du plan).\n\nOn dit que la distance de Manhattan entre A et B vaut \\(12 + 7 = 19\\).\n\nDe même, cette même distance entre les extrémités d’un virage vaut \\(2 + 1 = 3\\). \\(\\lceil \\frac{19}{3} \\rceil = 7\\) virages sont donc nécessaires pour relier A à B et nous allons voir qu’ils sont suffisants.\n\nHorizontalement il faut 12 pas à droite (d), soit 5 virages ddx et 2 virages xxd.\n\nEn effet, avec au plus 4 virages ddx, il faudrait au moins 4 virages xxd, d’où au moins 8 virages.\n\nVerticalement il faut 7 pas en haut (h par opposition à b, bas).\n\nSi parmi les 2 virages xxd il y avait au moins bbd, alors il faudrait au moins 7 virages ddh, impossible.\n\nAinsi il y a 2 virages hhd et il y aura 3 virages ddh de plus que ddb, soit 4 ddh et 1 ddb comme il faut 5 virages ddx.\n\nOn ne part de A, ni on arrive en B avec un virage ddb (sinon on sortirait du plan).\n\nSi un virage ddb était suivi de hhd, alors b et h seraient sur un même segment, ce qui est interdit par l’énoncé.\n\nFixons l’une des cinq positions intérieures pour le virage ddb, suivi de ddh.\n\nOn choisit deux emplacements parmi les cinq restants pour les deux virages hhd, d’où \\(\\binom{5}{2} = 10\\) possibilités.\n\nAu total, cela fait donc \\(5 \\times 10 = 50\\) chemins différents.\n\n**Réponse : 50.**"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 42.5, "y": 241.2 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 1,
+        "position": { "x": 200.7, "y": 771.9 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 1,
+        "position": { "x": 75.1, "y": 696.7 }
+      }
+    ]
+  },
+  "id": "2026-fn-2",
+  "number": 2,
+  "title": "Les jetons",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias a trouvé sept jetons dans son grenier. Il retire quatre jetons dont la somme est égale à 26.\n\n**Quels sont les trois jetons qui restent ?**\n\n![figure](figure:2026-fn-2-jetons)",
+    "figures": [
+      {
+        "id": "2026-fn-2-jetons",
+        "description": "Sept jetons alignés, numérotés 4, 7, 2, 3, 5, 8 et 6, le dernier (6) souligné.",
+        "imageUrl": "q02_fig-jetons.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-text", "value": "2, 3, 4" },
+  "correction": {
+    "markdown": "Les sept jetons portent les entiers de 2 à 8 et les quatre plus grands totalisent \\(8 + 7 + 6 + 5 = 26\\), exactement la somme visée, c’est donc qu’il reste les trois plus petits.\n\nVariante par le complémentaire : les sept jetons ont pour somme \\(2 + \\cdots + 8 = 35\\), donc les trois restants totalisent \\(35 - 26 = 9\\). De même on constate que la somme des trois plus petits vaut exactement \\(2 + 3 + 4 = 9\\).\n\n**Réponse : 2, 3, 4.**"
+  }
+}

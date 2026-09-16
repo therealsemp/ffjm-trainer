@@ -1,0 +1,73 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 458.0, "y": 839.5 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 3,
+        "position": { "x": 75.1, "y": 538.2 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 4,
+        "position": { "x": 200.7, "y": 348.8 }
+      }
+    ]
+  },
+  "id": "2026-fn-11",
+  "number": 11,
+  "title": "Tétraminos",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "J’ai un exemplaire de chacun des sept tétraminos avec pour chacun son nom écrit dessus.\n\n![figure](figure:2026-fn-11-tetrominoes)\n\nJ’ai assemblé trois de ces sept tétraminos pour former la figure suivante. La lettre T est visible sur l’une des 12 cases.\n\n![figure](figure:2026-fn-11-grid)\n\n**Quelles sont toutes les cases où la lettre T peut se trouver ?** On marquera les cases en dessinant une croix dedans.",
+    "figures": [
+      {
+        "id": "2026-fn-11-tetrominoes",
+        "description": "Les sept tétraminos (I, L, O, T, S, Z, J), chacun dessiné avec son nom inscrit dans l'une de ses cases.",
+        "imageUrl": "q11_fig-tetrominoes.png"
+      },
+      {
+        "id": "2026-fn-11-grid",
+        "description": "Contour vierge d'une figure de 12 cases assemblée à partir de trois tétraminos (une rangée de 4 cases, une rangée de 5 cases avec un débord à droite, une rangée de 3 cases décalée vers la droite), sans indication de la position de la lettre T.",
+        "imageUrl": "q11_fig-grid.png"
+      }
+    ]
+  },
+  "answer": { "type": "open" },
+  "correction": {
+    "markdown": "Pour une position, on ne peut pas placer le tétramino T.\n\n![figure](figure:2026-fn-11-sol-impossible)\n\nPour 6 positions, on peut placer le tétramino T mais d’autres cases sont inaccessibles avec un tétramino.\n\n![figure](figure:2026-fn-11-sol-isolated)\n\nPour les 5 autres positions on peut assembler 3 tétraminos.\n\n![figure](figure:2026-fn-11-sol-assemblies)\n\nLa solution est donc :\n\n![figure](figure:2026-fn-11-sol-answer)",
+    "figures": [
+      {
+        "id": "2026-fn-11-sol-impossible",
+        "description": "La case du coin bas-droit de la figure marquée T : impossible à obtenir, un tétramino T ne peut pas y être placé.",
+        "imageUrl": "q11_fig-sol-impossible.png"
+      },
+      {
+        "id": "2026-fn-11-sol-isolated",
+        "description": "Sept grilles où la lettre T est placée à un autre emplacement (case colorée), chacune montrant qu'une autre partie de la figure devient alors inaccessible à un tétramino entier.",
+        "imageUrl": "q11_fig-sol-isolated.png"
+      },
+      {
+        "id": "2026-fn-11-sol-assemblies",
+        "description": "Cinq assemblages complets et valides des trois tétraminos (avec leurs lettres I, L, O, T, S, Z, J), un par emplacement possible de la lettre T.",
+        "imageUrl": "q11_fig-sol-assemblies.png"
+      },
+      {
+        "id": "2026-fn-11-sol-answer",
+        "description": "La figure de 12 cases avec une croix dans chacune des 5 cases où la lettre T peut se trouver.",
+        "imageUrl": "q11_fig-sol-answer.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 42.5, "y": 975.6 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 2,
+        "position": { "x": 200.7, "y": 684.9 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 2,
+        "position": { "x": 75.1, "y": 275.9 }
+      }
+    ]
+  },
+  "id": "2026-fn-6",
+  "number": 6,
+  "title": "Les images de Mathilde",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathilde a un paquet d’images qu’elle veut coller dans son cahier. Elle colle d’abord la moitié du paquet à raison d’une image par jour. Ensuite, pour aller plus vite, elle colle le reste à raison de trois images par jour. Cela lui a pris 16 jours en tout pour coller toutes les images.\n\n**Combien avait-elle d’images ?**"
+  },
+  "answer": { "type": "exact-numeric", "value": "24" },
+  "correction": {
+    "markdown": "Notons \\(2i\\) le nombre d’images, pair puisque la moitié du paquet est un entier. Elle colle d’abord \\(i\\) images en \\(i\\) jours, puis \\(i\\) images en \\(j\\) jours avec \\(i = 3j\\).\n\nD’où la relation de temps \\(i + j = 16\\), et donc \\(j = 4\\) et \\(2i = 6j = 24\\).\n\nVariante pour les plus jeunes, par essai sur le nombre de jours consacrés à la deuxième étape : avec un jour, cela fait trois images, donc \\(3 + 1 = 4\\) jours au total ; avec deux jours, cela fait six images, donc \\(6 + 2 = 8\\) jours au total ; avec trois jours, cela fait neuf images, donc \\(9 + 3 = 12\\) jours au total ; avec quatre jours, cela fait douze images, donc \\(12 + 4 = 16\\) jours au total, bingo ! et on retrouve bien \\(12 + 12 = 24\\) images.\n\n**Réponse : 24.**"
+  }
+}

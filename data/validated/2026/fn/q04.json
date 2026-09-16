@@ -1,0 +1,46 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 42.5, "y": 558.8 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 2,
+        "position": { "x": 200.7, "y": 323.3 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 1,
+        "position": { "x": 75.1, "y": 1012.7 }
+      }
+    ]
+  },
+  "id": "2026-fn-4",
+  "number": 4,
+  "title": "Le fer à cheval",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Madame Bonifer veut accrocher un fer à cheval porte-bonheur en forme de U (voir la figure). Le fer à cheval a 8 trous, mais Madame Bonifer n’a que 2 clous qu’elle va mettre dans 2 trous du fer à cheval.\n\n**De combien de façons différentes peut-elle accrocher son fer à cheval ?** Deux façons sont considérées comme identiques si on utilise les mêmes trous.\n\n![figure](figure:2026-fn-4-horseshoe)",
+    "figures": [
+      {
+        "id": "2026-fn-4-horseshoe",
+        "description": "Fer à cheval en forme de U percé de 8 trous régulièrement espacés.",
+        "imageUrl": "q04_fig-horseshoe.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "28" },
+  "correction": {
+    "markdown": "Cela revient à choisir 2 trous parmi les 8, soit \\(\\binom{8}{2} = \\frac{8 \\times 7}{2} = 28\\) façons.\n\nPour les plus jeunes, on a 8 choix pour le premier trou, puis 7 choix pour le deuxième trou. Mais en procédant ainsi, on aura compté deux fois les cas en inversant les rôles des premier et deuxième clous. On retrouve donc \\(\\frac{8 \\times 7}{2} = 28\\) façons.\n\n**Réponse : 28.**"
+  }
+}

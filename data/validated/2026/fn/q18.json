@@ -1,0 +1,68 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 461.4, "y": 760.6 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 8,
+        "position": { "x": 200.7, "y": 482.6 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 7,
+        "position": { "x": 75.1, "y": 68.2 }
+      }
+    ]
+  },
+  "id": "2026-fn-18",
+  "number": 18,
+  "title": "Partage équitable",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Un paysan prépare sa succession entre ses deux enfants. Il veut partager ce champ rectangulaire amputé d’un carré, comme le montre la figure, en deux parties de même aire et de même périmètre, par un segment de droite. Toutes les longueurs sont des nombres entiers de décamètres, y compris la longueur du segment de découpe.\n\n![figure](figure:2026-fn-18-field)\n\n**Sachant qu’il s’agit du champ répondant à ces caractéristiques ayant la plus petite aire possible, quel est le périmètre de ce champ ?**",
+    "figures": [
+      {
+        "id": "2026-fn-18-field",
+        "description": "Champ rectangulaire amputé d'un carré dans son coin inférieur droit, formant une figure en L.",
+        "imageUrl": "q18_fig-field.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "50" },
+  "correction": {
+    "markdown": "Voici une solution d’Olivier Miakinen retravaillée avec moi.\n\nSi la ligne de partage ne coupe pas les segments [EF] ni [FG] issus du carré amputé, la condition de périmètre égal force cette ligne à passer par le centre O du rectangle ABCD car GD = EF et ED = FG, mais les aires des deux morceaux diffèrent de celle du petit carré, et ne peuvent donc pas être égales.\n\n![figure](figure:2026-fn-18-sol-intro)\n\nLa ligne de partage coupe donc l’un de ces deux segments.\n\nLorsque la ligne de partage passe par F, la condition de périmètre égal l’oblige à passer par B. Pour que les aires soient égales, il faudrait que le rectangle ABCD soit un carré, mais alors \\(FB = AE\\sqrt{2}\\) et les deux longueurs FB et AE ne sauraient être simultanément entières, \\(\\sqrt{2}\\) étant irrationnel.\n\nFinalement, les extrémités K et L de la coupure sont soit \\(K \\in [FG]\\) et \\(L \\in [BA]\\), soit \\(K \\in [FE]\\) et \\(L \\in [BC]\\).\n\nAjoutons que la condition sur le périmètre impose \\(FK = BL = d\\).\n\nSans perte de généralité, plaçons-nous dans ce dernier cas.\n\n![figure](figure:2026-fn-18-sol-general)\n\nPour que toutes les longueurs soient entières après découpage, y compris \\(d\\), les nombres \\(a = x - d\\) et \\(b = y + d\\) doivent aussi être entiers et donc, \\((a, b, c)\\) est un triplet pythagoricien, pas nécessairement primitif.\n\nOn verra plus loin le cas où seules les longueurs avant découpage et celle du segment de découpe sont entières.\n\nLes aires des deux parties sont respectivement \\(yz + \\frac{ab}{2}\\) et \\(x(y+z) - \\frac{ab}{2}\\).\n\nAvec \\(x = a + d\\) et \\(y = b - d\\), la condition sur l’aire entraîne \\((d+e)(b-d) + ab = (a+d)(b+e)\\), d’où \\(e(b - a - 2d) = d^2\\) et en particulier \\(b - a > 2d > 0\\).\n\nLe cas \\(d = 1\\) entraîne \\(e = 1\\) et \\(b - a = 3\\), et le triplet \\((a, b, c) = (9, 12, 15)\\) donne un champ d’aire \\(12 \\times 13 - 2^2 = 152\\) dam².\n\n![figure](figure:2026-fn-18-sol-9-12-15)\n\nSi une solution plus petite existe, elle contiendra un rectangle déduit d’un triplet \\((a, b, c)\\) tel que \\(152 > ab \\geqslant a(a+1)\\) qui nécessite \\(a \\leqslant 11\\) car \\(12 \\times 13 = 156 > 152\\).\n\nÉtablissons une liste des premiers triplets pythagoriciens.\n\n| \\(a\\) | 3 | 5 | 6 | 7 | 8 | 9 | 9 | 10 | 11 |\n|---|---|---|---|---|---|---|---|---|---|\n| \\(b\\) | 4 | 12 | 8 | 24 | 15 | 12 | 40 | 24 | 60 |\n| \\(c\\) | 5 | 13 | 10 | 25 | 17 | 15 | 41 | 26 | 61 |\n| \\(ab < 152\\) | 12 | 60 | 48 | X | 120 | 108 | X | X | X |\n| \\(b - a\\) | 1 | 7 | 2 | | 7 | 3 | | | |\n\nSi \\(d \\geqslant 4\\), il faudrait \\(b - a > 8\\), impossible d’après le tableau ci-dessus.\n\nExaminons les cas \\(d = 2\\) ou 3 pour lesquels \\(b - a > 4\\), donc \\(b - a = 7\\).\n\n- \\(d = 2\\) : \\(e = \\frac{4}{7-4} = \\frac{4}{3}\\) non entier, impossible.\n- \\(d = 3\\) : \\(e = \\frac{9}{7-6} = 9\\).\n  - Le triplet (5, 12, 13) donne un champ d’aire \\(20 \\times 21 - 12^2 = 276 > 152\\).\n  - Le triplet (8, 15, 17) donne un champ d’aire \\(23 \\times 24 - 12^2 = 408 > 152\\).\n\nEn conclusion, la solution demandée est bien la première trouvée, avec une aire de 152 dam² et un périmètre de 50 dam.\n\n**Réponse : 50.**\n\n**Complément**\n\nSupposons que l’énoncé ne demande comme longueurs entières que les côtés du champ avant découpe et la longueur de la découpe.\n\nContrairement à \\(x\\), \\(y\\) et \\(z\\), les longueurs \\(a\\), \\(b\\) et \\(d\\) ne sont plus forcément entières.\n\nPosons \\(s = a + b = (x-d) + (y+d) = x + y\\) et \\(p = ab = x(y+z) - yz = xy + xz - yz\\) (par la condition sur les aires, cf. supra).\n\nD’où \\(b = \\frac{s + \\sqrt{s^2 - 4p}}{2}\\), \\(a = \\frac{s - \\sqrt{s^2 - 4p}}{2}\\) et \\(c^2 = a^2 + b^2 = s^2 - 2p\\).\n\nPar force brute en itérant sur les valeurs de \\(x\\), \\(y\\) et \\(z\\), on peut chercher toutes les valeurs telles que \\(0 < a \\leqslant x\\), \\(y \\leqslant b \\leqslant y+z\\) et \\(c^2\\) est un carré.\n\nOn trouve plusieurs solutions avec une aire inférieure à 152 dam².\n\nLa plus petite a une aire de 54 dam² et un périmètre de 32 dam.\n\n![figure](figure:2026-fn-18-sol-complement)",
+    "figures": [
+      {
+        "id": "2026-fn-18-sol-intro",
+        "description": "Rectangle ABCD (teinté) amputé du petit carré EFGD, avec le centre O marqué et une ligne de partage en pointillés passant approximativement par O.",
+        "imageUrl": "q18_fig-sol-intro.png"
+      },
+      {
+        "id": "2026-fn-18-sol-general",
+        "description": "Figure générale labellisée du champ en L avec toutes les longueurs (x, y, z, a, b, c, d, e) et les points A, B, C, D, F, G, K, E, L, la diagonale de découpe c reliant L à K/E.",
+        "imageUrl": "q18_fig-sol-general.png"
+      },
+      {
+        "id": "2026-fn-18-sol-9-12-15",
+        "description": "La même figure appliquée au triplet pythagoricien (9, 12, 15) sur papier quadrillé, avec toutes les longueurs numériques annotées (côtés 10, 12, 13, 11, 1, 2).",
+        "imageUrl": "q18_fig-sol-9-12-15.png"
+      },
+      {
+        "id": "2026-fn-18-sol-complement",
+        "description": "Diagramme du champ optimal de 54 dam² pour le complément : deux zones d'aire 27 séparées par une ligne de partage, avec les longueurs 4, 9, 7, 6, 3, 3 et les segments 5-√7 / 5+√7 / 8 annotés.",
+        "imageUrl": "q18_fig-sol-complement.png"
+      }
+    ]
+  }
+}

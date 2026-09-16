@@ -1,0 +1,39 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 52.2, "y": 843.1 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 6,
+        "position": { "x": 200.7, "y": 706.8 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 5,
+        "position": { "x": 75.1, "y": 68.2 }
+      }
+    ]
+  },
+  "id": "2026-fn-15",
+  "number": 15,
+  "title": "Les vidéos de contrôle",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Axel et Bob, deux policiers, sont en train de visionner, séparément, la même vidéo. Au même instant, le 1er a encore 2h30 de visionnage mais le 2e a encore 5h25 de visionnage. Ils décident de regarder les vidéos en accéléré : le 1er en multipliant la vitesse par 1,5 et le 2e en la multipliant par 2,5.\n\n**Combien de temps après Axel (en minutes et secondes), Bob finira-t-il de regarder sa vidéo ?**"
+  },
+  "answer": { "type": "exact-numeric", "value": "30" },
+  "correction": {
+    "markdown": "Axel visionnera les 2 h 30 en \\(\\frac{150}{1{,}5} = 100\\) minutes.\n\nBob visionnera les 5 h 25 en \\(\\frac{325}{2{,}5} = 130\\) minutes.\n\nAinsi Bob finira \\(130 - 100 = 30\\) minutes après Axel.\n\n**Réponse : 30 minutes.**"
+  }
+}

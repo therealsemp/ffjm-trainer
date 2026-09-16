@@ -1,0 +1,46 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 458.0, "y": 93.6 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 3,
+        "position": { "x": 200.7, "y": 359.2 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 2,
+        "position": { "x": 75.1, "y": 823.4 }
+      }
+    ]
+  },
+  "id": "2026-fn-8",
+  "number": 8,
+  "title": "L'étoile filante",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Placez les nombres 3, 4, 5, 6, 7, 8, 9 et 10 dans les disques vides. En additionnant les trois nombres d’un même alignement, vous devrez toujours trouver 14.\n\n**Quels nombres iront en _a_ et en _b_ ?**\n\n![figure](figure:2026-fn-8-star)",
+    "figures": [
+      {
+        "id": "2026-fn-8-star",
+        "description": "Étoile à cinq branches formée de disques reliés entre un pentagone intérieur (disques 1 et 2 déjà remplis, trois vides) et un pentagone extérieur (disques a et b à trouver, trois autres vides).",
+        "imageUrl": "q08_fig-star.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-text", "value": "a = 9 et b = 6" },
+  "correction": {
+    "markdown": "Notons \\(i\\) (resp. \\(e\\)) la somme des disques du pentagone intérieur (resp. extérieur).\n\nLes cinq alignements totalisent \\(e + 2i = 5 \\times 14 = 70\\).\n\nPar ailleurs \\(i + e = 1 + \\cdots + 10 = 55\\).\n\nPar différence, nous en déduisons \\(i = 15 = 1 + 2 + 3 + 4 + 5\\).\n\n4 et 5 ne sont pas voisins pour éviter une répétition de \\(5 = 14 - 4 - 5\\).\n\nComme \\(1 + 5 = 2 + 4\\) et \\(1 + 4 = 2 + 3\\) généreraient une répétition, la seule possibilité est que 4 soit entre 1 et 2.\n\nD’où \\(a = 14 - 4 - 1 = 9\\) et \\(b = 14 - 5 - 3 = 6\\).\n\nRemarque : il y a une unique solution pour l’étoile, avec 3 comme autre voisin de 1, et 5 comme autre voisin de 2.\n\n**Réponse : \\(a = 9\\) et \\(b = 6\\).**"
+  }
+}

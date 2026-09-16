@@ -1,0 +1,63 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "fn",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/fn/2026_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 42.5, "y": 122.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-2.pdf",
+        "page": 1,
+        "position": { "x": 75.1, "y": 197.9 }
+      },
+      {
+        "path": "../../../raw/2026/fn/2026_fn_solution-detailed-1.pdf",
+        "page": 1,
+        "position": { "x": 200.7, "y": 481.7 }
+      }
+    ]
+  },
+  "id": "2026-fn-1",
+  "number": 1,
+  "title": "Les gommettes",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "J’ai des gommettes de trois formes différentes.\n\n**Mais combien de chaque ?**\n\n![figure](figure:2026-fn-1-shapes)",
+    "figures": [
+      {
+        "id": "2026-fn-1-shapes",
+        "description": "Assortiment de gommettes de trois formes différentes (triangles, carrés et cercles) empilées et mêlées, à dénombrer par forme.",
+        "imageUrl": "q01_fig-shapes.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-text", "value": "5 disques, 4 triangles, 3 carrés" },
+  "correction": {
+    "markdown": "Nous pouvons voir **5 disques** :\n\n![figure](figure:2026-fn-1-sol-circles)\n\nNous pouvons voir **4 triangles** :\n\n![figure](figure:2026-fn-1-sol-triangles)\n\nNous pouvons voir **3 carrés** :\n\n![figure](figure:2026-fn-1-sol-squares)",
+    "figures": [
+      {
+        "id": "2026-fn-1-sol-circles",
+        "description": "L'assortiment de gommettes de l'énoncé, avec les 5 disques colorés en orange.",
+        "imageUrl": "q01_fig-answer-circles.png"
+      },
+      {
+        "id": "2026-fn-1-sol-triangles",
+        "description": "L'assortiment de gommettes de l'énoncé, avec les 4 triangles colorés en bleu.",
+        "imageUrl": "q01_fig-answer-triangles.png"
+      },
+      {
+        "id": "2026-fn-1-sol-squares",
+        "description": "L'assortiment de gommettes de l'énoncé, avec les 3 carrés colorés en vert.",
+        "imageUrl": "q01_fig-answer-squares.png"
+      }
+    ]
+  }
+}

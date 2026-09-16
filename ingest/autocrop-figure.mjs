@@ -30,7 +30,7 @@ const OUTPUT_SCALE = 1.5 // matches crop-figure.mjs / preview-crop.mjs
 const DETECT_SCALE = 3 // internal render scale used for ink-boundary detection
 const RATIO = DETECT_SCALE / OUTPUT_SCALE
 const DEFAULT_MARGIN = 6 // px, at OUTPUT_SCALE, added around the measured ink box
-const INK_LUMINANCE_THRESHOLD = 245 // 0-255; below this counts as "ink", not background
+const INK_COLOR_DISTANCE_THRESHOLD = 30 // 0-441 (max RGB Euclidean distance); above this counts as "ink", relative to the region's own background color
 const DILATE_RADIUS = 3 // px, at DETECT_SCALE — bridges dashed lines/antialiasing gaps without merging separate text/figure blocks
 const EDGE_WARNING_DISTANCE = 3 // px, at DETECT_SCALE
 
@@ -55,12 +55,35 @@ const region = createCanvas(dw, dh)
 region.getContext("2d").drawImage(full, dx, dy, dw, dh, 0, 0, dw, dh)
 const { data: px } = region.getContext("2d").getImageData(0, 0, dw, dh)
 
+// Background color is estimated as the mode of the region's pixel colors
+// (quantized to reduce antialiasing/JPEG-artifact noise) rather than assumed
+// to be white: a colored page background (e.g. a pale green FFJM statement
+// PDF) would otherwise fall under a plain luminance threshold and get
+// misclassified as ink across the whole region, merging the entire page into
+// one blob. By far the largest area in any generous crop box is background,
+// so its mode is a robust estimate regardless of hue.
+function quantKey(r, g, b) {
+  return `${Math.round(r / 16)},${Math.round(g / 16)},${Math.round(b / 16)}`
+}
+const colorCounts = new Map()
+for (let p = 0; p < dw * dh; p++) {
+  const idx = p * 4
+  const key = quantKey(px[idx], px[idx + 1], px[idx + 2])
+  colorCounts.set(key, (colorCounts.get(key) || 0) + 1)
+}
+let bgKey = null, bgCount = -1
+for (const [key, count] of colorCounts) {
+  if (count > bgCount) { bgCount = count; bgKey = key }
+}
+const [bgR, bgG, bgB] = bgKey.split(",").map((v) => Number(v) * 16)
+
 const ink = new Uint8Array(dw * dh)
 for (let j = 0; j < dh; j++) {
   for (let i = 0; i < dw; i++) {
     const idx = (j * dw + i) * 4
-    const luminance = 0.299 * px[idx] + 0.587 * px[idx + 1] + 0.114 * px[idx + 2]
-    ink[j * dw + i] = luminance < INK_LUMINANCE_THRESHOLD ? 1 : 0
+    const dr = px[idx] - bgR, dg = px[idx + 1] - bgG, db = px[idx + 2] - bgB
+    const dist = Math.sqrt(dr * dr + dg * dg + db * db)
+    ink[j * dw + i] = dist > INK_COLOR_DISTANCE_THRESHOLD ? 1 : 0
   }
 }
 

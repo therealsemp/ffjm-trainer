@@ -1,0 +1,38 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 598 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 2, "position": { "x": 133, "y": 960 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 998 } }
+    ]
+  },
+  "id": "2026-sf-4",
+  "number": 4,
+  "title": "Multiplication à compléter",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Complétez cette multiplication en posant les cinq jetons sur les cases vides.\n\n**Quel sera le résultat ?**\n\n![figure](figure:2026-sf-4-multiplication)",
+    "figures": [
+      {
+        "id": "2026-sf-4-multiplication",
+        "description": "Multiplication posée à compléter : un multiplicande à trois chiffres avec une case marquée « 3 » et deux cases vides, multiplié par 8, donnant un résultat à quatre chiffres commençant par « 7 » suivi de trois cases vides ; les jetons 2, 4, 5, 6, 9 sont déjà répartis dans deux groupes de cases à droite.",
+        "imageUrl": "q04_fig-multiplication.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "7456" },
+  "correction": {
+    "markdown": "Comme \\(72 = 8 \\times 9\\), le premier chiffre du multiplicande ne peut être que 9.\n\nLe résultat vaut au moins \\(932 \\times 8 = 7456\\), qui convient, on peut donc s'arrêter là pour l'épreuve.\n\nPour le plaisir, montrons qu'il n'y a pas d'autre solution.\n\nLe résultat vaut au plus \\(936 \\times 8 = 7488\\), le résultat commence donc par 74.\n\nCela impose alors 745 car le résultat, pair, se termine par 2 ou 6, tandis que \\(5 \\times 8\\) se termine par 0.\n\nLa seule possibilité avec les chiffres restants est bien \\(2 \\times 8 = 16\\) puisque \\(6 \\times 8\\) se termine par 8.\n\n**Variante**\n\nÀ partir du plus petit résultat 7456, on fait des sauts de 8 pour vérifier facilement l'impossibilité des cas restants.\n\n**Réponse : 7456.**"
+  }
+}

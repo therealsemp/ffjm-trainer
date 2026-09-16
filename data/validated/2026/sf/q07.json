@@ -1,0 +1,45 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 137 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 3, "position": { "x": 133, "y": 850 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 443 } }
+    ]
+  },
+  "id": "2026-sf-7",
+  "number": 7,
+  "title": "Trois sur huit",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Avec son imprimante 3D, Mathias a créé des triangles, 3 noirs et 5 blancs, qu'il assemble comme sur la figure pour former un grand carré. En choisissant au hasard quels seront les 3 triangles noirs, il peut obtenir des résultats différents.\n\n**Combien peut-il en obtenir (en comptant l'exemple) ?**\n\nOn peut tourner et retourner l'œuvre d'art obtenue. Deux résultats qui se déduisent l'un de l'autre en tournant ou retournant le grand carré ne comptent que pour un seul.\n\n![figure](figure:2026-sf-7-triangles)",
+    "figures": [
+      {
+        "id": "2026-sf-7-triangles",
+        "description": "Grand carré composé de 8 triangles assemblés (imprimés en 3D), 3 noirs et 5 blancs, vu en perspective.",
+        "imageUrl": "q07_fig-triangles.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "7" },
+  "correction": {
+    "markdown": "Il y a \\(C_8^3 = 56\\) choix de 3 triangles noirs parmi les 8 emplacements, mais en tournant ou retournant le grand carré, on génère 8 configurations équivalentes.\n\nD'où \\(\\frac{56}{8} = 7\\) résultats distincts aux symétries près.\n\nOn peut expliciter 7 représentants, en numérotant les emplacements de 1 à 8 dans le sens des aiguilles d'une montre : 123, 124, 125, 235, 236 (équivalent à l'exemple donné dans l'énoncé), 135, 136.\n\nPour ne rien oublier, il faut procéder avec méthode. Cherchons d'abord à ce que les 3 noirs se touchent par un côté, puis à ce que seuls 2 noirs se touchent par un côté, et enfin à ce que les trois noirs ne se touchent pas par un côté. On obtient les figures suivantes :\n\n![figure](figure:2026-sf-7-solutions)\n\n**Remarque** : c'est une application élémentaire du lemme de Burnside, car exceptée l'identité, aucune des 7 autres symétries du carré ne laisse de configuration invariante, en raison d'un nombre impair de triangles noirs.\n\n**Réponse : 7.**",
+    "figures": [
+      {
+        "id": "2026-sf-7-solutions",
+        "description": "Les 7 configurations distinctes (à rotation/réflexion près) de 3 triangles noirs parmi 8 dans le carré assemblé.",
+        "imageUrl": "q07_fig-solutions.png"
+      }
+    ]
+  }
+}

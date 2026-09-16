@@ -1,0 +1,38 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 935 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 3, "position": { "x": 133, "y": 500 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 210 } }
+    ]
+  },
+  "id": "2026-sf-6",
+  "number": 6,
+  "title": "Pesées",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Voici trois balances. Les boites identiques ont toutes la même masse. Chaque balance est en équilibre.\n\n**Complétez la masse de la troisième balance.**\n\n![figure](figure:2026-sf-6-balances)",
+    "figures": [
+      {
+        "id": "2026-sf-6-balances",
+        "description": "Trois balances à l'équilibre : la première avec une boîte grise et un poids de 40 face à une boîte blanche ; la deuxième avec une boîte grise face à un poids de 100 ; la troisième avec une boîte grise et une boîte blanche face à un poids inconnu (?).",
+        "imageUrl": "q06_fig-balances.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "80" },
+  "correction": {
+    "markdown": "Dans la deuxième balance, une boîte blanche vaut \\(\\frac{100}{2}=50\\).\n\nDans la première balance, on en déduit qu'une boîte grise vaut \\(\\frac{50+40}{3}=30\\).\n\nDans la troisième balance, la masse à compléter vaut \\(50+30=80\\).\n\n**Variante**\n\nMentalement on regroupe deux fois les contenus de la deuxième balance avec ceux de la première balance : en retranchant une boîte blanche des deux côtés, il reste à gauche \\(40+100+100=240\\), et à droite, trois fois le contenu gauche de la troisième balance, d'où une masse à compléter de \\(\\frac{240}{3}=80\\).\n\n**Réponse : 80.**"
+  }
+}

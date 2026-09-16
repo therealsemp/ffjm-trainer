@@ -1,0 +1,65 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 800 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 6, "position": { "x": 133, "y": 621 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 5, "position": { "x": 24, "y": 60 } }
+    ]
+  },
+  "id": "2026-sf-14",
+  "number": 14,
+  "title": "Carrés fantastiques",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Cette figure est composée de 16 cercles et 11 carrés (9 petits et 2 plus grands). Le but du jeu est de répartir les nombres de 1 à 16 dans les 16 cercles, avec la contrainte suivante : pour chacun des 11 carrés, la somme des nombres se trouvant dans les quatre cercles qui touchent les sommets du carré doit être la même. Les nombres 1, 2 et 3 ont déjà été placés. Compléter la figure avec les nombres de 4 à 16.\n\n**Quels seront les quatre nombres de la ligne du bas ?**\n\n![figure](figure:2026-sf-14-grid)",
+    "figures": [
+      {
+        "id": "2026-sf-14-grid",
+        "description": "Grille 4×4 de 16 cercles reliés par des lignes diagonales formant 9 petits carrés et 2 plus grands carrés ; les cercles 1 (haut gauche), 2 (centre) et 3 (droite) sont déjà placés.",
+        "imageUrl": "q14_fig-grid.png"
+      }
+    ]
+  },
+  "answer": { "type": "open", "value": "2 solutions : 8, 10, 4, 14 ou 12, 6, 4, 14" },
+  "correction": {
+    "markdown": "La somme des nombres de 1 à 16 vaut \\(16 \\times 17 \\div 2 = 136\\).\n\nOn peut les répartir en 4 carrés de 4 nombres.\n\nDonc la somme commune est de \\(136 \\div 4 = 17 \\times 2 = 34\\).\n\nSi on enlève à 136 les nombres des 2 grands carrés et ceux du petit carré central, on obtient que 34 est aussi la somme des 4 coins de la figure.\n\n\\(34-(1+2)=31=16+15\\) (seule possibilité).\n\nNous avons deux cas à traiter selon que ce soit 15 ou 16 en dessous de 1.\n\n**Premier cas** : Si on appelle a le nombre à droite de 16, alors le nombre en dessous de a est \\(34-16-2-a=16-a\\).\n\nEn considérant l'un des grands carrés on a dans la case tout en bas de 2 le nombre \\(34-15-3-a=16-a\\).\n\nOr tous les nombres sont différents.\n\n![figure](figure:2026-sf-14-base-squares)\n\n![figure](figure:2026-sf-14-premier-cas)\n\n**Deuxième cas** : Si on appelle a et b les nombres manquants de la première ligne, on peut calculer les autres en fonction de a et de b.\n\n![figure](figure:2026-sf-14-grid-ab)\n\nIl apparaît que le nombre tout en bas du a est 4.\n\nOr \\(34-(3+4)=27=14+13\\) (seule possibilité).\n\nSi 14 est au-dessus de 4 alors \\(a+b=17\\) et \\(b=17-a\\). Or il existe déjà une case \\(17-a\\). Donc 13 est au-dessus de 4.\n\n\\(a+b=16\\) et \\(b=16-a\\). Réécrivons tout en fonction de a.\n\n![figure](figure:2026-sf-14-grid-a)\n\nNous avons 2 séries de 4 nombres consécutifs : d'une part : a ; a+1 ; a+2 ; a+3 ; et d'autre part : 14-a ; 15-a ; 16-a ; 17-a. Et il nous reste les nombres de 5 à 12.\n\nNous avons donc 2 possibilités : soit a=5 soit a=9.\n\nOn obtient les deux configurations suivantes :\n\n![figure](figure:2026-sf-14-solutions)\n\n**Réponse : 2 solutions pour la ligne du bas : 8, 10, 4, 14 et 12, 6, 4, 14.**",
+    "figures": [
+      {
+        "id": "2026-sf-14-base-squares",
+        "description": "Grille 4×4 avec les 4 carrés de coin disjoints mis en évidence (deux surlignés en orange), reliés par des diagonales ; cercles 1, 2, 3 déjà placés.",
+        "imageUrl": "q14_fig-base-squares.png"
+      },
+      {
+        "id": "2026-sf-14-premier-cas",
+        "description": "Grille 4×4 avec un pentagone tracé reliant les cercles du premier cas étudié ; deux cellules valant « 16-a » surlignées en orange, menant à une contradiction (nombres non tous différents).",
+        "imageUrl": "q14_fig-premier-cas.png"
+      },
+      {
+        "id": "2026-sf-14-grid-ab",
+        "description": "Grille 4×4 avec les cases exprimées en fonction de a et b : 1, 15, a, b / 16, 2, 17-a, 17-b / b-2, 18-b, a+b-3, 3 / 3+a, 15-a, 4, 30-a-b.",
+        "imageUrl": "q14_fig-grid-ab.png"
+      },
+      {
+        "id": "2026-sf-14-grid-a",
+        "description": "Grille 4×4 réécrite en fonction de a seul : 1, 15, a, 16-a / 16, 2, 17-a, a+1 / 14-a, a+2, 13, 3 / 3+a, 15-a, 4, 14.",
+        "imageUrl": "q14_fig-grid-a.png"
+      },
+      {
+        "id": "2026-sf-14-solutions",
+        "description": "Les deux grilles solutions finales côte à côte, en rouge : (1,15,5,11 / 16,2,12,6 / 9,7,13,3 / 8,10,4,14) et (1,15,9,7 / 16,2,8,10 / 5,11,13,3 / 12,6,4,14).",
+        "imageUrl": "q14_fig-solutions.png"
+      }
+    ]
+  }
+}

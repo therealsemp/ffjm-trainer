@@ -1,0 +1,38 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 460, "y": 622 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 8, "position": { "x": 133, "y": 896 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 8, "position": { "x": 24, "y": 33 } }
+    ]
+  },
+  "id": "2026-sf-17",
+  "number": 17,
+  "title": "Partage d'un carré",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "On veut partager un carré de côté 1 dm en quatre parties de surfaces égales à l'aide de trois segments de même longueur. Ces trois segments doivent traverser entièrement le carré, et ne pas se couper, sauf éventuellement en leurs extrémités.\n\n**Quelle est, au maximum, la longueur d'un de ces trois segments ?**\n\nOn donnera la réponse en dm, arrondie au millième, et si nécessaire, on prendra 1,414 pour \\(\\sqrt2\\) ; 1,732 pour \\(\\sqrt3\\) et 2,236 pour \\(\\sqrt5\\)."
+  },
+  "answer": { "type": "exact-numeric", "value": "1,118" },
+  "correction": {
+    "markdown": "Au moins un coin n'est pas coupé en deux par un segment, supposons par symétrie que c'est celui en bas à droite.\n\nÀ présent intéressons-nous à la longueur du segment qui délimite la zone à laquelle appartient ce point.\n\nDeux configurations sont à étudier selon qu'un segment traverse deux côtés consécutifs ou opposés. Le troisième schéma illustre le maximum obtenu.\n\n![figure](figure:2026-sf-17-squares)\n\nLa stratégie est d'exprimer une deuxième variable \\(y\\) en fonction de la première \\(x\\) à l'aide de l'aire \\(\\frac14\\), puis par le théorème de Pythagore, le carré de la longueur du segment en fonction de \\(x\\), et enfin de maximiser sur le domaine de définition.\n\nDans le premier cas, le segment est l'hypoténuse d'un triangle rectangle de cathètes \\(x \\leqslant y\\) telles que \\(\\frac12 xy = \\frac14\\), d'où \\(y = \\frac{1}{2x} \\leqslant 1 \\Leftrightarrow x \\geqslant \\frac12\\). De plus \\(x \\leqslant y \\Leftrightarrow x^2 \\leqslant \\frac12\\).\n\n\\(x^2+y^2 = x^2 + \\frac{1}{4x^2}\\) est minimal pour \\(x^2 = \\frac{1}{4x^2} = \\frac12\\), et maximal pour \\(x=\\frac12\\).\n\nDans l'autre cas, il est le grand côté d'un trapèze de bases \\(x \\leqslant y\\) et de hauteur 1, d'où \\(\\frac12(x+y) = \\frac14\\), ou encore \\(y = \\frac12 - x\\). De plus \\(x \\leqslant y \\Leftrightarrow x \\leqslant \\frac14\\).\n\n\\((y-x)^2 + 1^2 = \\left(\\frac12 - 2x\\right)^2 + 1\\) sera minimal pour \\(x=\\frac14\\), et maximal pour \\(x=0\\) (le trapèze dégénère en triangle, vers le même maximum que le cas précédent).\n\nLa longueur maximale d'un de ces trois segments vaut \\(\\sqrt{1+\\frac14} = \\frac{\\sqrt5}{2} \\approx 1,118\\) arrondie au millième.\n\n**Réponse : 1,118.**",
+    "figures": [
+      {
+        "id": "2026-sf-17-squares",
+        "description": "Trois schémas de carrés partagés en quatre parties : segments parallèles à un côté (côtés x et y), segments inclinés partant des coins (côtés x et y), et trois bandes diagonales illustrant le cas maximal.",
+        "imageUrl": "q17_fig-squares.png"
+      }
+    ]
+  }
+}

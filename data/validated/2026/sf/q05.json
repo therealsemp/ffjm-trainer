@@ -1,0 +1,38 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 743 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 3, "position": { "x": 133, "y": 150 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2026-sf-5",
+  "number": 5,
+  "title": "Les trois cartes",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a disposé 3 cartes à jouer devant elle. Parmi ces cartes, il y a un roi, une dame et un valet, et aussi un coeur (♥), un pique (♠) et un trèfle (♣).\n\nLe trèfle (T) se trouve juste à gauche du valet (V).\n\nLa dame (D) se trouve juste à droite du roi (R).\n\nLe coeur (C) se trouve juste à gauche du trèfle (T).\n\n**Identifiez les trois cartes en plaçant les lettres R, D, V et C, P, T dans les cartes.**\n\n![figure](figure:2026-sf-5-cards)",
+    "figures": [
+      {
+        "id": "2026-sf-5-cards",
+        "description": "Trois cartes à jouer vierges alignées, à identifier.",
+        "imageUrl": "q05_fig-cards.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-text", "value": "R,D,V / C,T,P" },
+  "correction": {
+    "markdown": "Les première et troisième propriétés entraînent l'ordre coeur, trèfle, valet.\n\nAvec la deuxième propriété, on déduit l'ordre roi, dame, valet.\n\nL'emplacement du pique s'impose.\n\n| R | D | V |\n|---|---|---|\n| C | T | P |\n\n**Réponse : R, D, V / C, T, P.**"
+  }
+}

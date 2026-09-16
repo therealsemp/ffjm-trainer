@@ -1,0 +1,38 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 1145 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 7, "position": { "x": 133, "y": 808 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 6, "position": { "x": 24, "y": 40 } }
+    ]
+  },
+  "id": "2026-sf-15",
+  "number": 15,
+  "title": "Un drôle de cactus",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Sur la planète Koch, on trouve de drôles de cactus dont les feuilles sont carrées.\n\nChaque année, la plante donne naissance à deux nouvelles feuilles dont une seule produira deux nouvelles feuilles l'année suivante.\n\nLes nouvelles feuilles sont disposées comme le montre la figure par rapport à la feuille mère, et elles encadrent toujours un triangle rectangle isocèle. La figure représente le cactus six ans après la plantation de la première feuille.\n\n**Si la première feuille avait une aire égale à 16 dm², quelle sera l'aire totale de la plante 16 ans après la plantation de cette première feuille ?**\n\nDonner la réponse en dm², sous forme d'une fraction irréductible.\n\n![figure](figure:2026-sf-15-cactus)",
+    "figures": [
+      {
+        "id": "2026-sf-15-cactus",
+        "description": "Cactus formé de feuilles carrées de tailles décroissantes, chaque nouvelle paire de feuilles disposée en encadrant un triangle rectangle isocèle par rapport à la feuille mère, six ans après la plantation.",
+        "imageUrl": "q15_fig-cactus.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "98303/2048" },
+  "correction": {
+    "markdown": "D'après le théorème de Pythagore, deux feuilles générées totalisent la même aire que leur mère : chacune a donc une aire moitié de celle de sa mère.\n\nAinsi l'année \\(n\\), l'aire totale des feuilles vaut \\(A = 16\\left(1 + 2\\left(\\frac12\\right) + \\cdots + 2\\left(\\frac12\\right)^n\\right) = 16\\left(1 + 1 + \\frac12 + \\cdots + \\frac{1}{2^{n-1}}\\right)\\).\n\nNous avons \\(1 + \\frac12 + \\cdots + \\frac{1}{2^{n-1}} = \\frac{1-(\\frac12)^n}{1-\\frac12} = 2 - \\frac{1}{2^{n-1}}\\) en tant que somme des \\(n\\) premiers termes de la série géométrique de terme initial 1 et de raison \\(\\frac12\\).\n\nD'où \\(A = 2^4\\left(3 - \\frac{1}{2^{n-1}}\\right) = \\frac{3 \\times 2^{n-1}-1}{2^{n-5}}\\), irréductible le numérateur étant impair et le dénominateur une puissance de 2.\n\nL'application numérique pour \\(n=16\\) donne \\(A = \\frac{3 \\times 2^{15}-1}{2^{11}} = \\frac{98303}{2048}\\).\n\n**Réponse : \\(\\frac{98303}{2048}\\).**"
+  }
+}

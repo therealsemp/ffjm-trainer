@@ -1,0 +1,43 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 460, "y": 278 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 8, "position": { "x": 133, "y": 187 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 6, "position": { "x": 24, "y": 555 } }
+    ]
+  },
+  "id": "2026-sf-16",
+  "number": 16,
+  "title": "Quadrilatère pianable",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Un polygone est dit pianable si au moins un point se trouve à des distances aux droites qui contiennent les côtés proportionnelles aux longueurs des côtés, chaque distance du point en question à la droite qui contient un côté du polygone étant proportionnelle à la longueur de ce côté. Tous les triangles sont pianables, mais au-delà de trois côtés peu de polygones le sont. Dans un repère orthonormé, les coordonnées des 4 sommets d'un quadrilatère sont les suivantes : \\(A(0;0)\\) \\(B(7;3)\\) \\(C(4;0)\\) \\(D(7;-3)\\).\n\n**Dans ce quadrilatère, donnez l'abscisse d'un tel point P.** Si nécessaire, on arrondira éventuellement au 1/1000."
+  },
+  "answer": { "type": "open", "value": "2 solutions : 3,053 ou 5,8" },
+  "correction": {
+    "markdown": "**Étude du quadrilatère ABCD**\n\nTestons le quadrilatère ABCD :\n\nComme CB=CD alors P est à égale distance de (CB) et de (CD), donc il est sur la bissectrice de \\(\\widehat{BCD}\\), c'est-à-dire l'axe des abscisses.\n\nPCH est un triangle rectangle et isocèle en H car \\(\\widehat{PCB}=45°\\). Donc \\(PH = \\frac{CP}{\\sqrt2}\\) et \\(PH^2 = \\frac{(x_P-4)^2}{2}\\).\n\n![figure](figure:2026-sf-16-abcd)\n\nL'équation de (AB) est \\(y=\\frac37 x\\) et la perpendiculaire à (AB) passant par P vérifie \\(y = \\frac{-7}{3}(x-x_P)\\).\n\nLe point K appartient à ces deux droites donc \\(\\frac37 x_K = \\frac{-7}{3}(x_K - x_P)\\) d'où \\(x_K = \\frac{49}{58}x_P\\) et \\(y_K = \\frac37 \\times \\frac{49}{58}x_P = \\frac{21}{58}x_P\\).\n\n\\(PK^2 = (x_P-x_K)^2+y_K^2 = \\left(\\frac{9}{58}x_P\\right)^2+\\left(\\frac{21}{58}x_P\\right)^2 = \\left(\\frac{3}{58}\\right)^2 \\times (3^2+7^2) \\times x_P^2 = \\frac{9}{58}x_P^2\\).\n\n\\(BC^2 = 3^2+3^2 = 18\\) et \\(AB^2 = 3^2+7^2 = 58\\) donc on doit avoir pour P : \\(\\frac{PH^2}{18} = \\frac{PK^2}{58}\\),\n\n\\(\\frac{(x_P-4)^2}{36} = \\frac{9}{58} \\times \\frac{x_P^2}{58}\\), \\(\\frac{(x_P-4)^2}{6^2} = \\frac{3^2}{58^2}x_P^2\\).\n\nSi \\(x_P>4\\) alors \\(\\frac{x_P-4}{6} = \\frac{3}{58}x_P\\) d'où \\(40x_P = 58 \\times 4\\) et \\(x_P = 5,8\\).\n\nSi \\(x_P<4\\) alors \\(\\frac{4-x_P}{6} = \\frac{3}{58}x_P\\) d'où \\(76x_P = 58 \\times 4\\) et \\(x_P = \\frac{58}{19} \\approx 3,053\\).\n\n**Étude du quadrilatère ABDC**\n\nTestons maintenant le quadrilatère ABDC (ou son symétrique ADBC) :\n\n\\(PM^2 = y_P^2\\), \\(PL^2 = (7-x_P)^2\\). On doit avoir \\(\\frac{PM}{4} = \\frac{PL}{6}\\).\n\nSi \\(y_P>0\\) et \\(x_P<7\\) (ou si \\(y_P<0\\) et \\(x_P>7\\)) alors \\(6y_P = 4(7-x_P)\\) et \\(y_P = \\frac{(14-2x_P)}{3}\\).\n\n![figure](figure:2026-sf-16-abdc)\n\nL'équation de (CD) est \\(y=-x+4\\) et la perpendiculaire à (CD) passant par P vérifie \\(y=(x-x_P)+y_P\\).\n\nLe point H appartient à ces deux droites donc \\(y_H = -x_H+4 = x_H-x_P+\\frac{(14-2x_P)}{3}\\) d'où \\(x_H = \\frac56 x_P - \\frac13\\) et \\(y_H = \\frac{-5}{6}x_P+\\frac{13}{3}\\). On en déduit que \\(PH^2 = \\frac{1}{18}(x_P+2)^2\\).\n\nOr \\(\\frac{PH^2}{18} = \\frac{PL^2}{36}\\) d'où \\(\\frac{(x_P+2)^2}{18^2} = \\frac{(7-x_P)^2}{6^2}\\).\n\nSoit \\(\\frac{x_P+2}{3} = 7-x_P\\) soit \\(\\frac{x_P+2}{3} = x_P-7\\).\n\nDans le premier cas \\(x_P=4,75\\) et \\(y_P=1,5\\), et dans le deuxième cas \\(x_P=11,5\\) et \\(y_P=-3\\).\n\n\\(PL/6 = 7-4,75=2,25\\) dans le premier cas et \\(PL/6=11,5-7=4,5\\) dans le deuxième cas.\n\nL'équation de (AB) est \\(y=\\frac37 x\\) et la perpendiculaire à (AB) passant par P vérifie \\(y=\\frac{-7}{3}(x-x_P)+y_P\\).\n\nLe point K appartient à ces deux droites donc \\(\\frac37 x_K = \\frac{-7}{3}(x_K-x_P)+\\frac{(14-2x_P)}{3}\\) d'où \\(x_K = \\frac{7}{58}(5x_P+14)\\) et \\(y_K = \\frac{3}{58}(5x_P+14)\\) donc\n\n\\(PK^2 = \\left(\\frac{7}{58}(5x_P+14)-x_P\\right)^2 + \\left(\\frac{3}{58}(5x_P+14)-\\frac{(14-2x_P)}{3}\\right)^2\\)\n\nAvec P(4,75 ; 1,5) : \\(PK^2 = \\left(\\frac{7}{58}\\times37,75-4,75\\right)^2+\\left(\\frac{3}{58}\\times37,75-1,5\\right)^2 = \\left(\\frac{-11,25}{58}\\right)^2+\\left(\\frac{26,25}{58}\\right)^2\\)\n\n\\(PK^2 = \\left(\\frac{45}{4}\\times\\frac{1}{58}\\right)^2+\\left(\\frac{105}{4}\\times\\frac{1}{58}\\right)^2 = \\frac{45^2+105^2}{4^2\\times58^2} = \\frac{2025+11025}{4^2\\times58^2} = \\frac{13050}{4^2\\times58^2} = \\frac{225}{2^5\\times29}\\) qui n'est pas décimal contrairement à \\(2,25^2\\).\n\nAvec P(11,5 ; -3) : \\(PK^2 = \\left(\\frac{7}{58}\\times71,5-11,5\\right)^2+\\left(\\frac{3}{58}\\times71,5+3\\right)^2 = \\left(\\frac{-166,5}{58}\\right)^2+\\left(\\frac{388,5}{58}\\right)^2\\)\n\n\\(PK^2 = \\left(\\frac{333}{2}\\times\\frac{1}{58}\\right)^2+\\left(\\frac{777}{2}\\times\\frac{1}{58}\\right)^2 = \\frac{111^2(3^2+7^2)}{2^2\\times58^2} = \\frac{111^2}{2^2\\times58} = \\frac{111^2}{2^3\\times29}\\) qui n'est pas décimal contrairement à \\(4,5^2\\).\n\nIl n'y a pas de solution dans ce cas-là car la 4e égalité n'est pas vérifiée.\n\nPar un procédé analogue on montrerait que si \\(y_P>0\\) et \\(x_P>7\\) (ou si \\(y_P<0\\) et \\(x_P<7\\)) alors \\(6y_P=4(x_P-7)\\) et \\(y_P=\\frac{(2x_P-14)}{3}\\) il n'y a pas de solution non plus.\n\n**Réponse : 2 solutions, 3,053 ou 5,8.**",
+    "figures": [
+      {
+        "id": "2026-sf-16-abcd",
+        "description": "Repère orthonormé avec le quadrilatère ABCD (A origine, B(7;3), C(4;0), D(7;-3)) et le point P sur l'axe des abscisses, avec les points K et H.",
+        "imageUrl": "q16_fig-abcd.png"
+      },
+      {
+        "id": "2026-sf-16-abdc",
+        "description": "Repère orthonormé avec le quadrilatère ABDC et le point P, avec les projetés K, L, M, H.",
+        "imageUrl": "q16_fig-abdc.png"
+      }
+    ]
+  }
+}

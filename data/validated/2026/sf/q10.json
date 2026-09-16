@@ -1,0 +1,45 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 610, "y": 1030 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 4, "position": { "x": 133, "y": 760 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 3, "position": { "x": 24, "y": 645 } }
+    ]
+  },
+  "id": "2026-sf-10",
+  "number": 10,
+  "title": "Le détecteur",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "La figure représente un détecteur de signaux extraterrestres.\n\nLes disques doivent contenir les nombres de 1 à 14 (7, 11 et 13 sont déjà placés) de telle sorte que :\n\n- la somme de trois nombres situés sur un même segment doit toujours être égale à 26\n- a < c .\n\n**Quels nombres iront en b et en d ?**\n\n![figure](figure:2026-sf-10-detector)",
+    "figures": [
+      {
+        "id": "2026-sf-10-detector",
+        "description": "Détecteur en forme de pentagone : un segment horizontal a-b-c relié au sommet du pentagone marqué 11, puis un pentagone de cercles incluant 13 (à gauche), d (à droite) et 7 (en bas, noirci), avec des cercles vides pour les valeurs restantes.",
+        "imageUrl": "q10_fig-detector.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-text", "value": "b=12 et d=14" },
+  "correction": {
+    "markdown": "La somme des nombres de 1 à 14 est \\(14 \\times 15 \\div 2 = 105\\).\n\nEn effet écrivons dans l'ordre croissant \\(1+2+3+\\cdots+13+14\\) puis dans l'ordre décroissant \\(14+13+12+\\cdots+2+1\\) et additionnons terme à terme on obtient \\(15+15+15+\\cdots+15+15\\) et il y a 14 termes soit \\(14 \\times 15\\). Comme on a compté 2 fois la somme on divise par 2.\n\n\\(26-(11+13)=2\\). On peut placer 2 entre 13 et 11.\n\nQuand on fait la somme des 7 segments (\\(7 \\times 26 = 182\\)), on a compté 1 fois chaque nombre, plus 1 fois chaque nombre noir (car ils appartiennent à au moins 2 segments), plus 1 fois le nombre 11 (car il appartient à 3 segments).\n\n\\(182 = 105 + (b+d+x+13+11+7) + 11\\).\n\nOn en déduit que \\(b+d+x = 35\\).\n\nSi le 14 ne fait pas partie de \\(\\{b;d;x\\}\\) alors au maximum on a \\(12+10+9=31\\) ce qui n'est pas possible.\n\nDonc 14 est dedans. \\(35-14=21=12+9\\) (seule possibilité). Les 3 nombres \\(\\{b;d;x\\}\\) sont donc \\(\\{9;12;14\\}\\).\n\n\\(26-(7+12)=7\\) donc le 12 n'est pas aligné avec le 7.\n\nPar conséquent \\(b=12\\). \\(26-(12+11)=3\\). On peut placer 3 entre 12 et 11.\n\n\\(13+14=27>26\\) donc \\(x \\neq 14\\) donc \\(x=9\\) et \\(d=14\\).\n\nOn en déduit les nombres des cases blanches autres que a et c.\n\nIl reste 6 et 8. Comme \\(a<c\\), on a \\(a=6\\) et \\(c=8\\).\n\nOn obtient la solution :\n\n![figure](figure:2026-sf-10-solution)\n\n**Réponse : b=12 et d=14.**",
+    "figures": [
+      {
+        "id": "2026-sf-10-solution",
+        "description": "Pentagone résolu : en tête 6, 12 (noirci), 8 ; puis 3 ; puis 11 (noirci) au centre ; 2 et 1 de part et d'autre ; 13 et 14 (noircis) aux extrémités ; puis 4 et 5 ; enfin 9 (noirci), 10, 7 (noirci) en bas.",
+        "imageUrl": "q10_fig-solution.png"
+      }
+    ]
+  }
+}

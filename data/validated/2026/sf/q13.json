@@ -1,0 +1,31 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 580 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 6, "position": { "x": 133, "y": 479 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 1010 } }
+    ]
+  },
+  "id": "2026-sf-13",
+  "number": 13,
+  "title": "Du pain tous les jours",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "À Mathville, il n'y a que cinq boulangeries. Chacune veut fermer exactement un seul jour par semaine. Les habitants souhaitent que chacun des sept jours de la semaine au moins une boulangerie soit ouverte.\n\n**De combien de façons différentes est-ce possible ?**"
+  },
+  "answer": { "type": "exact-numeric", "value": "16800" },
+  "correction": {
+    "markdown": "Chacune des 5 boulangeries a le choix entre 7 jours de fermeture. Cela fait un total de \\(7 \\times 7 \\times 7 \\times 7 \\times 7 = 7^5 = 16\\,807\\) possibilités.\n\nParmi celles-ci on doit éliminer les cas où les 5 boulangeries choisissent le même jour de fermeture ; cela concerne 7 possibilités.\n\n\\(16\\,807 - 7 = 16\\,800\\).\n\n**Réponse : 16800.**"
+  }
+}

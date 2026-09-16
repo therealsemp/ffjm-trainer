@@ -1,0 +1,50 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 390 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 5, "position": { "x": 133, "y": 900 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 460 } }
+    ]
+  },
+  "id": "2026-sf-12",
+  "number": 12,
+  "title": "Les quatre équerres",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Ces quatre équerres ont toutes un angle droit et un angle de 60°.\n\nSi la plus petite a une aire de 26 cm², **quelle est l'aire de la plus grande ?** Si nécessaire, on prendra 1,732 pour \\(\\sqrt3\\) et on donnera la réponse arrondie au cm² le plus proche.\n\n![figure](figure:2026-sf-12-equerres)",
+    "figures": [
+      {
+        "id": "2026-sf-12-equerres",
+        "description": "Quatre équerres emboîtées (triangles rectangles avec un angle de 60°) de tailles croissantes, formant une figure composite grisée avec deux petits cercles marquant des sommets internes.",
+        "imageUrl": "q12_fig-equerres.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "702" },
+  "correction": {
+    "markdown": "Chacune des équerres correspond à un demi triangle équilatéral. Si on appelle \\(a\\) la longueur du plus petit côté alors l'hypoténuse est \\(2a\\), et en utilisant le théorème de Pythagore, on a \\(L^2 = (2a)^2-a^2 = 4a^2-a^2 = 3a^2\\) et \\(L = a \\times \\sqrt3\\).\n\nAinsi pour passer du petit côté de l'angle droit au grand côté de l'angle droit, on multiplie par \\(\\sqrt3\\). Or \\(\\sqrt3 \\times \\sqrt3 = 3\\). On obtient donc successivement \\(a\\) ; \\(\\sqrt3 a\\) ; \\(3a\\) ; \\(3\\sqrt3 a\\) et \\(9a\\).\n\n![figure](figure:2026-sf-12-triangle)\n\nAire(ABC) \\(= a \\times \\sqrt3 \\times a \\div 2 = a^2 \\frac{\\sqrt3}{2} = 26\\) cm².\n\nAire(AEF) \\(= 3\\sqrt3 a \\times 9a \\div 2 = a^2 \\frac{\\sqrt3}{2} \\times 27 = 26 \\times 27 = 702\\) cm².\n\n![figure](figure:2026-sf-12-composite)\n\nL'aire de la plus grande équerre est de **702 cm²**.\n\n**Réponse : 702.**",
+    "figures": [
+      {
+        "id": "2026-sf-12-triangle",
+        "description": "Triangle équilatéral ABC (hauteur L, côtés 2a) avec un petit carré indiquant l'angle droit en A, et les points D et B en bas, symétriques par rapport à A, marquant les longueurs a.",
+        "imageUrl": "q12_fig-triangle.png"
+      },
+      {
+        "id": "2026-sf-12-composite",
+        "description": "Figure composite formée des quatre équerres emboîtées, avec les points A, B, C, E, F et les longueurs a, 2a, 3a, √3a, 3√3a, 9a annotées.",
+        "imageUrl": "q12_fig-composite.png"
+      }
+    ]
+  }
+}

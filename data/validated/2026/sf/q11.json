@@ -1,0 +1,31 @@
+{
+  "year": 2026,
+  "champNumber": 40,
+  "phase": "sf",
+  "examTitle": "40e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2026/sf/2026_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 185 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-1.pdf", "page": 5, "position": { "x": 133, "y": 329 } },
+      { "path": "../../../raw/2026/sf/2026_sf_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 57 } }
+    ]
+  },
+  "id": "2026-sf-11",
+  "number": 11,
+  "title": "La caissière étourdie",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde vient d'acheter un jeu dont le prix marqué en euros est un nombre entier à deux chiffres.\n\nEn tapant le prix, la caissière s'est trompée et a tapé le carré du premier chiffre plus le carré du deuxième chiffre.\n\nEn examinant le ticket, Mathilde constate que le prix qu'elle a payé correspond au prix marqué moins 1 euro.\n\n**Combien Mathilde a-t-elle payé son jeu ?**"
+  },
+  "answer": { "type": "open", "value": "2 solutions : 34 ou 74" },
+  "correction": {
+    "markdown": "Si \\(10d+u\\) est le prix affiché, alors \\(d^2+u^2 = 10d+u-1\\) est le prix payé.\n\nLa relation se réécrit en \\(d(10-d) = u(u-1)+1\\).\n\nSi \\(d\\) est solution, alors \\(10-d\\) est également solution : on peut donc supposer \\(1 \\leqslant d \\leqslant 5\\).\n\nLe membre de droite est impair car le produit de deux entiers consécutifs est toujours pair.\n\n\\(d\\) est donc impair, d'où 3 valeurs à tester.\n\n| d | d(10-d) | u(u-1)/2 | Nombre triangulaire ? |\n|---|---|---|---|\n| 1 | 9 | 4 | non |\n| 3 | 21 | 10 | oui |\n| 5 | 25 | 12 | non |\n\nLes couples solutions sont \\((d,u) = (3,5)\\) ou \\((7,5)\\).\n\nOn n'oublie pas que c'est le prix payé qui est demandé, soit 34 ou 74.\n\n**Réponse : 2 solutions, 34 ou 74.**"
+  }
+}

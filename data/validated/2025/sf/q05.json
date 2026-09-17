@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 643 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 2, "position": { "x": 133, "y": 45 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 290 } }
+    ]
+  },
+  "id": "2025-sf-5",
+  "number": 5,
+  "title": "Pairs et impairs",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**Complétez la phrase écrite dans le cadre avec des nombres écrits en chiffres de façon qu'elle soit vraie.**\n\n> 15 mars 2025\n>\n> Dans ce cadre, on compte :\n> … chiffres pairs,\n> et … chiffres impairs.\n\nNote : Les chiffres pairs sont 0, 2, 4, 6 et 8."
+  },
+  "answer": { "type": "exact-text", "value": "3 chiffres pairs et 5 chiffres impairs" },
+  "correction": {
+    "markdown": "Dans « 15 mars 2025 » on a déjà 3 chiffres pairs (2, 0, 2) et 3 chiffres impairs (1, 5, 5). On ajoute 2 chiffres.\n\nS'ils sont tous les deux pairs, on obtient 5 chiffres pairs et 3 chiffres impairs. Or 3 et 5 ne sont pas pairs.\n\nS'ils sont tous les deux impairs, on obtient 3 chiffres pairs et 5 chiffres impairs. On a bien 3 et 5 impairs.\n\nSi l'un est impair et l'autre pair, on obtient 4 chiffres pairs et 4 chiffres impairs. Or 4 n'est pas impair.\n\n**Réponse : 3 chiffres pairs et 5 chiffres impairs.**"
+  }
+}

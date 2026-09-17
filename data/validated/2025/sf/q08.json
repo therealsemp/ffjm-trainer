@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 307 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 3, "position": { "x": 133, "y": 45 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 3, "position": { "x": 24, "y": 410 } }
+    ]
+  },
+  "id": "2025-sf-8",
+  "number": 8,
+  "title": "Les 9 pions",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Neuf pions sont posés sur cette grille. Mathilde veut retirer 3 ou 4 pions gris, mais en laissant le 5, son chiffre préféré. Le total des numéros des pions restant sur la grille (y compris le 5) doit être égal à 25.\n\n![figure](figure:2025-sf-8-pions)\n\n**Combien y a-t-il de dispositions différentes des pions restant sur la grille ?**",
+    "figures": [
+      {
+        "id": "2025-sf-8-pions",
+        "description": "Grille 3×3 de pions numérotés : 8, 1, 6 / 3, 5, 7 / 4, 9, 2.",
+        "imageUrl": "q08_fig-pions.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "10" },
+  "correction": {
+    "markdown": "Le total de tous les pions fait \\(1+2+3+4+5+6+7+8+9=45\\). \\(45-25=20\\).\n\nLe total des trois ou quatre pièces enlevées doit donc faire 20.\n\nEn enlevant 3 pièces, on peut choisir \\(9+8+3=20\\) ou \\(9+7+4=20\\). Cela nous donne 2 dispositions.\n\nEn enlevant 4 pièces, on peut choisir \\(9+8+2+1=20\\) ; \\(9+7+3+1=20\\) ; \\(9+6+4+1=20\\) ; \\(9+6+3+2=20\\) ; \\(8+7+4+1=20\\) ; \\(8+7+3+2=20\\) ; \\(8+6+4+2=20\\) ; \\(7+6+4+3=20\\). Cela nous donne 8 dispositions.\n\nAu total \\(2+8=10\\).\n\n**Réponse : 10.**"
+  }
+}

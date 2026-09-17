@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 413 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 3, "position": { "x": 133, "y": 300 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 3, "position": { "x": 24, "y": 720 } }
+    ]
+  },
+  "id": "2025-sf-9",
+  "number": 9,
+  "title": "La fraction de Mathilde",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde a écrit une fraction avec un numérateur strictement plus grand que 25 et un dénominateur strictement plus petit que \\(2 \\times 25\\). Cette fraction est égale à \\(\\frac{2}{3}\\).\n\n**Quelle est la fraction écrite par Mathilde ?**"
+  },
+  "answer": { "type": "open", "value": "4 solutions : 26/39, 28/42, 30/45, 32/48" },
+  "correction": {
+    "markdown": "\\(\\frac{2}{3} = \\frac{2 \\times 12}{3 \\times 12} = \\frac{24}{36}\\) mais \\(24 < 25\\).\n\n\\(\\frac{2}{3} = \\frac{2 \\times 13}{3 \\times 13} = \\frac{26}{39} = \\frac{2 \\times 14}{3 \\times 14} = \\frac{28}{42} = \\frac{2 \\times 15}{3 \\times 15} = \\frac{30}{45} = \\frac{2 \\times 16}{3 \\times 16} = \\frac{32}{48}\\).\n\n\\(\\frac{2}{3} = \\frac{2 \\times 17}{3 \\times 17} = \\frac{34}{51}\\) mais \\(51 > 50\\).\n\nNous avons donc **4 solutions** : \\(\\frac{26}{39}\\), \\(\\frac{28}{42}\\), \\(\\frac{30}{45}\\), \\(\\frac{32}{48}\\).\n\n**Réponse : 4 solutions : 26/39, 28/42, 30/45, 32/48.**"
+  }
+}

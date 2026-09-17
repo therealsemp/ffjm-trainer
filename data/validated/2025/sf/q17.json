@@ -1,0 +1,68 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 460, "y": 60 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 7, "position": { "x": 133, "y": 45 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 8, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-17",
+  "number": 17,
+  "title": "Les boîtes à nombres",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Des boites sont numérotées 1, 2, 3, etc. jusqu'à l'infini. Chaque boite contient un nombre. Pour un entier n, on note s(n) la somme de ses chiffres.\n\nOn sait que :\n\n- pour tout n, le nombre de la boite \\(n+s(n)+s(n+s(n))\\) est égal à la somme des nombres des boites \\(n\\) et \\(n+s(n)\\) ;\n- les boites 1 et 2 contiennent des nombres entiers strictement positifs ;\n- la boite 7 contient le nombre 13.\n\n**Que contient la boite 64 ?**"
+  },
+  "answer": { "type": "open", "value": "2 solutions : 589 ou 610" },
+  "correction": {
+    "markdown": "Étudions la suite des numéros de boites concernées. Prenons un « n » et calculons le numéro de la boite suivante : \\(n+s(n)\\).\n\nSi on part de 1, on a \\(1+1=2\\) ; \\(2+2=4\\) ; \\(4+4=8\\) ; \\(8+8=16\\) ; \\(16+7=23\\) ; \\(23+5=28\\) ; etc.\n\nChaque boite, à partir de la 3ᵉ contient un nombre somme des deux nombres des deux boites précédentes, c'est une suite de Fibonacci.\n\nCherchons à déterminer quand \\(m+s(m)=n+s(n)\\) avec \\(m \\neq n\\).\n\nAvec un nombre à 1 chiffre : \\(A+s(A)=2A\\). Ils sont tous différents.\n\nAvec un nombre à 2 chiffres : \\(AB+s(AB)=11A+2B\\).\n\nPeut-on avoir \\(11A+2B=2C\\) ? Comme \\(C<10\\) alors \\(11A+2B<20\\) et donc \\(A=1\\), mais alors \\(11+2B\\) est impair et \\(2C\\) est pair, il ne peut pas y avoir égalité.\n\nPeut-on avoir \\(11A+2B=11C+2D\\) ? On a \\(11(A-C)=2(D-B)\\) donc 11 divise \\((D-B)\\).\n\nOr \\(D-B\\) est compris entre -9 et 9 cela ne peut être que 0 d'où \\(D=B\\) et \\(A=C\\).\n\nAvec un nombre à 3 chiffres : \\(ABC+s(ABC)=101A+11B+2C\\).\n\nPeut-on avoir \\(101A+11B+2C=101D+11E+2F\\) ?\n\nOn a \\(101(A-D)+11(B-E)+2(C-F)=0\\)\n\nPar exemple on peut prendre \\(A-D=1\\), \\(B-E=-9\\) et \\(C-F=-1\\) et on a \\(101-99-2=0\\).\n\nIl faut donc déterminer les suites de numéros de boites jusqu'à arriver à des nombres à 3 chiffres.\n\nLes boites qui nous intéressent sont 1 et 2 qui contiennent des nombres strictement positifs, la boite 7 qui contient 13 et la boite 64 dont on cherche le contenu :\n\n![figure](figure:2025-sf-17-boxes1)\n\nOn finit par aboutir sur les mêmes numéros, ce qui signifie qu'elles contiennent les mêmes nombres.\n\nEn effet, par soustraction, on obtient les nombres de droite vers la gauche. Alignons ces boites :\n\n![figure](figure:2025-sf-17-boxes2)\n\nAinsi la boite 16 contient aussi le nombre 13, et on cherche le contenu de la boite 91.\n\nCherchons des petits nombres pour les boites 1 et 2 : mettons 1 dans chacune. On obtient alors la suite :\n\n![figure](figure:2025-sf-17-seq1)\n\nLa suite 2/3/5/8/13 nous donne une solution.\n\nMettons 9 à la place de 8 et calculons les précédents :\n\n![figure](figure:2025-sf-17-seq2)\n\nCela ne fonctionne pas car -1 est négatif.\n\nMettons 7 à la place de 8 et calculons les précédents :\n\n![figure](figure:2025-sf-17-seq3)\n\nCela nous donne une autre solution.\n\nMettons 6 à la place de 8 et calculons les précédents :\n\n![figure](figure:2025-sf-17-seq4)\n\nCela ne fonctionne pas car -1 est négatif.\n\nCalculons le contenu de la boite 91 :\n\n![figure](figure:2025-sf-17-final)\n\nOn a **2 solutions** : **589 et 610**.\n\n**Réponse : 2 solutions : 589 ou 610.**",
+    "figures": [
+      {
+        "id": "2025-sf-17-boxes1",
+        "description": "Trois rangées décalées de boîtes numérotées, illustrant la suite n+s(n) : rangée 1 (alignée à gauche) : 1,2,4,8,16,23,28,38,49,62,70,77,91,101,103,107,115 ; rangée 2 (décalée, commençant sous 23) : 7,14,19,29,40,44,52,59,73,83,94,107,115 ; rangée 3 (décalée plus à droite, commençant sous 91) : 64,74,85,98,115.",
+        "imageUrl": "q17_corr-boxes1.png"
+      },
+      {
+        "id": "2025-sf-17-boxes2",
+        "description": "Mêmes trois rangées de boîtes, réalignées : rangée 1 : 1,2,4,8,16,23,28,38,49,62,70,77,91,101,103,107,115 ; rangée 2 (décalée d'une case de plus vers la droite) : 7,14,19,29,40,44,52,59,73,83,94,107,115 ; rangée 3 (décalée encore plus à droite, sous 101) : 64,74,85,98,115.",
+        "imageUrl": "q17_corr-boxes2.png"
+      },
+      {
+        "id": "2025-sf-17-seq1",
+        "description": "Rangée de boîtes : 1, 1, 2, 3, 5, 8, 13.",
+        "imageUrl": "q17_corr-seq1.png"
+      },
+      {
+        "id": "2025-sf-17-seq2",
+        "description": "Rangée de boîtes : -1, 5, 4, 9, 13.",
+        "imageUrl": "q17_corr-seq2.png"
+      },
+      {
+        "id": "2025-sf-17-seq3",
+        "description": "Rangée de boîtes : 5, 1, 6, 7, 13.",
+        "imageUrl": "q17_corr-seq3.png"
+      },
+      {
+        "id": "2025-sf-17-seq4",
+        "description": "Rangée de boîtes : 8, -1, 7, 6, 13.",
+        "imageUrl": "q17_corr-seq4.png"
+      },
+      {
+        "id": "2025-sf-17-final",
+        "description": "Trois rangées de boîtes : rangée 1 (fond jaune) : 1,2,4,8,16,23,28,38,49,62,70,77,91,101,103,107,115 ; rangée 2 : 2,3,5,8,13,21,34,55,89,144,233,377,610 (alignée sous les 13 premières boîtes de la rangée 1) ; rangée 3 : 5,1,6,7,13,20,33,53,86,139,225,364,589 (même alignement que la rangée 2).",
+        "imageUrl": "q17_corr-final.png"
+      }
+    ]
+  }
+}

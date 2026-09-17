@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 207 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 2, "position": { "x": 133, "y": 400 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 3, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-7",
+  "number": 7,
+  "title": "Soustraction glissante",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Dans cette opération, une même lettre remplace un chiffre, toujours le même, et deux lettres différentes remplacent deux chiffres différents. Aucune lettre ne remplace un 0.\n\n![figure](figure:2025-sf-7-dame)\n\n**Que vaut DAME ?**",
+    "figures": [
+      {
+        "id": "2025-sf-7-dame",
+        "description": "Soustraction posée en colonnes : DAME moins EDAM, égal 2025.",
+        "imageUrl": "q07_fig-dame.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "8916" },
+  "correction": {
+    "markdown": "DAME\n−EDAM\n=2025\n\n\\(E-M=5\\) ou \\((10+E)-M=5\\). Dans les deux cas il y a 5 d'écart entre E et M.\n\nS'il n'y a pas de retenue dans la 3ᵉ colonne alors \\(A-D=0\\) donc \\(A=D\\) ce qui n'est pas possible.\n\nIl y a donc une retenue et \\(A-(D+1)=0\\) ou \\((10+A)-(D+1)=0\\).\n\nDans le premier cas \\(A=D+1\\) (A est le successeur de D) et dans le deuxième \\(A=0\\) et \\(D=9\\) ce qui n'est pas possible. Donc \\(D-E=2\\). Il y a 2 d'écart entre D et E, D étant le plus grand.\n\nDans la 3ᵉ colonne \\((10+M)-A=2\\) ou \\((10+M)-(A+1)=2\\).\n\nSi \\(E=1\\), \\(M=6\\), \\(D=3\\) et \\(A=4\\) mais il n'y a pas de retenue en 3ᵉ colonne.\n\nSi \\(E=2\\), \\(M=7\\), \\(D=4\\) et \\(A=5\\) mais il n'y a pas de retenue en 3ᵉ colonne.\n\nSi \\(E=3\\), \\(M=8\\), \\(D=5\\) et \\(A=6\\) mais il n'y a pas de retenue en 3ᵉ colonne.\n\nSi \\(E=4\\), \\(M=9\\), \\(D=6\\) et \\(A=7\\) mais il n'y a pas de retenue en 3ᵉ colonne.\n\nSi \\(E=5\\), \\(M=0\\) ce qui n'est pas possible.\n\nSi \\(E=6\\), \\(M=1\\), \\(D=8\\) et \\(A=9\\).\n\nOn vérifie :\n\n8916\n−6891\n=2025.\n\nDonc **DAME=8916**.\n\nRemarque : pour les plus habitués au calcul littéral : \\(DAM \\times 10 + E - (1000 \\times E + DAM) = 2025\\) d'où on déduit que \\(DAM - EEE = 225\\), ce qui simplifie la recherche. En effet \\(225 + EEE = DAM\\). Si \\(E<5\\) alors il n'y a pas de retenue et \\(D=A\\). Si \\(E=5\\) alors \\(M=0\\) ce qui est interdit. Si \\(E=6\\) alors \\(225+666=891\\) d'où la solution 8916. Si \\(E=7\\) alors \\(225+777=1002\\) ce qui est trop grand.\n\n**Réponse : 8916.**"
+  }
+}

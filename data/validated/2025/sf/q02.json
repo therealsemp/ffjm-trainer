@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 227 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 1, "position": { "x": 133, "y": 400 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 400 } }
+    ]
+  },
+  "id": "2025-sf-2",
+  "number": 2,
+  "title": "Le décor",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "La maitresse propose de faire ce décor avec des gommettes grises, blanches et noires.\n\n![figure](figure:2025-sf-2-gommettes)\n\nDans la boite de gommettes, il y a :\n\n- 10 gommettes noires ;\n- 15 gommettes blanches ;\n- 20 gommettes grises.\n\n**Combien de décors peut-on faire au maximum ?**",
+    "figures": [
+      {
+        "id": "2025-sf-2-gommettes",
+        "description": "Un décor modèle dans un cadre rectangulaire : à gauche un sapin gris de 3 étages (3 gommettes grises triangulaires empilées) avec un tronc noir, à côté un sapin gris plus petit de 2 étages avec un tronc noir, et à droite une colonne de 3 gommettes blanches (ronds) empilées.",
+        "imageUrl": "q02_fig-gommettes.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "4" },
+  "correction": {
+    "markdown": "Le décor utilise 2 gommettes noires. Nous en avons 10 : on peut donc faire 5 décors avec elles (\\(2+2+2+2+2=10\\)).\n\nLe décor utilise 3 gommettes blanches. Nous en avons 15 : on peut donc faire 5 décors avec elles (\\(3+3+3+3+3=15\\)).\n\nLe décor utilise 5 gommettes grises. Nous en avons 20 : on peut donc faire 4 décors avec elles (\\(5+5+5+5=20\\)).\n\nAu maximum on ne peut faire que 4 décors à cause des gommettes grises.\n\n**Réponse : 4.**"
+  }
+}

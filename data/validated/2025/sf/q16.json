@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 713 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 6, "position": { "x": 133, "y": 610 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 7, "position": { "x": 24, "y": 300 } }
+    ]
+  },
+  "id": "2025-sf-16",
+  "number": 16,
+  "title": "Les propriétés de mon triangle",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Les côtés BA, AC et BC d'un triangle sont, dans cet ordre, en progression arithmétique strictement croissante de raison « r ».\n\nDe plus \\(BA \\times BC^2 = AC^3 + 11r^3\\).\n\n**Calculer BC sachant que l'aire du triangle est 600 cm².**"
+  },
+  "answer": { "type": "exact-numeric", "value": "50" },
+  "correction": {
+    "markdown": "Si on pose \\(x=BA\\) alors \\(AC=x+r\\) et \\(BC=x+2r\\).\n\n\\(x(x+2r)^2=(x+r)^3+11r^3\\). En développant il vient \\(x^2r+xr^2-12r^3=0\\) et, en divisant par r, on a \\(x^2+xr-12r^2=0\\).\n\n\\(\\Delta=r^2+4 \\times 12r^2=49r^2=(7r)^2\\). Donc \\(x=\\frac{-r \\pm 7r}{2}\\). Comme x est positif alors \\(x=6r \\div 2=3r\\). Donc \\(BA=3r\\) ; \\(AC=4r\\) et \\(BC=5r\\). \\(5^2=3^2+4^2\\) donc ABC est un triangle rectangle en A.\n\nSon aire est donc \\(3r \\times 4r \\div 2=6r^2=600\\). \\(r^2=100\\), \\(r=10\\) et \\(BC=5r=50\\).\n\nIl y a **1 solution** : **BC=50 cm**.\n\n**Réponse : 50.**"
+  }
+}

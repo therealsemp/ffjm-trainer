@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 100 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 1, "position": { "x": 133, "y": 300 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 160 } }
+    ]
+  },
+  "id": "2025-sf-1",
+  "number": 1,
+  "title": "Évolution",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Lucas fait une construction à l'aide de petits cubes. À chaque étape, il ajoute un cube à chaque extrémité de sa construction, comme sur le schéma.\n\n![figure](figure:2025-sf-1-cube)\n\n**Combien de petits cubes aura-t-il utilisés pour construire entièrement l'étape 4 ?**",
+    "figures": [
+      {
+        "id": "2025-sf-1-cube",
+        "description": "Trois étapes d'une construction en petits cubes : « Départ » (1 cube isolé), « Étape 1 » (un cube central avec des cubes ajoutés à ses extrémités visibles), « Étape 2 » (construction plus étoffée, cubes ajoutés à chaque extrémité de l'étape précédente).",
+        "imageUrl": "q01_fig-cube.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "21" },
+  "correction": {
+    "markdown": "Nous avons 1 cube au départ et à chaque étape nous ajoutons 5 cubes.\n\nÀ la quatrième étape nous avons donc \\(1+5+5+5+5 = 21\\) cubes.\n\n**Réponse : 21.**"
+  }
+}

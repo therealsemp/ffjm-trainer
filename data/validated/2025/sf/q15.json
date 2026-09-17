@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 593 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 6, "position": { "x": 133, "y": 420 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 7, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-15",
+  "number": 15,
+  "title": "Surpassez-vous !",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "**Trouvez deux entiers positifs sachant que le premier surpasse de 31 le quintuple du second, et que le produit des deux nombres surpasse leur somme de 2249.**"
+  },
+  "answer": { "type": "exact-text", "value": "126 et 19" },
+  "correction": {
+    "markdown": "Appelons A et B les deux nombres. \\(A=31+5B\\) et \\(AB=2249+A+B\\).\n\nDonc \\(B(31+5B)=2249+31+5B+B\\).\n\nEn développant il vient \\(5B^2+25B-2280=0\\) et, en divisant par 5, \\(B^2+5B-456=0\\).\n\n\\(\\Delta=5^2+4 \\times 456=1849=43^2\\).\n\nDonc \\(B=\\frac{-5 \\pm 43}{2}\\). Comme B est positif \\(B=38 \\div 2=19\\). \\(A=31+5 \\times 19=126\\).\n\nIl y a **1 solution** : **A=126 et B=19**.\n\n**Réponse : 126 et 19.**"
+  }
+}

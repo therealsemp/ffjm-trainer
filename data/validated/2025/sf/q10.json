@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 553 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 3, "position": { "x": 133, "y": 620 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-10",
+  "number": 10,
+  "title": "Le puzzle circulaire",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un puzzle circulaire est composé d'une pièce centrale et d'anneaux de pièces autour. Le premier anneau comporte un certain nombre de pièces (au moins 5), et chaque anneau supplémentaire compte plus de pièces que le précédent (au moins 3 de plus). On sait en outre que la différence du nombre de pièces entre deux anneaux consécutifs est toujours la même.\n\n**Combien d'anneaux y a-t-il dans un puzzle avec 625 pièces, sachant qu'il y a 25 pièces si on ne compte que la pièce centrale et les deux premiers anneaux ?**"
+  },
+  "answer": { "type": "exact-numeric", "value": "12" },
+  "correction": {
+    "markdown": "Appelons N le nombre d'anneaux, A le nombre de pièces du premier anneau (\\(A>4\\)) et R la différence du nombre de pièces entre deux anneaux consécutifs (\\(R>2\\)).\n\n\\(1+A+(A+R)=25\\) donc \\(R=24-2 \\times A\\).\n\n\\(1+A+(A+R)+(A+2 \\times R)+(A+3 \\times R)+\\ldots+(A+(N-1) \\times R)=625\\).\n\nOr \\(1+2+3+\\ldots+(N-1)=(N-1) \\times N \\div 2\\).\n\nEn effet :\n\n\\(1+2+3+\\ldots+(N-1)\\)\n\n\\(+(N-1)+(N-2)+(N-3)+\\ldots+1\\)\n\n\\(=N+N+N+\\ldots+N\\) (quand on additionne terme à terme les deux lignes)\n\n\\(=(N-1) \\times N\\)\n\nOn obtient : \\(1+N \\times A+(N-1) \\times N \\times R \\div 2=625\\). Donc \\(N \\times (A+(N-1) \\times (12-A))=624\\).\n\nPrenons les valeurs de A comprises entre 5 et 10 (car \\(24-2 \\times A>2\\)).\n\nPour \\(A=5\\) on a \\(624=N \\times (5+(N-1) \\times 7)\\) d'où \\(624=N \\times (7 \\times N-2)\\). Or \\(624=7 \\times 89+1\\) donc N est entre 9 (car \\(9 \\times 9=81\\)) et 10 (car \\(10 \\times 10=100\\)) qui ne sont pas des diviseurs de 624.\n\nPour \\(A=6\\) on a \\(624=N \\times (6+(N-1) \\times 6)\\) d'où \\(624=N \\times (6 \\times N)\\) et \\(104=N \\times N\\). Impossible.\n\nPour \\(A=7\\) on a \\(624=N \\times (7+(N-1) \\times 5)\\) d'où \\(624=N \\times (5 \\times N+2)\\). Or \\(624=5 \\times 124+4\\) donc N est entre 10 (car \\(10 \\times 10=100\\)) et 12 (car \\(12 \\times 12=144\\)). Parmi ces nombres seul 12 est un diviseur de 624 mais \\(12 \\times (5 \\times 12+2)=12 \\times 62=744 \\neq 624\\).\n\nPour \\(A=8\\) on a \\(624=N \\times (8+(N-1) \\times 4)\\) d'où \\(624=N \\times (4 \\times N+4)\\). Or \\(624=4 \\times 156\\) et \\(156=N \\times (N+1)\\) donc N est entre 12 (car \\(12 \\times 12=144\\)) et 13 (car \\(13 \\times 13=169\\)). Or \\(12 \\times 13=156\\). Nous avons une solution avec \\(N=12\\).\n\nPour \\(A=9\\) on a \\(624=N \\times (9+(N-1) \\times 3)\\) d'où \\(624=N \\times (3 \\times N+6)\\). Or \\(624=3 \\times 208\\) et \\(208=N \\times (N+2)\\) donc N est entre 14 (car \\(14 \\times 14=196\\)) et 15 (car \\(15 \\times 15=225\\)) qui ne sont pas des diviseurs de 624.\n\nPour \\(A=10\\) on a \\(624=N \\times (10+(N-1) \\times 2)\\) d'où \\(624=N \\times (2 \\times N+8)\\). Or \\(624=2 \\times 312\\) et \\(312=N \\times (N+4)\\) donc N est entre 16 (car \\(16 \\times 16=256\\)) et 18 (car \\(18 \\times 18=324\\)). Pour \\(N=16\\), \\(16 \\times 20=320 \\neq 312\\).\n\nAu final nous avons **1 solution** : il y a **12 anneaux**.\n\n**Réponse : 12.**"
+  }
+}

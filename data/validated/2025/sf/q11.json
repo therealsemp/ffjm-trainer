@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 60 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 4, "position": { "x": 133, "y": 45 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 330 } }
+    ]
+  },
+  "id": "2025-sf-11",
+  "number": 11,
+  "title": "Un moyen de moyenner",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Autour d'un cercle on dessine 9 droites qui lui sont tangentes, et on obtient un polygone irrégulier à 9 sommets.\n\n**Quelle est la moyenne des mesures en degrés des 9 angles ?**"
+  },
+  "answer": { "type": "exact-numeric", "value": "140" },
+  "correction": {
+    "markdown": "La somme des angles d'un triangle fait 180°. Sur notre polygone à 9 côtés, traçons les diagonales issues d'un même sommet, on obtient alors 7 triangles.\n\n![figure](figure:2025-sf-11-polygon)\n\nLa somme de tous les angles de ce polygone fait donc \\(7 \\times 180\\). Il faut diviser par 9 pour en avoir la moyenne. Or \\(180 \\div 9 = 20\\) et \\(7 \\times 20 = 140\\).\n\nLa moyenne est donc de **140°**.\n\n**Réponse : 140.**",
+    "figures": [
+      {
+        "id": "2025-sf-11-polygon",
+        "description": "Un cercle entouré de 9 droites tangentes (en noir) formant un polygone irrégulier à 9 sommets (contour bleu). Depuis un même sommet du polygone, 7 diagonales (en rouge) sont tracées vers les autres sommets, découpant le polygone en 7 triangles.",
+        "imageUrl": "q11_corr-polygon.png"
+      }
+    ]
+  }
+}

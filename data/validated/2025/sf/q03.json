@@ -1,0 +1,50 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 313 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 1, "position": { "x": 133, "y": 500 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 700 } }
+    ]
+  },
+  "id": "2025-sf-3",
+  "number": 3,
+  "title": "Équi-cercles",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Cette figure est formée de 3 cercles.\n\n![figure](figure:2025-sf-3-circles)\n\n**Placez les nombres 3, 4, 5, 6 et 7 dans les cases vides.**\n\nAttention : quand on additionne les quatre nombres dans un cercle, on doit toujours trouver 14.",
+    "figures": [
+      {
+        "id": "2025-sf-3-circles",
+        "description": "Trois cercles entrecroisés (un en haut, deux en bas se chevauchant) formant une figure à 7 zones. En haut : zone propre du cercle du haut « … » à gauche, zone d'intersection haut/bas-droit « 1 » au centre-haut, zone propre du cercle du haut « … » à droite. Au milieu : zone d'intersection haut/bas-gauche « … », minuscule zone d'intersection des trois cercles « … » (tout petit, au centre), zone d'intersection bas-gauche/bas-droit « 2 ». En bas : zone propre du cercle du bas-droit « … ».",
+        "imageUrl": "q03_fig-circles.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-text", "value": "6, 1, 7, 3, 4, 2, 5" },
+  "correction": {
+    "markdown": "Dans le cercle contenant 1 et 2, comme \\(1+2=3\\) et \\(14-3=11\\), il manque soit 4 et 7 soit 5 et 6.\n\nTestons les 4 possibilités :\n\n![figure](figure:2025-sf-3-tests)\n\n- Premier cas : \\(7+2=9\\) et \\(14-9=5\\). Or \\(5=1+4\\) ou \\(5=2+3\\). De plus 1, 2 et 4 sont déjà pris.\n- Deuxième cas : \\(6+2=8\\) et \\(14-8=6\\). Or \\(6=1+5\\) ou \\(6=2+4\\). De plus 1, 2 et 5 sont déjà pris.\n- Troisième cas : \\(5+2=7\\) et \\(14-7=7\\). Or \\(7=1+6\\) ou \\(7=2+5\\) ou \\(7=3+4\\). Seule la dernière est possible. Le 7 va donc dans le cercle contenant 1 et 5. Or \\(1+5+7=13\\). \\(14-13=1\\). Il faudrait compléter par 1 ce qui n'est pas possible.\n- Quatrième cas : \\(4+2=6\\) et \\(14-6=8\\). Or \\(8=1+7\\) ou \\(8=2+6\\) ou \\(8=3+5\\). Seule la dernière est possible. Le 6 va donc dans le cercle contenant 1 et 4. \\(1+4+6=11\\). \\(14-11=3\\). Le 3 complète ce cercle et le 5 prend la place restante.\n\nLa solution est donc la suivante :\n\n![figure](figure:2025-sf-3-solution)\n\n**Réponse : 6, 1, 7, 3, 4, 2, 5.**",
+    "figures": [
+      {
+        "id": "2025-sf-3-tests",
+        "description": "Quatre variantes de la figure à 3 cercles, testant chacune une des quatre répartitions possibles restant à essayer : (1 et 7 dans le cercle du haut avec 4 en face, 2 en bas), (1 et 6 avec 5 en face, 2 en bas), (1 et 5 avec 6 en face, 2 en bas), (1 et 4 avec 7 en face, 2 en bas).",
+        "imageUrl": "q03_corr-tests.png"
+      },
+      {
+        "id": "2025-sf-3-solution",
+        "description": "Même figure à 3 cercles, entièrement complétée en rouge : 6 (zone propre du haut, gauche), 1 (intersection haut/bas-droit), 7 (zone propre du haut, droite), 3 (intersection haut/bas-gauche), 4 (intersection des trois cercles, au centre), 2 (intersection bas-gauche/bas-droit), 5 (zone propre du bas-droit).",
+        "imageUrl": "q03_corr-solution.png"
+      }
+    ]
+  }
+}

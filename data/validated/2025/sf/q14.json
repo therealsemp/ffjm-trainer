@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 427 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 6, "position": { "x": 133, "y": 45 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 6, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-14",
+  "number": 14,
+  "title": "Carré de carrés",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Complétez les cases vides de ce carré de telle sorte que :\n\n- les nombres de chaque ligne, lus de gauche à droite, soient tous des carrés de nombres entiers ;\n- les nombres de chaque colonne, lus de haut en bas, soient tous des carrés de nombres entiers.\n\n![figure](figure:2025-sf-14-grid)\n\n**Quel sera le nombre de la première ligne ?**",
+    "figures": [
+      {
+        "id": "2025-sf-14-grid",
+        "description": "Grille 4×4 avec seule la deuxième ligne entièrement remplie : 2, 0, 2, 5. Toutes les autres cases sont vides.",
+        "imageUrl": "q14_fig-grid.png"
+      }
+    ]
+  },
+  "answer": { "type": "open", "value": "2 solutions : 1296 ou 9216" },
+  "correction": {
+    "markdown": "Regardons le chiffre des unités pour un carré :\n\n| A | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| A² | 0 | 1 | 4 | 9 | 6 | 5 | 6 | 9 | 4 | 1 |\n\nUn carré ne peut pas se terminer par 2, 3, 7 ou 8.\n\nRemarques : si un nombre se termine par 0, par exemple A0, on obtient son carré en faisant le carré de A et on complète par 00 ; si un nombre se termine par 5, par exemple A5, on obtient son carré en faisant \\(A \\times (A+1)\\) et on complète par 25.\n\n| A | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 |\n|---|---|---|---|---|---|---|---|---|---|\n| A² | 100 | 400 | 900 | 1600 | 2500 | 3600 | 4900 | 6400 | 8100 |\n\n| A | 5 | 15 | 25 | 35 | 45 | 55 | 65 | 75 | 85 | 95 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| A² | 25 | 225 | 625 | 1225 | 2025 | 3025 | 4225 | 5625 | 7225 | 9025 |\n\nCherchons les nombres possibles pour la dernière ligne ou la dernière colonne, le 2ᵉ chiffre étant 5.\n\nParmi 1500, on sait que \\(40^2=1600\\). Testons \\(39^2=1521\\). On ne le retient pas car il contient un 2 (terminaison impossible).\n\nParmi 4500, c'est entre 65 et 70. \\(67^2=4489\\) et \\(68^2=4624\\). Il n'y a pas de réponse.\n\nParmi 5500, c'est entre 70 et 75. \\(74^2=5476\\) et \\(75^2=5625\\). Il n'y a pas de réponse.\n\nParmi 6500, c'est entre 80 et 85. \\(81^2=6561\\), cela convient.\n\nParmi 9500, c'est entre 95 et 99. \\(97^2=9409\\) et \\(98^2=9604\\). Il n'y a pas de réponse.\n\nOn complète le tableau :\n\n|   | 2 |   | 6 |\n|---|---|---|---|\n| 2 | 0 | 2 | 5 |\n|   | 2 |   | 6 |\n| 6 | 5 | 6 | 1 |\n\nOn cherche désormais un carré finissant par 6 (donc le chiffre des unités de sa racine carrée est 4 ou 6), et dont le 2ᵉ chiffre est 2.\n\nParmi 1200, on est dans la trentaine, \\(34^2=1156\\) et \\(36^2=1296\\), ce dernier convient.\n\nParmi 2200, on est entre 45 et 50, \\(46^2=2116\\). Il n'y a pas de réponse.\n\nParmi 3200, on est entre 55 et 60, \\(56^2=3136\\). Il n'y a pas de réponse.\n\nParmi 4200, \\(65^2=4225\\) donc \\(64^2\\) est trop petit et \\(66^2\\) est trop grand.\n\nParmi 5200, on est entre 70 et 75, \\(74^2=5476\\). Il n'y a pas de réponse.\n\nParmi 6200, on est entre 75 et 80, \\(76^2=5776\\). Il n'y a pas de réponse.\n\nParmi 7200, \\(85^2=7225\\) donc \\(84^2\\) est trop petit et \\(86^2\\) est trop grand.\n\nParmi 8200, on est entre 90 et 95, \\(94^2=8836\\). Il n'y a pas de réponse.\n\nParmi 9200, on est entre 95 et 99, \\(96^2=9216\\). Ce nombre convient.\n\nNous avons donc deux façons de remplir ce tableau :\n\n| 1 | 2 | 9 | 6 |\n|---|---|---|---|\n| 2 | 0 | 2 | 5 |\n| 9 | 2 | 1 | 6 |\n| 6 | 5 | 6 | 1 |\n\n| 9 | 2 | 1 | 6 |\n|---|---|---|---|\n| 2 | 0 | 2 | 5 |\n| 1 | 2 | 9 | 6 |\n| 6 | 5 | 6 | 1 |\n\nIl y a **2 solutions** : le nombre de la première ligne est **1296** ou **9216**.\n\n**Réponse : 2 solutions : 1296 ou 9216.**"
+  }
+}

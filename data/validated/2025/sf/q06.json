@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 60 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 2, "position": { "x": 133, "y": 240 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 460 } }
+    ]
+  },
+  "id": "2025-sf-6",
+  "number": 6,
+  "title": "LA SI DO",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Clara doit s'entrainer à la clarinette pour améliorer son doigté. Elle doit jouer les trois notes LA, SI, DO par groupes de 4 (comme par exemple LA-SI-DO-SI) avec les trois conditions suivantes :\n\n- dans chaque groupe de 4, il y a les 3 notes,\n- deux notes qui se suivent doivent être différentes,\n- la première et la dernière ne doivent pas être les mêmes.\n\n**Combien de groupes différents peut-elle former ?**"
+  },
+  "answer": { "type": "exact-numeric", "value": "12" },
+  "correction": {
+    "markdown": "Il y a 4 notes contenant les 3 notes LA, SI et DO. Par conséquent une note est répétée 2 fois.\n\nC'est le SI dans l'exemple donné. Cherchons toutes les possibilités avec SI répété deux fois.\n\n- LA SI DO SI\n- DO SI LA SI\n- SI LA SI DO\n- SI DO SI LA\n\nNous avons donc 4 possibilités.\n\nDe même, si LA est répété 2 fois, nous avons 4 nouvelles possibilités.\n\nEnfin, si DO est répété 2 fois, nous avons 4 autres possibilités.\n\nAu total \\(4+4+4=12\\).\n\n**Réponse : 12.**"
+  }
+}

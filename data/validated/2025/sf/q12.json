@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 227 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 4, "position": { "x": 133, "y": 750 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 5, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-12",
+  "number": 12,
+  "title": "Carré et trapèzes",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Sur le prolongement [AB) d'un des côtés d'un carré ABCD de côté 74 cm, on place le point M tel que BM = 13 cm. On mène par M une droite qui coupe le carré en deux trapèzes de même aire, celle-ci coupe [BC] au point E.\n\n**Quelle est la mesure exacte de BE en cm ?**\n\nOn arrondira au centième si nécessaire."
+  },
+  "answer": { "type": "exact-numeric", "value": "9,62" },
+  "correction": {
+    "markdown": "Pour avoir 2 trapèzes de même aire il faut et il suffit que la droite menée par M passe par le centre du carré. Par symétrie on a BE=DF et EC=AF=74-BE.\n\n![figure](figure:2025-sf-12-square)\n\nDans les triangles MAF et MBE, comme (BE)//(AF) on peut appliquer le théorème de Thalès : \\(\\frac{BE}{AF} = \\frac{MB}{MA} = \\frac{13}{13+74} = \\frac{13}{87}\\).\n\nUtilisons le produit en croix :\n\n\\(87 \\times BE = 13(74-BE)\\)\n\n\\(87 \\times BE = 962-13 \\times BE\\)\n\n\\(100 \\times BE = 962\\)\n\n\\(BE=9,62\\).\n\n**Réponse : 9,62.**",
+    "figures": [
+      {
+        "id": "2025-sf-12-square",
+        "description": "Carré ABCD (A en haut à gauche, B en haut à droite, D en bas à gauche, C en bas à droite) avec M sur le prolongement de [AB) au-delà de B. Les deux diagonales AC et BD du carré sont tracées, ainsi qu'une troisième droite proche de BD passant par M, le centre du carré, et par F sur [AD] ; cette troisième droite coupe aussi [BC] en E, tout près de B.",
+        "imageUrl": "q12_corr-square.png"
+      }
+    ]
+  }
+}

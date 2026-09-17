@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 460, "y": 267 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 7, "position": { "x": 133, "y": 630 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 9, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-18",
+  "number": 18,
+  "title": "Triangles de Brahmagupta",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Le triangle de côtés de longueurs 3, 4 et 5 est remarquable. Les longueurs de ses côtés sont des entiers consécutifs, et son aire est également un entier strictement positif. Le mathématicien Brahmagupta a trouvé un autre triangle vérifiant ces propriétés.\n\n**Quel est son périmètre sachant qu'il est inférieur à 2025 ?**"
+  },
+  "answer": { "type": "open", "value": "3 solutions : 42, 156 ou 582" },
+  "correction": {
+    "markdown": "Appelons « a » la longueur intermédiaire. \\((a-1)\\) et \\((a+1)\\) sont les autres longueurs.\n\nLe périmètre est donc \\(P=a-1+a+a+1=3a\\). Comme \\(P<2025\\) alors \\(a<675\\).\n\nAppelons p le demi-périmètre et A l'aire pour utiliser la formule de Héron. \\(p=\\frac{3a}{2}\\)\n\nOn a \\(A^2=p(p-a+1)(p-a)(p-a-1)=\\left(\\frac{3a}{2}\\right)\\left(\\frac{a+2}{2}\\right)\\left(\\frac{a}{2}\\right)\\left(\\frac{a-2}{2}\\right)=\\frac{3a^2(a+2)(a-2)}{16}\\).\n\nSi a est impair alors \\(3a^2(a+2)(a-2)\\) l'est aussi ce qui n'est pas possible si on veut que l'aire soit entière.\n\nDonc \\(a=2b\\). Comme \\(a<675\\) alors \\(b<338\\).\n\n\\(A^2=3b^2(b+1)(b-1)\\). Donc 3 divise \\((b+1)\\) ou 3 divise \\((b-1)\\).\n\nDans le premier cas \\(b+1=3c\\), \\(b=3c-1\\) et \\(b-1=3c-2\\).\n\n\\(A^2=3^2(3c-1)^2 \\times c(3c-2)\\). Cherchons si c et \\((3c-2)\\) peuvent avoir un diviseur commun.\n\nSi d divise c et \\((3c-2)\\) alors d divise 3c et donc aussi 2. Donc \\(d=1\\) ou \\(d=2\\).\n\nSi c et \\((3c-2)\\) sont premiers entre eux alors \\(c=k^2\\) et \\(3c-2=h^2\\). c n'est pas pair sinon \\(3c-2\\) le serait aussi. Cherchons k parmi les nombres impairs.\n\n- Si \\(k=1\\) alors \\(c=1\\), \\(3c-2=1\\), \\(b=2\\), \\(a=4\\), \\((a-1)=3\\) et \\((a+1)=5\\). C'est l'exemple donné.\n- Si \\(k=3\\) alors \\(c=9\\), \\(3c-2=25=5^2\\), \\(b=26\\), \\(a=52\\), et **P=156**.\n- Si \\(k=5\\) alors \\(c=25\\), \\(3c-2=73\\) impossible.\n- Si \\(k=7\\) alors \\(c=49\\), \\(3c-2=145\\) impossible.\n- Si \\(k=9\\) alors \\(c=81\\), \\(3c-2=241\\) impossible.\n- Si \\(k=11\\) alors \\(c=121>113\\).\n\nSi \\(d=2\\) alors \\(c=2m\\) et \\(3c-2=6m-2=2(3m-1)\\). Comme \\(c<113\\) alors \\(m<57\\).\n\n- Si \\(m=1^2=1\\) alors \\(3m-1=2\\) impossible.\n- Si \\(m=2^2=4\\) alors \\(3m-1=11\\) impossible.\n- Si \\(m=3^2=9\\) alors \\(3m-1=26\\) impossible.\n- Si \\(m=4^2=16\\) alors \\(3m-1=47\\) impossible.\n- Si \\(m=5^2=25\\) alors \\(3m-1=74\\) impossible.\n- Si \\(m=6^2=36\\) alors \\(3m-1=107\\) impossible.\n- Si \\(m=7^2=49\\) alors \\(3m-1=146\\) impossible.\n- Si \\(m=8^2=64>57\\).\n\nDans le deuxième cas \\(b-1=3c\\), \\(b=3c+1\\) et \\(b+1=3c+2\\). Comme \\(b<338\\) alors \\(c<113\\).\n\n\\(A^2=3^2(3c+1)^2 \\times c(3c+2)\\). Cherchons si c et \\((3c+2)\\) peuvent avoir un diviseur commun.\n\nSi d divise c et \\((3c+2)\\) alors d divise 2. Donc \\(d=1\\) ou \\(d=2\\).\n\nSi c et \\((3c+2)\\) sont premiers entre eux alors \\(c=k^2\\) et \\(3c+2=h^2\\). c n'est pas pair sinon \\(3c+2\\) le serait aussi. Cherchons k parmi les nombres impairs.\n\n- Si \\(k=1\\) alors \\(c=1\\), \\(3c+2=5\\) impossible.\n- Si \\(k=3\\) alors \\(c=9\\), \\(3c+2=29\\) impossible.\n- Si \\(k=5\\) alors \\(c=25\\), \\(3c+2=77\\) impossible.\n- Si \\(k=7\\) alors \\(c=49\\), \\(3c+2=149\\) impossible.\n- Si \\(k=9\\) alors \\(c=81\\), \\(3c+2=245\\) impossible.\n\nSi \\(d=2\\) alors \\(c=2m\\) et \\(3c+2=6m+2=2(3m+1)\\). Comme \\(c<113\\) alors \\(m<57\\).\n\n- Si \\(m=1^2=1\\) alors \\(3m+1=4=2^2\\). \\(c=2\\), \\(b=7\\), \\(a=14\\) et **P=42**.\n- Si \\(m=2^2=4\\) alors \\(3m+1=13\\) impossible.\n- Si \\(m=3^2=9\\) alors \\(3m+1=28\\) impossible.\n- Si \\(m=4^2=16\\) alors \\(3m+1=49=7^2\\). \\(c=32\\), \\(b=97\\), \\(a=194\\) et **P=582**.\n- Si \\(m=5^2=25\\) alors \\(3m+1=76\\) impossible.\n- Si \\(m=6^2=36\\) alors \\(3m+1=109\\) impossible.\n- Si \\(m=7^2=49\\) alors \\(3m+1=148\\) impossible.\n\nIl y a **3 solutions** : 42, 156 et 582.\n\n**Réponse : 3 solutions : 42, 156 ou 582.**"
+  }
+}

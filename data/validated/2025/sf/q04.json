@@ -1,0 +1,50 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "sf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/sf/2025_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 440 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-1.pdf", "page": 1, "position": { "x": 133, "y": 650 } },
+      { "path": "../../../raw/2025/sf/2025_sf_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 45 } }
+    ]
+  },
+  "id": "2025-sf-4",
+  "number": 4,
+  "title": "Sudoku-gommettes",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Lili veut placer des gommettes blanches ○ et des gommettes noires ● sur les cases de cette grille. Elle a déjà placé 3 gommettes noires et 3 gommettes blanches.\n\n![figure](figure:2025-sf-4-grid)\n\n- Chaque case doit contenir une, deux ou trois gommettes d'une seule couleur ;\n- dans chaque rangée horizontale ou verticale, aucune case n'a le même nombre de gommettes qu'une autre ;\n- l'indice au début d'une rangée indique le nombre total de gommettes noires dans cette rangée.\n\n**Placez les gommettes noires ● et les gommettes blanches ○ dans la grille de Lili.**",
+    "figures": [
+      {
+        "id": "2025-sf-4-grid",
+        "description": "Grille 3×3 avec en-têtes de colonnes 3, 5, 1 et indices de lignes 3, 4, 2. Case en haut à gauche (ligne d'indice 3, colonne d'en-tête 3) déjà remplie de 3 gommettes noires ; case en bas à droite (ligne d'indice 2, colonne d'en-tête 1) déjà remplie de 3 gommettes blanches. Les autres cases sont vides.",
+        "imageUrl": "q04_fig-grid.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-text", "value": "3N, 1B, 2B / 2B, 3N, 1N / 1B, 2N, 3B" },
+  "correction": {
+    "markdown": "Les indices 3 indiquent la case où il y a les 3 gommettes noires (3N), les autres sont donc blanches (B).\n\nL'indice 2 indique une case où il y a 2 gommettes noires (2N).\n\nPour l'indice 5 il manque une case avec 3 gommettes noires (3N).\n\nPour l'indice 4 il manque une case avec 1 gommette noire (1N).\n\nOn complète alors les cases blanches par le nombre qui manque dans les deux dernières lignes et dans les deux dernières colonnes.\n\n![figure](figure:2025-sf-4-sequence)\n\nLa solution est donc :\n\n![figure](figure:2025-sf-4-solution)\n\n**Réponse : 3N, 1B, 2B / 2B, 3N, 1N / 1B, 2N, 3B.**",
+    "figures": [
+      {
+        "id": "2025-sf-4-sequence",
+        "description": "Six états successifs de la grille 3×3 (en-têtes 3, 5, 1 ; indices 3, 4, 2) montrant la déduction progressive : case (3,1)=3N puis B,B autour ; ajout de B en ligne 4 et 2 ; ajout de 2N et 3B ; grille finale annotée 3N,1B,2B / 2B,3N,1N / 1B,2N,3B.",
+        "imageUrl": "q04_corr-sequence.png"
+      },
+      {
+        "id": "2025-sf-4-solution",
+        "description": "Grille 3×3 finale avec les gommettes effectivement dessinées (ronds noirs pleins ● et ronds blancs ○) : ligne 3 = 3 noirs, 1 blanc, 2 blancs ; ligne 4 = 2 blancs, 3 noirs, 1 noir ; ligne 2 = 1 blanc, 2 noirs, 3 blancs.",
+        "imageUrl": "q04_corr-solution.png"
+      }
+    ]
+  }
+}

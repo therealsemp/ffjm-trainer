@@ -1,0 +1,61 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 638 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 24, "y": 90 }
+      }
+    ]
+  },
+  "id": "2024-fn-5",
+  "number": 5,
+  "title": "Le grand S",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**Remplir chaque carré de cette figure avec un nombre choisi parmi les nombres entiers de 1 à 9 de telle façon que :**\n\n- les six nombres soient tous différents ;\n- la somme des six nombres soit égale à 24 ;\n- deux nombres qui se suivent ne soient jamais placés sur un même segment ;\n- les cinq sommes des deux nombres situés sur un même segment soient toutes différentes.\n\n![figure](figure:2024-fn-5-s)",
+    "figures": [
+      {
+        "id": "2024-fn-5-s",
+        "description": "Six carrés reliés par des segments en forme de S sur trois lignes de deux cases chacune (case haut-gauche et haut-droite reliées à la case du milieu-gauche, elle-même reliée à la case du milieu-droite, elle-même reliée à la case bas-gauche, reliée à la case bas-droite). La case en haut à gauche contient déjà un 2, la case du milieu à droite contient déjà un 7 ; les quatre autres cases sont vides.",
+        "imageUrl": "q05_fig-s.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "de haut en bas, gauche à droite : 2-6, 5-7, 1-3"
+  },
+  "correction": {
+    "markdown": "Les 4 nombres restants totalisent \\(24 - (2+7) = 15\\).\n\n\\(8+1+3+4 = 16 > 15\\) prouve qu'il n'y aura ni 8, ni 9.\n\nComme \\(1+\\cdots+7=28\\), c'est donc que \\(28-24=4\\) ne sera pas utilisé.\n\nIl reste donc à placer 1, 3, 5 et 6.\n\n![figure](figure:2024-fn-5-corr-1)\n\nComme 1 et 3 ne sont pas à côté de 2, ils occupent les 2 places en bas.\n\n6 n'étant pas à côté de 7, il se place donc à droite du 2, et 5 en dessous du 2.\n\n![figure](figure:2024-fn-5-corr-2)\n\nComme \\(2+6=8=7+1\\), cela impose que 1 ne soit pas à côté de 7, ce qui permet de compléter : on vérifie alors que les 5 sommes 8, 7, 12, 10, 4 sont distinctes.\n\n![figure](figure:2024-fn-5-corr-3)",
+    "figures": [
+      {
+        "id": "2024-fn-5-corr-1",
+        "description": "La figure en S avec 2 en haut-gauche, 7 au milieu-droite, les 4 autres cases encore vides — étape intermédiaire indiquant seulement que 1, 3, 5 et 6 restent à placer.",
+        "imageUrl": "q05_corr-1.png"
+      },
+      {
+        "id": "2024-fn-5-corr-2",
+        "description": "La figure en S avec 2 en haut-gauche, 6 en haut-droite, 5 au milieu-gauche, 7 au milieu-droite, les deux cases du bas encore vides.",
+        "imageUrl": "q05_corr-2.png"
+      },
+      {
+        "id": "2024-fn-5-corr-3",
+        "description": "La figure en S complète : 2-6 en haut, 5-7 au milieu, 1-3 en bas.",
+        "imageUrl": "q05_corr-3.png"
+      }
+    ]
+  }
+}

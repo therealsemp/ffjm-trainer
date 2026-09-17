@@ -1,0 +1,66 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 133, "y": 400 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 9,
+        "position": { "x": 24, "y": 440 }
+      }
+    ]
+  },
+  "id": "2024-fn-17",
+  "number": 17,
+  "title": "Surface d'un pavé",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Voici le schéma d'un des types de pavés pentagonaux pouvant paver le plan.\n\n![figure](figure:2024-fn-17-pentagon)\n\n**Si BC = AE = 1 dm et AB = 2 dm, quelle est l'aire du pavé ?** Donner la réponse en cm², arrondie au cm² le plus proche. Si nécessaire, utiliser 1,414 pour \\(\\sqrt2\\) et 1,732 pour \\(\\sqrt3\\).",
+    "figures": [
+      {
+        "id": "2024-fn-17-pentagon",
+        "description": "Pentagone ABCDE irrégulier avec ses cinq angles intérieurs indiqués : 150° en A, 60° en B, 135° en C, 105° en D, 90° (angle droit marqué) en E.",
+        "imageUrl": "q17_fig-pentagon.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "255"
+  },
+  "correction": {
+    "markdown": "Inscrivons le pentagone ABCDE dans un rectangle PQRS avec les droites (QR) et (CD) confondues, \\(B\\in[PQ]\\), \\(E\\in[RS]\\) et \\(A\\in[SP]\\). H est le milieu de [PB].\n\n![figure](figure:2024-fn-17-corr-main)\n\nPartons à la chasse aux angles.\n\nPar triangulation, la somme des angles intérieurs d'un polygone à \\(n\\) côtés vaut \\(180(n-2)\\), d'où \\(\\widehat{CDE}=540-(150+60+135+90)=105°\\).\n\nComme \\(\\widehat{QCB}=180-135=45°\\), le triangle BCQ rectangle en Q est isocèle et \\(\\widehat{CBQ}=45°\\). \\(BQ=QC=\\frac{1}{\\sqrt2}=\\frac{\\sqrt2}{2}\\).\n\nD'où \\(\\widehat{PBA}=180-(60+45)=75°\\) et \\(\\widehat{BAP}=15°\\).\n\nAlors \\(PB=2\\sin15\\) et \\(PA=2\\cos15\\).\n\nAinsi \\(\\widehat{SAE}=180-150+15=15°\\) et \\(\\widehat{AES}=75°\\). \\(AS=\\cos15\\) et \\(SE=\\sin15\\).\n\nEnfin \\(\\widehat{RED}=15°\\) et \\(\\widehat{EDR}=75°\\).\n\nRappelons les formules d'addition en trigonométrie :\n\n- \\(\\cos(a+b)=\\cos a\\cos b-\\sin a\\sin b\\)\n- \\(\\sin(a+b)=\\sin a\\cos b+\\cos a\\sin b\\)\n\nAvec \\(a=45\\) et \\(b=-30\\), nous obtenons :\n\n- \\(\\cos15=\\frac{\\sqrt6+\\sqrt2}{4}\\)\n- \\(\\sin15=\\frac{\\sqrt6-\\sqrt2}{4}\\)\n\n\\(ER=PB+BQ-SE=\\sin15+\\frac{\\sqrt2}{2}=\\cos15=AS\\).\n\nRemarque : les triangles ASE, ERD, AFE, AFG et BHG sont isométriques.\n\nÉvaluons alors les aires :\n\n- \\(\\mathscr{A}_{EHQR}=ER(PA+AS)=3\\cos^2 15\\)\n- \\(\\mathscr{A}_{BCQ}=\\frac12 BQ\\times QC=\\frac14\\)\n\nAlors \\(\\mathscr{A}_{ABCDE}=\\mathscr{A}_{EHQR}-\\mathscr{A}_{BCQ}\\) en substituant les triangles AFG par BHG, et AFE par DRE.\n\nD'où \\(\\mathscr{A}_{ABCDE}=3\\cos^2 15-\\frac14=\\frac{5+3\\sqrt3}{4}\\approx2,549\\ dm^2\\).\n\nAstuce : sans développer le carré, \\(\\cos^2 15=\\frac{1+\\cos30}{2}=\\frac{2+\\sqrt3}{4}\\).\n\n**Variante sans trigonométrie suggérée par Pierre Forest**\n\n![figure](figure:2024-fn-17-corr-variante)\n\nLe triangle ABC est un demi triangle équilatéral puisque \\(AB=2\\times BC\\) et \\(\\hat B=60°\\), d'où \\(AC=\\sqrt3\\) et \\(\\mathscr{A}_{ABC}=\\frac{\\sqrt3}{2}\\).\n\nSoit M le milieu de [AB]. Comme \\(AM=1=AE\\), le triangle AME est isocèle : puisque \\(\\hat A=150°\\), alors \\(\\widehat{AME}=15°\\).\n\nComme \\(\\hat B=60°\\) et que \\(BM=1=BC\\), alors le triangle BCM est équilatéral, d'où \\(CM=1\\).\n\n\\(\\widehat{CME}=180-60-15=105°\\) et \\(\\widehat{MCD}=135-60=75°\\) : ces deux angles sont supplémentaires et (ME) est parallèle à (CD).\n\nDe même, \\(\\widehat{MED}=90-15=75°\\) : les angles \\(\\widehat{CME}\\) et \\(\\widehat{MED}\\) sont supplémentaires et (CM) est parallèle à (DE).\n\nIl en résulte que MCDE est un parallélogramme et donc \\(DE=CM=1\\) (*).\n\nAED est donc un triangle rectangle isocèle de côté 1 : \\(\\mathscr{A}_{AED}=\\frac12\\) et \\(AD=\\sqrt2\\).\n\nSoit (AH) la perpendiculaire à (CD) issue de A.\n\n\\(\\widehat{ACH}=135-90=45°\\) : ACH est donc un triangle rectangle isocèle et \\(\\mathscr{A}_{ACH}=\\frac{AC^2}{4}=\\frac34\\).\n\n\\(\\widehat{ADH}=105-45=60°\\) : le triangle rectangle AHD est un demi triangle équilatéral et \\(\\mathscr{A}_{AHD}=AD^2\\frac{\\sqrt3}{8}=\\frac{\\sqrt3}{4}\\).\n\n\\(\\mathscr{A}_{ABCDE}=\\mathscr{A}_{ABC}+\\mathscr{A}_{AED}+\\mathscr{A}_{ACH}+\\mathscr{A}_{AHD}=\\frac{\\sqrt3}{2}+\\frac12+\\frac34+\\frac{\\sqrt3}{4}=\\frac{5+3\\sqrt3}{4}\\).\n\n(*) pour montrer que DE=1, on pourrait aussi utiliser le fait que le pavage utilisant ce pentagone est celui découvert en août 2015 par une équipe de mathématiciens du campus Bothell de l'université de Washington : la figure de ce pavage permet d'affirmer qu'en plus des données de l'énoncé, on a \\(ED=AE=BC\\). Encore fallait-il avoir le schéma de ce pavage en tête lors de la finale !\n\n![figure](figure:2024-fn-17-corr-pavage)\n\n**Démonstration visuelle (preuve sans mots) suggérée par Antoine Vanney**\n\n![figure](figure:2024-fn-17-corr-preuve)\n\n**Réponse : 255 cm² après arrondi.**",
+    "figures": [
+      {
+        "id": "2024-fn-17-corr-main",
+        "description": "Le pentagone ABCDE inscrit dans un rectangle PQRS : P en haut-gauche, S en haut-droite, Q en bas-gauche, R en bas-droite ; B sur [PQ], E sur [RS], A sur [PS], les côtés CD confondus avec QR. H est le milieu de [PB], marqué sur le côté gauche. Chaque triangle formé entre le pentagone et le rectangle est ombré, avec les angles reportés (15°, 150°, 75°, 60°, 45°, 135°, 105°, 75°).",
+        "imageUrl": "q17_corr-main.png"
+      },
+      {
+        "id": "2024-fn-17-corr-variante",
+        "description": "Le pentagone ABCDE avec le point M (milieu de [AB]) relié à C et E, formant les triangles ABC, AME/AED et ACH/AHD ; H est le pied de la perpendiculaire à (CD) issue de A. Tous les angles de la construction sont annotés (30°, 45°, 60°, etc.).",
+        "imageUrl": "q17_corr-variante.png"
+      },
+      {
+        "id": "2024-fn-17-corr-pavage",
+        "description": "Pavage coloré (jaune, bleu, rouge, rose) du plan par le pentagone de l'énoncé, illustrant le pavage découvert en 2015 par l'équipe de l'université de Washington.",
+        "imageUrl": "q17_corr-pavage.png"
+      },
+      {
+        "id": "2024-fn-17-corr-preuve",
+        "description": "Démonstration visuelle sans mots : le pentagone ABCDE découpé par des segments internes issus du point F, avec chaque segment de longueur 1 annoté en rouge et les angles clés annotés (15°, 60°, 75°, 150°, 45°), illustrant que l'aire se recompose de morceaux de côté unité.",
+        "imageUrl": "q17_corr-preuve.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 133, "y": 390 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 24, "y": 420 }
+      }
+    ]
+  },
+  "id": "2024-fn-9",
+  "number": 9,
+  "title": "Le cercle des menteurs",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Quinze personnes en cercle disent simultanément : « Un et un seul de mes deux voisins ment. »\n\n**Combien de personnes ont menti ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "5 ou 15"
+  },
+  "correction": {
+    "markdown": "Un menteur possède exactement 2 voisins de même nature.\n\nAvec 15 menteurs, chacun possède deux voisins menteurs, c'est donc compatible.\n\nSinon, au moins une personne dit la vérité, nommons-la 0 et son seul voisin menteur, 1.\n\nComme 1 est menteur et 0 dit la vérité, alors 2 dit la vérité tout comme 3, et donc 4 sera menteur, et l'on se ramène à la même situation, translatée de 3.\n\nAinsi les numéros 1, 4, 7, 10 et 13 forment 5 menteurs, compatible lorsqu'on boucle, avec 14, voisin de 0, qui dit la vérité.\n\n**Réponse : 2 solutions, 5 ou 15 menteurs.**"
+  }
+}

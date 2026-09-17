@@ -1,0 +1,37 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 133, "y": 460 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 24, "y": 640 }
+      }
+    ]
+  },
+  "id": "2024-fn-10",
+  "number": 10,
+  "title": "Drôle de rectangle",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde a tracé un rectangle non carré dont les côtés mesurent des nombres entiers de millimètres dans une page de format A4 (qui mesure 210 mm sur 297 mm).\n\nElle additionne le nombre qui correspond à l'aire de son rectangle exprimée en mm² et les deux nombres qui correspondent à la longueur et à la largeur exprimées en mm. Son résultat est égal à 2024.\n\n**Quel est le périmètre du rectangle de Mathilde, exprimé en mm ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "200, 208, 296 ou 464"
+  },
+  "correction": {
+    "markdown": "\\(a<b\\) la largeur et la longueur du rectangle vérifient \\(ab+a+b=2024\\).\n\nD'où \\((a+1)(b+1)=2025=3^4 5^2\\).\n\nLe diamètre d'une feuille A4 est sa diagonale que nous pouvons calculer à l'aide du théorème de Pythagore, en rappelant que le ratio longueur par largeur d'une feuille A4 est proche de \\(\\sqrt{2}\\).\n\nD'où \\(b \\leqslant \\sqrt{210^2+297^2} \\approx 210\\sqrt{3} < 210 \\times 1,8 = 378\\).\n\nParmi les \\(\\frac{(4+1)(2+1)-1}{2}=7\\) décompositions non carrées, nous en écartons 3 avec 2025, 675 et 405, donnant \\(b>378\\).\n\nIl reste alors les 4 décompositions :\n\n| a+1 | b+1 | a | b | 2(a+b) |\n|---|---|---|---|---|\n| 9 | 225 | 8 | 224 | 464 |\n| 15 | 135 | 14 | 134 | 296 |\n| 25 | 81 | 24 | 80 | 208 |\n| 27 | 75 | 26 | 74 | 200 |\n\n**Réponse : 4 solutions, 200, 208, 296 ou 464.**"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 458 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 24, "y": 670 }
+      }
+    ]
+  },
+  "id": "2024-fn-4",
+  "number": 4,
+  "title": "Puzzle",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Avec les quatre pièces représentées à droite, on voudrait remplir un rectangle qui ne doit avoir aucune case vide.\n\n![figure](figure:2024-fn-4-pieces)\n\nLes pièces ne doivent pas se superposer, mais on peut les tourner et les retourner. Une première pièce est déjà posée.\n\n![figure](figure:2024-fn-4-placed)\n\n**De combien de façons différentes peut-on compléter le rectangle avec les trois autres pièces ?**",
+    "figures": [
+      {
+        "id": "2024-fn-4-pieces",
+        "description": "Trois pièces de puzzle en forme de T à cases quadrillées (pointillés), grisées, présentées côte à côte.",
+        "imageUrl": "q04_fig-pieces.png"
+      },
+      {
+        "id": "2024-fn-4-placed",
+        "description": "Une quatrième pièce identique, déjà posée dans le coin d'une grille rectangulaire en pointillés représentant le rectangle à compléter.",
+        "imageUrl": "q04_fig-placed.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "3"
+  },
+  "correction": {
+    "markdown": "Il y a 2 façons de placer la pièce « T » sans laisser un trou d'au plus 2 carrés.\n\nL'une laisse un remplissage symétrique (1 et 2), l'autre, unique (3).\n\n![figure](figure:2024-fn-4-corr-solutions)\n\n**Réponse : 3 façons.**",
+    "figures": [
+      {
+        "id": "2024-fn-4-corr-solutions",
+        "description": "Trois rectangles quadrillés montrant chacun une façon différente de compléter le puzzle avec les trois pièces en T restantes.",
+        "imageUrl": "q04_corr-solutions.png"
+      }
+    ]
+  }
+}

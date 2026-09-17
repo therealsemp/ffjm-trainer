@@ -1,0 +1,37 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 290 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 5,
+        "position": { "x": 24, "y": 700 }
+      }
+    ]
+  },
+  "id": "2024-fn-13",
+  "number": 13,
+  "title": "Tous vos œufs dans le même panier",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le fermier a vendu 100 œufs en tout, de poules et de canes. Son aide Mathieu-le-Matheux lui dit avoir constaté que les deux catégories d'œufs ont rapporté exactement la même somme, mais ajoute que si les œufs de poules avaient été vendus au prix des œufs de canes, la vente des œufs de poules aurait rapporté 45 euros, tandis que si les œufs de canes avaient été vendus au prix des œufs de poules, la vente des œufs de canes n'aurait rapporté que 20 euros.\n\n**Quel était le prix d'un œuf de cane, en centimes d'euro ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "75"
+  },
+  "correction": {
+    "markdown": "Soient \\(50+x\\) et \\(50-x\\) les nombres d'œufs respectivement de poules et de canes, avec \\(x<50\\) entier.\n\nNotons \\(p\\) (resp. \\(c\\)) le prix unitaire d'un œuf de poule (resp. cane).\n\nL'énoncé se traduit par les trois relations :\n\n- (1) \\((50+x)p=(50-x)c\\)\n- (2) \\((50+x)c=45\\)\n- (3) \\((50-x)p=20\\)\n\nEn multipliant (1) par \\(pc\\) et avec (2) et (3), il vient \\(45p^2=20c^2\\), d'où \\(3p=2c\\).\n\nEn multipliant (1) par \\(\\frac{3}{c}\\), il vient \\((50+x)2=(50-x)3\\), d'où \\(x=\\frac{50}{5}=10\\).\n\n(2) s'écrit alors \\(60c=45\\), d'où \\(c=0,75\\).\n\n**Réponse : 75 centimes d'euros.**"
+  }
+}

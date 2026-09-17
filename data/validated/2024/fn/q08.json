@@ -1,0 +1,44 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 133, "y": 210 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 24, "y": 220 }
+      }
+    ]
+  },
+  "id": "2024-fn-8",
+  "number": 8,
+  "title": "Le vieux dé",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un matelot a trouvé un vieux dé dans son filet de pêche. L'eau de mer a complètement détruit les nombres sur ses faces.\n\nIl ne reste que quelques marques près de trois sommets de ce dé : 6, 7 et 11. Chaque marque donne la somme des nombres des trois faces qui se rencontrent en ce sommet.\n\n![figure](figure:2024-fn-8-die)\n\n**Quel était le nombre correspondant à la face marquée d'un point d'interrogation ?** On précise que les faces de ce dé portaient chacune des nombres de 1 à 6.",
+    "figures": [
+      {
+        "id": "2024-fn-8-die",
+        "description": "Un dé en perspective dont la face avant visible porte un point d'interrogation. Près de trois sommets du dé sont notées les valeurs 7 (en haut à gauche), 6 (en haut à droite) et 11 (en bas à droite).",
+        "imageUrl": "q08_fig-die.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "5"
+  },
+  "correction": {
+    "markdown": "Les sommes 6 et 7 sont nécessairement \\(6=1+2+3\\) et \\(7=1+2+4\\).\n\nPuisque les coins 11 et 6 partagent deux faces communes, alors \\(11=2+3+6\\).\n\nTous les nombres entre 1 et 6 ont été cités sauf 5 qui est la face cherchée.\n\nPour être complet, les faces du dé sont :\n\n- devant - derrière : 5 - 2\n- gauche - droite : 4 - 3\n- dessus - dessous : 1 - 6\n\n**Réponse : 5.**"
+  }
+}

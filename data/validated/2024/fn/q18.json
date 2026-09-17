@@ -1,0 +1,37 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 133, "y": 615 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 12,
+        "position": { "x": 24, "y": 480 }
+      }
+    ]
+  },
+  "id": "2024-fn-18",
+  "number": 18,
+  "title": "Les nombres de Mathias",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Sur sa calculatrice, Mathias additionne les nombres entiers dans l'ordre : \\(0+1+2+3+4+\\cdots\\) Avant la frappe de chaque nombre à partir du deuxième, la calculatrice affiche un résultat provisoire : 0, 1, 3, 6, 10, 15, …\n\nMathias note tous les résultats provisoires qui peuvent se scinder en deux nombres tels que le premier soit le double du second, comme 21, 105, 2211, 9045, … Mathias choisit ensuite un nombre à six chiffres parmi ceux qu'il a notés.\n\n**Quel est ce nombre ?** Note : la scission ne peut pas se faire juste avant un chiffre 0."
+  },
+  "answer": {
+    "type": "open",
+    "value": "222111, 306153, 742371 ou 890445"
+  },
+  "correction": {
+    "markdown": "Soit \\(100\\leqslant m<500\\) le nombre à 3 chiffres, tel qu'en sommant les entiers de 0 à \\(n\\), nous obtenons un nombre à 6 chiffres s'écrivant 2m suivi de m.\n\nCela se traduit par \\(0+\\cdots+n=2m\\times10^3+m\\), d'où la relation \\(\\frac{n(n+1)}{2}=2001m\\).\n\nLa double inégalité \\(2\\times10^5<2001m=\\frac{n(n+1)}{2}<10^6\\) conduit à :\n\n- \\((n+1)^2>4\\times10^5\\)\n- \\(n^2<2\\times10^6\\)\n\nD'où \\(200\\sqrt{10}-1<n<1000\\sqrt2\\) ou encore \\(600<n\\leqslant1414\\).\n\nComme \\(2001=3\\times23\\times29\\), alors \\(n(n+1)=2\\times3\\times23\\times29\\,m\\).\n\nRemarque : \\(n\\equiv1\\pmod3\\) ne donne aucune solution car 3 ne divise pas \\(n(n+1)\\).\n\nSelon que les nombres premiers 23 et/ou 29 divisent \\(n\\) ou \\(n+1\\), nous avons 4 cas :\n\n- \\(n\\equiv0\\ (667)\\) :\n  - \\(n=667\\equiv1\\pmod3\\), pas de solution\n  - \\(n=2\\times667=1334\\), d'où 890445\n  - pas d'autre solution car \\(3\\times667>1414\\)\n- \\(n+1\\equiv0\\ (667)\\) :\n  - \\(n=667-1=666\\), d'où 222111\n  - \\(n=2\\times667-1\\equiv1\\pmod3\\), pas de solution\n  - pas d'autre solution car \\(3\\times667-1>1414\\)\n- \\(n\\equiv0\\ (23)\\) et \\(n+1\\equiv0\\ (29)\\) :\n  - posons \\(n=23k\\) et résolvons \\(23k+1\\equiv0\\pmod{29}\\), d'où \\(6k\\equiv1\\pmod{29}\\), ou encore \\(k\\equiv5\\pmod{29}\\), soit \\(n\\equiv5\\times23=115\\pmod{667}\\)\n  - comme \\(115<600\\), \\(n=115+667=782\\), d'où 306153\n  - pas d'autre solution car \\(115+2\\times667>1414\\)\n- \\(n\\equiv0\\ (29)\\) et \\(n+1\\equiv0\\ (23)\\) : \\(n\\equiv551\\pmod{667}\\)\n  - posons \\(n=29k\\) et résolvons \\(29k+1\\equiv0\\pmod{23}\\), d'où \\(6k\\equiv-1\\pmod{23}\\), ou encore \\(k\\equiv-4\\pmod{23}\\), soit \\(n\\equiv19\\times29=551\\pmod{667}\\)\n  - comme \\(551<600\\), \\(n=551+667=1218\\), d'où 742371\n  - pas d'autre solution car \\(551+2\\times667>1414\\)\n\n**Réponse : 4 solutions, 222111, 306153, 742371 ou 890445.**"
+  }
+}

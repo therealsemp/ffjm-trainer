@@ -1,0 +1,51 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 670 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 6,
+        "position": { "x": 24, "y": 740 }
+      }
+    ]
+  },
+  "id": "2024-fn-15",
+  "number": 15,
+  "title": "Natation en eau libre",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Anna Jeuse veut traverser une rivière large de 80 m.\n\nElle nage à la vitesse de 4 km/h, mais le courant de la rivière la déporterait à la vitesse de 8,5 km/h si elle ne nageait pas. Elle sait qu'elle ne pourra pas atteindre la rive exactement en face de son point de départ avec un tel courant, mais aimerait arriver le plus près possible de ce point.\n\n![figure](figure:2024-fn-15-river)\n\n**À quelle distance du point en face arrivera-t-elle au minimum ?** Donner la réponse en m arrondie au centième. Si nécessaire, utiliser 1,414 pour \\(\\sqrt2\\) et 4,123 pour \\(\\sqrt{17}\\).",
+    "figures": [
+      {
+        "id": "2024-fn-15-river",
+        "description": "Schéma d'une rivière large de 80 m : le point de départ est en bas à gauche, le point d'arrivée visé est en haut, marqué d'un « ? » pour la distance horizontale au point exactement en face ; une flèche horizontale indique le sens du courant.",
+        "imageUrl": "q15_fig-river.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "150"
+  },
+  "correction": {
+    "markdown": "Notons D le point de départ, H son projeté orthogonal de l'autre côté de la rive, et A le point d'arrivée.\n\nLe vecteur vitesse \\(\\overrightarrow{DM'}\\) de la nageuse est l'addition (commutative) de deux composantes :\n\n- la nage \\(\\overrightarrow{DM}\\) de norme 4 selon une direction à déterminer : M est situé sur (C) demi-cercle de centre D et de rayon 4.\n- le courant \\(\\overrightarrow{MM'}\\) de norme 8,5 parallèlement aux rives et vers l'est : M' est situé sur (C') demi-cercle de centre D', translaté de D, et de rayon 4.\n\n![figure](figure:2024-fn-15-corr-diagram)\n\nLa distance cherchée HA est minimale si l'angle \\(\\widehat{D'DM'}\\) est maximal, soit lorsque la droite (DA) est tangente à (C') en M'.\n\nLe triangle DM'D' est alors rectangle en M' et nous avons \\(DM'^2+D'M'^2=DD'^2\\) d'après le théorème de Pythagore.\n\nD'où \\(DM'=\\sqrt{8,5^2-4^2}=7,5\\).\n\nRemarque : DM'D est la moitié d'un triangle pythagoricien (8,15,17).\n\nLes rives (DD') et (HA) étant parallèles, nous avons \\(\\widehat{DAH}=\\widehat{D'DM'}\\) (angles alternes-internes)\n\nComme \\(\\tan\\widehat{DAH}=\\frac{HD}{HA}\\) et \\(\\tan\\widehat{D'DM'}=\\frac{D'M'}{DM'}\\), il vient \\(HA=\\frac{HD\\times DM'}{D'M'}\\).\n\nAinsi \\(HA=\\frac{80\\times7,5}{4}=150\\).\n\nVariante plus calculatoire : \\(f(t)=8500t-\\sqrt{(4000t)^2-80^2}\\) est minimale en \\(t^*=\\frac{17}{750}\\), et \\(f(t^*)=150\\).\n\n**Réponse : 150 mètres au minimum.**",
+    "figures": [
+      {
+        "id": "2024-fn-15-corr-diagram",
+        "description": "Schéma géométrique : une droite horizontale représentant une rive passant par H, avec le point A dessus relié par une diagonale au point D en bas ; deux demi-cercles en pointillés (C) centré en D et (C') centré en D' sur la rive du bas, avec les points M sur (C) et M' à l'intersection de la diagonale (DA) et de (C').",
+        "imageUrl": "q15_corr-diagram.png"
+      }
+    ]
+  }
+}

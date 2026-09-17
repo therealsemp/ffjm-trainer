@@ -1,0 +1,37 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 253 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 24, "y": 550 }
+      }
+    ]
+  },
+  "id": "2024-fn-3",
+  "number": 3,
+  "title": "Les cartes Mathemon",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias à Mathilde : « J'ai 28 cartes Mathemon de plus que toi ».\n\nMathilde : « Oui, mais tu m'en dois 19. Rends-les moi ! »\n\n**Lorsque Mathias aura rendu 19 cartes à Mathilde, combien en aura-t-elle de plus que lui ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "10"
+  },
+  "correction": {
+    "markdown": "L'écart sera alors de \\(19 - (28 - 19) = 10\\) en faveur de Mathilde.\n\nVariante avec un paramètre : initialement Mathilde possédait \\(c\\) cartes et Mathias \\(c+28\\). Après le transfert de 19 cartes de Mathias vers Mathilde, cette dernière en posséda \\(c+19\\), et Mathias \\(c+28-19=c+9\\), d'où un écart de \\(19-9=10\\).\n\n**Réponse : 10.**"
+  }
+}

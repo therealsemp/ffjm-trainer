@@ -1,0 +1,44 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 133, "y": 47 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 24, "y": 600 }
+      }
+    ]
+  },
+  "id": "2024-fn-6",
+  "number": 6,
+  "title": "Les cubes de Mathias",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "![figure](figure:2024-fn-6-cubes)\n\nLes dessins représentent des assemblages de six cubes réalisés par Mathias. Un même assemblage est représenté plusieurs fois.\n\n**Écrire, dans l'ordre alphabétique, les lettres de tous les dessins correspondant à cet assemblage.**",
+    "figures": [
+      {
+        "id": "2024-fn-6-cubes",
+        "description": "Sept dessins en perspective d'assemblages de six cubes chacun, étiquetés A à G, chaque assemblage ayant une orientation ou une forme légèrement différente.",
+        "imageUrl": "q06_fig-cubes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "ACE"
+  },
+  "correction": {
+    "markdown": "Mentalement on vérifie que A, C et E correspondent au même assemblage.\n\nB est l'image de cet assemblage par rapport à un miroir.\n\nD, F et G, sont distincts deux à deux : ils présentent à chaque fois un cube orienté différemment par rapport à l'assemblage (ou son reflet dans le miroir).\n\n**Réponse : ACE.**"
+  }
+}

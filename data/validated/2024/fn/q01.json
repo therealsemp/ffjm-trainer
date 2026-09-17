@@ -1,0 +1,44 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 63 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 24, "y": 250 }
+      }
+    ]
+  },
+  "id": "2024-fn-1",
+  "number": 1,
+  "title": "Les jetons de Mathilde",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Ces cinq jetons peuvent être vus comme des 6 ou comme des 9.\n\n![figure](figure:2024-fn-1-jetons)\n\nMathilde a souligné les chiffres des deux jetons à gauche pour que le premier soit lu comme un 9 et le deuxième comme un 6. Elle va souligner les chiffres des trois autres et elle pourra alors partager ces cinq jetons en deux tas de même somme. **Quelle sera la somme des valeurs de chaque tas ?**",
+    "figures": [
+      {
+        "id": "2024-fn-1-jetons",
+        "description": "Cinq jetons circulaires en police stylisée affichant chacun un chiffre pouvant se lire 6 ou 9 selon l'orientation : de gauche à droite, les jetons se lisent 9, 6, 9, 6, 6 dans le sens indiqué par l'énoncé.",
+        "imageUrl": "q01_fig-jetons.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "18"
+  },
+  "correction": {
+    "markdown": "Une solution évidente est \\(3 \\times 6 = 18 = 2 \\times 9\\), montrons qu'elle est unique.\n\nCherchons \\(6a + 9b = 6c + 9d\\) avec 4 entiers tels que \\(a+b+c+d=5\\).\n\nD'où \\(6(a-c) = 9(d-b)\\), ou encore \\(2(a-c) = 3(d-b)\\).\n\nIl existe un entier \\(k\\) tel que \\(a-c=3k\\) et \\(d-b=2k\\).\n\nD'où \\(a+b+c+d = 5k + 2(b+c) = 5\\).\n\nLa seule possibilité est \\(k=1\\) et \\(b+c=0\\), soit \\(b=c=0\\).\n\nAinsi \\(a=3\\) et \\(d=2\\).\n\nLa somme des valeurs de chaque tas vaut \\(6a = 9d = 18\\).\n\n**Réponse : 18.**"
+  }
+}

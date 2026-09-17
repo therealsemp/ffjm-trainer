@@ -1,0 +1,37 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 133, "y": 123 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 24, "y": 90 }
+      }
+    ]
+  },
+  "id": "2024-fn-7",
+  "number": 7,
+  "title": "Tennis de table",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Sept personnes, A, B, C, D, E, F et G jouent au tennis de table en double : à chaque partie, il y a une paire de deux personnes contre une autre paire de deux autres personnes. La paire qui gagne reste en jeu et joue la partie suivante contre une autre paire. Une personne qui a perdu une partie ne rejoue pas la partie juste après.\n\n**Si la paire formée des personnes A et B est très forte et gagne toujours, combien de parties devra-t-elle jouer au minimum pour avoir gagné contre toutes les paires possibles des cinq autres personnes ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "10"
+  },
+  "correction": {
+    "markdown": "Il y a \\(C_5^2 = 10\\) façons de choisir une paire parmi les cinq C, D, E, F et G.\n\nC'est le minimum car il existe un enchaînement où deux paires consécutives sont toujours disjointes, par exemple CD, EF, CG, DE, FG, CE, DF, EG, CF, DG.\n\n**Réponse : 10 parties au minimum.**"
+  }
+}

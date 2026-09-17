@@ -1,0 +1,44 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 385 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 6,
+        "position": { "x": 24, "y": 260 }
+      }
+    ]
+  },
+  "id": "2024-fn-14",
+  "number": 14,
+  "title": "Un sommelier maladroit",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Un sommelier prépare une fontaine à champagne. Il place 25 flûtes en carré, puis place 16 flûtes en carré au-dessus, puis 9, puis 4, puis 1 pour obtenir une pyramide à 5 étages comme sur le dessin.\n\n![figure](figure:2024-fn-14-pyramid)\n\nIl verse ensuite du champagne dans la flûte du haut jusqu'à ce que toutes soient remplies. Lorsqu'une flûte déborde, le surplus se déverse uniformément dans les quatre flûtes en dessous. Mais pour les flûtes tout en bas qui débordent, le surplus est gaspillé.\n\n**Quelle quantité de champagne aura été gaspillée au moment où toutes les flûtes seront remplies ?** Donner la réponse en nombre de flûtes sous forme d'un nombre entier ou d'une fraction irréductible.",
+    "figures": [
+      {
+        "id": "2024-fn-14-pyramid",
+        "description": "Pyramide de coupes de champagne à 5 étages : 25 flûtes en carré 5×5 à la base, puis 16 (4×4), 9 (3×3), 4 (2×2), et 1 flûte tout en haut.",
+        "imageUrl": "q14_fig-pyramid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "286"
+  },
+  "correction": {
+    "markdown": "Une quantité 1 remplit la flûte du haut (étage 1).\n\nToute quantité \\(q\\) versée ensuite dans cette flûte alimentera de \\(\\frac{q}{4}\\) chaque flûte de l'étage 2. Toutes les flûtes de l'étage 2 seront pleines (nous dirons que l'étage est complet) avec une quantité 4, soit 5 en cumulé, sans gaspillage.\n\nÀ partir de là, chaque flûte d'un coin sera plus lente à se remplir, car alimentée par son unique voisine de l'étage supérieur, contrairement aux autres de son étage, alimentées par deux (côté hors coin) ou quatre (intérieur) voisines de l'étage supérieur, d'où du gaspillage.\n\nPar récurrence, lorsque l'étage \\(i-1\\) est complet, toute quantité \\(q\\) versée ensuite dans la flûte du haut alimentera de \\(\\frac{q}{4^{i-1}}\\) chaque flûte de coin de l'étage \\(i\\).\n\nL'étage \\(i\\) sera donc complet lorsque ces dernières seront pleines, c'est-à-dire pour \\(q=4^{i-1}\\), d'où le tableau :\n\n| Étage | Quantité rendant l'étage complet | Cumul des quantités |\n|---|---|---|\n| 1 | 1 | 1 |\n| 2 | 4 | 1+4=5 |\n| 3 | \\(4^2=16\\) | 5+16=21 |\n| 4 | \\(4^3=64\\) | 21+64=85 |\n| 5 | \\(4^4=256\\) | 85+256=341 |\n\nLa quantité de champagne gaspillée vaut alors \\(341-(1+4+9+16+25)=286\\).\n\nNote : pour une pyramide de \\(i\\) étages, elle vaut \\(\\frac{4^i-1}{3}-\\frac{i(i+1)(2i+1)}{6}\\).\n\n**Réponse : 286.**"
+  }
+}

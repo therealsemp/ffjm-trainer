@@ -1,0 +1,49 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 143 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 24, "y": 420 }
+      }
+    ]
+  },
+  "id": "2024-fn-2",
+  "number": 2,
+  "title": "Les dominos",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Dominique veut placer des dominos entre les deux dominos (2 ; 0) et (2 ; 4) en respectant la règle du jeu de dominos : deux carrés qui se touchent doivent contenir le même nombre de points.\n\n![figure](figure:2024-fn-2-refs)\n\n**Parmi les huit dominos représentés ci-contre, combien peut-elle en utiliser, au maximum ?**\n\n![figure](figure:2024-fn-2-pile)",
+    "figures": [
+      {
+        "id": "2024-fn-2-refs",
+        "description": "Les deux dominos de référence entre lesquels placer la chaîne : à gauche un domino (2 ; 0), à droite un domino (2 ; 4), reliés par une ligne pointillée indiquant l'espace à remplir.",
+        "imageUrl": "q02_fig-refs.png"
+      },
+      {
+        "id": "2024-fn-2-pile",
+        "description": "Un tas de huit dominos disposés en désordre, se chevauchant partiellement, chacun affichant deux valeurs de points.",
+        "imageUrl": "q02_fig-pile.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "5"
+  },
+  "correction": {
+    "markdown": "Les trois dominos 2-3, 0-5 et 2-6 sont « isolés » car 3, 5 et 6 n'apparaissent qu'une seule fois : ils ne pourront donc pas être utilisés.\n\nRestent alors \\(8 - 3 = 5\\) dominos qu'il est possible de placer entre 0 et 2 avec 0-0, 0-1, 1-1, 1-2, 2-2.\n\n**Réponse : 5 dominos au maximum.**"
+  }
+}

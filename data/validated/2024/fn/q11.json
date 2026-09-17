@@ -1,0 +1,44 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 25 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 4,
+        "position": { "x": 24, "y": 560 }
+      }
+    ]
+  },
+  "id": "2024-fn-11",
+  "number": 11,
+  "title": "Carrelage",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Noé aimerait poser un carrelage dans une chambre qui mesure 4 m de large. Il dispose de dalles de trois longueurs différentes : 50 cm, 70 cm et 80 cm : toutes ont 50 cm de large et il ne veut pas les couper. Il pose une première rangée avec huit dalles carrées de 50 cm sur 50 cm.\n\n**Combien de possibilités a-t-il pour poser la deuxième rangée sachant que dans cette rangée de largeur 50 cm, à l'exception des bords, il ne doit y avoir aucun joint dans l'alignement d'un joint de la première rangée ? Compter toutes les solutions, même celles obtenues par symétrie.**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "19"
+  },
+  "correction": {
+    "markdown": "En prenant 1 dm pour unité, la deuxième rangée ne doit contenir aucun cumul de longueurs multiple de 5, à l'exception des bords. En particulier elle ne débute ni finit par 5, ni par un motif \\(7+5k+8\\) avec \\(k\\) entier.\n\nSoit l'équation \\(5a+7b+8c=40\\) où \\(a\\), \\(b\\) et \\(c\\) désignent le nombre de carreaux respectivement de longueur 5, 7 et 8.\n\nÉtudions \\(5a+7b=8(5-c)\\), en faisant varier \\(c\\) de 0 à 5.\n\nConsidérons \\(a\\) modulo 7 (pour faire disparaître le terme en \\(b\\)), et retenons les valeurs vérifiant \\(5a \\leqslant 8(5-c)\\).\n\n| c | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| 8(5-c) | 40 | 32 | 24 | 16 | 8 | 0 |\n| 5a (mod 7) | 5 | 4 | 3 | 2 | 1 | 0 |\n| a (mod 7) | 1 | 5 | 2 | 6 | 3 | 0 |\n\nAinsi 5 triplets satisfont l'équation :\n\n| a | 8 | 5 | 2 | 1 | 0 |\n|---|---|---|---|---|---|\n| b | 0 | 1 | 2 | 5 | 0 |\n| c | 0 | 1 | 2 | 0 | 5 |\n\nOublions le premier qui correspond au carrelage de la première rangée.\n\nLe deuxième génère un carrelage \\(7+5\\times5+8\\) et son symétrique.\n\nLe troisième génère six carrelages et leurs symétriques :\n\n- \\(8+5+5+8+7+7\\)\n- \\(8+5+8+5+7+7\\)\n- \\(8+5+8+7+5+7\\)\n- \\(8+8+5+5+7+7\\)\n- \\(8+8+5+7+5+7\\)\n- \\(8+8+7+5+5+7\\)\n\nEn effet, s'il y avait un carrelage débutant et finissant par un même carreau, 7 ou 8, alors nous aurions un motif \\(7+5k+8\\).\n\nQuitte à le parcourir dans l'autre sens, construisons un arbre dont la racine est 8 et la feuille terminale est 7. Chaque nœud indique une longueur parmi 5, 7 ou 8, et le nombre entre parenthèses étant le cumul des longueurs.\n\n![figure](figure:2024-fn-11-corr-tree)\n\nLe quatrième génère un carrelage pour chacune des 4 positions intérieures de 5 parmi 5 carreaux 7.\n\nLe cinquième génère un unique carrelage \\(5\\times8\\).\n\n**Réponse : \\(2+12+4+1=19\\) possibilités.**",
+    "figures": [
+      {
+        "id": "2024-fn-11-corr-tree",
+        "description": "Arbre binaire dont chaque nœud est étiqueté par une longueur de carreau (5, 7 ou 8) avec le cumul entre parenthèses ; racine 8(8), se ramifiant jusqu'à la feuille terminale 7(40), illustrant tous les enchaînements possibles de carreaux 5/7/8 sommant à 40.",
+        "imageUrl": "q11_corr-tree.png"
+      }
+    ]
+  }
+}

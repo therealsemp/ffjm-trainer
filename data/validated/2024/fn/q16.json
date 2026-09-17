@@ -1,0 +1,72 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "fn",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/fn/2024_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 133,
+        "y": 195
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/fn/2024_fn_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 24,
+          "y": 470
+        }
+      }
+    ]
+  },
+  "id": "2024-fn-16",
+  "number": 16,
+  "title": "Tourbillon",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Placer les nombres entiers de 1 à 21 (sauf 1, 2, 3, 15, 19, 20 et 21 qui sont déjà placés) dans les cases vides de ce diagramme de telle sorte que :\n\n- la somme des cinq nombres situés sur le pourtour de chaque triangle curviligne soit toujours égale à 48 ;\n- la somme des sept nombres situés sur le pourtour de l'heptagone curviligne central soit égale à 28.\n\n![figure](figure:2024-fn-16-tourbillon)\n\n**Quels nombres iront en a et b ?**",
+    "figures": [
+      {
+        "id": "2024-fn-16-tourbillon",
+        "description": "Diagramme circulaire en forme de tourbillon : un heptagone curviligne central de cercles vides, entouré de sept triangles curvilignes formés chacun de cinq cercles. Les cercles déjà remplis (de l'extérieur vers l'intérieur, dans l'ordre du diagramme) portent 1, 2, 15, b, 3, 20, a, 19, 21, formant les sommets extérieurs et intermédiaires ; les autres cercles sont vides. b et a sont grisés (cases à trouver), les autres cercles pleins remplis sont blancs avec leur nombre.",
+        "imageUrl": "q16_fig-tourbillon.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : (a,b) = (8,13), (9,13) ou (9,14)"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2024-fn-16-corr-legend)\n\nComme \\(1+\\cdots+7=28\\), alors les nombres situés sur l'heptagone curviligne central (en rouge) sont exactement les entiers de 1 à 7.\n\nNotons \\(e\\) (resp. \\(c\\)) la somme des nombres situés sur l'heptagone curviligne en bleu (resp. en blanc).\n\nEn sommant les 3 heptagones, il vient (1) \\(28+e+c=1+\\cdots+21=231\\).\n\nUn nombre en bleu appartient à un unique triangle curviligne, alors que chaque nombre en blanc ou en rouge appartient à exactement deux triangles curvilignes.\n\nEn sommant les 7 triangles curvilignes, il vient (2) \\(e+2c+2\\times28=7\\times48\\).\n\nDe (1) et (2), nous déduisons \\(c=280-203=77\\).\n\nComme \\(8+\\cdots+14=105-28=77\\), alors \\(c\\) est formé des entiers de 8 à 14. Il en découle que \\(e\\) est formé des entiers de 15 à 21.\n\nEn sommant 3 triangles curvilignes disjoints bien choisis, nous obtenons la relation \\(x+20+19+15+y+2+3\\times48=231\\), d'où \\(x+y=31\\).\n\nAinsi \\((x,y)=(18,13)\\) ou \\((17,14)\\).\n\nDans le triangle curviligne contenant 2, 3, 19 et \\(y\\), le nombre blanc restant a pour somme \\(48-(2+3+19+y)=24-y\\).\n\n**Cas y=13**\n\nb et son voisin rouge totalisent \\(48-(2+15+13)=18\\).\n\nLe blanc bleu du triangle curviligne contenant 1 et b, totalisent \\(48-(1+18)=29=17+12\\).\n\nD'où il ne reste que la décomposition \\(18=14+4\\) pour b et son voisin rouge.\n\nLe blanc et rouge du triangle curviligne contenant 3, 11 et 21, totalisent \\(48-(3+11+21)=13=8+5\\).\n\na et son voisin rouge totalisent \\(48-(20+13)=15=9+6\\).\n\nIl ne reste plus qu'à compléter 7, 10 et 16.\n\n![figure](figure:2024-fn-16-corr-y13)\n\n**Cas y=14**\n\nLe blanc et rouge du triangle curviligne contenant 3, 10 et 21, totalisent \\(48-(3+10+21)=14\\).\n\na et son voisin rouge totalisent aussi \\(48-(20+14)=14\\).\n\nComme \\(14=9+5=8+6\\), les 4 entiers sont fixés dans leur ensemble.\n\nb et son voisin rouge totalisent \\(48-(2+15+14)=17=13+4\\) puisque 5, 6 et 10 sont déjà utilisés.\n\nLe blanc et bleu du triangle curviligne contenant 1 et b, totalisent \\(48-(1+17)=30=18+12\\).\n\nIl ne reste plus qu'à compléter 7, 11 et 16.\n\n![figure](figure:2024-fn-16-corr-final)\n\n**Réponse : 3 solutions, (a, b) = (8, 13), (9, 13) ou (9, 14).**",
+    "figures": [
+      {
+        "id": "2024-fn-16-corr-legend",
+        "description": "Le tourbillon avec un code couleur générique (pas encore résolu) : cercles rouges pour l'heptagone curviligne central, cercles bleus et blancs pour les deux autres heptagones curvilignes, x et y notant deux valeurs encore inconnues, a et b les cases recherchées.",
+        "imageUrl": "q16_corr-legend.png"
+      },
+      {
+        "id": "2024-fn-16-corr-y13",
+        "description": "Le tourbillon avec la solution du cas y=13 : tous les cercles complétés (1 à 21 placés), correspondant à a=9, b=13.",
+        "imageUrl": "q16_corr-y13.png"
+      },
+      {
+        "id": "2024-fn-16-corr-final",
+        "description": "Deux tourbillons complets côte à côte, correspondant aux deux solutions restantes du cas y=14 : (a,b)=(8,13) à gauche et (9,14) à droite (légèrement différents dans l'agencement des nombres 5, 6, 8, 9, 10).",
+        "imageUrl": "q16_corr-final.png"
+      }
+    ]
+  }
+}

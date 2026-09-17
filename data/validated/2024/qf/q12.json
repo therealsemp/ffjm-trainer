@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 480, "y": 700 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 7,
+        "position": { "x": 133, "y": 480 }
+      }
+    ]
+  },
+  "id": "2024-qf-12",
+  "number": 12,
+  "title": "Les trapèzes de l'année",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "**Combien existe-t-il de trapèzes isocèles (non croisés et non aplatis)**\n\n- dont les côtés mesurent tous des nombres entiers de centimètres ;\n- et dont le périmètre mesure 24 cm ?\n\nAttention, un rectangle ou un carré sont des trapèzes isocèles particuliers.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "31"
+  },
+  "correction": {
+    "markdown": "Un tel trapèze est défini par les longueurs (non nulles pour éviter un cas dégénéré) de ses bases, la grande \\(B \\geqslant b\\) la petite, et du côté isocèle \\(i\\).\n\nSon périmètre vaut alors \\(24 = B + b + 2i\\).\n\nRemarquons que \\(B + b\\) est pair, d'où \\(b\\) et \\(B\\) ont même parité.\n\nNous avons l'inégalité \\(B < i + b + i\\) (stricte car on écarte tout trapèze aplati) qui est l'application de deux fois l'inégalité triangulaire au niveau de la grande base.\n\nEn ajoutant \\(B\\) de chaque côté, nous obtenons \\(2B < 24\\), d'où \\(B \\leqslant 11\\).\n\nNous aurons un trapèze non rectangle avec \\(B > b = B - 2k \\geqslant 1\\) fixés, soit pour \\(k = 1 \\ldots \\left\\lfloor \\frac{B-1}{2} \\right\\rfloor\\), et nous déduisons \\(i = 12 - \\frac{B+b}{2}\\).\n\n| B | 11 | 10 ou 9 | 8 ou 7 | 6 ou 5 | 4 ou 3 |\n|---|---|---|---|---|---|\n| ⌊(B-1)/2⌋ | 5 | 4 | 3 | 2 | 1 |\n\nLe cas rectangulaire a lieu lorsque \\(B = b \\geqslant i = 12 - B\\), d'où \\(B \\geqslant 6\\).\n\n| longueur B=b | 11 | 10 | 9 | 8 | 7 | 6 |\n|---|---|---|---|---|---|---|\n| largeur i=12-B | 1 | 2 | 3 | 4 | 5 | 6 |\n\nOn recense donc \\(5 + 2(4+3+2+1) = 25\\) trapèzes isocèles non rectangles, 5 rectangles et 1 carré de côté 6.\n\n**Réponse : il existe 25+5+1=31 trapèzes isocèles différents.**",
+    "figures": []
+  }
+}

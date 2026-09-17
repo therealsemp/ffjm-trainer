@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 790 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 133, "y": 480 }
+      }
+    ]
+  },
+  "id": "2024-qf-6",
+  "number": 6,
+  "title": "L'escargot",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un escargot est tombé au fond d'un puits de 24 mètres de profondeur. Il lui faut une heure pour monter de 3 mètres, puis, fatigué, il se laisse glisser pendant une heure et redescend de 2 mètres. Il commence son ascension un dimanche à midi.\n\n**Quel jour de la semaine et à quelle heure atteindra-t-il le haut du puits ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "mardi à 7h"
+  },
+  "correction": {
+    "markdown": "Notons \\(a_h\\) l'altitude atteinte à chaque heure \\(h\\) par l'escargot, avec \\(a_0 = 0\\) (fond du puits).\n\nLes deux règles de déplacement se traduisent par les relations suivantes, valables pour tout entier naturel \\(n\\) :\n\n- (1) \\(a_{2n+1} = a_{2n} + 3\\) (phase de montée)\n- (2) \\(a_{2n+2} = a_{2n+1} - 2\\) (phase de descente)\n\nPar substitution de (1) dans (2), il vient \\(a_{2n+2} = a_{2n} + 1\\).\n\n\\(a_{2n}\\) est une sous-suite arithmétique vérifiant alors \\(a_{2n} = n\\).\n\nD'où, par (1), \\(a_{2n+1} = n + 3\\).\n\nRemarque : c'est forcément dans une phase de montée que l'altitude 24 sera atteinte pour la première fois.\n\nAinsi \\(a_{43} = 24\\), tandis que pour \\(h < 43\\), nous aurons \\(a_h < 24\\).\n\nLa durée 43 heures est équivalente à 2 jours moins 5 heures.\n\n**Variante avec représentation graphique**\n\nVoici une représentation de la hauteur de l'escargot (en bleu) et de la cible (24 mètres, en orange) en fonction du temps, en supposant une vitesse constante durant chaque phase de montée et de descente.\n\n![figure](figure:2024-qf-6-corr-graph)\n\n**Réponse : l'escargot atteindra le haut du puits mardi à 7h.**",
+    "figures": [
+      {
+        "id": "2024-qf-6-corr-graph",
+        "description": "Graphique en dents de scie montrant la hauteur de l'escargot (bleu) en fonction du temps de 0 à 43 heures, oscillant entre des phases de montée et de descente et progressant globalement jusqu'à atteindre la ligne horizontale orange à 24 mètres ; axe horizontal « Temps (heure) », axe vertical « Hauteur (mètre) ».",
+        "imageUrl": "q06_corr-graph.png"
+      }
+    ]
+  }
+}

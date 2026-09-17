@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 490 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": { "x": 133, "y": 60 }
+      }
+    ]
+  },
+  "id": "2024-qf-16",
+  "number": 16,
+  "title": "Pyramide de cubes",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Je dispose de 2024 cubes oranges et 2024 cubes verts je construis une pyramide de cette façon :\n\n- tout en haut : un seul cube d'une des deux couleurs ;\n- juste dessous 4 cubes de l'autre couleur disposés en carré ;\n- en-dessous un carré de 9 cubes de la première couleur ;\n- dessous un carré de 16 cubes etc, en alternant systématiquement les couleurs.\n\nTous les étages sont complets ; j'ai utilisé exactement les 2024 cubes orange.\n\n**Combien de cubes verts me reste-t-il ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "253"
+  },
+  "correction": {
+    "markdown": "Pour \\(n \\geqslant 1\\), soit \\(S_n\\) le cumul jusqu'à l'étage \\(n\\) des cubes des étages de rang de même parité que \\(n\\).\n\nL'étage de rang \\(i\\) possède \\(i^2 = C_i^2 + C_{i+1}^2\\) cubes d'une même couleur, relation valable pour \\(i \\geqslant 1\\) puisque \\(C_1^2 = 0\\).\n\nNous avons la relation \\(\\sum_{i=k}^{n} C_i^k = C_{n+1}^{k+1}\\) obtenue par exemple par une somme télescopique du terme exprimé avec la relation de récurrence du triangle de Pascal \\(C_i^k = C_{i+1}^{k+1} - C_i^{k+1}\\), et \\(C_k^{k+1} = 0\\).\n\nNous l'utiliserons ci-après avec \\(k=2\\) :\n\n- les étages pairs totalisent \\(S_{2n} = \\sum_{i=1}^{n} (2i)^2 = \\sum_{i=2}^{2n+1} C_i^2 = C_{2n+2}^3\\) cubes\n- ceux impairs totalisent \\(S_{2n-1} = \\sum_{i=1}^{n} (2i-1)^2 = \\sum_{i=1}^{2n} C_i^2 = C_{2n+1}^3\\) cubes\n\nNous vérifions que \\(S_n = 2024 = 2^3 \\times 11 \\times 23 = \\frac{22 \\times 23 \\times 24}{6} = C_{24}^3 = S_{22}\\).\n\n22 est l'unique \\(n\\) tel que \\(S_n = 2024\\) car la suite \\(S_n = C_{n+2}^3\\) (nombre pyramidal triangulaire) est strictement croissante.\n\nLa pyramide s'arrête au 22ème étage de cubes orange.\n\nIl reste donc \\(2024 - S_{21} = C_{24}^3 - C_{23}^3 = C_{23}^2 = 253\\) cubes verts.\n\n**Variante sans expliciter \\(S_n\\)**\n\nCette variante s'appuie sur l'existence d'un \\(n\\) tel que \\(S_n = 2024\\), mais sans le vérifier.\n\nRappelons que \\(s_n = S_{n-1} + S_n = \\sum_{i=1}^{n} i^2 = \\frac{n(n+1)(2n+1)}{6} = \\frac{1}{4} C_{2n+2}^3\\) (nombre pyramidal carré).\n\nMontrons par récurrence que la suite \\(S_n\\) est strictement croissante :\n\n- nous le vérifions sur les trois premiers termes avec \\(S_1 = 1 < S_2 = 4 < S_3 = 10\\)\n- supposons \\(S_{2n-1} < S_{2n} < S_{2n+1}\\) pour \\(n \\geqslant 1\\) et montrons que \\(S_{2n+1} < S_{2n+2} < S_{2n+3}\\)\n  - pour \\(n \\geqslant 3\\), nous avons \\(S_{n+1} = S_{n-1} + (n+1)^2\\) et \\(S_n = S_{n-2} + n^2\\), d'où \\(S_{n+1} - S_n = S_{n-1} - S_{n-2} + 2n + 1\\)\n  - par hypothèse de récurrence \\(S_{n-1} - S_{n-2} > 0\\), d'où \\(S_{n+1} - S_n > 0\\)\n\nSi \\(S_{n-1} < S_n = 2024 < S_{n+1}\\), alors \\(s_n < 2 \\times 2024 = 4048 < s_{n+1}\\).\n\n\\(s_n\\) sera proche de 4048 pour \\(2n+1 \\approx \\sqrt[3]{4048 \\times 24} = 4\\sqrt[3]{1518}\\).\n\nPuisque \\(11^3 = 1331 < 1518 < 1728 = 12^3\\), alors \\(2n+1\\) sera proche de 46, soit \\(n = 22\\) ou \\(23\\).\n\nNous vérifions alors que \\(s_{22} = 3795 < 4048 < 4324 = s_{23}\\).\n\nLa pyramide s'arrête au 22ème étage de cubes orange.\n\nIl reste donc \\(2024 - s_{22} = 4048 - 3795 = 253\\) cubes verts.\n\n**Autre variante en synthèse**\n\nIl n'y a pas assez de cubes pour construire une tour de 23 étages qui nécessiterait \\(s_{23} = 4324 > 2 \\times 2024 = 4048\\) cubes.\n\nAppelons « étape » une séquence lors de laquelle j'ajoute, si c'est possible, un étage de la première couleur, puis un étage de la seconde couleur.\n\nA chaque étape \\(k\\), je consomme \\((2k)^2 - (2k-1)^2 = 4k-1\\) cubes de plus pour la deuxième couleur que pour la première.\n\nA la \\(n\\)ième étape, le cumul de ces écarts est égal à \\(c_n = 4 \\frac{n(n+1)}{2} - n = n(2n+1)\\) cubes.\n\nIl en résulte qu'à la 11ème étape, si j'ai assez de cubes des deux couleurs, j'aurai consommé \\(s_{22} = 3795\\) cubes dont \\(c_{11} = 11 \\times 23 = 253\\) cubes de plus pour la seconde couleur.\n\nOr, à ce moment-là, il me reste précisément \\(2 \\times 2024 - 3795 = 253\\) cubes non encore utilisés : ils sont forcément tous de la première couleur, et celle-ci est donc verte.\n\n**Quelques questions/réponses s'il subsistait un doute…**\n\nQuestion : pourrait-on avoir consommé tous les cubes orange au moment de la construction du 21ème étage ?\n\nRéponse : non parce que chaque étage de rang impair contient un nombre impair de cubes. Le nombre total de cubes utilisés pour construire les étages de rang impair jusqu'au 21ème étage inclus est également un nombre impair. Il ne peut donc pas être égal à 2024.\n\nQuestion : pourrait-on avoir consommé tous les cubes orange lors de la construction du 20ème étage, voire avant ?\n\nRéponse numérique : non, parce qu'à ce stade de la construction, on aura consommé \\(2 \\times 2024 - s_{20} = 4048 - 2870 = 1178\\) cubes dont \\(c_{10} = 10 \\times 21 = 210\\) cubes de plus pour la première couleur, ce qui donne 694 cubes de la deuxième couleur (ce qui permet largement de construire le 21ème étage) et 484 cubes de la première couleur (ce qui permet de construire le 22ème étage en les utilisant tous).\n\nQuestion : pourrait-on se passer de cette vérification numérique ?\n\nRéponse : on sait qu'à l'issue de l'étape 11, il reste seulement des cubes de la première couleur. À l'issue de l'étape précédente, s'il reste des cubes orange, ils sont en nombre suffisant pour réaliser entièrement ce 22ème étage. Mais se peut-il que tous les cubes orange aient été consommés avec la réalisation du 20ème étage, voire avant ? Un examen de l'évolution du cumul des cubes des étages pairs modulo 32 permet d'y répondre :\n\n- à l'étage \\(8p\\), on ajoute \\((8p)^2 \\equiv 0 \\pmod{32}\\)\n- à l'étage \\(8p \\pm 2\\), on ajoute \\((8p \\pm 2)^2 \\equiv 4 \\pmod{32}\\)\n- à l'étage \\(8p+4\\), on ajoute \\((8p+4)^2 \\equiv 16 \\pmod{32}\\)\n\nLe cumul des cubes est successivement égal, modulo 32, à 4, 20, 24, 24, 28, 12, 16, 16, 20, 4, et enfin 8 pour l'étage n° 22. Or, \\(2024 \\equiv 8 \\pmod{32}\\), autrement dit, le 22ème étage est le seul qui, lors de sa construction, peut épuiser le stock de cubes orange.\n\n**Réponse : il me reste 253 cubes verts.**",
+    "figures": []
+  }
+}

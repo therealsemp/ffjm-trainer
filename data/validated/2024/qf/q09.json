@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 480, "y": 480 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 5,
+        "position": { "x": 133, "y": 850 }
+      }
+    ]
+  },
+  "id": "2024-qf-9",
+  "number": 9,
+  "title": "Les deux calendriers",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Curieusement, sur un ancien calendrier du 21e siècle, à partir d'un vendredi 1er mars et seulement à partir de ce jour, mais ensuite jusqu'à la fin de l'année, les jours de la semaine indiqués coïncident avec ceux présents sur le futur calendrier de 2024. Ainsi par exemple le 2 mars est un samedi sur les deux calendriers (l'ancien et celui de 2024), le 3 mars est un dimanche sur les deux calendriers, etc.\n\n**De quelle année cet ancien calendrier est-il ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : 2002, 2013 ou 2019"
+  },
+  "correction": {
+    "markdown": "Cherchons d'abord les millésimes compris entre 2001 (début du 21ème siècle) et 2023, dont le 1er mars était un vendredi.\n\nComme \\(365 = 7 \\times 52 + 1\\), chaque année commune génère un décalage d'un jour, contre deux jours pour une année bissextile.\n\nAinsi le 01/03/2023 était un mercredi (décalage de deux jours en raison du 29/2/2024), tandis que le 01/03/2022 était un mardi (décalage d'un jour).\n\nPoursuivons et retenons les années où sept divise le cumul du décalage.\n\n| année 20du | 23 | 22 | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| décalage | 2 | 1 | 1 | 1 | 2 | 1 | 1 | 1 | 2 | 1 | 1 | 1 |\n| cumul (mod 7) | 2 | 3 | 4 | 5 | 0 | 1 | 2 | 3 | 5 | 6 | 0 | 1 |\n\n| année 20du | 11 | 10 | 09 | 08 | 07 | 06 | 05 | 04 | 03 | 02 | 01 |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| décalage | 2 | 1 | 1 | 1 | 2 | 1 | 1 | 1 | 2 | 1 | 1 |\n| cumul (mod 7) | 3 | 4 | 5 | 6 | 1 | 2 | 3 | 4 | 6 | 0 | 1 |\n\nComme il n'y a aucun multiple de 4 parmi 2002, 2013 et 2019, ces millésimes ne sont pas bissextiles, garantissant ainsi que le calendrier ne coïncidera pas avec 2024 sur la période du 1/1 au 29/2.\n\nRemarque : un calendrier d'année bissextile est intégralement réutilisable au bout de 28 ans ; partant de 2024, il n'y avait donc pas de risque d'obtenir une année bissextile comprise entre 2001 et 2023.\n\n**Réponse : 3 solutions avec les millésimes 2002, 2013 ou 2019.**",
+    "figures": []
+  }
+}

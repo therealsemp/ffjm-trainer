@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 920 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": { "x": 133, "y": 60 }
+      }
+    ]
+  },
+  "id": "2024-qf-7",
+  "number": 7,
+  "title": "La tirelire de Mathias",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias vient de casser sa tirelire. Celle-ci contenait 24 pièces. Mathias range ses pièces en piles de même valeur : de gauche à droite et dans cet ordre, une seule pièce d'un euro, puis une pile de pièces de 50 centimes, une pile de pièces de 20 centimes et une pile de pièces de 10 centimes, chaque pile contenant plus de pièces que celle située à sa gauche.\n\n**Quelle somme Mathias possède-t-il, au maximum ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "6,50"
+  },
+  "correction": {
+    "markdown": "La tirelire contient \\(1 < c < v < d\\) pièces respectivement d'un euro, 50, 20 et 10 centimes, avec \\(c + v + d = 23\\).\n\nLa somme \\(100 + 50c + 20v + 10d\\), exprimée en centimes, sera maximale en saturant le nombre de pièces des coefficients dans l'ordre décroissant.\n\nComme \\(c + 1 \\leqslant v\\) et \\(c + 2 \\leqslant d\\), alors \\(3c + 3 \\leqslant c + v + d\\), d'où \\(c \\leqslant 6 < \\frac{20}{3} < 7\\).\n\nPosons alors \\(c = 6\\), et il reste \\(v + d = 17\\).\n\nComme \\(v + 1 \\leqslant d\\), alors \\(2v + 1 \\leqslant v + d\\), d'où \\(v \\leqslant 8 = \\frac{16}{2}\\).\n\nPosons alors \\(v = 8\\), et il reste \\(d = 9\\).\n\nAinsi \\(c = 6\\), \\(v = 8\\) et \\(d = 9\\), conduisent à la somme de 650 centimes.\n\n**Réponse : Mathias possède au maximum 6,50 €.**",
+    "figures": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 480, "y": 790 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": { "x": 133, "y": 200 }
+      }
+    ]
+  },
+  "id": "2024-qf-13",
+  "number": 13,
+  "title": "Optimisons…",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Les nombres entiers positifs \\(x, y, z\\) sont tels que :\n\n\\[(2024 - x)(2024 - y)(2024 - z) = 1\\]\n\n**Quelle est la plus grande valeur que peut prendre la somme \\((x+y+z)\\) ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "6073"
+  },
+  "correction": {
+    "markdown": "Comme l'expression est invariante par permutation de \\(x\\), \\(y\\) et \\(z\\), supposons par exemple \\(x \\leqslant y \\leqslant z\\), d'où \\(2024 - x \\geqslant 2024 - y \\geqslant 2024 - z\\).\n\nSi \\(abc = 1\\) pour \\(a\\), \\(b\\) et \\(c\\) entiers, alors chacun divise 1, donc vaut \\(\\pm 1\\), et il y a un nombre pair (0 ou 2) de \\(-1\\).\n\nDeux cas sont alors à considérer pour \\((2024-x, 2024-y, 2024-z)\\) :\n\n- \\((1,1,1)\\), d'où \\(x=y=z=2023\\), et \\(x+y+z=6069\\).\n- \\((1,-1,-1)\\), d'où \\(x=2023\\) et \\(y=z=2025\\), et \\(x+y+z=6073\\).\n\n**Réponse : 6073 est la plus grande valeur prise par la somme \\(x+y+z\\).**",
+    "figures": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 360 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 133, "y": 200 }
+      }
+    ]
+  },
+  "id": "2024-qf-3",
+  "number": 3,
+  "title": "La bibliothèque",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Dans cette bibliothèque, il n'y a que des recueils de jeux mathématiques, qui ont tous une couverture bleue, et des romans. Les romans de plus de 100 pages ont tous une couverture blanche.\n\n**Lequel de ces livres ne peut certainement pas provenir de cette bibliothèque ?**\n\n1. un livre jaune ;\n2. un livre vert de 85 pages ;\n3. un livre orange de 120 pages ;\n4. un livre rouge.\n\nEcrire le numéro du livre.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "3"
+  },
+  "correction": {
+    "markdown": "Dans cette bibliothèque, un livre de n'importe quelle couleur (en particulier jaune, vert ou rouge) est un roman d'au plus 100 pages.\n\nUn livre orange est un roman car si c'était un recueil de jeux mathématiques, il serait bleu. Mais possédant 120 pages, il devrait être blanc comme tout roman de plus de 100 pages.\n\n**Réponse : un livre orange de 120 pages ne peut certainement pas provenir de cette bibliothèque.**",
+    "figures": []
+  }
+}

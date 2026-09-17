@@ -1,0 +1,58 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 480,
+        "y": 640
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 133,
+          "y": 60
+        }
+      }
+    ]
+  },
+  "id": "2024-qf-11",
+  "number": 11,
+  "title": "Drôle de calcul",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathias a divisé un nombre à 4 chiffres par un nombre à 2 chiffres. Dans ce calcul, la lettre A et la lettre B remplacent chacune un chiffre non nul et A≠B. Le calcul de Mathias était juste, mais il a fait deux taches qui cachent deux chiffres du résultat.\n\n![figure](figure:2024-qf-11-calc)\n\n**Que vaut ABBA ?**",
+    "figures": [
+      {
+        "id": "2024-qf-11-calc",
+        "description": "Fraction ABBA/BB = deux carrés noirs suivis de B, représentant le résultat de la division : les deux premiers chiffres du quotient (un nombre à 3 chiffres se terminant par B) sont cachés par deux taches noires.",
+        "imageUrl": "q11_fig-calc.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : ABBA = 4224, 9339 ou 9779"
+  },
+  "correction": {
+    "markdown": "En écrivant \\(\\overline{ABBA} = \\overline{BB} \\times \\blacksquare\\blacksquare B\\), nous avons \\(A \\equiv B^2 \\pmod{10}\\) en raisonnant sur le chiffre des unités.\n\nSi \\(B \\in \\{0,1,5,6\\}\\), alors \\(A = B\\), impossible puisque \\(A \\neq B\\) d'après l'énoncé.\n\nNous construisons le tableau suivant :\n\n| B | 2 | 3 | 4 | 7 | 8 | 9 |\n|---|---|---|---|---|---|---|\n| A | 4 | 9 | 6 | 9 | 4 | 1 |\n\nComme \\(\\overline{ABBA} = 1001A + 110B = 11(91A + 10B)\\) et \\(\\overline{BB} = 11B\\), alors \\(\\frac{\\overline{ABBA}}{\\overline{BB}} = \\frac{91A}{B} + 10\\) est un nombre à trois chiffres se terminant par \\(B\\).\n\n\\(\\frac{7 \\times 13 \\times A}{B}\\) étant entier, nous retenons les cas où \\(B\\) divise \\(A\\), ainsi que \\(B = 7\\).\n\n| B | 2 | 3 | 7 |\n|---|---|---|---|\n| A | 4 | 9 | 9 |\n\n**Réponse : 3 solutions avec \\(\\overline{ABBA} = 4224\\), 9339 ou 9779.**",
+    "figures": []
+  }
+}

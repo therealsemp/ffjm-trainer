@@ -1,0 +1,56 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 200 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": { "x": 133, "y": 660 }
+      }
+    ]
+  },
+  "id": "2024-qf-15",
+  "number": 15,
+  "title": "Mosaïque",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Le pourtour de cette mosaïque est constitué de triangles rectangles isocèles. Les quatre quadrilatères blancs au centre sont des losanges dont la petite diagonale mesure exactement la moitié de la longueur de la grande diagonale.\n\n![figure](figure:2024-qf-15-mosaic)\n\n**Quelle est la proportion de la surface blanche par rapport à la surface totale du grand carré ?** On donnera la réponse sous forme d'une fraction irréductible.",
+    "figures": [
+      {
+        "id": "2024-qf-15-mosaic",
+        "description": "Mosaïque en forme de carré orienté à 45° (losange) inscrit dans un grand carré blanc : le pourtour du losange est formé de quatre grands triangles bleus, et à l'intérieur du carré blanc central se trouve une « rose des vents » à huit branches (alternance de triangles blancs et bleus) entourée de quatre petits losanges blancs.",
+        "imageUrl": "q15_fig-mosaic.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "7/18"
+  },
+  "correction": {
+    "markdown": "Les petits triangles autour d'un losange blanc étant isométriques, nous permutons quatre paires de petits triangles de sorte qu'au sein du grand carré blanc, seule la « rose des vents », initialement alternée, soit intégralement bleue.\n\n![figure](figure:2024-qf-15-corr-rotated)\n\nLa mosaïque ainsi modifiée, reste invariante par rotation d'un quart de tour comme initialement, et présente toutes les symétries du carré (notamment selon un des quatre axes) : la proportion cherchée restera la même sur un huitième de mosaïque (partie entourée de rouge dans la figure ci-dessus, et reproduite ci-après).\n\n![figure](figure:2024-qf-15-corr-eighth)\n\nEn fixant la petite diagonale du losange blanc à 2, un petit triangle, de base 1 et de hauteur 2, a pour aire 1.\n\nLe huitième de figure est un demi-carré de côté 6, d'aire \\(\\frac{1}{2} \\times 6^2 = 18\\).\n\nLe quadrilatère blanc est un demi-carré de côté 4, auquel on a ôté un petit triangle : son aire vaut \\(\\frac{1}{2} \\times 4^2 - 1 = 7\\).\n\n**Réponse : la proportion de surface blanche par rapport à la surface totale du grand carré vaut \\(\\frac{7}{18}\\).**",
+    "figures": [
+      {
+        "id": "2024-qf-15-corr-rotated",
+        "description": "Même mosaïque, modifiée : la rose des vents centrale est maintenant entièrement bleue (au lieu d'alterner blanc/bleu), avec un huitième de la figure (un triangle) délimité par des traits rouges partant du centre.",
+        "imageUrl": "q15_corr-rotated.png"
+      },
+      {
+        "id": "2024-qf-15-corr-eighth",
+        "description": "Agrandissement du huitième de mosaïque : un grand triangle bleu avec, à l'intérieur près du sommet inférieur gauche, un petit triangle blanc étiqueté « 2 » (sa base) et des lignes en pointillés délimitant un carré intérieur et le quadrilatère blanc central, avec un petit triangle bleu supplémentaire à droite.",
+        "imageUrl": "q15_corr-eighth.png"
+      }
+    ]
+  }
+}

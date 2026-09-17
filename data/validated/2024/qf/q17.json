@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 480, "y": 60 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 11,
+        "position": { "x": 133, "y": 400 }
+      }
+    ]
+  },
+  "id": "2024-qf-17",
+  "number": 17,
+  "title": "Jeu de billes",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Arthur et Blandine jouent à un jeu. Dans un sac, il y a entre 2 et 24 billes. Chacune est soit bleue soit rouge. On tire deux billes au hasard. Arthur gagne si elles sont de la même couleur, sinon Blandine gagne.\n\n**Combien y a-t-il de billes dans le sac sachant que le jeu est équilibré ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : 4, 9 ou 16 billes"
+  },
+  "correction": {
+    "markdown": "Supposons que le sac contienne \\(b\\) bleues et \\(r\\) rouges, avec \\(2 \\leqslant b+r \\leqslant 24\\).\n\nArthur gagne avec un tirage de la forme BB ou RR, et perd avec BR ou RB :\n\n- \\(a = \\dfrac{C_b^2 + C_r^2}{C_{b+r}^2}\\)\n- \\(1-a = \\dfrac{C_b^1 C_r^1 + C_r^1 C_b^1}{C_{b+r}^2}\\)\n\nLe jeu est équilibré se traduit par \\(a = 1-a\\), d'où \\(b(b-1) + r(r-1) = 2rb\\).\n\nS'agissant d'un polynôme symétrique, quitte à inverser les couleurs, supposons de plus \\(r \\geqslant b\\).\n\nL'écriture \\(b^2 - b(2r+1) + r(r-1) = 0\\) est une équation du deuxième degré en \\(b\\), de discriminant \\(d^2 = (2r+1)^2 - 4r(r-1) = 8r+1\\).\n\n\\(d^2\\) étant impair, tout comme \\(d\\), alors \\(d = 2n+1\\).\n\nAinsi il vient \\(r = \\dfrac{n(n+1)}{2}\\), d'où \\(b = \\dfrac{2r+1 \\pm d}{2}\\).\n\nAyant supposé \\(r \\geqslant b\\), nous retenons \\(b = \\dfrac{n(n-1)}{2}\\) et rejetons \\(\\dfrac{(n+1)(n+2)}{2} > r\\).\n\nDonc \\(b+r = n^2\\).\n\nEn rappelant que \\(2 \\leqslant b+r \\leqslant 24\\), nous aurons \\(2 \\leqslant n \\leqslant 4\\).\n\n**Réponse : 3 solutions avec 4, 9 ou 16 billes dans le sac.**",
+    "figures": []
+  }
+}

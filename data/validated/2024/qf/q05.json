@@ -1,0 +1,51 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 610 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 133, "y": 130 }
+      }
+    ]
+  },
+  "id": "2024-qf-5",
+  "number": 5,
+  "title": "Un partage facile",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**Partagez cette figure en quatre parties superposables.** Le découpage doit suivre les lignes du quadrillage et la superposition peut se faire avec ou sans retournement des pièces.\n\n![figure](figure:2024-qf-5-grid)\n\n**Ecrivez les numéros de toutes les cases qui appartiennent à la même partie que la case n° 24.** On écrira les numéros des cases dans l'ordre, du plus petit au plus grand (24).",
+    "figures": [
+      {
+        "id": "2024-qf-5-grid",
+        "description": "Figure en escalier composée de 24 cases numérotées de 1 à 24, de haut en bas : 1,2,3 / 4,5,6,7,8 / 9,10,11,12 / 13,14,15,16 / 17,18,19 / 20,21,22,23,24 — chaque ligne décalée d'une case vers la droite par rapport à la précédente.",
+        "imageUrl": "q05_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "11, 12, 15, 16, 19, 24"
+  },
+  "correction": {
+    "markdown": "Chacune des quatre parties possèdera exactement \\(\\frac{24}{4} = 6\\) pièces.\n\nPar connexité, les pièces 20, 21 et 22 seront nécessairement dans la même partie, limitant l'étude des configurations, que nous ne détaillons pas ici.\n\nLe partage suivant vient alors assez rapidement.\n\n![figure](figure:2024-qf-5-corr-solution)\n\n**Réponse : 11, 12, 15, 16, 19, 24.**",
+    "figures": [
+      {
+        "id": "2024-qf-5-corr-solution",
+        "description": "Même figure en escalier que l'énoncé, partagée en quatre parties de 6 cases par des traits en gras et quatre teintes de gris distinctes. La partie la plus foncée regroupe exactement les cases 11, 12, 15, 16, 19 et 24 (la partie demandée par la question). Les cases 1 et 4 forment le coin le plus clair d'une deuxième partie ; les cases restantes (2,3,5,6,7,8,9,10,13,14,17,18,20,21,22,23) se répartissent entre les deux autres parties.",
+        "imageUrl": "q05_corr-solution.png"
+      }
+    ]
+  }
+}

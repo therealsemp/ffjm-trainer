@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 60 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": { "x": 133, "y": 480 }
+      }
+    ]
+  },
+  "id": "2024-qf-14",
+  "number": 14,
+  "title": "Une égalité lumineuse",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Dans ce cryptarithme, une même lettre remplace toujours le même chiffre, deux lettres différentes remplacent toujours deux chiffres différents et le premier chiffre d'un nombre à plusieurs chiffres ne peut jamais être égal à 0.\n\n**Si UN × UN = NEON, combien vaut ONE ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : ONE = 256 ou 816"
+  },
+  "correction": {
+    "markdown": "En raisonnant sur le chiffre des unités, nous avons \\(N^2 \\equiv N \\pmod{10}\\).\n\nPuisque \\(N \\neq 0\\), alors nous avons \\(N = 1, 5\\) ou \\(6\\).\n\nNous en déduisons pour :\n\n- \\(N = 1\\) : \\(41^2 = 1681\\) car \\(31^2 < 1000\\) et \\(50^2 > 2000\\)\n- \\(N = 5\\) : \\(75^2 = 5625\\) car \\(70^2 < 5000\\) et \\(80^2 > 6000\\)\n- \\(N = 6\\) : pas de solution car \\(77^2 < 6000\\) et \\(84^2 > 7000\\)\n\n**Réponse : 2 solutions avec \\(\\overline{ONE} = 256\\) ou \\(816\\).**",
+    "figures": []
+  }
+}

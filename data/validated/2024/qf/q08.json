@@ -1,0 +1,56 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 480, "y": 90 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": { "x": 133, "y": 550 }
+      }
+    ]
+  },
+  "id": "2024-qf-8",
+  "number": 8,
+  "title": "Les quatre carrés",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathilde a trouvé ces quatre petits carrés. Elle veut les coller sur un carré plus grand et a déjà collé l'un d'eux. Elle va coller les trois autres sur les cases blanches, puis découper et enlever les parties foncées, mais elle veut que la partie gris clair restante soit en un seul morceau.\n\n![figure](figure:2024-qf-8-squares)\n\n**Combien de formes différentes pourra avoir cette partie bleue ?**",
+    "figures": [
+      {
+        "id": "2024-qf-8-squares",
+        "description": "Grand carré divisé en 2×2 cases : les deux cases du haut sont blanches (vides), la case en bas à gauche est déjà occupée par un petit carré gris clair uni, et la case en bas à droite contient un petit carré coupé en diagonale (triangle gris clair en haut-gauche, triangle gris foncé en bas-droite). En dessous de la grille, deux autres petits carrés à coller : l'un avec un triangle gris foncé pointant vers le bas sur fond gris clair, l'autre avec un triangle gris clair pointant vers le haut sur fond gris foncé.",
+        "imageUrl": "q08_fig-squares.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "28"
+  },
+  "correction": {
+    "markdown": "Notons Z, V et M les carrés à placer (noms donnés selon l'orientation proposée par l'énoncé, par convention vers le haut), sachant qu'il y a 3 autres orientations (gauche, bas, droite).\n\n![figure](figure:2024-qf-8-corr-orientations)\n\nSous peine d'avoir un morceau de partie bleue isolée :\n\n- parmi les quatre arêtes intérieures du grand carré, une seule est verte, imposée par M qui a trois côtés verts, et éventuellement renforcée par un voisin Z ou V.\n- l'arête bleue de M ne peut toucher un bord du grand carré, ni au passage une arête verte intérieure, laissant 2 orientations possibles pour chacune des 3 cases blanches.\n- la pointe verte de V ne peut toucher un bord du grand carré, ni une arête verte intérieure, ce qui laisse 2 orientations possibles pour chacune des 3 cases blanches.\n- l'angle droit vert de Z ne peut toucher le centre du grand carré, ce qui laisse 3 orientations possibles pour chacune des 3 cases blanches.\n\nLe carré déjà collé laissant en bleu deux arêtes intérieures, faisons comme s'il était totalement bleu (ou comme si c'était un Z vers le haut), ce qui permet d'exploiter la symétrie par rapport à la diagonale descendante.\n\nOn balaye alors les configurations, en commençant par exemple par M dans le carré en haut à droite (celui en bas à gauche sera traité par symétrie), orienté vers la gauche puis vers le bas, puis dans le carré en haut à gauche uniquement orienté vers le bas (l'orientation vers la droite sera traitée par symétrie).\n\nPour chacun des 12 cas, on teste les 2 emplacements possibles pour V, avec à chaque fois les 2 orientations théoriques : 2 configurations isolent un morceau de partie bleue et il reste 10 configurations à compléter par Z.\n\nDans 4 cas, on complète avec les 2 orientations de Z, tandis que pour les 6 autres, une seule orientation convient : cela fait en tout 14 configurations complètes.\n\n![figure](figure:2024-qf-8-corr-configs)\n\nEn tenant compte de la symétrie, cela fait donc 28 configurations.\n\n**Réponse : cette partie bleue peut avoir 28 formes différentes.**",
+    "figures": [
+      {
+        "id": "2024-qf-8-corr-orientations",
+        "description": "Trois colonnes étiquetées Z, V, M montrant chacune quatre orientations (haut, gauche/droite, bas...) du petit carré à quatre triangles colorés (vert et bleu clair), illustrant la convention de nommage des pièces selon leur orientation « vers le haut ».",
+        "imageUrl": "q08_corr-orientations.png"
+      },
+      {
+        "id": "2024-qf-8-corr-configs",
+        "description": "14 diagrammes de carrés 2×2 complets (deux rangées de 7), chacun montrant une configuration valide des quatre petits carrés colorés (vert et bleu clair) formant une partie bleue connexe distincte.",
+        "imageUrl": "q08_corr-configs.png"
+      }
+    ]
+  }
+}

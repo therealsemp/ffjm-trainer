@@ -1,0 +1,71 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 24,
+        "y": 63
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 133,
+          "y": 260
+        }
+      }
+    ]
+  },
+  "id": "2024-qf-1",
+  "number": 1,
+  "title": "Tétraminos",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a trouvé ces pièces de puzzle, chacune en quatre exemplaires. En utilisant les quatre pièces d'une même forme, elle veut recouvrir entièrement les cases de cette grille.\n\n![figure](figure:2024-qf-1-pieces)\n\n![figure](figure:2024-qf-1-grid)\n\n**Pour quelle sorte de pièce cela ne sera pas possible ? Ecrire la lettre correspondant à cette pièce.**",
+    "figures": [
+      {
+        "id": "2024-qf-1-pieces",
+        "description": "Cinq pièces de puzzle étiquetées A, B, C, D, E (des tétraminos de formes différentes : carré, formes en S/Z, en L, en T, en barre).",
+        "imageUrl": "q01_fig-pieces.png"
+      },
+      {
+        "id": "2024-qf-1-grid",
+        "description": "Grille vide 4×4 à recouvrir.",
+        "imageUrl": "q01_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "C"
+  },
+  "correction": {
+    "markdown": "Aucune difficulté pour résoudre le puzzle avec les formes A (1), B (3), D (1) et E (1), avec entre parenthèses le nombre de façons distinctes d'y parvenir aux symétries près du carré.\n\nPour la forme C, chaque coin de la grille est couvert par une extrémité de pièce, un coin par pièce car sinon C serait la forme E. Chaque pièce couvre aussi deux des quatre cases centrales (en gris). S'il existait un recouvrement, nous aurions alors huit cases centrales, contradiction : un tel recouvrement est donc impossible.\n\nRemarque : on pourrait même montrer que la forme C ne peut paver aucune grille rectangulaire.\n\n![figure](figure:2024-qf-1-corr-pieces)\n\n**Réponse : C.**",
+    "figures": [
+      {
+        "id": "2024-qf-1-corr-pieces",
+        "description": "Les cinq pièces reproduites avec une solution de pavage 4×4 pour A, trois solutions pour B, la tentative pour C avec les quatre cases centrales grisées et un cadre en pointillés marquant l'impossibilité, et une solution pour D et E.",
+        "imageUrl": "q01_corr-pieces.png"
+      }
+    ]
+  }
+}

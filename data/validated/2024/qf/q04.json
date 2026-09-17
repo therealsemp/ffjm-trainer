@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 460 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 133, "y": 500 }
+      }
+    ]
+  },
+  "id": "2024-qf-4",
+  "number": 4,
+  "title": "Les bonbons",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Alice, Bernard, Chloé et Damien ont chacun au moins un bonbon. À eux quatre, ils en ont au total 24. Bernard en a deux fois plus que Damien et Alice en a six fois plus que Chloé.\n\n**Combien Alice a-t-elle de bonbons ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "18"
+  },
+  "correction": {
+    "markdown": "Notons par leurs initiales, \\(a, b, c, d\\), le nombre de bonbons que chacun possède. L'énoncé fournit les relations suivantes :\n\n- (1) \\(a + b + c + d = 24\\)\n- (2) \\(b = 2d\\)\n- (3) \\(a = 6c\\)\n\nNous cherchons la valeur de \\(a\\).\n\nEn utilisant (2) et (3), (1) s'écrit aussi \\(6c + 2d + c + d = 24\\) ou encore \\(7c + 3d = 24\\).\n\n\\(c\\) est alors un multiple de 3, et comme \\(1 \\leqslant c \\leqslant 3 < \\frac{24}{7} < 4\\), il vient \\(c = 3\\), d'où \\(d = 1\\), \\(b = 2\\) et \\(a = 18\\).\n\n**Réponse : Alice possède 18 bonbons.**",
+    "figures": []
+  }
+}

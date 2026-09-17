@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 480, "y": 180 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 133, "y": 490 }
+      }
+    ]
+  },
+  "id": "2024-qf-2",
+  "number": 2,
+  "title": "Les fléchettes",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "En lançant plusieurs fléchettes sur cette cible, Mathias a obtenu 24 points.\n\n![figure](figure:2024-qf-2-target)\n\n**Combien a-t-il lancé de fléchettes, au minimum ?**",
+    "figures": [
+      {
+        "id": "2024-qf-2-target",
+        "description": "Cible de fléchettes à trois anneaux concentriques valant, de l'extérieur vers le centre, 2, 5 et 9 points.",
+        "imageUrl": "q02_fig-target.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "4"
+  },
+  "correction": {
+    "markdown": "On ne peut atteindre 24 avec\n\n- une fléchette (trivial)\n- deux fléchettes car au mieux \\(9 \\times 2 = 18 < 24\\)\n- trois fléchettes car \\(9 \\times 3 = 27 > 24\\), puis au mieux \\(9 \\times 2 + 5 = 23 < 24\\)\n\nAvec quatre fléchettes, c'est possible avec \\(5 \\times 3 + 9 = 24\\).\n\n**Variante avec une équation**\n\nSoient \\(d\\), \\(c\\) et \\(n\\) le nombre de fléchettes touchant la cible respectivement dans la zone 2, 5 et 9 points.\n\nMathias a obtenu 24 points se traduit par la relation \\(2d + 5c + 9n = 24\\).\n\nLes entiers \\(d\\), \\(c\\) et \\(n\\) vérifient les inégalités :\n\n- \\(0 \\leqslant d \\leqslant 12 = \\frac{24}{2}\\)\n- \\(0 \\leqslant c \\leqslant 4 < \\frac{24}{5} < 5\\)\n- \\(0 \\leqslant n \\leqslant 2 < \\frac{24}{9} < 3\\)\n\nNous cherchons le nombre total de fléchettes \\(n+c+d\\) minimal.\n\nPour faciliter l'étude, remarquons que :\n\n- \\(c+n\\) est pair, d'où \\(c\\) et \\(n\\) ont même parité.\n- \\(d + c \\equiv 0 \\pmod{3}\\)\n\n| n | 2 | 1 | 1 | 0 | 0 | 0 |\n|---|---|---|---|---|---|---|\n| c | 0 | 3 | 1 | 4 | 2 | 0 |\n| d | 3 | 0 | 5 | 2 | 7 | 12 |\n| n+c+d | 5 | 4 | 7 | 6 | 9 | 12 |\n\n**Réponse : Mathias a lancé 4 fléchettes au minimum.**",
+    "figures": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "qf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/qf/2024_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 480, "y": 560 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/qf/2024_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": { "x": 133, "y": 510 }
+      }
+    ]
+  },
+  "id": "2024-qf-10",
+  "number": 10,
+  "title": "Une poule matheuse et pondeuse",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Une poule sait compter. On la met devant un tas de 2024 d'oeufs. Elle est très organisée : elle crée un deuxième tas dans lequel elle place les oeufs au fur et à mesure qu'elle les a comptés. Mais à chaque fois qu'elle a compté 4 oeufs, elle pond un oeuf qu'elle place dans le tas des oeufs qu'il lui reste à compter.\n\n**Quand il ne restera plus qu'un seul tas, combien d'oeufs aura-t-elle comptés ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2698"
+  },
+  "correction": {
+    "markdown": "On peut suivre le déroulé en accéléré à l'aide de divisions euclidiennes par 4, en conservant un reste non nul dans le tas initial :\n\n- \\(2024 = 4 \\times 506\\) : la poule compte 2024 et pond 506\n- \\(506 = 4 \\times 126 + 2\\) : la poule compte 504 et pond 126\n- \\(126 + 2 = 128 = 4 \\times 32\\) : la poule compte 128 et pond 32\n- \\(32 = 4 \\times 8\\) : la poule compte 32 et pond 8\n- \\(8 = 4 \\times 2\\) : la poule compte 8 et pond 2, qu'elle compte\n\nLe tas final contiendra \\(2024 + 504 + 128 + 32 + 8 + 2 = 2698\\) oeufs.\n\n**Généralisation à un nombre quelconque d'oeufs**\n\nPour un tas initial de \\(0 \\leqslant n < 4\\) oeufs, le problème est trivial puisque la poule comptera \\(n\\).\n\nSupposons désormais \\(n \\geqslant 4\\) et considérons la division euclidienne \\(n - 1 = 3q + r\\) avec \\(r = 0, 1\\) ou \\(2\\).\n\nAprès avoir compté 4 oeufs, la poule pond un oeuf placé dans le tas initial qui contient désormais \\(n - 4 + 1 = n - 3\\) oeufs.\n\nComme \\(n - 4 = 3(q-1) + r\\), on itère : après la \\(q\\)ième étape, elle aura compté \\(4q\\) oeufs et il restera \\(n - 3q = 1 + r\\) oeufs dans le tas initial.\n\nComme \\(1 + r < 4\\), à la fin elle aura compté \\(4q + r + 1 = n + q = n + \\left\\lfloor \\frac{n-1}{3} \\right\\rfloor\\) oeufs.\n\nApplication numérique : avec \\(n - 1 = 2023 = 3 \\times 674 + 1\\), la poule aura compté \\(2024 + 674 = 2698\\) oeufs.\n\n**Réponse : lorsqu'il ne restera plus qu'un seul tas, 2698 oeufs auront été comptés.**",
+    "figures": []
+  }
+}

@@ -95,10 +95,15 @@ function renderRichContent(section, assetBase) {
 
   for (const fig of section.figures ?? []) {
     if (!fig.imageUrl) continue
-    const placeholder = `figure:${fig.id}`
+    // Placeholders are always written `figure:ID)` (closing the markdown
+    // image's parens) — matching up to that `)` avoids one id being a literal
+    // prefix of another (e.g. "...corr-t1" is a prefix of "...corr-t10") and
+    // getting replaced inside it, which used to leave a stray trailing
+    // character in the URL and made the longer id look unreferenced.
+    const placeholder = `figure:${fig.id})`
     if (markdown.includes(placeholder)) {
       referencedIds.add(fig.id)
-      markdown = markdown.replaceAll(placeholder, `/assets/${assetBase}/${encodeURIComponent(fig.imageUrl)}`)
+      markdown = markdown.replaceAll(placeholder, `/assets/${assetBase}/${encodeURIComponent(fig.imageUrl)})`)
     }
   }
 

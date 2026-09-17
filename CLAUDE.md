@@ -10,7 +10,7 @@ Guidance for Claude Code when working in this repository.
 
 ## Project
 
-FFJM Trainer — a training tool for the FFJM (Fédération Française des Jeux Mathématiques) championship, for a small/family audience. See `docs/functional-spec.md` and `docs/technical-architecture.md` for the functional and technical foundations agreed before any implementation started, and `README.md` for a day-to-day contributor overview.
+FFJM Trainer — a training tool for the FFJM (Fédération Française des Jeux Mathématiques) championship, for a small/family audience. See `docs/functional-spec.md` and `docs/technical-architecture.md` for the functional and technical foundations agreed before any implementation started, `specifications/` for the detailed user-facing epics/stories that `/app` will implement, and `README.md` for a day-to-day contributor overview.
 
 Current phase: building the PDF ingestion pipeline that turns official FFJM archives into structured question data. The web app is deliberately sequenced to start only once a validated data model exists.
 
@@ -26,6 +26,7 @@ Current phase: building the PDF ingestion pipeline that turns official FFJM arch
 /shared         → code used by both /ingest and /review (e.g. shared/validate.mjs)
 /app            → the deployed static site (not built yet)
 /docs           → functional-spec.md and technical-architecture.md
+/specifications → user-facing epics/stories for /app, one subdirectory per epic, one file per story (English; see specifications/README.md)
 ```
 
 All three areas under `/data` share the same `{year}/{phase}/` layout (sized for the eventual scale — potentially 1000+ question files, unworkable flat in one directory). `raw/` keeps full descriptive filenames (`2026_qf_statement.pdf`) since those are source files that may travel outside their directory; `needs-review/`/`validated/` use short filenames (`q01.json`, `q01_fig-grid.png`) since the path already carries year/phase and these files never leave their directory.

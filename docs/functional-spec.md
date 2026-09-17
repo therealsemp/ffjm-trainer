@@ -7,7 +7,6 @@ Outil d'entraînement aux épreuves du Championnat des Jeux Mathématiques (FFJM
 ## Utilisateurs
 
 - Groupe restreint et connu (pas de grand public en v1).
-- Pas de comptes ni de profils individuels en v1 : chacun utilise l'outil sans authentification, sans historique personnel sauvegardé.
 
 ## Contenu
 
@@ -19,16 +18,6 @@ Outil d'entraînement aux épreuves du Championnat des Jeux Mathématiques (FFJM
   - **thème** : champ réservé dans le modèle, non exploité en v1 (pas de source fiable pour le déterminer actuellement).
 - Le contenu d'un énoncé ou d'une correction n'est pas toujours du texte simple : il peut inclure du calcul, de la géométrie, des tableaux, des schémas. Le modèle de contenu doit supporter du texte enrichi (texte + notation mathématique + figures), pas seulement du texte brut ou une image scannée.
 
-## Modes d'usage
-
-1. **Mode révision**
-   - Parcours libre des exercices, filtrable au minimum par catégorie.
-   - Affichage direct de l'énoncé et de la correction, sans obligation de saisir une réponse.
-
-2. **Mode entraînement**
-   - Un exercice est présenté, sans saisie de réponse.
-   - L'utilisateur consulte la correction quand il le souhaite, puis s'auto-évalue lui-même ("j'ai trouvé" / "je n'ai pas trouvé"), comme dans un système de type Anki. Pas d'auto-correction automatique en v1, même pour les réponses numériques/textuelles exactes.
-
 ## Règles d'affichage (UI)
 
 - **Règle du nombre de solutions** : depuis au moins 2003, chaque épreuve FFJM affiche après la fin de la catégorie CM une consigne du type *"Pour qu'un problème soit complètement résolu, vous devez donner le nombre de ses solutions, et donner la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une."* Ce n'est pas une donnée propre à un exercice ou à une année : c'est une règle générale du concours. Elle doit être affichée par l'application elle-même (pas stockée en base) dès que le **tier natif** de l'exercice présenté est strictement supérieur à CM, c'est-à-dire dès que `tier` (voir modèle de données) vaut `C1`, `C2`, `L1/GP` ou `L2/HC` — pas `CE` ni `CM`. Attention à ne pas se baser sur `categories` pour cette règle : en format cumulatif, un exercice de tier CE peut très bien apparaître dans `categories` de toutes les catégories (C1, C2... y ont aussi accès), ce qui déclencherait la consigne à tort.
@@ -39,7 +28,6 @@ Explicitement écarté ou reporté à une itération future :
 
 - Chronométrage façon concours réel.
 - Suivi de progression / statistiques dans le temps.
-- Gestion multi-profils / comptes utilisateurs.
 - Génération automatique de nouveaux exercices.
 - Filtrage ou exploitation par thème.
 - Interface d'administration / import en direct dans l'application (l'import est un pipeline hors-ligne, exécuté en one-shot, pas une fonctionnalité de l'app v1).

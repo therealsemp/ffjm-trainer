@@ -24,6 +24,7 @@ En cours de construction, dans cet ordre volontaire :
 /shared         code utilisé à la fois par /ingest et /review (ex: validate.mjs)
 /app            site statique déployé (pas encore construit)
 /docs           spécifications fonctionnelle et technique
+/specifications epics/stories détaillant le comportement attendu de /app, un sous-répertoire par epic (en anglais, voir specifications/README.md)
 ```
 
 `/data` n'appartient à aucun outil en particulier : `/ingest` y écrit (`needs-review`), l'outil de revue y lit et promeut les fichiers (`needs-review` → `validated`), `/app` y lira (`validated`) au moment du build. L'état d'une question, c'est le répertoire dans lequel elle se trouve — pas un champ dans son JSON.

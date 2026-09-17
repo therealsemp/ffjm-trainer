@@ -102,8 +102,15 @@ function renderRichContent(section, assetBase) {
     }
   }
 
+  // `breaks: true` makes marked render a single `\n` as `<br>` instead of
+  // CommonMark's default (a soft break, invisible in HTML — swallowed to a
+  // space). Several transcribed corrections use one `\n` per line to mirror
+  // a source PDF's step-by-step layout (e.g. a sequence of short deduction
+  // lines) without the extra paragraph spacing a blank-line `\n\n` would add;
+  // without this option those lines silently ran together in the UI even
+  // though the JSON's markdown was itself correct.
   const { withPlaceholders, rendered } = extractMath(markdown)
-  let html = `<div class="rich-content">${reinsertMath(marked.parse(withPlaceholders), rendered)}</div>`
+  let html = `<div class="rich-content">${reinsertMath(marked.parse(withPlaceholders, { breaks: true }), rendered)}</div>`
 
   const unreferenced = (section.figures ?? []).filter((f) => f.imageUrl && !referencedIds.has(f.id))
   for (const fig of unreferenced) {

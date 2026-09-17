@@ -1,46 +1,46 @@
-# User Story 1.1 — Détection et redirection automatique au chargement
+# User Story 1.1 — Automatic detection and redirection on load
 
 ## Epic
-EPIC 1 — Gestion des profils
+EPIC 1 — Profile management
 
-## Acteur
-Utilisateur (enfant ou parent utilisant l'appareil)
+## Actor
+User (child or parent using the device)
 
 ## User Story
-**En tant qu'** utilisateur ouvrant l'application,
-**je veux** être automatiquement redirigé vers mon espace si j'ai déjà un profil enregistré sur cet appareil, ou vers la création de profil sinon,
-**afin de** ne pas avoir à me réidentifier à chaque ouverture et d'accéder directement à mon entraînement.
+**As a** user opening the application,
+**I want** to be automatically redirected to my space if I already have a profile saved on this device, or to profile creation otherwise,
+**so that** I don't have to identify myself again every time I open it and can go straight to my training.
 
-## Contexte / Règles métier
-- Le profil est stocké localement via un cookie du navigateur (pas de compte serveur, pas d'authentification).
-- Un seul profil actif à la fois par navigateur/appareil.
-- Cette story s'exécute automatiquement au chargement de l'application, sans action de l'utilisateur.
+## Context / Business rules
+- The profile is stored locally via a browser cookie (no server account, no authentication).
+- Only one active profile at a time per browser/device.
+- This story runs automatically when the application loads, with no user action.
 
-## Critères d'acceptation
+## Acceptance criteria
 
-### Scénario 1 : Profil existant et valide
-- **Given** un cookie de profil valide est présent dans le navigateur (contient un nom et une catégorie reconnue)
-- **When** l'utilisateur ouvre l'application
-- **Then** l'application redirige automatiquement vers la page d'accueil du profil, sans écran intermédiaire
-- **And** aucune action de l'utilisateur n'est requise
+### Scenario 1: Existing, valid profile
+- **Given** a valid profile cookie is present in the browser (contains a name and a recognized category)
+- **When** the user opens the application
+- **Then** the application automatically redirects to the profile's home page, with no intermediate screen
+- **And** no action is required from the user
 
-### Scénario 2 : Aucun profil enregistré
-- **Given** aucun cookie de profil n'est présent dans le navigateur
-- **When** l'utilisateur ouvre l'application
-- **Then** l'application redirige automatiquement vers la page de création de profil (Story 1.2)
+### Scenario 2: No saved profile
+- **Given** no profile cookie is present in the browser
+- **When** the user opens the application
+- **Then** the application automatically redirects to the profile creation page (Story 1.2)
 
-### Scénario 3 : Profil corrompu ou invalide
-- **Given** un cookie de profil est présent mais son contenu est invalide (catégorie inconnue, format incorrect, nom manquant)
-- **When** l'utilisateur ouvre l'application
-- **Then** l'application traite ce cas comme "aucun profil"
-- **And** redirige vers la page de création de profil (Story 1.2)
-- **And** le cookie invalide est ignoré ou nettoyé (ne provoque pas d'erreur bloquante)
+### Scenario 3: Corrupted or invalid profile
+- **Given** a profile cookie is present but its content is invalid (unknown category, incorrect format, missing name)
+- **When** the user opens the application
+- **Then** the application treats this case as "no profile"
+- **And** redirects to the profile creation page (Story 1.2)
+- **And** the invalid cookie is ignored or cleared (does not cause a blocking error)
 
-## Hors scope
-- Gestion de plusieurs profils simultanés sur le même navigateur.
-- Synchronisation entre appareils/navigateurs différents.
-- Authentification par mot de passe.
+## Out of scope
+- Managing several simultaneous profiles on the same browser.
+- Synchronization between different devices/browsers.
+- Password authentication.
 
-## Notes pour la recette
-- Vérifier le comportement après suppression manuelle du cookie par les outils développeur du navigateur.
-- Vérifier le comportement après modification manuelle de la valeur du cookie (test de robustesse).
+## QA notes
+- Check the behavior after manually deleting the cookie via browser developer tools.
+- Check the behavior after manually altering the cookie value (robustness test).

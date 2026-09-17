@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 660 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 2, "position": { "x": 24, "y": 300 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 1010 } }
+    ]
+  },
+  "id": "2025-fn-5",
+  "number": 5,
+  "title": "Pièces mathéfiques",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Matou explore un manoir magique où, dans chaque salle, il trouve des pièces de monnaie, dont le nombre est indiqué sur le schéma. Il ramasse toutes les pièces des salles qu'il traverse, mais ces pièces sont ensorcelées : lorsqu'il a un nombre pair de pièces en main, celles-ci disparaissent ! Matou ne doit pas passer plus d'une fois dans chaque salle qu'il traverse.\n\n![figure](figure:2025-fn-5-manoir)\n\n**Combien de pièces Matou peut-il emporter, au maximum, en sortant du manoir ?**",
+    "figures": [
+      {
+        "id": "2025-fn-5-manoir",
+        "description": "Grille de 3 lignes sur 4 colonnes représentant des salles reliées horizontalement et verticalement par des portes (traits « + »). « Entrée → » pointe vers la salle en haut à gauche et « → Sortie » part de la salle en bas à droite. Salles, ligne par ligne : 1, 4, 2, 5 / 3, 1, 2, 7 / 8, 7, 6, 10.",
+        "imageUrl": "q05_fig-manoir.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "25" },
+  "correction": {
+    "markdown": "On commence par une salle contenant 1 pièce et 1 est un nombre impair.\nEnsuite si on passe par une salle contenant un nombre impair de pièces, on perd tout.\nSi on passe par une salle contenant un nombre pair de pièces, on obtient à nouveau un nombre impair.\nPrenons un chemin ne passant que par des salles paires (à partir de la deuxième salle) à savoir : 1;4;2;2;6;10. 1+4+2+2+6+10=25.\n\nLe nombre maximum de pièces est donc de **25 pièces**.\n\n**Réponse : 25.**"
+  }
+}

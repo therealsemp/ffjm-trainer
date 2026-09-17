@@ -1,0 +1,60 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 940 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 9, "position": { "x": 24, "y": 720 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 5, "position": { "x": 24, "y": 95 } }
+    ]
+  },
+  "id": "2025-fn-16",
+  "number": 16,
+  "title": "Des losanges pas carrés",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Cent points sont disposés régulièrement en carrés comme le montre la figure, de sorte que deux points voisins horizontalement ou verticalement soient toujours espacés d'un centimètre.\n\n![figure](figure:2025-fn-16-grid)\n\n**Combien peut-on tracer de losanges non aplatis et qui ne soient pas des carrés, ayant pour sommets des points de la figure et dont les côtés mesurent des nombres entiers de centimètres ?**",
+    "figures": [
+      {
+        "id": "2025-fn-16-grid",
+        "description": "Grille régulière de 10×10 points (cent points), espacés d'un centimètre horizontalement et verticalement.",
+        "imageUrl": "q16_fig-grid.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "110" },
+  "correction": {
+    "markdown": "L'un des côtés du losange (au moins) ne sera ni horizontal, ni vertical. Il formera donc avec l'horizontale et la verticale un triangle rectangle à côtés entiers.\nLe plus petit de ces triangles pythagoriciens est (3;4;5). Cherchons donc des losanges de côté 5.\n\n**Première forme :**\nCette forme est inscrite dans un rectangle de 8×4, on peut donc la déplacer horizontalement (2 positions) et verticalement (6 positions).\nDe plus on peut échanger le côté horizontal par un côté vertical.\nEnfin on peut prendre son symétrique par rapport à un axe (horizontal ou vertical). Au total ce nous donne 2×6×2×2=48 losanges.\n\n![figure](figure:2025-fn-16-form1)\n\n**Deuxième forme :**\nCette forme est inscrite dans un rectangle de 9×3, on peut ne peut donc pas la déplacer horizontalement (1 seule position) mais verticalement (7 positions).\nDe plus on peut échanger le côté horizontal par un côté vertical.\nEnfin on peut prendre son symétrique par rapport à un axe (horizontal ou vertical). Au total ce nous donne 7×2×2=28 losanges.\n\n![figure](figure:2025-fn-16-form2)\n\n**Troisième forme :**\nCette forme est inscrite dans un rectangle de 8×6, on peut donc la déplacer horizontalement (2 positions) et verticalement (4 positions).\nDe plus on peut échanger les diagonales horizontale et verticale.\nAu total ce nous donne 2×4×2=16 losanges.\n\n![figure](figure:2025-fn-16-form3)\n\n**Quatrième forme :**\nCette forme est inscrite dans un rectangle de 7×7, on peut donc la déplacer horizontalement (3 positions) et verticalement (3 positions).\nDe plus on peut prendre son symétrique par rapport à un axe (horizontal ou vertical). Au total ce nous donne 3×3×2=18 losanges.\n\n![figure](figure:2025-fn-16-form4)\n\nSi on prend un autre triangle pythagoricien, par exemple (6;8;10), le losange ne rentre pas dans notre carré 9×9.\nAu total cela fait : 48+28+16+18=110.\n\nOn peut tracer **110 losanges**.\n\n**Réponse : 110.**",
+    "figures": [
+      {
+        "id": "2025-fn-16-form1",
+        "description": "Première forme : parallélogramme (losange incliné) de côté 5 inscrit dans un rectangle 8×4, avec les longueurs 4 et 3 des côtés du triangle rectangle sous-jacent indiquées, deux côtés marqués « 5 ».",
+        "imageUrl": "q16_corr-form1.png"
+      },
+      {
+        "id": "2025-fn-16-form2",
+        "description": "Deuxième forme : parallélogramme (losange incliné) de côté 5 inscrit dans un rectangle 9×3, avec les longueurs 3 et 4 indiquées, un côté marqué « 5 ».",
+        "imageUrl": "q16_corr-form2.png"
+      },
+      {
+        "id": "2025-fn-16-form3",
+        "description": "Troisième forme : losange (diamant) de côté 5 inscrit dans un rectangle 8×6, avec les longueurs 4 et 3 indiquées sur chaque demi-diagonale, les quatre côtés marqués « 5 ».",
+        "imageUrl": "q16_corr-form3.png"
+      },
+      {
+        "id": "2025-fn-16-form4",
+        "description": "Quatrième forme : losange très aplati (allongé) inscrit dans un carré 7×7, découpé en plusieurs triangles rectangles 3-4-5, avec les longueurs 4, 3 et les côtés « 5 » indiqués.",
+        "imageUrl": "q16_corr-form4.png"
+      }
+    ]
+  }
+}

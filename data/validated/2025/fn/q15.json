@@ -1,0 +1,45 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 680 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 9, "position": { "x": 24, "y": 500 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 700 } }
+    ]
+  },
+  "id": "2025-fn-15",
+  "number": 15,
+  "title": "Écusson",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Pour le concours de math 2025, les organisateurs désirent créer un écusson comme illustré ci-contre. Ils se donnent les conditions suivantes : AB = CD = 12 cm, et les deux arcs de cercle ont pour centres respectifs C et D.\n\n![figure](figure:2025-fn-15-ecusson)\n\n**Quelle doit être la mesure de AC, pour que l'aire de la surface blanche soit égale à celle du rectangle gris ?**\n\nDonner la réponse en cm arrondie au centième. Utiliser √3 ≈ 1,732 et π ≈ 3,142 s'il faut calculer avec ces valeurs.",
+    "figures": [
+      {
+        "id": "2025-fn-15-ecusson",
+        "description": "Écusson en forme de blason : un rectangle gris étiqueté « MATH » en haut avec les sommets A (haut-gauche), B (haut-droite), C (bas-gauche) et D (bas-droite), surmontant une forme en pointe (deux arcs de cercle se rejoignant) étiquetée « 2025 » et se terminant en pointe basse au point E.",
+        "imageUrl": "q15_fig-ecusson.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "7,37" },
+  "correction": {
+    "markdown": "CDE est un triangle équilatéral de côté 12 cm. Sa hauteur est de \\(6\\sqrt{3}\\) (on peut la retrouver en utilisant Pythagore ou \\(\\cos(60°) = \\sqrt{3} \\div 2\\))\n\nSon aire est donc de \\(12 \\times 6\\sqrt{3} \\div 2 = 36\\sqrt{3}\\).\n\nL'aire d'un disque de rayon 12 cm est de \\(\\pi \\times 12^2\\).\n\nChaque secteur angulaire a un angle de 60° soit 1/6 du disque.\n\nL'aire d'un secteur angulaire est de \\(\\pi \\times 12^2 \\div 6 = 24\\pi\\).\n\nLa partie blanche est composée de deux secteurs angulaires auxquels on enlève un triangle. Son aire est donc de \\(2 \\times 24\\pi - 36\\sqrt{3} = 48\\pi - 36\\sqrt{3}\\).\n\nLe rectangle gris de longueur 12 cm a la même aire. Sa largeur est donc de\n\n\\(\\dfrac{48\\pi - 36\\sqrt{3}}{12} = 4\\pi - 3\\sqrt{3} \\approx 4 \\times 3{,}142 - 3 \\times 1{,}732 = 12{,}568 - 5{,}196 = 7{,}372\\).\n\nOn a donc, en arrondissant au centième près : **AC≈7,37 cm**.\n\n![figure](figure:2025-fn-15-corr-ecusson)\n\n**Réponse : 7,37.**",
+    "figures": [
+      {
+        "id": "2025-fn-15-corr-ecusson",
+        "description": "Le même écusson que celui de l'énoncé (rectangle « MATH » A,B,C,D surmontant la pointe « 2025 » se terminant en E), avec en plus deux segments bleus tracés de C à E et de D à E, mettant en évidence le triangle équilatéral CDE inscrit dans la pointe.",
+        "imageUrl": "q15_corr-ecusson.png"
+      }
+    ]
+  }
+}

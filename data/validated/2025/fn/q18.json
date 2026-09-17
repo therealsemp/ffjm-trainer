@@ -1,0 +1,58 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 460, "y": 330 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 13, "position": { "x": 24, "y": 500 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 7, "position": { "x": 24, "y": 95 } }
+    ]
+  },
+  "id": "2025-fn-18",
+  "number": 18,
+  "title": "Le polygone de Mathias",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Sur une feuille, dans un repère orthonormé, Mathias a placé les quatre points de coordonnées entières suivants : O (0 ; 0), P (2 ; 0), Q (2 ; 1) et R (1 ; 2).\nIl a ensuite dessiné un polygone régulier passant exactement par ces quatre points. Deux de ces points sont sur le même côté du polygone et aucun de ces points n'est un sommet du polygone.\n\n**Quelle est la longueur du côté de ce polygone ?**\n\nDonner la réponse arrondie au centième. Si nécessaire, utiliser 1,732 pour √3 ; 2,236 pour √5 et 0,588 pour sin(π/5)."
+  },
+  "answer": { "type": "open", "value": "5 solutions : 2,73 ; 3,73 ; 3,05 ; 2,70 et 1,69" },
+  "correction": {
+    "markdown": "Cherchons d'abord un triangle équilatéral.\n\n**Premier cas :**\n\n![figure](figure:2025-fn-18-case1)\n\nLa pente de (AC) est de tan(60°)=√3. L'équation de (AC) est donc \\(y=\\sqrt3 x+B\\).\nElle passe par R donc \\(2=\\sqrt3+B\\). \\(B=2-\\sqrt3\\).\nL'abscisse de A vérifie \\(0=\\sqrt3 x_A+2-\\sqrt3\\) donc \\(x_A=\\dfrac{\\sqrt3-2}{\\sqrt3}=\\dfrac{3-2\\sqrt3}{3}\\).\nLa pente de (BC) est de \\(-\\sqrt3\\). L'équation de (BC) est donc \\(y=-\\sqrt3 x+B\\).\nElle passe par Q donc \\(1=-2\\sqrt3+B\\). \\(B=1+2\\sqrt3\\).\nL'abscisse de B vérifie \\(0=-\\sqrt3 x_B+1+2\\sqrt3\\) donc \\(x_B=\\dfrac{1+2\\sqrt3}{\\sqrt3}=\\dfrac{\\sqrt3+6}{3}\\).\n\n\\(AB=x_B-x_A=\\dfrac{\\sqrt3+6-3+2\\sqrt3}{3}=1+\\sqrt3\\approx 2{,}732\\).\n\n**Deuxième cas :**\n\n![figure](figure:2025-fn-18-case2)\n\nLa pente de (BC) est de \\(\\tan(30°)=\\dfrac{1}{\\sqrt3}=\\dfrac{\\sqrt3}{3}\\). L'équation de (BC) est donc \\(y=x\\dfrac{\\sqrt3}{3}+B\\).\nElle passe par R donc \\(2=\\dfrac{\\sqrt3}{3}+B\\). \\(B=2-\\dfrac{\\sqrt3}{3}\\).\nL'ordonnée de B est donc \\(y_B=2\\dfrac{\\sqrt3}{3}+2-\\dfrac{\\sqrt3}{3}=2+\\dfrac{\\sqrt3}{3}\\)\nLa pente de (AC) est de \\(-\\dfrac{1}{\\sqrt3}=-\\dfrac{\\sqrt3}{3}\\). L'équation de (AC) est donc \\(y=-\\dfrac{\\sqrt3}{3}x\\).\nL'ordonnée de A est donc \\(y_A=-2\\dfrac{\\sqrt3}{3}\\)\n\n\\(AB=y_B-y_A=2+\\dfrac{\\sqrt3}{3}+2\\dfrac{\\sqrt3}{3}=2+\\sqrt3\\approx 3{,}732\\).\n\n**Troisième cas :**\n\n![figure](figure:2025-fn-18-case3)\n\nL'équation de (RQ) est \\(y=3-x\\). La pente de (BC) est de \\(\\tan(15°)=\\dfrac{\\sin(30°)}{1+\\cos(30°)}=\\dfrac{1/2}{1+\\sqrt3/2}=\\dfrac{1}{2+\\sqrt3}=\\dfrac{2-\\sqrt3}{4-3}=2-\\sqrt3\\). L'équation de (BC) est donc \\(y=(2-\\sqrt3)x+B\\).\nElle passe par P donc \\(0=2(2-\\sqrt3)+B\\). \\(B=2\\sqrt3-4\\).\nLes coordonnées de B vérifient donc \\(y_B=3-x_B\\) et \\(y_B=(2-\\sqrt3)x_B+(2\\sqrt3-4)\\)\nOn en déduit que \\(x_B=\\dfrac{15+\\sqrt3}{6}\\) et \\(y_B=\\dfrac{3-\\sqrt3}{6}\\).\n\nLa pente de (AC) est de \\(\\tan(75°)=\\dfrac{1}{2-\\sqrt3}=2+\\sqrt3\\). L'équation de (AC) est donc \\(y=(2+\\sqrt3)x\\).\nLes coordonnées de A vérifient donc \\(y_A=3-x_A\\) et \\(y_A=(2+\\sqrt3)x_A\\)\nOn en déduit que \\(x_A=\\dfrac{3-\\sqrt3}{2}\\) et \\(y_A=\\dfrac{3+\\sqrt3}{2}\\).\n\\(\\overrightarrow{AB}\\left(1+\\dfrac{2\\sqrt3}{3};-1-\\dfrac{2\\sqrt3}{3}\\right)\\) \\(AB=\\left(1+\\dfrac{2\\sqrt3}{3}\\right)\\times\\sqrt2\\)\n\\(1{,}732\\times2\\div3\\approx1{,}155\\) et \\(2{,}155\\times1{,}414\\approx3{,}047\\) donc \\(AB\\approx3{,}047\\).\n\n**Quatrième cas :**\n\n![figure](figure:2025-fn-18-case4)\n\nPosons \\(\\alpha=\\widehat{POR}\\). L'équation de (OR) est \\(y=2x\\). \\(2=\\tan(\\alpha)\\).\nLa pente de (AC) est \\(\\tan(\\alpha-60)=\\dfrac{\\tan(\\alpha)-\\tan(60)}{1+\\tan(\\alpha)\\times\\tan(60)}=\\dfrac{2-\\sqrt3}{1+2\\sqrt3}=\\dfrac{(2-\\sqrt3)(2\\sqrt3-1)}{11}=\\dfrac{5\\sqrt3-8}{11}\\).\nL'équation de (AC) est donc \\(y=\\left(\\dfrac{5\\sqrt3-8}{11}\\right)x+B\\). Elle passe par P donc\n\\(0=\\left(\\dfrac{5\\sqrt3-8}{11}\\right)\\times2+B\\). \\(B=\\dfrac{16-10\\sqrt3}{11}\\). L'abscisse de A vérifie \\(2x_A=\\left(\\dfrac{5\\sqrt3-8}{11}\\right)x_A+\\dfrac{16-10\\sqrt3}{11}\\)\n\\(x_A=\\dfrac{16-10\\sqrt3}{5(6-\\sqrt3)}=\\dfrac{(16-10\\sqrt3)(6+\\sqrt3)}{5(36-3)}=\\dfrac{66-44\\sqrt3}{5\\times33}=\\dfrac{6-4\\sqrt3}{15}\\) et \\(y_A=\\dfrac{12-8\\sqrt3}{15}\\).\nLa pente de (BC) est \\(\\tan(\\alpha+60)=\\dfrac{2+\\sqrt3}{1-2\\sqrt3}=\\dfrac{(2+\\sqrt3)(1+2\\sqrt3)}{-11}=\\dfrac{8+5\\sqrt3}{-11}\\).\nL'équation de (BC) est donc \\(y=-\\left(\\dfrac{8+5\\sqrt3}{11}\\right)x+B\\). Elle passe par Q donc \\(1=-\\left(\\dfrac{8+5\\sqrt3}{11}\\right)\\times2+B\\).\n\\(B=\\dfrac{27+10\\sqrt3}{11}\\). L'abscisse de B vérifie \\(2x_B=-\\left(\\dfrac{8+5\\sqrt3}{11}\\right)x_B+\\dfrac{27+10\\sqrt3}{11}\\)\n\\(x_B=\\dfrac{27+10\\sqrt3}{5(6+\\sqrt3)}=\\dfrac{(27+10\\sqrt3)(6-\\sqrt3)}{5(36-3)}=\\dfrac{132+33\\sqrt3}{5\\times33}=\\dfrac{12+3\\sqrt3}{15}\\). \\(y_B=\\dfrac{24+6\\sqrt3}{15}\\).\n\\(\\overrightarrow{AB}\\left(\\dfrac{6+7\\sqrt3}{15};\\dfrac{12+14\\sqrt3}{15}\\right)\\). \\(AB^2=\\dfrac{(6+7\\sqrt3)^2}{15^2}\\times(1+2^2)\\). \\(AB=\\dfrac{6+7\\sqrt3}{15}\\times\\sqrt5\\)\n\\(7\\times1{,}732=12{,}124\\). \\(18{,}124\\div15\\approx1{,}208\\). \\(1{,}208\\times2{,}236\\approx2{,}701\\). Donc \\(AB\\approx2{,}701\\).\n\n**Autres cas que le triangle :** Si c'est un carré alors il a pour sommets O et P ce qui est interdit.\nSi c'est un pentagone, alors on obtient la figure suivante :\n\n![figure](figure:2025-fn-18-pentagon)\n\nLa pente de (AB) est de \\(-\\tan(18°)\\). L'équation de (AB) est \\(y=-\\tan(18)x+B\\). Elle passe par R donc \\(2=-\\tan(18)+B\\) et \\(B=2+\\tan(18)\\). L'abscisse de A étant 2 on a\n\\(y_A=-2\\tan(18)+2+\\tan(18)=2-\\tan(18)\\)\n\\(y_A=2-\\dfrac{1-\\cos(36)}{\\sin(36)}=\\dfrac{-1+2\\sin(36)+\\cos(36)}{\\sin(36)}\\)\nLes coordonnées de U vérifient \\(y_U=-\\tan(18)x_U+2+\\tan(18)\\).\nLa pente de (CD) est de \\(-\\tan(54)\\) et (CD) passe par O donc l'équation de (CD) est \\(y=-\\tan(54)x\\) d'où \\(y_U=-\\tan(54)x_U\\)\n\\(x_U=\\dfrac{2+\\tan(18)}{\\tan(54)-\\tan(18)}\\) et \\(y_U=\\dfrac{\\tan(54)(2+\\tan(18))}{\\tan(54)-\\tan(18)}\\)\n\nLa pente de (UE), bissectrice de \\(\\widehat{BUC}\\), est de \\(-\\tan(36°)\\). L'équation de (UE) est donc \\(y=-\\tan(36)x+B\\). Elle passe par U donc\n\\(\\dfrac{\\tan(54)(2+\\tan(18))}{\\tan(54)-\\tan(18)}=\\tan(36)\\times\\dfrac{2+\\tan(18)}{\\tan(54)-\\tan(18)}+B\\) donc \\(B=\\dfrac{(\\tan(54)-\\tan(36))(2+\\tan(18))}{\\tan(54)-\\tan(18)}\\)\nOr \\(\\tan(a)-\\tan(b)=\\dfrac{\\sin(a-b)}{\\cos(a)\\cos(b)}\\) donc\n\\(B=\\dfrac{\\sin(18)(2\\cos(18)+\\sin(18))}{\\sin(36)\\cos(36)}=\\dfrac{\\sin(36)+(1-\\cos(36))/2}{\\sin(36)\\cos(36)}=\\dfrac{1+2\\sin(36)-\\cos(36)}{2\\sin(36)\\cos(36)}\\)\nL'abscisse de E étant 2, on a \\(y_E=-2\\tan(36)+B\\)\n\n\\(EA=\\dfrac{-1+2\\sin(36)+\\cos(36)}{\\sin(36)} - \\dfrac{1+2\\sin(36)-\\cos(36)-4\\sin^2(36)}{2\\sin(36)\\cos(36)}\\)\n\\(EA=\\dfrac{4\\sin(36)\\cos(36)+2\\cos^2(36)+4\\sin^2(36)-2\\sin(36)-\\cos(36)-1}{2\\sin(36)\\cos(36)}\\)\n\\(\\cos(36)=\\dfrac{1+\\sqrt5}{4}\\) donc \\(\\cos^2(36)=\\dfrac{3+\\sqrt5}{8}\\) et \\(\\sin^2(36)=\\dfrac{5-\\sqrt5}{8}\\) puis\n\\(2\\cos^2(36)+4\\sin^2(36)-\\cos(36)-1=\\dfrac{4-\\sqrt5}{2}\\)\n\\(EA=2+\\dfrac{(4-\\sqrt5)\\sin(36)-5+\\sqrt5}{\\sqrt5}=3-\\sqrt5+\\dfrac{4(4\\sqrt5-5)\\sin(36)}{10}\\)\n\\(3-2{,}236=0{,}764\\). \\(4\\times2{,}236=8{,}944\\). \\(3{,}944\\times4=15{,}776\\). \\(1{,}5776\\times0{,}588\\approx0{,}928\\). \\(0{,}928+0{,}764=1{,}692\\).\nDonc \\(AE\\approx1{,}692\\).\nSi le nombre de côtés augmente, on n'a pas de solution.\n\nIl y a **5 solutions** : 2,73 ; 3,73 ; 3,05 ; 2,70 et 1,69.\n\n**Réponse : 5 solutions, 2,73 ; 3,73 ; 3,05 ; 2,70 et 1,69.**",
+    "figures": [
+      {
+        "id": "2025-fn-18-case1",
+        "description": "Repère orthonormé avec un triangle équilatéral ABC (A à gauche sur l'axe horizontal, B en bas à droite, C en haut), les points O, P, Q, R et l'axe des ordonnées tracés en rouge, illustrant le premier cas où R et Q sont sur des côtés différents proches du sommet C.",
+        "imageUrl": "q18_corr-case1.png"
+      },
+      {
+        "id": "2025-fn-18-case2",
+        "description": "Repère orthonormé avec un triangle équilatéral (A en haut, B à droite, C à gauche), les points O, P, Q, R et l'axe des ordonnées tracés en rouge, illustrant le deuxième cas.",
+        "imageUrl": "q18_corr-case2.png"
+      },
+      {
+        "id": "2025-fn-18-case3",
+        "description": "Repère orthonormé avec un triangle équilatéral (A en haut à gauche, B en bas à droite, C en bas), les points O, P, Q, R et l'axe des ordonnées tracés en rouge, illustrant le troisième cas.",
+        "imageUrl": "q18_corr-case3.png"
+      },
+      {
+        "id": "2025-fn-18-case4",
+        "description": "Repère orthonormé avec un triangle équilatéral (A en bas à gauche confondu près de O, B en haut, C à droite), les points O, P, Q, R et l'axe des ordonnées tracés en rouge, illustrant le quatrième cas.",
+        "imageUrl": "q18_corr-case4.png"
+      },
+      {
+        "id": "2025-fn-18-pentagon",
+        "description": "Repère orthonormé avec un pentagone régulier (sommets U, B, C, D, E ou T), les points O, P, Q, R tracés en noir/rouge, le segment UT/UE en bleu illustrant la bissectrice utilisée pour le cas du pentagone.",
+        "imageUrl": "q18_corr-pentagon.png"
+      }
+    ]
+  }
+}

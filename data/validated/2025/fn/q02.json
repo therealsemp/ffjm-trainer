@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 340 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 1, "position": { "x": 24, "y": 480 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 400 } }
+    ]
+  },
+  "id": "2025-fn-2",
+  "number": 2,
+  "title": "Dates",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "On note la date du 17 mai 2025 de la manière suivante : 17.05.2025.\n\n**Combien de dates de l'année 2025 peut-on écrire de la même façon, en utilisant uniquement les huit chiffres 0, 0, 0, 2, 2, 3, 4, 5 ?**"
+  },
+  "answer": { "type": "exact-numeric", "value": "3" },
+  "correction": {
+    "markdown": "En prenant les chiffres 2 ; 0 ; 2 et 5 pour l'année, il nous reste les chiffres 0 ; 0 ; 3 et 4 pour le mois et le jour. Pour le mois on peut faire 03 et 04. Avec le mois de mars (03) il nous reste pour le jour 04. Avec le mois d'avril (04) il nous reste pour le jour 03 et 30.\n\nOn peut donc écrire **3 dates** : 04.03.2025, 03.04.2025 et 30.04.2025\n\n**Réponse : 3.**"
+  }
+}

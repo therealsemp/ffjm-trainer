@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 350 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 3, "position": { "x": 24, "y": 95 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 460 } }
+    ]
+  },
+  "id": "2025-fn-8",
+  "number": 8,
+  "title": "Un mini maximum pour Max",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Max a réparti ces neuf jetons en trois paquets de trois jetons. Dans chaque paquet, il a multiplié entre eux les nombres écrits sur les jetons et a noté le plus grand des trois résultats ou l'un des plus grands si plusieurs sont égaux.\n\n![figure](figure:2025-fn-8-jetons)\n\n**Que vaut ce plus grand résultat, au minimum ?**",
+    "figures": [
+      {
+        "id": "2025-fn-8-jetons",
+        "description": "Neuf jetons circulaires numérotés de 1 à 9, disposés en grille 3×3 : 1, 2, 3 / 4, 5, 6 / 7, 8, 9.",
+        "imageUrl": "q08_fig-jetons.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "72" },
+  "correction": {
+    "markdown": "Intuitivement le plus grand résultat sera minimal lorsque les trois résultats seront proches.\nSi \\(a \\leqslant b \\leqslant c\\) sont les trois produits de 3 chiffres, alors \\(a \\times b \\times c = 1 \\times \\cdots \\times 9 = 9! = 362880\\).\n71 étant un nombre premier, il ne pourra être obtenu comme produit de 3 chiffres.\nComme \\(a \\times b \\times c \\leqslant c^3\\) et que \\(70^3 = 343000\\), cela prouve que \\(c \\geqslant 72\\).\nL'exemple \\(a=70=2\\times5\\times7\\), \\(3\\times4\\times6=b=72=c=1\\times8\\times9\\) montre que le minimax est 72.\n\n**Variante suggérée par François SOUPE**\n\nSi 1, 2 et 3 ne sont pas chacun dans un tas, alors le tas qui n'en a pas vaut au minimum \\(4\\times5\\times6=120\\) et celui qui en a deux vaut au maximum \\(2\\times3\\times9=54\\).\nEn permutant 3 et 4, on obtient une meilleure solution avec 72 et 90.\n1, 2 et 3 sont donc dans trois tas différents.\nPour le tas avec 1, le maximum est \\(72=1\\times8\\times9\\) et en allouant correctement 4, 5, 6 et 7, on parvient à \\(70=2\\times5\\times7\\) et \\(72=3\\times4\\times6\\).\n\n**Réponse : 72.**"
+  }
+}

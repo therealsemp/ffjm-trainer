@@ -1,0 +1,45 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 95 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 1, "position": { "x": 24, "y": 240 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 200 } }
+    ]
+  },
+  "id": "2025-fn-1",
+  "number": 1,
+  "title": "Ficelles",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Sur une planche avec neuf clous placés comme sur la figure, Zoé désire attacher des ficelles tendues entre le clou A et un autre clou de la planche.\n\n![figure](figure:2025-fn-1-nails)\n\n**Combien de ficelles de longueurs différentes pourra-t-elle placer au maximum ?**",
+    "figures": [
+      {
+        "id": "2025-fn-1-nails",
+        "description": "Planche avec neuf clous disposés en grille régulière 3×3, le clou de départ situé au coin inférieur gauche et étiqueté « A° ».",
+        "imageUrl": "q01_fig-nails.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "5" },
+  "correction": {
+    "markdown": "Nous pouvons placer **5 ficelles** de longueurs différentes :\n\n![figure](figure:2025-fn-1-diagram)\n\n**Réponse : 5.**",
+    "figures": [
+      {
+        "id": "2025-fn-1-diagram",
+        "description": "Grille de neuf clous en carré 3×3. Cinq segments tracés depuis le clou en bas à gauche vers cinq clous distincts de longueurs toutes différentes : un segment rouge court (horizontal, vers le clou voisin), trois segments noirs de longueurs croissantes, et un segment violet (le plus long, en diagonale vers le coin opposé).",
+        "imageUrl": "q01_corr-diagram.png"
+      }
+    ]
+  }
+}

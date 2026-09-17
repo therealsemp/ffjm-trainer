@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 24, "y": 600 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 2, "position": { "x": 24, "y": 95 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 1, "position": { "x": 24, "y": 850 } }
+    ]
+  },
+  "id": "2025-fn-4",
+  "number": 4,
+  "title": "Inéquitable",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Aly, Boby et Caly jouent dans la cour.\nIls ont 87 billes en tout. Caly a deux fois plus de billes que Boby. Aly a 7 billes de plus que Boby.\n\n**Combien de billes a chaque enfant ?**"
+  },
+  "answer": { "type": "open", "value": "Aly a 27 billes, Boby a 20 billes et Caly a 40 billes" },
+  "correction": {
+    "markdown": "Prenons comme référence la part de Boby. Boby prend une part ; Caly prend deux parts et Aly prend une part plus 7 billes. Au total on prend 4 parts plus 7 billes qui doivent correspondre à 87 billes. Les 4 parts correspondent donc à 80 billes. 80=4×20 donc la part de Boby est de 20 billes, celle de Caly est de 2×20=40 billes et celle d'Aly est de 20+7=27 billes. Vérifions : 20+40+27=87.\n\n**Aly a 27 billes, Boby a 20 billes et Caly a 40 billes**."
+  }
+}

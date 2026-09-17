@@ -1,0 +1,74 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 24,
+        "y": 440
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf",
+        "page": 1,
+        "position": {
+          "x": 24,
+          "y": 700
+        }
+      },
+      {
+        "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf",
+        "page": 1,
+        "position": {
+          "x": 24,
+          "y": 610
+        }
+      }
+    ]
+  },
+  "id": "2025-fn-3",
+  "number": 3,
+  "title": "Vitrail",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Un vitrail est constitué de six rectangles comme sur la figure. Dans chaque rectangle, il y a un pavage fait à partir de losanges identiques comme dans le premier rectangle. Lorsque le vitrier découpe un losange, il peut utiliser toutes les parties de ce losange dans le vitrail.\n\n![figure](figure:2025-fn-3-vitrail)\n\n**Combien le vitrier a-t-il utilisé de losanges pour construire ce vitrail ?**",
+    "figures": [
+      {
+        "id": "2025-fn-3-vitrail",
+        "description": "Deux colonnes (rectangles verticaux) côte à côte, chacune divisée par deux lignes horizontales en trois cellules, représentant schématiquement le vitrail à six rectangles. La cellule du haut de la colonne de gauche est pavée d'un motif en croix de losanges (deux losanges pleins visibles, avec des demi et quarts de losanges sur les bords). Les cinq autres cellules sont vides.",
+        "imageUrl": "q03_fig-vitrail.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "30"
+  },
+  "correction": {
+    "markdown": "Prenons un des rectangles :\nOn peut compter 2 losanges entiers. Autour de chacun de ces losanges, les 4 morceaux forment un losange. Nous avons besoin de deux losanges supplémentaires. Enfin si on découpe la partie de droite, les 4 morceaux forment aussi un losange. Au total on a besoin de 5 losanges dans chaque rectangle.\nComme nous avons 6 rectangles, 6×5=30.\n\nNous avons besoin de **30 losanges**.\n\n![figure](figure:2025-fn-3-corr-vitrail)\n\n**Réponse : 30.**",
+    "figures": [
+      {
+        "id": "2025-fn-3-corr-vitrail",
+        "description": "Le rectangle-type du vitrail, colorié pour illustrer le comptage des 5 losanges le composant : une zone verte à gauche (un losange complété par ses quarts de bord), une zone bleue au centre (le pavage avec deux losanges pleins), une zone orange à droite (un losange complété par ses morceaux de bord).",
+        "imageUrl": "q03_corr-vitrail.png"
+      }
+    ]
+  }
+}

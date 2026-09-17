@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 370 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 6, "position": { "x": 24, "y": 600 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 95 } }
+    ]
+  },
+  "id": "2025-fn-13",
+  "number": 13,
+  "title": "Un sport neuf ?",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Dans cette égalité, chaque lettre remplace toujours un même chiffre et deux lettres différentes remplacent toujours deux chiffres différents. Aucune lettre ne remplace un 0 ou un 9.\n\n\\(\\dfrac{GOLF}{SKI} = 9\\)\n\n**Quelle est la valeur de GOLF, sachant que SKI est multiple de 11 ?**"
+  },
+  "answer": { "type": "open", "value": "4 solutions : GOLF vaut 3762, 5742, 7326 ou 7524" },
+  "correction": {
+    "markdown": "On cherche le nombre AB tel que AB×11=SKI et AB×99=GOLF.\nSi A+B<10 alors S=A, K=A+B et I=B. De plus AB×99=AB×(100-1)=AB00-AB=GOLF.\nComme B≠0 alors A=G et donc G=S ce qui est impossible.\nDonc A+B>9 et S=A+1, K=A+B-10 et I=B. On a toujours AB00-AB=GOLF.\n10-B=F=10-I, 10-(A+1)=L=10-S, B-1=O=I-1 et A=G=S-1.\nOn a deux blocs identiques :\n\n![figure](figure:2025-fn-13-tables)\n\nOr A+B>9 donc G+I>9 donc K=G+I-10. Comme 0<K<9 alors 10<G+I<19 donc G≠1 et G≠2.\nSi G=3 alors I=8 et K=1 on a alors GOLF=3762.\nSi G=5 alors I=8 car si I=7 alors S=6=O et si I=6 alors O=5=G. Donc K=3 et GOLF=5742.\nSi G=6 alors I=8 (impossible car S=7=O) ou I=7 (impossible car O=6=G).\nSi G=7 alors I≠8 (car sinon G=O), I≠7, I=6 (donc K=3 et GOLF=7524), I=4 (donc K=1 et GOLF=7326).\n\nIl y a **4 solutions** : GOLF est égal à **3762, 5742, 7326 ou 7524**.\n\n**Réponse : 4 solutions, GOLF vaut 3762, 5742, 7326 ou 7524.**",
+    "figures": [
+      {
+        "id": "2025-fn-13-tables",
+        "description": "Deux tableaux identiques en structure, côte à côte. Tableau de gauche : ligne I = 1,2,3,4,5,6,7,8 (case « 5 » en fond rouge) ; ligne F = 9,8,7,6,5,4,3,2 alignée sous I (cases « 9 » et « 5 » en fond rouge, sous I=1 et I=5) ; ligne O = (case vide),1,2,3,(case vide),5,6,7 (cases vides sous les colonnes rouges). Tableau de droite, structure identique : ligne S = 1,2,3,4,5,6,7,8 (case « 5 » en fond rouge) ; ligne L = 9,8,7,6,5,4,3,2 (cases « 9 » et « 5 » en fond rouge, sous S=1 et S=5) ; ligne G = (case vide),1,2,3,(case vide),5,6,7.",
+        "imageUrl": "q13_corr-tables.png"
+      }
+    ]
+  }
+}

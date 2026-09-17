@@ -1,0 +1,81 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 24,
+        "y": 220
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf",
+        "page": 5,
+        "position": {
+          "x": 24,
+          "y": 400
+        }
+      },
+      {
+        "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf",
+        "page": 3,
+        "position": {
+          "x": 24,
+          "y": 420
+        }
+      }
+    ]
+  },
+  "id": "2025-fn-12",
+  "number": 12,
+  "title": "Le carré de l'année",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "**Placez les chiffres de 1 à 9, sauf le 6 déjà en place**, dans les cases vides de ce carré, de telle sorte qu'en additionnant les trois nombres de 3 chiffres vus dans chacune des directions indiquées par les flèches, on obtienne 2025.\n\n![figure](figure:2025-fn-12-square)",
+    "figures": [
+      {
+        "id": "2025-fn-12-square",
+        "description": "Grille carrée 3×3 vue en losange, avec le chiffre 6 déjà placé au centre. Quatre flèches partent des coins vers l'extérieur, et les chiffres 2, 0, 2, 5 sont indiqués aux quatre coins extérieurs du losange (un par direction de lecture).",
+        "imageUrl": "q12_fig-square.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : les grilles 9-5-1 / 3-2-6 / 7-4-8, 9-1-5 / 3-2-6 / 7-8-4 et 9-1-5 / 2-3-6 / 8-7-4"
+  },
+  "correction": {
+    "markdown": "Écrivons les deux additions simultanées sans 0 :\n\n![figure](figure:2025-fn-12-additions)\n\nLes unités totalisent au moins \\(6=1+2+3\\) et au plus \\(24=9+8+7\\), d'où exactement 15.\nPour pouvoir atteindre 45, la somme des chiffres de 1 à 9, les dizaines totalisent 11 et les centaines 19.\nD'où :\n\n- \\(c+f+h=15=h+6+g\\)\n- \\(b+e+6=11=f+e+d\\)\n- \\(a+d+g=19=c+b+a\\)\n\nAinsi \\(b \\geqslant 2\\) car \\(a+c \\leqslant 9+8\\) et \\(b=5-e \\leqslant 4\\).\n\nNous allons examiner trois cas selon la valeur de b en utilisant les relations :\n\n- \\(e=5-b\\)\n- \\(d+f=b+6\\)\n- \\(a+c=19-b\\)\n- \\(g+h=9=8+1=7+2=5+4\\)\n- \\(a+d+g=19=9+8+2=9+7+3=8+7+4\\)\n\nLe cas \\(b=4\\) s'élimine facilement car \\(a+c=15=8+7\\), et parmi g ou h, l'un répéterait 4, 7 ou 8.\n\nReste à examiner les cas \\(b=2\\) et \\(b=3\\) :\n\n![figure](figure:2025-fn-12-cases-table)\n\nOn trouve alors **3 solutions**, chacune s'écrivant de deux façons (une par direction de lecture) :\n\n![figure](figure:2025-fn-12-solutions)\n\n**Réponse : 3 solutions, 951/326/748, 915/326/784, 915/236/874.**",
+    "figures": [
+      {
+        "id": "2025-fn-12-additions",
+        "description": "Deux additions simultanées posées en colonnes, sans zéro, chacune de la forme (3 nombres de 3 chiffres) = 2025 : à gauche avec les lettres a,b,c / d,e,f / g,6,h ; à droite, la même grille lue dans l'autre sens, avec les lettres c,f,h / b,e,6 / a,d,g.",
+        "imageUrl": "q12_corr-additions.png"
+      },
+      {
+        "id": "2025-fn-12-cases-table",
+        "description": "Tableau à 11 colonnes (b, e, d+f, a+c, g+h, a+d+g, a, c, d, f, g, h) et 2 lignes complètes (b=2 et b=3) plus une ligne partielle, détaillant pour chaque valeur de b les décompositions possibles et les valeurs déduites des lettres a,c,d,f,g,h.",
+        "imageUrl": "q12_corr-cases-table.png"
+      },
+      {
+        "id": "2025-fn-12-solutions",
+        "description": "Trois paires d'additions (séparées par « ou »), chaque paire reliée par « et » représentant la même grille solution lue dans les deux directions : (829+731+465 et 915+236+874), (739+425+861 et 951+326+748), (739+821+465 et 915+326+784) — toutes égales à 2025.",
+        "imageUrl": "q12_corr-solutions.png"
+      }
+    ]
+  }
+}

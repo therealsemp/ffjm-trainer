@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 24, "y": 560 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 9, "position": { "x": 24, "y": 300 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 4, "position": { "x": 24, "y": 460 } }
+    ]
+  },
+  "id": "2025-fn-14",
+  "number": 14,
+  "title": "Les années passent, puis se répètent…",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le nombre 23,24252525… où 25 se répète à l'infini, est le développement décimal illimité d'une fraction irréductible. **Laquelle ?**"
+  },
+  "answer": { "type": "exact-text", "value": "230101/9900" },
+  "correction": {
+    "markdown": "Prenons A=0,2525252525… alors 100A-25=0,25252525…=A donc 100A-25=A et que \\(A=\\dfrac{25}{99}\\).\n\nPosons F=23,2425252525… alors (F-23,24)×100=0,25252525…=A donc \\(100F-2324=\\dfrac{25}{99}\\)\n\nd'où 9900F-2324(100-1)=25 et 9900F=232400-2324+25=230101. On a \\(F=\\dfrac{230101}{9900}\\).\n\nCette fraction est-elle irréductible ? 9900=2²×3²×5²×11. Or 230101 n'est divisible ni par 2, ni par 3, ni par 5 et ni par 11. La fraction est irréductible.\n\n\\(F=\\dfrac{230101}{9900}\\).\n\n**Réponse : 230101/9900.**"
+  }
+}

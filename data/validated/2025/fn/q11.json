@@ -1,0 +1,65 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 24,
+        "y": 95
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf",
+        "page": 4,
+        "position": {
+          "x": 24,
+          "y": 300
+        }
+      },
+      {
+        "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf",
+        "page": 3,
+        "position": {
+          "x": 24,
+          "y": 95
+        }
+      }
+    ]
+  },
+  "id": "2025-fn-11",
+  "number": 11,
+  "title": "Une année spéciale",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Le nombre 2025 est multiple de la somme de ses chiffres \\(2+0+2+5=9\\), et le quotient de 2025 par la somme de ses chiffres \\(2025/9=225\\) est un carré parfait.\n\n**Trouvez une autre année du 21e siècle ayant les mêmes propriétés.**\n\nNote : Les années du 21e siècle sont les années de 2001 à 2100 inclus"
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 2023 et 2028"
+  },
+  "correction": {
+    "markdown": "Éliminons le cas 2100 en faisant \\(2100:3=700\\) qui n'est pas un carré. L'année s'écrit donc \\(\\overline{20ab}\\).\n\\((2+a+b) \\times N^2 = 2000+10a+b\\).\nAu maximum \\(2+a+b=20\\) donc \\(N^2>100\\) et \\(N>10\\).\nAu minimum \\(2+a+b=3\\). \\(2100:3=700\\). \\(25^2=625\\) ; \\(26^2=676\\) et \\(27^2=729\\) donc \\(N<27\\).\nPour chaque N entre 11 et 26, calculons \\(N^2\\), puis le quotient de la division de 2100 par \\(N^2\\), et enfin la somme des chiffres de ce dernier nombre s'il s'écrit 20ab.\n\n![figure](figure:2025-fn-11-table)\n\nPour deux autres années autres que 2025 nous avons une concordance entre le quotient et la somme des chiffres.\n\nIl y a **2 solutions** : les années 2023 et 2028.\n\n**Réponse : 2 solutions, 2023 et 2028.**",
+    "figures": [
+      {
+        "id": "2025-fn-11-table",
+        "description": "Tableau à 16 colonnes (N de 11 à 26) et 4 lignes : N², le quotient de 2100 par N² (entier), le produit N²×quotient, et la somme des chiffres de ce produit lorsqu'il s'écrit 20ab (« – » sinon). Les colonnes où quotient et somme des chiffres coïncident sont en gras : N=13 (12=12), N=15 (9=9), N=17 (7=7) — correspondant aux années 2028, 2025 et 2023.",
+        "imageUrl": "q11_corr-table.png"
+      }
+    ]
+  }
+}

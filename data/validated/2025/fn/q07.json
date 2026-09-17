@@ -1,0 +1,38 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "fn",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Finale nationale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/fn/2025_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 460, "y": 210 }
+    },
+    "detailedSolutions": [
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-1.pdf", "page": 2, "position": { "x": 24, "y": 640 } },
+      { "path": "../../../raw/2025/fn/2025_fn_solution-detailed-2.pdf", "page": 2, "position": { "x": 24, "y": 300 } }
+    ]
+  },
+  "id": "2025-fn-7",
+  "number": 7,
+  "title": "Les dominos",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un domino est constitué de deux demi-dominos portant chacun entre 0 et 6 points.\n\nExemples :\n\n![figure](figure:2025-fn-7-dominos)\n\nMathias a placé quatre dominos différents \"en chaîne\" : deux demi-dominos se touchant doivent porter le même nombre de points. Il a multiplié entre eux les nombres de points des huit demi-dominos et a trouvé 2025.\n\n**Quelle est le nombre total de points de la chaîne ?**",
+    "figures": [
+      {
+        "id": "2025-fn-7-dominos",
+        "description": "Trois exemples de dominos, chacun formé de deux moitiés représentées par des points (pips) : un domino aux deux moitiés vides (0-0), un domino avec 3 points sur chaque moitié (3-3), un domino avec 5 points sur une moitié et 2 sur l'autre (5-2).",
+        "imageUrl": "q07_fig-dominos.png"
+      }
+    ]
+  },
+  "answer": { "type": "exact-numeric", "value": "24" },
+  "correction": {
+    "markdown": "2025=45×45=5×5×3×3×3×3. Nous avons huit nombres compris entre 1 et 6 (si l'un était égal à zéro alors le produit serait égal à zéro) : il s'agit donc des nombres 5;5;3;3;3;3;1;1.\n5+5+3+3+3+3+1+1=24.\n\nLa chaîne comporte **24 points**.\n\n**Réponse : 24.**"
+  }
+}

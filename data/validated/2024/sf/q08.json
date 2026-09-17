@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 320, "y": 287 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 133, "y": 200 }
+      }
+    ]
+  },
+  "id": "2024-sf-8",
+  "number": 8,
+  "title": "Les piles",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Gaël doit changer les deux piles de sa lampe de poche. Il a une boîte où il y a six piles dont deux ne fonctionnent pas.\n\n![figure](figure:2024-sf-8-piles)\n\nS'il a de la chance, en deux essais, il peut trouver les deux piles défectueuses : par exemple si la lampe s'allume avec les piles 1 et 2, puis avec les piles 3 et 4, il sait que les piles défectueuses sont les piles 5 et 6.\n\n**Mais s'il utilise la meilleure tactique et s'il n'a pas de chance, combien d'essais devra-t-il effectuer pour éliminer les deux mauvaises piles de sa boîte ?**",
+    "figures": [
+      {
+        "id": "2024-sf-8-piles",
+        "description": "Six piles numérotées de 1 à 6, alignées côte à côte.",
+        "imageUrl": "q08_fig-piles.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "5"
+  },
+  "correction": {
+    "markdown": "Supposons implicitement que la lampe s'allume ssi les deux piles sont bonnes.\n\nParmi les \\(C_6^2 = 15\\) combinaisons de deux piles défectueuses et quatre bonnes, un premier test permet d'en distinguer :\n\n- \\(C_4^2 = 6\\) si la lampe s'allume\n- \\(15 - 6 = 9\\) si la lampe reste éteinte\n\nDans le pire cas, comme \\(2^3 < 9 < 2^4\\), il faudra au moins 4 tests supplémentaires, prouvant que \\(1 + 4 = 5\\) tests seront nécessaires.\n\nMontrons que 5 tests suffisent, en commençant par identifier deux piles bonnes.\n\nAvec 4 piles bonnes parmi 3 groupes disjoints de piles (par exemple, 12, 34 et 56), au moins un groupe contiendra deux piles bonnes, d'après le principe des tiroirs (*).\n\nAinsi en au plus deux tests, on peut identifier deux piles bonnes :\n\n- lorsque la lampe s'allume, au premier test ou, si on est moins chanceux, au second test\n- sinon la lampe reste éteinte aux deux tests, et les deux piles non testées sont nécessairement bonnes\n\nSoit \\(P\\) une pile bonne déterminée précédemment. Il reste alors un groupe de quatre piles inconnues dont deux défectueuses.\n\nUn test direct entre \\(P\\) et une pile inconnue permet de déterminer la nature de cette dernière : si la lampe s'allume, alors la pile inconnue est bonne ; sinon elle est défectueuse.\n\nAinsi trois tests distincts associant \\(P\\) permettront de déterminer la nature de trois des quatre piles inconnues, et, par déduction, celle de la quatrième ; en particulier les deux piles défectueuses seront identifiées.\n\n**Variante sur la fin avec le principe des tiroirs**\n\nAvec 3 tests distincts associant \\(P\\) parmi 2 résultats, deux tests donneront le même résultat, d'après le principe des tiroirs.\n\nLorsque ce même résultat est :\n\n- lampe éteinte, les deux piles défectueuses sont identifiées\n- lampe allumée, les deux piles bonnes sont identifiées, et les deux piles restantes sont défectueuses\n\n**Variante « 3 + 2 tests » (les précédentes étant « 2 + 3 tests »)**\n\nOn repart de (*) en testant 12, 34 et 56 :\n\n- lorsque la lampe s'allume deux fois, on obtient directement les deux piles défectueuses lors du test en échec\n- sinon elle s'allume exactement une fois, par exemple 12 ; alors la pile 1 est bonne et on réalise les deux tests 13 et 15, ce qui permet de déterminer la nature des piles 3 et 5, et par déduction celle des piles 4 (opposée à 3) et 6 (opposée à 5).\n\n**Variante avec un scénario de tests**\n\nTestons d'abord 12 et 13.\n\nSi la lampe s'allume (noté 1 ; sinon 0) au moins une fois, c'est que la pile 1 est bonne : testons ensuite 14 et 15.\n\nSinon, soit la pile 1 est défectueuse, soit les piles 2 et 3 sont défectueuses : testons ensuite 34, 35 et 24.\n\nLes tableaux suivants synthétisent les différents résultats, avec à chaque fois à droite les piles défectueuses déterminées.\n\n| 12 | 13 | 14 | 15 | Piles |\n|---|---|---|---|---|\n| 1 | 1 | 1 | | 56 |\n| 1 | 1 | 0 | 1 | 46 |\n| 1 | 1 | 0 | 0 | 45 |\n| 1 | 0 | 1 | 1 | 36 |\n| 1 | 0 | 1 | 0 | 35 |\n| 1 | 0 | 0 | | 34 |\n| 0 | 1 | 1 | 1 | 26 |\n| 0 | 1 | 1 | 0 | 25 |\n| 0 | 1 | 0 | | 24 |\n\nou\n\n| 12 | 13 | 34 | 35 | 24 | Piles |\n|---|---|---|---|---|---|\n| 0 | 0 | 1 | 1 | 1 | 16 |\n| 0 | 0 | 1 | 1 | 0 | 12 |\n| 0 | 0 | 1 | 0 | | 15 |\n| 0 | 0 | 0 | 1 | | 14 |\n| 0 | 0 | 0 | 0 | 1 | 13 |\n| 0 | 0 | 0 | 0 | 0 | 23 |\n\nExplication du dernier cas avec 5 tests en échec : si la pile 3 était bonne, alors 1, 4 et 5 seraient défectueuses, contradiction. Si la pile 2 était bonne, alors 1 et 4 seraient défectueuses comme 3, contradiction.\n\nLes 15 cas sont donc couverts en au plus 5 tests.\n\nRéponse : 5 essais au plus pour éliminer les deux mauvaises piles.\n\n**Réponse : 5.**",
+    "figures": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 16, "y": 667 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 8,
+        "position": { "x": 133, "y": 130 }
+      }
+    ]
+  },
+  "id": "2024-sf-15",
+  "number": 15,
+  "title": "Les fractions égyptiennes",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Mathilde a trouvé cette égalité dans un vieux cahier de son grand-père. Deux dénominateurs différents, des entiers naturels, sont cachés par des taches d'encre.\n\n![figure](figure:2024-sf-15-fraction)\n\n**Quelle était la somme de ces deux dénominateurs ?**",
+    "figures": [
+      {
+        "id": "2024-sf-15-fraction",
+        "description": "Égalité \\(\\frac{2}{85} = \\frac{1}{\\blacksquare} + \\frac{1}{\\blacksquare}\\), les deux dénominateurs remplacés chacun par une tache d'encre grise.",
+        "imageUrl": "q15_fig-fraction.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "4 solutions : 242, 306, 810 ou 3698"
+  },
+  "correction": {
+    "markdown": "Notons \\(a > b > 0\\) les deux dénominateurs tels que \\(\\frac{2}{85} = \\frac{1}{a} + \\frac{1}{b}\\), ou encore \\(2ab = 85(a+b)\\).\n\nD'où \\((2a - 85)(2b - 85) = 85^2\\).\n\nComme \\(85 = 5 \\times 17\\), et que \\(a > b\\), il y a quatre factorisations possibles.\n\n| \\(2a - 85\\) | \\(85^2 = 7225\\) | 1445 | 425 | 289 |\n|---|---|---|---|---|\n| \\(2b - 85\\) | 1 | 5 | 17 | \\(5^2 = 25\\) |\n| \\(a\\) | 3655 | 765 | 255 | 187 |\n| \\(b\\) | 43 | 45 | 51 | 55 |\n| \\(a+b\\) | 3698 | 810 | 306 | 242 |\n\nConclusion : 4 valeurs possibles pour \\(a+b\\), 242, 306, 810 ou 3698.\n\n**Réponse : 242, 306, 810 ou 3698.**",
+    "figures": []
+  }
+}

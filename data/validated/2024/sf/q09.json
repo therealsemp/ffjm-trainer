@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 320, "y": 440 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": { "x": 133, "y": 480 }
+      }
+    ]
+  },
+  "id": "2024-sf-9",
+  "number": 9,
+  "title": "Le calcul de Mathias",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "A représente un chiffre différent de 0, toujours le même, et \\(\\overline{AA}\\) un nombre à deux chiffres. Mathias a effectué le calcul suivant et son résultat est un nombre qui s'écrit avec A chiffres.\n\n\\[\\overline{AA} \\times \\overline{AA} + \\overline{AA} + \\overline{AA}\\]\n\nMathias a ensuite divisé ce résultat par A.\n\n**Quel est le résultat de cette division ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "506"
+  },
+  "correction": {
+    "markdown": "Le nombre à \\(A\\) chiffres vaut \\(N(A) = 11A(11A+2) = (11A+1)^2 - 1\\), fonction strictement croissante de \\(A\\).\n\nAinsi \\(1 \\leqslant A \\leqslant 9\\) entraîne \\(N(1) \\leqslant N(A) \\leqslant N(9)\\).\n\nComme \\(N(1) = 143\\) (3 chiffres) et \\(N(9) = 9999\\) (4 chiffres), il vient \\(3 \\leqslant A \\leqslant 4\\).\n\nIl reste alors à vérifier :\n\n- \\(N(3) = 1155\\), qui ne convient pas puisqu'il s'écrit avec 4 (et non 3) chiffres\n- \\(N(4) = 2024\\), qui convient puisqu'il s'écrit avec 4 chiffres\n\nLe résultat demandé est alors \\(\\frac{N(4)}{4} = 506\\).\n\n**Réponse : 506.**",
+    "figures": []
+  }
+}

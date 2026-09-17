@@ -1,0 +1,60 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 320,
+        "y": 363
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 133,
+          "y": 200
+        }
+      }
+    ]
+  },
+  "id": "2024-sf-17",
+  "number": 17,
+  "title": "Des médailles et des coupes",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Pour le 38e championnat des jeux mathématiques, la fédération internationale a décidé de produire des médailles circulaires.\n\nSur celles-ci sont représentés deux demi-disques tangents et de bases parallèles. Ces deux demi-disques ont les extrémités de leur diamètre de base sur le bord de la médaille. L'aire du demi-disque supérieur est exactement le double de l'aire du demi-disque inférieur (le schéma ne respecte pas forcément les proportions).\n\n![figure](figure:2024-sf-17-medal)\n\n**Déterminer l'aire de la partie grisée, sachant que la médaille a un diamètre de 8 cm.**\n\nOn donnera la réponse en mm², arrondie à l'entier le plus proche, et si besoin est, on utilisera 3,1416 pour π et 1,414 pour √2.",
+    "figures": [
+      {
+        "id": "2024-sf-17-medal",
+        "description": "Cercle (contour de la médaille) contenant deux demi-disques grisés tangents en leur milieu, de bases parallèles horizontales : un grand demi-disque orienté vers le bas dans la moitié supérieure du cercle, et un plus petit demi-disque orienté vers le haut dans la moitié inférieure.",
+        "imageUrl": "q17_fig-medal.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2513"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2024-sf-17-corr-circle)\n\nNotons \\(R = AI\\) (resp. \\(r = DJ\\)) le rayon du grand (resp. petit) demi-disque, et \\(x = OT\\) la distance entre le centre de la médaille et le point de tangence.\n\nL'aire cherchée vaut alors \\(a = \\frac{\\pi}{2}(r^2 + R^2)\\).\n\nComme \\((AB)\\) est parallèle à \\((CD)\\), la perpendiculaire à la tangente commune en \\(T\\) coïncide avec \\((IJ)\\), médiatrice des cordes \\([AB]\\) et \\([CD]\\) passant par \\(O\\) : \\(I\\), \\(O\\), \\(T\\) et \\(J\\) sont donc alignés.\n\nNous avons la relation \\(r^2 + (r+x)^2 = 4^2 = R^2 + (R-x)^2\\) en appliquant le théorème de Pythagore dans les triangles \\(DJO\\) et \\(AIO\\), respectivement rectangles en \\(J\\) et \\(I\\).\n\nD'où \\(R^2 - r^2 = (r+x)^2 - (R-x)^2\\).\n\nOu encore \\((R-r)(R+r) = (r-R+2x)(R+r)\\).\n\nComme \\(R + r > 0\\), il vient \\(x = R - r\\).\n\nEn réinjectant cette relation, nous obtenons \\(r^2 + R^2 = 4^2\\).\n\nFinalement \\(a = 8\\pi \\approx 25{,}1328\\) cm², soit 2513 mm² après arrondi.\n\nRemarque : nous n'avons pas utilisé la propriété entre les aires des demi-disques, se traduisant par \\(R^2 = 2r^2\\), d'où \\(r = \\frac{4\\sqrt{3}}{3}\\), \\(R = \\frac{4\\sqrt{6}}{3}\\) et \\(x = \\frac{4\\sqrt{3}}{3}(\\sqrt{2}-1)\\).\n\n**Réponse : 2513.**",
+    "figures": [
+      {
+        "id": "2024-sf-17-corr-circle",
+        "description": "Cercle de la médaille avec construction géométrique complète : points A et B aux extrémités du diamètre du grand demi-disque (en haut), I le milieu de AB, D et C aux extrémités du diamètre du petit demi-disque (en bas), J le milieu de DC, O le centre du cercle, T le point de tangence entre les deux demi-disques ; I, O, T, J alignés verticalement, avec des angles droits marqués en I et J, et des pointillés reliant O à A et à D.",
+        "imageUrl": "q17_corr-circle.png"
+      }
+    ]
+  }
+}

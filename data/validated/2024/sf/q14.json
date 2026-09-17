@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 16, "y": 467 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 7,
+        "position": { "x": 133, "y": 590 }
+      }
+    ]
+  },
+  "id": "2024-sf-14",
+  "number": 14,
+  "title": "Un quadrilatère croisé",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Cette figure ne respecte pas les proportions, mais on sait que :\n\n- ABD, ACD et AED sont des triangles rectangles ;\n- AE = 8 m et ED = 21 m ;\n- AC mesure 2 mètres de plus que AB ;\n- BD mesure 4 mètres de plus que CD.\n\n![figure](figure:2024-sf-14-quad)\n\n**Quel est, en mètres, le périmètre du quadrilatère croisé ABDC ?**\n\nSi besoin est, on arrondira le résultat à l'entier le plus proche.",
+    "figures": [
+      {
+        "id": "2024-sf-14-quad",
+        "description": "Quadrilatère croisé : point A à gauche, D à droite, avec deux segments AD croisés formant B (en haut, proche de A) et C (en haut, au-dessus, avec un angle droit marqué en C) reliés à A et D ; un point E en bas relié à A (8 m, angle droit en E) et à D (21 m).",
+        "imageUrl": "q14_fig-quad.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "60"
+  },
+  "correction": {
+    "markdown": "Posons \\(AB = x\\) et \\(CD = y\\), de sorte que \\(AC = x + 2\\) et \\(BD = y + 4\\).\n\nLe périmètre cherché vaut \\(p = AB + BD + DC + CA = 2(x + y + 3)\\).\n\nAvec trois triangles rectangles, \\(AED\\), \\(ABD\\) et \\(ACD\\), respectivement rectangles en \\(E\\), \\(B\\) et \\(C\\), abusons du théorème de Pythagore :\n\n- \\(AD^2 = 8^2 + 21^2 = 505\\)\n- \\(AB^2 + BD^2 = AD^2 = AC^2 + CD^2\\)\n\nD'où \\(x^2 + (y+4)^2 = 505 = (x+2)^2 + y^2\\).\n\nAinsi \\((x+2)^2 - x^2 = (y+4)^2 - y^2\\), ou encore \\(2 \\times 2(x+1) = 4 \\times 2(y+2)\\).\n\nD'où \\(x = 2y + 3\\) et \\(p = 6(y+2)\\).\n\nEn réinjectant cette relation, il vient \\((2y+5)^2 + y^2 = 505\\), soit \\(y^2 + 4y - 96 = 0\\).\n\nD'où \\((y-8)(y+12) = 0\\) et donc \\(y = 8\\) (seule racine positive), et \\(x = 19\\).\n\nFinalement \\(p = 6 \\times 10 = 60\\).\n\n**Réponse : 60.**",
+    "figures": []
+  }
+}

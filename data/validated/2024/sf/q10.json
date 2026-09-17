@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 320, "y": 600 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": { "x": 133, "y": 130 }
+      }
+    ]
+  },
+  "id": "2024-sf-10",
+  "number": 10,
+  "title": "Un peu de cuisine",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "**RIZ + SEL + WOK = 2024**\n\nDans cette opération codée, chaque lettre remplace un chiffre, toujours le même, et deux lettres différentes remplacent toujours deux chiffres différents. Cette opération codée a 2160 solutions différentes. Mais un chiffre n'apparaît dans aucune de ces solutions.\n\n**Lequel ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1"
+  },
+  "correction": {
+    "markdown": "Soit \\(n = \\sum_{i=0}^{k} d_i 10^i\\) et \\(s(n) = \\sum_{i=0}^{k} d_i\\), la somme des chiffres de \\(n\\).\n\nLa relation \\(n \\equiv s(n) \\pmod 9\\) est à la base de la « preuve par neuf ».\n\nAinsi \\(R + I + Z + S + E + L + W + O + K \\equiv \\overline{RIZ} + \\overline{SEL} + \\overline{WOK} \\pmod 9\\) et \\(2024 \\equiv 2 + 0 + 2 + 4 = 8 \\pmod 9\\).\n\nComme la somme des 10 chiffres vaut \\(\\frac{9 \\times 10}{2} = 45 \\equiv 0 \\pmod 9\\), le chiffre manquant \\(c\\) vérifie alors \\(c + 8 \\equiv 0 \\pmod 9\\), d'où \\(c = 1\\).\n\nUne variante est de déterminer l'une des solutions, par exemple \\(869 + 735 + 420\\) ou \\(950 + 728 + 346\\).\n\n**Réponse : 1.**",
+    "figures": []
+  }
+}

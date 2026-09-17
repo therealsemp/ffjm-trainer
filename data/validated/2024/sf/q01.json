@@ -1,0 +1,51 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 16, "y": 67 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 133, "y": 285 }
+      }
+    ]
+  },
+  "id": "2024-sf-1",
+  "number": 1,
+  "title": "Color-cases",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**On demande de colorier trois cases de cette grille en respectant deux consignes :**\n\n- dans chaque ligne et dans chaque colonne, il ne doit y avoir qu'une seule case coloriée ;\n- quand on additionne les nombres des trois cases coloriées, on doit trouver 15.\n\n![figure](figure:2024-sf-1-grid)",
+    "figures": [
+      {
+        "id": "2024-sf-1-grid",
+        "description": "Grille 3×3 avec les nombres 1, 4, 7 (première ligne), 9, 5, 3 (deuxième ligne), 6, 8, 2 (troisième ligne), sans case coloriée.",
+        "imageUrl": "q01_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "1 solution : 4, 9, 2 (colorées, dans cet ordre de lecture de la grille)"
+  },
+  "correction": {
+    "markdown": "Avec les conditions une seule case coloriée par rangée, il y a \\(3! = 6\\) sommes à vérifier :\n\n- \\(1 + 5 + 2 = 8\\)\n- \\(1 + 3 + 8 = 12\\)\n- \\(4 + 9 + 2 = 15\\)\n- \\(4 + 3 + 6 = 13\\)\n- \\(7 + 9 + 8 = 24\\)\n- \\(7 + 5 + 6 = 18\\)\n\nUne seule donne 15.\n\n![figure](figure:2024-sf-1-corr-grid)\n\n**Réponse : 4, 9, 2.**",
+    "figures": [
+      {
+        "id": "2024-sf-1-corr-grid",
+        "description": "Même grille 3×3, avec les cases 4, 9 et 2 mises en évidence par un fond gris clair (les trois cases coloriées de la solution).",
+        "imageUrl": "q01_corr-grid.png"
+      }
+    ]
+  }
+}

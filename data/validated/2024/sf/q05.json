@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 16, "y": 513 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 133, "y": 305 }
+      }
+    ]
+  },
+  "id": "2024-sf-5",
+  "number": 5,
+  "title": "La guirlande d'anniversaire",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Demain, c'est l'anniversaire de Johanna. Cécile assemble des triangles pour fabriquer une guirlande. Elle répète plusieurs fois ce motif.\n\n![figure](figure:2024-sf-5-guirlande)\n\nElle s'arrête, avant de finir un dernier motif, quand elle colle son 12ème triangle gris.\n\n**Combien de triangles a-t-elle utilisés en tout ?**",
+    "figures": [
+      {
+        "id": "2024-sf-5-guirlande",
+        "description": "Motif de 4 triangles pointant vers le bas, dans l'ordre : gris, blanc, gris, noir.",
+        "imageUrl": "q05_fig-guirlande.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "23"
+  },
+  "correction": {
+    "markdown": "Chaque motif comporte 2 triangles gris, le premier en première position, et le deuxième en troisième position.\n\nAlors le dernier triangle collé, le 12ème gris, apparaîtra dans le \\(\\frac{12}{2} = 6\\)ème motif, en troisième position.\n\nAinsi \\(5 \\times 4 + 3 = 6 \\times 4 - 1 = 23\\) triangles auront été utilisés.\n\n**Réponse : 23.**",
+    "figures": []
+  }
+}

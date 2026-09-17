@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 16, "y": 420 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 133, "y": 145 }
+      }
+    ]
+  },
+  "id": "2024-sf-4",
+  "number": 4,
+  "title": "Les gâteaux d'anniversaire",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Demain, c'est l'anniversaire de Nelly.\n\nAntoine achète deux boîtes de gâteaux.\n\n![figure](figure:2024-sf-4-boxes)\n\nPuis il achète encore une troisième boîte.\n\n**Combien coûte-t-elle ?**",
+    "figures": [
+      {
+        "id": "2024-sf-4-boxes",
+        "description": "Trois boîtes de gâteaux illustrées : la première (16 €) et la deuxième (14 €) contiennent chacune plusieurs gâteaux (gros gâteau rond et petits gâteaux), la troisième (prix « ? € ») contient un assortiment différent de gâteaux.",
+        "imageUrl": "q04_fig-boxes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "11"
+  },
+  "correction": {
+    "markdown": "La deuxième boîte et la moitié de la première correspondent au double de la troisième boîte.\n\nAinsi la troisième boîte vaut \\(\\frac{1}{2}\\left(14 + \\frac{16}{2}\\right) = 11\\) €.\n\nRemarque : un grand gâteau coûte 5 et un petit 3.\n\n**Réponse : 11.**",
+    "figures": []
+  }
+}

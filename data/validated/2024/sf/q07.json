@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 320, "y": 50 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 133, "y": 680 }
+      }
+    ]
+  },
+  "id": "2024-sf-7",
+  "number": 7,
+  "title": "Carrés en série",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "![figure](figure:2024-sf-7-squares)\n\nLundi, Julia a dessiné un carré sur une feuille.\n\nMardi, elle partage son carré en 4 carrés. Elle colorie en noir le carré en haut à droite.\n\nMercredi, elle fait de même pour les carrés blancs, comme indiqué sur la figure.\n\nJeudi, elle fait de même pour les carrés blancs restants.\n\nVendredi, elle fait de même pour les carrés blancs restants.\n\n**Combien Julia a-t-elle de carrés noirs, en tout, sur sa feuille, le vendredi soir ?**",
+    "figures": [
+      {
+        "id": "2024-sf-7-squares",
+        "description": "Trois étapes du carré de Julia, étiquetées Lundi (carré blanc entier), Mardi (carré divisé en 4, celui en haut à droite noirci), Mercredi (le carré en bas à gauche du découpage de Mardi lui-même divisé en 4, avec un nouveau carré noirci en haut à droite de cette subdivision, selon le même principe répété).",
+        "imageUrl": "q07_fig-squares.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "40"
+  },
+  "correction": {
+    "markdown": "Chaque jour les carrés blancs de la veille génèrent autant de nouveaux carrés noirs, et trois fois plus de nouveaux carrés blancs.\n\nVoici un tableau qui récapitule le nombre de carrés par couleur.\n\n| | Lundi | Mardi | Mercredi | Jeudi | Vendredi |\n|---|---|---|---|---|---|\n| Blanc | 1 | 3 | 9 | 27 | 81 |\n| Noir | 0 | 1 | 4 | 13 | 40 |\n\nPour aller plus loin, cela se traduit par les relations de récurrence avec \\(b_j\\) (resp. \\(n_j\\)) le nombre de carrés blancs (resp. noirs) le jour \\(j\\) :\n\n- \\(b_{j+1} = 3b_j\\) avec \\(b_0 = 1\\)\n- \\(n_{j+1} = n_j + b_j\\) avec \\(n_0 = 0\\)\n\nD'où \\(b_j = 3^j\\) et \\(n_j = \\frac{3^j - 1}{2}\\) et la valeur demandée est \\(n_4 = 40\\).\n\n**Réponse : 40.**",
+    "figures": []
+  }
+}

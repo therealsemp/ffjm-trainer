@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 16, "y": 293 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 133, "y": 645 }
+      }
+    ]
+  },
+  "id": "2024-sf-3",
+  "number": 3,
+  "title": "De A à Z",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Voici les constructions de Alix et Zoé. Alix a construit un cube plein avec des petits cubes.\n\n![figure](figure:2024-sf-3-cubes)\n\nZoé veut faire la même construction qu'Alix mais elle n'a pas encore fini.\n\n**Combien de petits cubes Zoé doit-elle encore ajouter ?**",
+    "figures": [
+      {
+        "id": "2024-sf-3-cubes",
+        "description": "Deux constructions en cubes vus en perspective : à gauche, le cube plein d'Alix (3×3×3 petits cubes) ; à droite, la construction inachevée de Zoé, en forme de L (un premier niveau incomplet de cubes visibles).",
+        "imageUrl": "q03_fig-cubes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "18"
+  },
+  "correction": {
+    "markdown": "Le cube plein d'Alix contient \\(3^3 = 27\\) petits cubes.\n\nLa construction de Zoé rend visibles 8 petits cubes, mais il y en a un supplémentaire caché, en formulant l'hypothèse que par gravité le petit cube du deuxième niveau situé à l'arrière ne reposerait sur rien et tomberait.\n\nVariante : les deux petits cubes du deuxième niveau peuvent être déplacés mentalement pour compléter le premier niveau, soit \\(3^2 = 9\\) petits cubes.\n\nAinsi, Zoé doit encore ajouter \\(27 - 9 = 18\\) petits cubes.\n\n**Réponse : 18.**",
+    "figures": []
+  }
+}

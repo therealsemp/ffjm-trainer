@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 16, "y": 143 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 133, "y": 495 }
+      }
+    ]
+  },
+  "id": "2024-sf-2",
+  "number": 2,
+  "title": "Moitié-moitié",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Sam achète des pommes au marché qu'il met dans son panier. Il rencontre Alya, il lui donne la moitié des pommes de son panier. Il rencontre ensuite Bob, il lui donne la moitié des pommes qui restent dans son panier. Il arrive chez lui, il compte ses pommes : il en a cinq.\n\n**Combien de pommes a-t-il achetées au marché ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "20"
+  },
+  "correction": {
+    "markdown": "Après sa première rencontre, il reste à Sam la moitié de son achat initial.\n\nAprès sa deuxième rencontre, il lui reste le quart de son achat initial, ce qui représente cinq pommes.\n\nIl avait donc acheté \\(5 \\times 4 = 20\\) pommes.\n\n**Réponse : 20.**",
+    "figures": []
+  }
+}

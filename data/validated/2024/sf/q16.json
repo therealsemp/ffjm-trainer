@@ -1,0 +1,39 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 320, "y": 57 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 8,
+        "position": { "x": 133, "y": 460 }
+      }
+    ]
+  },
+  "id": "2024-sf-16",
+  "number": 16,
+  "title": "De 23 à 2024",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Matt remarque que 2024 est divisible par le nombre premier 23 égal à \\(24 - 1\\).\n\n**Quelle autre année entre 1000 et 2024, dont le chiffre des dizaines est différent de 0, présentait la même propriété, c'est-à-dire qu'un des diviseurs premiers du millésime est égal au nombre formé par les deux derniers chiffres de ce millésime moins 1 ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "open",
+    "value": "4 solutions : 1012, 1014, 1520 ou 1580"
+  },
+  "correction": {
+    "markdown": "Notons \\(100p + q + 1\\) le millésime cherché, avec \\(10 \\leqslant p \\leqslant 20\\) et \\(q\\) un nombre premier à deux chiffres.\n\nLa propriété se traduit par \\(100p + q + 1 \\equiv 0 \\pmod q\\).\n\nOu encore \\(100p + 1 \\equiv 0 \\pmod q\\), ce qui signifie que \\(q\\) divise \\(100p + 1\\).\n\nComme \\(45^2 = 2025 > 2001\\), soit \\(Q = \\{11, 13, 17, 19, 23, 29, 31, 37, 41, 43\\}\\).\n\nPour répondre au problème, il n'est pas nécessaire d'obtenir la décomposition complète de \\(100p + 1\\), mais juste les facteurs premiers à deux chiffres.\n\nPlutôt que de tester la divisibilité des 11 valeurs par un élément de \\(Q\\) pour saisir un \\(q \\leqslant \\lfloor \\sqrt{100p+1} \\rfloor\\), nous allons inverser \\(q \\in Q\\), en cherchant \\(k\\) tel que \\(kq \\equiv 1 \\pmod{100}\\).\n\nDétaillons sur deux exemples :\n\n- \\(q = 13\\)\n  - pour obtenir 1 en unité, on ne peut le multiplier que par 7, d'où \\(13 \\times 7 = 91\\).\n  - pour obtenir 0 en dizaine, il faut ajouter 10 fois un multiple qui se termine par \\(10 - 9 = 1\\), soit encore 91, d'où \\(13 \\times 77 = 1001\\).\n- \\(q = 17\\)\n  - pour obtenir 1 en unité, on ne peut le multiplier que par 3, d'où \\(17 \\times 3 = 51\\).\n  - pour obtenir 0 en dizaine, il faut ajouter 10 fois un multiple qui se termine par \\(10 - 5 = 5\\), soit 85, mais \\(17 \\times 53 = 901\\).\n\nD'où le tableau en ne conservant que les millésimes \\(kq\\) entre 1001 et 2001, et en vérifiant si \\(k\\) est le multiple d'un nombre premier à deux chiffres absent de \\(Q\\).\n\n| \\(q\\) | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| \\(k\\) | 91 | 77 | 53 | 79 | 87 | 69 | 71 | 73 | 61 | 7 |\n| \\(kq = 100p+1\\) | 1001 | 1001 | - | 1501 | 2001 | 2001 | - | - | - | - |\n| \\(q\\) | 11 | 13 | - | 19 ou 79 | 23 | 29 | - | - | - | - |\n| \\(kq + q\\) | 1012 | 1014 | - | 1520 ou 1580 | 2024 | 2030 | - | - | - | - |\n\nConclusion : quatre années avec la même propriété, 1012, 1014, 1520 ou 1580.\n\n**Réponse : 1012, 1014, 1520 ou 1580.**",
+    "figures": []
+  }
+}

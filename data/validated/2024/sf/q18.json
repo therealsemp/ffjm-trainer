@@ -1,0 +1,90 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 2,
+      "position": { "x": 320, "y": 600 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 9,
+        "position": { "x": 133, "y": 600 }
+      }
+    ]
+  },
+  "id": "2024-sf-18",
+  "number": 18,
+  "title": "La numérotation cavalière",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Mathilde déplace un cavalier sur un échiquier de 8 fois 8 cases sans passer deux fois par la même case. Elle numérote les cases par où est passé le cavalier : 1 pour la case de départ, 2 pour la suivante, etc.\n\nA un moment, le cavalier est passé par les huit cases de la première rangée de l'échiquier. En lisant le grand nombre obtenu par tous les chiffres écrits sur cette rangée, de gauche à droite sans se préoccuper des cases, elle se rend compte que ce nombre n'aurait pas pu être plus petit.\n\n**Quel est ce nombre ?**\n\nOn rappelle qu'un cavalier d'échecs se déplace selon la diagonale d'un rectangle de deux cases sur trois, dans n'importe quelle direction.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "101121583205"
+  },
+  "correction": {
+    "markdown": "Dans un échiquier \\(8 \\times 8\\), la numérotation des cases va de 1 à 64.\n\nAfin de minimiser le nombre cherché, maximisons le nombre d'entiers à un chiffre présents sur la première rangée.\n\nNotons qu'il ne peut y avoir deux entiers consécutifs car le cavalier change de rangée après un déplacement, les composantes 1 et 2 étant non nulles.\n\nDe plus, le cavalier ayant un déplacement impair (parité de \\(1+2=3\\)), il parcourt des cases en alternant la couleur : ainsi tous les nombres des cases blanches auront la même parité, opposée à celle des nombres des cases noires.\n\nS'il y avait au moins 5 entiers à un chiffre sur la première rangée, alors parmi les 4 ensembles 23, 45, 67, 89, il ne pourrait pas y avoir deux représentants d'un même ensemble, sous peine d'avoir deux entiers consécutifs. Ainsi il y aurait 1, et par conséquent 3, 5, 7 et 9, soit les 5 impairs. Mais cela serait impossible car dans une rangée, il y a exactement 4 cases blanches et 4 noires.\n\nIl y a donc au plus quatre entiers à un chiffre sur la première rangée, et le nombre formé comporte au moins \\(4 \\times 1 + (8-4) \\times 2 = 12\\) chiffres.\n\nNous allons tenter de construire un entier à 12 chiffres avec quatre entiers à un chiffre.\n\nPour être le plus petit, visons un nombre débutant par 10, que nous plaçons dans le coin gauche.\n\nIl y a alors deux façons d'enchaîner le mouvement 9-10-11.\n\n![figure](figure:2024-sf-18-corr-t1)\n\nou\n\n![figure](figure:2024-sf-18-corr-t2)\n\nToujours pour être le plus petit, visons un nombre débutant par 1011.\n\nComme 11 est déjà utilisé, cela nécessite 1 en deuxième case, puis un autre entier parmi 12 à 19.\n\n![figure](figure:2024-sf-18-corr-t3)\n\nou\n\n![figure](figure:2024-sf-18-corr-t4)\n\nEn troisième case, l'entier sera minimal avec la configuration de gauche où nous plaçons 12, ce qui n'est pas possible dans celle de droite.\n\nPour passer d'une case à sa voisine par un côté, de couleur et donc de parité opposée, il faut au moins trois déplacements.\n\nAinsi en quatrième case, visons 15, en veillant à ne pas placer 14 au niveau d'une des deux cases de l'enchaînement du coin droit, car ce dernier n'est pas la fin du parcours (64 pair), sa valeur étant impaire puisque de couleur opposée au coin gauche (10 pair).\n\n![figure](figure:2024-sf-18-corr-t5)\n\nou\n\n![figure](figure:2024-sf-18-corr-t6)\n\nLe coin droit ne porte pas 3 car en deux mouvement on ne peut dépasser une distance de 4, alors que 1 est distant de 6 du coin droit.\n\nDe même, le coin droit ne porte pas 7 (distance horizontale de 5 vis-à-vis de 9).\n\nLe coin droit porte soit 5, soit un nombre impair à deux chiffres.\n\nSi c'est un nombre impair à deux chiffres, alors les trois autres entiers à un chiffre sont deux pairs parmi 4, 6 ou 8 et un impair parmi 3 ou 7. Cela ne peut être 7 car avec 6 ou 8, il y aurait deux entiers consécutifs. C'est donc 3, 6 et 8. Le placement est imposé pour 8 et 3. Les cases de l'enchaînement du coin droit doivent rester libres (X). On vérifie alors qu'il est impossible de placer 4 et 5 pour relier 3 à 6.\n\n![figure](figure:2024-sf-18-corr-t7)\n\nC'est donc 5 et il reste trois emplacements, deux pairs et un impair, les deux autres entiers à un chiffre étant parmi 3, 7 ou 8 : 3 et 7 étant impossibles (deux impairs), tout comme 7 et 8 (deux consécutifs), ce sont donc 3 et 8, dont le placement est imposé. En particulier la position de 3 impose le placement de 4 dans le mouvement 4-5-6, et donc celui de 6. Il ne reste alors qu'une position possible pour le 7.\n\n![figure](figure:2024-sf-18-corr-t8)\n\nEn reprenant les placements possibles de 13 et 14 vus précédemment, il en résulte.\n\n![figure](figure:2024-sf-18-corr-t9)\n\nNous vérifions alors que pour passer du 15 à ??, cinq mouvements sont nécessaires, ce qui permet d'obtenir la valeur 101 121 583 205, minimale par construction, obtenue par exemple des façons suivantes (les nombres entre parenthèses donnent des variantes) :\n\n![figure](figure:2024-sf-18-corr-t10)\n\nRemarque : rien n'indique que le parcours complet de l'échiquier est possible, et fort heureusement car sinon cela obligerait à procéder à des vérifications plus approfondies.\n\n**Réponse : 101 121 583 205.**",
+    "figures": [
+      {
+        "id": "2024-sf-18-corr-t1",
+        "description": "Grille 3×4 partielle : 10 en case (1,1), 9 en case (2,3), 11 en case (3,2), les autres cases vides.",
+        "imageUrl": "q18_corr-t1.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t2",
+        "description": "Variante : 10 en case (1,1), 11 en case (2,3), 9 en case (3,2), les autres cases vides.",
+        "imageUrl": "q18_corr-t2.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t3",
+        "description": "Grille 3×4 partielle : 10, 1, 1? en première ligne, 9 en case (2,3), 11 en case (3,2).",
+        "imageUrl": "q18_corr-t3.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t4",
+        "description": "Variante : 10, 1, 1? en première ligne, 11 en case (2,3), 9 en case (3,2).",
+        "imageUrl": "q18_corr-t4.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t5",
+        "description": "Grille 3×4 : 10, 1, 12, 15 en première ligne, 14, 9 en case (2,2)-(2,3), 11, 13 en case (3,2) et (3,4).",
+        "imageUrl": "q18_corr-t5.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t6",
+        "description": "Variante : 10, 1, 12, 15 en première ligne, (13), 9, 13 en deuxième ligne, 11, 14 en troisième ligne.",
+        "imageUrl": "q18_corr-t6.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t7",
+        "description": "Grille 3×8 : 10, 1, 12, 15, 8, 3, 6, ?? en première ligne, 9, 2, X en deuxième ligne (sous les colonnes 3, 4, 6), 11, 7, X en troisième ligne (sous les colonnes 2, 6, 7).",
+        "imageUrl": "q18_corr-t7.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t8",
+        "description": "Grille 3×8 : 10, 1, 12, 15, 8, 3, ??, 5 en première ligne, 9, 2, 6 en deuxième ligne, 11, 7, 4 en troisième ligne.",
+        "imageUrl": "q18_corr-t8.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t9",
+        "description": "Grille 3×8 : 10, 1, 12, 15, 8, 3, ??, 5 en première ligne, (13), 9, 2, 13, 6 en deuxième ligne, 11, 14, 7 en troisième ligne.",
+        "imageUrl": "q18_corr-t9.png"
+      },
+      {
+        "id": "2024-sf-18-corr-t10",
+        "description": "Grille finale à 4 lignes : 10, 1, 12, 15, 8, 3, 20, 5 en première ligne ; (13), 9, 2, 13, 6, 17, ((18)) en deuxième ligne ; 11, 14, 7, 16, 19, 4, (19) en troisième ligne ; (18), ((17)), 18 en quatrième ligne (sous les trois dernières colonnes), les parenthèses indiquant des variantes possibles.",
+        "imageUrl": "q18_corr-t10.png"
+      }
+    ]
+  }
+}

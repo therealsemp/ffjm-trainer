@@ -1,0 +1,45 @@
+{
+  "year": 2024,
+  "champNumber": 38,
+  "phase": "sf",
+  "examTitle": "38e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2024/sf/2024_sf_statement.pdf",
+      "page": 1,
+      "position": { "x": 16, "y": 657 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2024/sf/2024_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 133, "y": 530 }
+      }
+    ]
+  },
+  "id": "2024-sf-6",
+  "number": 6,
+  "title": "Les rectangles",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**Combien de rectangles entièrement dessinés, peut-on compter sur cette figure ?**\n\n![figure](figure:2024-sf-6-rectangles)\n\nAttention, les carrés sont des rectangles particuliers. Il faut les compter !",
+    "figures": [
+      {
+        "id": "2024-sf-6-rectangles",
+        "description": "Trois carrés/rectangles superposés en escalier : un carré en haut, un rectangle horizontal au milieu chevauchant le carré du haut, et un carré en bas à droite chevauchant le rectangle du milieu.",
+        "imageUrl": "q06_fig-rectangles.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "13"
+  },
+  "correction": {
+    "markdown": "Prenons comme unité la longueur d'un petit carré et dénombrons les rectangles selon les dimensions possibles :\n\n- \\(1 \\times 1\\) (4)\n- \\(1 \\times 2\\) (3)\n- \\(1 \\times 3\\) (1)\n- \\(2 \\times 2\\) (1)\n- \\(2 \\times 3\\) (2)\n- \\(3 \\times 3\\) (2)\n\nCela représente en tout 13 rectangles.\n\n**Réponse : 13.**",
+    "figures": []
+  }
+}

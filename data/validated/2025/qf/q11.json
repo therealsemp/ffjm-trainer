@@ -1,0 +1,50 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 309.3,
+        "y": 459.9
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 133.8,
+          "y": 134.7
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-11",
+  "number": 11,
+  "title": "Les trois carrés",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathias a dessiné trois carrés de côtés mesurant des nombres entiers de centimètres, dont deux sont identiques. La somme des aires des trois carrés est égale à 2025 cm².\n\n**Combien mesure le périmètre du plus petit carré, ou de l'un d'eux s'ils sont identiques ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 60 ou 80"
+  },
+  "correction": {
+    "markdown": "Les trois carrés ont pour aire \\(2a^2 + b^2 = 2025 = 45^2\\) avec \\(a\\) et \\(b\\) entiers non nuls.\n\nAlors \\(b^2 = 2025 - 2a^2\\) est impair et il en est de même pour \\(b\\).\n\nPar ailleurs, \\((45 - b)(45 + b) = 2a^2\\) : à gauche c'est un multiple de 4, donc \\(a^2\\) est pair et il en est de même pour \\(a\\).\n\nPour tout entier \\(n\\), nous avons \\(n^2 \\equiv 0, 1\\) ou \\(-1 \\pmod{5}\\).\n\nOn vérifie que seuls \\(a \\equiv b \\equiv 0 \\pmod{5}\\) vérifient \\(2a^2 + b^2 \\equiv 0 \\pmod{5}\\).\n\n**Variante par réduction à une équation plus simple**\n\nPosons \\(a = 10c\\) et \\(b = 5d\\), la relation s'écrit désormais \\(8c^2 + d^2 = 81\\).\n\nAinsi \\(0 < c^2 < \\frac{81}{8}\\), d'où \\(0 < c < 4\\), et 3 cas sont à étudier :\n\n| \\(c\\) | 1 | 2 | 3 |\n|---|---|---|---|\n| \\(d^2 = 81 - 8c^2\\) | 73 non carré | \\(49 = 7^2\\) | \\(9 = 3^2\\) |\n\nLa relation possède 2 solutions \\((a,b) = (20, 35)\\) ou \\((30, 15)\\).\n\nLe périmètre du plus petit carré vaut alors \\(4 \\times 20 = 80\\) ou \\(4 \\times 15 = 60\\).\n\n**Variante par paramétrage**\n\nComme les triplets pythagoriciens, l'équation \\(2a^2 + b^2 = c^2\\) se paramètre ainsi :\n\n- \\(a = 2pxy\\)\n- \\(b = p|x^2 - 2y^2|\\)\n- \\(c = p(x^2 + 2y^2)\\)\n\nAvec \\(p = \\gcd(a,b,c)\\) entier, \\(x\\) impair et \\(y\\) pair tels que \\(\\gcd(x,y) = 1\\).\n\nIci \\(c = 45\\) et comme vu plus haut, \\(p\\) est un multiple de 5, d'où 2 cas :\n\n- \\(p = 5\\) : \\(x^2 + 2y^2 = 9\\), soit \\((x,y) = (1,2)\\), ou encore \\((a,b) = (20,35)\\)\n- \\(p = 15\\) : \\(x^2 + 2y^2 = 3\\), soit \\((x,y) = (1,1)\\), ou encore \\((a,b) = (30,15)\\)\n\n**Réponse : 2 solutions, 60 ou 80.**"
+  }
+}

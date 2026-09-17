@@ -1,0 +1,46 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 308.1,
+        "y": 111.0
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 14,
+        "position": {
+          "x": 133.8,
+          "y": 340.9
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-17",
+  "number": 17,
+  "title": "Poupées russes",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Mathilde voit un certain nombre de poupées russes. Elle sait qu'en tout il y a 13 poupées russes, numérotées de 1, la plus petite, à 13, la plus grande. Elle sait également que toutes les poupées qu'elle ne voit pas sont imbriquées les unes dans les autres dans les poupées qu'elle voit. Lorsque l'on ouvre une poupée, il y a au plus une autre poupée visible dedans, qui elle-même peut contenir une autre poupée etc. Elle se demande comment sont imbriquées les poupées et se rend compte qu'il y a 2025 possibilités. **Quels sont les numéros des poupées qu'elle voit ?**\n\n(on donnera les numéros dans l'ordre décroissant)."
+  },
+  "answer": {
+    "type": "open",
+    "value": "4 solutions : 13;12;11;6;5;2;1, 13;11;10;5;4;1, 13;10;9;4;3 ou 13;12;11;10;9;6;5;4;3"
+  },
+  "correction": {
+    "markdown": "Mathilde voit la poupée la plus grande car non contenue dans une autre.\n\nElle en voit d'autres, et l'énoncé utilise d'ailleurs le pluriel, car sinon il y aurait une seule possibilité, tout comme si elle voyait les 13 poupées.\n\nNotons \\(13 = p_1 > p_2 > \\cdots > p_n > 0\\) les numéros des \\(2 \\leqslant n \\leqslant 12\\) poupées visibles, avec la convention \\(p_{n+1} = 0\\).\n\nPour \\(k = 1\\) à \\(n\\), la poupée non visible \\(i\\) telle que \\(p_k > i > p_{k+1}\\) peut être placée à l'intérieur de \\(p_j\\) où \\(j = 1\\) à \\(k\\), d'où \\(k\\) possibilités.\n\nLes choix étant indépendants, il y a en tout \\(\\prod_{j=1}^n j^{p_j - p_{j+1} - 1}\\) possibilités.\n\nComme \\(2025 = 3^4 5^2\\), étudions trois cas, le premier étant détaillé :\n\n- \\(3^4 5^2\\) : \\(p_2 - p_3 - 1 = 0\\), \\(p_3 - p_4 - 1 = 4\\), \\(p_4 - p_5 - 1 = 0\\) et \\(p_5 - p_6 - 1 = 2\\), et par sommation \\(p_2 - p_6 = 10\\), ainsi \\((p_2, p_6)\\) vaut :\n  - \\((12,2)\\), avec \\(p_6 - p_7 - 1 = 0\\), \\(p_7 = 1\\), d'où 12, 11, 6, 5, 2, 1\n  - \\((11,1)\\), d'où 11, 10, 5, 4, 1\n  - \\((10,0)\\), avec \\(p_5 - p_6 - 1 = 2\\), \\(p_5 = 3\\), d'où 10, 9, 4, 3\n- \\(3^2 5^2 9\\) : \\(p_2 - p_{10} = 13\\), pas de solution avec \\(p_2 \\leqslant 12\\) et \\(p_{10} \\geqslant 0\\)\n- \\(5^2 9^2\\) : \\(p_2 - p_{10} = 12\\), soit \\((p_2, p_{10}) = (12,0)\\), avec \\(p_9 - p_{10} - 1 = 2\\), \\(p_9 = 3\\), d'où 12, 11, 10, 9, 6, 5, 4, 3\n\n**Réponse : 4 solutions, 13;12;11;6;5;2;1, 13;11;10;5;4;1, 13;10;9;4;3 ou 13;12;11;10;9;6;5;4;3.**"
+  }
+}

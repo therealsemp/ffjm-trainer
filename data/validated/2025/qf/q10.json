@@ -1,0 +1,50 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 309.3,
+        "y": 374.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 133.8,
+          "y": 557.1
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-10",
+  "number": 10,
+  "title": "Des entiers somme-somme-produit",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un entier somme-somme-produit est égal à la somme de la somme de ses chiffres et du produit de ses chiffres. Le nombre 59 est un exemple car (5+9) + (5x9) = 14 + 45 = 59.\n\n**Combien y a-t-il d'entiers somme-somme-produit à deux chiffres (en comptant 59) ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "9"
+  },
+  "correction": {
+    "markdown": "Cherchons \\(\\overline{du}\\) tel que \\(d + u + du = 10d + u\\) avec \\(d \\neq 0\\).\n\nD'où \\(9d = du\\), ou encore \\(u = 9\\).\n\n\\(1 \\leqslant d \\leqslant 9\\), ce sont donc les 9 entiers à deux chiffres se terminant par 9.\n\n**Réponse : 9.**"
+  }
+}

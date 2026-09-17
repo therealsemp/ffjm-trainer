@@ -1,0 +1,48 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 39.9,
+        "y": 183.0
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 133.8,
+          "y": 167.1
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-15",
+  "number": 15,
+  "title": "Des urnes et des boules",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Chaque joueur a une urne blanche contenant deux balles noires et une urne noire contenant deux balles blanches. À chaque tour, le premier joueur prend une balle au hasard dans chacune de ses urnes et les échange, tandis que le deuxième joueur prend une balle au hasard dans son urne blanche, la met dans son urne noire, puis prend une balle au hasard dans son urne noire et la met dans son urne blanche. Le premier joueur qui se retrouve avec les balles blanches dans son urne blanche et les balles noires dans son urne noire gagne. En cas d'égalité, les deux joueurs ont gagné. **Quelle est la probabilité que le premier joueur gagne ?**\n\nOn donnera la réponse sous la forme d'une fraction irréductible."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "306/451"
+  },
+  "correction": {
+    "markdown": "Les deux joueurs sont désignés par \\(J_1\\) et \\(J_2\\).\n\nNotons qu'il y a trois états possible par urne.\n\n| Urne \\ État | Initial (I) | Médian (M) | Final (F) |\n|---|---|---|---|\n| Blanche | 2N | 1B 1N | 2B |\n| Noire | 2B | 1B 1N | 2N |\n\nNous déterminons les matrices de transition par joueur.\n\n| \\(J_1\\) | I | M | F |\n|---|---|---|---|\n| I | 0 | 1 | 0 |\n| M | 1/4 | 1/2 | 1/4 |\n| F | 0 | 0 | 1 |\n\net\n\n| \\(J_2\\) | I | M | F |\n|---|---|---|---|\n| I | 1/3 | 2/3 | 0 |\n| M | 1/6 | 2/3 | 1/6 |\n| F | 0 | 0 | 1 |\n\nNotons \\(i_k^j\\), \\(m_k^j\\), \\(f_k^j\\) la probabilité pour le joueur \\(j\\) de se trouver à l'état I, M, F au bout de \\(k\\) étapes.\n\n\\(m_k^1 = \\frac{1}{2} m_{k-1}^1 + i_{k-1}^1\\) et \\(i_k^1 = \\frac{1}{4} m_{k-1}^1\\), d'où \\(m_k^1 = \\frac{1}{2} m_{k-1}^1 + \\frac{1}{4} m_{k-2}^1\\) avec \\(m_0^1 = 0\\) et \\(m_1^1 = 1\\).\n\n\\(m_k^2 = \\frac{2}{3} m_{k-1}^2 + \\frac{2}{3} i_{k-1}^2\\) et \\(i_k^2 = \\frac{1}{3} i_{k-1}^2 + \\frac{1}{6} m_{k-1}^2\\), d'où \\(2i_k^2 = m_k^2 - \\frac{1}{3} m_{k-1}^2\\) et donc \\(m_k^2 = m_{k-1}^2 - \\frac{1}{3} m_{k-2}^2\\) avec \\(m_0^2 = 0\\) et \\(m_1^2 = \\frac{2}{3}\\).\n\nAinsi \\(m_n^1 = \\frac{2}{\\sqrt5}[a^n - \\bar a^n]\\) et \\(m_n^2 = \\frac{2}{\\sqrt5}[b^n - \\bar b^n]\\), avec \\(a = \\frac{1+\\sqrt5}{4}\\), \\(\\bar a = \\frac{1-\\sqrt5}{4}\\), \\(b = \\frac{3+\\sqrt5}{6}\\) et \\(\\bar b = \\frac{3-\\sqrt5}{6}\\).\n\nPar ailleurs, \\(f_n^2 = f_{n-1}^2 + \\frac{1}{6} m_{n-1}^2\\), d'où \\(f_n^2 = \\frac{1}{6}\\sum_{k=2}^n m_{k-1}^2 = \\frac{1}{3\\sqrt5}\\left(\\frac{1-b^n}{1-b} - \\frac{1-\\bar b^n}{1-\\bar b}\\right)\\), par sommation télescopique.\n\nPartant de l'état I, le premier joueur gagne au bout de \\(k \\geqslant 2\\) étapes s'il était en étape \\(k-1\\) à l'état M tandis que le deuxième joueur n'était pas à l'état F. Ainsi \\(p_k = \\frac{1}{4} m_{k-1}^1 (1 - f_{k-1}^2)\\) et on cherche \\(P_1 = \\sum_{k \\geqslant 2} p_k\\).\n\nAlors \\(P_1 = \\frac{1}{2\\sqrt5}\\sum_{k \\geqslant 2}(a^{k-1} - \\bar a^{k-1}) - \\frac{1}{30}\\sum_{k \\geqslant 2}(a^{k-1} - \\bar a^{k-1})\\left(\\frac{1-b^{k-1}}{1-b} - \\frac{1-\\bar b^{k-1}}{1-\\bar b}\\right)\\).\n\nAvec la série géométrique \\(\\sum_{k \\geqslant 2} x^{k-1} = \\frac{x}{1-x}\\) valable pour \\(|x| < 1\\), il vient :\n\n- \\(\\frac{a}{1-a} + \\frac{\\bar a}{1-\\bar a} = 2\\sqrt5\\)\n- \\(\\frac{b-\\bar b}{(1-b)(1-\\bar b)} = 3\\sqrt5\\)\n\nD'où \\(P_1 = \\frac{1}{30}\\left[\\left(\\frac{ab}{(1-b)(1-ab)} - \\frac{\\bar a \\bar b}{(1-\\bar b)(1-\\bar a \\bar b)}\\right) - \\left(\\frac{\\bar a b}{(1-b)(1-\\bar a b)} - \\frac{a \\bar b}{(1-\\bar b)(1-a\\bar b)}\\right)\\right]\\).\n\nEnfin \\(P_1 = \\frac{1}{10}\\left(\\frac{69}{11} + \\frac{21}{41}\\right) = \\frac{306}{451}\\).\n\n**Variante par la probabilité complémentaire**\n\nPartant de l'état I, le deuxième joueur gagne au bout de \\(k \\geqslant 2\\) étapes avant le premier joueur s'il était à l'état M en étape \\(k-1\\) tandis que le premier joueur est à l'état I ou M à l'étape \\(k\\).\n\nCela se traduit par \\(q_k = \\frac{1}{6} m_{k-1}^2 (i_k^1 + m_k^1) = \\frac{1}{6} m_{k-1}^2 \\left(\\frac{1}{4} m_{k-1}^1 + m_k^1\\right)\\), et évaluons \\(Q = \\sum_{k \\geqslant 2} q_k\\).\n\nAlors \\(Q = \\frac{2}{15}\\sum_{k \\geqslant 2}(b^{k-1} - \\bar b^{k-1})\\left[a^{k-1}\\left(a+\\frac{1}{4}\\right) - \\bar a^{k-1}\\left(\\bar a+\\frac{1}{4}\\right)\\right]\\).\n\nD'où \\(Q = \\frac{2}{15}\\left[\\left(\\left(a+\\frac{1}{4}\\right)\\frac{ab}{1-ab} + \\left(\\bar a+\\frac{1}{4}\\right)\\frac{\\bar a \\bar b}{1-\\bar a \\bar b}\\right) - \\left(\\left(a+\\frac{1}{4}\\right)\\frac{a\\bar b}{1-a\\bar b} + \\left(\\bar a+\\frac{1}{4}\\right)\\frac{\\bar a b}{1-\\bar a b}\\right)\\right]\\).\n\nFinalement \\(Q = \\frac{2}{15}\\left(\\frac{28}{11} - \\frac{11}{82}\\right) = \\frac{145}{451} = 1 - P_1\\).\n\n**Variante moins calculatoire (inspirée par Pierre Forest)**\n\nUne situation peut être résumée par l'état de l'urne blanche de chacun des joueurs, puisque l'on en déduit celui de leur urne noire par complémentaire.\n\n\\(P_1\\) est alors la probabilité pour \\(J_1\\) de gagner depuis la situation I, I.\n\nDéfinissons trois autres probabilités pour \\(J_1\\) de gagner depuis la situation :\n\n- I, M : \\(P_2\\)\n- M, I : \\(P_3\\)\n- M, M : \\(P_4\\)\n\nA l'aide des matrices de transition, nous déduisons les relations suivantes :\n\n- \\(P_1 = \\frac{1}{3} P_3 + \\frac{2}{3} P_4\\)\n- \\(P_2 = \\frac{1}{6} P_3 + \\frac{2}{3} P_4\\)\n- \\(P_3 = \\frac{1}{4} + \\frac{1}{4} \\times \\frac{1}{3} P_1 + \\frac{1}{4} \\times \\frac{2}{3} P_2 + \\frac{1}{2} \\times \\frac{1}{3} P_3 + \\frac{1}{2} \\times \\frac{2}{3} P_4\\)\n- \\(P_4 = \\frac{1}{4} + \\frac{1}{4} \\times \\frac{1}{6} P_1 + \\frac{1}{4} \\times \\frac{2}{3} P_2 + \\frac{1}{2} \\times \\frac{1}{6} P_3 + \\frac{1}{2} \\times \\frac{2}{3} P_4\\)\n\nD'où le système :\n\n- \\(3P_1 = P_3 + 2P_4\\)\n- \\(6P_2 = P_3 + 4P_4\\)\n- \\(10P_3 = 3 + P_1 + 2P_2 + 4P_4\\)\n- \\(16P_4 = 6 + P_1 + 4P_2 + 2P_3\\)\n\nEn reportant dans les deux dernières les expressions de \\(P_1\\) et \\(P_2\\) des deux premières il vient :\n\n- \\(28P_3 - 18P_4 = 9\\)\n- \\(-9P_3 + 38P_4 = -18\\)\n\nD'où \\(P_3 = \\frac{333}{451}\\) et \\(P_4 = \\frac{585}{902}\\).\n\nFinalement \\(P_1 = \\frac{306}{451}\\) et \\(P_2 = \\frac{501}{902}\\).\n\n**Réponse : \\(\\frac{306}{451}\\).**"
+  }
+}

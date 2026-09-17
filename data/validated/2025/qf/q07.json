@@ -1,0 +1,58 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 40.9,
+        "y": 719.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 133.8,
+          "y": 557.3
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-7",
+  "number": 7,
+  "title": "TR'adition",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**Placez les nombres 1, 2, 3, 4, 5, 7 dans les cases suivantes**\n\n![figure](figure:2025-qf-7-boxes)\n\nde telle sorte que dans trois cases quelconques placées côte à côte, l'un des nombres est égal à la somme des deux autres, et que le premier chiffre soit plus petit que le dernier.",
+    "figures": [
+      {
+        "id": "2025-qf-7-boxes",
+        "description": "Une rangée de six cases vides à remplir.",
+        "imageUrl": "q07_fig-boxes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "413257"
+  },
+  "correction": {
+    "markdown": "7, le plus grand des 6 chiffres, est le dernier chiffre :\n\n- il n'est pas le premier, qui doit être plus petit que le dernier\n- en position intérieure, à une symétrie près, \\(ab7c\\) imposerait \\(a = c\\) puisque \\(a + b = 7 = b + c\\)\n\nSi \\(5 = 4 + 1 = 3 + 2\\), plus grand des 5 chiffres restants, était le premier chiffre, alors comme \\(7 = 5 + 2 = 4 + 3\\), nous aurions à la fin \\(\\{3, 4\\}7\\) avec une répétition de 3 ou 4 au début !\n\n5 est alors l'avant-dernier chiffre, selon le même raisonnement que pour 7 en position intérieure.\n\nDe droite à gauche, il vient \\(7 - 5 = 2\\), puis \\(5 - 2 = 3\\), et \\(3 - 2 = 1\\), enfin \\(3 + 1 = 4\\).\n\n**Réponse : 413257.**"
+  }
+}

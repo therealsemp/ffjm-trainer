@@ -1,0 +1,51 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 40.9,
+        "y": 610.5
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 133.8,
+          "y": 299.5
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-6",
+  "number": 6,
+  "title": "Les quatre amis",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Annabelle, Bertrand, Clarisse et Damien sont quatre amis.\n\nChacun d'eux se destine à un métier précis : archéologue, bibliothécaire, cardiologue, et Bertrand veut devenir dentiste.\n\nUne seule de ces personnes se destine au métier qui a la même initiale que son prénom, mais ce n'est pas Annabelle. D'ailleurs, Annabelle ne voudrait surtout pas travailler dans le domaine médical.\n\n**Quels sont les métiers choisis par Annabelle et par Damien ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "Annabelle bibliothécaire, Damien archéologue"
+  },
+  "correction": {
+    "markdown": "Bertrand est dentiste, et Annabelle n'est ni archéologue (commence par A), ni cardiologue (domaine médical) : elle est donc bibliothécaire.\n\nComme Damien n'est pas dentiste, Clarisse est celle dont le métier commence par l'initiale de son prénom : elle est cardiologue et donc Damien archéologue.\n\n**Variante avec un logigramme**\n\nUne seule règle à respecter, un unique O (oui) par rangée : en particulier une fois qu'on a un O, on complète sa ligne et sa colonne par des N (non).\n\nOn le remplit dans l'ordre des métiers de Bertrand, Annabelle, Clarisse et Damien.\n\n| Prénom \\ Métier | Archéologue | Bibliothécaire | Cardiologue | Dentiste |\n|---|---|---|---|---|\n| Annabelle | N | O | N | N |\n| Bertrand | N | N | N | O |\n| Clarisse | N | N | O | N |\n| Damien | O | N | N | N |\n\n**Réponse : 21 pour le codage de bibliothécaire et archéologue.**"
+  }
+}

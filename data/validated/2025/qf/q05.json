@@ -1,0 +1,66 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 40.9,
+        "y": 438.9
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 133.8,
+          "y": 134.7
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-5",
+  "number": 5,
+  "title": "Labyrinthe",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Dans ce labyrinthe, les pièces sont numérotées de 0 à 15. Lorsqu'on passe d'une pièce à l'autre par une porte, une alarme se déclenche sauf :\n\n- si le numéro de la pièce dans laquelle on entre est égal à celui de la pièce que l'on quitte augmenté de 3 ;\n- si le numéro de la pièce dans laquelle on entre est égal à celui de la pièce que l'on quitte diminué de 13.\n\n![figure](figure:2025-qf-5-grid)\n\nOn entre dans le labyrinthe par la pièce n° 0 et on en sort par la pièce n° 1. **Combien de pièces aura-t-on traversé (y compris la pièce 0 et la pièce 1) si on n'a déclenché aucune alarme ?**",
+    "figures": [
+      {
+        "id": "2025-qf-5-grid",
+        "description": "Grille 4×4 des pièces du labyrinthe, numérotées de 0 à 15 réparties ainsi (de haut en bas, gauche à droite) : 9,12,15,2 / 6,7,4,5 / 3,10,11,8 / 0,13,14,1. Une flèche sort à droite de la pièce 1 (aucune flèche d'entrée du côté de la pièce 0 dans cette figure de l'énoncé).",
+        "imageUrl": "q05_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "12"
+  },
+  "correction": {
+    "markdown": "Le respect d'une des deux règles (+3 ou -13) impose le parcours 0, 3, 6, 9, 12, 15, 2, 5, 8, 11, 14, 1.\n\n![figure](figure:2025-qf-5-path)\n\nLes quatre pièces 4, 7, 10 et 13 n'ont alors pas été visitées, soit \\(4^2 - 4 = 12\\) pièces traversées.\n\n**Réponse : 12.**",
+    "figures": [
+      {
+        "id": "2025-qf-5-path",
+        "description": "Même grille 4×4 que l'énoncé, avec un tracé en gras suivant le chemin emprunté (colonne de gauche vers le haut, ligne du haut vers la droite, colonne de droite vers le bas, puis un crochet passant par 11 et 14 jusqu'à 1), laissant les pièces 7, 4, 10 et 13 à l'écart du tracé ; flèche d'entrée avant la pièce 0, flèche de sortie après la pièce 1.",
+        "imageUrl": "q05_corr-path.png"
+      }
+    ]
+  }
+}

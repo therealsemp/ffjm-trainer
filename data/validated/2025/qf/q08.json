@@ -1,0 +1,58 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 309.3,
+        "y": 74.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 133.8,
+          "y": 203.6
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-8",
+  "number": 8,
+  "title": "Donnez-nous le la",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Dans cette addition codée, des lettres différentes remplacent toujours des chiffres différents et un même chiffre est toujours remplacé par la même lettre.\n\n![figure](figure:2025-qf-8-play)\n\nDe plus, le premier chiffre d'un nombre à plusieurs chiffres ne peut être un 0. **Quelle est la valeur de LA ?**",
+    "figures": [
+      {
+        "id": "2025-qf-8-play",
+        "description": "Addition posée en colonnes : PLAY + LA = 2025.",
+        "imageUrl": "q08_fig-play.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "93"
+  },
+  "correction": {
+    "markdown": "Remarque que \\(L \\neq 0\\) en tant que premier chiffre de \\(\\overline{LA}\\).\n\n**Variante avec inégalités**\n\n\\(9 < 2025 - \\overline{PLAY} = \\overline{LA} < 100 \\Leftrightarrow 1925 < \\overline{PLAY} < 2014\\), d'où \\(\\overline{PL} = 19\\).\n\nAinsi \\(9 \\leqslant A + L \\leqslant 8 + 9 = 17\\), et donc \\(A \\leqslant 12 - L = 3\\).\n\nAlors \\(15 > 8 + 3 \\geqslant Y + A\\) et donc \\(Y = 5 - A\\).\n\nEnfin \\(A + L = 12\\), d'où \\(A = 3\\) et donc \\(Y = 2\\).\n\n**Variante avec retenues**\n\nOn note \\(r_u\\) (resp. \\(r_d\\) ou \\(r_c\\)) la retenue, valant 0 ou 1, générée en colonne des unités (resp. dizaines ou centaines).\n\n\\(r_d + L = 10 r_c > 0\\) entraîne \\(r_c = 1\\), et donc \\(L = 9\\).\n\nOn déduit \\(P = 2 - r_c = 1\\) et \\(A = 12 - 9 - r_u\\).\n\nAlors \\(Y = 5 + 10 r_u - A = 2 + 11 r_u < 10\\), soit \\(r_u = 0\\), \\(Y = 2\\) et \\(A = 3\\).\n\n**Réponse : 93.**"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 309.3,
+        "y": 276.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 133.8,
+          "y": 442.5
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-9",
+  "number": 9,
+  "title": "La planète maths",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Sur la planète Maths, un jour ne dure pas 24 heures comme sur la planète Terre. Sur le cadran de l'horloge d'un mathsien, toutes les heures sont disposées en cercle à des intervalles égaux. L'aiguille des heures parcourt la même distance entre 1 heure et 9 heures qu'entre 10 heures et 2 heures. **Combien d'heures affiche une horloge sur cette planète ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "16"
+  },
+  "correction": {
+    "markdown": "Si une journée sur cette planète dure \\(h\\) heures, alors la distance parcourue par l'aiguille des heures s'écrit \\(9 - 1 = h - 10 + 2\\), d'où \\(h = 16\\).\n\nRemarque : on pourrait penser que la réponse 32 soit acceptée de la même façon qu'une horloge mentionne 12 là où une journée terrestre dure 24 heures, mais l'énoncé précise « TOUTES les heures sont disposées ».\n\n**Réponse : 16.**"
+  }
+}

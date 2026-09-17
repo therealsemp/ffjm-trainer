@@ -1,0 +1,59 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 40.9,
+        "y": 89.6
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 133.8,
+          "y": 275.6
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-1",
+  "number": 1,
+  "title": "Deux dates",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias dispose de ces douze cartes.\n\n![figure](figure:2025-qf-1-cards)\n\nEn 2025, la première date de l'année qu'il pourra former en utilisant deux cartes pour le jour, deux cartes pour le mois et quatre pour l'année sera le 13 janvier : 13 01 2025. **Quelle sera la dernière date de 2025 qu'il pourra former en utilisant huit de ces douze cartes ?**",
+    "figures": [
+      {
+        "id": "2025-qf-1-cards",
+        "description": "Douze cartes numérotées, chacune en double exemplaire : 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5.",
+        "imageUrl": "q01_fig-cards.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "30/11/2025"
+  },
+  "correction": {
+    "markdown": "Inutile de viser le dernier mois (12) car les deux cartes « 2 » sont pour 2025. Avec les deux cartes « 1 », Mathias peut former le mois précédent, novembre. Ce dernier ayant trente jours, 30/11/2025 est la date la plus tardive réalisable.\n\nRemarque : c'est une date palindrome de la première date réalisable 13/01/2025.\n\n**Réponse : 30/11/2025.**"
+  }
+}

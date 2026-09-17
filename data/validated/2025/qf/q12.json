@@ -1,0 +1,49 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 309.3,
+        "y": 559.5
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 133.8,
+          "y": 553.5
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-12",
+  "number": 12,
+  "title": "Moyennons",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "25, A, B, 250, C, …\n\nDans cette suite de nombres, chaque nombre à partir du deuxième est la moyenne des deux nombres qui l'encadrent. **Que vaut le nombre C ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "325"
+  },
+  "correction": {
+    "markdown": "25, A, B, 250, C forment une progression arithmétique, ce qui se traduit par :\n\n- (1) \\(2A = 25 + B\\)\n- (2) \\(2B = A + 250\\)\n- (3) \\(500 = B + C\\)\n\n\\(4B = 525 + B\\) découle de (1)+2(2), d'où \\(B = \\frac{525}{3} = 175\\).\n\nEnfin avec (3) il vient \\(C = 500 - B = 325\\).\n\n**Réponse : 325.**"
+  }
+}

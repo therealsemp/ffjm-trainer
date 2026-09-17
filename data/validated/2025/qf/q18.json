@@ -1,0 +1,60 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 308.1,
+        "y": 255.0
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 15,
+        "position": {
+          "x": 133.8,
+          "y": 134.7
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-18",
+  "number": 18,
+  "title": "Tic-tac-toc",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Tic et Tac sont un peu toqués.\n\nTic attache les deux extrémités d'un élastique aux extrémités des aiguilles d'une horloge, la petite aiguille mesurant 2 cm et la grande aiguille 3 cm. Tac trace un point noir quelque part sur l'élastique (mais pas aux extrémités). Lorsque l'heure tourne, ce point noir va se déplacer, le rapport a/b restant constant (voir dessin).\n\n![figure](figure:2025-qf-18-clock)\n\nOn voit que la figure que trace le point noir se croise elle-même. Tic et Tac refont l'expérience et se rendent compte que cette fois-ci la figure tracée ne se croise plus elle-même. **Combien vaut le rapport a/b au maximum lorsque la figure ne se croise pas elle-même ?**\n\nOn écrira la réponse sous forme d'une fraction irréductible.",
+    "figures": [
+      {
+        "id": "2025-qf-18-clock",
+        "description": "Cadran d'horloge avec la petite aiguille et la grande aiguille pointant vers des positions différentes, reliées par un élastique en pointillé formant une boucle ; un point noir sur l'élastique, avec les segments notés a (du point vers l'extrémité d'une aiguille) et b (vers l'autre).",
+        "imageUrl": "q18_fig-clock.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1/18"
+  },
+  "correction": {
+    "markdown": "Notons dans le plan complexe \\(H\\) (resp. \\(M\\)) les affixes des points situés au bout de l'aiguille des heures (resp. minutes), effectuant un tour en 12 heures (resp. 1 heure), et \\(P \\in [HM]\\) celui du point noir, défini par \\(b\\overrightarrow{PH} + a\\overrightarrow{PM} = \\vec{0}\\) avec \\(a > 0\\) et \\(b > 0\\).\n\nQuitte à opérer une rotation d'un quart de tour et inverser le sens des aiguilles, on a : \\(H = 2e^{i\\frac{\\pi}{6}t}\\), \\(M = 3e^{i2\\pi(t-\\lfloor t \\rfloor)} = 3e^{i2\\pi t}\\) et \\(P = \\frac{bH+aM}{a+b} = \\frac{H+pM}{1+p}\\) où \\(p = \\frac{a}{b} > 0\\).\n\nCela fournit ainsi un paramétrage avec \\(t \\in [0;12[\\) :\n\n- \\(x(t) = \\frac{2\\cos\\frac{\\pi}{6}t + 3p\\cos 2\\pi t}{1+p}\\)\n- \\(y(t) = \\frac{2\\sin\\frac{\\pi}{6}t + 3p\\sin 2\\pi t}{1+p}\\)\n\nRemarque : pour un paramétrage avec \\(\\theta \\in [0;2\\pi[\\), il suffit de poser \\(\\theta = \\frac{\\pi}{6}t\\).\n\nComme \\(H\\left(t+\\frac{12}{11}\\right) = H(t)e^{i\\frac{2\\pi}{11}}\\) et que \\(M\\left(t+\\frac{12}{11}\\right) = M(t)e^{i\\frac{24\\pi}{11}} = M(t)e^{i\\frac{2\\pi}{11}}\\), alors \\(P\\left(t+\\frac{12}{11}\\right) = P(t)e^{i\\frac{2\\pi}{11}}\\), ce qui signifie que la courbe de \\(P\\) est invariante par rotation d'un multiple de 11ème de tour autour de l'origine.\n\nAussi, dans ce qui suit, nous étudierons la courbe pour \\(t \\in \\left[0; \\frac{12}{11}\\right[\\).\n\n**Si la courbe possède un point double, alors \\(p > \\frac{1}{18}\\).**\n\nSupposons l'existence de \\(0 \\leqslant u < v < \\frac{12}{11}\\) tels que \\(P(u) = P(v)\\).\n\nAlors \\(\\frac{1}{p} = -\\frac{M(v)-M(u)}{H(v)-H(u)}\\) est défini puisque le cercle décrit par \\(H\\) ne possède aucun point double, a fortiori dans l'intervalle \\(\\left[0; \\frac{12}{11}\\right[\\).\n\nNous vérifions que \\(e^{i\\alpha} - e^{i\\beta} = e^{i\\frac{\\alpha+\\beta}{2}}\\left(e^{i\\frac{\\alpha-\\beta}{2}} - e^{-i\\frac{\\alpha-\\beta}{2}}\\right) = 2ie^{i\\frac{\\alpha+\\beta}{2}}\\sin\\frac{\\alpha-\\beta}{2}\\).\n\nAinsi \\(\\frac{1}{p} = -e^{i\\frac{11}{12}\\pi(u+v)}\\frac{3\\sin\\frac{v-u}{2}\\pi}{2\\sin\\frac{v-u}{12}\\pi}\\).\n\nPuisque \\(\\frac{1}{p}\\) est un réel non nul, il est nécessaire que la partie imaginaire soit nulle, soit \\(\\sin\\frac{11}{12}\\pi(u+v) = 0\\), d'où \\(u+v = \\frac{12}{11}\\) car \\(0 < u+v < \\frac{24}{11}\\).\n\nAlors \\(\\cos\\frac{11}{12}\\pi(u+v) = -1\\), et donc \\(e^{i\\frac{11}{12}\\pi(u+v)} = -1\\).\n\nComme \\(\\sin\\frac{v-u}{12}\\pi > 0\\) et \\(\\frac{1}{p} > 0\\), il en résulte que \\(\\sin(v-u)\\pi > 0\\) et donc \\(0 < v-u < 1\\).\n\nAinsi \\(\\frac{1}{p} = \\frac{3\\sin 12z}{2\\sin z}\\) avec \\(z = \\frac{v-u}{12}\\pi\\).\n\nMontrons par récurrence que \\(\\sin nx < n\\sin x\\) pour \\(n > 1\\) entier et \\(x \\neq 0\\).\n\n- C'est vrai pour \\(n=2\\) puisque \\(\\sin 2x = 2\\cos x \\sin x < 2\\sin x\\).\n- Pour \\(n \\geqslant 2\\), \\(\\sin(n+1)x = \\sin nx \\cos x + \\cos nx \\sin x < n\\sin x + \\sin x = (n+1)\\sin x\\) en utilisant l'hypothèse de récurrence.\n\nIl en résulte \\(\\frac{1}{p} = \\frac{3\\sin 12z}{2\\sin z} < \\frac{3 \\times 12}{2} = 18\\), d'où \\(p > \\frac{1}{18}\\).\n\n**Si \\(p > \\frac{1}{18}\\), la courbe possède un point double.**\n\nMontrons d'abord que la fonction continue \\(f(z) = 3p\\sin 12z - 2\\sin z\\) s'annule sur \\(\\left]0; \\frac{\\pi}{12}\\right[\\).\n\nEn effet, au voisinage de 0, elle est équivalente à \\(3p \\times 12z - 2z = 2z(18p-1) > 0\\), et \\(f\\left(\\frac{\\pi}{12}\\right) = -2\\sin\\frac{\\pi}{12} < 0\\).\n\nL'existence de \\(z_0 \\in \\left]0; \\frac{\\pi}{12}\\right[\\) tel que \\(f(z_0) = 0\\) découle du théorème des valeurs intermédiaires.\n\nA partir de \\(v - u = \\frac{12z_0}{\\pi}\\) et \\(u+v = \\frac{12}{11}\\), on en déduit \\(v = \\frac{6}{11}+e\\) et \\(u = \\frac{6}{11}-e\\) avec \\(e = \\frac{6z_0}{\\pi}\\), et l'on obtient les coordonnées d'un point double de la courbe décrite par \\(P\\).\n\n**Cas limite \\(p = \\frac{1}{18}\\)**\n\nIl correspond à l'équation d'une épicycloïde à \\(q = 11\\) points de rebroussement avec \\(R = \\frac{33}{19}\\) et \\(r = \\frac{3}{19}\\).\n\n**Illustrations**\n\nLa courbe est invariante par symétrie d'axe réel puisque \\(P(-t) = \\overline{P(t)}\\), ce qui permet de limiter son étude pour \\(t \\in \\left[0; \\frac{6}{11}\\right[\\).\n\nRemarque : mais dans l'étude d'un point double, on peut avoir \\(\\frac{6}{11} \\leqslant v-u < 1\\).\n\nVoici des représentations pour les valeurs \\(p = \\frac{1}{6}\\), \\(\\frac{1}{18}\\) et \\(\\frac{1}{30}\\) : lorsque \\(p\\) tend vers 0, la courbe s'approche du cercle de rayon 2 formé par \\(H\\).\n\n![figure](figure:2025-qf-18-curves)\n\nIntuitivement un maximum (resp. minimum) sur une arche correspond à un temps \\(t = \\frac{12k}{11}\\) (resp. \\(t = \\frac{6(2k+1)}{11}\\)) pour \\(k = 0\\) à 10, où les aiguilles se superposent (resp. sont opposées), et lorsqu'il y a un point double cela se fait de manière symétrique autour d'un minimum, le cas limite correspondant à un point de rebroussement coïncidant avec un minimum (faux point double).\n\nOn vérifie par exemple que \\(\\frac{\\delta P}{\\delta t}(6) = (0,0)\\), \\(\\frac{\\delta^2 P}{\\delta t^2}(6) = (r,0)\\) et \\(\\frac{\\delta^3 P}{\\delta t^3}(6) = (0,s)\\) avec \\(r \\neq 0\\) et \\(s \\neq 0\\), soit un point de rebroussement de première espèce.\n\nSource des graphiques : WolframAlpha\n\n**Réponse : \\(\\frac{1}{18}\\).**",
+    "figures": [
+      {
+        "id": "2025-qf-18-curves",
+        "description": "Trois courbes tracées par le point P pour p = 1/6, 1/18 et 1/30 respectivement : la première se recoupe plusieurs fois (nombreuses petites boucles internes), la deuxième (cas limite) présente des points de rebroussement sans se recouper, la troisième est une courbe fermée lisse en forme de fleur à 11 pétales sans aucun croisement.",
+        "imageUrl": "q18_corr-curves.png"
+      }
+    ]
+  }
+}

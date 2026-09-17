@@ -1,0 +1,59 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 40.9,
+        "y": 255.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 133.8,
+          "y": 191.7
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-3",
+  "number": 3,
+  "title": "Jus de pomme",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Une bouteille de jus de pomme à moitié pleine pèse exactement autant que quatre bouteilles vides identiques du même jus de pomme.\n\n![figure](figure:2025-qf-3-bottles)\n\n**Si on posait une bouteille pleine de ce jus de pomme sur le plateau de droite de la balance, combien de bouteilles vides du même jus faudrait-il placer sur le plateau de gauche pour équilibrer la balance ?**",
+    "figures": [
+      {
+        "id": "2025-qf-3-bottles",
+        "description": "Quatre bouteilles vides identiques à gauche, une flèche vers le haut, puis une bouteille pleine (remplie de jus orange) à droite.",
+        "imageUrl": "q03_fig-bottles.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "7"
+  },
+  "correction": {
+    "markdown": "Mentalement, partant de la situation initiale \\(4B = B + \\frac{1}{2}J\\) où \\(B\\) est la masse d'une bouteille vide et \\(J\\) celle du seul jus d'une bouteille, en :\n\n- ôtant une bouteille de part et d'autre, \\(3B = \\frac{1}{2}J\\), le seul jus d'une demi-bouteille pèse autant que trois bouteilles vides\n- ajoutant le résultat précédent, \\(7B = B + J\\), une bouteille pleine de jus pèse autant que 7 bouteilles vides\n\n**Réponse : 7.**"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 39.9,
+        "y": 51.0
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 133.8,
+          "y": 507.5
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-14",
+  "number": 14,
+  "title": "Atteindre 2025",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "On peut construire une suite de nombres entiers en ajoutant à chaque nombre le double de la somme des chiffres qui le composent. Par exemple, en partant de 1000, on obtient :\n\n1ère étape : 1002 = 1000 + 2(1+ 0 + 0 + 0),\n\n2ème étape : 1008 = 1002 + 2(1+ 0 + 0 + 2),\n\n3ème étape : 1026 (= 1008 + 2(1+ 0 + 0 + 8), etc…\n\n**Combien de nombres de départ strictement inférieurs à 2025 permettent d'arriver au nombre 2025 ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "48"
+  },
+  "correction": {
+    "markdown": "Notons \\(f(n) = n + 2s(n)\\) où \\(s(n)\\) est la somme des chiffres de l'entier \\(n\\).\n\nPour \\(k \\geqslant 1\\), définissons \\(f^k(n) = f(f^{k-1}(n))\\) avec \\(f^0 = Id\\).\n\nNous cherchons les entiers \\(n < 2025\\) tels qu'il existe \\(k \\geqslant 1\\) et \\(f^k(n) = 2025\\).\n\nS'il existe \\(n\\) tel que \\(f(n) = t\\), alors \\(n\\) est un antécédent de \\(t\\).\n\nRappelons que \\(n \\equiv s(n) \\pmod{9}\\).\n\n\\(f(n) \\equiv 3n \\pmod{9}\\) est un multiple de 3 : tout entier non multiple de 3 n'aura pas d'antécédent.\n\n\\(f(m) = f(n)\\) entraîne \\(m \\equiv n \\pmod{3}\\) : deux antécédents seront congrus modulo 3.\n\nSur une dizaine \\(D_j = \\{10j, \\ldots, 10j+9\\}\\), \\(s\\) est strictement croissante ; il en est de même pour \\(f\\), et l'équation \\(f(n) = t\\) a au plus une solution.\n\nComme \\(n \\equiv f(n) \\pmod{2}\\), alors par récurrence \\(n \\equiv f^k(n) = 2025 \\pmod{2}\\), et \\(n\\) est impair.\n\nSi \\(n = 10^q p + 1\\) avec \\(p\\) non multiple de 10 et \\(q\\) entier, alors nous pouvons vérifier que \\(s(n-2) - s(n) = 9q - 2\\), d'où \\(f(n-2) - f(n) = 6(3q-1)\\).\n\nNous en déduisons 3 règles avec \\(p\\) non multiple de 10 :\n\n- (R1) \\(f(n-6) = f(n)\\) pour \\(n = 10p + q\\) où \\(q \\in \\{1,3,5\\}\\)\n- (R2) \\(f(n-12) = f(n)\\) pour \\(n = 100p + q\\) où \\(q \\in \\{3,5,7,9\\}\\)\n- (R3) \\(f(n-30) = f(n)\\) pour \\(n = 1000p + q\\) où \\(q\\) impair entre 1 et 29\n\nOn génère l'arbre des antécédents de 2025 selon les valeurs croissantes de \\(k\\), en explorant tous les noeuds multiples de 3, majorer \\(s(n)\\) pour minorer \\(n\\), balayer dans le sens décroissant des dizaines pour trouver une éventuelle solution, puis utiliser les règles (R1), (R2) ou (R3) pour déduire plus rapidement d'autres solutions ou l'absence de solution. Lorsqu'on obtient un noeud non multiple de 3, c'est une feuille terminale (noté « fin » ci-après). Dans le cas contraire, il faut itérer en explorant ses antécédents (noté « à explorer » ci-après). Détaillons l'analyse du premier niveau \\(k=1\\).\n\nComme \\(n\\) est impair et \\(s(n) < 28 = s(1999)\\), il vient \\(n > 2025 - 2 \\times 28 = 1969\\).\n\nOn balaye les dizaines avec \\(i\\) impair :\n\n- \\(D_{202}\\) : \\(f(2021) = 2031\\), d'où \\(f(n) > 2025\\) pour \\(n \\in D_{202}\\), impliquant l'absence de solution dans \\(D_{199}\\)\n- \\(D_{201}\\) : \\(n = 2010 + i\\) : \\(6 + 3i = 15\\), d'où \\(i = 3\\) : 2013\n  - \\(2013 - 6 = 2007\\) d'après (R1)\n  - \\(2013 - 30 = 1983\\) d'après (R3)\n  - \\(1983 - 6 = 1977\\) d'après (R1) ou \\(2007 - 30 = 1977\\) d'après (R3)\n\nOn le résumera ainsi.\n\n\\(k=1\\) : 4 noeuds\n\n- 2025 : 2013, 2007 (R1), 1983 (R3), 1977 (R1 ou R3) à explorer\n\n\\(k=2\\) : 8 feuilles, 4 noeuds\n\n- 2013 : 2003, 1973 (R3), 1967 (R1) fin\n- 2007 : 2001, 1971 (R3), 1965 (R1), 1959 (R1) à explorer\n- 1983 : 1951, 1945 (R1), 1939 (R1) fin\n- 1977 : 1943, 1937 (R1) fin\n\n\\(k=3\\) : 7 feuilles, 3 noeuds\n\n- 2001 : 1963, 1957 (R1) fin\n- 1971 : 1941, 1935 (R1), 1929 (R1) à explorer\n- 1965 : 1933, 1927 (R1) fin\n- 1959 : 1931, 1925 (R1), 1919 (R1) fin\n\n\\(k=4\\) : 8 feuilles, 4 noeuds\n\n- 1941 : 1913, 1907 (R1), 1895 (R2), 1889 (R1) fin\n- 1935 : 1911, 1905 (R1), 1893 (R2), 1887 (R1) à explorer\n- 1929 : 1903, 1891 (R2), 1885 (R1), 1879 (R1) fin\n\n\\(k=5\\) : 10 feuilles\n\n- 1911 : 1873, 1867 (R1) fin\n- 1905 : 1871, 1865 (R1), 1859 (R1) fin\n- 1893 : 1861, 1855 (R1), 1849 (R1) fin\n- 1887 : 1853, 1847 (R1) fin\n\nEn résumé, voici les 48 entiers < 2025 permettant d'atteindre 2025 : 1847, 1849, 1853, 1855, 1859, 1861, 1865, 1867, 1871, 1873, 1879, 1885, 1887, 1889, 1891, 1893, 1895, 1903, 1905, 1907, 1911, 1913, 1919, 1925, 1927, 1929, 1931, 1933, 1935, 1937, 1939, 1941, 1943, 1945, 1951, 1957, 1959, 1963, 1965, 1967, 1971, 1973, 1977, 1983, 2001, 2003, 2007, 2013.\n\nCi-après une représentation graphique due à Pierre Forest (en jaune les multiples de 9, en bleu, ceux de 3).\n\n![figure](figure:2025-qf-14-tree)\n\n**Réponse : 48.**",
+    "figures": [
+      {
+        "id": "2025-qf-14-tree",
+        "description": "Arbre des antécédents de 2025 par f(n) = n + 2s(n), racine 2025 en jaune en haut, se ramifiant sur 5 niveaux jusqu'aux 48 feuilles ; chaque flèche est annotée « 2 × k » (multiplicateur reliant les niveaux) et chaque noeud son accroissement « +6 », « +12 » ou « +30 » ; les multiples de 9 sont en jaune, les autres multiples de 3 en bleu.",
+        "imageUrl": "q14_corr-tree.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "year": 2025,
+  "champNumber": 39,
+  "phase": "qf",
+  "examTitle": "39e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2025/qf/2025_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 39.9,
+        "y": 339.0
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2025/qf/2025_qf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 133.8,
+          "y": 206.9
+        }
+      }
+    ]
+  },
+  "id": "2025-qf-16",
+  "number": 16,
+  "title": "Cube à Sion",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Au siècle dernier, une archéologue a retrouvé un cube vieux de 3000 ans. Elle a pu déterminer que le cube avait été fait de la façon suivante. Avec 27 petits cubes de bois, on a fait un grand cube, puis on a peint une face en Rouge, une en Bleu, une en Vert, une en Noir, une en Marron et une en Orange. Ensuite, les cubes ont été remélangés puis on a fait un autre grand cube avec, de sorte que seules les faces peintes des petits cubes sont visibles. Malheureusement ce cube a disparu dans un incendie peu après sa découverte. Il n'en reste que trois photos, qui hélas ont perdu certaines de leurs couleurs avec le temps.\n\n![figure](figure:2025-qf-16-cubes)\n\nAujourd'hui la petite-fille de l'archéologue essaye de reconstituer les couleurs d'origine. **Aidez-la à les retrouver en complétant la troisième photo.**",
+    "figures": [
+      {
+        "id": "2025-qf-16-cubes",
+        "description": "Trois photos du grand cube reconstitué avec des petits cubes peints, chaque face visible étiquetée par l'initiale de sa couleur (R, B, V, N, M, O). Les deux premières photos montrent un cube en perspective avec la plupart des cases remplies ; la troisième photo est une grille 3×3 très incomplète, ne montrant que M au centre et V, V en bas.",
+        "imageUrl": "q16_fig-cubes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "3;1;4;3;4;1"
+  },
+  "correction": {
+    "markdown": "Partitionnons les \\(3^3 = 27\\) petits cubes en quatre ensembles :\n\n| Ensemble | Cardinal | Position d'un élément | Nb de faces peintes d'un élément |\n|---|---|---|---|\n| S | 8 | Sommet | 3 |\n| A | 12 | Milieu d'arête | 2 |\n| F | 6 | Centre de face | 1 |\n| C | 1 | Centre du cube | 0 |\n\nUne face du grand cube est composée de \\(3^2 = 9\\) petits cubes, 4S, 4A et 1C, donnant ainsi le nombre de représentants par couleur.\n\nEn raisonnant dans l'ordre S, A, F puis C, on montre que le grand cube s'obtient en opérant une permutation interne à chaque ensemble, sous peine de voir une face non peinte.\n\nRemarque : deux faces voisines peintes d'un petit cube le sont nécessairement avec deux couleurs distinctes.\n\nDénombrons sur les 3 photos les faces peintes des petits cubes, par couleur et par ensemble (entre parenthèses on rappelle le nombre de représentants) :\n\n| Ensemble \\ Couleur | B | M | N | O | R | V |\n|---|---|---|---|---|---|---|\n| S (4) | 1 | 2 | 1 | 4 | 4 | 2 |\n| A (4) | 4 | 2 | 4 | 1 | 4 | 4 |\n| F (1) | 1 | 1 | 0 | 1 | 1 | 1 |\n\nNous en déduisons ainsi les couleurs manquantes par ensemble :\n\n- S : 3B, 2M, 3N, 2V\n- A : 2M, 3O\n- F : 1N\n\nRepérons les B de l'ensemble A : la photo de gauche en montre 3 et celle de droite 2 (en bleu) ; comme le grand cube n'en possède que 4, il s'agit donc de la même face.\n\n![figure](figure:2025-qf-16-corr-a)\n\nOn les fait coïncider d'une unique façon afin de respecter les couleurs déjà connues, et le montage représente cinq faces (en gras les ajouts).\n\nNumérotons les faces de la gauche vers la droite en tournant autour du centre dans le sens des aiguilles, soit sur la photo de gauche, les faces \\(1^23\\), et sur la photo de droite, les faces \\(3^45\\) : ainsi pour \\(i = 1\\) à 6, les faces \\(i\\) et \\(i+3\\) (mod 6) sont opposées.\n\nOn peut alors compléter en face 5 un O (en orange) de l'ensemble A, voisin de M en face 4, M étant écarté d'après la remarque supra.\n\n![figure](figure:2025-qf-16-corr-b)\n\nLa troisième photo ne coïncidant avec aucune des cinq faces, c'est donc la face 6 dont on peut compléter le centre (N est le seul F manquant).\n\nPartant de N voisine de O et M (cube au centre de la photo 2), nous vérifions que N est également voisine de B (A en face 1 et 2) et de V (A en face 2 et 4) : N est donc opposée à R.\n\nD'où deux colorations possibles pour le grand cube initial.\n\n![figure](figure:2025-qf-16-corr-c)\n\nLa première nécessiterait un O en face 5 pour le cube de l'ensemble S dont on connaît B (face 1) et R (face 3) : c'est impossible car il y aurait 5O dans l'ensemble S.\n\nRetenons la deuxième et complétons la face manquante des cubes de l'ensemble S dont on connaît les deux autres (en gras), ainsi qu'une M (en marron) de l'ensemble A en face 5, voisine de B en face 3, en rappelant que B est opposée à O.\n\n![figure](figure:2025-qf-16-corr-d)\n\nRaisonnons à présent sur la face 6, opposée à la face 3 : les 4 cases de l'ensemble A auront pour voisines 3R et 1V ; V n'est ni voisine de M (opposée à V), ni de V (cf remarque supra) ; M et V déjà présents en face 6 auront donc R comme voisin.\n\nIl reste alors 2 possibilités de placement, mais dans un cas, M en face 1 serait voisine de V en face 6, impossible.\n\nAlors on peut compléter O (A) en face 6, voisin de V en face 1 (seuls M et O manquent et M opposé à V).\n\n![figure](figure:2025-qf-16-corr-e)\n\nCela permet désormais de compléter les faces manquantes de l'ensemble S en croisant les possibilités restantes (3B, 1M, 3N) avec la coloration retenue.\n\n![figure](figure:2025-qf-16-corr-f)\n\nIl reste alors 2 faces de l'ensemble A, 1M et 1O.\n\nEn fixant une face parmi les 6 couleurs, il y a 4 voisines possibles, la couleur opposée étant interdite, mais on compte alors 2 fois chaque paire. Chacune des \\(\\frac{6 \\times 4}{2} = 12\\) paires de voisines apparaît donc exactement une fois dans l'ensemble A.\n\nOr MR est déjà présent entre les faces 5 et 6, d'où OR entre les faces 4 et 6.\n\nOn achève le remplissage du cube avec MN entre les faces 3 et 4 (ON est déjà présent entre les faces 1 et 5).\n\nVoici les photos reconstituées.\n\n![figure](figure:2025-qf-16-corr-g)\n\nAinsi qu'un patron du cube privilégiant la face 3.\n\n![figure](figure:2025-qf-16-corr-h)\n\n**Réponse : 3;1;4;3;4;1.**",
+    "figures": [
+      {
+        "id": "2025-qf-16-corr-a",
+        "description": "Les deux mêmes photos du grand cube (gauche et droite), avec les lettres B de l'ensemble A mises en évidence en bleu clair.",
+        "imageUrl": "q16_corr-a.png"
+      },
+      {
+        "id": "2025-qf-16-corr-b",
+        "description": "Les deux cubes assemblés en un seul montage de 5 faces reconnaissables (photo de gauche = faces 1,2,3 ; photo de droite = faces 3,4,5) ; un O ajouté en gras au centre de la face 5.",
+        "imageUrl": "q16_corr-b.png"
+      },
+      {
+        "id": "2025-qf-16-corr-c",
+        "description": "Deux patrons en croix alternatifs pour la face 6 restante (centre N, voisins B/V/O/M/R disposés différemment), reliés par « ou ».",
+        "imageUrl": "q16_corr-c.png"
+      },
+      {
+        "id": "2025-qf-16-corr-d",
+        "description": "Les deux mêmes cubes en montage, avec un V mis en évidence en gras sur la photo de gauche et un M ajouté en orange/gras sur la photo de droite (face 5, ensemble A).",
+        "imageUrl": "q16_corr-d.png"
+      },
+      {
+        "id": "2025-qf-16-corr-e",
+        "description": "Patron en croix des faces 5, 1, 2, 4 avec leurs couleurs complètes (dont R/V en face 5, V/O/N/R en face 1-2-4), et face 2 en bas répétée pour fermer le patron.",
+        "imageUrl": "q16_corr-e.png"
+      },
+      {
+        "id": "2025-qf-16-corr-f",
+        "description": "Les deux cubes en montage avec l'ensemble S désormais complet (N et M mis en évidence en gras sur chaque cube), et à droite une grille 3×3 (troisième photo) partiellement complétée : N M B / O N / B V V.",
+        "imageUrl": "q16_corr-f.png"
+      },
+      {
+        "id": "2025-qf-16-corr-g",
+        "description": "Les deux photos reconstituées du grand cube (toutes les cases remplies, M mis en évidence en gras sur la photo de gauche), et à droite la troisième photo (grille 3×3) avec une case supplémentaire complétée en O : N M B / O N O / B V V.",
+        "imageUrl": "q16_corr-g.png"
+      },
+      {
+        "id": "2025-qf-16-corr-h",
+        "description": "Patron complet du grand cube en croix privilégiant la face 3, avec les 6 grilles 3×3 (Face 1 à Face 6) entièrement remplies de leurs lettres de couleur.",
+        "imageUrl": "q16_corr-h.png"
+      }
+    ]
+  }
+}

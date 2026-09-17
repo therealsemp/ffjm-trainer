@@ -25,10 +25,9 @@ Outil d'entraînement aux épreuves du Championnat des Jeux Mathématiques (FFJM
    - Parcours libre des exercices, filtrable au minimum par catégorie.
    - Affichage direct de l'énoncé et de la correction, sans obligation de saisir une réponse.
 
-2. **Mode entraînement / examen**
-   - Un exercice est présenté, l'utilisateur saisit une réponse.
-   - Si la réponse attendue est simple et univoque (numérique ou texte exact) → **auto-correction** automatique.
-   - Sinon → **auto-évaluation** : la correction est affichée et l'utilisateur indique lui-même s'il avait juste (comme dans un système de type Anki).
+2. **Mode entraînement**
+   - Un exercice est présenté, sans saisie de réponse.
+   - L'utilisateur consulte la correction quand il le souhaite, puis s'auto-évalue lui-même ("j'ai trouvé" / "je n'ai pas trouvé"), comme dans un système de type Anki. Pas d'auto-correction automatique en v1, même pour les réponses numériques/textuelles exactes.
 
 ## Règles d'affichage (UI)
 
@@ -49,3 +48,4 @@ Explicitement écarté ou reporté à une itération future :
 
 - Aucun coût d'infrastructure toléré à court terme : projet personnel/familial.
 - Doit rester simple à utiliser sur ordinateur comme sur mobile (site web responsive, pas d'app native).
+- Interface exclusivement en français, sans option de changement de langue : le public (FFJM) est francophone. Pas de gestion multilingue à prévoir.

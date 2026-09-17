@@ -20,7 +20,7 @@ User with an active profile on this device
 ### Scenario 1: Access to the account space
 - **Given** the user has an active profile and is on the home page
 - **When** they activate the "My account" entry point
-- **Then** a page is displayed with: the profile name, the associated FFJM category, and the profile's statistics
+- **Then** a page is displayed with: the profile name, the associated FFJM category, the profile's statistics, and the theme setting (Story 1.4)
 
 ### Scenario 2: Viewing statistics
 - **Given** the user is on the "My account" page

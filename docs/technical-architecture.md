@@ -23,6 +23,18 @@ Ce choix découle directement de la contrainte fonctionnelle « pas de comptes, 
 - Figures géométriques : **SVG** inline en priorité ; repli sur image (PNG/JPEG extraite du PDF source) quand la figure est trop complexe pour être vectorisée simplement.
 - Responsive : un seul site, adapté à l'écran (pas d'app mobile native, pas de PWA en v1).
 
+## Couche applicative (`/app`)
+
+- **Accès aux données** : au build, un script génère un index de navigation (années/phases/catégories disponibles, listing des questions par édition) à partir de `data/validated/`. Les composants ne lisent jamais directement les fichiers JSON de `data/validated/` : ils passent par un module client de données (ex. `dataClient`) qui expose des fonctions asynchrones (`listEditions()`, `getQuestion(id)`, ...) et va chercher les fichiers nécessaires à la demande (par édition) — même si, aujourd'hui, ce sont de simples fichiers statiques servis par GitHub Pages. Objectif : pouvoir remplacer cette implémentation par un vrai appel API plus tard sans toucher aux composants qui consomment les données.
+- **Persistance locale** (profil actif, session d'entraînement en cours, préférence de thème) : passe par une couche d'abstraction de stockage générique (interface `get`/`set`/`remove`), indépendante de la technologie de stockage navigateur choisie derrière (cookie, `localStorage`, etc.). Les composants ne manipulent jamais une API de stockage navigateur directement.
+- **Thème** (clair/sombre/système) : voir Story 1.4. Par défaut sur la préférence système (`prefers-color-scheme`), réglable explicitement par l'utilisateur, stocké via la même couche de persistance que le reste.
+- **Styling / identité visuelle** : non tranché à ce stade — à traiter dans une discussion dédiée avant d'être implémenté.
+- **Routage, parsing markdown/maths** : pas de préférence de librairie à ce stade ; choix laissé à l'implémentation (un routeur React et une combinaison markdown+KaTeX standard conviennent).
+- **Pas d'i18n** : le public (FFJM) est exclusivement francophone. Les textes affichés à l'utilisateur sont écrits en dur en français directement dans le code, sans couche de traduction ni sélecteur de langue — à ne pas prévoir, même en vue d'une évolution future. Seul le code (identifiants, commentaires) reste en anglais, comme le reste du projet.
+- **Stratégie de tests** :
+  - Tests unitaires/composants (ex. Vitest + React Testing Library) pour la logique métier : tirage pondéré par `tier`, règles d'affichage dérivées (consigne "nombre de solutions"), couche de stockage, couche client de données.
+  - Tests bout-en-bout (ex. Playwright) sur les parcours clés (création de profil → configuration et déroulement d'une session d'entraînement → consultation d'une édition), exécutés à au moins deux tailles de viewport (mobile ~390px, desktop ~1440px) pour couvrir le responsive sans faire de la comparaison pixel par pixel systématique.
+
 ## Modèle de données
 
 Un fichier JSON par question (pas par examen) : plus simple à valider unitairement, et cohérent avec le principe « l'état, c'est le répertoire, pas un champ » (voir plus bas). Chaque fichier est auto-suffisant : les informations d'examen (année, phase...) sont dénormalisées dans chaque question plutôt que factorisées dans un fichier parent.

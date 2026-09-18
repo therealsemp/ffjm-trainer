@@ -12,7 +12,7 @@ Update this file whenever a story's implementation state changes. Values: `Not s
 | 1.2 — Profile creation | Done | |
 | 1.3 — Account access and profile reset | Done | |
 | 1.4 — Theme preference | Done | |
-| 1.5 — Account statistics | Done | Lifetime cumulative stats (`trainingGlobalStats`, separate storage key from the session's own), shown via the shared `StatsSummary` component. Empty-state placeholder when nothing's been trained yet. |
+| 1.5 — Account statistics | Done | Lifetime cumulative stats (`trainingGlobalStats`, separate storage key from the session's own), shown via the shared `StatsSummary` component (per-tier horizontal stacked bars, colorblind-safe status palette validated with the dataviz skill's script). Empty-state placeholder when nothing's been trained yet. |
 
 ## EPIC 2 — Training mode
 

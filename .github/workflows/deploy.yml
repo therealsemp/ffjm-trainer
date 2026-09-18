@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+# Triggered by a version tag (vX.Y.Z, semantic versioning) — never by a
+# plain push to main. main takes work-in-progress commits at whatever pace
+# the maintainer commits at (see CLAUDE.md); a tag is the explicit,
+# separate "this is ready, publish it" gesture. See
+# docs/technical-architecture.md ("Hébergement & déploiement").
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; a newer tag pushed while one is still
+# building supersedes it rather than queuing behind it.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Build
+        working-directory: app
+        # Runs build-data-index.mjs (reads ../data/validated) before
+        # vite build — see app/package.json.
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

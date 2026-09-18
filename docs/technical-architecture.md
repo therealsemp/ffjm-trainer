@@ -12,7 +12,8 @@ Ce choix découle directement de la contrainte fonctionnelle « pas de comptes, 
 
 - Dépôt GitHub public.
 - Hébergement : **GitHub Pages** (gratuit).
-- Déploiement : **GitHub Actions**, build + publish automatique au push sur `main`, via `actions/upload-pages-artifact` (empaquette `dist/` comme artifact de build) + `actions/deploy-pages` (publie cet artifact sur Pages) — pas la méthode historique par commit/force-push sur une branche `gh-pages` : aucun commit n'est créé, aucune branche annexe à maintenir. Nécessite de configurer la source Pages du repo sur "GitHub Actions" (Settings → Pages) plutôt que sur une branche.
+- Déploiement : **GitHub Actions**, déclenché par le push d'un **tag de version** (`vX.Y.Z`, versionnement sémantique classique) — pas par n'importe quel push sur `main`. `main` reçoit des commits de travail au rythme de l'utilisateur (voir `CLAUDE.md`) sans que chacun doive être publié ; un tag est un geste explicite et séparé ("ceci est prêt, publie-le"), découplé du rythme des commits.
+- Build + publish via `actions/upload-pages-artifact` (empaquette `app/dist/` comme artifact de build) + `actions/deploy-pages` (publie cet artifact sur Pages) — pas la méthode historique par commit/force-push sur une branche `gh-pages` : aucun commit n'est créé, aucune branche annexe à maintenir. Nécessite de configurer la source Pages du repo sur "GitHub Actions" (Settings → Pages) plutôt que sur une branche.
 - Le pipeline d'import (voir plus bas) n'est **pas** exécuté à chaque déploiement : c'est un traitement à la demande (déclenché manuellement ou via `workflow_dispatch`), dont le résultat (fichiers validés dans `/data`) est commité dans le repo.
 
 ## Frontend

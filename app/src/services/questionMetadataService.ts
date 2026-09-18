@@ -1,5 +1,6 @@
 import type { CategoryCode } from "../types/profile"
 import type { QuestionMetadata, Tier } from "../types/question"
+import { fetchJson } from "./fetchJson"
 
 // Canonical tier order — mirrors shared/categories.mjs's CANONICAL_ORDER,
 // collapsed to the 6 real tiers (L1/GP and L2/HC are one tier each, since
@@ -34,10 +35,10 @@ let manifestPromise: Promise<QuestionMetadata[]> | null = null
 
 function loadManifest(): Promise<QuestionMetadata[]> {
   if (!manifestPromise) {
-    manifestPromise = fetch(`${import.meta.env.BASE_URL}data/questions.json`).then((response) => {
-      if (!response.ok) throw new Error(`Failed to load question metadata (${response.status})`)
-      return response.json() as Promise<QuestionMetadata[]>
-    })
+    manifestPromise = fetchJson<QuestionMetadata[]>(
+      `${import.meta.env.BASE_URL}data/questions.json`,
+      "Failed to load question metadata",
+    )
   }
   return manifestPromise
 }
@@ -75,5 +76,20 @@ export const questionMetadataService = {
     const manifest = await loadManifest()
     const pool = manifest.filter((question) => question.tier === tier)
     return pool[Math.floor(Math.random() * pool.length)]
+  },
+
+  // Used by questionService to resolve an id into year/phase/number before
+  // fetching the question's full content.
+  async getById(id: string): Promise<QuestionMetadata> {
+    const manifest = await loadManifest()
+    const entry = manifest.find((question) => question.id === id)
+    if (!entry) throw new Error(`Unknown question id: ${id}`)
+    return entry
+  },
+
+  // The FFJM "number of solutions" instruction (see functional-spec.md)
+  // applies whenever a question's tier is strictly above CM.
+  isAboveCM(tier: Tier): boolean {
+    return TIER_ORDER.indexOf(tier) > TIER_ORDER.indexOf("CM")
   },
 }

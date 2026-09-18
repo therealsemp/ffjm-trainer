@@ -17,7 +17,7 @@ User in an active training session
 - Repeating a question already seen in the session is allowed: each draw is made over the full set of questions in the selected levels, with no exclusion of questions already seen.
 - No time limit is imposed on a question.
 - The user can skip a question at any time, including after having viewed the answer.
-- Whenever the displayed question's `tier` is strictly above CM (i.e. C1, C2, L1/GP, or L2/HC), the FFJM "number of solutions" instruction must be shown alongside the answer and explanations (see `functional-spec.md`). This is a display rule derived from `tier`, not a stored field, and does not apply to CE/CM questions.
+- Whenever the displayed question's `tier` is strictly above CM (i.e. C1, C2, L1/GP, or L2/HC), the FFJM "number of solutions" instruction must be shown alongside the **statement**, not the answer (see `functional-spec.md`) — it tells the user what's expected of a complete answer *before* they attempt it, not after. This is a display rule derived from `tier`, not a stored field, and does not apply to CE/CM questions.
 
 ## Acceptance criteria
 
@@ -26,6 +26,7 @@ User in an active training session
 - **When** a question needs to be displayed (session start or after an action on the previous question)
 - **Then** a question is drawn at random from among the selected levels, with a probability proportional to each level's coefficient
 - **And** the statement (text + optional image) is displayed
+- **And**, if the question's `tier` is strictly above CM, the FFJM "number of solutions" instruction is shown alongside the statement
 - **And** two actions are available: "Skip" and "See the answer and explanations"
 - **And** no timer is displayed or started
 
@@ -42,7 +43,6 @@ User in an active training session
 - **And** the explanations are also displayed, with no further action required
 - **And** two buttons appear below the answer: "I found it" and "I didn't find it"
 - **And** the "Skip" option remains available
-- **And**, if the question's `tier` is strictly above CM, the FFJM "number of solutions" instruction is shown alongside the answer and explanations
 
 ### Scenario 4: Positive self-assessment
 - **Given** the answer and explanations are displayed

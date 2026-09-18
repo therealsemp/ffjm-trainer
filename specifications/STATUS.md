@@ -19,7 +19,7 @@ Update this file whenever a story's implementation state changes. Values: `Not s
 | Story | Status | Notes |
 |---|---|---|
 | 2.1 — Session configuration | Done | |
-| 2.2 — Question flow | In progress | Draw (weighted by tier), skip/reveal/self-assess loop, and counters all work — but only metadata (year/phase/tier/number) is shown, not the real statement/answer/correction (needs markdown+KaTeX rendering, a later lot). The "number of solutions" display rule is also deferred to that lot, since it only makes sense once an answer is actually rendered. |
+| 2.2 — Question flow | Done | Full statement/answer/correction rendering (markdown + inline LaTeX via KaTeX, figures resolved from `![...](figure:<id>)`), plus the "number of solutions" rule for tiers above CM. |
 | 2.3 — Session stats view | Not started | |
 | 2.4 — Statistics saving | Done | `trainingSessionService` persists after every action, per level. Global totals aren't stored separately — they're summed from the per-level counters on demand, same principle as not storing `tier` redundantly. |
 | 2.5 — Resume or new session | Not started | Session already persists (2.4) — what's missing is the resume-vs-new decision screen. For now, opening the config page always starts fresh. |

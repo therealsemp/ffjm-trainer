@@ -13,7 +13,8 @@ export function AppLayout() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="flex items-center justify-between border-b border-brand-line px-4 py-3">
-        <Link to="/accueil" className="font-heading text-lg font-bold">
+        <Link to="/accueil" className="flex items-center gap-2 font-heading text-lg font-bold">
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="" className="h-8 w-8" />
           FFJM Trainer
         </Link>
         <Link

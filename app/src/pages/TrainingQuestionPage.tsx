@@ -52,7 +52,7 @@ export function TrainingQuestionPage() {
 
   if (!session) return <Navigate to="/entrainement/configuration" replace />
   if (!question) {
-    return <main className="mx-auto max-w-3xl px-4 py-8 text-brand-muted">Chargement de la question...</main>
+    return <main className="mx-auto max-w-4xl px-4 py-8 text-brand-muted">Chargement de la question...</main>
   }
 
   const basePath = `${import.meta.env.BASE_URL}data/${question.year}/${question.phase}`
@@ -71,7 +71,7 @@ export function TrainingQuestionPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-8">
+    <main className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-8">
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center gap-2">
           {question.title && <h1 className="text-2xl font-bold">{question.title}</h1>}

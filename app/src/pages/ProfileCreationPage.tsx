@@ -52,7 +52,7 @@ export function ProfileCreationPage() {
             autoComplete="off"
             className="rounded-lg border border-brand-line bg-brand-surface px-3 py-2.5 text-inherit"
           />
-          {nameError && <p className="text-sm text-red-600">{nameError}</p>}
+          {nameError && <p className="text-sm text-brand-danger">{nameError}</p>}
         </div>
 
         <fieldset className="flex flex-col gap-2.5 border-0 p-0">
@@ -75,7 +75,7 @@ export function ProfileCreationPage() {
               </SelectableCard>
             ))}
           </div>
-          {categoryError && <p className="text-sm text-red-600">{categoryError}</p>}
+          {categoryError && <p className="text-sm text-brand-danger">{categoryError}</p>}
         </fieldset>
 
         <Button type="submit">Commencer</Button>

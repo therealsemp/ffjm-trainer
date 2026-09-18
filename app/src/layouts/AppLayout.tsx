@@ -4,11 +4,20 @@
 // route's {{outlet}}. The theme control (Story 1.4) lives on the account
 // page, not here.
 
+import { useEffect } from "react"
 import { Link, Outlet } from "react-router-dom"
 import { useProfile } from "../services/ProfileContext"
+import { questionMetadataService } from "../services/questionMetadataService"
 
 export function AppLayout() {
   const { profile } = useProfile()
+
+  // Fire-and-forget: warms questionMetadataService's cache as soon as
+  // there's an active profile, so training/archives screens likely find it
+  // already loaded — without ever blocking this layout's own render on it.
+  useEffect(() => {
+    questionMetadataService.preload()
+  }, [])
 
   return (
     <div className="flex min-h-screen flex-col">

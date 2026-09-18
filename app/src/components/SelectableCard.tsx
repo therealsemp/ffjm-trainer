@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 
 interface SelectableCardProps {
+  type?: "radio" | "checkbox"
   name: string
   value: string
   checked: boolean
@@ -8,10 +9,10 @@ interface SelectableCardProps {
   children: ReactNode
 }
 
-// A radio option styled as a card instead of a native radio button. The
-// input stays in the DOM (keyboard nav, screen readers, form semantics),
-// visually hidden behind the card — see `.sr-only` usage below.
-export function SelectableCard({ name, value, checked, onChange, children }: SelectableCardProps) {
+// A radio or checkbox option styled as a card instead of the native
+// control. The input stays in the DOM (keyboard nav, screen readers, form
+// semantics), visually hidden behind the card — see `.sr-only` usage below.
+export function SelectableCard({ type = "radio", name, value, checked, onChange, children }: SelectableCardProps) {
   return (
     <label
       className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-2.5 transition has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-brand-blue has-[:focus-visible]:outline-offset-2 ${
@@ -21,7 +22,7 @@ export function SelectableCard({ name, value, checked, onChange, children }: Sel
       }`}
     >
       <input
-        type="radio"
+        type={type}
         name={name}
         value={value}
         checked={checked}

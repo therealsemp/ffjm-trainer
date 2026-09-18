@@ -12,7 +12,8 @@ User in an active training session
 **so that** I can train without time pressure and honestly self-assess.
 
 ## Context / Business rules
-- A question is drawn at random from among the levels selected for the session, weighted by each level's official coefficient (number of puzzles in the real contest: CE=5, CM=8, C1=11, C2=14, L1=16, GP=16, L2=18, HC=18), renormalized over the selected levels only. "Level" here means the question's `tier` (its native level), not `categories` (the cumulative list of categories that have access to it) — the pool for a given level is exactly the questions whose `tier` equals that level.
+- A question is drawn at random from among the levels selected for the session, weighted by each level's official coefficient, renormalized over the selected levels only. "Level" here means the question's `tier` (its native level), not `categories` (the cumulative list of categories that have access to it) — the pool for a given level is exactly the questions whose `tier` equals that level.
+- The coefficients are **incremental per tier** (how many questions natively belong to that tier), not the cumulative total a candidate of that category answers overall: CE=5, CM=3, C1=3, C2=3, L1/GP=2, L2/HC=2. (For reference, the cumulative totals — CE=5, CM=8, C1=11, C2=14, L1/GP=16, L2/HC=18 — are what a candidate of each category actually answers end to end, since they also get every lower tier's questions; but that cumulative figure is the wrong number to weight a single tier's own pool by.)
 - Repeating a question already seen in the session is allowed: each draw is made over the full set of questions in the selected levels, with no exclusion of questions already seen.
 - No time limit is imposed on a question.
 - The user can skip a question at any time, including after having viewed the answer.

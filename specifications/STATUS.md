@@ -18,11 +18,11 @@ Update this file whenever a story's implementation state changes. Values: `Not s
 
 | Story | Status | Notes |
 |---|---|---|
-| 2.1 — Session configuration | Not started | |
-| 2.2 — Question flow | Not started | Needs the build-time data index (`questionMetadataService`/`questionService`, see `docs/technical-architecture.md`) — not built yet. |
+| 2.1 — Session configuration | Done | |
+| 2.2 — Question flow | In progress | Draw (weighted by tier), skip/reveal/self-assess loop, and counters all work — but only metadata (year/phase/tier/number) is shown, not the real statement/answer/correction (needs markdown+KaTeX rendering, a later lot). The "number of solutions" display rule is also deferred to that lot, since it only makes sense once an answer is actually rendered. |
 | 2.3 — Session stats view | Not started | |
-| 2.4 — Statistics saving | Not started | |
-| 2.5 — Resume or new session | Not started | |
+| 2.4 — Statistics saving | Done | `trainingSessionService` persists after every action, per level. Global totals aren't stored separately — they're summed from the per-level counters on demand, same principle as not storing `tier` redundantly. |
+| 2.5 — Resume or new session | Not started | Session already persists (2.4) — what's missing is the resume-vs-new decision screen. For now, opening the config page always starts fresh. |
 
 ## EPIC 3 — Archives consultation
 

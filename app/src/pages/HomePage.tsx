@@ -3,6 +3,7 @@
 // the profile-detection/creation flow works end to end.
 
 import { Navigate } from "react-router-dom"
+import { Button } from "../components/Button"
 import { useProfile } from "../services/ProfileContext"
 import { CATEGORY_OPTIONS } from "../types/profile"
 
@@ -33,8 +34,11 @@ export function HomePage() {
     <main className="mx-auto flex max-w-lg flex-col gap-4 px-4 py-8">
       <h1 className="text-3xl font-bold">Salut {greetingNameFor(profile.name)} !</h1>
       <p className="text-brand-muted">Catégorie : {category?.label ?? profile.category}</p>
+
+      <Button to="/entrainement/configuration">S'entraîner</Button>
+
       <p className="rounded-lg border border-dashed border-brand-line p-4 text-brand-muted">
-        Le reste de l'application est en construction.
+        Le reste de l'application (consultation d'archives) est en construction.
       </p>
     </main>
   )

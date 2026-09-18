@@ -27,7 +27,7 @@ Outil d'entraînement aux épreuves du Championnat des Jeux Mathématiques (FFJM
 Explicitement écarté ou reporté à une itération future :
 
 - Chronométrage façon concours réel.
-- Suivi de progression / statistiques dans le temps.
+- Historique détaillé/horodaté des sessions passées, ou graphiques d'évolution dans le temps. Des compteurs cumulés à vie (nombre total de questions passées/trouvées/non trouvées, tous niveaux et sessions confondus, voir Story 1.5) sont en revanche dans le périmètre v1 — ce n'est pas un historique, juste un total qui s'incrémente.
 - Génération automatique de nouveaux exercices.
 - Filtrage ou exploitation par thème.
 - Interface d'administration / import en direct dans l'application (l'import est un pipeline hors-ligne, exécuté en one-shot, pas une fonctionnalité de l'app v1).

@@ -13,7 +13,7 @@ User with an active profile
 
 ## Context / Business rules
 - Only one session can be saved at a time (for the device's active profile).
-- Starting a new session permanently deletes the existing saved session (statistics included).
+- Starting a new session permanently deletes the existing saved session, **including its own statistics** — but never the profile's lifetime statistics (Story 1.5), which are separate and keep accumulating regardless of how many sessions get discarded.
 - Resuming a session always displays a new question drawn at random directly (no restoring the precise display state of the last question viewed, see Story 2.2/2.4).
 
 ## Acceptance criteria
@@ -41,7 +41,8 @@ User with an active profile
 ### Scenario 4: Starting a new session
 - **Given** the session choice screen is displayed
 - **When** the user activates "Start a new session"
-- **Then** the existing saved session (levels, statistics) is permanently deleted
+- **Then** the existing saved session (levels, its own statistics) is permanently deleted
+- **And** the profile's lifetime statistics (Story 1.5) are left untouched
 - **And** the user is taken to configuring a new session (Story 2.1)
 
 ## Out of scope
@@ -51,4 +52,5 @@ User with an active profile
 ## QA notes
 - Check that after deletion (new session), the old session can no longer be recovered.
 - Check that resuming correctly restores the saved counters exactly (consistency with Story 2.4).
-- Check the behavior if the profile is deleted (Story 1.3): the associated session must also be deleted.
+- Check that starting a new session leaves the profile's lifetime statistics (Story 1.5) exactly as they were.
+- Check the behavior if the profile is deleted (Story 1.3): the associated session, its statistics, and the profile's lifetime statistics must all be deleted.

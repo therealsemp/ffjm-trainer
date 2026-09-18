@@ -4,8 +4,9 @@ import { fetchJson } from "./fetchJson"
 
 // Canonical tier order — mirrors shared/categories.mjs's CANONICAL_ORDER,
 // collapsed to the 6 real tiers (L1/GP and L2/HC are one tier each, since
-// they share the same question pool).
-const TIER_ORDER: Tier[] = ["CE", "CM", "C1", "C2", "L1/GP", "L2/HC"]
+// they share the same question pool). Exported since trainingSessionService
+// and the stats display also need the full, ordered tier list.
+export const TIER_ORDER: Tier[] = ["CE", "CM", "C1", "C2", "L1/GP", "L2/HC"]
 
 // Which tier a profile category maxes out at.
 const CATEGORY_TO_TIER: Record<CategoryCode, Tier> = {

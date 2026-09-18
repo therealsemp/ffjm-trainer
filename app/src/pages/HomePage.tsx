@@ -35,7 +35,7 @@ export function HomePage() {
       <h1 className="text-3xl font-bold">Salut {greetingNameFor(profile.name)} !</h1>
       <p className="text-brand-muted">Catégorie : {category?.label ?? profile.category}</p>
 
-      <Button to="/entrainement/configuration">S'entraîner</Button>
+      <Button to="/entrainement">S'entraîner</Button>
 
       <p className="rounded-lg border border-dashed border-brand-line p-4 text-brand-muted">
         Le reste de l'application (consultation d'archives) est en construction.

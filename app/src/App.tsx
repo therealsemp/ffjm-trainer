@@ -8,6 +8,7 @@ import { ProfileCreationPage } from "./pages/ProfileCreationPage"
 import { HomePage } from "./pages/HomePage"
 import { AccountPage } from "./pages/AccountPage"
 import { SessionConfigPage } from "./pages/SessionConfigPage"
+import { TrainingEntryPage } from "./pages/TrainingEntryPage"
 import { TrainingQuestionPage } from "./pages/TrainingQuestionPage"
 
 export function App() {
@@ -22,6 +23,7 @@ export function App() {
               <Route element={<AppLayout />}>
                 <Route path="/accueil" element={<HomePage />} />
                 <Route path="/compte" element={<AccountPage />} />
+                <Route path="/entrainement" element={<TrainingEntryPage />} />
                 <Route path="/entrainement/configuration" element={<SessionConfigPage />} />
                 <Route path="/entrainement/question" element={<TrainingQuestionPage />} />
               </Route>

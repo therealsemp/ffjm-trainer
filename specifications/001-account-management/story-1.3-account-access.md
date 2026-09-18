@@ -16,7 +16,7 @@ User with an active profile on this device
 - The reset is permanent and local: it only affects this device.
 - The "My account" entry point lives in a persistent header, visible on every page once a profile is active (not just the home page). Pages reached before a profile exists (detection/redirection, profile creation) have no header, since there is nothing to link to yet.
 - The theme control (Story 1.4) lives on this "My account" page only — never in the header.
-- The page also shows statistics — see Story 1.5, tracked separately since it depends on EPIC 2.
+- The page also shows the profile's lifetime training statistics — see Story 1.5.
 
 ## Acceptance criteria
 
@@ -35,7 +35,7 @@ User with an active profile on this device
 ### Scenario 3: Confirming the reset
 - **Given** the reset confirmation pop-up is displayed
 - **When** the user activates "Confirm reset"
-- **Then** the profile cookie and all associated data (statistics, progress) are erased
+- **Then** the profile cookie and all associated data are erased — including any in-progress training session (Story 2.5) and the profile's lifetime statistics (Story 1.5)
 - **And** the user is redirected to the profile creation page (Story 1.2)
 
 ### Scenario 4: Cancelling the reset

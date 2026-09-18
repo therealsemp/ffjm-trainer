@@ -12,17 +12,17 @@ Update this file whenever a story's implementation state changes. Values: `Not s
 | 1.2 — Profile creation | Done | |
 | 1.3 — Account access and profile reset | Done | |
 | 1.4 — Theme preference | Done | |
-| 1.5 — Account statistics | Not started | Split out of 1.3 — blocked on EPIC 2 (nothing to show until session stats exist). Page currently shows a placeholder message. |
+| 1.5 — Account statistics | Done | Lifetime cumulative stats (`trainingGlobalStats`, separate storage key from the session's own), shown via the shared `StatsSummary` component. Empty-state placeholder when nothing's been trained yet. |
 
 ## EPIC 2 — Training mode
 
 | Story | Status | Notes |
 |---|---|---|
 | 2.1 — Session configuration | Done | |
-| 2.2 — Question flow | Done | Full statement/answer/correction rendering (markdown + inline LaTeX via KaTeX, figures resolved from `![...](figure:<id>)`), plus the "number of solutions" rule for tiers above CM. |
-| 2.3 — Session stats view | Not started | |
-| 2.4 — Statistics saving | Done | `trainingSessionService` persists after every action, per level. Global totals aren't stored separately — they're summed from the per-level counters on demand, same principle as not storing `tier` redundantly. |
-| 2.5 — Resume or new session | Not started | Session already persists (2.4) — what's missing is the resume-vs-new decision screen. For now, opening the config page always starts fresh. |
+| 2.2 — Question flow | Done | Full statement/answer/correction rendering (markdown + inline LaTeX via KaTeX + GFM tables, figures resolved from `![...](figure:<id>)`), the "number of solutions" rule for tiers above CM (shown alongside the statement, collapsed by default), and a short-answer box (gold accent) separated from the detailed explanation, each with its own self-assessment buttons. |
+| 2.3 — Session stats view | Done | Popup (native `<dialog>`) reachable from an icon on the question screen, via the shared `StatsSummary` component. |
+| 2.4 — Statistics saving | Done | Revised: every action now increments **two** independent counters (same `Stats` shape, different storage keys) — the session's own (`trainingSessionStats`, reset on a new session) and the profile's lifetime total (`trainingGlobalStats`, only reset on profile reset, see 1.5). |
+| 2.5 — Resume or new session | Done | New `/entrainement` decision screen (`TrainingEntryPage`); home now links there instead of straight to configuration. |
 
 ## EPIC 3 — Archives consultation
 

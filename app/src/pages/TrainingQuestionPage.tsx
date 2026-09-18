@@ -1,11 +1,12 @@
 // Story 2.2 — question flow, with real content (statement/answer/
 // correction) rendered via RichContent.
 
-import { ChevronsRight, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react"
-import { useEffect, useState } from "react"
+import { ChartColumn, ChevronsRight, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 import { Navigate } from "react-router-dom"
 import { Button } from "../components/Button"
 import { RichContent } from "../components/RichContent"
+import { StatsSummary } from "../components/StatsSummary"
 import { questionMetadataService } from "../services/questionMetadataService"
 import { questionService } from "../services/questionService"
 import { useTrainingSession } from "../services/TrainingSessionContext"
@@ -31,9 +32,10 @@ function SelfAssessmentButtons({ onFound, onNotFound }: { onFound: () => void; o
 }
 
 export function TrainingQuestionPage() {
-  const { session, recordSkip, recordFound, recordNotFound } = useTrainingSession()
+  const { session, sessionStats, recordSkip, recordFound, recordNotFound } = useTrainingSession()
   const [question, setQuestion] = useState<Question | null>(null)
   const [revealed, setRevealed] = useState(false)
+  const statsDialogRef = useRef<HTMLDialogElement>(null)
 
   async function drawNext(levels: Tier[]) {
     const tier = questionMetadataService.pickWeightedTier(levels)
@@ -73,16 +75,41 @@ export function TrainingQuestionPage() {
   return (
     <main className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-8">
       <div className="flex flex-col gap-1">
-        <div className="flex flex-wrap items-center gap-2">
-          {question.title && <h1 className="text-2xl font-bold">{question.title}</h1>}
-          <span className="rounded-full border-2 border-brand-gold px-2.5 py-0.5 text-sm font-bold whitespace-nowrap">
-            Niveau {question.tier}
-          </span>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            {question.title && <h1 className="text-2xl font-bold">{question.title}</h1>}
+            <span className="rounded-full border-2 border-brand-gold px-2.5 py-0.5 text-sm font-bold whitespace-nowrap">
+              Niveau {question.tier}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => statsDialogRef.current?.showModal()}
+            className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-brand-line px-3 py-1.5 text-sm font-medium whitespace-nowrap hover:bg-brand-surface"
+          >
+            <ChartColumn size={16} />
+            Statistiques de la session
+          </button>
         </div>
         <p className="text-sm text-brand-muted">
           {question.year} · {PHASE_LABELS[question.phase]}
         </p>
       </div>
+
+      <dialog
+        ref={statsDialogRef}
+        className="m-auto max-w-md rounded-xl border border-brand-line bg-brand-bg p-6 text-brand-text backdrop:bg-black/40"
+      >
+        <h2 className="mb-4 text-xl font-bold">Statistiques de la session</h2>
+        <StatsSummary stats={sessionStats} levels={session.levels} />
+        <button
+          type="button"
+          onClick={() => statsDialogRef.current?.close()}
+          className="mt-4 cursor-pointer rounded-lg border border-brand-line px-4 py-2 font-semibold hover:bg-brand-surface"
+        >
+          Fermer
+        </button>
+      </dialog>
 
       <div className="rounded-xl border border-brand-line bg-brand-surface p-4">
         <RichContent content={question.statement} basePath={basePath} />

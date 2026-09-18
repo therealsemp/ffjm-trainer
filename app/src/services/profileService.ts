@@ -28,7 +28,7 @@ export const profileService = {
     storage.set(PROFILE_KEY, profile)
   },
 
-  deleteProfile(): void {
+  resetProfile(): void {
     storage.remove(PROFILE_KEY)
   },
 }

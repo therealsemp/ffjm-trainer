@@ -12,7 +12,8 @@ User with an active profile
 **so that** I can train on the levels that suit me, up to my maximum level.
 
 ## Context / Business rules
-- The levels offered range from the simplest up to the active profile's category level (maximum allowed level).
+- A "level" here is a `tier` (CE, CM, C1, C2, L1/GP, L2/HC — 6 values, not the 8 FFJM categories: L1 and GP share one tier, as do L2 and HC, since they share the same question pool — see `shared/categories.mjs`), matching Story 2.2's weighted draw, which draws by `tier`.
+- The levels offered range from the simplest up to the tier matching the active profile's category (maximum allowed level) — e.g. a profile of category L1 or GP both max out at tier L1/GP; a profile of category L2 or HC both reach all 6 tiers.
 - Each level is represented by a checkbox that can be toggled on or off.
 - By default, all levels are off.
 - A button lets the user enable all available levels in a single action.
@@ -57,5 +58,6 @@ User with an active profile
 - Manual weighting/prioritization between levels by the user (weighting is automatic, see Story 2.2).
 
 ## QA notes
-- Check that a profile of category CE sees only one level offered (CE), since it is the lowest level.
-- Check that a profile of category HC sees all 8 levels offered.
+- Check that a profile of category CE sees only one level offered (CE), since it is the lowest tier.
+- Check that a profile of category HC (or L2) sees all 6 levels offered.
+- Check that a profile of category L1 (or GP) sees 5 levels offered (up to and including L1/GP), not 4 or 6.

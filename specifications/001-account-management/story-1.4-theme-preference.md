@@ -16,7 +16,7 @@ User of the application (with or without an active profile)
 - The user can explicitly override this default by choosing "Light", "Dark", or "System" (back to automatic).
 - The choice is stored locally on this device only (same storage mechanism as the rest of the profile) and applies immediately, with no page reload.
 - The theme setting is device-level, not tied to a specific profile: it persists even if the profile is deleted (Story 1.3) or before any profile is created.
-- The setting is reachable from the "My account" page (Story 1.3).
+- The setting is reachable only from the "My account" page (Story 1.3) — never from the persistent header itself.
 
 ## Acceptance criteria
 

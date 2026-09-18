@@ -7,9 +7,10 @@
    utility built from it automatically. Palette locked in
    docs/technical-architecture.md: light theme "Vif", dark theme
    "Classique"; gold is an accent (border/background highlight), never body
-   text on a light background. Dark mode here only follows the OS
-   preference for now — the explicit light/dark/system toggle is Story 1.4,
-   not built yet. */
+   text on a light background. Three theme states (Story 1.4): "system"
+   (default) sets no `data-theme` attribute and lets the media query below
+   decide; an explicit choice stamps `data-theme="light"`/`"dark"` on
+   <html>, which wins over the OS preference either way. */
 @theme {
   --color-brand-bg: #ffffff;
   --color-brand-surface: #eef3fc;
@@ -19,13 +20,14 @@
   --color-brand-gold: #e0a93e;
   --color-brand-line: rgb(0 0 0 / 12%);
   --color-brand-ink: #1a1a1a;
+  --color-brand-danger: #b3261e;
 
   --font-heading: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Public Sans", system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-brand-bg: #0f1b2d;
     --color-brand-surface: #16243b;
     --color-brand-text: #edebe3;
@@ -34,6 +36,16 @@
     --color-brand-gold: #e4c158;
     --color-brand-line: rgb(255 255 255 / 14%);
   }
+}
+
+:root[data-theme="dark"] {
+  --color-brand-bg: #0f1b2d;
+  --color-brand-surface: #16243b;
+  --color-brand-text: #edebe3;
+  --color-brand-muted: #a9b4c4;
+  --color-brand-blue: #3e5c8a;
+  --color-brand-gold: #e4c158;
+  --color-brand-line: rgb(255 255 255 / 14%);
 }
 
 :root {

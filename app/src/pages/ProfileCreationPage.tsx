@@ -69,7 +69,7 @@ export function ProfileCreationPage() {
                 <span className="flex flex-col">
                   <span className="font-heading text-lg font-bold">{option.code}</span>
                   <span className="text-sm text-brand-muted">
-                    {option.label} — {option.description}
+                    {option.label} : {option.description}
                   </span>
                 </span>
               </SelectableCard>

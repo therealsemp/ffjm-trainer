@@ -1,0 +1,83 @@
+// Story 1.3 — account access and profile reset, plus Story 1.4 (theme)
+// and the placeholder for Story 1.5 (statistics, blocked on EPIC 2).
+// Reached only through AppLayout, which only renders once a profile
+// exists, so `profile` is never null here in practice.
+
+import { useRef } from "react"
+import { useNavigate } from "react-router-dom"
+import { useProfile } from "../services/ProfileContext"
+import { CATEGORY_OPTIONS } from "../types/profile"
+import { Button } from "../components/Button"
+import { ThemeToggle } from "../components/ThemeToggle"
+
+export function AccountPage() {
+  const { profile, resetProfile } = useProfile()
+  const navigate = useNavigate()
+  const dialogRef = useRef<HTMLDialogElement>(null)
+
+  if (!profile) return null
+
+  const category = CATEGORY_OPTIONS.find((option) => option.code === profile.category)
+
+  function handleConfirmReset() {
+    dialogRef.current?.close()
+    resetProfile()
+    navigate("/profil/creation", { replace: true })
+  }
+
+  return (
+    <main className="mx-auto flex max-w-lg flex-col gap-8 px-4 py-8">
+      <h1 className="text-3xl font-bold">Mon compte</h1>
+
+      <section className="flex flex-col gap-1">
+        <p>
+          <span className="font-semibold">Prénom :</span> {profile.name}
+        </p>
+        <p>
+          <span className="font-semibold">Catégorie :</span> {category?.label ?? profile.category}
+        </p>
+      </section>
+
+      <section className="flex flex-col gap-2">
+        <h2 className="text-xl font-bold">Thème</h2>
+        <ThemeToggle />
+      </section>
+
+      <section className="flex flex-col gap-2">
+        <h2 className="text-xl font-bold">Statistiques</h2>
+        {/* Story 1.5 — blocked on EPIC 2 (training mode), nothing real to show yet. */}
+        <p className="text-brand-muted">
+          Pas encore de statistiques : elles apparaîtront une fois le mode entraînement disponible.
+        </p>
+      </section>
+
+      <section className="flex flex-col gap-2 border-t border-brand-line pt-6">
+        <Button type="button" variant="danger" onClick={() => dialogRef.current?.showModal()}>
+          Réinitialiser mon profil
+        </Button>
+      </section>
+
+      <dialog
+        ref={dialogRef}
+        className="m-auto max-w-sm rounded-xl border border-brand-line bg-brand-bg p-6 text-brand-text backdrop:bg-black/40"
+      >
+        <p className="mb-4">
+          Toutes tes données (profil et progression) sont stockées uniquement sur cet appareil. Si tu confirmes,
+          elles seront définitivement effacées.
+        </p>
+        <div className="flex justify-end gap-3">
+          <button
+            type="button"
+            className="cursor-pointer rounded-lg px-4 py-2 font-semibold hover:bg-brand-surface"
+            onClick={() => dialogRef.current?.close()}
+          >
+            Annuler
+          </button>
+          <Button type="button" variant="danger" onClick={handleConfirmReset}>
+            Confirmer la réinitialisation
+          </Button>
+        </div>
+      </dialog>
+    </main>
+  )
+}

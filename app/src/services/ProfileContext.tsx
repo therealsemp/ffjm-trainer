@@ -9,6 +9,7 @@ import type { Profile } from "../types/profile"
 interface ProfileContextValue {
   profile: Profile | null
   createProfile: (profile: Profile) => void
+  resetProfile: () => void
 }
 
 const ProfileContext = createContext<ProfileContextValue | null>(null)
@@ -22,6 +23,10 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
       createProfile: (newProfile: Profile) => {
         profileService.createProfile(newProfile)
         setProfile(newProfile)
+      },
+      resetProfile: () => {
+        profileService.resetProfile()
+        setProfile(null)
       },
     }),
     [profile],

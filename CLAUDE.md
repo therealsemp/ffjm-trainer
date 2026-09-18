@@ -7,6 +7,7 @@ Guidance for Claude Code when working in this repository.
 1. **Never run `git commit` (or any command that creates a commit).** The user commits everything themselves. Stage changes or leave them in the working tree if helpful, but do not commit — not even when asked to "save progress" or similar unless the user explicitly says the word "commit".
 2. **Before transcribing a PDF (statement/correction) into a question JSON, read `ingest/TRANSCRIPTION-GUIDE.md`.** There's no deterministic extraction script — the transcription is done by reading the PDF directly and writing the JSON by hand, and that guide documents recurring mistakes (flattened lists, condensed reasoning, missed figures) to avoid repeating.
 3. **Language split: code in English, user-facing UI text in French, no exceptions.** All code, identifiers, comments, commit messages, and specifications/stories are written in English. Everything a user of the deployed `/app` actually sees (labels, buttons, messages) is hardcoded in French — the FFJM audience is exclusively French-speaking. There is no i18n/translation layer and no language switcher; do not add one or design for future multilingual support.
+4. **Never use an em dash (—) in `/app` UI labels/copy.** Use a comma, colon, or parentheses instead. Doesn't apply to code comments or docs/specifications prose — only to text actually rendered to the user.
 
 ## Project
 

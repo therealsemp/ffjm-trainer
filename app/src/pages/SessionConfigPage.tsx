@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Button } from "../components/Button"
+import { PageContainer } from "../components/PageContainer"
 import { SelectableCard } from "../components/SelectableCard"
 import { useProfile } from "../services/ProfileContext"
 import { questionMetadataService } from "../services/questionMetadataService"
@@ -35,7 +36,7 @@ export function SessionConfigPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-lg flex-col gap-6 px-4 py-8">
+    <PageContainer>
       <h1 className="text-3xl font-bold">Configurer l'entraînement</h1>
 
       <div className="flex items-center justify-between gap-3">
@@ -69,6 +70,6 @@ export function SessionConfigPage() {
       <Button type="button" onClick={handleStart}>
         Commencer
       </Button>
-    </main>
+    </PageContainer>
   )
 }

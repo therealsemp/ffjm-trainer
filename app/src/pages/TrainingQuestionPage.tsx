@@ -5,6 +5,7 @@ import { ChartColumn, ChevronsRight, ThumbsDown, ThumbsUp, TriangleAlert } from 
 import { useEffect, useRef, useState } from "react"
 import { Navigate } from "react-router-dom"
 import { Button } from "../components/Button"
+import { PageContainer } from "../components/PageContainer"
 import { RichContent } from "../components/RichContent"
 import { StatsSummary } from "../components/StatsSummary"
 import { questionMetadataService } from "../services/questionMetadataService"
@@ -54,7 +55,11 @@ export function TrainingQuestionPage() {
 
   if (!session) return <Navigate to="/entrainement/configuration" replace />
   if (!question) {
-    return <main className="mx-auto max-w-4xl px-4 py-8 text-brand-muted">Chargement de la question...</main>
+    return (
+      <PageContainer wide>
+        <p className="text-brand-muted">Chargement de la question...</p>
+      </PageContainer>
+    )
   }
 
   const basePath = `${import.meta.env.BASE_URL}data/${question.year}/${question.phase}`
@@ -73,7 +78,7 @@ export function TrainingQuestionPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-8">
+    <PageContainer wide>
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-2">
@@ -165,6 +170,6 @@ export function TrainingQuestionPage() {
           </div>
         </>
       )}
-    </main>
+    </PageContainer>
   )
 }

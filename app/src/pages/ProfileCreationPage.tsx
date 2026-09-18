@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { useProfile } from "../services/ProfileContext"
 import { CATEGORY_OPTIONS, type CategoryCode } from "../types/profile"
 import { Button } from "../components/Button"
+import { PageContainer } from "../components/PageContainer"
 import { SelectableCard } from "../components/SelectableCard"
 
 export function ProfileCreationPage() {
@@ -33,7 +34,7 @@ export function ProfileCreationPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-lg flex-col gap-4 px-4 py-8">
+    <PageContainer gap="gap-4">
       <h1 className="text-3xl font-bold">Crée ton profil</h1>
       <p className="text-brand-muted">
         Indique ton prénom et ta catégorie FFJM pour commencer à t'entraîner.
@@ -80,6 +81,6 @@ export function ProfileCreationPage() {
 
         <Button type="submit">Commencer</Button>
       </form>
-    </main>
+    </PageContainer>
   )
 }

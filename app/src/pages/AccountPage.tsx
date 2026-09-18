@@ -9,6 +9,7 @@ import { useProfile } from "../services/ProfileContext"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 import { CATEGORY_OPTIONS } from "../types/profile"
 import { Button } from "../components/Button"
+import { PageContainer } from "../components/PageContainer"
 import { StatsSummary } from "../components/StatsSummary"
 import { ThemeToggle } from "../components/ThemeToggle"
 
@@ -31,7 +32,7 @@ export function AccountPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-4xl flex-col gap-8 px-4 py-8">
+    <PageContainer gap="gap-8">
       <h1 className="text-3xl font-bold">Mon compte</h1>
 
       <section className="flex flex-col gap-1">
@@ -89,6 +90,6 @@ export function AccountPage() {
           </Button>
         </div>
       </dialog>
-    </main>
+    </PageContainer>
   )
 }

@@ -3,6 +3,7 @@
 import { Flame } from "lucide-react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { Button } from "../components/Button"
+import { PageContainer } from "../components/PageContainer"
 import { StatsSummary } from "../components/StatsSummary"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 
@@ -18,7 +19,7 @@ export function TrainingEntryPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-8">
+    <PageContainer>
       <h1 className="text-3xl font-bold">Reprendre l'entraînement ?</h1>
 
       <div className="flex flex-col gap-4 rounded-xl border border-brand-line bg-brand-surface p-4">
@@ -44,6 +45,6 @@ export function TrainingEntryPage() {
       >
         Démarrer une nouvelle session
       </button>
-    </main>
+    </PageContainer>
   )
 }

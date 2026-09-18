@@ -31,7 +31,7 @@ export function AccountPage() {
   }
 
   return (
-    <main className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8">
+    <main className="mx-auto flex max-w-4xl flex-col gap-8 px-4 py-8">
       <h1 className="text-3xl font-bold">Mon compte</h1>
 
       <section className="flex flex-col gap-1">

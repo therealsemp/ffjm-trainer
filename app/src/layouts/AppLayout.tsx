@@ -34,7 +34,15 @@ export function AppLayout() {
           {profile?.name.charAt(0).toUpperCase()}
         </Link>
       </header>
-      <Outlet />
+      {/* Plain block wrapper, deliberately not a flex item itself: each
+          page's own root uses `mx-auto max-w-*` to center and cap its
+          width, and that only works as a normal block box. As a direct
+          flex child of the column above, auto margins would disable
+          cross-axis stretch and shrink the page to its content's width
+          instead — see the "account page won't widen" investigation. */}
+      <div>
+        <Outlet />
+      </div>
     </div>
   )
 }

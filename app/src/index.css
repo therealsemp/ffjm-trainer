@@ -22,6 +22,16 @@
   --color-brand-ink: #1a1a1a;
   --color-brand-danger: #b3261e;
 
+  /* Status colors for the stats bars (found/not-found/skipped) — fixed,
+     never themed: validated once against both surfaces with
+     scripts/validate_palette.js (dataviz skill), not swapped per theme.
+     Softened once already to better match the theme's muted tone; going
+     softer/more orange than this reopens a colorblind collision with
+     green (verified, not assumed) — this is the calmest pair that still
+     clears the CVD floor by a comfortable margin (ΔE 14.2 vs an 8 target). */
+  --color-status-good: #3f9152;
+  --color-status-warning: #e8ab3f;
+
   --font-heading: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Public Sans", system-ui, sans-serif;
 }

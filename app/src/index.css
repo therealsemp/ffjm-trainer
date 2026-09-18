@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Design tokens. Tailwind v4 generates utilities (bg-*, text-*, border-*...)
+   straight from these `--color-*`/`--font-*` variables, and those utilities
+   reference the variable (not a baked-in value) — so redefining a variable
+   under a media query, like the dark-mode block below, re-themes every
+   utility built from it automatically. Palette locked in
+   docs/technical-architecture.md: light theme "Vif", dark theme
+   "Classique"; gold is an accent (border/background highlight), never body
+   text on a light background. Dark mode here only follows the OS
+   preference for now — the explicit light/dark/system toggle is Story 1.4,
+   not built yet. */
+@theme {
+  --color-brand-bg: #ffffff;
+  --color-brand-surface: #eef3fc;
+  --color-brand-text: #15202b;
+  --color-brand-muted: #51606f;
+  --color-brand-blue: #2955a6;
+  --color-brand-gold: #e0a93e;
+  --color-brand-line: rgb(0 0 0 / 12%);
+  --color-brand-ink: #1a1a1a;
+
+  --font-heading: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-brand-bg: #0f1b2d;
+    --color-brand-surface: #16243b;
+    --color-brand-text: #edebe3;
+    --color-brand-muted: #a9b4c4;
+    --color-brand-blue: #3e5c8a;
+    --color-brand-gold: #e4c158;
+    --color-brand-line: rgb(255 255 255 / 14%);
+  }
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}

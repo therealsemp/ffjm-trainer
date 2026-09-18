@@ -2,8 +2,8 @@
 // correction) rendered via RichContent.
 
 import { ChartColumn, ChevronsRight, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
-import { Navigate } from "react-router-dom"
+import { useEffect, useRef, useState, type MouseEvent } from "react"
+import { Navigate, useSearchParams } from "react-router-dom"
 import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
 import { RichContent } from "../components/RichContent"
@@ -37,11 +37,26 @@ export function TrainingQuestionPage() {
   const [question, setQuestion] = useState<Question | null>(null)
   const [revealed, setRevealed] = useState(false)
   const statsDialogRef = useRef<HTMLDialogElement>(null)
+  const correctionEndRef = useRef<HTMLDivElement>(null)
+  // Forces the draw to a specific question via ?q=<id> — handy to reach an
+  // exact question (e.g. an edge case) that the weighted random draw would
+  // make impractical to hit by clicking through the app.
+  const [searchParams] = useSearchParams()
+  const forcedQuestionId = searchParams.get("q")
+
+  function scrollToCorrectionEnd(event: MouseEvent) {
+    event.preventDefault()
+    correctionEndRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
 
   async function drawNext(levels: Tier[]) {
-    const tier = questionMetadataService.pickWeightedTier(levels)
-    const metadata = await questionMetadataService.pickRandomQuestionInTier(tier)
-    const full = await questionService.getQuestion(metadata.id)
+    let id = forcedQuestionId
+    if (!id) {
+      const tier = questionMetadataService.pickWeightedTier(levels)
+      const metadata = await questionMetadataService.pickRandomQuestionInTier(tier)
+      id = metadata.id
+    }
+    const full = await questionService.getQuestion(id)
     setQuestion(full)
     setRevealed(false)
   }
@@ -155,17 +170,27 @@ export function TrainingQuestionPage() {
       {revealed && (
         <>
           <div className="flex flex-col gap-4 rounded-xl border-2 border-brand-gold bg-brand-gold/10 p-4">
-            {question.answer.type !== "open" && (
-              <p className="text-lg">
-                <span className="font-semibold">Réponse :</span> {question.answer.value}
-              </p>
-            )}
+            <p className="text-lg">
+              <span className="font-semibold">Réponse :</span>{" "}
+              {question.answer.value !== undefined ? (
+                question.answer.value
+              ) : (
+                <a
+                  href="#correction-end"
+                  onClick={scrollToCorrectionEnd}
+                  className="underline decoration-2 underline-offset-2 hover:text-brand-blue"
+                >
+                  voir la réponse en image à la fin de l'explication détaillée
+                </a>
+              )}
+            </p>
             <SelfAssessmentButtons onFound={handleFound} onNotFound={handleNotFound} />
           </div>
 
           <div className="flex flex-col gap-4 rounded-xl border border-brand-line bg-brand-surface p-4">
             <h2 className="text-lg font-bold">Explication détaillée</h2>
             <RichContent content={question.correction} basePath={basePath} />
+            <div id="correction-end" ref={correctionEndRef} />
             <SelfAssessmentButtons onFound={handleFound} onNotFound={handleNotFound} />
           </div>
         </>

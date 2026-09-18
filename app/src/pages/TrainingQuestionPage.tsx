@@ -1,7 +1,7 @@
 // Story 2.2 — question flow, with real content (statement/answer/
 // correction) rendered via RichContent.
 
-import { ThumbsDown, ThumbsUp } from "lucide-react"
+import { ChevronsRight, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
 import { Button } from "../components/Button"
@@ -9,7 +9,26 @@ import { RichContent } from "../components/RichContent"
 import { questionMetadataService } from "../services/questionMetadataService"
 import { questionService } from "../services/questionService"
 import { useTrainingSession } from "../services/TrainingSessionContext"
-import type { Question, Tier } from "../types/question"
+import { PHASE_LABELS, type Question, type Tier } from "../types/question"
+
+function SelfAssessmentButtons({ onFound, onNotFound }: { onFound: () => void; onNotFound: () => void }) {
+  return (
+    <div className="flex flex-wrap gap-3">
+      <Button type="button" onClick={onFound} className="flex items-center gap-2">
+        <ThumbsUp size={18} />
+        J'avais trouvé
+      </Button>
+      <button
+        type="button"
+        onClick={onNotFound}
+        className="flex cursor-pointer items-center gap-2 rounded-lg border border-brand-line px-4 py-2 font-semibold hover:bg-brand-surface"
+      >
+        <ThumbsDown size={18} />
+        Je n'avais pas trouvé
+      </button>
+    </div>
+  )
+}
 
 export function TrainingQuestionPage() {
   const { session, recordSkip, recordFound, recordNotFound } = useTrainingSession()
@@ -53,60 +72,70 @@ export function TrainingQuestionPage() {
 
   return (
     <main className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-8">
-      <p className="text-sm text-brand-muted">
-        {question.year} · {question.phase.toUpperCase()} · Niveau {question.tier}
-      </p>
+      <div className="flex flex-col gap-1">
+        <div className="flex flex-wrap items-center gap-2">
+          {question.title && <h1 className="text-2xl font-bold">{question.title}</h1>}
+          <span className="rounded-full border-2 border-brand-gold px-2.5 py-0.5 text-sm font-bold whitespace-nowrap">
+            Niveau {question.tier}
+          </span>
+        </div>
+        <p className="text-sm text-brand-muted">
+          {question.year} · {PHASE_LABELS[question.phase]}
+        </p>
+      </div>
 
-      <div className="flex flex-col gap-4 rounded-xl border border-brand-line bg-brand-surface p-4">
-        {questionMetadataService.isAboveCM(question.tier) && (
-          <p className="border-l-4 border-brand-gold bg-brand-gold/10 p-3 text-sm">
-            Pour qu'un problème soit complètement résolu, tu dois donner le nombre de ses solutions, et donner la
-            solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une.
-          </p>
-        )}
+      <div className="rounded-xl border border-brand-line bg-brand-surface p-4">
         <RichContent content={question.statement} basePath={basePath} />
       </div>
 
+      {questionMetadataService.isAboveCM(question.tier) && (
+        <details className="rounded-lg border-l-4 border-brand-gold bg-brand-gold/10 p-3 text-sm">
+          <summary className="flex cursor-pointer items-center gap-2 font-semibold">
+            <TriangleAlert size={16} />
+            Règlement officiel FFJM sur le nombre de solutions
+          </summary>
+          <p className="mt-2">
+            Attention&nbsp;! Pour qu'un problème soit complètement résolu, vous devez donner le nombre de ses
+            solutions, et donner la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une. Pour tous
+            les problèmes susceptibles d'avoir plusieurs solutions, l'emplacement a été prévu pour écrire deux
+            solutions (mais il se peut qu'il n'y en ait qu'une !)
+          </p>
+        </details>
+      )}
+
       <div className="flex flex-wrap gap-3">
+        {!revealed && (
+          <Button type="button" onClick={() => setRevealed(true)}>
+            Vérifier ma réponse
+          </Button>
+        )}
         <button
           type="button"
           onClick={handleSkip}
-          className="cursor-pointer rounded-lg border border-brand-line px-4 py-2 font-semibold hover:bg-brand-surface"
+          className="flex cursor-pointer items-center gap-1 rounded-lg border border-brand-line px-4 py-2 font-semibold hover:bg-brand-surface"
         >
-          Passer
+          Ignorer
+          <ChevronsRight size={18} />
         </button>
-        {!revealed && (
-          <Button type="button" onClick={() => setRevealed(true)}>
-            Voir la réponse et les explications
-          </Button>
-        )}
       </div>
 
       {revealed && (
-        <div className="flex flex-col gap-4 rounded-xl border border-brand-line bg-brand-surface p-4">
-          {question.answer.type !== "open" && (
-            <p>
-              <span className="font-semibold">Réponse :</span> {question.answer.value}
-            </p>
-          )}
-
-          <RichContent content={question.correction} basePath={basePath} />
-
-          <div className="flex flex-wrap gap-3">
-            <Button type="button" onClick={handleFound} className="flex items-center gap-2">
-              <ThumbsUp size={18} />
-              J'avais trouvé
-            </Button>
-            <button
-              type="button"
-              onClick={handleNotFound}
-              className="flex cursor-pointer items-center gap-2 rounded-lg border border-brand-line px-4 py-2 font-semibold hover:bg-brand-surface"
-            >
-              <ThumbsDown size={18} />
-              Je n'avais pas trouvé
-            </button>
+        <>
+          <div className="flex flex-col gap-4 rounded-xl border-2 border-brand-gold bg-brand-gold/10 p-4">
+            {question.answer.type !== "open" && (
+              <p className="text-lg">
+                <span className="font-semibold">Réponse :</span> {question.answer.value}
+              </p>
+            )}
+            <SelfAssessmentButtons onFound={handleFound} onNotFound={handleNotFound} />
           </div>
-        </div>
+
+          <div className="flex flex-col gap-4 rounded-xl border border-brand-line bg-brand-surface p-4">
+            <h2 className="text-lg font-bold">Explication détaillée</h2>
+            <RichContent content={question.correction} basePath={basePath} />
+            <SelfAssessmentButtons onFound={handleFound} onNotFound={handleNotFound} />
+          </div>
+        </>
       )}
     </main>
   )

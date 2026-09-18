@@ -35,10 +35,16 @@ let manifestPromise: Promise<QuestionMetadata[]> | null = null
 
 function loadManifest(): Promise<QuestionMetadata[]> {
   if (!manifestPromise) {
+    // Don't cache a failed attempt — a transient failure (e.g. the dev
+    // server mid-restart) would otherwise poison every future draw for
+    // the rest of the page's life, since nothing would ever retry.
     manifestPromise = fetchJson<QuestionMetadata[]>(
       `${import.meta.env.BASE_URL}data/questions.json`,
       "Failed to load question metadata",
-    )
+    ).catch((error: unknown) => {
+      manifestPromise = null
+      throw error
+    })
   }
   return manifestPromise
 }

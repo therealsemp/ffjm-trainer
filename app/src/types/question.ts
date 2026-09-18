@@ -5,13 +5,24 @@ import type { CategoryCode } from "./profile"
 // same question pool). See shared/categories.mjs, the canonical source.
 export type Tier = "CE" | "CM" | "C1" | "C2" | "L1/GP" | "L2/HC"
 
+export type Phase = "qf" | "sf" | "fn"
+
+// Full French label for a phase code — the only place this mapping lives,
+// so any display of a phase goes through it rather than hardcoding text
+// next to `question.phase` wherever it's shown.
+export const PHASE_LABELS: Record<Phase, string> = {
+  qf: "Quarts de finale",
+  sf: "Demi-finale",
+  fn: "Finale",
+}
+
 // Lightweight per-question record from the build-time manifest
 // (app/public/data/questions.json) — never the question's actual content
 // (statement/correction), see docs/technical-architecture.md.
 export interface QuestionMetadata {
   id: string
   year: number
-  phase: "qf" | "sf" | "fn"
+  phase: Phase
   number: number
   tier: Tier
   categories: CategoryCode[]
@@ -33,14 +44,15 @@ export interface RichContent {
 }
 
 // The full question content — only the fields the app actually renders
-// (the real file on disk has more: sourceFiles, coefficient, title...).
+// (the real file on disk has more: sourceFiles, coefficient...).
 export interface Question {
   id: string
   year: number
-  phase: "qf" | "sf" | "fn"
+  phase: Phase
   number: number
   tier: Tier
   categories: CategoryCode[]
+  title?: string
   statement: RichContent
   answer: {
     type: "exact-numeric" | "exact-text" | "open"

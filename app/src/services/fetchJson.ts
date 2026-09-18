@@ -7,7 +7,9 @@ export async function fetchJson<T>(url: string, errorMessage: string): Promise<T
   const response = await fetch(url)
   const contentType = response.headers.get("content-type") ?? ""
   if (!response.ok || !contentType.includes("application/json")) {
-    throw new Error(`${errorMessage} (status ${response.status}, content-type "${contentType || "none"}")`)
+    const message = `${errorMessage} — GET ${url} (status ${response.status}, content-type "${contentType || "none"}")`
+    console.error(message)
+    throw new Error(message)
   }
   return response.json() as Promise<T>
 }

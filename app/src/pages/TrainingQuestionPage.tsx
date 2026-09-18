@@ -85,10 +85,11 @@ export function TrainingQuestionPage() {
           <button
             type="button"
             onClick={() => statsDialogRef.current?.showModal()}
-            className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-brand-line px-3 py-1.5 text-sm font-medium whitespace-nowrap hover:bg-brand-surface"
+            title="Statistiques de la session"
+            aria-label="Statistiques de la session"
+            className="flex cursor-pointer items-center rounded-lg border border-brand-line p-2 hover:bg-brand-surface"
           >
-            <ChartColumn size={16} />
-            Statistiques de la session
+            <ChartColumn size={18} />
           </button>
         </div>
         <p className="text-sm text-brand-muted">

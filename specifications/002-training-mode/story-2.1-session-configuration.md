@@ -1,5 +1,7 @@
 # User Story 2.1 — Configuring a training session
 
+_Also covers choosing the session's length (target question count), added after this story's initial implementation._
+
 ## Epic
 EPIC 2 — Doing exercises (training)
 
@@ -18,6 +20,8 @@ User with an active profile
 - By default, all levels are off.
 - A button lets the user enable all available levels in a single action.
 - At least one level must be selected to start the session.
+- The user also chooses the session's length: a target number of questions to answer before it ends (see Story 2.6 for what happens once that target is reached), or "No limit" to keep the session open-ended (the previous, only behavior).
+- The length choice is a single selection among a few presets (5, 10, 15, 20) plus "No limit", not a free-form number field. The default selection is 10.
 - This story only applies when there is no session in progress to resume (see Story 2.5).
 
 ## Acceptance criteria
@@ -47,17 +51,25 @@ User with an active profile
 - **Then** confirmation is blocked
 - **And** a message indicates that at least one level must be selected
 
-### Scenario 5: Successful confirmation
-- **Given** the user has selected at least one level
+### Scenario 5: Choosing the session length
+- **Given** the user is on the configuration screen
+- **When** they look at the length control
+- **Then** it shows the presets (5, 10, 15, 20) plus "No limit", with 10 selected by default
+- **And** selecting a different preset, or "No limit", replaces the previous selection (single choice)
+
+### Scenario 6: Successful confirmation
+- **Given** the user has selected at least one level and a session length
 - **When** they confirm the configuration
-- **Then** a new session is created with the selected levels
+- **Then** a new session is created with the selected levels and the chosen target question count (or no limit)
 - **And** the user is taken to the first question screen (Story 2.2)
 
 ## Out of scope
-- Changing the selected levels while a session is in progress (the choice is fixed when the session is created).
+- Changing the selected levels or the session length while a session is in progress (both are fixed when the session is created).
 - Manual weighting/prioritization between levels by the user (weighting is automatic, see Story 2.2).
+- A free-form/custom question count beyond the offered presets.
 
 ## QA notes
 - Check that a profile of category CE sees only one level offered (CE), since it is the lowest tier.
 - Check that a profile of category HC (or L2) sees all 6 levels offered.
 - Check that a profile of category L1 (or GP) sees 5 levels offered (up to and including L1/GP), not 4 or 6.
+- Check that confirming with "No limit" selected produces a session that behaves exactly as before this feature (no progress bar, no automatic end, see Story 2.6).

@@ -10,12 +10,18 @@ import { questionMetadataService } from "../services/questionMetadataService"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 import type { Tier } from "../types/question"
 
+// Preset question counts offered for a fixed-length session; "Sans
+// limite" (targetCount: null) keeps the previous, open-ended behavior.
+const QUESTION_COUNT_OPTIONS = [5, 10, 15, 20] as const
+const DEFAULT_TARGET_COUNT: number | null = 10
+
 export function SessionConfigPage() {
   const { profile } = useProfile()
   const { startSession } = useTrainingSession()
   const navigate = useNavigate()
 
   const [selected, setSelected] = useState<Tier[]>([])
+  const [targetCount, setTargetCount] = useState<number | null>(DEFAULT_TARGET_COUNT)
   const [error, setError] = useState<string | null>(null)
 
   if (!profile) return null
@@ -31,13 +37,40 @@ export function SessionConfigPage() {
       setError("Choisis au moins un niveau pour commencer.")
       return
     }
-    startSession(selected)
+    startSession(selected, targetCount)
     navigate("/entrainement/question")
   }
 
   return (
     <PageContainer>
       <h1 className="text-3xl font-bold">Configurer l'entraînement</h1>
+
+      <div className="flex flex-col gap-2.5">
+        <p className="text-brand-muted">Choisis le nombre de questions de la session.</p>
+        <div className="flex flex-wrap gap-2">
+          {QUESTION_COUNT_OPTIONS.map((count) => (
+            <SelectableCard
+              key={count}
+              type="radio"
+              name="targetCount"
+              value={String(count)}
+              checked={targetCount === count}
+              onChange={() => setTargetCount(count)}
+            >
+              <span className="font-heading font-bold">{count}</span>
+            </SelectableCard>
+          ))}
+          <SelectableCard
+            type="radio"
+            name="targetCount"
+            value="unlimited"
+            checked={targetCount === null}
+            onChange={() => setTargetCount(null)}
+          >
+            <span className="font-heading font-bold">Sans limite</span>
+          </SelectableCard>
+        </div>
+      </div>
 
       <div className="flex items-center justify-between gap-3">
         <p className="text-brand-muted">Choisis les niveaux sur lesquels tu veux t'entraîner.</p>

@@ -3,15 +3,17 @@
 
 import { ChartColumn, ChevronsRight, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react"
 import { useEffect, useRef, useState, type MouseEvent } from "react"
-import { Navigate, useSearchParams } from "react-router-dom"
+import { Navigate, useNavigate, useSearchParams } from "react-router-dom"
 import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
 import { RichContent } from "../components/RichContent"
+import { SessionProgressBar } from "../components/SessionProgressBar"
 import { StatsSummary } from "../components/StatsSummary"
 import { useProfile } from "../services/ProfileContext"
 import { questionMetadataService } from "../services/questionMetadataService"
 import { questionService } from "../services/questionService"
 import { playSound } from "../services/soundEffects"
+import { trainingSessionService } from "../services/trainingSessionService"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 import { PHASE_LABELS, type Question, type Tier } from "../types/question"
 
@@ -36,7 +38,22 @@ function SelfAssessmentButtons({ onFound, onNotFound }: { onFound: () => void; o
 
 export function TrainingQuestionPage() {
   const { profile } = useProfile()
-  const { session, sessionStats, recordSkip, recordFound, recordNotFound } = useTrainingSession()
+  const { session, sessionStats, sessionOutcomes, recordSkip, recordFound, recordNotFound } = useTrainingSession()
+  const navigate = useNavigate()
+  // Captured once at mount, not read reactively from context: a session
+  // that's already complete when this page is first reached (stale link,
+  // direct nav) should redirect away, but `sessionComplete` itself flips to
+  // true mid-session the instant the completing action is recorded — using
+  // it reactively here raced against this component's own navigate() to
+  // the recap on that very same action, and won, bouncing to configuration
+  // instead of showing the recap.
+  const [wasAlreadyComplete] = useState(() => {
+    const activeSession = trainingSessionService.getActiveSession()
+    return (
+      activeSession !== null &&
+      trainingSessionService.isComplete(activeSession, trainingSessionService.getSessionOutcomes().length)
+    )
+  })
   const [question, setQuestion] = useState<Question | null>(null)
   const [revealed, setRevealed] = useState(false)
   const statsDialogRef = useRef<HTMLDialogElement>(null)
@@ -72,6 +89,10 @@ export function TrainingQuestionPage() {
   }, [])
 
   if (!session) return <Navigate to="/entrainement/configuration" replace />
+  // Reaching this page with an already-complete session (stale link, direct
+  // nav) isn't "just finished" — send it to configuration like any other
+  // completed session, not to the recap (see TrainingRecapPage).
+  if (wasAlreadyComplete) return <Navigate to="/entrainement/configuration" replace />
   if (!question) {
     return (
       <PageContainer wide>
@@ -90,13 +111,15 @@ export function TrainingQuestionPage() {
 
   function handleFound() {
     if (soundEnabled) playSound("ok")
-    recordFound(question!.tier)
-    void drawNext(session!.levels)
+    const completed = recordFound(question!.tier)
+    if (completed) navigate("/entrainement/recap")
+    else void drawNext(session!.levels)
   }
   function handleNotFound() {
     if (soundEnabled) playSound("ko")
-    recordNotFound(question!.tier)
-    void drawNext(session!.levels)
+    const completed = recordNotFound(question!.tier)
+    if (completed) navigate("/entrainement/recap")
+    else void drawNext(session!.levels)
   }
 
   return (
@@ -119,9 +142,15 @@ export function TrainingQuestionPage() {
             <ChartColumn size={18} />
           </button>
         </div>
-        <p className="text-sm text-brand-muted">
-          {question.year} · {PHASE_LABELS[question.phase]}
-        </p>
+        <div className="flex items-center gap-3">
+          <p className="shrink-0 text-sm text-brand-muted whitespace-nowrap">
+            {question.year} · {PHASE_LABELS[question.phase]}
+            {session.targetCount !== null && " ·"}
+          </p>
+          {session.targetCount !== null && (
+            <SessionProgressBar outcomes={sessionOutcomes} target={session.targetCount} />
+          )}
+        </div>
       </div>
 
       <dialog

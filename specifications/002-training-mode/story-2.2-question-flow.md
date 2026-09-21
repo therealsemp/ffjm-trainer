@@ -19,6 +19,8 @@ User in an active training session
 - The user can skip a question at any time, including after having viewed the answer.
 - Whenever the displayed question's `tier` is strictly above CM (i.e. C1, C2, L1/GP, or L2/HC), the FFJM "number of solutions" instruction must be shown alongside the **statement**, not the answer (see `functional-spec.md`) — it tells the user what's expected of a complete answer *before* they attempt it, not after. This is a display rule derived from `tier`, not a stored field, and does not apply to CE/CM questions.
 - Self-assessing a question plays a short sound effect, distinct for "I found it" versus "I didn't find it", unless the user has turned sounds off (see Story 1.6).
+- If the session has a target question count (Story 2.1), a progress bar is shown with one segment per question of that target, filled in order as each question is self-assessed: green for "found", orange for "not found". A skipped question does not fill a segment at all — it's neither counted nor does it advance the bar. Nothing is shown for a "No limit" session.
+- Once self-assessing a question brings the session to its target count, the session ends there instead of drawing another question — see Story 2.6.
 
 ## Acceptance criteria
 
@@ -50,14 +52,16 @@ User in an active training session
 - **When** the user activates "I found it"
 - **Then** the question is counted as "done / found" for its level
 - **And**, unless sounds are turned off (Story 1.6), the "found" sound effect plays
-- **And** a new question is drawn at random following the same rules
+- **And**, if the session has a target question count and this brings it to that target, the session ends (Story 2.6) instead of drawing another question
+- **And** otherwise, a new question is drawn at random following the same rules, and if a progress bar is shown, its next segment fills green
 
 ### Scenario 5: Negative self-assessment
 - **Given** the answer and explanations are displayed
 - **When** the user activates "I didn't find it"
 - **Then** the question is counted as "done / not found" for its level
 - **And**, unless sounds are turned off (Story 1.6), the "not found" sound effect plays
-- **And** a new question is drawn at random following the same rules
+- **And**, if the session has a target question count and this brings it to that target, the session ends (Story 2.6) instead of drawing another question
+- **And** otherwise, a new question is drawn at random following the same rules, and if a progress bar is shown, its next segment fills orange
 
 ### Scenario 6: Skipping after viewing the answer
 - **Given** the answer and explanations are displayed
@@ -69,10 +73,13 @@ User in an active training session
 - Limiting or excluding questions already seen in the session (repetition allowed as a product choice).
 - Timing or a time limit per question.
 - Viewing session statistics (see Story 2.3).
+- What the end-of-session screen looks like, and what happens to a completed session afterward (see Story 2.6).
 
 ## QA notes
 - Check that weighting follows the official coefficients renormalized, over a significant sample of draws (statistical test).
 - Check that a question already seen can indeed come up again in a later draw.
-- Check that none of the three final actions ("Skip", "I found it", "I didn't find it") leaves the interface stuck without a transition to a new question.
+- Check that none of the three final actions ("Skip", "I found it", "I didn't find it") leaves the interface stuck without a transition to a new question, except reaching the target count, which ends the session instead.
 - Check that the "number of solutions" instruction appears for C1/C2/L1/GP/L2/HC questions and never for CE/CM questions, based on `tier` and not on `categories`.
 - Check that no sound plays for either self-assessment button when the sound preference (Story 1.6) is off.
+- Check that skipping never fills a progress bar segment and never counts toward the target, at any point in the session (including as the very next action after the second-to-last answered question).
+- Check that no progress bar is shown for a "No limit" session.

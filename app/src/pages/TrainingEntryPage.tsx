@@ -8,10 +8,14 @@ import { StatsSummary } from "../components/StatsSummary"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 
 export function TrainingEntryPage() {
-  const { session, sessionStats, discardSession } = useTrainingSession()
+  const { session, sessionStats, sessionOutcomes, sessionComplete, discardSession } = useTrainingSession()
   const navigate = useNavigate()
 
   if (!session) return <Navigate to="/entrainement/configuration" replace />
+  // A completed session is never offered for resuming — the recap
+  // (TrainingRecapPage) is only reached right after finishing (see
+  // TrainingQuestionPage), not by navigating back here later.
+  if (sessionComplete) return <Navigate to="/entrainement/configuration" replace />
 
   function handleNewSession() {
     discardSession()
@@ -31,6 +35,10 @@ export function TrainingEntryPage() {
           <Button to="/entrainement/question">Reprendre</Button>
         </div>
         <p className="text-brand-muted">Niveaux : {session.levels.join(", ")}</p>
+        <p className="text-brand-muted">
+          Objectif :{" "}
+          {session.targetCount !== null ? `${sessionOutcomes.length} / ${session.targetCount} questions` : "sans limite"}
+        </p>
 
         <div className="flex flex-col gap-4 border-t border-brand-line pt-4">
           <h3 className="font-semibold">Statistiques de la session</h3>

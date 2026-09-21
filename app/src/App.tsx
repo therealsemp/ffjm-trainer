@@ -10,6 +10,7 @@ import { AccountPage } from "./pages/AccountPage"
 import { SessionConfigPage } from "./pages/SessionConfigPage"
 import { TrainingEntryPage } from "./pages/TrainingEntryPage"
 import { TrainingQuestionPage } from "./pages/TrainingQuestionPage"
+import { TrainingRecapPage } from "./pages/TrainingRecapPage"
 
 export function App() {
   return (
@@ -26,6 +27,7 @@ export function App() {
                 <Route path="/entrainement" element={<TrainingEntryPage />} />
                 <Route path="/entrainement/configuration" element={<SessionConfigPage />} />
                 <Route path="/entrainement/question" element={<TrainingQuestionPage />} />
+                <Route path="/entrainement/recap" element={<TrainingRecapPage />} />
               </Route>
             </Routes>
           </TrainingSessionProvider>

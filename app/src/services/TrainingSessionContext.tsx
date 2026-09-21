@@ -4,16 +4,22 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react"
 import { trainingSessionService } from "./trainingSessionService"
 import type { Tier } from "../types/question"
-import type { Stats, TrainingSession } from "../types/trainingSession"
+import type { QuestionOutcome, Stats, TrainingSession } from "../types/trainingSession"
 
 interface TrainingSessionContextValue {
   session: TrainingSession | null
   sessionStats: Stats
+  sessionOutcomes: QuestionOutcome[]
   globalStats: Stats
-  startSession: (levels: Tier[]) => void
+  // Whether the active session reached its target question count (always
+  // false for an unlimited session, or when there's no active session).
+  sessionComplete: boolean
+  startSession: (levels: Tier[], targetCount: number | null) => void
   recordSkip: (tier: Tier) => void
-  recordFound: (tier: Tier) => void
-  recordNotFound: (tier: Tier) => void
+  // Return whether that action completed the session, so the caller can
+  // stop drawing new questions and show the recap instead.
+  recordFound: (tier: Tier) => boolean
+  recordNotFound: (tier: Tier) => boolean
   // Story 2.5 "start a new session": session + its own stats only.
   discardSession: () => void
   // Story 1.3 profile reset: session, its stats, and the lifetime stats.
@@ -25,41 +31,56 @@ const TrainingSessionContext = createContext<TrainingSessionContextValue | null>
 export function TrainingSessionProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<TrainingSession | null>(() => trainingSessionService.getActiveSession())
   const [sessionStats, setSessionStats] = useState<Stats>(() => trainingSessionService.getSessionStats())
+  const [sessionOutcomes, setSessionOutcomes] = useState<QuestionOutcome[]>(() =>
+    trainingSessionService.getSessionOutcomes(),
+  )
   const [globalStats, setGlobalStats] = useState<Stats>(() => trainingSessionService.getGlobalStats())
 
   const value = useMemo<TrainingSessionContextValue>(() => {
-    function record(action: (tier: Tier) => void, tier: Tier) {
+    function record(action: (tier: Tier) => void, tier: Tier): boolean {
       action(tier)
+      const newOutcomes = trainingSessionService.getSessionOutcomes()
       setSessionStats(trainingSessionService.getSessionStats())
+      setSessionOutcomes(newOutcomes)
       setGlobalStats(trainingSessionService.getGlobalStats())
+      const completed = session !== null && trainingSessionService.isComplete(session, newOutcomes.length)
+      if (completed) trainingSessionService.markJustCompleted()
+      return completed
     }
 
     return {
       session,
       sessionStats,
+      sessionOutcomes,
       globalStats,
-      startSession: (levels) => {
-        trainingSessionService.startSession(levels)
-        setSession({ levels })
+      sessionComplete: session !== null && trainingSessionService.isComplete(session, sessionOutcomes.length),
+      startSession: (levels, targetCount) => {
+        trainingSessionService.startSession(levels, targetCount)
+        setSession({ levels, targetCount })
         setSessionStats(trainingSessionService.getSessionStats())
+        setSessionOutcomes(trainingSessionService.getSessionOutcomes())
       },
-      recordSkip: (tier) => record(trainingSessionService.recordSkip, tier),
+      recordSkip: (tier) => {
+        record(trainingSessionService.recordSkip, tier)
+      },
       recordFound: (tier) => record(trainingSessionService.recordFound, tier),
       recordNotFound: (tier) => record(trainingSessionService.recordNotFound, tier),
       discardSession: () => {
         trainingSessionService.clearSession()
         setSession(null)
         setSessionStats(trainingSessionService.getSessionStats())
+        setSessionOutcomes(trainingSessionService.getSessionOutcomes())
       },
       resetTrainingData: () => {
         trainingSessionService.clearSession()
         trainingSessionService.resetGlobalStats()
         setSession(null)
         setSessionStats(trainingSessionService.getSessionStats())
+        setSessionOutcomes(trainingSessionService.getSessionOutcomes())
         setGlobalStats(trainingSessionService.getGlobalStats())
       },
     }
-  }, [session, sessionStats, globalStats])
+  }, [session, sessionStats, sessionOutcomes, globalStats])
 
   return <TrainingSessionContext.Provider value={value}>{children}</TrainingSessionContext.Provider>
 }

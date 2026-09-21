@@ -15,6 +15,7 @@ User with an active profile
 - Only one session can be saved at a time (for the device's active profile).
 - Starting a new session permanently deletes the existing saved session, **including its own statistics** — but never the profile's lifetime statistics (Story 1.5), which are separate and keep accumulating regardless of how many sessions get discarded.
 - Resuming a session always displays a new question drawn at random directly (no restoring the precise display state of the last question viewed, see Story 2.2/2.4).
+- A session that has already reached its target question count (Story 2.1/2.6) is never offered as resumable: accessing training mode with such a session (via this screen) goes straight to session configuration (Story 2.1), skipping the resume/new-session choice below entirely — the recap (Story 2.6) is reached only right after finishing, never by navigating back here.
 
 ## Acceptance criteria
 
@@ -26,10 +27,16 @@ User with an active profile
 
 ### Scenario 2: Existing session — choice offered
 - **Given** the user accesses training mode
-- **And** a session is saved for their profile
+- **And** an unfinished session is saved for their profile (no target count, or a target not yet reached)
 - **When** the page loads
 - **Then** two options are offered: "Resume current session" and "Start a new session"
-- **And** the saved session's characteristics and statistics are displayed next to the resume option (selected levels, number of skipped/found/not-found questions)
+- **And** the saved session's characteristics and statistics are displayed next to the resume option (selected levels, target question count or "no limit", number of skipped/found/not-found questions)
+
+### Scenario 2bis: Existing session already completed
+- **Given** the user accesses training mode
+- **And** the saved session has already reached its target question count
+- **When** the page loads
+- **Then** the user is taken directly to session configuration (Story 2.1), not the resume/new-session choice, and not the recap (Story 2.6)
 
 ### Scenario 3: Resuming the current session
 - **Given** the session choice screen is displayed

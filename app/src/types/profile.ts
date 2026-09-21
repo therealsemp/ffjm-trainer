@@ -23,4 +23,7 @@ export const CATEGORY_OPTIONS: CategoryOption[] = [
 export interface Profile {
   name: string
   category: CategoryCode
+  // Optional so existing stored profiles (created before this setting
+  // existed) have no value — treated as enabled wherever this is read.
+  soundEnabled?: boolean
 }

@@ -8,8 +8,10 @@ import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
 import { RichContent } from "../components/RichContent"
 import { StatsSummary } from "../components/StatsSummary"
+import { useProfile } from "../services/ProfileContext"
 import { questionMetadataService } from "../services/questionMetadataService"
 import { questionService } from "../services/questionService"
+import { playSound } from "../services/soundEffects"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 import { PHASE_LABELS, type Question, type Tier } from "../types/question"
 
@@ -33,6 +35,7 @@ function SelfAssessmentButtons({ onFound, onNotFound }: { onFound: () => void; o
 }
 
 export function TrainingQuestionPage() {
+  const { profile } = useProfile()
   const { session, sessionStats, recordSkip, recordFound, recordNotFound } = useTrainingSession()
   const [question, setQuestion] = useState<Question | null>(null)
   const [revealed, setRevealed] = useState(false)
@@ -83,11 +86,15 @@ export function TrainingQuestionPage() {
     recordSkip(question!.tier)
     void drawNext(session!.levels)
   }
+  const soundEnabled = profile?.soundEnabled ?? true
+
   function handleFound() {
+    if (soundEnabled) playSound("ok")
     recordFound(question!.tier)
     void drawNext(session!.levels)
   }
   function handleNotFound() {
+    if (soundEnabled) playSound("ko")
     recordNotFound(question!.tier)
     void drawNext(session!.levels)
   }

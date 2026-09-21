@@ -18,6 +18,7 @@ User in an active training session
 - No time limit is imposed on a question.
 - The user can skip a question at any time, including after having viewed the answer.
 - Whenever the displayed question's `tier` is strictly above CM (i.e. C1, C2, L1/GP, or L2/HC), the FFJM "number of solutions" instruction must be shown alongside the **statement**, not the answer (see `functional-spec.md`) — it tells the user what's expected of a complete answer *before* they attempt it, not after. This is a display rule derived from `tier`, not a stored field, and does not apply to CE/CM questions.
+- Self-assessing a question plays a short sound effect, distinct for "I found it" versus "I didn't find it", unless the user has turned sounds off (see Story 1.6).
 
 ## Acceptance criteria
 
@@ -48,12 +49,14 @@ User in an active training session
 - **Given** the answer and explanations are displayed
 - **When** the user activates "I found it"
 - **Then** the question is counted as "done / found" for its level
+- **And**, unless sounds are turned off (Story 1.6), the "found" sound effect plays
 - **And** a new question is drawn at random following the same rules
 
 ### Scenario 5: Negative self-assessment
 - **Given** the answer and explanations are displayed
 - **When** the user activates "I didn't find it"
 - **Then** the question is counted as "done / not found" for its level
+- **And**, unless sounds are turned off (Story 1.6), the "not found" sound effect plays
 - **And** a new question is drawn at random following the same rules
 
 ### Scenario 6: Skipping after viewing the answer
@@ -72,3 +75,4 @@ User in an active training session
 - Check that a question already seen can indeed come up again in a later draw.
 - Check that none of the three final actions ("Skip", "I found it", "I didn't find it") leaves the interface stuck without a transition to a new question.
 - Check that the "number of solutions" instruction appears for C1/C2/L1/GP/L2/HC questions and never for CE/CM questions, based on `tier` and not on `categories`.
+- Check that no sound plays for either self-assessment button when the sound preference (Story 1.6) is off.

@@ -10,6 +10,7 @@ interface ProfileContextValue {
   profile: Profile | null
   createProfile: (profile: Profile) => void
   resetProfile: () => void
+  setSoundEnabled: (soundEnabled: boolean) => void
 }
 
 const ProfileContext = createContext<ProfileContextValue | null>(null)
@@ -27,6 +28,14 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
       resetProfile: () => {
         profileService.resetProfile()
         setProfile(null)
+      },
+      setSoundEnabled: (soundEnabled: boolean) => {
+        setProfile((current) => {
+          if (!current) return current
+          const updated = { ...current, soundEnabled }
+          profileService.createProfile(updated)
+          return updated
+        })
       },
     }),
     [profile],

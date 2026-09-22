@@ -146,15 +146,6 @@ export function ArchiveQuestionPage() {
 
       {showAnswers && (
         <>
-          {questionMetadataService.isAboveCM(question.tier) && (
-            <p className="rounded-lg border-l-4 border-brand-gold bg-brand-gold/10 p-3 text-sm">
-              Attention&nbsp;! Pour qu'un problème soit complètement résolu, vous devez donner le nombre de ses
-              solutions, et donner la solution s'il n'en a qu'une, ou deux solutions s'il en a plus d'une. Pour tous
-              les problèmes susceptibles d'avoir plusieurs solutions, l'emplacement a été prévu pour écrire deux
-              solutions (mais il se peut qu'il n'y en ait qu'une !)
-            </p>
-          )}
-
           {question.answer.value !== undefined && (
             <div className="rounded-xl border-2 border-brand-gold bg-brand-gold/10 p-4">
               <p className="text-lg">

@@ -16,7 +16,7 @@ User browsing a selected edition
 - It is permanently visible during consultation, whichever question is displayed.
 - Its state applies immediately to the currently displayed question, as well as to all following questions viewed (until it is toggled back).
 - By default, when starting to consult an edition, answers are hidden.
-- Whenever the displayed question's `tier` is strictly above CM (i.e. C1, C2, L1/GP, or L2/HC), the FFJM "number of solutions" instruction must be shown alongside the answer whenever it is visible (see `functional-spec.md`). This is a display rule derived from `tier`, not a stored field, and does not apply to CE/CM questions.
+- Unlike training mode (Story 2.2), the FFJM "number of solutions" instruction is **not** shown here, on any question — archive consultation isn't about attempting the question under contest conditions, just reading the statement and, optionally, the answer.
 
 ## Acceptance criteria
 
@@ -30,7 +30,6 @@ User browsing a selected edition
 - **Given** the user is viewing any question, answers hidden
 - **When** they turn on the "Show answers" switch
 - **Then** the answer (and explanation) for the currently displayed question appears immediately
-- **And**, if the question's `tier` is strictly above CM, the FFJM "number of solutions" instruction is shown alongside the answer
 - **And** the switch stays "shown" (ON) for the following questions viewed
 
 ### Scenario 3: Turning answer display off
@@ -48,8 +47,9 @@ User browsing a selected edition
 ## Out of scope
 - Per-question display setting.
 - Remembering the switch's state from one consultation session to another (each new edition selection starts back on "hidden" by default).
+- The FFJM "number of solutions" instruction — deliberately never shown here, see the context/business rules above (it's a training-mode-only display, Story 2.2).
 
 ## QA notes
 - Check that changing the switch's state applies instantly with no page reload.
 - Check that the switch's state is correctly kept while navigating between several consecutive questions.
-- Check that the "number of solutions" instruction appears for C1/C2/L1/GP/L2/HC questions and never for CE/CM questions, based on `tier` and not on `categories`.
+- Check that the "number of solutions" instruction never appears on any question here, regardless of `tier`, even though it does in training mode.

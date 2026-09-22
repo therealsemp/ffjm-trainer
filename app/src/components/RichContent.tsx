@@ -3,6 +3,7 @@ import rehypeKatex from "rehype-katex"
 import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math"
 import type { RichContent as RichContentType } from "../types/question"
+import { ScrollableTable } from "./ScrollableTable"
 import { ZoomableImage } from "./ZoomableImage"
 
 // The transcribed data uses `\( ... \)` / `\[ ... \]` (see
@@ -52,7 +53,7 @@ export function RichContent({ content, basePath }: RichContentProps) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[rehypeKatex]}
-        components={{ img: ZoomableImage }}
+        components={{ img: ZoomableImage, table: ScrollableTable }}
       >
         {markdown}
       </ReactMarkdown>

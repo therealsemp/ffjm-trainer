@@ -142,16 +142,16 @@ export function TrainingQuestionPage() {
             <ChartColumn size={18} />
           </button>
         </div>
-        <div className="flex items-center gap-3">
-          <p className="shrink-0 text-sm text-brand-muted whitespace-nowrap">
-            {question.year} · {PHASE_LABELS[question.phase]}
-            {session.targetCount !== null && " ·"}
-          </p>
-          {session.targetCount !== null && (
-            <SessionProgressBar outcomes={sessionOutcomes} target={session.targetCount} />
-          )}
-        </div>
+        <p className="text-sm text-brand-muted">
+          {question.year} · {PHASE_LABELS[question.phase]}
+        </p>
       </div>
+
+      {session.targetCount !== null && (
+        <div className="-my-2">
+          <SessionProgressBar outcomes={sessionOutcomes} target={session.targetCount} />
+        </div>
+      )}
 
       <dialog
         ref={statsDialogRef}

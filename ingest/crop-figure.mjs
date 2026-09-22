@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Crops a figure out of a PDF page and saves it as a standalone PNG, at a
-// fixed rendering scale (1.5) chosen as a good size/legibility trade-off for
+// fixed rendering scale (3) chosen as a good size/legibility trade-off for
 // on-screen display (see discussion in the review — ~150-300px figures,
 // a few KB to a few tens of KB as PNG).
 //
@@ -13,7 +13,7 @@
 import { createCanvas } from "@napi-rs/canvas"
 import { readFileSync, writeFileSync } from "node:fs"
 
-const SCALE = 1.5
+const SCALE = 3
 
 const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs")
 

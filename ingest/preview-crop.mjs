@@ -3,7 +3,7 @@
 // crop box, WITHOUT cropping — use this to sanity-check a figure's
 // coordinates in context (does the box bleed into a neighboring column or
 // question title?) before committing to crop-figure.mjs. Same coordinate
-// space and scale (1.5) as crop-figure.mjs, so a box validated here can be
+// space and scale (3) as crop-figure.mjs, so a box validated here can be
 // passed to crop-figure.mjs unchanged.
 //
 // Usage: node preview-crop.mjs <pdf> <page> <x> <y> <w> <h> <out.png>
@@ -11,7 +11,7 @@
 import { createCanvas } from "@napi-rs/canvas"
 import { readFileSync, writeFileSync } from "node:fs"
 
-const SCALE = 1.5
+const SCALE = 3
 
 const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs")
 

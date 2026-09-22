@@ -26,8 +26,8 @@
 import { createCanvas } from "@napi-rs/canvas"
 import { readFileSync, writeFileSync } from "node:fs"
 
-const OUTPUT_SCALE = 1.5 // matches crop-figure.mjs / preview-crop.mjs
-const DETECT_SCALE = 3 // internal render scale used for ink-boundary detection
+const OUTPUT_SCALE = 3 // matches crop-figure.mjs / preview-crop.mjs
+const DETECT_SCALE = 6 // internal render scale used for ink-boundary detection
 const RATIO = DETECT_SCALE / OUTPUT_SCALE
 const DEFAULT_MARGIN = 6 // px, at OUTPUT_SCALE, added around the measured ink box
 const INK_COLOR_DISTANCE_THRESHOLD = 30 // 0-441 (max RGB Euclidean distance); above this counts as "ink", relative to the region's own background color

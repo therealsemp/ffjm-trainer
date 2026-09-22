@@ -1,52 +1,50 @@
 # FFJM Trainer
 
-Un outil d'entraînement aux épreuves du Championnat des Jeux Mathématiques (FFJM), basé sur les vraies annales officielles, pour un usage familial/personnel.
+A training tool for the FFJM (Fédération Française des Jeux Mathématiques) championship, built on the real official archives, for family/personal use.
 
-Voir [`docs/functional-spec.md`](docs/functional-spec.md) (périmètre fonctionnel) et [`docs/technical-architecture.md`](docs/technical-architecture.md) (choix techniques) pour le contexte complet.
+See [`docs/functional-spec.md`](docs/functional-spec.md) (functional scope) and [`docs/technical-architecture.md`](docs/technical-architecture.md) (technical decisions) for the full context.
 
-## État du projet
+## Project status
 
-En cours de construction, dans cet ordre volontaire :
+- **PDF ingestion pipeline** — in progress, usable: turns FFJM archives into structured question data (see below).
+- **Review/validation tool** — available: reviews and validates that data before it feeds the web app.
+- **Web app** (`/app`) — implemented and deployed: account management, training mode, and archive consultation are all built (see [`specifications/STATUS.md`](specifications/STATUS.md) for the detailed story-by-story status).
 
-1. **Pipeline d'ingestion des PDF** (en cours) — transformer les annales FFJM en données structurées.
-2. **Outil de revue/validation** (premier jet disponible) — relire et valider ces données avant qu'elles n'alimentent l'application.
-3. **Application web** (pas commencée) — ne démarre qu'une fois un modèle de données validé disponible.
-
-## Structure du dépôt
+## Repository structure
 
 ```
 /data
-  /raw          PDF sources FFJM, rangés {année}/{phase}/ (committé)
-  /needs-review questions extraites, en attente de revue humaine, {année}/{phase}/qNN.json (local, non commité)
-  /validated    questions validées, {année}/{phase}/qNN.json (committé) — source de vérité
-/ingest         conversion PDF → JSON (Node, dépendances propres à cet outil)
-/review         outil de revue/validation : petit serveur local + UI
-/shared         code utilisé à la fois par /ingest et /review (ex: validate.mjs)
-/app            site statique déployé (pas encore construit)
-/docs           spécifications fonctionnelle et technique
-/specifications epics/stories détaillant le comportement attendu de /app, un sous-répertoire par epic (en anglais, voir specifications/README.md)
+  /raw          FFJM PDF sources, laid out {year}/{phase}/ (committed)
+  /needs-review extracted questions awaiting human review, {year}/{phase}/qNN.json (local, gitignored)
+  /validated    validated questions, {year}/{phase}/qNN.json (committed) — source of truth
+/ingest         PDF -> JSON conversion (Node, own dependencies)
+/review         validation tool: small local server + UI
+/shared         code used by both /ingest and /review (e.g. validate.mjs)
+/app            deployed static site (React + Vite + TypeScript)
+/docs           functional and technical specifications
+/specifications epics/stories describing /app's expected behavior, one subdirectory per epic (see specifications/README.md)
 ```
 
-`/data` n'appartient à aucun outil en particulier : `/ingest` y écrit (`needs-review`), l'outil de revue y lit et promeut les fichiers (`needs-review` → `validated`), `/app` y lira (`validated`) au moment du build. L'état d'une question, c'est le répertoire dans lequel elle se trouve — pas un champ dans son JSON.
+`/data` belongs to no single tool: `/ingest` writes to it (`needs-review`), the review tool reads and promotes files (`needs-review` -> `validated`), `/app` reads `validated` at build time. A question's validation state is which directory it's in, not a field inside its JSON.
 
-## Pipeline d'ingestion (`/ingest`)
+## Ingestion pipeline (`/ingest`)
 
 ```bash
 cd ingest
 npm install
-node render-page.mjs <pdf> <page> <scale> <out.png>       # rendre une page en image, pour repérer une figure
-node crop-figure.mjs <pdf> <page> <x> <y> <w> <h> <out.png> # extraire une figure précise en PNG
+node render-page.mjs <pdf> <page> <scale> <out.png>        # render a page as an image, to locate a figure
+node crop-figure.mjs <pdf> <page> <x> <y> <w> <h> <out.png> # extract a precise figure as a PNG
 ```
 
-La transcription du texte/maths des PDF vers le JSON structuré se fait avec l'assistance d'un modèle capable de lire les PDF directement (voir `docs/technical-architecture.md`), pas par un script one-shot.
+Transcribing a PDF's text/math into structured JSON is done with the help of a model that can read PDFs directly (see `docs/technical-architecture.md`), not by a one-shot script.
 
-## Revue manuelle des données (`/review`)
+## Manual data review (`/review`)
 
-Une fois des questions extraites dans `data/needs-review/`, elles doivent être relues à la main avant de rejoindre `data/validated/` — le pipeline d'ingestion (assisté par IA) peut se tromper, notamment sur les figures et les maths.
+Once questions are extracted into `data/needs-review/`, they need a human review before joining `data/validated/` — the (AI-assisted) ingestion pipeline can make mistakes, especially on figures and math.
 
-L'outil de revue est une petite application web locale (serveur + UI, dépendance `express` uniquement) qui affiche la question rendue (énoncé, réponse attendue, correction, avec maths et figures) à côté du PDF source, avec des onglets pour basculer entre l'énoncé et la ou les solutions détaillées. Un bouton **Valider** rejoue la validation du schéma et, si elle passe, déplace la question (JSON + figures PNG) vers `data/validated/`.
+The review tool is a small local web app (server + UI, `express` as its only dependency) that displays the rendered question (statement, expected answer, correction, with math and figures) next to the source PDF, with tabs to switch between the statement and the detailed solution(s). A **Validate** button re-runs schema validation and, if it passes, moves the question (JSON + figure PNGs) into `data/validated/`.
 
-Démarrer l'outil :
+Starting the tool:
 
 ```bash
 cd review
@@ -54,18 +52,39 @@ npm install
 npm start
 ```
 
-Puis ouvrir **http://localhost:5175** dans un navigateur. Le port peut être changé : `node server.mjs <port>`.
+Then open **http://localhost:5175** in a browser. The port can be changed: `node server.mjs <port>`.
 
-C'est un outil de développement, pas une fonctionnalité de l'application finale — il ne tourne que sur la machine de la personne qui fait la revue.
+This is a development tool, not a feature of the final app — it only ever runs on the reviewer's own machine.
 
-## Valider une question en ligne de commande
+## Validating a question from the command line
 
 ```bash
 node shared/validate.mjs data/needs-review/*/*/*.json
 ```
 
-Vérifie la structure du JSON, la présence des catégories/coefficients, et que chaque figure/PDF source référencé (`imageUrl`, `sourceFiles`) existe bien à l'emplacement relatif indiqué. C'est la même validation que celle utilisée par le bouton "Valider" de l'outil de revue — utile pour vérifier plusieurs fichiers d'un coup sans passer par l'interface.
+Checks the JSON's structure, the presence of categories/coefficients, and that every referenced figure/source PDF (`imageUrl`, `sourceFiles`) actually exists at the given relative path. Same validation as the review tool's "Validate" button — useful to check several files at once without going through the UI.
 
-## Licence des données
+## Web application (`/app`)
 
-Les PDF dans `/data/raw` et le contenu qui en est dérivé sont la propriété de la FFJM. Usage strictement privé/familial pour l'instant ; toute publication plus large nécessiterait une autorisation préalable de la fédération.
+The deployed static site: React 19 + Vite + TypeScript, Tailwind CSS v4, React Router. No backend — all state (profile, training sessions, stats, preferences) lives in the browser's `localStorage`. See `docs/technical-architecture.md` for the full design (service layer, data model, theming, deployment) and `specifications/` for the detailed, story-by-story functional behavior.
+
+It covers three areas:
+- **Account management** — local profile (name + FFJM category), light/dark/system theme, sound feedback preference, lifetime training statistics, profile reset.
+- **Training mode** — configurable sessions (levels + optional target question count), questions drawn at random and weighted by official level coefficients, self-assessment, session and lifetime stats, resuming an in-progress session or reviewing a completed one's recap.
+- **Archive consultation** — browsing a past edition (year + phase) question by question in official order, or jumping directly to one via a summary, with a global answer show/hide switch.
+
+Running it locally:
+
+```bash
+cd app
+npm install
+npm run dev
+```
+
+`npm run dev`/`npm run build` first regenerate `app/public/data/` from `data/validated/` (see `app/scripts/build-data-index.mjs`) — the app never reads `/data` directly at runtime, only this build-time manifest + mirrored question files.
+
+Deployment is tag-triggered: pushing a semantic-version git tag (`vX.Y.Z`) runs the GitHub Actions workflow (`.github/workflows/deploy.yml`), which builds the app and publishes it to GitHub Pages. A plain push to `main` deploys nothing.
+
+## Data license
+
+The PDFs in `/data/raw`, and content derived from them, belong to the FFJM. Strictly private/family use for now; any wider publication would require the federation's prior authorization.

@@ -9,7 +9,10 @@ export interface Edition {
   phases: Phase[]
 }
 
-const PHASE_ORDER: Phase[] = ["qf", "sf", "fn"]
+// Exported since the archive selection page (Story 3.1) needs the full,
+// fixed order to always render all 3 phases, greying out the ones absent
+// from a given year rather than only listing what exists.
+export const PHASE_ORDER: Phase[] = ["qf", "sf", "fn"]
 
 // Canonical tier order — mirrors shared/categories.mjs's CANONICAL_ORDER,
 // collapsed to the 6 real tiers (L1/GP and L2/HC are one tier each, since

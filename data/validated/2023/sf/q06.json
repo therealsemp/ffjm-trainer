@@ -1,0 +1,64 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 16.7,
+        "y": 605.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 400
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-6",
+  "number": 6,
+  "title": "Grille à partager",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**Partagez cette grille en quatre parties de manière que la somme des nombres dans chacune des parties soit égale à 23.**\n\n![figure](figure:2023-sf-6-grid)",
+    "figures": [
+      {
+        "id": "2023-sf-6-grid",
+        "description": "Grille de 4 lignes sur 4 colonnes contenant les nombres : ligne 1, 3, 8, 5, 6 ; ligne 2, 10, 1, 11, 2 ; ligne 3, 2, 9, 7, 5 ; ligne 4, 4, 7, 9, 3.",
+        "imageUrl": "q06_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2023-sf-6-corr-grid)",
+    "figures": [
+      {
+        "id": "2023-sf-6-corr-grid",
+        "description": "La même grille, avec quatre zones mises en évidence par des couleurs différentes : la première ligne (3, 8, 5, 6) en bleu, la deuxième ligne (10, 1, 11, 2) en orange, la troisième ligne (2, 9, 7, 5) en vert, et la quatrième ligne (4, 7, 9, 3) sans couleur.",
+        "imageUrl": "q06_corr-grid.png"
+      }
+    ]
+  }
+}

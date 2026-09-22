@@ -1,0 +1,65 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 16.7,
+        "y": 270
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 172
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-3",
+  "number": 3,
+  "title": "Cinq lettres, c'est tout !",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**Complétez toutes les cases de la grille suivante en utilisant dans chaque ligne, et dans chaque colonne, les lettres L, A, P, I, N. Dans chaque ligne, et dans chaque colonne, les lettres doivent être toutes différentes.**\n\n![figure](figure:2023-sf-3-grid)",
+    "figures": [
+      {
+        "id": "2023-sf-3-grid",
+        "description": "Grille de 5 lignes sur 5 colonnes, partiellement remplie. Ligne 1 : vide, vide, P, I, N. Ligne 2 : vide, I, vide, P, A. Ligne 3 : I, vide, N, vide, L. Ligne 4 : P, L, vide, N, vide. Ligne 5 : A, I, P, vide, vide.",
+        "imageUrl": "q03_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2023-sf-3-corr-grid)",
+    "figures": [
+      {
+        "id": "2023-sf-3-corr-grid",
+        "description": "La grille entièrement complétée. Ligne 1 : L, A, P, I, N. Ligne 2 : N, I, L, P, A. Ligne 3 : I, P, N, A, L. Ligne 4 : P, L, A, N, I. Ligne 5 : A, N, I, L, P.",
+        "imageUrl": "q03_corr-grid.png"
+      }
+    ]
+  }
+}

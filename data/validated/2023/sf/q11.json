@@ -1,0 +1,50 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 306.7,
+        "y": 690
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 122
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-11",
+  "number": 11,
+  "title": "Intercalons !",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Si l'on intercale 22 entre les deux chiffres du nombre 11, on obtient 1221 qui est un multiple du nombre 11.\n\nDe la même façon, en intercalant 23 entre les chiffres d'un certain nombre à deux chiffres, on obtient un multiple de ce nombre.\n\n**Quel est ce nombre à deux chiffres ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 solutions : 10, 26 et 32"
+  },
+  "correction": {
+    "markdown": "*Inspiré de Daniel Collignon*\n\nSoit A23B ce nombre : \\(A23B \\equiv 0\\ [AB]\\) (congruence)\n\nNotons que si AB = 10, ça marche\n\nSi le nombre est de la forme ABAB aussi (ABAB = 101AB). Soit AB=32\n\nN=1000A+230+B = 100AB+230-99B donc AB divise 230-99B\n\nOn regarde pour toutes les valeurs de B de 0 à 9, si un nombre à 2 chiffres se terminant par B divise 230-99B. Seules B = 0 ; 2 et 6 fonctionnent.\n\nOn a donc 3 solutions 10, 26 et 32.\n\n**Réponse : 3 solutions, 10, 26 et 32.**"
+  }
+}

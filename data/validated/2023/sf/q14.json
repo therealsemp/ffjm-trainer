@@ -1,0 +1,49 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 16.7,
+        "y": 342
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 432
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-14",
+  "number": 14,
+  "title": "Une multiplication renversante",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "\\(ABCD \\times 23 = DCBA \\times 32\\)\n\nDans cette égalité, les nombres ABCD et DCBA s'écrivent avec quatre chiffres tous différents, un même chiffre étant toujours remplacé par la même lettre.\n\n**Que vaut le nombre ABCD ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "4 solutions : 3872, 6784, 9056 et 9376"
+  },
+  "correction": {
+    "markdown": "*Solution inspirée par Daniel Collignon*\n\nABCD est pair donc \\(D \\in \\{2, 4, 6, 8\\}\\) et comme \\(2A \\equiv 3D\\ [10]\\), \\((A, D) \\in \\{(3,2), (6,4), (9,6)\\}\\) et \\(D \\neq 8\\). (\\((A, D) = (8,2)\\) ne fonctionne pas pour le chiffre des milliers.)\n\n\\(23.ABCD = 32.DCBA\\)\n\n\\(-230(10B + C) + 320(10C + B) = 1000(-32D + 23A) - 32A + 23D\\)\n\n\\(2970C - 1980B = 22968A - 31977D\\)\n\nEn divisant par 99 : \\(10(3C - 2B) = 232A - 323D\\)\n\nPuisque \\(A = \\frac{3D}{2}\\) ; \\(10(3C - 2D) = 25D\\) et \\((3C - 2D) = \\frac{5D}{2}\\)\n\nPour les 3 valeurs possibles de D, on déduit que \\((3C - 2B) \\in \\{5, 10, 15\\}\\) ce qui donne \\((B, C) \\in \\{(8,7), (7,8), (0,5), (3,7)\\}\\)\n\nOn a donc 4 solutions 3872, 6784, 9056 et 9376\n\n**Réponse : 4 solutions, 3872, 6784, 9056 et 9376.**"
+  }
+}

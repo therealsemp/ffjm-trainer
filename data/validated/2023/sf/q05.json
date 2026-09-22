@@ -1,0 +1,59 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 16.7,
+        "y": 465.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 318.7
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-5",
+  "number": 5,
+  "title": "Les gommettes",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Alix, Bob et Carla se partagent ces neuf gommettes. Chacun prend trois gommettes.\n\n![figure](figure:2023-sf-5-gommettes)\n\nAlix : j'ai les trois formes et mon triangle est noir.\n\nBob : j'ai les trois couleurs.\n\nCarla : je n'ai pas de triangle et pas de gommette grise.\n\nChacun a une gommette carrée.\n\n**Quelles sont les numéros des gommettes de Carla ?**",
+    "figures": [
+      {
+        "id": "2023-sf-5-gommettes",
+        "description": "Neuf gommettes numérotées de 1 à 9, disposées en grille 3x3 : rangée du haut, un triangle blanc (1), un carré gris (2), un triangle noir (3) ; rangée du milieu, un cercle blanc (4), un cercle gris (5), un cercle noir (6) ; rangée du bas, un carré blanc (7), un carré gris (8), un carré noir (9).",
+        "imageUrl": "q05_fig-gommettes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "4, 6 et 7"
+  },
+  "correction": {
+    "markdown": "Alix a 3 formes et Clara n'a pas de triangle, donc Bob a 2 triangles. Comme Alix a le triangle noir, Bob a les triangles blanc et gris. Comme Bob a un carré et les 3 couleurs, son carré est noir. Bob a 3 couleurs et Clara n'a pas de grise, donc Alix a 2 grises. Comme son triangle est noir, il a un rond gris et un carré gris. Il reste donc pour Clara les gommettes 4, 6 et 7.\n\n**Réponse : 4, 6 et 7.**"
+  }
+}

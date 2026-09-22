@@ -1,0 +1,52 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 16.7,
+        "y": 385.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 236.7
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-4",
+  "number": 4,
+  "title": "Un partage délicat",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Trois enfants se partagent 40 cm de fil pour un bricolage.\n\nBob prend 4 cm de plus qu'Alix.\n\nCarla prend 5 cm de plus que Bob.\n\n**Donnez la longueur de fil de Bob.**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "13 cm"
+  },
+  "correction": {
+    "markdown": "Alix + Bob + Carla = 40\n\nBob = Alix + 4\n\nCarla = Bob + 5 = Alix + 9\n\nDonc Alix + Alix + 4 + Alix + 9 = 40\n\n3 x Alix + 13 = 40\n\n3 x Alix = 27 donc Alix = 9 donc Bob = Alix + 4 = 13 cm\n\n**Réponse : 13 cm.**"
+  }
+}

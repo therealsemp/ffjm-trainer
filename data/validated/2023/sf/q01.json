@@ -1,0 +1,59 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 16.7,
+        "y": 65.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 120
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-1",
+  "number": 1,
+  "title": "Les dés de Lily",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Lily a construit le patron d'un dé. Elle aimerait en construire un deuxième identique avec le patron de droite.\n\n![figure](figure:2023-sf-1-dice)\n\n**Combien de points devra-t-elle dessiner dans la case marquée d'un point d'interrogation ?**",
+    "figures": [
+      {
+        "id": "2023-sf-1-dice",
+        "description": "À gauche, le patron (développement) complet d'un dé, ses six faces portant des points de 1 à 6. À droite, un second patron identique mais partiellement vide, dont une case est marquée d'un point d'interrogation.",
+        "imageUrl": "q01_fig-dice.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 5
+  },
+  "correction": {
+    "markdown": "5 points sont sur la case marquée d'un point d'interrogation.\n\n**Réponse : 5.**"
+  }
+}

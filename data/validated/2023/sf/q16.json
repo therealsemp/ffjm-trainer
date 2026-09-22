@@ -1,0 +1,62 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 306.7,
+        "y": 53.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 665.3
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-16",
+  "number": 16,
+  "title": "Le blason",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Ce blason est constitué d'un hexagone régulier gris inscrit dans un carré blanc.\n\n![figure](figure:2023-sf-16-blason)\n\nQuatre sommets de l'hexagone sont placés sur les côtés du carré, et un axe de symétrie de l'hexagone est confondu avec une diagonale du carré.\n\n**L'aire restant en blanc représente quel pourcentage de l'aire totale du carré ?**\n\nSi nécesssaire, on prendra 1,414 pour √2, 1,732 pour √3 et on arrondira au dixième de pourcent le plus proche.",
+    "figures": [
+      {
+        "id": "2023-sf-16-blason",
+        "description": "Un carré blanc contenant un hexagone régulier gris, dont quatre sommets touchent les côtés du carré ; un losange formé par les diagonales du carré est également tracé, laissant apparaître les triangles blancs restants aux quatre coins.",
+        "imageUrl": "q16_fig-blason.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "30,4 %"
+  },
+  "correction": {
+    "markdown": "On considère un quart du blason, avec la longueur telle que sur le schéma. Par symétries, la part de l'aire blanche dans ce quart est la valeur recherchée.\n\n![figure](figure:2023-sf-16-corr-triangle)\n\nL'aire de la partie grisée est \\(\\frac{3}{2}\\sqrt{3}\\) alors que l'aire du grand triangle blanc est : \\(\\frac{(\\sqrt{3}+1)^2}{2} = \\sqrt{3} + 2\\)\n\ndonc la part de la partie blanche restante est\n\n\\[1 - \\frac{3\\sqrt{3}}{2(\\sqrt{3}+2)} = 1 - \\frac{3}{2}\\sqrt{3} \\times (-\\sqrt{3} + 2) = \\frac{11}{2} - 3\\sqrt{3} \\approx 0,304\\]\n\nLe pourcentage est donc 30,4%\n\n**Réponse : 30,4 %.**",
+    "figures": [
+      {
+        "id": "2023-sf-16-corr-triangle",
+        "description": "Un quart du blason isolé : un triangle rectangle avec, à l'intérieur, des lignes en pointillés délimitant la zone grisée de l'hexagone et la zone blanche restante, avec les longueurs 1 et √3 indiquées sur les côtés.",
+        "imageUrl": "q16_corr-triangle.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 16.7,
+        "y": 180
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 132
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-2",
+  "number": 2,
+  "title": "Les sept nombres",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Dans ce diagramme, la somme de trois nombres alignés doit toujours être égale à 10.\n\n![figure](figure:2023-sf-2-tree)\n\n**Retrouvez la place des nombres ① ② ③ ④ et ⑥.**",
+    "figures": [
+      {
+        "id": "2023-sf-2-tree",
+        "description": "Sept cercles disposés en arbre sur trois niveaux : un cercle en haut ; au niveau du milieu, trois cercles reliés au premier, celui du centre contenant déjà le nombre 5 ; au niveau du bas, deux cercles reliés à ceux du milieu, celui de droite contenant déjà le nombre 7. Les autres cercles sont vides.",
+        "imageUrl": "q02_fig-tree.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2023-sf-2-corr-tree)",
+    "figures": [
+      {
+        "id": "2023-sf-2-corr-tree",
+        "description": "Le même arbre, entièrement complété : en haut le 1 ; au niveau du milieu, de gauche à droite, 3, 5 et 2 ; au niveau du bas, de gauche à droite, 6, 4 et 7.",
+        "imageUrl": "q02_corr-tree.png"
+      }
+    ]
+  }
+}

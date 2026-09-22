@@ -1,0 +1,48 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 16.7,
+        "y": 446.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 578.7
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-15",
+  "number": 15,
+  "title": "La suite de Mathias",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Mathias écrit une suite de nombres en partant du nombre négatif – 2023 et en ajoutant 4 lorsqu'il passe d'un nombre au suivant : – 2023, – 2019, – 2015, – 2011, ....\n\nLorsqu'il s'arrête, la somme de tous les nombres qu'il a écrits est égale à 1013.\n\n**Combien de nombres a-t-il écrits ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1013
+  },
+  "correction": {
+    "markdown": "Soit n le nombre de nombres écrits. La somme de ces nombres est :\n\n\\[\\sum_{k=0}^{n-1} [-2023 + 4k] = -2023n + 2n(n-1) = 2n^2 - 2025n = 1013\\]\n\nLe discriminant de cette équation du 2nd degré est\n\n\\[2025^2 + 8 \\times 1013 = (2026 - 1)^2 + 4 \\times 2026 = (2026 + 1)^2\\]\n\nDonc la solution de l'équation est\n\n\\[\\frac{2025 + 2027}{4} = 1013\\]\n\n**Réponse : 1013.**"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 16.7,
+        "y": 53.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 252
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-12",
+  "number": 12,
+  "title": "De 1 à 14",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "**Placez les nombres de 2 à 14 (sauf 11 qui est déjà écrit) dans les cases vides de ce diagramme de telle sorte que la somme de trois ou quatre nombre situés sur un même segment soit toujours égale à 25.**\n\n![figure](figure:2023-sf-12-diagram)",
+    "figures": [
+      {
+        "id": "2023-sf-12-diagram",
+        "description": "Diagramme de cercles reliés par des segments, formant un réseau de plusieurs branches. Seul le cercle marqué 1 (en haut) et le cercle marqué 11 sont déjà remplis ; tous les autres cercles sont vides.",
+        "imageUrl": "q12_fig-diagram.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "6 nombres ne sont comptés qu'une fois, les autres interviennent exactement dans 2 lignes.\n\nLa somme de 1 à 14 est 105, alors que la somme des 7 lignes est 7x25 = 175. Donc la somme des 6 chiffres comptés une seule fois est 2x105 – 175 = 35. Sachant 1 et 11 et que la somme des 3 nombres sur la verticale du 1 est 24, la somme des 3 autres chiffres comptés 2 fois est 105 – 35 – 1 – 11 – 24 = 34.\n\nOr sur la ligne horizontale du 1, il y a 10 et 14, donc 34 = 14+13+7 ou 14+12+8 ce qui permet de placer le 14 et le 10. 13 ne peut pas être sous la verticale de 11, ni de 14, donc seul 14+12+8 fonctionne avec 8 dans la verticale du 14. Ceci détermine la seule solution.\n\n![figure](figure:2023-sf-12-corr-diagram)",
+    "figures": [
+      {
+        "id": "2023-sf-12-corr-diagram",
+        "description": "Le même diagramme entièrement complété : première rangée 1-14-10, deuxième rangée 9-11-5-3, troisième rangée 2-13-8-4, quatrième rangée 7-12-6, les cercles étant reliés par des segments comme dans l'énoncé.",
+        "imageUrl": "q12_corr-diagram.png"
+      }
+    ]
+  }
+}

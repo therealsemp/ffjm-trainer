@@ -1,0 +1,56 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 16.7,
+        "y": 172
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 363.3
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-13",
+  "number": 13,
+  "title": "La chaîne de l'année",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "![figure](figure:2023-sf-13-chain)\n\nDans cette chaîne de nombres, tous les nombres sont des multiples de 2023. Lorsqu'on passe d'un nombre au suivant selon une flèche, le dernier chiffre du nombre de départ est égal au premier chiffre du nombre d'arrivée (ce chiffre ne pouvant pas être un 0). Dans cet exemple, la somme des trois nombres de la chaîne est égale à 378301.\n\n**Quelle est, au minimum, la somme des nombres d'une chaîne de multiples de 2023 contenant au moins deux nombres distincts et construite selon le même principe ?**",
+    "figures": [
+      {
+        "id": "2023-sf-13-chain",
+        "description": "Trois nombres reliés par des flèches : 2023 → 307496 → 68782, illustrant le principe de la chaîne (le dernier chiffre de chaque nombre est le premier chiffre du suivant).",
+        "imageUrl": "q13_fig-chain.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 42483
+  },
+  "correction": {
+    "markdown": "On regarde combien fait 2023 x n avec n entre 2 et 9. 6x 2023 = 12138 et 4x2023 = 8092, donc on a la séquence 12138 – 8092 – 2023\n\nPour faire en sorte qu'on ait un nombre qui commence par 3 au lieu de 12138, il suffit d'ajouter 10x2023, ce qui donne la séquence : 32368 – 8092 – 2023 et une somme de 42483.\n\n**Réponse : 42483.**"
+  }
+}

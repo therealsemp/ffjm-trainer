@@ -1,0 +1,57 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 306.7,
+        "y": 370
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 535.3
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-9",
+  "number": 9,
+  "title": "Les sept jetons",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathias a trouvé ces sept jetons\n\n![figure](figure:2023-sf-9-tokens)\n\ndans une mallette de jeux de son grand-père.\n\nIl les répartit en deux groupes et calcule alors le produit des numéros des jetons de chaque groupe et s'aperçoit que la différence entre les deux produits (le plus grand moins le plus petit) a la plus petite valeur possible.\n\n**Que vaut la somme des deux produits calculés par Mathias ?**",
+    "figures": [
+      {
+        "id": "2023-sf-9-tokens",
+        "description": "Sept jetons ronds numérotés 2, 3, 5, 7, 11, 13 et 17, alignés côte à côte.",
+        "imageUrl": "q09_fig-tokens.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1429
+  },
+  "correction": {
+    "markdown": "Si on multiplie les 7 jetons, on obtient : (2x13)x(3x11)x17x(5x7) = (26x33)x(17x35)\n\nDonc, intuitivement, il faut chercher à obtenir un produit proche de 20x35=700\n\n17x7x2x3 = 714 et 13x11x5 = 715. La différence est minimale et la somme des 2 produits est 1429\n\n**Réponse : 1429.**"
+  }
+}

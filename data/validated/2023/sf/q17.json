@@ -1,0 +1,53 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 306.7,
+        "y": 230
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 16.7,
+          "y": 31.3
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-17",
+  "number": 17,
+  "title": "Le calcul d'Al Ambiqué",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "\\[\\sqrt{23 \\times 44484 + \\sqrt{23 \\times 44484 + \\sqrt{23 \\times 44484 + \\dots}}}\\]\n\nAlbert Ambiqué se lance dans un long calcul.\n\nCe calcul comprend une infinité de radicaux emboîtés, le nombre 23 × 44484 étant indéfiniment répété.\n\n**Quel est le résultat du calcul d'Albert.**\n\nSi besoin est, on arrondira le résultat à l'unité la plus proche."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1012
+  },
+  "correction": {
+    "markdown": "Soit N le résultat. \\(N = \\sqrt{23 \\times 44484 + N}\\) ce qui donne une équation du 2nd degré \\(N^2 - N - 23 \\times 44484\\) dont le discriminant est\n\n\\[1 + 4 \\times 23 \\times 44484 = 4092529 = 2023^2\\]\n\nDonc \\(N = \\frac{1 + 2023}{2} = 1012\\)\n\n![figure](figure:2023-sf-17-corr-verification)\n\n**Réponse : 1012.**",
+    "figures": [
+      {
+        "id": "2023-sf-17-corr-verification",
+        "description": "Vérification posée du calcul 2023 × 2023 = 4092529, présentée en colonnes selon la disposition classique d'une multiplication posée (produits intermédiaires par chiffre puis addition).",
+        "imageUrl": "q17_corr-verification.png"
+      }
+    ]
+  }
+}

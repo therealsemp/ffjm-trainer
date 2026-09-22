@@ -1,0 +1,69 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 306.7,
+        "y": 478.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 668.7
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-10",
+  "number": 10,
+  "title": "Le cavalier",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un cavalier de jeu d'échec se trouve sur le damier de la figure où seules les cases blanches sont accessibles (mais on peut sauter par dessus une case noire).\n\n![figure](figure:2023-sf-10-board)\n\nOn rappelle qu'un cavalier d'échec se déplace selon la diagonale d'un rectangle de deux cases sur trois, dans n'importe quelle direction. Les deux cases marquées d'une croix sont les seules que le cavalier peut atteindre lors d'un premier saut.\n\n**S'il ne doit jamais se poser plus d'une fois sur une même case, combien de cases blanches ce cavalier peut-il visiter au maximum, y compris sa case de départ ?**",
+    "figures": [
+      {
+        "id": "2023-sf-10-board",
+        "description": "Damier de 5 cases sur 5, alternant cases blanches et grises. Un cavalier de jeu d'échecs est placé sur une case blanche vers le haut du damier ; deux cases sont marquées d'une croix, indiquant les cases atteignables en un premier saut.",
+        "imageUrl": "q10_fig-board.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 15
+  },
+  "correction": {
+    "markdown": "*Solution proposée par Daniel Collignon*\n\nConstruisons le graphe des cases reliées par un mouvement de cavalier.\n\n![figure](figure:2023-sf-10-corr-board)\n\nEn partant de A, si aucun des 2 liens M-D ou E-L n'est emprunté, le chemin maximum est de 8 cases. En empruntant ces 2 liens, le maximum est de 14. Si seul l'un des 2 est utilisé, on peut parcourir 15 cases : AHONELMD(GLCBIPK) ou AFMHONEL(CBIPKDG)\n\n![figure](figure:2023-sf-10-corr-graph)\n\n**Réponse : 15.**",
+    "figures": [
+      {
+        "id": "2023-sf-10-corr-board",
+        "description": "Le même damier, dont les cases blanches sont étiquetées de A à P (case par case) pour servir de repère au graphe des déplacements du cavalier.",
+        "imageUrl": "q10_corr-board.png"
+      },
+      {
+        "id": "2023-sf-10-corr-graph",
+        "description": "Deux graphes représentant les cases reliées entre elles par un mouvement de cavalier, sous forme de deux chaînes de cases reliées par des traits : A-F-M-J-E-N-O-H d'une part, P-K-D-G-L-C-B-I d'autre part.",
+        "imageUrl": "q10_corr-graph.png"
+      }
+    ]
+  }
+}

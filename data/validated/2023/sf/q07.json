@@ -1,0 +1,58 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 16.7,
+        "y": 675.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 465.3
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-7",
+  "number": 7,
+  "title": "La mosaïque de Lucas",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Lucas réalise une mosaïque, étape par étape, comme indiqué sur la figure.\n\n![figure](figure:2023-sf-7-mosaic)\n\nA chaque étape :\n\n- il double le nombre de carrés ;\n- les nouveaux carrés sont ajoutés une fois en dessous, puis à droite à l'étape suivante.\n\nMathéo lui signale que la feuille sur laquelle il veut coller sa mosaïque peut contenir au maximum 40 carrés en largeur et 70 carrés en longueur.\n\n**Combien de carrés lui faut-il pour coller la plus grande mosaïque possible ?**",
+    "figures": [
+      {
+        "id": "2023-sf-7-mosaic",
+        "description": "Cinq étapes de construction d'une mosaïque : « début » (un carré blanc), « étape 1 » (une colonne de 2 carrés, un blanc un gris), « étape 2 » (2x2 carrés), « étape 3 » (un rectangle plus grand, moitié blanc moitié gris), « étape 4 » (un rectangle encore plus grand, moitié blanc moitié gris), illustrant le doublement du nombre de carrés à chaque étape.",
+        "imageUrl": "q07_fig-mosaic.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 2048
+  },
+  "correction": {
+    "markdown": "A chaque étape, la mosaïque double le nombre de carrés. Voyons à quel moment ça dépasse 40 ou 70.\n\n1=1x1, 2=2x1 (lignes x colonnes), 4=2x2, 8=4x2, 16=4x4, 32=8x4, 64=8x8, 128=16x8, 256=16x16, 512=32x16, 1024=32x32, 2048=64x32\n\nAu-delà ça dépasse 40, donc il faut 2048 carrés.\n\n**Réponse : 2048.**"
+  }
+}

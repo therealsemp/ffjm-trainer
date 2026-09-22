@@ -1,0 +1,46 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 306.7,
+        "y": 368.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 16.7,
+          "y": 156.7
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-18",
+  "number": 18,
+  "title": "Les halls d'Archie",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Archie Tekte construit partout dans le monde des halls d'exposition en forme de parallélépipèdes rectangles et de différentes tailles.\n\nFéru de numérologie, il s'impose les contraintes suivantes :\n\n- une des dimensions du hall doit être de 15 mètres ;\n- les deux autres dimensions sont des nombres entiers de mètres ;\n- La longueur de la grande diagonale du hall, exprimée en mètres, doit être égale à la racine carrée du volume du hall exprimé en mètres cubes.\n\n**Quel est le volume possible d'un hall d'Archie si ce volume n'excède pas 10000 m³**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 solutions : 720 m³, 1755 m³ et 7830 m³"
+  },
+  "correction": {
+    "markdown": "Soient a et b les 2 autres dimensions. La grande diagonale est d telle que \\(d^2 = 225 + a^2 + b^2\\) et le volume est 15ab donc :\n\n\\[225 + a^2 + b^2 = 15ab\\]\n\nConsidérons l'équation du 2nd degré en a. Quand b croît (admettons a>b par symétrie), a tend vers 15b. \\(15ab < 10000\\) impose donc \\(b < \\frac{100}{15} + \\varepsilon\\), avec \\(\\varepsilon\\) « petit ».\n\n- b=1 : \\(a^2 - 15a + 226 = 0\\) pas de solution (discriminant négatif)\n- b=2 : \\(a^2 - 30a + 229 = 0\\) pas de solution (idem)\n- b=3 : \\(a^2 - 45a + 234 = 0\\) admet 2 solutions a=6 et a=39 (234 = 2.3².13 permet de retrouver 45 = 6+39)\n- b=4 : \\(a^2 - 60a + 241 = 0\\) pas de solution entière (241 premier)\n- b=5 : \\(a^2 - 75a + 250 = 0\\) pas de solution entière (250 = 2.5³)\n- b=6 : \\(a^2 - 90a + 261 = 0\\) admet 2 solutions a=3 et a=87\n- b=7 : \\(a^2 - 105a + 274 = 0\\) n'admet pas de solution entière (274 = 2.137 et 137 premier)\n\nIl y a donc 3 solutions : \\(3 \\times 6 \\times 15 = 720\\), \\(3 \\times 39 \\times 15 = 1755\\) et \\(6 \\times 87 \\times 15 = 7830\\)\n\n**Réponse : 3 solutions, 720 m³, 1755 m³ et 7830 m³.**"
+  }
+}

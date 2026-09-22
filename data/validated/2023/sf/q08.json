@@ -1,0 +1,63 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "sf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/sf/2023_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 306.7,
+        "y": 136.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/sf/2023_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 16.7,
+          "y": 503.3
+        }
+      }
+    ]
+  },
+  "id": "2023-sf-8",
+  "number": 8,
+  "title": "Nombres miroirs",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Max tape sur sa calculatrice, le nombre de 4 chiffres :\n\n![figure](figure:2023-sf-8-display)\n\nMalia qui est assise en face peut aussi lire le même nombre.\n\n**En comptant l'exemple, combien de nombres différents à quatre chiffres compris entre 1000 et 2023, Max peut-il taper pour que Malia lise le même nombre ?**\n\nSur la calculatrice de Max, les chiffres s'écrivent de la manière suivante.\n\n![figure](figure:2023-sf-8-digits)",
+    "figures": [
+      {
+        "id": "2023-sf-8-display",
+        "description": "Un nombre de 4 chiffres affiché en police de calculatrice à cristaux liquides (chaque chiffre formé de segments).",
+        "imageUrl": "q08_fig-display.png"
+      },
+      {
+        "id": "2023-sf-8-digits",
+        "description": "Les dix chiffres de 0 à 9 affichés dans la police de la calculatrice de Max (segments), servant de référence pour savoir quels chiffres restent lisibles une fois la calculatrice retournée.",
+        "imageUrl": "q08_fig-digits.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 8
+  },
+  "correction": {
+    "markdown": "On peut lire 1001, 1111, 1221, 1551, 1691, 1881, 1961, 2002, soit 8 nombres en tout\n\n**Réponse : 8.**"
+  }
+}

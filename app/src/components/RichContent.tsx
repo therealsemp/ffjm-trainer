@@ -3,6 +3,7 @@ import rehypeKatex from "rehype-katex"
 import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math"
 import type { RichContent as RichContentType } from "../types/question"
+import { ZoomableImage } from "./ZoomableImage"
 
 // The transcribed data uses `\( ... \)` / `\[ ... \]` (see
 // ingest/TRANSCRIPTION-GUIDE.md), but remark-math only recognizes
@@ -48,7 +49,11 @@ export function RichContent({ content, basePath }: RichContentProps) {
       [&_table]:my-2 [&_table]:border-collapse [&_td]:border [&_td]:border-brand-line [&_td]:p-2
       [&_th]:border [&_th]:border-brand-line [&_th]:bg-brand-bg [&_th]:p-2"
     >
-      <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[rehypeKatex]}
+        components={{ img: ZoomableImage }}
+      >
         {markdown}
       </ReactMarkdown>
     </div>

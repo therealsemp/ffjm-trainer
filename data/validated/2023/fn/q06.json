@@ -1,0 +1,44 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 166.7, "y": 666.7 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 600.0 }
+      }
+    ]
+  },
+  "id": "2023-fn-6",
+  "number": 6,
+  "title": "Multiplication",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**Placez les chiffres de 3 à 8, chacun dans une case, pour que la multiplication soit juste.**\n\n![figure](figure:2023-fn-6-puzzle)",
+    "figures": [
+      {
+        "id": "2023-fn-6-puzzle",
+        "description": "Une grille de multiplication à trous : une rangée de trois cases dont deux affichent déjà \"2\", puis un signe × suivi d'une case vide, puis une rangée de résultat de quatre cases dont la première et la dernière affichent déjà \"1\".",
+        "imageUrl": "q06_fig-puzzle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2263 × 7 = 15841"
+  },
+  "correction": {
+    "markdown": "Pour obtenir 1 comme unité du résultat, il faut utiliser 3x7 et pour obtenir 1 en dizaine de milliers au résultat, 3 ne peut pas multiplier 2. On a dont la position de 3 et 7. On en déduit que 5 est le chiffre des milliers, provenant de 7x2 plus 1 de retenue, provenant du 7x2 précédent. Il reste à placer 4, 6 et 8.\n\n7x4+2 = 30 ne va pas\n\n7x6+2 = 44. Ensuite 7x2+4 = 18 ok\n\n7x8+2 = 58 ne va pas\n\nD'où l'unique solution : **2263 x 7 = 15841**"
+  }
+}

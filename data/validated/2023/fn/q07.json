@@ -1,0 +1,38 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 386.7, "y": 43.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 786.7 }
+      }
+    ]
+  },
+  "id": "2023-fn-7",
+  "number": 7,
+  "title": "Les porte-clés",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Lulu fabrique des porte-clés. Chaque jour, il devient plus habile et il fabrique 3 porte-clés de plus que la veille. On sait qu'il a commencé la fabrication des porte-clés un lundi et que ce jour-là, il a fabriqué 4 porte-clés.\n\n**Quel jour de la semaine fabriquera-t-il son 200e porte-clé ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "jeudi"
+  },
+  "correction": {
+    "markdown": "Utilisons un tableau pour indiquer le nombre de porte-clés fabriqués chaque jour et le nombre total depuis le 1er jour\n\n| Jour | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Fabriqués | 4 | 7 | 10 | 13 | 16 | 19 | 22 | 25 | 28 | 31 | 34 |\n| Total | 4 | 11 | 21 | 34 | 50 | 69 | 91 | 116 | 144 | 175 | 209 |\n\nIl a donc fabriqué le 200ème le 11ème jour qui est un **jeudi**."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 13.3, "y": 423.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 353.3 }
+      }
+    ]
+  },
+  "id": "2023-fn-4",
+  "number": 4,
+  "title": "Collage",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Lina découpe cinq figures identiques qui ont la forme représentée ci dessous ![figure](figure:2023-fn-4-piece)\nElle les colle de manière à recouvrir entièrement cette grande figure.\n\n![figure](figure:2023-fn-4-shape)\n\n**Retrouvez son collage.** Attention : On peut tourner les pièces à plat mais pas les retourner.",
+    "figures": [
+      {
+        "id": "2023-fn-4-piece",
+        "description": "Une petite pièce en forme de croix/L composée de carrés (le modèle à dupliquer cinq fois).",
+        "imageUrl": "q04_fig-piece.png"
+      },
+      {
+        "id": "2023-fn-4-shape",
+        "description": "Une grande figure quadrillée irrégulière (composée de carrés) à recouvrir entièrement par cinq exemplaires de la pièce modèle.",
+        "imageUrl": "q04_fig-shape.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "On commence par la forme en haut à gauche, puis celle en bas à gauche.\n\n![figure](figure:2023-fn-4-corr-solution)",
+    "figures": [
+      {
+        "id": "2023-fn-4-corr-solution",
+        "description": "La grande figure quadrillée avec les cinq pièces disposées à l'intérieur, chaque pièce étant délimitée par un tracé rouge distinct.",
+        "imageUrl": "q04_corr-solution.png"
+      }
+    ]
+  }
+}

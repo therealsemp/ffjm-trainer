@@ -1,0 +1,38 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 380.0, "y": 466.7 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 306.7, "y": 100.0 }
+      }
+    ]
+  },
+  "id": "2023-fn-10",
+  "number": 10,
+  "title": "Diviser pour réussir",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Dans cette classe de moins de 30 élèves 52,4 % d'entre eux (valeur arrondie au dixième) ont obtenu la moyenne au dernier devoir.\n\n**Quel est le nombre d'élèves de la classe ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 21
+  },
+  "correction": {
+    "markdown": "Pour trouver la fraction la plus proche d'un nombre décimal, on peut utiliser la méthode des fractions continues.\n\n\\[\\frac{1}{0,524} = 1,908... = 2 - 0,092...\\]\n\nPuis\n\n\\[\\frac{1}{0,092} = 10,869... = 11 - 0,131\\]\n\nDonc, on a approximativement :\n\n\\[\\frac{1}{0,524} \\approx 2 - \\frac{1}{11} = \\frac{21}{11} \\text{ et } 0,524 \\approx \\frac{11}{21}\\]\n\nOn vérifie que ça fonctionne : \\(\\frac{11}{21} \\approx 0,5238...\\)\n\nOn a donc **21 élèves dans la classe**, dont 11 ont obtenu la moyenne."
+  }
+}

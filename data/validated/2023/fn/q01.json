@@ -1,0 +1,51 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 13.3, "y": 40.0 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 53.3 }
+      }
+    ]
+  },
+  "id": "2023-fn-1",
+  "number": 1,
+  "title": "Les allumettes",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Sur cette figure, Mathilde compte 8 petits triangles et 2 grands triangles.\n\n![figure](figure:2023-fn-1-triangles)\n\nLe tour de chaque triangle est entièrement dessiné avec des allumettes.\n\nMathias enlève quelques allumettes et il ne reste aucun triangle entièrement dessiné.\n\n**Combien d'allumettes a-t-il ôtées, au minimum ?**",
+    "figures": [
+      {
+        "id": "2023-fn-1-triangles",
+        "description": "Une figure en étoile à six branches (hexagramme) composée de six petits triangles équilatéraux formant deux grands triangles superposés, entièrement tracée avec des allumettes (traits noirs) et des points aux intersections.",
+        "imageUrl": "q01_fig-triangles.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 4
+  },
+  "correction": {
+    "markdown": "Il est nécessaire d'enlever **4 allumettes**. On ne peut pas faire moins, car 4 triangles sont disjoints.\n\n![figure](figure:2023-fn-1-corr-solution)",
+    "figures": [
+      {
+        "id": "2023-fn-1-corr-solution",
+        "description": "La même figure en étoile à six branches, avec quatre allumettes marquées d'une croix rouge : celles à retirer pour qu'aucun triangle ne reste entièrement dessiné.",
+        "imageUrl": "q01_corr-solution.png"
+      }
+    ]
+  }
+}

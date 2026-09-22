@@ -1,0 +1,49 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 316.7,
+        "y": 33.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 960.0
+        }
+      }
+    ]
+  },
+  "id": "2023-fn-15",
+  "number": 15,
+  "title": "Les deux polygones",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Deux polygones réguliers discutent.\n\nA : « J'ai un côté de plus que toi. »\n\nB : « A nous deux, nous avons 2023 diagonales. »\n\nA : « A nous deux, nous avons .... côtés. »\n\n**Quel nombre complète la dernière phrase de A ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 93
+  },
+  "correction": {
+    "markdown": "Soit a le nombre de côtés de A et b celui de B.\n\nLes propositions disent que \\(a = b+1\\) et \\(\\frac{a(a-3)}{2} + \\frac{b(b-3)}{2} = 2023\\) (dans un polygone, à partir de chacun des N sommets il part N-3 diagonales et chaque diagonale est comptée 2 fois)\n\nOn obtient une équation du 2nd degré en b : \\(b^2 - 2b - 1 = 2023\\)\n\nQui s'écrit \\((b+44)(b-46) = 0\\) donc b=46 et a+b=**93 est la somme des côtés.**"
+  }
+}

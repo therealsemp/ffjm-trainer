@@ -1,0 +1,56 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 20.0,
+        "y": 33.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 306.7,
+          "y": 520.0
+        }
+      }
+    ]
+  },
+  "id": "2023-fn-12",
+  "number": 12,
+  "title": "Fermenrond",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "À Fermenrond, les enclos sont formés de droites et de demi-cercles comme sur le dessin.\n\n![figure](figure:2023-fn-12-fermenrond)\n\nLe cochon a l'enclos gris clair, l'âne a l'enclos gris foncé et la poule l'enclos blanc, chacun disposant de suffisamment d'espace pour s'ébattre.\n\n**Sachant que le cochon et l'âne ont autant d'espace, quelle est le rapport entre la surface de la ferme et la surface de l'enclos de la poule ?**",
+    "figures": [
+      {
+        "id": "2023-fn-12-fermenrond",
+        "description": "Un grand demi-cercle contenant deux demi-cercles plus petits emboîtés : un gris clair (le plus grand des deux, occupant la partie gauche) et un gris foncé (plus petit, à droite), la zone blanche restante formant l'enclos de la poule.",
+        "imageUrl": "q12_fig-fermenrond.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1/9"
+  },
+  "correction": {
+    "markdown": "Le diamètre du grand cercle est la somme des 2 diamètres, donc le grand rayon a est la somme des 2 rayons, b et c (b>c).\n\nL'énoncé dit que \\(\\pi b^2 = \\pi a^2 - (\\pi b^2 + \\pi c^2)\\)\n\nPuisque \\(a = b+c\\), l'égalité s'écrit aussi \\(2\\pi(a-c)^2 = \\pi a^2 - \\pi c^2\\)\n\nSoit \\(a^2 - 4ac + 3c^2 = 0 \\Leftrightarrow (a-3c)(a-c) = 0\\)\n\nDonc \\(c = \\frac{a}{3}\\) et le rapport des aires est **1/9**"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 13.3, "y": 273.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 273.3 }
+      }
+    ]
+  },
+  "id": "2023-fn-3",
+  "number": 3,
+  "title": "Au restaurant",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Au restaurant, il ne reste que cinq desserts : une glace à la fraise, une glace au citron, une mousse à la fraise, une mousse au citron et une tarte au citron.\n\nCléa : « J'aimerais un dessert à la fraise ».\n\nDenis : « j'aimerais une mousse ou une glace ».\n\nBilly : « j'aimerais un dessert au citron ».\n\nAlix : « Cléa et moi n'aimons que les mousses ».\n\nElias : « je ne veux pas de glace ».\n\n**Quel dessert donner à quel enfant pour que chacun soit content ?** Vous Relierez par des flèches les prénoms aux desserts (G pour glace, M pour mousse, T pour tarte, F pour fraise et C pour citron).",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "Alix : MC, Billy : GC, Cléa : MF, Denis : GF, Elias : TC"
+  },
+  "correction": {
+    "markdown": "Cléa veut de la Fraise et une Mousse, elle veut donc MF. Alix veut une mousse aussi donc MC. Elias ne veut pas de Glace, donc il prend la Tarte TC (il n'y a plus de Mousse). Billy veut un dessert au Citron donc prend GC. Denis prend la dernière GF qui correspond bien à son choix : pas de tarte.\n\n![figure](figure:2023-fn-3-corr-diagram)",
+    "figures": [
+      {
+        "id": "2023-fn-3-corr-diagram",
+        "description": "Diagramme reliant chaque prénom à son dessert par un trait coloré, les traits d'Alix, Billy et Cléa se croisant : Alix-MC, Billy-GC, Cléa-MF, Denis-GF, Elias-TC.",
+        "imageUrl": "q03_corr-diagram.png"
+      }
+    ]
+  }
+}

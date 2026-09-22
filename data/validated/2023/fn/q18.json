@@ -1,0 +1,64 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 316.7,
+        "y": 466.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 316.7,
+          "y": 13.3
+        }
+      }
+    ]
+  },
+  "id": "2023-fn-18",
+  "number": 18,
+  "title": "Les 23 points",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Dans un plan sont placés 23 points, et toutes les paires de points sont reliées par un segment.\n\n**Combien peut-on voir de triangles au maximum ?**\n\nOn compte tous les triangles non plats, même ceux dont les sommets ne font pas partie des 23 points de départ, et même si des segments les traversent\n\nAttention, on trace des segments et non des droites",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 306383
+  },
+  "correction": {
+    "markdown": "Les sommets d'un triangle sont constitués d'intersections de segments. Différentes configurations sont possibles :\n\n- Les 3 sommets sont parmi les 23 points : \\(\\binom{23}{3}\\) possibilités\n- 2 sommets sont parmi les 23 points et le 3ème est l'intersection de 2 segments définis par 4 points. 4 points choisis parmi 23 permettent de tracer au maximum 4 triangles de ce type, soit \\(4\\binom{23}{4}\\) en tout\n\n![figure](figure:2023-fn-18-corr-fig1)\n\n- 1 sommet parmi les 23 points et 2 sommets intersections de 3 segments (cf figure) à partir de 5 points parmi les 23. Ces 5 points permettent de tracer au maximum 5 triangles de ce type, soit en tout \\(5\\binom{23}{5}\\)\n\n![figure](figure:2023-fn-18-corr-fig2)\n\n- Aucun sommet parmi les 23 points. Il faut prendre 6 points parmi 23 qui définissent au maximum un unique triangle, soit en tout \\(\\binom{23}{6}\\)\n\n![figure](figure:2023-fn-18-corr-fig3)\n\nDonc le nombre maximum de triangles est \\(\\binom{23}{3} + 4\\binom{23}{4} + 5\\binom{23}{5} + \\binom{23}{6} = \\frac{23 \\times 22 \\times 21}{6} \\times \\left(1 + 20 + \\frac{20 \\times 19}{4} + \\frac{20 \\times 19 \\times 18}{120}\\right) = 23 \\times 11 \\times 7 \\times (21 + 5 \\times 19 + 3 \\times 19) = 23 \\times 11 \\times 7 \\times 173 = 306383\\)\n\nIl y a au maximum **306383 triangles**.",
+    "figures": [
+      {
+        "id": "2023-fn-18-corr-fig1",
+        "description": "Quatre points reliés par des segments formant un triangle bleu dont un sommet est l'intersection de deux segments.",
+        "imageUrl": "q18_corr-fig1.png"
+      },
+      {
+        "id": "2023-fn-18-corr-fig2",
+        "description": "Cinq points reliés par des segments, avec deux triangles bleus dont les sommets sont des intersections de trois segments.",
+        "imageUrl": "q18_corr-fig2.png"
+      },
+      {
+        "id": "2023-fn-18-corr-fig3",
+        "description": "Six points reliés par tous leurs segments, avec un unique petit triangle bleu au centre formé uniquement d'intersections de segments.",
+        "imageUrl": "q18_corr-fig3.png"
+      }
+    ]
+  }
+}

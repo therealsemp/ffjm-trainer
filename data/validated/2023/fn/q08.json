@@ -1,0 +1,56 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 386.7, "y": 130.0 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 886.7 }
+      }
+    ]
+  },
+  "id": "2023-fn-8",
+  "number": 8,
+  "title": "Que de cubes !",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Zac a collé 7 cubes, face contre face. Il obtient la construction suivante.\n\n![figure](figure:2023-fn-8-cube)\n\nLe plus grand cube a une arête de 9 cm. Les deux cubes gris foncés sont identiques et ont une arête de 2 cm.\n\n**Combien mesure l'arête du cube A ?**",
+    "figures": [
+      {
+        "id": "2023-fn-8-cube",
+        "description": "Un assemblage de 7 cubes collés face contre face, de tailles décroissantes, formant un escalier ; le cube A (le plus petit, gris foncé) est indiqué au premier plan.",
+        "imageUrl": "q08_fig-cube.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "De la vue de droite (ci-contre), on en déduit que le côté du cube B est 7 (grâce au petit cube de côté 2).\n\n![figure](figure:2023-fn-8-corr-views)\n\nOn utilise ensuite la vue de face pour déterminer les autres mesures des cubes C, D puis A : C=B-2 et D=C-2 et enfin — sur la vue de droite — A+9 = B+C+D = 7+5+3=15.\n\n![figure](figure:2023-fn-8-corr-annotated)\n\n**Le côté de A est 6 cm.**",
+    "figures": [
+      {
+        "id": "2023-fn-8-corr-views",
+        "description": "Deux vues schématiques (vue de droite en haut, vue de face en bas) de l'assemblage de cubes, avec les cubes étiquetés A, B, C, D et les valeurs connues 9, 2, 7 indiquées.",
+        "imageUrl": "q08_corr-views.png"
+      },
+      {
+        "id": "2023-fn-8-corr-annotated",
+        "description": "Les mêmes vues, annotées en rouge avec les valeurs déduites : 2, 7, 5, 3, 2 sur les différents cubes.",
+        "imageUrl": "q08_corr-annotated.png"
+      }
+    ]
+  }
+}

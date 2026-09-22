@@ -1,0 +1,45 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 20.0, "y": 353.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 306.7, "y": 786.7 }
+      }
+    ]
+  },
+  "id": "2023-fn-14",
+  "number": 14,
+  "title": "Les comptes de Picsou",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Picsou est riche. Il possède N euros où N est un nombre entier à dix chiffres, le premier chiffre n'étant pas un 0.\n\nIl vient juste de recevoir de l'argent supplémentaire. Étonnant ! Maintenant l'argent qu'il possède ne nécessite plus que deux chiffres différents pour pouvoir être écrit.\n\n**Combien Picsou a-t-il reçu d'argent, au minimum ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 123457
+  },
+  "correction": {
+    "markdown": "S'il ajoute un nombre à N chiffres, il va modifier au plus N+2 chiffres du nombre de départ ; ce qui se produit si le N+1ème chiffre en partant de la droite est un 9. Par exemple, 295+8=303. Dans cet exemple, si à gauche de 295, j'obtiens 30295+8=30303. Donc à partir d'un nombre à N chiffres, on peut modifier un nombre à N+4 chiffres et n'avoir que 2 chiffres dans l'écriture du résultat.\n\nOn prend donc un nombre à 6 chiffres qui commence par 1 pour qu'il soit le plus petit possible. Au-dessus, on met 8 pour que la somme fasse 10 avec une retenue de 1.\n\n![figure](figure:2023-fn-14-corr-addition)\n\nOn continue de proche en proche vers la droite en mettant 2 (le minimum) à côté du 1 et 7 au-dessus puis 3 et 6 ... jusqu'aux unités où je dois avoir 10 sans retenue soit 3+7. Il me reste donc 2 et 1 à placer, soit x=2019876543 + **123457** = 2020000000. Par construction ce nombre est le minimum.",
+    "figures": [
+      {
+        "id": "2023-fn-14-corr-addition",
+        "description": "Un schéma d'addition posée à trous illustrant le report de retenues : \"x 0 x-1 9 8 _ _ _ _\" plus \"1\" égale \"x 0 x 0 0 _ _ _ _\".",
+        "imageUrl": "q14_corr-addition.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 13.3, "y": 166.7 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 166.7 }
+      }
+    ]
+  },
+  "id": "2023-fn-2",
+  "number": 2,
+  "title": "Enveloppes de cubes ?",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a trouvé ces six formes en papier. Sans les découper et en les pliant selon les pointillés, deux seulement de ces formes permettent de recouvrir les six faces d'un cube.\n\n![figure](figure:2023-fn-2-shapes)\n\n**Multipliez entre eux les numéros de ces deux formes et écrivez le résultat.**",
+    "figures": [
+      {
+        "id": "2023-fn-2-shapes",
+        "description": "Six patrons de cube en papier, numérotés de 1 à 6, chacun composé de six carrés reliés selon des dispositions différentes, avec des pointillés indiquant les plis.",
+        "imageUrl": "q02_fig-shapes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 15
+  },
+  "correction": {
+    "markdown": "Seuls les patrons 3 et 5 permettent de former un cube. On a indiqué sur les autres patrons, les 2 faces qui se superposent.\n\n![figure](figure:2023-fn-2-corr-shapes)\n\nLa réponse est **15**.",
+    "figures": [
+      {
+        "id": "2023-fn-2-corr-shapes",
+        "description": "Les six patrons numérotés de 1 à 6 ; sur les patrons 1, 2, 4 et 6, une croix rouge marque les deux carrés qui se superposeraient une fois le patron plié, montrant qu'ils ne forment pas un cube valide.",
+        "imageUrl": "q02_corr-shapes.png"
+      }
+    ]
+  }
+}

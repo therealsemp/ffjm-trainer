@@ -1,0 +1,38 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 13.3, "y": 570.0 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 13.3, "y": 433.3 }
+      }
+    ]
+  },
+  "id": "2023-fn-5",
+  "number": 5,
+  "title": "Un nombre magique",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Kim observe qu'en prenant 2023 et en additionnant tous ses chiffres, on obtient 7, son nombre préféré :\n\n2 + 0 + 2 + 3 = 7\n\n**Dans les cent prochaines années, combien d'années permettront d'obtenir aussi 7 ?** On ne comptera pas 2023.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "Après 2023, il y a 2032 (on ajoute une dizaine et on retire une unité). Ensuite 2041 et 2050.\n\nAprès on passe à 21xx, dont la somme du chiffre des dizaines et des unités vaut 4 : 04, 13, 22 pour ne pas dépasser 2123.\n\nSoit **6 solutions** : 2032, 2041, 2050, 2104, 2113, 2122"
+  }
+}

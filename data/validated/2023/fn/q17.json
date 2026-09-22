@@ -1,0 +1,53 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 316.7,
+        "y": 293.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 13.3,
+          "y": 180.0
+        }
+      }
+    ]
+  },
+  "id": "2023-fn-17",
+  "number": 17,
+  "title": "Le terrain du Père Manfin",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Le Père Manfin, Gérard, possède un terrain en forme de quadrilatère dont deux angles opposés sont droits et dont les côtés mesurent tous des nombres entiers de mètres inférieurs à 150 m.\n\n![figure](figure:2023-fn-17-terrain)\n\nDe plus, AM = 23 m et le côté MH mesure exactement 1 mètre de plus que le côté AT.\n\n**Quelle est, en m², l'aire du terrain de Gérard ?** Note : le dessin ne respecte pas les proportions.",
+    "figures": [
+      {
+        "id": "2023-fn-17-terrain",
+        "description": "Un quadrilatère ATHM avec des angles droits marqués en A et en H ; le côté AM est étiqueté 23 m, et les sommets T et H sont en haut, A et M en bas.",
+        "imageUrl": "q17_fig-terrain.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "4 solutions : 506, 1386, 2100, 2660 m²"
+  },
+  "correction": {
+    "markdown": "Le terrain est composé de 2 triangles rectangles TAM en A et THM en H. Soit TA=a et TH=b, alors \\(23^2 + a^2 = b^2 + (a+1)^2\\)\n\nQui s'écrit aussi \\((23-b)(23+b) = 2a+1\\). 2a+1 est impair donc b doit être pair et b<23. Essayons les valeurs possibles en gardant en tête que a<150.\n\nL'aire est ensuite \\(\\mathcal{A} = \\frac{23a + c(a+1)}{2}\\)\n\n| b | 22 | 20 | 18 | 16 | 14 |\n|---|---|---|---|---|---|\n| a | 22 | 64 | 102 | 136 | >150 |\n| 𝒜 | 506 | 1386 | 2100 | 2660 | - |\n\nIl y a donc **4 solutions 506, 1386, 2100 et 2660 m²**"
+  }
+}

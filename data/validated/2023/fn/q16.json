@@ -1,0 +1,51 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 316.7, "y": 126.7 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 13.3, "y": 13.3 }
+      }
+    ]
+  },
+  "id": "2023-fn-16",
+  "number": 16,
+  "title": "La rosace",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Mathias a dessiné cette jolie rosace.\n\n![figure](figure:2023-fn-16-rosace)\n\nLe grand cercle a 21 cm de diamètre, et le petit cercle passe par les points d'intersections des deux triangles équilatéraux qui formaient une étoile régulière à six branches.\n\n**Quelle est l'aire totale des zones blanches ?** Si nécessaire, on prendra 22/7 pour pi et 1,732 pour \\(\\sqrt{3}\\), et on donnera la réponse en cm², arrondie au dixième.",
+    "figures": [
+      {
+        "id": "2023-fn-16-rosace",
+        "description": "Une rosace : un grand cercle contenant une étoile à six branches (hexagramme formé de deux triangles équilatéraux superposés) et un petit cercle inscrit passant par les points d'intersection des triangles ; les zones blanches (entre le grand cercle et l'étoile, et le petit cercle) sont visibles autour du motif gris central.",
+        "imageUrl": "q16_fig-rosace.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 75.5
+  },
+  "correction": {
+    "markdown": "Le centre des cercles est le barycentre des 2 triangles équilatéraux qui se situe dans un rapport 1/3-2/3 de la hauteur. Donc le rayon R du grand cercle est 2/3 de la hauteur du triangle et le rayon r du petit cercle est 1/3 du côté du triangle. Soit \\(R = r\\sqrt{3}\\)\n\n![figure](figure:2023-fn-16-corr-triangle)\n\nLa surface cherchée est donc :\n\n\\[12\\left(\\frac{\\sqrt{3}}{4}r^2\\right) - \\pi r^2 = \\left(\\sqrt{3} - \\frac{\\pi}{3}\\right)R^2 \\approx 75,5 \\text{ cm}^2\\]",
+    "figures": [
+      {
+        "id": "2023-fn-16-corr-triangle",
+        "description": "Un hexagramme inscrit dans un cercle, avec un triangle équilatéral surligné en gris, le rayon R du grand cercle et le rayon r du petit cercle indiqués par des segments rouges depuis le centre.",
+        "imageUrl": "q16_corr-triangle.png"
+      }
+    ]
+  }
+}

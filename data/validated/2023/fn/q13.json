@@ -1,0 +1,56 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 2,
+      "position": { "x": 20.0, "y": 193.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 306.7, "y": 600.0 }
+      }
+    ]
+  },
+  "id": "2023-fn-13",
+  "number": 13,
+  "title": "Le casier à crayons",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Mathilde a 60 crayons de couleur. Elle veut les ranger dans le casier représenté sur la figure en plaçant au moins un crayon par case. Les huit cases doivent contenir des nombres de crayons tous différents. Les flèches indiquent les sommes des nombres de crayons placés dans les cases des rangées correspondantes, toutes égales à 23. Deux cases ont déjà été remplies avec 9 et 8 crayons.\n\n![figure](figure:2023-fn-13-crayons)\n\n**Indiquez le nombre de crayons que Mathilde placera dans la case marquée d'un point d'interrogation.**",
+    "figures": [
+      {
+        "id": "2023-fn-13-crayons",
+        "description": "Un casier en forme de losange composé de huit cases en diamant, avec « 9 » et « ? » sur la rangée du haut et « 8 » sur une case voisine ; des flèches sous chaque rangée indiquent une somme de 23.",
+        "imageUrl": "q13_fig-crayons.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "5 solutions : 16, 15, 14, 7, 4"
+  },
+  "correction": {
+    "markdown": "60 = 23+23+8+b (horizontal), donc b = 6\n\nDe même 60=23+23+9+c (vertical), donc c=5\n\nOn peut donc compléter en fonction de a.\n\n![figure](figure:2023-fn-13-corr-grid1)\n\nOn essaie les valeurs pour a=1 à 13 pour qu'aucune case ne comporte le même nombre de crayons.\n\n![figure](figure:2023-fn-13-corr-grid2)\n\nOn trouve **5 valeurs possibles** pour a : 1, 2, 3, 10, 13\n\ndonc pour 17-a, les solutions sont **16, 15, 14, 7, 4**",
+    "figures": [
+      {
+        "id": "2023-fn-13-corr-grid1",
+        "description": "Le casier en losange avec ses cases exprimées algébriquement en fonction de a : 8 en haut, puis a+1 et c, puis 9, a et 23 en rangée centrale, puis b et 23, chaque rangée totalisant 23.",
+        "imageUrl": "q13_corr-grid1.png"
+      },
+      {
+        "id": "2023-fn-13-corr-grid2",
+        "description": "Le même casier avec b et c remplacés par leurs valeurs numériques : 8 en haut, puis 17-a, a+1 et 5, puis 9, a, 14-a et 23, puis 6 et 23.",
+        "imageUrl": "q13_corr-grid2.png"
+      }
+    ]
+  }
+}

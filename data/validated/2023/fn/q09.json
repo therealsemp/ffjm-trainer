@@ -1,0 +1,44 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "fn",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/fn/2023_fn_statement.pdf",
+      "page": 1,
+      "position": { "x": 380.0, "y": 376.7 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/fn/2023_fn_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 306.7, "y": 36.7 }
+      }
+    ]
+  },
+  "id": "2023-fn-9",
+  "number": 9,
+  "title": "Des entiers consécutifs",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Dans le tableau de gauche, on a écrit les nombres entiers 2, 3 et 4 sur la première ligne. En-dessous, on a écrit les trois plus petits nombres entiers consécutifs tels que le nombre écrit sous le 2 soit différent de 2 et divisible par 2, celui écrit sous le 3 soit divisible par 3 et celui écrit sous le 4 soit divisible par 4. On veut remplir la seconde ligne du tableau de droite avec les trois plus petits nombres entiers consécutifs en respectant la même règle.\n\n![figure](figure:2023-fn-9-grids)\n\n**Quel nombre sera écrit dans la case grisée ?**",
+    "figures": [
+      {
+        "id": "2023-fn-9-grids",
+        "description": "Deux petits tableaux de 3 colonnes. Le tableau de gauche affiche 2,3,4 en première ligne et 14,15,16 en seconde ligne (exemple résolu). Le tableau de droite affiche 3,4,5 en première ligne, la seconde ligne étant vide, sa dernière case étant grisée.",
+        "imageUrl": "q09_fig-grids.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 63
+  },
+  "correction": {
+    "markdown": "Soit N+3 le nombre sous 3 : 3 divise N. Sous 4, on a N+4 divisible par 4, donc 4 divise N. Idem sous 5, on a N+5 et 5 divise N. Donc 3, 4 et 5 divisent N. Le plus petit N est 3x4x5 = 60. Sous 3-4-5, on a donc 63-64-65 et **le nombre cherché est 63**."
+  }
+}

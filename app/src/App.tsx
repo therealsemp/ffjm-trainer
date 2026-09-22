@@ -11,6 +11,9 @@ import { SessionConfigPage } from "./pages/SessionConfigPage"
 import { TrainingEntryPage } from "./pages/TrainingEntryPage"
 import { TrainingQuestionPage } from "./pages/TrainingQuestionPage"
 import { TrainingRecapPage } from "./pages/TrainingRecapPage"
+import { ArchiveSelectionPage } from "./pages/ArchiveSelectionPage"
+import { ArchiveQuestionPage } from "./pages/ArchiveQuestionPage"
+import { ArchiveSummaryPage } from "./pages/ArchiveSummaryPage"
 
 export function App() {
   return (
@@ -28,6 +31,9 @@ export function App() {
                 <Route path="/entrainement/configuration" element={<SessionConfigPage />} />
                 <Route path="/entrainement/question" element={<TrainingQuestionPage />} />
                 <Route path="/entrainement/recap" element={<TrainingRecapPage />} />
+                <Route path="/archives" element={<ArchiveSelectionPage />} />
+                <Route path="/archives/:year/:phase/sommaire" element={<ArchiveSummaryPage />} />
+                <Route path="/archives/:year/:phase/:number" element={<ArchiveQuestionPage />} />
               </Route>
             </Routes>
           </TrainingSessionProvider>

@@ -1,6 +1,5 @@
-// Placeholder landing page once a profile exists. Everything past this
-// point (training, archives...) is a later story — this page only proves
-// the profile-detection/creation flow works end to end.
+// Landing page once a profile exists, linking to the two main modes:
+// training and archive consultation.
 
 import { Archive, Dumbbell } from "lucide-react"
 import type { ReactNode } from "react"
@@ -95,10 +94,10 @@ export function HomePage() {
           description="Crée des sessions d'entraînement pour essayer de résoudre des exercices piochés au hasard des épreuves de la FFJM."
         />
         <HomeActionCard
+          to="/archives"
           icon={<Archive size={40} />}
           title="Consulter les archives"
-          description="Fonctionnalité en construction, elle arrive bientôt !"
-          disabled
+          description="Parcours les épreuves complètes des éditions précédentes, question par question."
         />
       </div>
     </PageContainer>

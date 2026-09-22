@@ -21,8 +21,8 @@ User browsing a selected edition
 ## Acceptance criteria
 
 ### Scenario 1: Default state
-- **Given** the user has just confirmed the selection of an edition (Story 3.1)
-- **When** the first question is displayed
+- **Given** the user has just selected an edition (Story 3.1) and opened a question from its summary (Story 3.4)
+- **When** that question is displayed
 - **Then** the "Show answers" switch is "hidden" (OFF)
 - **And** no answer is visible on the displayed question
 

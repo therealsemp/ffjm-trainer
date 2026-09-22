@@ -16,11 +16,12 @@ User browsing a selected edition
 - The position within the edition is shown to the user (e.g. "Question 4/16").
 - A question whose `categories` does not include the active profile's category is outside what that profile actually plays — it stays visible, but with a warning (e.g. "This question isn't part of your category (CM)"), since browsing always shows the full edition.
 - This story does not cover showing or hiding answers (see Story 3.3), which applies on top of this navigation.
+- Besides Previous/Next, a question can also be reached directly from the edition's summary (Story 3.4); both ways of arriving at a question behave identically here.
 
 ## Acceptance criteria
 
 ### Scenario 1: Displaying the first question
-- **Given** the user has just confirmed the selection of an edition (Story 3.1)
+- **Given** the user opens the first entry of an edition's summary (Story 3.4)
 - **When** the consultation screen is displayed
 - **Then** the edition's first question is displayed
 - **And** the position indicator shows "Question 1/N" (N being the edition's total number of exercises)
@@ -51,7 +52,6 @@ User browsing a selected edition
 - **And** the question remains fully viewable (statement, and answer once revealed per Story 3.3) — the warning is informational, not a restriction
 
 ## Out of scope
-- Jumping directly to a specific question via a list or selector (navigation is sequential only in v1).
 - Remembering the last question viewed when leaving and returning to this edition (each new edition selection starts back at question 1).
 
 ## QA notes

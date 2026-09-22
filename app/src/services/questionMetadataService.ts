@@ -1,6 +1,15 @@
 import type { CategoryCode } from "../types/profile"
-import type { QuestionMetadata, Tier } from "../types/question"
+import type { Phase, QuestionMetadata, Tier } from "../types/question"
 import { fetchJson } from "./fetchJson"
+
+// One entry per year present in the data, phases ordered qf -> sf -> fn
+// (Story 3.1) — never a phase absent from that year's actual data.
+export interface Edition {
+  year: number
+  phases: Phase[]
+}
+
+const PHASE_ORDER: Phase[] = ["qf", "sf", "fn"]
 
 // Canonical tier order — mirrors shared/categories.mjs's CANONICAL_ORDER,
 // collapsed to the 6 real tiers (L1/GP and L2/HC are one tier each, since
@@ -98,5 +107,28 @@ export const questionMetadataService = {
   // applies whenever a question's tier is strictly above CM.
   isAboveCM(tier: Tier): boolean {
     return TIER_ORDER.indexOf(tier) > TIER_ORDER.indexOf("CM")
+  },
+
+  // Every edition (year + phase) actually present in the data, most recent
+  // year first (Story 3.1) — only combinations that exist are ever listed.
+  async getAvailableEditions(): Promise<Edition[]> {
+    const manifest = await loadManifest()
+    const phasesByYear = new Map<number, Set<Phase>>()
+    for (const question of manifest) {
+      if (!phasesByYear.has(question.year)) phasesByYear.set(question.year, new Set())
+      phasesByYear.get(question.year)!.add(question.phase)
+    }
+    return [...phasesByYear.entries()]
+      .sort(([yearA], [yearB]) => yearB - yearA)
+      .map(([year, phases]) => ({ year, phases: PHASE_ORDER.filter((phase) => phases.has(phase)) }))
+  },
+
+  // An edition's full question list, in the contest's official order
+  // (Story 3.2) — `number` is that order, not just a file-naming detail.
+  async getEditionQuestions(year: number, phase: Phase): Promise<QuestionMetadata[]> {
+    const manifest = await loadManifest()
+    return manifest
+      .filter((question) => question.year === year && question.phase === phase)
+      .sort((a, b) => a.number - b.number)
   },
 }

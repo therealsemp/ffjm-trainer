@@ -34,6 +34,7 @@ vi.mock("../services/questionMetadataService", async (importOriginal) => {
         number: 1,
         tier: "CE",
         categories: ["CE"],
+        hasDetailedCorrection: true,
       })),
     },
   }
@@ -62,9 +63,16 @@ function baseQuestion(overrides: Partial<Question> = {}): Question {
 // `?q=<id>` forces the draw to a specific question (bypassing the weighted
 // random tier/question pick entirely) — the documented escape hatch this
 // page already offers for exactly this kind of deterministic testing.
-function renderPage(question: Question, { targetCount = null }: { targetCount?: number | null } = {}) {
+function renderPage(
+  question: Question,
+  { targetCount = null, includeWithoutDetailedCorrection = false }: { targetCount?: number | null; includeWithoutDetailedCorrection?: boolean } = {},
+) {
   getQuestion.mockResolvedValue(question)
-  trainingSessionService.startSession(["CE", "CM", "C1", "C2", "L1/GP", "L2/HC"], targetCount)
+  trainingSessionService.startSession(
+    ["CE", "CM", "C1", "C2", "L1/GP", "L2/HC"],
+    targetCount,
+    includeWithoutDetailedCorrection,
+  )
   return render(
     <MemoryRouter initialEntries={[`/?q=${question.id}`]}>
       <ProfileProvider>
@@ -109,7 +117,7 @@ describe("TrainingQuestionPage — standard flow", () => {
     const q1 = baseQuestion({ id: "q1" })
     const q2 = baseQuestion({ id: "q2", statement: { markdown: "Deuxième énoncé." } })
     getQuestion.mockResolvedValueOnce(q1).mockResolvedValueOnce(q2)
-    trainingSessionService.startSession(["CE"], null)
+    trainingSessionService.startSession(["CE"], null, false)
     render(
       <MemoryRouter initialEntries={["/?q=q1"]}>
         <ProfileProvider>
@@ -183,6 +191,18 @@ describe("TrainingQuestionPage — edge cases", () => {
     expect(screen.getByText("voir la réponse en image à la fin de l'explication détaillée")).toBeInTheDocument()
   })
 
+  test("a question with no detailed correction shows only the short answer, no 'Explication détaillée' section", async () => {
+    const user = userEvent.setup()
+    renderPage(baseQuestion({ correction: undefined, answer: { type: "exact-numeric", value: 42 } }))
+    await screen.findByText("Voici l'énoncé.")
+    await user.click(screen.getByRole("button", { name: "Vérifier ma réponse" }))
+    expect(screen.getByText("Réponse :")).toBeInTheDocument()
+    expect(screen.getByText("42")).toBeInTheDocument()
+    expect(screen.queryByText("Explication détaillée")).not.toBeInTheDocument()
+    // Only the short-answer box's self-assessment buttons — not duplicated.
+    expect(screen.getAllByRole("button", { name: "J'avais trouvé" })).toHaveLength(1)
+  })
+
   test("redirects to session configuration when there is no active session", () => {
     trainingSessionService.clearSession()
     render(
@@ -201,7 +221,7 @@ describe("TrainingQuestionPage — edge cases", () => {
   })
 
   test("redirects to configuration (not the recap) when the session was already complete on arrival", () => {
-    trainingSessionService.startSession(["CE"], 1)
+    trainingSessionService.startSession(["CE"], 1, false)
     trainingSessionService.recordFound("CE")
     render(
       <MemoryRouter initialEntries={["/"]}>

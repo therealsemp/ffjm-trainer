@@ -22,6 +22,7 @@ export function SessionConfigPage() {
 
   const [selected, setSelected] = useState<Tier[]>([])
   const [targetCount, setTargetCount] = useState<number | null>(DEFAULT_TARGET_COUNT)
+  const [includeWithoutDetailedCorrection, setIncludeWithoutDetailedCorrection] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   if (!profile) return null
@@ -37,7 +38,7 @@ export function SessionConfigPage() {
       setError("Choisis au moins un niveau pour commencer.")
       return
     }
-    startSession(selected, targetCount)
+    startSession(selected, targetCount, includeWithoutDetailedCorrection)
     navigate("/entrainement/question")
   }
 
@@ -97,6 +98,27 @@ export function SessionConfigPage() {
           </SelectableCard>
         ))}
       </div>
+
+      <label className="flex w-fit cursor-pointer items-center gap-3 self-start">
+        <input
+          type="checkbox"
+          checked={includeWithoutDetailedCorrection}
+          onChange={(event) => setIncludeWithoutDetailedCorrection(event.target.checked)}
+          className="sr-only"
+        />
+        <span
+          className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${
+            includeWithoutDetailedCorrection ? "bg-brand-gold" : "bg-brand-muted/40"
+          }`}
+        >
+          <span
+            className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+              includeWithoutDetailedCorrection ? "translate-x-6" : "translate-x-1"
+            }`}
+          />
+        </span>
+        <span className="font-semibold">Inclure les questions sans solution détaillée</span>
+      </label>
 
       {error && <p className="text-sm text-brand-danger">{error}</p>}
 

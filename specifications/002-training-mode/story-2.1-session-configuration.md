@@ -1,6 +1,6 @@
 # User Story 2.1 — Configuring a training session
 
-_Also covers choosing the session's length (target question count), added after this story's initial implementation._
+_Also covers choosing the session's length (target question count), and whether to include questions with no detailed correction — both added after this story's initial implementation._
 
 ## Epic
 EPIC 2 — Doing exercises (training)
@@ -23,6 +23,7 @@ User with an active profile
 - The user also chooses the session's length: a target number of questions to answer before it ends (see Story 2.6 for what happens once that target is reached), or "No limit" to keep the session open-ended (the previous, only behavior).
 - The length choice is a single selection among a few presets (5, 10, 15, 20) plus "No limit", not a free-form number field. The default selection is 10.
 - This story only applies when there is no session in progress to resume (see Story 2.5).
+- Some questions have no detailed correction (only a results-only source was available, see `ingest/TRANSCRIPTION-GUIDE.md` rule 10) — a separate toggle lets the user include them in the draw pool. Off by default: these questions offer no worked explanation to learn from, so most sessions should skip them unless the user opts in.
 
 ## Acceptance criteria
 
@@ -63,6 +64,12 @@ User with an active profile
 - **Then** a new session is created with the selected levels and the chosen target question count (or no limit)
 - **And** the user is taken to the first question screen (Story 2.2)
 
+### Scenario 7: Including questions with no detailed correction
+- **Given** the user is on the configuration screen
+- **When** they look at the "Include questions with no detailed correction" toggle
+- **Then** it is off by default
+- **And** turning it on and confirming makes the draw pool (Story 2.2) also include questions with no detailed correction, not just those that have one
+
 ## Out of scope
 - Changing the selected levels or the session length while a session is in progress (both are fixed when the session is created).
 - Manual weighting/prioritization between levels by the user (weighting is automatic, see Story 2.2).
@@ -73,3 +80,4 @@ User with an active profile
 - Check that a profile of category HC (or L2) sees all 6 levels offered.
 - Check that a profile of category L1 (or GP) sees 5 levels offered (up to and including L1/GP), not 4 or 6.
 - Check that confirming with "No limit" selected produces a session that behaves exactly as before this feature (no progress bar, no automatic end, see Story 2.6).
+- Check that leaving the "include questions with no detailed correction" toggle off never draws a question that has no `correction` (Story 2.2's "no worked explanation" case never appears unless opted into).

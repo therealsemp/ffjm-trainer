@@ -14,7 +14,7 @@ interface TrainingSessionContextValue {
   // Whether the active session reached its target question count (always
   // false for an unlimited session, or when there's no active session).
   sessionComplete: boolean
-  startSession: (levels: Tier[], targetCount: number | null) => void
+  startSession: (levels: Tier[], targetCount: number | null, includeWithoutDetailedCorrection: boolean) => void
   recordSkip: (tier: Tier) => void
   // Return whether that action completed the session, so the caller can
   // stop drawing new questions and show the recap instead.
@@ -54,9 +54,9 @@ export function TrainingSessionProvider({ children }: { children: ReactNode }) {
       sessionOutcomes,
       globalStats,
       sessionComplete: session !== null && trainingSessionService.isComplete(session, sessionOutcomes.length),
-      startSession: (levels, targetCount) => {
-        trainingSessionService.startSession(levels, targetCount)
-        setSession({ levels, targetCount })
+      startSession: (levels, targetCount, includeWithoutDetailedCorrection) => {
+        trainingSessionService.startSession(levels, targetCount, includeWithoutDetailedCorrection)
+        setSession({ levels, targetCount, includeWithoutDetailedCorrection })
         setSessionStats(trainingSessionService.getSessionStats())
         setSessionOutcomes(trainingSessionService.getSessionOutcomes())
       },

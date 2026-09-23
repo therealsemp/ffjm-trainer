@@ -79,6 +79,10 @@ describe("validateQuestion — standard cases", () => {
       [],
     )
   })
+
+  test("accepts a question with no correction at all, as long as answer.value is present", () => {
+    assert.deepEqual(errorsFor({ correction: undefined, answer: { type: "exact-numeric", value: 42 } }), [])
+  })
 })
 
 describe("validateQuestion — required fields", () => {
@@ -164,6 +168,18 @@ describe("validateQuestion — answer", () => {
 
   test("rejects an unknown answer type", () => {
     assert.ok(errorsFor({ answer: { type: "multiple-choice", value: 1 } }).some((e) => e.startsWith("answer.type:")))
+  })
+
+  test("rejects a missing correction combined with an 'open' answer with no value", () => {
+    assert.ok(
+      errorsFor({ correction: undefined, answer: { type: "open" } }).some((e) =>
+        e.includes("required when correction is absent"),
+      ),
+    )
+  })
+
+  test("accepts a missing correction combined with an 'open' answer that does have a value", () => {
+    assert.deepEqual(errorsFor({ correction: undefined, answer: { type: "open", value: "42" } }), [])
   })
 })
 

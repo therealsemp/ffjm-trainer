@@ -11,18 +11,31 @@ describe("trainingSessionService — session lifecycle", () => {
   })
 
   test("startSession stores the session and resets its stats/outcomes", () => {
-    trainingSessionService.startSession(["CE", "CM"], 10)
-    expect(trainingSessionService.getActiveSession()).toEqual({ levels: ["CE", "CM"], targetCount: 10 })
+    trainingSessionService.startSession(["CE", "CM"], 10, false)
+    expect(trainingSessionService.getActiveSession()).toEqual({
+      levels: ["CE", "CM"],
+      targetCount: 10,
+      includeWithoutDetailedCorrection: false,
+    })
     expect(trainingSessionService.getSessionOutcomes()).toEqual([])
   })
 
   test("startSession accepts targetCount: null (unlimited)", () => {
-    trainingSessionService.startSession(["CE"], null)
-    expect(trainingSessionService.getActiveSession()).toEqual({ levels: ["CE"], targetCount: null })
+    trainingSessionService.startSession(["CE"], null, false)
+    expect(trainingSessionService.getActiveSession()).toEqual({
+      levels: ["CE"],
+      targetCount: null,
+      includeWithoutDetailedCorrection: false,
+    })
+  })
+
+  test("startSession records includeWithoutDetailedCorrection: true when asked", () => {
+    trainingSessionService.startSession(["CE"], null, true)
+    expect(trainingSessionService.getActiveSession()?.includeWithoutDetailedCorrection).toBe(true)
   })
 
   test("clearSession removes the session but not the global stats", () => {
-    trainingSessionService.startSession(["CE"], 5)
+    trainingSessionService.startSession(["CE"], 5, false)
     trainingSessionService.recordFound("CE")
     trainingSessionService.clearSession()
     expect(trainingSessionService.getActiveSession()).toBeNull()
@@ -61,7 +74,7 @@ describe("trainingSessionService — isComplete", () => {
 
 describe("trainingSessionService — recording actions", () => {
   test("recordFound increments both session and global stats for the right tier, and appends an outcome", () => {
-    trainingSessionService.startSession(["CE"], null)
+    trainingSessionService.startSession(["CE"], null, false)
     trainingSessionService.recordFound("CE")
     expect(trainingSessionService.getSessionStats().CE).toEqual({ skipped: 0, found: 1, notFound: 0 })
     expect(trainingSessionService.getGlobalStats().CE).toEqual({ skipped: 0, found: 1, notFound: 0 })
@@ -69,29 +82,29 @@ describe("trainingSessionService — recording actions", () => {
   })
 
   test("recordNotFound increments notFound and appends an outcome", () => {
-    trainingSessionService.startSession(["CM"], null)
+    trainingSessionService.startSession(["CM"], null, false)
     trainingSessionService.recordNotFound("CM")
     expect(trainingSessionService.getSessionStats().CM.notFound).toBe(1)
     expect(trainingSessionService.getSessionOutcomes()).toEqual(["notFound"])
   })
 
   test("recordSkip increments skipped but does not append an outcome", () => {
-    trainingSessionService.startSession(["C1"], null)
+    trainingSessionService.startSession(["C1"], null, false)
     trainingSessionService.recordSkip("C1")
     expect(trainingSessionService.getSessionStats().C1.skipped).toBe(1)
     expect(trainingSessionService.getSessionOutcomes()).toEqual([])
   })
 
   test("global stats accumulate across sessions, session stats reset each time", () => {
-    trainingSessionService.startSession(["CE"], null)
+    trainingSessionService.startSession(["CE"], null, false)
     trainingSessionService.recordFound("CE")
-    trainingSessionService.startSession(["CE"], null)
+    trainingSessionService.startSession(["CE"], null, false)
     expect(trainingSessionService.getSessionStats().CE.found).toBe(0)
     expect(trainingSessionService.getGlobalStats().CE.found).toBe(1)
   })
 
   test("resetGlobalStats clears lifetime stats only", () => {
-    trainingSessionService.startSession(["CE"], null)
+    trainingSessionService.startSession(["CE"], null, false)
     trainingSessionService.recordFound("CE")
     trainingSessionService.resetGlobalStats()
     expect(trainingSessionService.getGlobalStats().CE.found).toBe(0)
@@ -109,7 +122,7 @@ describe("trainingSessionService — just-completed flag", () => {
 
   test("startSession clears a stale just-completed flag from a previous session", () => {
     trainingSessionService.markJustCompleted()
-    trainingSessionService.startSession(["CE"], null)
+    trainingSessionService.startSession(["CE"], null, false)
     expect(trainingSessionService.getJustCompleted()).toBe(false)
   })
 })

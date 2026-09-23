@@ -102,8 +102,8 @@ export const trainingSessionService = {
     storage.remove(SESSION_JUST_COMPLETED_KEY)
   },
 
-  startSession(levels: Tier[], targetCount: number | null): void {
-    storage.set(SESSION_KEY, { levels, targetCount } satisfies TrainingSession)
+  startSession(levels: Tier[], targetCount: number | null, includeWithoutDetailedCorrection: boolean): void {
+    storage.set(SESSION_KEY, { levels, targetCount, includeWithoutDetailedCorrection } satisfies TrainingSession)
     storage.set(SESSION_STATS_KEY, createEmptyStats())
     storage.set(SESSION_OUTCOMES_KEY, [] satisfies QuestionOutcome[])
     storage.remove(SESSION_JUST_COMPLETED_KEY)

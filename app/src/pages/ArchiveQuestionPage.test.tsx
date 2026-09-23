@@ -21,7 +21,16 @@ const getQuestion = vi.mocked(questionService.getQuestion)
 const getEditionQuestions = vi.mocked(questionMetadataService.getEditionQuestions)
 
 function metadata(number: number, overrides: Partial<QuestionMetadata> = {}): QuestionMetadata {
-  return { id: `2025-qf-${number}`, year: 2025, phase: "qf", number, tier: "CE", categories: ["CE"], ...overrides }
+  return {
+    id: `2025-qf-${number}`,
+    year: 2025,
+    phase: "qf",
+    number,
+    tier: "CE",
+    categories: ["CE"],
+    hasDetailedCorrection: true,
+    ...overrides,
+  }
 }
 
 function question(number: number, overrides: Partial<Question> = {}): Question {
@@ -138,6 +147,17 @@ describe("ArchiveQuestionPage — edge cases", () => {
     expect(screen.queryByText(/Réponse :/)).not.toBeInTheDocument()
     expect(screen.getByText("Explication détaillée")).toBeInTheDocument()
     expect(screen.getByText("Explication 1.")).toBeInTheDocument()
+  })
+
+  test("a question with no detailed correction shows only the answer, no 'Explication détaillée' section", async () => {
+    const user = userEvent.setup()
+    const edition = [metadata(1)]
+    renderPage(1, edition, { 1: question(1, { correction: undefined, answer: { type: "exact-numeric", value: 42 } }) })
+    await screen.findByText("Énoncé 1.")
+    await user.click(screen.getByRole("checkbox", { name: "Afficher les réponses" }))
+    expect(screen.getByText(/Réponse :/)).toBeInTheDocument()
+    expect(screen.getByText("42")).toBeInTheDocument()
+    expect(screen.queryByText("Explication détaillée")).not.toBeInTheDocument()
   })
 
   test("redirects to /archives when the edition has no questions at all", async () => {

@@ -26,6 +26,7 @@ const Q = (overrides: Partial<QuestionMetadata>): QuestionMetadata => ({
   number: 1,
   tier: "CE",
   categories: ["CE"],
+  hasDetailedCorrection: true,
   ...overrides,
 })
 
@@ -85,6 +86,31 @@ describe("pickRandomQuestionInTier", () => {
       const picked = await questionMetadataService.pickRandomQuestionInTier("CE")
       expect(["a", "c"]).toContain(picked.id)
     }
+  })
+
+  test("excludes questions with no detailed correction by default", async () => {
+    mockManifest([
+      Q({ id: "with-correction", tier: "CE", hasDetailedCorrection: true }),
+      Q({ id: "without-correction", tier: "CE", hasDetailedCorrection: false }),
+    ])
+    const { questionMetadataService } = await import("./questionMetadataService")
+    for (let i = 0; i < 10; i++) {
+      const picked = await questionMetadataService.pickRandomQuestionInTier("CE")
+      expect(picked.id).toBe("with-correction")
+    }
+  })
+
+  test("includes questions with no detailed correction when explicitly asked", async () => {
+    mockManifest([
+      Q({ id: "with-correction", tier: "CE", hasDetailedCorrection: true }),
+      Q({ id: "without-correction", tier: "CE", hasDetailedCorrection: false }),
+    ])
+    const { questionMetadataService } = await import("./questionMetadataService")
+    const seen = new Set<string>()
+    for (let i = 0; i < 30; i++) {
+      seen.add((await questionMetadataService.pickRandomQuestionInTier("CE", true)).id)
+    }
+    expect(seen).toEqual(new Set(["with-correction", "without-correction"]))
   })
 })
 

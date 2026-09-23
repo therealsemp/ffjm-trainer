@@ -21,6 +21,7 @@ User in an active training session
 - Self-assessing a question plays a short sound effect, distinct for "I found it" versus "I didn't find it", unless the user has turned sounds off (see Story 1.6).
 - If the session has a target question count (Story 2.1), a progress bar is shown with one segment per question of that target, filled in order as each question is self-assessed: green for "found", orange for "not found". A skipped question does not fill a segment at all — it's neither counted nor does it advance the bar. Nothing is shown for a "No limit" session.
 - Once self-assessing a question brings the session to its target count, the session ends there instead of drawing another question — see Story 2.6.
+- A question with no detailed correction (only a results-only source, see Story 2.1's toggle) shows the short answer only — no "Explication détaillée" section, and no second copy of the self-assessment buttons (the short-answer box's own buttons are the only assessment action for that question).
 
 ## Acceptance criteria
 
@@ -43,9 +44,16 @@ User in an active training session
 - **Given** a question is displayed
 - **When** the user activates "See the answer and explanations"
 - **Then** the (short) answer is displayed
-- **And** the explanations are also displayed, with no further action required
+- **And** the explanations are also displayed, with no further action required — unless the question has no detailed correction (Scenario 3bis)
 - **And** two buttons appear below the answer: "I found it" and "I didn't find it"
 - **And** the "Skip" option remains available
+
+### Scenario 3bis: Viewing the answer of a question with no detailed correction
+- **Given** a question with no detailed correction is displayed (only included in the draw because Story 2.1's toggle was turned on)
+- **When** the user activates "See the answer and explanations"
+- **Then** the (short) answer is displayed
+- **And** no "Explication détaillée" section is shown at all
+- **And** only one copy of "I found it"/"I didn't find it" appears (below the short answer)
 
 ### Scenario 4: Positive self-assessment
 - **Given** the answer and explanations are displayed
@@ -83,3 +91,4 @@ User in an active training session
 - Check that no sound plays for either self-assessment button when the sound preference (Story 1.6) is off.
 - Check that skipping never fills a progress bar segment and never counts toward the target, at any point in the session (including as the very next action after the second-to-last answered question).
 - Check that no progress bar is shown for a "No limit" session.
+- Check that a question with no detailed correction never shows an "Explication détaillée" section and never duplicates the self-assessment buttons, whether or not the answer has a `value`.

@@ -24,4 +24,11 @@ export interface TrainingSession {
   // Number of questions to answer before the session is complete, or null
   // for no limit (the session runs until the user starts a new one).
   targetCount: number | null
+  // Whether the draw pool includes questions with no detailed correction
+  // (results-only source, see Question.correction) — off by default, since
+  // those don't offer a worked explanation to learn from. See Story 2.1.
+  // Optional so a session stored before this field existed still parses as
+  // valid (same pattern as Profile.soundEnabled) — treat a missing value as
+  // `false` wherever read.
+  includeWithoutDetailedCorrection?: boolean
 }

@@ -154,10 +154,12 @@ export function ArchiveQuestionPage() {
             </div>
           )}
 
-          <div className="flex flex-col gap-4 rounded-xl border border-brand-line bg-brand-surface p-4">
-            <h2 className="text-lg font-bold">Explication détaillée</h2>
-            <RichContent content={question.correction} basePath={basePath} />
-          </div>
+          {question.correction && (
+            <div className="flex flex-col gap-4 rounded-xl border border-brand-line bg-brand-surface p-4">
+              <h2 className="text-lg font-bold">Explication détaillée</h2>
+              <RichContent content={question.correction} basePath={basePath} />
+            </div>
+          )}
 
           {navigation}
         </>

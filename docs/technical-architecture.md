@@ -108,9 +108,17 @@ type Question = {
   statement: RichContent
   answer: {
     type: "exact-numeric" | "exact-text" | "open"
-    value?: string | number   // absent seulement si type = "open"
+    value?: string | number
+    // absent seulement si type = "open" ET correction présente (la figure de
+    // correction sert alors de réponse) — si correction est absente, value
+    // est toujours obligatoire, quel que soit type (voir shared/validate.mjs)
   }
-  correction: RichContent
+  // Absent quand la seule source disponible est une solution "résultats
+  // seuls" sans raisonnement à transcrire (voir ingest/TRANSCRIPTION-GUIDE.md
+  // règle 10) — décidé par la convention de nommage du fichier brut
+  // (`..._solution.pdf` vs `..._solution-detailed.pdf`), pas par un jugement
+  // fait pendant la transcription.
+  correction?: RichContent
 }
 ```
 

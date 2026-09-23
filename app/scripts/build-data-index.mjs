@@ -61,6 +61,7 @@ function build() {
             number: question.number,
             tier: question.tier,
             categories: question.categories,
+            hasDetailedCorrection: question.correction !== undefined,
           })
         }
       }

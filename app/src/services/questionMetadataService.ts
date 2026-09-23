@@ -90,10 +90,15 @@ export const questionMetadataService = {
     return levels[levels.length - 1]
   },
 
-  // Uniform random pick among every question of a given tier.
-  async pickRandomQuestionInTier(tier: Tier): Promise<QuestionMetadata> {
+  // Uniform random pick among every question of a given tier. Excludes
+  // questions with no detailed correction unless explicitly included
+  // (Story 2.1's toggle) — off by default, since those have no worked
+  // explanation to learn from.
+  async pickRandomQuestionInTier(tier: Tier, includeWithoutDetailedCorrection = false): Promise<QuestionMetadata> {
     const manifest = await loadManifest()
-    const pool = manifest.filter((question) => question.tier === tier)
+    const pool = manifest.filter(
+      (question) => question.tier === tier && (includeWithoutDetailedCorrection || question.hasDetailedCorrection),
+    )
     return pool[Math.floor(Math.random() * pool.length)]
   },
 

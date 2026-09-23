@@ -17,6 +17,7 @@ User browsing a selected edition
 - Its state applies immediately to the currently displayed question, as well as to all following questions viewed (until it is toggled back).
 - By default, when starting to consult an edition, answers are hidden.
 - Unlike training mode (Story 2.2), the FFJM "number of solutions" instruction is **not** shown here, on any question — archive consultation isn't about attempting the question under contest conditions, just reading the statement and, optionally, the answer.
+- A question with no detailed correction (only a results-only source was available, see `ingest/TRANSCRIPTION-GUIDE.md` rule 10) shows just the answer when the switch is on — no "Explication détaillée" section at all, since there's nothing to show there.
 
 ## Acceptance criteria
 
@@ -53,3 +54,4 @@ User browsing a selected edition
 - Check that changing the switch's state applies instantly with no page reload.
 - Check that the switch's state is correctly kept while navigating between several consecutive questions.
 - Check that the "number of solutions" instruction never appears on any question here, regardless of `tier`, even though it does in training mode.
+- Check that a question with no detailed correction shows the answer (when it has one) but never an "Explication détaillée" section, and that this doesn't depend on `answer.value` being present or not.

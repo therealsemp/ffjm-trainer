@@ -26,6 +26,12 @@ export interface QuestionMetadata {
   number: number
   tier: Tier
   categories: CategoryCode[]
+  // False for a question whose only source was a results-only solution PDF
+  // (no reasoning to transcribe) — the full `Question.correction` is absent
+  // in that case. Denormalized here (rather than only checked after
+  // fetching full content) so the training-mode draw can filter these out
+  // *before* fetching anything, per the session config toggle (Story 2.1).
+  hasDetailedCorrection: boolean
 }
 
 // A figure referenced from RichContent.markdown via `![...](figure:<id>)` —
@@ -58,5 +64,10 @@ export interface Question {
     type: "exact-numeric" | "exact-text" | "open"
     value?: string | number
   }
-  correction: RichContent
+  // Absent when the only available source was a results-only solution PDF
+  // (no reasoning to transcribe) — see ingest/TRANSCRIPTION-GUIDE.md rule
+  // 10. `answer.value` is guaranteed present whenever this is absent (see
+  // shared/validate.mjs), so there's always something to show as "the
+  // answer" even with no detailed explanation to go with it.
+  correction?: RichContent
 }

@@ -120,14 +120,27 @@ export function validateQuestion(q, errors, baseDir) {
   }
 
   validateRichContent(q.statement, "statement", errors, baseDir)
-  validateRichContent(q.correction, "correction", errors, baseDir)
+  // `correction` is optional: some editions only have a results-only source
+  // (see ingest/TRANSCRIPTION-GUIDE.md rule 10) — the naming convention on
+  // disk (`..._solution.pdf` vs `..._solution-detailed.pdf`) is what decides
+  // this, not a judgment call made here or during transcription.
+  if (q.correction !== undefined) {
+    validateRichContent(q.correction, "correction", errors, baseDir)
+  }
 
   if (typeof q.answer !== "object" || q.answer === null) {
     fail(errors, "answer", "must be an object")
   } else {
     if (!ANSWER_TYPES.includes(q.answer.type)) fail(errors, "answer.type", `must be one of ${ANSWER_TYPES.join(", ")}`)
-    if (q.answer.type !== "open" && (q.answer.value === undefined || q.answer.value === "")) {
+    const hasValue = q.answer.value !== undefined && q.answer.value !== ""
+    if (q.answer.type !== "open" && !hasValue) {
       fail(errors, "answer.value", "required unless answer.type is 'open'")
+    }
+    // Without a correction, an "open" answer can't fall back on "the answer
+    // is only shown via the correction's own figure" — that fallback has
+    // nothing to fall back to, so the value must be present here instead.
+    if (q.correction === undefined && !hasValue) {
+      fail(errors, "answer.value", "required when correction is absent (no fallback figure to show the answer)")
     }
   }
 }

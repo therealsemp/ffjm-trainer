@@ -1,0 +1,45 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "qf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/qf/2023_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 29.5,
+        "y": 390
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/qf/2023_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 40,
+          "y": 670.7
+        }
+      }
+    ]
+  },
+  "id": "2023-qf-16",
+  "number": 16,
+  "title": "Les pépites d'or",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Picsou a acheté 100 pépites à un orpailleur. Il sait qu'une pépite, et une seule, est fausse. Mais il ne sait pas laquelle.\n\nLorsque Picsou présente un groupe de plusieurs pépites à Poudre d'Or, le joaillier bien connu, ce dernier lui indique si la pépite fausse fait partie du groupe ou non. Si elle fait partie du groupe, Picsou paye 600 dollars, sinon, il paye 400 dollars.\n\nÉventuellement, le groupe présenté peut être réduit à une seule pépite.\n\n**Si Picsou applique la meilleure stratégie possible, alors, au maximum, quel sera le total des dollars qu'il payera afin d'identifier la pépite fausse ?**\n\nNote : La pépite fausse peut n'appartenir à aucun groupe présenté à Poudre d'Or."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 3600
+  }
+}

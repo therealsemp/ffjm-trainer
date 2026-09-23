@@ -1,0 +1,53 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "qf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/qf/2023_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 316,
+        "y": 555
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/qf/2023_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 40,
+          "y": 512.4
+        }
+      }
+    ]
+  },
+  "id": "2023-qf-12",
+  "number": 12,
+  "title": "Le cube de Cunégonde",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Cunégonde possède un joli cube d'albâtre dont elle a calculé le volume, en millimètres cubes, et qu'elle a ensuite noté sur son cahier. Son frère, qui passait par là, a fait trois taches sur le cahier qui cachent chacune un chiffre et ne laissent que trois chiffres visibles du résultat de Cunégonde :\n\n![figure](figure:2023-qf-12-fig-taches)\n\nLa longueur de l'arête du cube est un nombre entier de millimètres.\n\n**Quelle est-elle, précisément ?**",
+    "figures": [
+      {
+        "id": "2023-qf-12-fig-taches",
+        "description": "Le résultat du volume écrit sur un cahier, avec trois taches d'encre bleues cachant chacune un chiffre, ne laissant visibles que trois « 7 » en rouge.",
+        "imageUrl": "q12_fig-taches.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 83
+  }
+}

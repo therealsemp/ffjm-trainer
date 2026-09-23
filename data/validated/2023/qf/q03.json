@@ -1,0 +1,56 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "qf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/qf/2023_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 29.5,
+        "y": 250
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/qf/2023_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 40,
+          "y": 156.2
+        }
+      }
+    ]
+  },
+  "id": "2023-qf-3",
+  "number": 3,
+  "title": "Les jetons",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Sur ces quatre jetons, on lit les nombres 13, 8, 6 et 18. De l'autre côté, ils portent les quatre mêmes nombres mais aucun jeton n'a le même nombre sur ses deux faces.\n\n![figure](figure:2023-qf-3-fig-jetons)\n\nMathias : « le jeton n°4 porte-t-il l'un des nombres 6 ou 8 sur son autre face ? »\n\nMathilde, qui a vu l'autre face des jetons : « non ».\n\nMathias : « le jeton n°2 porte-t-il le nombre 18 sur son autre face ? »\n\nMathilde : « oui ».\n\n**Quel nombre figure sur l'autre face du jeton n°1 ?**",
+    "figures": [
+      {
+        "id": "2023-qf-3-fig-jetons",
+        "description": "Quatre jetons ronds verts numérotés n°1 à n°4, affichant respectivement 13, 8, 6 et 18.",
+        "imageUrl": "q03_fig-jetons.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  }
+}

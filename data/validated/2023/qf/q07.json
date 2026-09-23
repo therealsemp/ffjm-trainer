@@ -1,0 +1,48 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "qf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/qf/2023_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 29.5,
+        "y": 640
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/qf/2023_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 40,
+          "y": 315.0
+        }
+      }
+    ]
+  },
+  "id": "2023-qf-7",
+  "number": 7,
+  "title": "Date et diviseurs",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Le nombre 2023 a la particularité d'être divisible par la somme de ses chiffres (qui est égale à 7 pour 2023).\n\n**Combien d'années entre l'an 2000 et l'année 2023 ont cette même particularité ?**\n\nNote : On comptera, si c'est le cas, 2000 et 2023."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 9
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "qf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/qf/2023_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 316,
+        "y": 77
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/qf/2023_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 40,
+          "y": 710.2
+        }
+      }
+    ]
+  },
+  "id": "2023-qf-17",
+  "number": 17,
+  "title": "Kaléïdoscope",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Dans ce kaleidoscope, chaque cercle est tangent intérieurement à un carré, et chaque carré, à l'exception du plus grand, a ses quatre sommets sur un cercle. On suppose qu'on a ainsi construit une infinité de cercles et de carrés de plus en plus petits.\n\n![figure](figure:2023-qf-17-fig-kaleido)\n\n**L'aire totale des zones bleues représente quel pourcentage de l'aire du kaléïdoscope ?** Si nécessaire, on prendra 3,1416 pour π, 1,414 pour √2 et on donnera la réponse en % arrondie à l'unité.",
+    "figures": [
+      {
+        "id": "2023-qf-17-fig-kaleido",
+        "description": "Un kaléidoscope de cercles et carrés concentriques emboîtés de plus en plus petits, alternant zones bleues (cercles) et zones roses (carrés), sur fond blanc bordé.",
+        "imageUrl": "q17_fig-kaleido.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 57
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "year": 2023,
+  "champNumber": 37,
+  "phase": "qf",
+  "examTitle": "37e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2023/qf/2023_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 29.5,
+        "y": 170
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2023/qf/2023_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 40,
+          "y": 116.8
+        }
+      }
+    ]
+  },
+  "id": "2023-qf-2",
+  "number": 2,
+  "title": "Les timbres",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "À Mathland, la monnaie est le ludic. Il existe deux sortes de timbres : des timbres à 2 ludics et des timbres à 5 ludics.\n\n![figure](figure:2023-qf-2-fig-timbres)\n\nUn colis doit être affranchi à 41 ludics.\n\n**De combien de façons différentes peut-on l'affranchir si l'on dispose de suffisamment de timbres de chaque sorte ?**",
+    "figures": [
+      {
+        "id": "2023-qf-2-fig-timbres",
+        "description": "Deux timbres : l'un jaune pâle valant 2 ludics avec un buste vert, l'autre orange valant 5 ludics avec un cerf rouge bondissant.",
+        "imageUrl": "q02_fig-timbres.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 4
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 72
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-1",
+  "number": 1,
+  "title": "Les neuf jetons",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Neuf jetons numérotés de 1 à 9 sont placés sur une grille carrée comme le montre la figure. Mathias enlève trois jetons de telle sorte qu'il ne reste plus que deux jetons dans chaque ligne et deux jetons dans chaque colonne de la grille. Il additionne les numéros des trois jetons qu'il a ôtés.\n\n![figure](figure:2022-sf-1-grid)\n\n**Quel sera son résultat, au maximum ?**",
+    "figures": [
+      {
+        "id": "2022-sf-1-grid",
+        "description": "Grille carrée 3×3 de neuf jetons numérotés : 5, 4, 3 sur la première ligne ; 6, 1, 2 sur la deuxième ; 7, 8, 9 sur la troisième.",
+        "imageUrl": "q01_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 19
+  },
+  "correction": {
+    "markdown": "Sur les lignes, du haut vers le bas, Mathias peut enlever au maximum 5, 6 et 9, ce qui fait 20 au total.\n\nMais 20 est inatteignable car 5 et 6 sont dans la même colonne.\n\nPar contre, 19 est atteignable lorsque Mathias enlève 4, 6 et 9.\n\n![figure](figure:2022-sf-1-corr-grid)\n\n**Réponse : 19.**",
+    "figures": [
+      {
+        "id": "2022-sf-1-corr-grid",
+        "description": "La même grille après retrait des jetons 4, 6 et 9 : 5, case vide, 3 sur la première ligne ; case vide, 1, 2 sur la deuxième ; 7, 8, case vide sur la troisième.",
+        "imageUrl": "q01_corr-grid.png"
+      }
+    ]
+  }
+}

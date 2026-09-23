@@ -1,0 +1,65 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 332,
+        "y": 298
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-8",
+  "number": 8,
+  "title": "Trois carrés sur un rectangle",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias a collé trois carrés blancs sur un rectangle gris. Les trois carrés sont parfaitement alignés, sans se chevaucher. Quatre des sommets des trois carrés sont situés sur le bord du rectangle gris, dont deux sur les milieux des petits côtés du rectangle.\n\n![figure](figure:2022-sf-8-rectangle)\n\n**Si chaque carré blanc a une superficie de 22 cm², quelle était celle du grand rectangle gris ?**",
+    "figures": [
+      {
+        "id": "2022-sf-8-rectangle",
+        "description": "Un rectangle gris incliné contenant trois carrés blancs alignés côte à côte, dont les sommets touchent le bord du rectangle, deux d'entre eux aux milieux des petits côtés.",
+        "imageUrl": "q08_fig-rectangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "132 cm²"
+  },
+  "correction": {
+    "markdown": "Chacun des quatre triangles rectangles se retrouve à l'intérieur du rectangle formé par les trois carrés blancs (symétries par rapport à chacun des quatre côtés de ce rectangle).\n\n![figure](figure:2022-sf-8-corr-lines)\n\nL'aire du grand rectangle est le double de l'aire du rectangle formé par les trois carrés blancs.\n\n2 × (3 × 22) = 132\n\n**Réponse : 132 cm².**",
+    "figures": [
+      {
+        "id": "2022-sf-8-corr-lines",
+        "description": "Le même rectangle gris avec les trois carrés blancs, sur lequel sont tracés en rouge les côtés des quatre triangles rectangles reliant les sommets du rectangle gris aux coins des carrés blancs, mettant en évidence la symétrie.",
+        "imageUrl": "q08_corr-lines.png"
+      }
+    ]
+  }
+}

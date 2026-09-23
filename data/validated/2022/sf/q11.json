@@ -1,0 +1,50 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 33
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 12,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-11",
+  "number": 11,
+  "title": "La somme de l'année",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde aimerait écrire 2022 comme la somme des nombres de 1 à 100, chacun étant précédé d'un signe **+** ou d'un signe **−**, en utilisant le plus petit nombre possible de signes **−** :\n\n\\[2022 = \\pm 1 \\pm 2 \\pm 3 \\pm 4 \\pm \\ldots \\pm 99 \\pm 100.\\]\n\n**En lisant l'égalité de gauche à droite, quel sera le premier nombre précédé d'un signe −, sachant que ce nombre négatif a la plus petite valeur absolue possible ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": -34
+  },
+  "correction": {
+    "markdown": "Soient P la somme des nombres précédés du signe plus (positifs) et M la somme des nombres précédés du signe moins (négatifs).\n\n\\(P - M = 1 + \\ldots + 100 = (100 \\times 101) / 2 = 5050\\) et \\(P + M = 2022\\)\n\n\\(M = (2022 - 5050) / 2 = -1514\\)\n\nAvec 16 nombres négatifs, on obtient au minimum \\(-(85 + \\ldots + 100) = -(100 + 85) \\times 16 / 2 = -1480\\) qui est trop grand.\n\nLa quantité minimale de nombres négatifs est 17.\n\nEn font partie tous les nombres de −84 à −100 sauf un, disons −X, et \\(-1514 + 1480 + 84 - X = 50 - X\\) (exclure plusieurs nombres est impossible car \\(50 - X - Y \\le -119 < -100\\))\n\n\\(50 - X\\) est minimum lorsque \\(X = 84\\)\n\n**Réponse : −34.**"
+  }
+}

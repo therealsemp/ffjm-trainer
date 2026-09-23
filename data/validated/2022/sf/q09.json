@@ -1,0 +1,57 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 332,
+        "y": 547
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 10,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-9",
+  "number": 9,
+  "title": "Piquets et enclos",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Sylvie possède un terrain circulaire dont le rayon mesure 20 m. Elle décide de former des enclos triangulaires de 10 m de côté pour ses chevaux.\n\nElle pose des piquets à chaque sommet des triangles, dont un qui se trouve au centre du terrain.\n\n**Combien de piquets peut-elle planter, au maximum ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 19
+  },
+  "correction": {
+    "markdown": "À partir du centre du terrain, Sylvie peut atteindre 1 piquet distant de 0 m (centre), 6 piquets distants de 10 m, 6 piquets distants de \\(10\\sqrt{3}\\) m, 6 piquets distants de 20 m.\n\n![figure](figure:2022-sf-9-corr-circle)\n\n1 + 6 + 6 + 6 = 19\n\n**Réponse : 19.**\n\n\\((1/2)^2 + (3\\sqrt{3}/2)^2 = (2)^2 + (\\sqrt{3})^2 = (5/2)^2 + (\\sqrt{3}/2)^2 = 7\\), la distance suivante est \\(10\\sqrt{7} > 20\\) m (12 piquets)",
+    "figures": [
+      {
+        "id": "2022-sf-9-corr-circle",
+        "description": "Un terrain circulaire recouvert d'un quadrillage triangulaire (lignes bleues) ; les points rouges marquent les positions de piquets atteignables à l'intérieur du cercle noir représentant le terrain.",
+        "imageUrl": "q09_corr-circle.png"
+      }
+    ]
+  }
+}

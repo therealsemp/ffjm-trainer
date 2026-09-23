@@ -1,0 +1,49 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 183
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 13,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-12",
+  "number": 12,
+  "title": "Les billets de loterie",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Mathilde et Mathias ont chacun acheté un billet de loterie. Chaque billet porte un numéro à cinq chiffres. Les deux premiers chiffres du billet de Mathias sont 09. En comparant leurs billets, Mathias et Mathilde constatent que les dix chiffres de 0 à 9 figurent sur ces billets et que le double du numéro du billet de Mathias (sans tenir compte du 0 initial) correspond au numéro du billet de Mathilde.\n\n**Quel est le numéro du billet de Mathilde ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 solutions : 18546, 18534 ou 18654"
+  },
+  "correction": {
+    "markdown": "Le billet de Mathilde commence par 18\n\nSoient 18ABC le billet de Mathilde et 09DEF celui de Mathias\n\nSi A = 2 ou 3, D est trop grand\n\nSi A = 4, D = 2, F = 3 et C = 6, impossible pour E et B (5 et 7)\n\nSi A = 5, D = 2\n\n- Soit F = 3 et C = 6, E = 7 et B = 4\n- Soit F = 7 et C = 4, E = 6 et B = 3\n\nSi A = 6, D = 3\n\n- Soit F = 2 et C = 4, impossible pour E et B (5 et 7)\n- Soit F = 7 et C = 4, E = 2 et B = 5\n\nSi A = 7, D = 3, E = 6 et B = 2, impossible pour F et C (4 et 5)\n\n**Réponse : 3 solutions : 18546, 18534 ou 18654.**"
+  }
+}

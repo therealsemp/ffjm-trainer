@@ -1,0 +1,62 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 467,
+        "y": 633
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-10",
+  "number": 10,
+  "title": "Les huit cartes",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde possède huit cartes portant les nombres de 1 à 8.\n\n![figure](figure:2022-sf-10-grid)\n\nElle place la carte numérotée 1 en premier, puis veut placer les sept autres en ligne à côté de telle sorte que la somme de deux nombres écrits sur des cartes placées côte à côte ne soit jamais divisible par 2 ni par 3.\n\n![figure](figure:2022-sf-10-row)\n\n**Quel sera le nombre à huit chiffres qui sera lisible sur les cartes placées par Mathilde ?**",
+    "figures": [
+      {
+        "id": "2022-sf-10-grid",
+        "description": "Huit cartes carrées numérotées de 1 à 8, disposées en deux lignes de quatre : 1, 2, 3, 4 puis 5, 6, 7, 8.",
+        "imageUrl": "q10_fig-grid.png"
+      },
+      {
+        "id": "2022-sf-10-row",
+        "description": "Une ligne de huit cases : la première contient la carte « 1 », les sept autres sont vides (en pointillés), en attente d'être complétées.",
+        "imageUrl": "q10_fig-row.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "4 solutions : 14765238, 14765832, 16743258 ou 16743852"
+  },
+  "correction": {
+    "markdown": "Sur deux cartes côte à côte, les nombres écrits sont de parité différente.\n\nNombres impairs et pairs alternent.\n\nÀ gauche du 7, il y a le 4 ou le 6.\n\nÀ droite du 1 ou du 7, il y a le 4 ou le 6.\n\n- Si le nombre commence par 1476, il y a le 5 à droite du 6, puis le 3 est entouré par 2 et 8\n- Si le nombre commence par 1674, il y a le 3 à droite du 4, puis le 5 est entouré par 2 et 6\n\n**Réponse : 4 solutions : 14765238, 14765832, 16743258 ou 16743852.**"
+  }
+}

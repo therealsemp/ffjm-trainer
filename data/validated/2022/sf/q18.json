@@ -1,0 +1,46 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 308,
+        "y": 365
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 19,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-18",
+  "number": 18,
+  "title": "Un triangle très entier",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Les trois côtés a, b, c d'un terrain triangulaire sont des nombres entiers de décamètres tels que le périmètre du terrain exprimé en décamètres est un nombre égal à celui de son aire exprimée en décamètres carrés.\n\n**Quel est le périmètre de ce terrain ?** On donnera la réponse en dam."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "5 solutions : 60, 42, 36, 30 ou 24"
+  },
+  "correction": {
+    "markdown": "Posons x = a + b − c, y = a + c − b et z = b + c − a (0 < x ≤ y ≤ z si a ≤ b ≤ c)\n\nL'aire du triangle est xyz/16 (formule de Héron)\n\nLe problème s'écrit xyz/16 = a + b + c = x + y + z\n\nx = 2x′, y = 2y′ et z = 2z′ (ils sont tous de même parité, et au moins un est pair)\n\nx′y′z′ = 4(x′ + y′ + z′)\n\n\\(x'y'z' \\le 12z'\\) donc \\(x'y' \\le 12\\), et \\(x'^2 \\le x'y'\\) donc \\(x' \\le 3\\)\n\n- Si x′ = 1, (y′ − 4)(z′ − 4) = 20 donne (y′;z′) = (5;24), (6;14) ou (8;9)\n- Si x′ = 2, (y′ − 2)(z′ − 2) = 8 donne (y′;z′) = (3;10) ou (4;6)\n- Si x′ = 3, \\(3y'z' \\le 12z'\\) donc \\(y' \\le 4\\)\n  - Si y′ = 3, z′ = 24/5 non entier\n  - Si y′ = 4, z′ = 7/2 non entier\n\n**Réponse : 5 solutions : 60, 42, 36, 30 ou 24.** (les deux derniers triangles sont rectangles)"
+  }
+}

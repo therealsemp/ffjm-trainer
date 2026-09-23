@@ -1,0 +1,59 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 188
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-2",
+  "number": 2,
+  "title": "Le fil d'Ariane",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Ariane est entrée dans ce labyrinthe par la gauche et elle en est sortie par la droite, après avoir ramassé les sept pièces d'or numérotées de 1 à 7 dans un ordre que vous devrez trouver.\n\n![figure](figure:2022-sf-2-maze)\n\nElle a déroulé derrière elle un fil qui ne s'est jamais croisé lui-même et elle n'est jamais passée deux fois dans un même couloir (mais elle a pu passer deux fois par un même carrefour).\n\n**Quels sont les numéros de la quatrième et de la sixième pièce qu'elle a ramassées ?**",
+    "figures": [
+      {
+        "id": "2022-sf-2-maze",
+        "description": "Labyrinthe rectangulaire avec une entrée à gauche et une sortie à droite ; sept carrefours numérotés de 1 à 7 disposés en anneaux concentriques (1 et 7 sur l'anneau extérieur, 2 et 6 en haut et en bas de l'anneau du milieu, 3 et 5 de part et d'autre de l'anneau intérieur, 4 au centre). À droite, deux petits diagrammes intitulés « possible », illustrant que le fil peut se recroiser en un carrefour sans que cela compte comme un croisement interdit.",
+        "imageUrl": "q02_fig-maze.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "Quatrième pièce : 4 ; sixième pièce : 1"
+  },
+  "correction": {
+    "markdown": "Quand Ariane rentre au centre (par 1 ou 7), elle doit ressortir de l'autre côté (par 7 ou 1) après y avoir ramassé les pièces dans l'ordre 3-4-5 ou 5-4-3 afin d'éviter un croisement (1-4, 4-1, 4-7 ou 7-4 avec 3-5 ou 5-3).\n\nElle ne doit pas commencer par 1, ce qui forcerait un croisement (→-1 avec 2-6 ou 6-2).\n\nElle commence par 2 ou par 6, puis elle rentre au centre par 7.\n\n**Réponse : quatrième 4 et sixième 1.**"
+  }
+}

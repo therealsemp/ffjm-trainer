@@ -1,0 +1,62 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 308,
+        "y": 118
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 17,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-16",
+  "number": 16,
+  "title": "Un triangle sur un pentagone",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "On choisit trois points sur le pourtour d'un pentagone régulier convexe, puis on relie ces trois points deux à deux de façon à former un triangle.\n\n![figure](figure:2022-sf-16-pentagone)\n\n**Que vaut, au maximum, le quotient de l'aire du triangle sur celle du pentagone ?** Si nécessaire, on prendra 2,236 pour \\(\\sqrt{5}\\), et on arrondira le quotient au millième le plus proche.",
+    "figures": [
+      {
+        "id": "2022-sf-16-pentagone",
+        "description": "Un pentagone régulier convexe dans lequel un triangle gris relie trois sommets, l'un des côtés du triangle coïncidant avec un côté du pentagone.",
+        "imageUrl": "q16_fig-pentagone.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 0.447
+  },
+  "correction": {
+    "markdown": "Deux sommets du triangle étant fixés, la translation du troisième sommet vers un sommet du pentagone augmente l'aire (ou ne la change pas)\n\nLe maximum est atteint avec la figure du bas\n\nSoit 1 le côté du pentagone régulier\n\nLa longueur d'une diagonale est \\(\\varphi\\)\n\nL'aire du triangle gris est \\(\\varphi^2 \\sin 36° / 2\\)\n\nL'aire d'un triangle B est \\(\\sin 36° / 2\\)\n\nL'aire d'un triangle A est \\(\\varphi^{-1} \\sin 36° / 2\\)\n\n![figure](figure:2022-sf-16-corr-labeled)\n\nLe quotient est \\(\\varphi^2 / (\\varphi^2 + 2 + 2\\varphi^{-1}) = \\sqrt{5}/5\\)\n\n**Réponse : 0,447.**\n\n\\(\\varphi = (1+\\sqrt{5})/2\\) est solution de \\(X^2 - X - 1 = 0\\) et 36° est solution de \\(\\cos 3t + \\cos 2t = 0\\), d'où \\(\\varphi = 2\\cos 36°\\)",
+    "figures": [
+      {
+        "id": "2022-sf-16-corr-labeled",
+        "description": "Un pentagone vu comme cinq triangles issus de son sommet le plus haut : le triangle central (gris) est encadré de deux triangles A (entre le sommet et une diagonale) puis de deux triangles B (entre une diagonale et un côté du pentagone).",
+        "imageUrl": "q16_corr-labeled.png"
+      }
+    ]
+  }
+}

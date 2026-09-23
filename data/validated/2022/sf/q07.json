@@ -1,0 +1,65 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 332,
+        "y": 108
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 8,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-7",
+  "number": 7,
+  "title": "Les cartes de Mathias",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias possède un grand nombre de cartes carrées identiques portant chacune un quart de cercle qui joint les milieux de deux côtés du carré. En utilisant quatre cartes et en les disposant convenablement, il peut former un cercle comme celui représenté sur la figure, mais il peut aussi former d'autres courbes plus longues en utilisant davantage de cartes.\n\n![figure](figure:2022-sf-7-cards)\n\n**S'il utilise plus de quatre cartes, sans les plier ni les faire se chevaucher, combien de cartes, au minimum, lui seront nécessaires, pour former une courbe fermée ?**",
+    "figures": [
+      {
+        "id": "2022-sf-7-cards",
+        "description": "À gauche, un carré traversé par ses deux médianes (formant une croix), avec un cercle inscrit passant par les milieux des quatre côtés, représentant l'assemblage de quatre cartes. À droite, une pile de cartes carrées identiques vues en perspective, chacune portant un quart de cercle dans un coin.",
+        "imageUrl": "q07_fig-cards.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 12
+  },
+  "correction": {
+    "markdown": "Le centre du quart de cercle d'une carte est soit à l'intérieur de la boucle (type I) soit à l'extérieur de la boucle (type E).\n\n4 divise le nombre de cartes d'un type.\n\nEn suivant la boucle dans un certain sens, on ne rencontre jamais une séquence de trois cartes du même type, ce qui forcerait la boucle de 4 cartes.\n\nEn alternant deux cartes de type I et une carte de type E, on forme une boucle de 4 × 3 = 12 cartes.\n\n![figure](figure:2022-sf-7-corr-loop)\n\n**Réponse : 12.**",
+    "figures": [
+      {
+        "id": "2022-sf-7-corr-loop",
+        "description": "Quatre cartes carrées disposées en croix, chacune apportant un quart de cercle, formant ensemble une courbe fermée à quatre lobes (une boucle en forme de fleur à quatre pétales).",
+        "imageUrl": "q07_corr-loop.png"
+      }
+    ]
+  }
+}

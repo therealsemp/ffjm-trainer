@@ -1,0 +1,53 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "sf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/sf/2022_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 308,
+        "y": 263
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/sf/2022_sf_solution-detailed.pdf",
+        "page": 18,
+        "position": {
+          "x": 40,
+          "y": 20
+        }
+      }
+    ]
+  },
+  "id": "2022-sf-17",
+  "number": 17,
+  "title": "Les polygones de Mathilde",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Autour d'un point de sa feuille de papier, Mathias a collé cinq polygones réguliers ayant ce point comme sommet commun, sans laisser de vide autour du point et sans chevauchement entre deux polygones quelconques.\n\n![figure](figure:2022-sf-17-polygones)\n\nMathilde a réussi la même chose avec seulement trois polygones réguliers convexes ayant des nombres de côtés tous différents.\n\n**Quelle est la somme des nombres de côtés des polygones utilisés par Mathilde ?**\n\nDans l'exemple de Mathias où les nombres de côtés des polygones n'étaient pas tous différents, la réponse aurait été 3×3 + 2×4, soit 17.",
+    "figures": [
+      {
+        "id": "2022-sf-17-polygones",
+        "description": "Cinq polygones réguliers jaunes (un triangle en haut, un carré, un triangle et deux pentagones) assemblés autour d'un point commun, sans espace vide ni chevauchement.",
+        "imageUrl": "q17_fig-polygones.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "6 solutions : 29, 22, 52, 35, 30 ou 28"
+  },
+  "correction": {
+    "markdown": "L'angle au sommet d'un polygone à N côtés est \\(360° (1/2 - 1/N)\\)\n\nLe problème revient à trouver a + b + c où a < b < c (les nombres de côtés) sont des entiers positifs tels que \\(1/a + 1/b + 1/c = 1/2\\)\n\n\\(3 \\le a \\le 4\\) car \\(1/5 + 1/6 + 1/7 = 107/210 < 1/2\\)\n\n- Si a = 4, \\(5 \\le b \\le 7\\) car \\(1/4 + 1/8 + 1/9 = 35/72 < 1/2\\)\n\n  (a;b;c) = (4;5;20) ou (4;6;12) convient mais b = 7 implique c = 28/3 non entier\n- Si a = 3, \\(7 \\le b\\) car \\(1/2 - 1/3 - 1/6 = 0\\) et \\(b \\le 11\\) car \\(1/3 + 1/12 + 1/13 = 77/156 < 1/2\\)\n\n  (a;b;c) = (3;7;42), (3;8;24), (3;9;18) ou (3;10;15) convient mais b = 11 implique c = 66/5 non entier\n\n**Réponse : 6 solutions : 29, 22, 52, 35, 30 ou 28.** (seul 52 introduit des angles non entiers en °)"
+  }
+}

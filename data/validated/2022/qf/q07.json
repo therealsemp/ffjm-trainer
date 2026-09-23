@@ -1,0 +1,51 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 29.5, "y": 669.2 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 5,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-7",
+  "number": 7,
+  "title": "Le triangle de l'année",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Les sept disques de ce triangle doivent contenir les nombres de 5 à 11 de telle sorte que la somme des nombres de chaque alignement de trois nombres soit toujours égale à 22. Les nombres 10 et 11 sont déjà placés.\n\n![figure](figure:2022-qf-7-triangle)\n\n**A vous de placer les autres.**",
+    "figures": [
+      {
+        "id": "2022-qf-7-triangle",
+        "description": "Un triangle avec un disque à chaque sommet, un disque au milieu de chaque côté et un disque au centre (sept disques au total, reliés par des segments). Le disque du milieu du côté gauche contient 11, le disque central contient 10 ; les quatre autres disques sont vides.",
+        "imageUrl": "q07_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "Sommet du haut : 5 ; milieu du côté droit : 8 ; coin bas-gauche : 6 ; bas-centre : 7 ; coin bas-droit : 9 (10 et 11 étaient déjà placés)."
+  },
+  "correction": {
+    "markdown": "Le nombre 9 n'est pas à côté du 11 car sinon 9+11=20 et 22-20=2 il faudrait un 2 pour compléter.\n\nLe nombre 9 n'est pas à côté du 10 car sinon 9+10=19 et 22-19=3 il faudrait un 3 pour compléter.\n\nLe nombre 8 n'est pas à côté du 11 car sinon 8+11=19 et 22-19=3 il faudrait un 3 pour compléter.\n\nLe nombre 8 n'est pas à côté du 10 car sinon 8+10=18 et 22-18=4 il faudrait un 4 pour compléter.\n\nPar conséquent les nombres 8 et 9 sont sur la ligne oblique de droite mais pas en haut.\n\n8+9=17 et 22-17=5. Le nombre 5 est en haut.\n\n5+11=16 et 22-16=6. Le nombre 6 est en bas à gauche.\n\n5+10=15 et 22-15=7. Le nombre 7 est en bas au centre.\n\n6+7=13 et 22-13=9. Le nombre 9 est en bas à droite.\n\nEnfin le nombre 8 est sur la ligne oblique de droite au centre.\n\n![figure](figure:2022-qf-7-corr-triangle)",
+    "figures": [
+      {
+        "id": "2022-qf-7-corr-triangle",
+        "description": "Le même triangle, entièrement complété : sommet 5, milieu gauche 11, centre 10, milieu droit 8, coins bas 6, 7, 9, tous les nombres trouvés affichés en rouge.",
+        "imageUrl": "q07_corr-triangle.png"
+      }
+    ]
+  }
+}

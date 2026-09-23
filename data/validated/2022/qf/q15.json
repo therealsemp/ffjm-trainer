@@ -1,0 +1,37 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 29.5, "y": 387.2 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": { "x": 29.5, "y": 728.2 }
+      }
+    ]
+  },
+  "id": "2022-qf-15",
+  "number": 15,
+  "title": "L'âge de Dominique",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "L'âge de Dominique est un nombre premier plus petit que 100. Si on lit cet âge de droite à gauche, on a encore un nombre premier (qui peut être le même). Si on additionne tous les nombres premiers strictement inférieurs à l'âge de Dominique, on obtient un nombre divisible par cet âge.\n\n**Quel est l'âge de Dominique ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : 2, 5 ou 71"
+  },
+  "correction": {
+    "markdown": "Écrivons les 25 nombres premiers inférieurs à 100 d'une part, et la somme de tous les nombres premiers inférieurs strictement à ces nombres d'autre part :\n\n| 2 | 3 | 5 | 7 | 11 |\n|---|---|---|---|---|\n| 13 | 17 | 19 | 23 | 29 |\n| 31 | 37 | 41 | 43 | 47 |\n| 53 | 59 | 61 | 67 | 71 |\n| 73 | 79 | 83 | 89 | 97 |\n\n| 0 | 2 | 5 | 10 | 17 |\n|---|---|---|---|---|\n| 28 | 41 | 58 | 77 | 100 |\n| 129 | 160 | 197 | 238 | 281 |\n| 328 | 381 | 440 | 501 | 568 |\n| 639 | 712 | 791 | 874 | 963 |\n\nOn a 0 divisible par 2, 5 divisible par 5, et 568 divisible par 71.\n\nDe plus 2, 5 et 17 sont des nombres premiers.\n\nOn a donc **3 solutions** : **2 ; 5 et 71**."
+  }
+}

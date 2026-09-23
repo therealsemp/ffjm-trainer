@@ -1,0 +1,61 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 29.5, "y": 166.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-14",
+  "number": 14,
+  "title": "Quatorze nombres effacés",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Sophie avait écrit les nombres de 1 à 22 dans les 22 disques de la figure, mais Adélaïde, la grande soeur énervante, en a effacé quatorze.\n\n![figure](figure:2022-qf-14-hexagons)\n\n**Retrouvez la position des nombres effacés sachant que :**\n\n- chaque nombre écrit au centre d'un hexagone représente la somme des nombres placés aux sommets de cet hexagone ;\n- deux disques directement reliés par un segment ne contiennent jamais deux entiers consécutifs.\n\nSur le bulletin-réponse, vous écrirez la valeur des nombres a, b, c, d et e.",
+    "figures": [
+      {
+        "id": "2022-qf-14-hexagons",
+        "description": "Une disposition triangulaire de 22 disques reliés par des segments, formant six petits hexagones imbriqués. Certains disques portent déjà un nombre (10, 20, 16, 13, 4, 9, 7, 12 aux sommets ; 69, 72, 93, 56, 73, 66 aux centres des hexagones), cinq disques grisés sont marqués des lettres a, b, c, d, e (positions à retrouver), et les autres disques sont vides.",
+        "imageUrl": "q14_fig-hexagons.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "a=1, b=15, c=19, d=17, e=18"
+  },
+  "correction": {
+    "markdown": "Enlevons les nombres déjà placés aux sommets, on obtient :\n\nSi on fait la somme 39+45+44=128, on obtient la somme de 12 nombres parmi ceux restants (il reste b et c).\n\nOr 1+2+3+5+6+8+11+14+15+17+18+19+21+22=162.\n\nDonc b+c=162-128=34.\n\nLa seule possibilité est 34=19+15. Or 19 ne peut pas être à côté du 20 donc c=19 et b=15.\n\nPour les deux autres nombres de cet hexagone il reste :\n\n60-34=26 et 26=21+5 ou 26=18+8. Or 19 est à côté des deux nombres : cela ne peut pas être 18. De plus 21 ne peut pas être à côté de 20. On a donc :\n\nIl reste : 1,2,3,6,8,11,14,17,18,22.\n\n![figure](figure:2022-qf-14-corr-step1)\n\nOn a 28=22+6=17+11. Or 16 est à côté des deux nombres : cela ne peut pas être 17. De plus 6 ne peut pas être à côté de 5. On a donc :\n\nOn a 12=11+1 et 11 n'est pas à côté du 10 donc on obtient :\n\nIl reste 2,3,8,14,17,18.\n\n17=14+3. Comme le 3 n'est pas à côté du 4 on obtient :\n\n![figure](figure:2022-qf-14-corr-step2)\n\n25=17+8. Comme le 8 n'est pas à côté du 7 on a :\n\nEnfin 20=18+2. Comme le 2 n'est pas à côté du 3 on obtient :\n\n![figure](figure:2022-qf-14-corr-step3)\n\nIl y a donc **1 solution** : **a=1, b=15, c=19, d=17, e=18.**",
+    "figures": [
+      {
+        "id": "2022-qf-14-corr-step1",
+        "description": "Trois pyramides côte à côte montrant les trois premiers états de résolution : (1) la pyramide une fois les nombres déjà placés retirés des hexagones d'origine, avec les sommets connus (10, 16, 20, 13, 4, 9, 7, 12) en noir et les sommes intermédiaires (39, 52, 60, 45, 57, 44) en rouge ; (2) la même pyramide avec b=15 et c=19 substitués et de nouvelles sommes (33, 26, 38, 44) ; (3) la pyramide suivante avec de nouvelles sommes (34, 28, 0, 45, 17, 23) une fois l'hexagone suivant résolu.",
+        "imageUrl": "q14_corr-step1.png"
+      },
+      {
+        "id": "2022-qf-14-corr-step2",
+        "description": "Trois pyramides côte à côte montrant les trois états de résolution suivants, chacune étendue d'un niveau supplémentaire (sommet ajouté \"1\"), avec de plus en plus de sommes intermédiaires nulles (0) au fil des déductions : d'abord (12, 22, 20, 0, 0, 39, 17, 23), puis (1, 10, 11, 0, 22, 20, 0, 0, 39, 17, 23), puis (25, 0, 20, 14, 3).",
+        "imageUrl": "q14_corr-step2.png"
+      },
+      {
+        "id": "2022-qf-14-corr-step3",
+        "description": "Les deux dernières pyramides côte à côte : l'avant-dernière (8, 17, 14, 3, 0, 0, 20) et la pyramide complète et entièrement résolue, toutes les sommes intermédiaires valant 0 sauf en bas où apparaissent les valeurs finales 17, 14, 3, 9, 18 correspondant à d=17 et e=18.",
+        "imageUrl": "q14_corr-step3.png"
+      }
+    ]
+  }
+}

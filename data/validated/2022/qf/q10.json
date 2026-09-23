@@ -1,0 +1,51 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 309.4, "y": 397.7 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 7,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-10",
+  "number": 10,
+  "title": "Deux additions et un café",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": ["C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Dans ces deux additions, on n'utilise que les chiffres de 1 à 6 qui sont remplacés par des lettres. Un même chiffre est toujours remplacé par la même lettre et une même lettre remplace toujours le même chiffre.\n\n![figure](figure:2022-qf-10-additions)\n\n**Si b = 6, que vaut *café* ?**",
+    "figures": [
+      {
+        "id": "2022-qf-10-additions",
+        "description": "Deux additions posées en colonnes utilisant des lettres à la place des chiffres : « a b + c + d = é f » à gauche, et « f é + b + d = c a » à droite.",
+        "imageUrl": "q10_fig-additions.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : café = 5142 ou café = 2415"
+  },
+  "correction": {
+    "markdown": "b=6.\n\na≠é donc la retenue pour les dizaines est au moins de 1.\n\n6+c+d≤6+5+4=15 donc la retenue est au maximum de 1. Elle est donc de 1.\n\né=a+1.\n\nDe même pour l'autre addition on obtient c=f+1.\n\n![figure](figure:2022-qf-10-corr-additions)\n\nOn a alors 6+(f+1)+d=10+f donc d=3.\n\nEt (a+1)+6+3=10+a ce qui est vrai quel que soit a.\n\nRegardons les valeurs possibles, il reste 1,2,4 et 5.\n\n- Si a=1 alors é=2 ; f=4 et c=5. Cela fonctionne café=5142.\n- Si a=4 alors é=5 ; f=1 et c=2. Cela fonctionne café=2415.\n\nIl y a donc **2 solutions** : café=**5142** et café=**2415**.",
+    "figures": [
+      {
+        "id": "2022-qf-10-corr-additions",
+        "description": "Les deux mêmes additions, réécrites avec les expressions déduites : « a 6 + (f+1) + d = (a+1) f » à gauche, et « f (a+1) + 6 + d = (f+1) a » à droite.",
+        "imageUrl": "q10_corr-additions.png"
+      }
+    ]
+  }
+}

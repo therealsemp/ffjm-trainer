@@ -1,0 +1,51 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 29.5, "y": 559.8 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": { "x": 29.5, "y": 437.7 }
+      }
+    ]
+  },
+  "id": "2022-qf-6",
+  "number": 6,
+  "title": "Les pierres de Joe",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Joe Aillé fabrique des bijoux.\n\nIl pèse des pierres précieuses. Deux pierres ayant la même forme ont le même poids.\n\n![figure](figure:2022-qf-6-balances)\n\nLes trois balances indiquent respectivement 27 g, 24 g et 21 g.\n\n**Quelle est la masse en grammes de chaque sorte de pierre ?**",
+    "figures": [
+      {
+        "id": "2022-qf-6-balances",
+        "description": "Trois balances à plateau unique affichant chacune un poids numérique : la première porte trois carrés verts et un disque bleu (affiche 27), la deuxième deux carrés verts, un triangle jaune et un disque bleu (affiche 24), la troisième deux disques bleus et un triangle jaune (affiche 21).",
+        "imageUrl": "q06_fig-balances.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "Carré : 6 g, triangle : 3 g, disque : 9 g"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2022-qf-6-corr-balances)\n\nLes balances 1 et 2 nous apprennent que, si on remplace un triangle par un carré, on gagne 27-24=3g.\n\nLes balances 2 et 3 nous apprennent que, si on remplace un disque par deux carrés, on gagne 24-21=3g.\n\nRemplaçons le disque de la balance n°1 par deux carrés alors on gagne 3g. 27+3=30 g pour 5 carrés.\n\nOr 5×6=30 donc **chaque carré pèse 6g**.\n\n6-3=3 donc **chaque triangle pèse 3g**.\n\n(2×6)-3=12-3=9 donc **chaque disque pèse 9g**.\n\nNous pouvons vérifier nos calculs : 6+6+6+9=27 ; 6+6+3+9=24 et 9+9+3=21.",
+    "figures": [
+      {
+        "id": "2022-qf-6-corr-balances",
+        "description": "Les trois mêmes balances que dans l'énoncé, rappelées en tête de la correction.",
+        "imageUrl": "q06_corr-balances.png"
+      }
+    ]
+  }
+}

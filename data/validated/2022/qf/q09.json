@@ -1,0 +1,50 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 309.4,
+        "y": 288.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 29.5,
+          "y": 37.9
+        }
+      }
+    ]
+  },
+  "id": "2022-qf-9",
+  "number": 9,
+  "title": "Nombre et carré retournables",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Le nombre 2022 possède une propriété remarquable : lorsqu'on élève son « retourné » au carré, on obtient le « retourné » de son carré : \\(2022 \\times 2022 = 4\\,088\\,484\\) et \\(2202 \\times 2202 = 4\\,848\\,804\\).\n\nMathias a trouvé un nombre plus petit que 2022, différent de son retourné, ayant la même propriété et dont la somme des chiffres est également égale à 6.\n\n**Trouvez ce nombre.**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : 1212, 1122 ou 1113"
+  },
+  "correction": {
+    "markdown": "Cherchons tous les nombres plus petits que 2022 et dont la somme des chiffres vaut 6.\n\n| nombre | retourné | carré | carré du retourné |\n|---|---|---|---|\n| ~~2022~~ | ~~2202~~ | ~~4088484~~ | ~~4848804~~ |\n| 2013 | 3102 | 4052169 | 9622404 |\n| 2004 | 4002 | 4016016 | 16016004 |\n| 1500 | 51 | 2250000 | 2601 |\n| 1410 | 141 | 1988100 | 19881 |\n| 1401 | 1041 | 1962801 | 1083681 |\n| 1320 | 231 | 1742400 | 53361 |\n| 1311 | 1131 | 1718721 | 1279161 |\n| 1302 | 2031 | 1695204 | 4124961 |\n| 1230 | 321 | 1512900 | 103041 |\n| 1221 | 1221 | égal au retourné | égal au retourné |\n| ~~1212~~ | ~~2121~~ | ~~1468944~~ | ~~4498641~~ |\n| 1203 | 3021 | 1447209 | 9126441 |\n| 1140 | 411 | 1299600 | 168921 |\n| 1131 | 1311 | déjà testé | déjà testé |\n| ~~1122~~ | ~~2211~~ | ~~1258884~~ | ~~4888521~~ |\n| ~~1113~~ | ~~3111~~ | ~~1238769~~ | ~~9678321~~ |\n| 1104 | 4011 | 1218816 | 16088121 |\n| 1050 | 501 | 1102500 | 251001 |\n| 1041 | 1401 | déjà testé | déjà testé |\n| 1032 | 2301 | 1065024 | 5294601 |\n| 1023 | 3201 | 1046529 | 10246401 |\n| 1014 | 4101 | 1028196 | 16818201 |\n| 1005 | 5001 | 1010025 | 25010001 |\n| 600 | 6 | 360000 | 36 |\n| 510 | 15 | 260100 | 225 |\n| 501 | 105 | 251001 | 11025 |\n| 420 | 24 | 176400 | 576 |\n| 411 | 114 | 168921 | 12996 |\n| 402 | 204 | 161604 | 41616 |\n| 330 | 33 | 108900 | 1089 |\n| 321 | 123 | 103041 | 15129 |\n| 312 | 213 | 97344 | 45369 |\n| 303 | 303 | égal au retourné | égal au retourné |\n| 240 | 42 | 57600 | 1764 |\n| 231 | 132 | 53361 | 17424 |\n| 222 | 222 | égal au retourné | égal au retourné |\n| 213 | 312 | déjà testé | déjà testé |\n| 204 | 402 | déjà testé | déjà testé |\n| 150 | 51 | 22500 | 2601 |\n| 141 | 141 | égal au retourné | égal au retourné |\n| 132 | 231 | déjà testé | déjà testé |\n| 123 | 321 | déjà testé | déjà testé |\n| 114 | 411 | déjà testé | déjà testé |\n| 105 | 501 | déjà testé | déjà testé |\n| 60 | 6 | 3600 | 36 |\n| 51 | 15 | 2601 | 225 |\n| 42 | 24 | 1764 | 576 |\n| 33 | 33 | égal au retourné | égal au retourné |\n| 24 | 42 | déjà testé | déjà testé |\n| 15 | 51 | déjà testé | déjà testé |\n| 6 | 6 | égal au retourné | égal au retourné |\n\nNous avons donc **3 solutions** : **1212 ; 1122 et 1113**."
+  }
+}

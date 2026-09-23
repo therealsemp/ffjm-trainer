@@ -1,0 +1,51 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 29.5, "y": 271.5 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 29.5, "y": 294.6 }
+      }
+    ]
+  },
+  "id": "2022-qf-3",
+  "number": 3,
+  "title": "Jeu de cartes",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Aline joue à un jeu où il faut éliminer trois cartes qui portent la même lettre en même temps, sans soulever d'autres cartes.\n\n![figure](figure:2022-qf-3-cards)\n\n**Dans quel ordre pourrait-elle éliminer ce paquet de cartes ?**",
+    "figures": [
+      {
+        "id": "2022-qf-3-cards",
+        "description": "Un tas de dix cartes rectangulaires empilées les unes sur les autres, portant chacune une lettre (deux cartes A, trois cartes B, deux cartes C, deux cartes D, une carte E répartie en plusieurs occurrences), les cartes se chevauchant partiellement de sorte que certaines soient visiblement au-dessus d'autres.",
+        "imageUrl": "q03_fig-cards.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "C, D, A, E, B"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2022-qf-3-corr-cards)\n\nLes cartes C sont au-dessus de toutes les autres. Elles viennent donc en premier.\n\nOn observe qu'une carte D est au-dessus d'une carte A, d'une carte E et de deux cartes B.\n\nLes cartes D viennent donc en deuxième position.\n\nUne carte A est au-dessus d'une carte B et une autre carte A est au-dessus d'une carte E.\n\nLes cartes A viennent donc en troisième position.\n\nUne carte E est au-dessus d'une carte B. Les cartes E viennent donc en quatrième position.\n\nEnfin les cartes B viennent en cinquième position.\n\nL'ordre est donc le suivant : **C,D,A,E,B**.",
+    "figures": [
+      {
+        "id": "2022-qf-3-corr-cards",
+        "description": "Le même tas de dix cartes empilées que dans l'énoncé, rappelé en tête de la correction.",
+        "imageUrl": "q03_corr-cards.png"
+      }
+    ]
+  }
+}

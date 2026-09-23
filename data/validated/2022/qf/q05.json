@@ -1,0 +1,56 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 29.5, "y": 458.8 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-5",
+  "number": 5,
+  "title": "La grille",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Dans cette grille de 42 cases, on veut colorier des cases de telle sorte que deux cases coloriées ne se touchent ni par un côté ni par un sommet.\n\n![figure](figure:2022-qf-5-grid)\n\n**Combien de cases pourra-t-on colorier, au maximum ?**",
+    "figures": [
+      {
+        "id": "2022-qf-5-grid",
+        "description": "Une grille vide de 6 colonnes sur 7 lignes (42 cases), sans aucune case coloriée.",
+        "imageUrl": "q05_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 12
+  },
+  "correction": {
+    "markdown": "Dans un carré de 2 sur 2, on ne peut colorier qu'une case au maximum.\n\nOn peut partager notre grille en 9 carrés de 2 sur 2 et un rectangle de 1 sur 6.\n\n![figure](figure:2022-qf-5-corr-partition)\n\nDans le rectangle de 1 sur 6, on ne peut colorier que 3 cases au maximum (une sur deux).\n\nPar conséquent on ne peut colorier que 9+3=12 cases au maximum.\n\nVérifions que c'est possible :\n\n![figure](figure:2022-qf-5-corr-solution)\n\nOn peut colorier au maximum **12 cases**.",
+    "figures": [
+      {
+        "id": "2022-qf-5-corr-partition",
+        "description": "La même grille 6×7, découpée par des traits épais en neuf carrés de 2×2 et une bande de 1×6 sur la droite.",
+        "imageUrl": "q05_corr-g1.png"
+      },
+      {
+        "id": "2022-qf-5-corr-solution",
+        "description": "La grille 6×7 avec des cases coloriées en bleu selon un motif en quinconce, montrant qu'on peut colorier 12 cases sans qu'aucune ne se touche par un côté ou un sommet.",
+        "imageUrl": "q05_corr-g2.png"
+      }
+    ]
+  }
+}

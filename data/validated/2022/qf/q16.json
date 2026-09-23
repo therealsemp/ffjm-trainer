@@ -1,0 +1,45 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 29.5, "y": 484.0 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 10,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-16",
+  "number": 16,
+  "title": "Il est généreux, Laux !",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": ["L1", "GP", "L2", "HC"],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Le Père Laux possède un terrain en forme de triangle équilatéral avec un étang central en forme de triangle curviligne. Chaque côté curviligne de l'étang joint deux milieux de côtés du triangle équilatéral et est constitué d'un sixième de cercle ayant pour centre le milieu du troisième côté du triangle.\n\n![figure](figure:2022-qf-16-fig-triangle)\n\nLe Père Laux décide de donner à chacun de ses trois enfants une « pointe du terrain » (en blanc sur le dessin) et de garder seulement l'étang pour lui, car il aime par dessus tout la pêche. Le grand triangle équilatéral a un côté égal à 100 mètres.\n\n**Quelle surface de terrain chaque enfant recevra-t-il ?**\n\nOn donnera la réponse arrondie au m² le plus proche, et si nécessaire, on prendra 1,732 pour √3 et 3,1416 pour π.",
+    "figures": [
+      {
+        "id": "2022-qf-16-fig-triangle",
+        "description": "Un grand triangle équilatéral avec, en son centre, une zone bleue en forme de triangle curviligne (l'étang), délimitée par trois arcs de cercle joignant les milieux des côtés.",
+        "imageUrl": "q16_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 856
+  },
+  "correction": {
+    "markdown": "La hauteur H d'un triangle équilatéral de côté C vaut \\( C\\dfrac{\\sqrt{3}}{2} \\).\n\nEn effet d'après le théorème de Pythagore, appliqué au demi-triangle équilatéral :\n\n\\[ H^2 = C^2 - \\left(\\dfrac{C}{2}\\right)^2 = C^2 - \\dfrac{C^2}{4} = C^2 \\times \\dfrac{3}{2^2} \\]\n\nPar conséquent l'aire d'un triangle équilatéral de côté C vaut \\( C^2\\dfrac{\\sqrt{3}}{4} \\).\n\nL'aire du triangle de côté 100 vaut donc \\( 50^2\\sqrt{3} \\) et celle de côté 50 vaut \\( 25^2\\sqrt{3} \\).\n\nL'aire d'un disque de rayon 50 vaut \\( 50^2\\pi \\) donc celle d'un sixième de ce disque vaut \\( 50^2\\dfrac{\\pi}{6} \\).\n\nPour avoir l'aire d'une calotte bleue, il faut enlever le triangle de côté 50. On obtient : \\( 50^2\\dfrac{\\pi}{6} - 25^2\\sqrt{3} \\).\n\nL'aire d'une pointe correspond à l'aire du triangle de côté 50 auquel on enlève cette calotte soit :\n\n\\[ 25^2\\sqrt{3} - \\left(50^2\\dfrac{\\pi}{6} - 25^2\\sqrt{3}\\right) = 2\\times 25^2\\sqrt{3} - 50^2\\dfrac{\\pi}{6} \\approx 1250\\times 1{,}732 - 2500\\times \\dfrac{3{,}1416}{6} \\]\n\n\\[ = 2165 - 2500\\times 0{,}5236 = 2165 - 1309 = 856. \\]\n\nChaque enfant recevra **856 m²**.",
+    "figures": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 309.4, "y": 157.8 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 10,
+        "position": { "x": 29.5, "y": 404.1 }
+      }
+    ]
+  },
+  "id": "2022-qf-17",
+  "number": 17,
+  "title": "Perdu dans la forêt",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": ["L2", "HC"],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Mathias est perdu quelque part dans une forêt carrée ABCD (la figure ne reflète pas sa position exacte). Ses amis Alice, Bertrand et Eléonore sont respectivement situés en A, B et E, le point E étant le milieu du côté [DC].\n\n![figure](figure:2022-qf-17-square)\n\n**Si le côté de la forêt mesure 2 km, que vaut, au minimum, la somme des distances entre Mathias et ses trois amis ?**\n\nSi des racines carrées interviennent, on effectuera les calculs en prenant 1,414 pour √2 ; 1,732 pour √3 et 2,236 pour √5, et on donnera la réponse arrondie au mètre le plus proche.",
+    "figures": [
+      {
+        "id": "2022-qf-17-square",
+        "description": "Un carré ABCD (A en bas à gauche, B en bas à droite, C en haut à droite, D en haut à gauche), avec E au milieu du côté [DC] et un point M à l'intérieur, relié par des segments à A, B et E.",
+        "imageUrl": "q17_fig-square.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 3732
+  },
+  "correction": {
+    "markdown": "Appelons (d) la médiatrice de [AB]. Imaginons que le point M (minimal) ne soit pas sur (d) et appelons M' son symétrique par rapport à la droite (d). On a alors EM=EM', AM=BM' et BM=AM' par symétrie.\n\nDonc AM+BM+EM=AM'+BM'+EM' donc M' vérifie aussi les conditions de minimum.\n\nAM+BM=AM'+BM' donc M et M' sont sur une ellipse de foyers A et B.\n\nAppelons maintenant I le milieu de [MM'] qui est situé sur (d). Il est à l'intérieur de l'ellipse donc AI+BI<AM+BM. De plus le triangle EMI étant rectangle en I on a EI<EM.\n\nDonc AI+BI+EI<AM+BM+EM. Le point M n'est donc pas au minimum s'il n'est pas sur (d).\n\nLe point M recherché est donc sur (d).\n\nAppelons y la distance en km de M par rapport à (AB).\n\nOn a AM²=1+y², BM²=1+y² et EM=2-y.\n\nAppelons \\( f(y) = 2\\sqrt{1+y^2} + 2 - y \\). Cherchons son minimum. Il est atteint quand sa dérivée s'annule.\n\n\\[ f'(y) = \\dfrac{2\\times 1}{2}\\times \\dfrac{2y}{\\sqrt{1+y^2}} - 1 = \\dfrac{2y}{\\sqrt{1+y^2}} - 1 \\]\n\nCette fonction s'annule quand :\n\n\\[ 2y = \\sqrt{1+y^2} \\text{ soit } 4y^2 = 1+y^2 \\text{ soit } 3y^2=1 \\text{ soit } y^2=\\dfrac{1}{3} \\text{ soit } y = \\dfrac{1}{\\sqrt{3}}. \\]\n\n\\[ f\\left(\\dfrac{1}{\\sqrt{3}}\\right) = 2\\sqrt{1+\\dfrac{1}{3}} + 2 - \\dfrac{1}{\\sqrt{3}} = 2\\sqrt{\\dfrac{4}{3}} + 2 - \\dfrac{1}{\\sqrt{3}} = \\dfrac{4}{\\sqrt{3}} + 2 - \\dfrac{1}{\\sqrt{3}} = \\dfrac{3}{\\sqrt{3}} + 2 = \\sqrt{3} + 2 \\approx 3{,}732. \\]\n\nLa distance minimum est donc d'environ 3,732 km soit **3 732 m**."
+  }
+}

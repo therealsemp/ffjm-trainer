@@ -1,0 +1,71 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 29.5, "y": 87.1 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-1",
+  "number": 1,
+  "title": "L'enclos",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde veut construire un enclos avec une série de pentaminos. Elle en a déjà posé quatre sur un quadrillage.\n\n![figure](figure:2022-qf-1-grid)\n\nLes pièces doivent se superposer avec des carrés vides du quadrillage, toujours se toucher par un sommet, mais pas par un côté et il doit rester une surface fermée à l'intérieur. Mathilde aimerait terminer le circuit avec une seule pièce parmi les pièces numérotées de 1 à 8.\n\n![figure](figure:2022-qf-1-pieces)\n\n**Quelle pièce permet de terminer l'enclos de sorte que la surface intérieure soit la plus grande possible ?**\n\nLes pièces peuvent être tournées et retournées.",
+    "figures": [
+      {
+        "id": "2022-qf-1-grid",
+        "description": "Un quadrillage sur lequel quatre pentaminos sont déjà posés, colorés en orange, bleu, rouge et vert, laissant une zone de cases blanches formant une surface fermée à l'intérieur.",
+        "imageUrl": "q01_fig-grid.png"
+      },
+      {
+        "id": "2022-qf-1-pieces",
+        "description": "Huit pentaminos numérotés de 1 à 8, de formes variées (bâtons, croix, zigzags), posés en diagonale ou à plat sur fond gris.",
+        "imageUrl": "q01_fig-pieces.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "![figure](figure:2022-qf-1-corr-pieces)\n\nLes pièces 1 et 4 ne permettent pas de terminer l'enclos.\n\nLes pièces 2, 3 et 7 permettent de terminer l'enclos par une ligne horizontale.\n\n![figure](figure:2022-qf-1-corr-grid1)\n\nLes pièces 5 et 8 permettent de terminer l'enclos mais en allant au dessus de cette ligne horizontale.\n\n![figure](figure:2022-qf-1-corr-grid2)\n\nLa pièce 6 permet de terminer l'enclos en allant au dessous de cette ligne horizontale.\n\n![figure](figure:2022-qf-1-corr-grid3)\n\nIl faut donc choisir la **pièce 6**.",
+    "figures": [
+      {
+        "id": "2022-qf-1-corr-pieces",
+        "description": "Les huit pentaminos numérotés de 1 à 8, rappelés en haut de la correction.",
+        "imageUrl": "q01_corr-pieces.png"
+      },
+      {
+        "id": "2022-qf-1-corr-grid1",
+        "description": "Trois quadrillages identiques montrant l'enclos terminé respectivement par les pièces 2, 3 et 7, chacun avec une ligne noire horizontale marquant la limite de la surface intérieure obtenue.",
+        "imageUrl": "q01_corr-grid1.png"
+      },
+      {
+        "id": "2022-qf-1-corr-grid2",
+        "description": "Deux quadrillages montrant l'enclos terminé respectivement par les pièces 5 et 8, la surface intérieure s'étendant au-dessus de la ligne horizontale de référence.",
+        "imageUrl": "q01_corr-grid2.png"
+      },
+      {
+        "id": "2022-qf-1-corr-grid3",
+        "description": "Un quadrillage montrant l'enclos terminé par la pièce 6, la surface intérieure s'étendant en dessous de la ligne horizontale de référence et étant la plus grande des trois cas.",
+        "imageUrl": "q01_corr-grid3.png"
+      }
+    ]
+  }
+}

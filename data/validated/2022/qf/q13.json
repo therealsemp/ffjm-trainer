@@ -1,0 +1,51 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 2,
+      "position": { "x": 29.5, "y": 50.5 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": { "x": 29.5, "y": 475.6 }
+      }
+    ]
+  },
+  "id": "2022-qf-13",
+  "number": 13,
+  "title": "Les tuyaux",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Ce conduit cylindrique contient quatre tuyaux tangents entre eux et tangents au conduit, deux gros et deux petits, comme le montre la figure.\n\n![figure](figure:2022-qf-13-tubes)\n\nLe diamètre de chacun des deux gros tuyaux est égal à 24 centimètres. **Quel est le diamètre en centimètres de chacun des deux petits ?**\n\nSi nécessaire, on pourra prendre 3,1416 pour π, et on donnera la réponse en cm, éventuellement arrondie au cm le plus proche.",
+    "figures": [
+      {
+        "id": "2022-qf-13-tubes",
+        "description": "Une vue en coupe d'un conduit cylindrique circulaire contenant quatre tuyaux circulaires tangents entre eux et au conduit : deux gros tuyaux de part et d'autre, un petit tuyau en haut, un petit tuyau en bas.",
+        "imageUrl": "q13_fig-tubes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 16
+  },
+  "correction": {
+    "markdown": "![figure](figure:2022-qf-13-corr-tubes)\n\nLe conduit fait 24 cm de rayon.\n\n24÷2=12.\n\nLe rayon des gros tuyaux est de 12 cm.\n\nSi on appelle r le rayon du petit tuyau.\n\nLe triangle OAC est rectangle en O. D'après le théorème de Pythagore on a :\n\nAC²=OA²+OC²\n\n(r+12)²=12²+(24-r)²\n\nr²+24r+12²=12²+24²-48r+r² (en développant)\n\n24r+48r=24² (en simplifiant par r² et par 12²)\n\nr+2r=24 (en divisant par 24)\n\n3r=24\n\nr=8 cm.\n\n8×2=16.\n\nLe diamètre des petits tuyaux fait donc **16 cm**.",
+    "figures": [
+      {
+        "id": "2022-qf-13-corr-tubes",
+        "description": "Le même conduit avec ses quatre tuyaux, plus un triangle OAC construit sur les centres : O au centre du conduit, A au centre d'un gros tuyau (segments bleus de 12 cm reliant O à A et A à un point sur l'axe horizontal), C au centre du petit tuyau du haut (segments rouges r), et un segment vert 24−r reliant O à C.",
+        "imageUrl": "q13_corr-tubes.png"
+      }
+    ]
+  }
+}

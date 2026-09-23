@@ -1,0 +1,37 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 29.5, "y": 193.6 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-2",
+  "number": 2,
+  "title": "La tirelire",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Dans sa tirelire, Mathilde a 10 pièces de 2 euros et 15 pièces de 1 euro. Elle décide d'acheter un jeu qui coûte 17 euros.\n\n**De combien de façons différentes peut-elle payer le jeu avec des pièces de sa tirelire ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 8
+  },
+  "correction": {
+    "markdown": "Pour payer 17 €, Mathilde peut prendre :\n\n- 8 pièces de 2 € et 1 pièce de 1 € ;\n- 7 pièces de 2 € et 3 pièces de 1 € ;\n- 6 pièces de 2 € et 5 pièces de 1 € ;\n- 5 pièces de 2 € et 7 pièces de 1 € ;\n- 4 pièces de 2 € et 9 pièces de 1 € ;\n- 3 pièces de 2 € et 11 pièces de 1 € ;\n- 2 pièces de 2 € et 13 pièces de 1 € ;\n- 1 pièce de 2 € et 15 pièces de 1 €.\n\nElle peut payer 17 € de **8 façons** différentes."
+  }
+}

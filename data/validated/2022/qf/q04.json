@@ -1,0 +1,76 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 29.5, "y": 359.9 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-4",
+  "number": 4,
+  "title": "Les gommettes",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": ["CE", "CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias possède 5 gommettes rouges et 4 gommettes bleues, toutes rondes et exactement de la taille des disques du dessin.\n\n![figure](figure:2022-qf-4-grid)\n\nIl doit coller précisément chaque gommette sur un disque blanc de telle sorte que :\n\n- aucune gommette bleue ne touche une autre gommette bleue ;\n- chaque gommette rouge touche au moins une autre gommette rouge.\n\n**Combien de gommettes rouges ne toucheront aucune gommette bleue ?**",
+    "figures": [
+      {
+        "id": "2022-qf-4-grid",
+        "description": "Une grille de neuf disques blancs vides disposés en carré 3×3, sur lesquels les gommettes devront être collées.",
+        "imageUrl": "q04_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1
+  },
+  "correction": {
+    "markdown": "Si les quatre coins sont rouges alors le cinquième rouge doit être au centre pour éviter que des gommettes bleues ne se touchent.\n\n![figure](figure:2022-qf-4-corr-g1)\n\nSi trois coins sont rouges et un coin est bleu, alors les deux cases à côté du bleu sont rouges. Or les trois gommettes restantes sont bleues et se toucheront.\n\n![figure](figure:2022-qf-4-corr-g2)\n\nSi deux coins consécutifs sont rouges et les deux autres bleus, alors les cases à côté des bleus sont rouges. Or les deux gommettes restantes sont bleues et se toucheront.\n\n![figure](figure:2022-qf-4-corr-g3)\n\nSi deux coins opposés sont rouges et les deux autres bleus, alors les cases à côté des bleus sont rouges mais il faudrait 6 gommettes rouges.\n\n![figure](figure:2022-qf-4-corr-g4)\n\nSi un coin est rouge et les trois autres bleus, alors les cases à côté des bleus sont rouges et la case centrale est bleu. Mais alors deux gommettes rouges ne touchent aucune autre gommette rouge.\n\n![figure](figure:2022-qf-4-corr-g5)\n\nSi les 4 coins sont bleus, les gommettes rouges se placent sur les autres cases et la figure respecte les consignes. On a alors 4 gommettes rouges qui touchent deux gommettes bleues et une gommette rouge qui ne touche aucune gommette bleue.\n\n![figure](figure:2022-qf-4-corr-g6)\n\nLa réponse est donc : **1**.",
+    "figures": [
+      {
+        "id": "2022-qf-4-corr-g1",
+        "description": "Grille 3×3 : quatre coins rouges, quatre bords bleus, centre rouge (motif en damier rouge/bleu).",
+        "imageUrl": "q04_corr-g1.png"
+      },
+      {
+        "id": "2022-qf-4-corr-g2",
+        "description": "Grille 3×3 : trois coins rouges et le coin bas-gauche bleu ; les deux cases à côté de ce coin bleu sont blanches (non déterminées), le reste rouge sauf une case bleue.",
+        "imageUrl": "q04_corr-g2.png"
+      },
+      {
+        "id": "2022-qf-4-corr-g3",
+        "description": "Grille 3×3 : deux coins hauts rouges, coin bas-gauche bleu, coin bas-droit rouge ; deux cases centrales blanches, le reste rouge/bleu.",
+        "imageUrl": "q04_corr-g3.png"
+      },
+      {
+        "id": "2022-qf-4-corr-g4",
+        "description": "Grille 3×3 : coins haut-droit et bas-gauche bleus, coins haut-gauche et bas-droit rouges, centre blanc, bords rouges.",
+        "imageUrl": "q04_corr-g4.png"
+      },
+      {
+        "id": "2022-qf-4-corr-g5",
+        "description": "Grille 3×3 : coin haut-droit bleu, coin bas-gauche bleu, les deux autres coins rouges, centre blanc, bords rouges.",
+        "imageUrl": "q04_corr-g5.png"
+      },
+      {
+        "id": "2022-qf-4-corr-g6",
+        "description": "Grille 3×3 : les quatre coins bleus, les quatre bords et le centre rouges (5 gommettes rouges, 4 bleues aux coins).",
+        "imageUrl": "q04_corr-g6.png"
+      }
+    ]
+  }
+}

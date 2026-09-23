@@ -1,0 +1,37 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 309.4, "y": 589.3 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": { "x": 29.5, "y": 37.9 }
+      }
+    ]
+  },
+  "id": "2022-qf-12",
+  "number": 12,
+  "title": "Que d'élastiques !",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": ["C2", "L1", "GP", "L2", "HC"],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Sur l'étiquette d'une boîte d'élastiques (circulaires), il est écrit *poids : 81g ; 3 dimensions différentes*.\n\nLes trois périmètres des élastiques sont respectivement égaux à 12 cm, 20 cm et 25 cm, et les poids des élastiques sont proportionnels à leurs longueurs.\n\nDans la boîte, il y a le même poids total de chaque sorte d'élastiques, chaque élastique pesant moins de 1 g, mais plus de 0,3g.\n\n**Combien y a-t-il d'élastiques de 12 cm dans cette boîte sachant qu'il y a plus de 100 élastiques au total ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 75
+  },
+  "correction": {
+    "markdown": "| Périmètre en cm | 12 | 20 | 25 |\n|---|---|---|---|\n| Nombre d'élastiques | n | p | q |\n| Poids d'un élastique | x | y | z |\n\nLes poids des élastiques sont proportionnels à leurs longueurs, donc \\( \\dfrac{x}{12} = \\dfrac{y}{20} = \\dfrac{z}{25} \\).\n\nPar conséquent \\( y = \\dfrac{20}{12} \\times x \\) et \\( z = \\dfrac{25}{12} \\times x \\).\n\nIl y a le même poids de chaque sorte d'élastiques, donc nx=py=qz=81÷3=27 g.\n\n\\( nx = p \\times \\dfrac{20}{12} \\times x = q \\times \\dfrac{25}{12} \\times x \\), donc 12n=20p=25q.\n\n25q est un multiple de 25, alors 12n aussi et par conséquent n aussi.\n\nn=25 ou n=50 ou n=75, etc.\n\nOr x>0,3 donc nx>0,3n donc 27>0,3n d'où 90>n.\n\nn=25 ou n=50 ou n=75.\n\nDe plus z<1 donc qz<q donc 27<q.\n\nSi n=25 alors q=12×25÷25=12 ce qui n'est pas supérieur à 27.\n\nSi n=50 alors q=12×50÷25=12×2=24 ce qui n'est pas supérieur à 27.\n\nSi n=75 alors q=12×75÷25=12×3=36 qui est supérieur à 27.\n\nDans ce cas p=12×75÷20=(12÷4)×(75÷5)=3×15=45.\n\nOn a bien 75+36+45=156 qui est supérieur à 100.\n\nIl y a donc **1 solution** : il y a **75 élastiques** de 12 cm de périmètre."
+  }
+}

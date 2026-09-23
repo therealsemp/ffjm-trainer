@@ -1,0 +1,37 @@
+{
+  "year": 2022,
+  "champNumber": 36,
+  "phase": "qf",
+  "examTitle": "36e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2022/qf/2022_qf_statement.pdf",
+      "page": 1,
+      "position": { "x": 309.4, "y": 87.1 }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2022/qf/2022_qf_solution-detailed.pdf",
+        "page": 5,
+        "position": { "x": 29.5, "y": 606.1 }
+      }
+    ]
+  },
+  "id": "2022-qf-8",
+  "number": 8,
+  "title": "Le cadenas",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": ["CM", "C1", "C2", "L1", "GP", "L2", "HC"],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Alex possède un cadenas dont le code de 4 chiffres, noté ABCD, est tel que :\n\n- A est le double de B ;\n- la somme de B et C est égale à 13 ;\n- la somme de A et B est égale à la somme de C et D.\n\n**Quel est le code de ce cadenas ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "8493"
+  },
+  "correction": {
+    "markdown": "A est le double de B donc les possibilités sont :\n\n| A | 0 | 2 | 4 | 6 | 8 |\n|---|---|---|---|---|---|\n| B | 0 | 1 | 2 | 3 | 4 |\n| C=13-B | 13 | 12 | 11 | 10 | 9 |\n\nComme C est un chiffre, la seule possibilité est que A=8, B=4 et C=9.\n\nA+B=8+4=12 et 12-9=3. Donc D=3.\n\nLe code du cadenas est donc : **8493**."
+  }
+}

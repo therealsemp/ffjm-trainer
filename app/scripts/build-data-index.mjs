@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Generates app/public/data/ from data/validated/: a mirror copy of the
 // validated tree (so a question's full content is fetchable at
-// /data/{year}/{phase}/qNN.json, no transformation) plus a flat metadata
+// /data/{year}/{phase}/qNN.json — figures copied as-is, question JSON
+// stripped of fields the app never reads, see below) plus a flat metadata
 // manifest, questions.json (id/year/phase/number/tier/categories only, no
 // content) that the app loads once to drive listing/weighted-draw logic
 // without fetching every question. See docs/technical-architecture.md
@@ -50,7 +51,7 @@ function build() {
 
       for (const file of readdirSync(phaseDir)) {
         const srcPath = path.join(phaseDir, file)
-        copyFileSync(srcPath, path.join(outDir, file))
+        const destPath = path.join(outDir, file)
 
         if (file.endsWith(".json")) {
           const question = JSON.parse(readFileSync(srcPath, "utf8"))
@@ -63,6 +64,22 @@ function build() {
             categories: question.categories,
             hasDetailedCorrection: question.correction !== undefined,
           })
+          // These fields only serve /ingest and /review (sourceFiles: jumping
+          // the PDF viewer to the right page; champNumber/examTitle: exam
+          // provenance; coefficient/coefficientSource: derivation bookkeeping)
+          // — the app's own `Question` type never declares any of them, so
+          // none of them should reach the deployed site's payload.
+          const {
+            sourceFiles: _sourceFiles,
+            champNumber: _champNumber,
+            examTitle: _examTitle,
+            coefficient: _coefficient,
+            coefficientSource: _coefficientSource,
+            ...publicQuestion
+          } = question
+          writeFileSync(destPath, JSON.stringify(publicQuestion))
+        } else {
+          copyFileSync(srcPath, destPath)
         }
       }
     }

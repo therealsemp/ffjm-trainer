@@ -116,6 +116,11 @@ function renderRichContent(section, assetBase) {
   // though the JSON's markdown was itself correct.
   const { withPlaceholders, rendered } = extractMath(markdown)
   let html = `<div class="rich-content">${reinsertMath(marked.parse(withPlaceholders, { breaks: true }), rendered)}</div>`
+  // A table cell entirely wrapped in `~~...~~` marks a source row highlighted
+  // in color in the original PDF (see TRANSCRIPTION-GUIDE.md) — `marked`
+  // renders that as a literal strikethrough, which reads as a mistake here;
+  // reinterpret it as a highlighted cell instead, matching app/'s renderer.
+  html = html.replace(/<td([^>]*)>\s*<del>([\s\S]*?)<\/del>\s*<\/td>/g, '<td$1 class="cell-highlight">$2</td>')
 
   const unreferenced = (section.figures ?? []).filter((f) => f.imageUrl && !referencedIds.has(f.id))
   for (const fig of unreferenced) {

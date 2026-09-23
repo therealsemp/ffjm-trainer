@@ -22,7 +22,10 @@ export function SessionConfigPage() {
 
   const [selected, setSelected] = useState<Tier[]>([])
   const [targetCount, setTargetCount] = useState<number | null>(DEFAULT_TARGET_COUNT)
-  const [includeWithoutDetailedCorrection, setIncludeWithoutDetailedCorrection] = useState(false)
+  // On by default: most sessions should stick to questions with a worked
+  // explanation. Its own label doubles as the description of what "on"/
+  // "off" means, so no separate instruction sentence is needed above it.
+  const [detailedOnly, setDetailedOnly] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   if (!profile) return null
@@ -38,7 +41,7 @@ export function SessionConfigPage() {
       setError("Choisis au moins un niveau pour commencer.")
       return
     }
-    startSession(selected, targetCount, includeWithoutDetailedCorrection)
+    startSession(selected, targetCount, !detailedOnly)
     navigate("/entrainement/question")
   }
 
@@ -73,6 +76,35 @@ export function SessionConfigPage() {
         </div>
       </div>
 
+      <div className="flex flex-col gap-2.5">
+        <p className="text-brand-muted">Solutions détaillées</p>
+        <label className="flex w-fit cursor-pointer items-center gap-3 self-start">
+          <input
+            type="checkbox"
+            checked={detailedOnly}
+            onChange={(event) => setDetailedOnly(event.target.checked)}
+            aria-label="Solutions détaillées uniquement"
+            className="sr-only"
+          />
+          <span
+            className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${
+              detailedOnly ? "bg-brand-gold" : "bg-brand-muted/40"
+            }`}
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+                detailedOnly ? "translate-x-6" : "translate-x-1"
+              }`}
+            />
+          </span>
+          <span className="font-semibold">
+            {detailedOnly
+              ? "Avec solutions détaillées uniquement"
+              : "Inclut les questions avec solution mais sans explication"}
+          </span>
+        </label>
+      </div>
+
       <div className="flex items-center justify-between gap-3">
         <p className="text-brand-muted">Choisis les niveaux sur lesquels tu veux t'entraîner.</p>
         <button
@@ -98,27 +130,6 @@ export function SessionConfigPage() {
           </SelectableCard>
         ))}
       </div>
-
-      <label className="flex w-fit cursor-pointer items-center gap-3 self-start">
-        <input
-          type="checkbox"
-          checked={includeWithoutDetailedCorrection}
-          onChange={(event) => setIncludeWithoutDetailedCorrection(event.target.checked)}
-          className="sr-only"
-        />
-        <span
-          className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${
-            includeWithoutDetailedCorrection ? "bg-brand-gold" : "bg-brand-muted/40"
-          }`}
-        >
-          <span
-            className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
-              includeWithoutDetailedCorrection ? "translate-x-6" : "translate-x-1"
-            }`}
-          />
-        </span>
-        <span className="font-semibold">Inclure les questions sans solution détaillée</span>
-      </label>
 
       {error && <p className="text-sm text-brand-danger">{error}</p>}
 

@@ -23,7 +23,7 @@ User with an active profile
 - The user also chooses the session's length: a target number of questions to answer before it ends (see Story 2.6 for what happens once that target is reached), or "No limit" to keep the session open-ended (the previous, only behavior).
 - The length choice is a single selection among a few presets (5, 10, 15, 20) plus "No limit", not a free-form number field. The default selection is 10.
 - This story only applies when there is no session in progress to resume (see Story 2.5).
-- Some questions have no detailed correction (only a results-only source was available, see `ingest/TRANSCRIPTION-GUIDE.md` rule 10) — a separate toggle lets the user include them in the draw pool. Off by default: these questions offer no worked explanation to learn from, so most sessions should skip them unless the user opts in.
+- Some questions have no detailed correction (only a results-only source was available, see `ingest/TRANSCRIPTION-GUIDE.md` rule 10). A "Solutions détaillées" toggle, positioned right after the session length and before the level selection, controls whether the draw pool (Story 2.2) includes them — **on by default** (restricting to questions that do have a detailed correction), since most sessions should stick to questions with a worked explanation. The toggle's own visible label doubles as its description instead of a separate instruction sentence above it, and changes with its state: "Avec solutions détaillées uniquement" when on, "Inclut les questions avec solution mais sans explication" when off. Its accessible name (for assistive tech) stays fixed regardless of state ("Solutions détaillées uniquement"), only the visible text changes.
 
 ## Acceptance criteria
 
@@ -64,11 +64,17 @@ User with an active profile
 - **Then** a new session is created with the selected levels and the chosen target question count (or no limit)
 - **And** the user is taken to the first question screen (Story 2.2)
 
-### Scenario 7: Including questions with no detailed correction
+### Scenario 7: The "Solutions détaillées" toggle, default state
 - **Given** the user is on the configuration screen
-- **When** they look at the "Include questions with no detailed correction" toggle
-- **Then** it is off by default
-- **And** turning it on and confirming makes the draw pool (Story 2.2) also include questions with no detailed correction, not just those that have one
+- **When** they look at the "Solutions détaillées" section, right after the session length
+- **Then** the toggle is on
+- **And** its label reads "Avec solutions détaillées uniquement"
+
+### Scenario 8: Turning the toggle off
+- **Given** the user is on the configuration screen
+- **When** they turn the "Solutions détaillées" toggle off
+- **Then** its label changes to "Inclut les questions avec solution mais sans explication"
+- **And** confirming from there makes the draw pool (Story 2.2) also include questions with no detailed correction, not just those that have one
 
 ## Out of scope
 - Changing the selected levels or the session length while a session is in progress (both are fixed when the session is created).
@@ -80,4 +86,4 @@ User with an active profile
 - Check that a profile of category HC (or L2) sees all 6 levels offered.
 - Check that a profile of category L1 (or GP) sees 5 levels offered (up to and including L1/GP), not 4 or 6.
 - Check that confirming with "No limit" selected produces a session that behaves exactly as before this feature (no progress bar, no automatic end, see Story 2.6).
-- Check that leaving the "include questions with no detailed correction" toggle off never draws a question that has no `correction` (Story 2.2's "no worked explanation" case never appears unless opted into).
+- Check that leaving the "Solutions détaillées" toggle on (the default) never draws a question that has no `correction` (Story 2.2's "no worked explanation" case never appears unless the toggle is turned off).

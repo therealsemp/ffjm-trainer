@@ -1,0 +1,55 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 573,
+        "y": 206
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 16,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-16",
+  "number": 16,
+  "title": "La dernière carte",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "On prend un paquet de 2020 cartes numérotées de 1 (en haut du paquet) jusqu'à 2020 (en dessous du paquet), les numéros écrits au verso des cartons n'étant pas visibles. On fait passer la carte supérieure du jeu vers le dessous du jeu, puis on jette la suivante sur la table en disant qu'elle est éliminée. Ensuite on recommence… La nouvelle carte de dessus du paquet passe sous le paquet en main, puis la suivante est posée et éliminée sur la table comme la première carte jetée. On continue ainsi jusqu'à ce qu'il ne reste plus qu'une seule carte en main, toutes les autres étant éliminées sur la table. **Quel est le numéro de la carte qui reste la dernière en main ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1993
+  },
+  "correction": {
+    "markdown": "Comme on ne garde qu'une carte sur deux, écrivons 2020 en base 2.\n2020=0+2×(0+2×(1+2×(0+2×(0+2×(1+2×(1+2×(1+2×(1+2×(1+2×(1))))))))))\n2020=11111100100 en base 2.\nPremier tour : on enlève les nombres pairs (de 2 à 2020), les nombres restants se terminent par 1 en base 2.\nDeuxième tour : on enlève les nombres avec l'avant-dernier chiffre égal à 1 en base 2 (de 3 à 2019) , les nombres restants se terminent par 01 en base 2.\nTroisième tour : on enlève les nombres avec chiffre précédent égal à 1 en base 2 (de 5 à 2013) , les nombres restants se terminent par 001 en base 2.\nQuatrième tour : on enlève les nombres avec chiffre précédent égal à 0 en base 2 (de 1 à 2017) , les nombres restants se terminent par 1001 en base 2.\n\nTout se passe comme si on écrivait tous les chiffres de 2020 à part le premier et le dernier étant 1.\n\nLe dernier nombre est donc 11111001001 en base 2 soit 1993.\n\nLe numéro de la carte restante est donc : **1993**.\n\n*Remarque* : pour tous les nombres entre 1024 et 2047, la formule est donc la suivante pour N le nombre de cartes, la dernière carte est \\( N\\times 2-2^{11}+1=2N-2047 \\).\n\nOn peut aussi tester avec un programme Scratch :\n\n![figure](figure:2020-qf-16-corr-scratch)",
+    "figures": [
+      {
+        "id": "2020-qf-16-corr-scratch",
+        "description": "Un programme Scratch : quand le drapeau vert est cliqué, supprimer tout de la liste cartes, mettre X à 0, répéter 2020 fois (ajouter 1 à X, ajouter X à cartes), puis répéter jusqu'à longueur de cartes = 1 (mettre X à élément 1 de cartes, ajouter X à cartes, supprimer l'élément 1 de la liste cartes, supprimer l'élément 1 de la liste cartes).",
+        "imageUrl": "q16_corr-scratch.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 196
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-3",
+  "number": 3,
+  "title": "Échange de cavaliers",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Rappelons qu'au jeu d'échecs, le cavalier se déplace selon une diagonale d'un rectangle de 2 cases sur 3 (voir la figure).\n\n![figure](figure:2020-qf-3-move)\n\n**En combien de mouvements, au minimum, peut-on échanger les deux cavaliers blancs et les deux cavaliers noirs, sur ce mini-échiquier en forme de croix ?**\n\n![figure](figure:2020-qf-3-board)",
+    "figures": [
+      {
+        "id": "2020-qf-3-move",
+        "description": "Un quadrillage rose avec un cavalier au centre et des flèches courbes vers les cases qu'il peut atteindre en un mouvement.",
+        "imageUrl": "q03_fig-move.png"
+      },
+      {
+        "id": "2020-qf-3-board",
+        "description": "Le mini-échiquier en forme de croix (cases bleues et blanches) : deux cavaliers noirs à gauche sur les rangées 3 et 2, deux cavaliers blancs à droite sur les mêmes rangées ; rangées numérotées de 1 à 4.",
+        "imageUrl": "q03_fig-board.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 8
+  },
+  "correction": {
+    "markdown": "Chaque cavalier ne peut pas atteindre sa case d'arrivée en un coup, il en faut au minimum deux.\nComme il y a quatre cavaliers, 4×2=8, il faut donc au minimum 8 mouvements.\nMontrons que cela suffit :\n\n![figure](figure:2020-qf-3-corr-moves)\n\nIl faut donc au minimum **8 mouvements**.",
+    "figures": [
+      {
+        "id": "2020-qf-3-corr-moves",
+        "description": "La suite des positions (neuf échiquiers en croix sur deux rangées) : on part des cavaliers noirs en haut et blancs en bas, et on aboutit, en 8 mouvements, aux cavaliers blancs en haut et noirs en bas.",
+        "imageUrl": "q03_corr-moves.png"
+      }
+    ]
+  }
+}

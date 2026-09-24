@@ -1,0 +1,51 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300,
+        "y": 51
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-8",
+  "number": 8,
+  "title": "Etadate",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "La calculatrice de LEON-NOEL indique la date sous la forme de huit chiffres écrits à la suite les uns des autres : deux pour le jour (de 01 à 31), puis deux pour le mois (de 01 à 12), et enfin quatre pour l'année ; ainsi, le deux février 2020 s'affichera 02022020. On dit que cette écriture est palindrome (elle se lit de la même façon en partant de la gauche et en partant de la droite). La première date palindrome du millénaire actuel a été le dix février 2001 : 10022001. **Quelle sera la dernière de ce millénaire ?** On écrira les huit chiffres affichés.\n\nNote : le troisième millénaire va de l'année 2001 à l'année 3000."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "29122192"
+  },
+  "correction": {
+    "markdown": "L'an 3000 ne fonctionne pas car 00 03 n'est pas une date.\nCela signifie que le chiffre des milliers de l'année est 2.\n\\_ \\_ \\_ 2 2 \\_ \\_ \\_\n\nLe chiffre des unités du mois est 2, le chiffre des dizaines du mois est donc 0 ou 1.\nEssayons le maximum soit 1.\n\\_ \\_ 12 21 \\_ \\_\n\nLe chiffre des unités du jour est au maximum 9. Essayons ce chiffre :\n\\_ 9 12 219 \\_\n\nLe chiffre des dizaines du jour est alors 0,1 ou 2.\nEssayons le maximum soit 2.\n29 12 2192\nCela fonctionne.\n\nLa dernière date palindrome du millénaire est donc **29 12 2192**."
+  }
+}

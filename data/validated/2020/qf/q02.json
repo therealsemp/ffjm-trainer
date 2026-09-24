@@ -1,0 +1,101 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 108
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-2",
+  "number": 2,
+  "title": "Triple exigence",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Cette grille de 9 cases est remplie uniquement à l'aide des trois nombres 1, 2 et 3, mais écrits de trois façons différentes : avec des chiffres indo-arabes (1 ; 2 ; 3), des chiffres romains (I ; II ; III), et des faces de dés (![figure](figure:2020-qf-2-dice-faces)). Dans chaque ligne et chaque colonne se trouvent les trois valeurs et les trois écritures. **Que contient la case grisée ?**\n\n![figure](figure:2020-qf-2-grid)",
+    "figures": [
+      {
+        "id": "2020-qf-2-grid",
+        "description": "Une grille 3×3 bleue : en haut à gauche le chiffre 1, en haut à droite le chiffre romain III, en bas à gauche une face de dé à trois points, la case en bas à droite est grisée avec un point d'interrogation.",
+        "imageUrl": "q02_fig-grid.png"
+      },
+      {
+        "id": "2020-qf-2-dice-faces",
+        "description": "Les trois faces de dé, à un, deux et trois points, séparées par des points-virgules.",
+        "imageUrl": "q02_fig-dice-faces.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 (en écriture indo-arabe)"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2020-qf-2-corr-grid0)\n\nPour compléter la première ligne, il faut un deux sur un dé :\n\n![figure](figure:2020-qf-2-corr-grid1)\n\nPour compléter la première colonne, il faut un deux en chiffres romains :\n\n![figure](figure:2020-qf-2-corr-grid2)\n\nLe dernier trois (en chiffre indo-arabe) ne peut pas être ni dans la 3ᵉ ligne ni dans la 3ᵉ colonne.\nIl est donc dans la case centrale :\n\n![figure](figure:2020-qf-2-corr-grid3)\n\nPour compléter la 2ᵉ colonne, il faut un « un » en chiffre romain :\n\n![figure](figure:2020-qf-2-corr-grid4)\n\nPour compléter la 2ᵉ ligne, il faut un « un » sur un dé :\n\n![figure](figure:2020-qf-2-corr-grid5)\n\nPour finir la grille, il faut mettre le deux en chiffre indo-arabe :\n\n![figure](figure:2020-qf-2-corr-grid6)\n\nLe nombre dans la case grisée est donc le **2** (en écriture indo-arabe).",
+    "figures": [
+      {
+        "id": "2020-qf-2-corr-grid0",
+        "description": "Grille de départ : 1 et III sur la première ligne, face de dé à trois points en bas à gauche, case grisée en bas à droite.",
+        "imageUrl": "q02_corr-grid0.png"
+      },
+      {
+        "id": "2020-qf-2-corr-grid1",
+        "description": "La face de dé à deux points ajoutée au centre de la première ligne.",
+        "imageUrl": "q02_corr-grid1.png"
+      },
+      {
+        "id": "2020-qf-2-corr-grid2",
+        "description": "Le chiffre romain II ajouté au début de la deuxième ligne.",
+        "imageUrl": "q02_corr-grid2.png"
+      },
+      {
+        "id": "2020-qf-2-corr-grid3",
+        "description": "Le 3 (chiffre indo-arabe) ajouté dans la case centrale.",
+        "imageUrl": "q02_corr-grid3.png"
+      },
+      {
+        "id": "2020-qf-2-corr-grid4",
+        "description": "Le chiffre romain I ajouté au centre de la dernière ligne.",
+        "imageUrl": "q02_corr-grid4.png"
+      },
+      {
+        "id": "2020-qf-2-corr-grid5",
+        "description": "La face de dé à un point ajoutée à droite de la deuxième ligne.",
+        "imageUrl": "q02_corr-grid5.png"
+      },
+      {
+        "id": "2020-qf-2-corr-grid6",
+        "description": "La grille complète, avec le 2 (chiffre indo-arabe) dans la case grisée.",
+        "imageUrl": "q02_corr-grid6.png"
+      }
+    ]
+  }
+}

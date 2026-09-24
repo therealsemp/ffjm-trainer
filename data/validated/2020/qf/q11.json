@@ -1,0 +1,67 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300,
+        "y": 349
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-11",
+  "number": 11,
+  "title": "Deux fois OOUUI",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "**\\( (OUI)^2 = 2 \\times OOUUI \\).** Dans cette opération codée, une même lettre remplace toujours le même chiffre et un même chiffre est toujours remplacé par la même lettre. **Que vaut OUI ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 152
+  },
+  "correction": {
+    "markdown": "OUI × OUI a comme chiffre des unités celui de I × I.\nOOUUI × 2 a comme chiffre des unités celui de I × 2.\nComparons à quel moment ce chiffre coïncide :\n\n|   |   |   |   |   |   |   |   |   |   |   |\n|---|---|---|---|---|---|---|---|---|---|---|\n| I | ~~0~~ | 1 | ~~2~~ | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n| I × I | ~~0~~ | 1 | ~~4~~ | 9 | 16 | 25 | 36 | 49 | 64 | 81 |\n| I × 2 | ~~0~~ | 2 | ~~4~~ | 6 | 8 | 10 | 12 | 14 | 16 | 18 |\n\nPar conséquent I=0 ou I=2.\n*Supposons d'abord que I=0.*\nOn a alors OUI qui est un multiple de 10. Donc OUI × OUI est un multiple de 10×10=100 et se termine par 00. OOUUI × 2 aussi donc U × 2 se termine par 0. Par conséquent U=0 (impossible car I=0) ou U=5.\nPar conséquent U=5.\nOn a alors OUI qui est un multiple de 50. Donc OUI × OUI est un multiple de 50×50=2500 et se termine par 500 ou 000.\nEt OOUUI × 2 se termine comme 550 × 2 =1100 c'est à dire par 100. Il y a contradiction.\n\n*Supposons alors que I=2.*\nPosons les opérations en appelant A le chiffre des unités de U× 2.\n\n![figure](figure:2020-qf-11-corr-ops-i2)\n\nA+A doit se terminer comme A ce qui n'arrive que si A=0.\nPar conséquent U × 2 =0 et U=0 ou U× 2 = 10 et U = 5.\n\n*Supposons que U=0.*\nPosons les opérations en appelant B le chiffre des unités de O× 2.\n\n![figure](figure:2020-qf-11-corr-ops-u0)\n\nB+B doit se terminer par 0. Donc B=0 ou B=5 (ce qui est impossible car B est dans la table de 2).\nO× 2 doit se terminer par 0. Donc O=0 (ce qui est impossible car U=0) ou O=5.\nEn calculant 502 × 502 = 252 004 et 55 002 × 2 =110 004. On ne trouve pas le même résultat.\n\n*Supposons que U=5.*\nPosons les opérations en appelant D le chiffre des unités de O× 2 et C le chiffre des unités de O× 2 +1 (la retenue) c'est à dire D+1.\n\n![figure](figure:2020-qf-11-corr-ops-u5)\n\nDonc (D+1)+6+D se termine par 1. Donc D+D doit se terminer par 4 c'est à dire que D=2 ou D=7 (ce qui est impossible car D est dans la table de 2).\nO× 2 doit se terminer par 2. Donc O=1 ou O=6.\nEn calculant 152 × 152 = 23 104 et 11 552 × 2 = 23 104. On trouve le même résultat.\nEt 652 × 652 = 425 104 et 66 552 × 2= 133 104. On ne trouve pas le même résultat.\n\nDonc il y a **1 solution** : OUI vaut : **152**.",
+    "figures": [
+      {
+        "id": "2020-qf-11-corr-ops-i2",
+        "description": "Les opérations posées OU2 × OU2 (produits partiels A4 et A, résultat se terminant par 4) et OOUU2 × 2 (résultat se terminant par A4).",
+        "imageUrl": "q11_corr-ops-i2.png"
+      },
+      {
+        "id": "2020-qf-11-corr-ops-u0",
+        "description": "Les opérations posées O02 × O02 (produits partiels B04, 00 et B, résultat se terminant par 04) et OO002 × 2 (résultat B004).",
+        "imageUrl": "q11_corr-ops-u0.png"
+      },
+      {
+        "id": "2020-qf-11-corr-ops-u5",
+        "description": "Les opérations posées O52 × O52 (produits partiels C04, 60 et D, résultat se terminant par 04) et OO552 × 2 (résultat C104).",
+        "imageUrl": "q11_corr-ops-u5.png"
+      }
+    ]
+  }
+}

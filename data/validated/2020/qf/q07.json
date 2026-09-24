@@ -1,0 +1,75 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 545
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-7",
+  "number": 7,
+  "title": "Les couleurs",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Les 10 sommets du graphe ci--contre doivent être coloriés pour que deux sommets reliés par un segment ne soient jamais de la même couleur.\n\n![figure](figure:2020-qf-7-graph)\n\n**Quel est le nombre minimum de couleurs dont on aura besoin ?**",
+    "figures": [
+      {
+        "id": "2020-qf-7-graph",
+        "description": "Un graphe bleu à 10 sommets : un pentagone extérieur, une étoile à cinq branches à l'intérieur, chaque sommet du pentagone relié à un sommet de l'étoile.",
+        "imageUrl": "q07_fig-graph.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 3
+  },
+  "correction": {
+    "markdown": "La figure de départ est la suivante :\n\n![figure](figure:2020-qf-7-corr-start)\n\nEssayons de colorier le pourtour avec deux couleurs :\n\n![figure](figure:2020-qf-7-corr-two)\n\nOn aboutit à un problème : le point noir touche un point bleu et un point rouge.\n\nEssayons de colorier avec trois couleurs :\n\n![figure](figure:2020-qf-7-corr-three)\n\nOn trouve une solution possible.\n\nIl faut donc au minimum **3 couleurs**.",
+    "figures": [
+      {
+        "id": "2020-qf-7-corr-start",
+        "description": "Le graphe de départ, tous les sommets blancs.",
+        "imageUrl": "q07_corr-start.png"
+      },
+      {
+        "id": "2020-qf-7-corr-two",
+        "description": "Tentative à deux couleurs sur le pourtour : sommet du haut et sommet en bas à droite en rouge, sommets de gauche et de droite en bleu, sommet en bas à gauche en noir ; les sommets intérieurs restent blancs.",
+        "imageUrl": "q07_corr-two.png"
+      },
+      {
+        "id": "2020-qf-7-corr-three",
+        "description": "Un coloriage complet avec trois couleurs (rouge, bleu, vert) dans lequel deux sommets reliés n'ont jamais la même couleur.",
+        "imageUrl": "q07_corr-three.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 573,
+        "y": 449
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 18,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-18",
+  "number": 18,
+  "title": "Les quatre produits serrés",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Les nombres de 1 à 16 doivent être écrits dans le tableau 4 × 4, à raison d'un par case (les nombres 1 et 2 sont déjà placés). Les produits des quatre nombres sur chaque ligne doivent être différents deux à deux, et rangés dans l'ordre croissant de bas en haut (voir la flèche). Le plus grand doit valoir exactement 1,04 fois le plus petit. Chacun des quatre produits doit également être le produit des quatre nombres dans une colonne, dans l'ordre croissant de gauche à droite (voir la flèche). **Quel sera le produit des quatre nombres écrits dans les cases colorées ?**\n\n![figure](figure:2020-qf-18-grid)",
+    "figures": [
+      {
+        "id": "2020-qf-18-grid",
+        "description": "Un tableau 4×4 : le 1 dans la 3ᵉ case de la première ligne, le 2 dans la 2ᵉ case de la dernière ligne ; quatre cases colorées en bleu (2ᵉ case de la ligne 1, 4ᵉ case de la ligne 2, 1ʳᵉ case de la ligne 3, 3ᵉ case de la ligne 4).",
+        "imageUrl": "q18_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 3240
+  },
+  "correction": {
+    "markdown": "\\( 1{,}04=\\dfrac{104}{100}=\\dfrac{26}{25} \\) Appelons A<B<C<D les 4 produits. On a donc 26A=25D.\n26 et 25 étant premiers entre eux, 25=5² divise A et 26=2×13 divise D.\n13 divise D donc 13 est dans la dernière colonne et dans la première ligne.\nIl y a aussi 2 multiples de 5 dans la première colonne et dans la dernière ligne.\nOr entre 1 et 16, il n'y a que 3 multiples de 5 : 5;10 et 15. Ils sont donc dans les cases vertes.\n\n![figure](figure:2020-qf-18-corr-start)\n\nOr ABCD=16 !\nA≤A≤A\nA<B<1,04A\nA<C<1,04A\n1,04A≤D≤1,04A\ndonc \\( 1{,}04A^4<ABCD<1{,}04^3A^4 \\) et \\( 1{,}04A^4<16\\,!<1{,}04^3A^4 \\).\n\nDonc \\( A<\\sqrt[4]{\\dfrac{16\\,!}{1{,}04}}\\approx 2118. \\) et \\( A>\\sqrt[4]{\\dfrac{16\\,!}{1{,}04^3}}\\approx 2076. \\) Comme A est un multiple de 25 alors A=2100.\nD=1,04A=2184.\nTestons les 6 cas pour les cases vertes :\n\n![figure](figure:2020-qf-18-corr-cases1)\n\nOn en déduit la valeur de la case en bas à droite car A=2100 :\n\n![figure](figure:2020-qf-18-corr-cases2)\n\nOn élimine donc les deux derniers cas.\n2100 et 2184 sont des multiples de 7 donc le deuxième multiple de 7 (7 ou 14) est dans la case en haut à gauche :\n\n![figure](figure:2020-qf-18-corr-cases3)\n\nOn complète alors la première ligne car D=2184 et la première colonne car A=2100.\n\n![figure](figure:2020-qf-18-corr-cases4)\n\nOn élimine donc les trois derniers cas.\n2184÷13÷7=24=6×4. Le 6 ne peut être sur la 3ᵉ ligne car il y aurait deux multiples de 3 sur cette ligne et il ne resterait que le 9 à mettre pour en avoir autant sur la deuxième colonne, or le 9 compte double.\n\n![figure](figure:2020-qf-18-corr-diag)\n\nLe 9 (et le 11) doit apparaître dans le même produit (B ou C) : il est donc dans la diagonale du 10 et du 13.\n\n![figure](figure:2020-qf-18-corr-two)\n\n3×9×4=108 et 2100÷108>19. Le premier cas est impossible.\n3×11×4=132 et 2100÷132>15. Il faut donc compléter par un 16.\n\nLa grille est donc la suivante :\n\n![figure](figure:2020-qf-18-corr-final)\n\nOn vérifie que les quatre produits sont bien dans l'ordre.\nLe produit des quatre nombres est donc 3×6×12×15=3240.\n\nDonc il y a **1 solution** : Le produit vaut : **3240**.",
+    "figures": [
+      {
+        "id": "2020-qf-18-corr-start",
+        "description": "Le tableau 4×4 avec le 1 et le 13 en haut à droite, le 2 en bas, et trois cases vertes (2ᵉ et 4ᵉ cases de la première colonne, 3ᵉ case de la dernière ligne).",
+        "imageUrl": "q18_corr-start.png"
+      },
+      {
+        "id": "2020-qf-18-corr-cases1",
+        "description": "Les six cas pour les cases vertes (5, 10, 15 dans un ordre différent à chaque fois).",
+        "imageUrl": "q18_corr-cases1.png"
+      },
+      {
+        "id": "2020-qf-18-corr-cases2",
+        "description": "Les six mêmes cas complétés par la case en bas à droite : 7, 7, 14, 14, 21, 21.",
+        "imageUrl": "q18_corr-cases2.png"
+      },
+      {
+        "id": "2020-qf-18-corr-cases3",
+        "description": "Les quatre cas restants, avec le 14 ou le 7 ajouté dans la case en haut à gauche.",
+        "imageUrl": "q18_corr-cases3.png"
+      },
+      {
+        "id": "2020-qf-18-corr-cases4",
+        "description": "Les quatre cas avec la première ligne et la première colonne complétées (12 ou 24 en haut, 3, 2, 6 ou 2 dans la première colonne).",
+        "imageUrl": "q18_corr-cases4.png"
+      },
+      {
+        "id": "2020-qf-18-corr-diag",
+        "description": "La grille restante : 14 12 1 13 / 5 _ _ 6 / 3 _ _ 4 / 10 2 15 7.",
+        "imageUrl": "q18_corr-diag.png"
+      },
+      {
+        "id": "2020-qf-18-corr-two",
+        "description": "Les deux possibilités pour placer le 9 et le 11 dans la diagonale du 10 et du 13.",
+        "imageUrl": "q18_corr-two.png"
+      },
+      {
+        "id": "2020-qf-18-corr-final",
+        "description": "La grille finale 14 12 1 13 / 5 8 9 6 / 3 11 16 4 / 10 2 15 7, avec les produits des lignes (2184, 2160, 2112, 2100) et des colonnes (2100, 2112, 2160, 2184), et les cases 12, 6, 3 et 15 grisées.",
+        "imageUrl": "q18_corr-final.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300,
+        "y": 227
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 10,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-10",
+  "number": 10,
+  "title": "La combinaison",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "**Quelle est la bonne combinaison de quatre chiffres du coffre de la FFJM sachant que :**\n\n- 3-4-7-6 a trois chiffres en commun avec la solution, qui sont tous bien placés ;\n- 3-5-6-8 a deux chiffres communs avec la solution, un bien placé et un mal placé ;\n- 3-5-7-8 a deux chiffres communs avec la solution, qui sont bien placés ;\n- 9-6-4-3 a trois chiffres communs avec la solution qui sont tous mal placés **?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3976"
+  },
+  "correction": {
+    "markdown": "La première information nous indique que la combinaison est 347\\_ ou 34\\_6 ou 3\\_76 ou \\_476.\n\n*Premier essai* avec 347\\_ sachant que le dernier chiffre n'est pas un 6.\nLa deuxième information nous montre un chiffre bien placé (c'est le 3) et un mal placé qui est le 5.\nEn effet ce ne peut être le 6 (à cause de la première information) ni le 8 (qui serait bien placé).\nLe code serait 3475.\nLa troisième information montre qu'il y a deux chiffres bien placés ce qui est faux avec 3475.\n\n*Deuxième essai* avec 34\\_6 sachant que le troisième chiffre n'est pas un 7.\nLa deuxième information nous montre un chiffre bien placé (c'est le 3) et un mal placé (c'est le 6).\nLe troisième chiffre n'est donc pas non plus un 5 ni un 8.\nLa troisième information montre qu'il y a deux chiffres bien placés :\nle 3 l'est mais on a éliminé les trois autres : 5,7 et 8. Cela ne fonctionne pas.\n\n*Troisième essai* avec 3\\_76 sachant que le deuxième chiffre n'est pas un 4.\nLa deuxième information nous montre un chiffre bien placé (c'est le 3) et un mal placé (c'est le 6).\nLe deuxième chiffre n'est donc pas non plus un 5 ni un 8.\nLa troisième information montre qu'il y a deux chiffres bien placés :le 3 et le 7.\nLa quatrième information montre trois chiffres mal placés qui sont donc 9,6 et 3 car on a éliminé le 4.\nLe deuxième chiffre est donc 9 et le code serait 3976. On vérifie qu'il fonctionne.\n\n*Quatrième essai* avec \\_476 sachant que le premier chiffre n'est pas un 3.\nLa deuxième information nous indique un chiffre bien placé qui ne peut être ni un 3 car on l'a éliminé, ni le 5 (c'est un 4), ni le 6 (c'est un 7), ni le 8 (c'est un 6). Il n'y a pas de solution avec cet essai.\n\nDonc il y a **1 solution** : la combinaison est : **3976**."
+  }
+}

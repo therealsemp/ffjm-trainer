@@ -1,0 +1,49 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300,
+        "y": 402
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 12,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-12",
+  "number": 12,
+  "title": "Deux fois trois",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Six nombres différents deux à deux sont écrits sur la circonférence d'un cercle. Chaque nombre est égal au produit de ses deux voisins immédiats. Trois nombres sont des entiers naturels tandis que les trois autres sont des fractions dont le numérateur est égal à 1. **Quelle est la somme des six nombres, sachant qu'elle est entière ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 12
+  },
+  "correction": {
+    "markdown": "Cherchons trois fractions de numérateur 1 dont la somme est un nombre entier. Commençons par les dénominateurs petits et de plus en plus grands.\n\\[ 1 = \\frac{1}{2}+\\frac{1}{2} = \\frac{1}{2}+\\frac{1}{3}+\\frac{1}{6} = \\frac{1}{2}+\\frac{1}{4}+\\frac{1}{4} = \\frac{1}{3}+\\frac{1}{3}+\\frac{1}{3}. \\]\nLes nombres étant différents, le seul cas possible est 1/2+1/3+1/6.\n0 n'est pas un nombre possible car le produit de ses deux voisins serait de 0 et donc l'un de ses voisins serait aussi 0.\nLe plus petit nombre est 1/6.\nSi on multiplie deux nombres entiers différents de 0, on obtient un résultat plus grand que 1/6.\nSi on multiplie 1/2 par un entier différent de 0, on obtient un résultat plus grand que 1/6.\nSi on multiplie 1/3 par un entier différent de 0, on obtient un résultat plus grand que 1/6.\nConclusion les voisins de 1/6 sont 1/2 et 1/3 et on a bien \\( \\frac{1}{2}\\times\\frac{1}{3}=\\frac{1}{6} \\).\n\nL'autre voisin de 1/2 est le nombre A tel que \\( A\\times\\frac{1}{6}=\\frac{1}{2} \\) donc A=3.\n\nL'autre voisin de 1/3 est le nombre B tel que \\( B\\times\\frac{1}{6}=\\frac{1}{3} \\) donc B=2.\n\nL'autre voisin de 3 est le nombre C tel que \\( C\\times\\frac{1}{2}=3 \\) donc C=6.\n\nOn a bien \\( 6\\times\\frac{1}{3}=2 \\) et 2×3=6. Les six nombres sont donc,dans l'ordre : 6, 3, 1/2, 1/6, 1/3, 2.\nLa somme des six nombres est donc de 6+3+1+2=12.\n\nDonc il y a **1 solution** : La somme vaut : **12**."
+  }
+}

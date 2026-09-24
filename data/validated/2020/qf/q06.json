@@ -1,0 +1,58 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 469
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-6",
+  "number": 6,
+  "title": "Une année heureuse",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Le nombre 2020 a pour somme de ses chiffres 4 et il est divisible par 4 : 2 + 0 + 2 + 0 = 4 et 2020 : 4 = 505. Mais Mathilde préfère le nombre 7 qui, pense-t-elle, lui porte bonheur. **Quelle sera la prochaine année dont le numéro a pour somme de ses chiffres 7 et qui est divisible par 7 ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 2023
+  },
+  "correction": {
+    "markdown": "Cherchons d'abord à diviser 2020 par 7, on trouve :\n\n![figure](figure:2020-qf-6-corr-division)\n\nLe reste est de 4. Or 7-4=3. Il faut donc ajouter 3 à 2020 pour obtenir un multiple de 7.\n2023 est un multiple de 7.\nOr 2+0+2+3=7.\n\nLa prochaine année est donc **2023**.",
+    "figures": [
+      {
+        "id": "2020-qf-6-corr-division",
+        "description": "La division posée de 2020 par 7 : quotient 288, restes successifs 6, 6 et enfin 4.",
+        "imageUrl": "q06_corr-division.png"
+      }
+    ]
+  }
+}

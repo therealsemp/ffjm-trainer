@@ -1,0 +1,76 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 359
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-5",
+  "number": 5,
+  "title": "Les caméras de surveillance",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Le dessin représente un quartier de Maths-Ville. Il y a dix carrefours (disques) et dix-huit rues (une rue est un trait qui relie deux disques sans passer par un autre disque). Chaque caméra doit être placée à un carrefour ; elle surveille alors ce carrefour et tous les carrefours qui lui sont reliés par une rue. Chaque carrefour doit être surveillé par au moins une caméra.\n\n![figure](figure:2020-qf-5-streets)\n\n**Quel est, au minimum, le nombre de caméras nécessaires ?**",
+    "figures": [
+      {
+        "id": "2020-qf-5-streets",
+        "description": "Un réseau de triangles verts : dix carrefours (disques blancs) sur trois rangées (3, 3 et 4 disques) reliés par dix-huit rues.",
+        "imageUrl": "q05_fig-streets.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 2
+  },
+  "correction": {
+    "markdown": "Le plan est le suivant :\n\n![figure](figure:2020-qf-5-corr-plan)\n\nSi on essaie de placer une seule caméra, elle ne surveille au maximum que 7 carrefours :\n\n![figure](figure:2020-qf-5-corr-one)\n\nSi on essaie de placer deux caméras, plaçons-les sur la ligne centrale :\n\n![figure](figure:2020-qf-5-corr-two)\n\nLa caméra de gauche surveille 6 carrefours et celle de droite en surveille 5.\nUn carrefour est surveillé par deux caméras.\nTous les carrefours sont surveillés.\n\nLe nombre minimum est donc de **2 caméras**.",
+    "figures": [
+      {
+        "id": "2020-qf-5-corr-plan",
+        "description": "Le plan du quartier : les dix carrefours (disques blancs) et les dix-huit rues.",
+        "imageUrl": "q05_corr-plan.png"
+      },
+      {
+        "id": "2020-qf-5-corr-one",
+        "description": "Une caméra (disque jaune) au centre de la rangée du milieu : elle surveille 7 carrefours (en rouge), deux à gauche et un à droite restent blancs.",
+        "imageUrl": "q05_corr-one.png"
+      },
+      {
+        "id": "2020-qf-5-corr-two",
+        "description": "Deux caméras (disques jaunes) aux extrémités de la rangée du milieu : tous les autres carrefours sont en rouge, surveillés.",
+        "imageUrl": "q05_corr-two.png"
+      }
+    ]
+  }
+}

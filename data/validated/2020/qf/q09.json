@@ -1,0 +1,67 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300,
+        "y": 172
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-9",
+  "number": 9,
+  "title": "L'âge d'Archibald",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "En 2020, Archibald fêtera son anniversaire. Il sait que son âge sera alors égal au nombre formé par les deux derniers chiffres de son année de naissance. **En quelle année est-il né ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 1960 ou 2010"
+  },
+  "correction": {
+    "markdown": "Appelons ABCD l'année de naissance d'Archibald. CD est donc son âge en 2020.\nOn a alors :\n\n![figure](figure:2020-qf-9-corr-add1)\n\nD+D se finit par 0 donc D=0 ou D=5.\n\nSupposons D=0, on a donc :\n\n![figure](figure:2020-qf-9-corr-add2)\n\nC+C se finit par 2 donc C=1 ou C=6.\n\nSi C=1 alors 2020-10=2010.\nL'année de naissance est 2010.\n\nSi C=6 alors 2020-60=1960.\nL'année de naissance est 1960.\n\nSupposons D=5, on a donc :\n\n![figure](figure:2020-qf-9-corr-add3)\n\n1+C+C se finit par 2. Cela signifie que 2×C se termine par 1 ce qui est impossible pour ce nombre pair.\n\nIl y a **2 solutions** : l'année de naissance est **1960** ou **2010**.",
+    "figures": [
+      {
+        "id": "2020-qf-9-corr-add1",
+        "description": "L'addition posée ABCD + CD = 2020.",
+        "imageUrl": "q09_corr-add1.png"
+      },
+      {
+        "id": "2020-qf-9-corr-add2",
+        "description": "L'addition posée ABC0 + C0 = 2020.",
+        "imageUrl": "q09_corr-add2.png"
+      },
+      {
+        "id": "2020-qf-9-corr-add3",
+        "description": "L'addition posée ABC5 + C5 = 2020, avec une retenue 1 au-dessus de la colonne des dizaines.",
+        "imageUrl": "q09_corr-add3.png"
+      }
+    ]
+  }
+}

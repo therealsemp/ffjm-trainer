@@ -1,0 +1,86 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 34
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-1",
+  "number": 1,
+  "title": "La bande des six",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Dans les disques de cette figure, on place les nombres de 1 à 6 (le 1 est déjà placé). On veut que la somme de deux nombres placés dans deux disques situés côte à côte soit toujours égale à 6, à 7 ou à 8. **Quel nombre ira dans la case grisée ?**\n\n![figure](figure:2020-qf-1-heptagon)",
+    "figures": [
+      {
+        "id": "2020-qf-1-heptagon",
+        "description": "Un heptagone rouge avec un disque à chaque sommet (sept disques). Le disque de gauche contient le nombre 1, le disque à droite en haut est grisé, les cinq autres sont vides.",
+        "imageUrl": "q01_fig-heptagon.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 4
+  },
+  "correction": {
+    "markdown": "![figure](figure:2020-qf-1-corr-start)\n\nLes seules possibilités à côté du 1 sont 5 (5+1=6) et 6 (6+1=7). On a deux dispositions possibles\n\n![figure](figure:2020-qf-1-corr-step1)\n\nÀ côté du 6, on ne peut placer que le 2 car 6+2=8.\n\n![figure](figure:2020-qf-1-corr-step2)\n\nÀ côté du 5, on ne peut placer que le 3 car 5+3=8.\n\n![figure](figure:2020-qf-1-corr-step3)\n\nIl ne reste que le 4 dans la case grisée car 4+2=6 et 4+3=7.\n\n![figure](figure:2020-qf-1-corr-step4)\n\n**Le nombre est donc 4.**",
+    "figures": [
+      {
+        "id": "2020-qf-1-corr-start",
+        "description": "Schéma de départ : les sept cases disposées en cercle, la case « 1 » à gauche et la case grisée à droite en haut.",
+        "imageUrl": "q01_corr-start.png"
+      },
+      {
+        "id": "2020-qf-1-corr-step1",
+        "description": "Les deux dispositions possibles : à gauche, 6 au-dessus du 1 et 5 en dessous ; à droite, 5 au-dessus du 1 et 6 en dessous.",
+        "imageUrl": "q01_corr-step1.png"
+      },
+      {
+        "id": "2020-qf-1-corr-step2",
+        "description": "Les deux dispositions, avec un 2 placé à côté du 6 dans chacune.",
+        "imageUrl": "q01_corr-step2.png"
+      },
+      {
+        "id": "2020-qf-1-corr-step3",
+        "description": "Les deux dispositions, avec en plus un 3 placé à côté du 5 dans chacune.",
+        "imageUrl": "q01_corr-step3.png"
+      },
+      {
+        "id": "2020-qf-1-corr-step4",
+        "description": "Les deux dispositions complètes, avec le 4 dans la case grisée.",
+        "imageUrl": "q01_corr-step4.png"
+      }
+    ]
+  }
+}

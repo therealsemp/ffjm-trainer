@@ -1,0 +1,62 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 573,
+        "y": 96
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 15,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-15",
+  "number": 15,
+  "title": "Aires et périmètres",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Un rectangle a un périmètre égal à 65 cm. On partage ce rectangle en neuf rectangles plus petits en traçant des lignes parallèles aux bords. Le périmètre de certains de ces petits rectangles est indiqué sur la figure. La somme des aires des quatre rectangles grisés est égale à 120 cm². **Quelle est, en cm², l'aire du rectangle central ?**\n\n![figure](figure:2020-qf-15-grid)\n\nNote : le dessin ne respecte pas les proportions.",
+    "figures": [
+      {
+        "id": "2020-qf-15-grid",
+        "description": "Un rectangle partagé en neuf rectangles (3×3). Les quatre coins, en vert, sont marqués F, F, J et M ; le rectangle central, en bleu clair, porte « aire = ? » ; les autres portent leur périmètre : p : 14 cm (en haut au centre), p : 28 cm (au milieu à gauche), p : 26 cm (au milieu à droite), p : 18 cm (en bas au centre).",
+        "imageUrl": "q15_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 17 ou 22,5"
+  },
+  "correction": {
+    "markdown": "Posons x,a et b les longueurs verticales et c,d et y les longueurs horizontales.\n\n![figure](figure:2020-qf-15-corr-grid)\n\nOn a 14=2×(d+x) donc d=7-x.\nOn a 18=2×(d+b) donc b=9-d=9-(7-x)=x+2.\nOn a 26=2×(y+a) donc a= 13-y.\nOn a 28=2×(c+a) donc c=14-a=14-(13-y)=y+1.\n\nLa somme des aires grisées est de (c+y)(b+x)=(2y+1)(2x+2)=120. Donc (2y+1)(x+1)=60.\n\nLe périmètre du grand rectangle est de 65 cm.\nDonc (x+2)+(13-y)+x+(y+1)+(7-x)+y=65÷2=32,5.\nx+y+23=32,5\nx+y=9,5.\ny=9,5-x.\nDonc (2×(9,5-x)+1)(x+1)=60\n(20-2x)(x+1)=60.\n(10-x)(x+1)=30.\n10x-x²+10-x=30.\nx²-9x+20=0.\nΔ=9²-4×20=81-80=1=1².\nSoit x=(9+1)÷2=5 soit x=(9-1)÷2=4.\n\nSi x=5 alors y=9,5-5=4,5 puis d=7-5=2 et a=13-4,5=8,5 Donc Aire =2×8,5=17 cm².\n\nSi x=4 alors y=9,5-4=5,5 puis d=7-4=3 et a=13-5,5=7,5 Donc Aire =3×7,5=22,5 cm².\n\nIl y a **2 solutions** : l'aire du rectangle central est **17 cm²** ou **22,5 cm²**.",
+    "figures": [
+      {
+        "id": "2020-qf-15-corr-grid",
+        "description": "Le rectangle partagé en 3×3 : colonnes de largeurs c, d, y et lignes de hauteurs x, a, b ; les quatre coins sont grisés.",
+        "imageUrl": "q15_corr-grid.png"
+      }
+    ]
+  }
+}

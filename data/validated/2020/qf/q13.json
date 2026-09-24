@@ -1,0 +1,49 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300,
+        "y": 477
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 13,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-13",
+  "number": 13,
+  "title": "Les pions tricolores",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Dans un sac il y a six jetons : deux bleus, deux verts et deux rouges. Chaque bleu vaut 1 point, chaque vert 2 points, et chaque rouge 3 points. On tire un jeton, puis un deuxième sans remettre le premier dans le sac. Les jetons de même couleur sont différenciés : le tirage du bleu « *a* » puis du bleu « *b* » sera considéré comme différent du tirage du « bleu « *b* » suivi du bleu « *a* » . De même un certain bleu suivi d'un certain rouge sera différent du tirage de ces deux mêmes jetons dans l'ordre inverse. **De combien de façons différentes peut-on tirer au moins 4 points ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 20
+  },
+  "correction": {
+    "markdown": "Pour le premier tirage, il y a 6 choix possibles, et pour chacun de ces choix, il y a, au deuxième tirage, 5 choix possibles. Le nombre total de combinaisons est donc de 6×5=30.\nÉcrivons toutes ces combinaisons en notant Ba et Bb les deux bleus, Va et Vb les deux verts, et Ra et Rb les deux rouges. Notons à côté le score obtenu.\n\n|   |   |   |\n|---|---|---|\n| Ba | Bb | 2 |\n| Ba | Va | 3 |\n| Ba | Vb | 3 |\n| ~~Ba~~ | ~~Ra~~ | ~~4~~ |\n| ~~Ba~~ | ~~Rb~~ | ~~4~~ |\n| Bb | Ba | 2 |\n| Bb | Va | 3 |\n| Bb | Vb | 3 |\n| ~~Bb~~ | ~~Ra~~ | ~~4~~ |\n| ~~Bb~~ | ~~Rb~~ | ~~4~~ |\n\n|   |   |   |\n|---|---|---|\n| Va | Ba | 3 |\n| Va | Bb | 3 |\n| ~~Va~~ | ~~Vb~~ | ~~4~~ |\n| ~~Va~~ | ~~Ra~~ | ~~5~~ |\n| ~~Va~~ | ~~Rb~~ | ~~5~~ |\n| Vb | Ba | 3 |\n| Vb | Bb | 3 |\n| ~~Vb~~ | ~~Va~~ | ~~4~~ |\n| ~~Vb~~ | ~~Ra~~ | ~~5~~ |\n| ~~Vb~~ | ~~Rb~~ | ~~5~~ |\n\n|   |   |   |\n|---|---|---|\n| ~~Ra~~ | ~~Ba~~ | ~~4~~ |\n| ~~Ra~~ | ~~Bb~~ | ~~4~~ |\n| ~~Ra~~ | ~~Va~~ | ~~5~~ |\n| ~~Ra~~ | ~~Vb~~ | ~~5~~ |\n| ~~Ra~~ | ~~Rb~~ | ~~6~~ |\n| ~~Rb~~ | ~~Ba~~ | ~~4~~ |\n| ~~Rb~~ | ~~Bb~~ | ~~4~~ |\n| ~~Rb~~ | ~~Va~~ | ~~5~~ |\n| ~~Rb~~ | ~~Vb~~ | ~~5~~ |\n| ~~Rb~~ | ~~Ra~~ | ~~6~~ |\n\nOn peut donc tirer au moins 4 points de 2+2+3+3+5+5=20 façons.\n\nLa réponse est donc de **20** façons différentes."
+  }
+}

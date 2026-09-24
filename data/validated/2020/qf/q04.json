@@ -1,0 +1,76 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 283
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-4",
+  "number": 4,
+  "title": "Le dé de Mathilde",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a construit un dé en carton. Voici trois vues différentes de ce dé.\n\n![figure](figure:2020-qf-4-dice)\n\n**Quel est le nombre de points inscrits sur la face du dessous de la vue de droite ?** Note : le dé de Mathilde ne respecte pas la disposition des points d'un dé du commerce.",
+    "figures": [
+      {
+        "id": "2020-qf-4-dice",
+        "description": "Trois vues en perspective du même dé rouge (points noirs), montrant chacune trois faces.",
+        "imageUrl": "q04_fig-dice.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1
+  },
+  "correction": {
+    "markdown": "Tout d'abord, on s'aperçoit que tous les chiffres de 1 à 6 sont utilisés. Chacun n'apparaît donc qu'une fois.\nPrenons le dé central et donnons-en un début de patron, on obtient :\n\n![figure](figure:2020-qf-4-corr-net1)\n\nLe dé de droite contient aussi les chiffres 2 et 5, cela signifie que le 3 vient en face du 4 :\n\n![figure](figure:2020-qf-4-corr-net2)\n\nLe dé de gauche nous donne la position des dés 1 et 6 par rapport à 4 :\n\n![figure](figure:2020-qf-4-corr-net3)\n\nLa face du dessous de la vue de droite est donc celle qui est en face du 2.\nD'après le patron effectué c'est donc le 1.\n\nLa face compte **1 point**.",
+    "figures": [
+      {
+        "id": "2020-qf-4-corr-net1",
+        "description": "Début de patron du dé central : trois faces assemblées en L.",
+        "imageUrl": "q04_corr-net1.png"
+      },
+      {
+        "id": "2020-qf-4-corr-net2",
+        "description": "Le patron complété d'une quatrième face (le 3 vient en face du 4).",
+        "imageUrl": "q04_corr-net2.png"
+      },
+      {
+        "id": "2020-qf-4-corr-net3",
+        "description": "Le patron complet des six faces du dé, avec la position des faces 1 et 6.",
+        "imageUrl": "q04_corr-net3.png"
+      }
+    ]
+  }
+}

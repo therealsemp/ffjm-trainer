@@ -1,0 +1,68 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "qf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/qf/2020_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 573,
+        "y": 339
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/qf/2020_qf_solution-detailed.pdf",
+        "page": 17,
+        "position": {
+          "x": 29,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "id": "2020-qf-17",
+  "number": 17,
+  "title": "Un grand verger",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Augustine désire aménager un verger de pommiers sur un terrain rectangulaire. Elle a reçu 2020 arbres qu'elle doit planter. Un système d'arrosage automatique impose que les arbres soient plantés sur les sommets d'un réseau régulier dont les mailles sont des triangles équilatéraux de coté égal à 5 mètres. De plus, aucun arbre ne doit être à moins de 10 mètres du bord du verger. **Quelle est la surface minimale du terrain ?** Si besoin est, on prendra 1,732 pour √3 et on arrondira au m² le plus proche."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 50961
+  },
+  "correction": {
+    "markdown": "![figure](figure:2020-qf-17-corr-lattice1)\n\nLa hauteur d'un triangle équilatéral de côté 5 est \\( \\dfrac{5\\sqrt{3}}{2} \\).\n\nLe rectangle contenant les arbres a pour hauteur 5A et pour longueur \\( 5B\\sqrt{3} \\).\nSur l'exemple ci-contre, A=4 et B=3.\nA et B sont des entiers multipliés par 0,5.\nSi A et B sont entiers, le nombre d'arbres est (2A+1)×B+(A+1)=2AB+A+B+1.\nAinsi sur l'exemple ci-contre N=2×4×3+4+3+1=32.\n\n![figure](figure:2020-qf-17-corr-lattice2)\n\nSi A est entier et B est non entier alors le nombre d'arbres est :\n(2A+1)(B+0,5)=2AB+A+B+0,5.\n\nAinsi sur l'exemple ci-contre N=2×4×2,5+4+2,5+0,5=27.\n\n![figure](figure:2020-qf-17-corr-lattice3)\n\nSi A est non entier et B est entier alors le nombre d'arbres est :\n2(A+0,5)×B+(A+0,5)=2AB+A+B+0,5.\n\nAinsi sur l'exemple ci-contre N=2×3,5×3+3,5+3+0,5=28.\n\n![figure](figure:2020-qf-17-corr-lattice4)\n\nSi A et B ne sont pas entiers alors le nombre d'arbres est :\n2(A+0,5)(B+0,5)=2AB+A+B+0,5.\n\nAinsi sur l'exemple ci-contre N=2×3,5×2,5+3,5+2,5+0,5=24.\n\nDans tous les cas N est la partie entière de 2AB+A+B+1.\nSi on veut minimiser la surface avec un nombre suffisant d'arbres (supérieur ou égal à 2020), il faut être proche du carré donc A environ égal à \\( B\\sqrt{3} \\).\nN environ égal à 2020 donc \\( 2\\sqrt{3}\\times B^2+(1+\\sqrt{3})B-2019=0 \\).\nEn résolvant cette équation du second degré, on trouve B≈23,75.\nCherchons donc des solutions avec 22<B<25,5 et donc 38<A<44.\nDéterminons le nombre d'arbres correspondant :\n\n|   | 38 | 38,5 | 39 | 39,5 | 40 | 40,5 | 41 | 41,5 | 42 | 42,5 | 43 | 43,5 | 44 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| 22 | 1733 | 1755 | 1778 | 1800 | 1823 | 1845 | 1868 | 1890 | 1913 | 1935 | 1958 | 1980 | 2003 |\n| 22,5 | 1771 | 1794 | 1817 | 1840 | 1863 | 1886 | 1909 | 1932 | 1955 | 1978 | 2001 | ~~2024~~ | 2047 |\n| 23 | 1810 | 1833 | 1857 | 1880 | 1904 | 1927 | 1951 | 1974 | 1998 | ~~2021~~ | 2045 | 2068 | 2092 |\n| 23,5 | 1848 | 1872 | 1896 | 1920 | 1944 | 1968 | 1992 | 2016 | ~~2040~~ | 2064 | 2088 | 2112 | 2136 |\n| 24 | 1887 | 1911 | 1936 | 1960 | 1985 | 2009 | ~~2034~~ | 2058 | 2083 | 2107 | 2132 | 2156 | 2181 |\n| 24,5 | 1925 | 1950 | 1975 | 2000 | ~~2025~~ | 2050 | 2075 | 2100 | 2125 | 2150 | 2175 | 2200 | 2225 |\n| 25 | 1964 | 1989 | 2015 | ~~2040~~ | 2066 | 2091 | 2117 | 2142 | 2168 | 2193 | 2219 | 2244 | 2270 |\n| 25,5 | 2002 | ~~2028~~ | 2054 | 2080 | 2106 | 2132 | 2158 | 2184 | 2210 | 2236 | 2262 | 2288 | 2314 |\n\nTestons les 7 valeurs proches de 2020 repéré en vert sur ce tableau avec la formule d'aire : \\( (20+5A)(20+5B\\sqrt{3}) \\).\n\n|   |   |   |\n|---|---|---|\n| 22,5 | 43,5 | 51028 |\n| ~~23~~ | ~~42,5~~ | ~~50961~~ |\n| 23,5 | 42 | 51409 |\n| 24 | 41 | 51265 |\n| 24,5 | 40 | 51079 |\n| 25 | 39,5 | 51440 |\n| 25,5 | 38,5 | 51178 |\n\nOn trouve alors que le minimum est pour B=23 et A=42,5.\nN=2021 et Aire≈50 961 m²\n\nLa surface minimale du terrain est de **50 961 m²**.",
+    "figures": [
+      {
+        "id": "2020-qf-17-corr-lattice1",
+        "description": "Un réseau triangulaire d'arbres (points bleus) dans un rectangle : exemple avec A=4 et B=3 (32 arbres).",
+        "imageUrl": "q17_corr-lattice1.png"
+      },
+      {
+        "id": "2020-qf-17-corr-lattice2",
+        "description": "Un réseau triangulaire d'arbres : exemple avec A entier et B non entier (A=4 et B=2,5, 27 arbres).",
+        "imageUrl": "q17_corr-lattice2.png"
+      },
+      {
+        "id": "2020-qf-17-corr-lattice3",
+        "description": "Un réseau triangulaire d'arbres : exemple avec A non entier et B entier (A=3,5 et B=3, 28 arbres).",
+        "imageUrl": "q17_corr-lattice3.png"
+      },
+      {
+        "id": "2020-qf-17-corr-lattice4",
+        "description": "Un réseau triangulaire d'arbres : exemple avec A et B non entiers (A=3,5 et B=2,5, 24 arbres).",
+        "imageUrl": "q17_corr-lattice4.png"
+      }
+    ]
+  }
+}

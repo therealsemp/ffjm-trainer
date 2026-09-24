@@ -1,0 +1,79 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300.5,
+        "y": 395.2
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-11",
+  "number": 11,
+  "title": "Les rectangles",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "**Combien de rectangles de toutes tailles et de toutes orientations peut-on dessiner en reliant des points de ce réseau ?**\n\n![figure](figure:2021-qf-11-dots)\n\nDeux rectangles de mêmes dimensions dessinés reliant des points différents seront comptés comme deux rectangles différents. Attention, les carrés sont des rectangles particuliers ; il faut donc les compter !",
+    "figures": [
+      {
+        "id": "2021-qf-11-dots",
+        "description": "Un réseau carré de 5 × 5 points régulièrement espacés.",
+        "imageUrl": "q11_fig-dots.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 130
+  },
+  "correction": {
+    "markdown": "Pour les carrés de côté 1, nous en avons 4×4=16.\n\nPour les rectangles de côtés 1 et 2, nous en avons 3×4×2=24.\n\nPour les rectangles de côtés 1 et 3, nous en avons 2×4×2=16.\n\nPour les rectangles de côtés 1 et 4, nous en avons 1×4×2=8.\n\nPour les carrés de côtés 2, nous en avons 3×3=9.\n\nPour les rectangles de côtés 2 et 3, nous en avons 2×3×2=12.\n\nPour les rectangles de côtés 2 et 4, nous en avons 1×3×2=6.\n\nPour les carrés de côtés 3, nous en avons 2×2=4.\n\nPour les rectangles de côtés 3 et 4, nous en avons 1×2×2=4.\n\nPour les carrés de côtés 4, nous en avons 1.\n\n![figure](figure:2021-qf-11-corr-straight)\n\nÉtudions maintenant ceux qui ne sont pas horizontaux et verticaux.\n\nPour les carrés de côtés 1, nous en avons 3×3=9.\n\nPour les rectangles de côtés 1 et 2, nous en avons 2×2×2=8.\n\nPour les rectangles de côtés 1 et 3, nous en avons 2.\n\nPour les carrés de côtés 2, nous en avons 1.\n\n![figure](figure:2021-qf-11-corr-tilted1)\n\nPour ces carrés, nous en avons 2×2×2=8.\n\n![figure](figure:2021-qf-11-corr-tilted2)\n\nPour ces carrés, nous en avons 2.\n\n![figure](figure:2021-qf-11-corr-tilted3)\n\n16+24+16+8+9+12+6+4+4+1+9+8+2+1+8+2=130\n\nDonc il y a **130 rectangles**.",
+    "figures": [
+      {
+        "id": "2021-qf-11-corr-straight",
+        "description": "Le réseau de 5 × 5 points avec, superposés depuis le coin inférieur gauche, un carré 1×1 et des rectangles 1×2, 1×3 et 1×4 horizontaux et verticaux alignés sur la grille.",
+        "imageUrl": "q11_corr-straight.png"
+      },
+      {
+        "id": "2021-qf-11-corr-tilted1",
+        "description": "Le réseau de 5 × 5 points avec trois carrés inclinés à 45° de côté √2 (reliant des points en diagonale), accolés en escalier.",
+        "imageUrl": "q11_corr-tilted1.png"
+      },
+      {
+        "id": "2021-qf-11-corr-tilted2",
+        "description": "Le réseau de 5 × 5 points avec un carré incliné dont les côtés relient des points décalés de 1 et 2 (côté √5).",
+        "imageUrl": "q11_corr-tilted2.png"
+      },
+      {
+        "id": "2021-qf-11-corr-tilted3",
+        "description": "Le réseau de 5 × 5 points avec un grand carré incliné dont les côtés relient des points décalés de 1 et 3 (côté √10).",
+        "imageUrl": "q11_corr-tilted3.png"
+      }
+    ]
+  }
+}

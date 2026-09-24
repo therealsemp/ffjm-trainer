@@ -1,0 +1,63 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 572.9,
+        "y": 54.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 14,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-14",
+  "number": 14,
+  "title": "Le pré du père Drau",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le père Drau possède un pré ayant la forme d'un triangle rectangle. La hauteur \\( h \\) issue du sommet de l'angle droit partage l'hypoténuse en deux segments de longueurs \\( a \\) et \\( c \\) telles que \\( a = b + c \\), où \\( b \\) désigne la longueur d'un côté de l'angle droit. **Si \\( a \\) = 10 m, quelle est la longueur \\( c \\) ?**\n\n![figure](figure:2021-qf-14-triangle)\n\nOn donnera la réponse en centimètres, éventuellement arrondie au centimètre le plus proche. Note : la figure ne respecte pas les proportions.",
+    "figures": [
+      {
+        "id": "2021-qf-14-triangle",
+        "description": "Un triangle rectangle bleu clair, angle droit en haut, avec la hauteur h issue de l'angle droit. L'hypoténuse (en bas) est partagée en un grand segment a à gauche et un petit segment c à droite ; le côté de droite de l'angle droit est noté b.",
+        "imageUrl": "q14_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 333
+  },
+  "correction": {
+    "markdown": "Si a=10 alors b+c=10.\n\nSi on applique le théorème de Pythagore dans le triangle de droite, on trouve :\n\nh²=b²-c²=(b+c)(b-c)=10(b-c).\n\nSi on applique le théorème de Pythagore dans le triangle de gauche, on trouve :\n\nd²=10²+h²=100+10(b-c).\n\nSi on applique le théorème de Pythagore dans le grand triangle, on trouve :\n\n(10+c)² = b²+d².\n\n100+c²+20c = b²+100 +10(b-c).\n\n20c = b²-c² +10(b-c).\n\n20c = h² +10 (b-c).\n\n20c = 10(b-c) +10(b-c).\n\n20c = 20(b-c).\n\nc=b-c.\n\n2c=b.\n\nOr 10=b+c=2c+c=3c.\n\nDonc \\( c = \\dfrac{10}{3} \\approx 3{,}33 \\) m.\n\n![figure](figure:2021-qf-14-corr-triangle)\n\nLa longueur c mesure environ **333 cm**.",
+    "figures": [
+      {
+        "id": "2021-qf-14-corr-triangle",
+        "description": "Le même triangle rectangle, avec le côté gauche de l'angle droit noté d, le côté droit noté b, la hauteur h, et l'hypoténuse partagée en a (à gauche) et c (à droite) ; angles droits marqués au sommet et au pied de la hauteur.",
+        "imageUrl": "q14_corr-triangle.png"
+      }
+    ]
+  }
+}

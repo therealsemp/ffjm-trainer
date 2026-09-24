@@ -1,0 +1,61 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 301.4,
+        "y": 557.4
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 13,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-13",
+  "number": 13,
+  "title": "Les pièces de Picsou",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Picsou possède 2021 pièces d'or. Il les répartit en piles contenant des nombres de pièces consécutifs.\n\n**S'il a plus de deux piles, combien la pile la plus haute contient-elle de pièces ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 66 ou 68"
+  },
+  "correction": {
+    "markdown": "Effectivement s'il n'avait qu'une pile elle serait composée de 2021 pièces.\n\nS'il n'avait que deux piles elles seraient composée de 1010 et de 1011 pièces.\n\nSi on appelle k le nombre de piles et N le nombre de pièces de la pile la plus basse.\n\n![figure](figure:2021-qf-13-corr-piles)\n\nDoublons les piles dans l'ordre inverse et superposons-les aux premières piles.\n\n![figure](figure:2021-qf-13-corr-doubled)\n\nOn obtient un rectangle de largeur k et de hauteur 2N+k-1 (plus grand que k car N vaut au moins 1) contenant 2021×2=4042 pièces.\n\nOr 4042=2×43×47=43×94=47×86.\n\nDonc k=43 ou k=47.\n\nSi k=43 alors 2N+42=94 donc 2N=52 et N=26 et la plus haute pile fait 26+42=68 pièces.\n\nSi k=47 alors 2N+46=86 donc 2N=40 et N=20 et la plus haute pile fait 20+46=66 pièces.\n\nIl y a donc **2 solutions** : la pile la plus haute contient **66 ou 68 pièces**.",
+    "figures": [
+      {
+        "id": "2021-qf-13-corr-piles",
+        "description": "Une suite de piles rectangulaires de hauteurs croissantes, étiquetées N, N+1, N+2, …, N+k-3, N+k-2, N+k-1.",
+        "imageUrl": "q13_corr-piles.png"
+      },
+      {
+        "id": "2021-qf-13-corr-doubled",
+        "description": "Les mêmes piles, chacune surmontée de la pile correspondante prise dans l'ordre inverse (N+k-1 sur N, N+k-2 sur N+1, …, N sur N+k-1), formant ensemble un rectangle de hauteur constante.",
+        "imageUrl": "q13_corr-doubled.png"
+      }
+    ]
+  }
+}

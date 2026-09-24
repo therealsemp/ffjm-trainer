@@ -1,0 +1,55 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 572.9,
+        "y": 167.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 15,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-15",
+  "number": 15,
+  "title": "Un rectangle à reconstituer",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Mathilde, en fouillant dans le grenier, a trouvé un vieux puzzle. Celui-ci est constitué de neuf carrés de côtés respectifs :\n\n18 ; 15 ; 14 ; 10 ; 9 ; 8 ; 7 ; 4 et 1.\n\nUne seule indication est donnée : *en utilisant ces neuf carrés, reconstituez un rectangle*.\n\nMathilde a réussi ce puzzle. Cinq carrés sont en contact avec le carré de côté 10.\n\n**Quelles sont les longueurs des côtés de ces cinq carrés ?**\n\nVous donnerez ces cinq longueurs rangées dans l'ordre croissant."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1, 4, 7, 9, 14"
+  },
+  "correction": {
+    "markdown": "18²+15²+14²+10²+9²+8²+7²+4²+1²=1056=2⁵×3×11=32×33.\n\n18+15=33. et 18+14=32 ce qui permet de coller ces trois carrés de côtés 18;15;14.\n\nEnsuite 18-14=4 et 4+10=14 ce qui permet de coller ces deux carrés de côtés 4 et 10.\n\nAprès 15=8+7 ce qui permet de coller ces deux carrés de côtés 8 et 7.\n\nEnfin 10=1+9 ; 8=1+7 et 9=1+8 ce qui permet de coller ces deux carrés de côtés 1 et 9.\n\nOn obtient la figure suivante :\n\n![figure](figure:2021-qf-15-corr-rectangle)\n\nLe carré de côté 10 touche bien 5 carrés.\n\nCe sont les carrés de côtés **1;4;7;9;14**.",
+    "figures": [
+      {
+        "id": "2021-qf-15-corr-rectangle",
+        "description": "Le rectangle 33 × 32 reconstitué avec les neuf carrés : en haut à gauche le carré 18, en haut à droite le 14, sous le 14 à gauche le 4 et à droite le 10, sous le 18 à gauche le 15, puis le 7 et le 8 empilés à droite du 15, le petit carré 1, et en bas à droite le 9. Les longueurs des côtés sont inscrites le long de chaque carré.",
+        "imageUrl": "q15_corr-rectangle.png"
+      }
+    ]
+  }
+}

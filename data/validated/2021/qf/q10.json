@@ -1,0 +1,50 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300.5,
+        "y": 282.6
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 10,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-10",
+  "number": 10,
+  "title": "Les chevaux d'Aristide",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Aristide élève des chevaux. Il possède des fils pour clôtures électriques de 30 mètres de long chacun. A l'aide de chacun de ces fils, il peut créer un enclos rectangulaire de 30 mètres de périmètre. Il s'aperçoit qu'avec des dimensions égales à des nombres entiers de mètres, la largeur étant toujours au moins égale à deux mètres, il peut créer tous les enclos différents possibles et que le nombre d'enclos correspondrait exactement au nombre de ses chevaux. **Combien Aristide possède-t-il de chevaux ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "Le périmètre d'un rectangle est donné par la formule 2×(Longueur+largeur).\n\nS'il vaut 30 alors Longueur+largeur=15.\n\n15=13+2=12+3=11+4=10+5=9+6=8+7.\n\nOn peut donc faire 6 enclos différents.\n\nAristide possède **6 chevaux**."
+  }
+}

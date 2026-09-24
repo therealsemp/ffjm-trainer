@@ -1,0 +1,48 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 572.9,
+        "y": 291.3
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 16,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-16",
+  "number": 16,
+  "title": "La somme de l'année",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "On calcule la partie entière* de chacun des produits \\( n \\times 47/43 \\), pour \\( n \\) variant de 1 à 43, puis on additionne toutes ces parties entières.\n\n**Quel résultat obtiendra-t-on ?**\n\n\\* La partie entière d'un nombre est le plus grand nombre entier inférieur ou égal à ce nombre."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1013
+  },
+  "correction": {
+    "markdown": "\\( \\dfrac{47}{43} = 1 + \\dfrac{4}{43} \\). Donc \\( \\dfrac{n \\times 47}{43} = n + \\dfrac{4 \\times n}{43} \\).\n\n\\( \\dfrac{4n}{43} < 1 \\). \\( 4n < 43 \\). \\( n < 10{,}75 \\). La partie entière de n×47/43 vaut n.\n\n\\( \\dfrac{4n}{43} < 2 \\). \\( 4n < 86 \\). \\( n < 21{,}5 \\). La partie entière de n×47/43 vaut n+1.\n\n\\( \\dfrac{4n}{43} < 3 \\). \\( 4n < 129 \\). \\( n < 32{,}25 \\). La partie entière de n×47/43 vaut n+2.\n\n\\( \\dfrac{4n}{43} < 4 \\). \\( n < 43 \\). La partie entière de n×47/43 vaut n+3.\n\nEt pour n=43, la partie entière de n×47/43 vaut n+4.\n\nOn doit donc faire les calculs suivants :\n\nla somme de 1 à 10.\n\nla somme de (11+1) à (21+1) soit la somme de 12 à 22.\n\nla somme de (22+2) à (32+2) soit la somme de 24 à 34.\n\nla somme de (33+3) à (42+3) soit la somme de 36 à 45.\n\net (43+4)=47.\n\nOn fait donc la somme des nombres de 1 à 47 à laquelle on enlève 11;23;35 et 46.\n\n1+2+3+...+47=47×48÷2=47×24=1128.\n\n11+23+35+46=115.\n\n1128-115=1013.\n\nLa somme de l'année vaut **1013**."
+  }
+}

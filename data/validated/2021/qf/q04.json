@@ -1,0 +1,66 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 316.2
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-4",
+  "number": 4,
+  "title": "L'araignée",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Une araignée se déplace sur les arêtes d'un cube en fil de fer depuis le sommet D (départ) jusqu'au sommet A (arrivée). Sur chacun des autres sommets, on a indiqué le nombre d'insectes qui y sont piégés. **Si l'araignée ne repasse jamais deux fois par un même sommet, combien d'insectes peut-elle manger, au maximum, en allant de D à A ?**\n\n![figure](figure:2021-qf-4-cube)",
+    "figures": [
+      {
+        "id": "2021-qf-4-cube",
+        "description": "Un cube en fil de fer vu en perspective, dont les huit sommets sont des cercles : D (départ) en bas à gauche devant, A (arrivée) à droite derrière en bas, et les autres sommets portent les nombres d'insectes 1, 2, 3, 4, 5 et 6.",
+        "imageUrl": "q04_fig-cube.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 20
+  },
+  "correction": {
+    "markdown": "En allant de D à A, on ne peut pas passer par tous les sommets.\n\nEn effet il faut alterner les sommets verts et les sommets oranges.\n\nEn revanche on peut passer par 5 sommets (3 oranges et 2 verts).\n\nAu maximum on peut ne pas passer par le 1.\n\nIl suffit de faire le trajet D-3-5-4-6-2-A par exemple.\n\n3+4+5+6+2=20.\n\n![figure](figure:2021-qf-4-corr-cube)\n\nL'araignée peut manger au maximum **20 insectes**.",
+    "figures": [
+      {
+        "id": "2021-qf-4-corr-cube",
+        "description": "Le même cube, avec les sommets coloriés alternativement en vert (D, 6, 5, A) et en orange (3, 4, 2, 1).",
+        "imageUrl": "q04_corr-cube.png"
+      }
+    ]
+  }
+}

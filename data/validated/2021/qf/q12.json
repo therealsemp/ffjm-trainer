@@ -1,0 +1,49 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300.5,
+        "y": 493.4
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 12,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-12",
+  "number": 12,
+  "title": "Les fractions",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "On écrit les 2020 fractions : \\( \\dfrac{1}{2021} \\) ; \\( \\dfrac{2}{2021} \\) ; \\( \\dfrac{3}{2021} \\) ; ..... ; \\( \\dfrac{2020}{2021} \\)\n\n**Combien d'entre elles sont simplifiables ?**\n\nUne fraction est simplifiable si elle n'est pas irréductible."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 88
+  },
+  "correction": {
+    "markdown": "Décomposons 2021 en produit de facteurs premiers : on trouve 2021=43×47.\n\nOn peut donc simplifier nos fractions si le numérateur est un multiple de 43 ou de 47.\n\nLes multiples de 43 inférieurs à 2021 sont 1×43 ; 2×43 ; 3×43 ;… ; 45×43 ; 46×43.\n\nIl y en a donc 46.\n\nLes multiples de 47 inférieurs à 2021 sont 1×47 ; 2×47 ; 3×47 ;… ; 41×47 ; 42×47.\n\nIl y en a donc 42.\n\n46+42=88.\n\nIl y a **88 fractions simplifiables**."
+  }
+}

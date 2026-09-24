@@ -1,0 +1,64 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 209.9
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-3",
+  "number": 3,
+  "title": "Les cubes",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a collé ensemble 27 petits cubes identiques pour former un cube de dimension trois fois plus grande. Mathias s'approche du cube qui est posé sur une table.\n\n**De sa position, et sans se déplacer, combien de petits cubes peut-il voir, au maximum ?**\n\nNote : Lorsqu'on voit deux ou trois faces d'un même petit cube, cela compte pour un seul cube."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 19
+  },
+  "correction": {
+    "markdown": "On peut voir au maximum 3 faces du grand cube.\n\nChaque face contient 3×3=9 cubes.\n\n![figure](figure:2021-qf-3-corr-cube-grid)\n\nOn peut voir 9 cubes (en vert sur le dessin ci-dessous) sur la face de devant ;\n\n6 cubes en plus (en rouge) sur la face de droite ;\n\net 4 cubes en plus (en bleu) sur la face du dessus.\n\n![figure](figure:2021-qf-3-corr-cube-colored)\n\n9+6+4=19.\n\nOn peut voir **19 petits cubes**.",
+    "figures": [
+      {
+        "id": "2021-qf-3-corr-cube-grid",
+        "description": "Un grand cube 3×3×3 dessiné en perspective, faces vues : devant, droite et dessus, chacune découpée en 3×3 petits carrés blancs.",
+        "imageUrl": "q03_corr-cube-grid.png"
+      },
+      {
+        "id": "2021-qf-3-corr-cube-colored",
+        "description": "Le même cube colorié : les 9 petits cubes de la face de devant en vert, 6 cubes supplémentaires de la face de droite en rouge et 4 cubes supplémentaires de la face du dessus en bleu.",
+        "imageUrl": "q03_corr-cube-colored.png"
+      }
+    ]
+  }
+}

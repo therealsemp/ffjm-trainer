@@ -1,0 +1,51 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300.5,
+        "y": 93
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-8",
+  "number": 8,
+  "title": "Les chiffres de l'année",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "L'année 2021 s'écrit en n'utilisant que les chiffres 0, 1 et 2.\n\n**Combien de millésimes, depuis l'an 1000 jusqu'à l'an 2021 inclus, utilisent ces trois chiffres et seulement ceux-là, l'un de ces chiffres étant répété ?**\n\nNote : on appelle millésime un nombre représentant une année."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 17
+  },
+  "correction": {
+    "markdown": "Avec 2 zéros, on peut écrire les nombres 1002, 1020, 1200, 2001, 2010.\n\nAvec 2 un, on peut écrire les nombres 1012, 1021, 1102, 1120, 1201, 1210, 2011.\n\nAvec 2 deux, on peut écrire les nombres 1022, 1202, 1220, 2012, 2021.\n\nAu total cela fait **17 millésimes**."
+  }
+}

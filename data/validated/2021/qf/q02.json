@@ -1,0 +1,66 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 92.5
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-2",
+  "number": 2,
+  "title": "Un partage équitable",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Le Père Mathieu veut partager son champ rectangulaire en deux parties de même surface. Un grillage est déjà posé entre les deux arbres (en pointillé sur le dessin). Mathieu veut poser un second grillage entre l'arbre vert foncé et un des sept points A, B, C, D, E, F ou G. **Auquel de ces sept points doit-il relier l'arbre vert foncé ?**\n\n![figure](figure:2021-qf-2-grid)",
+    "figures": [
+      {
+        "id": "2021-qf-2-grid",
+        "description": "Un champ rectangulaire quadrillé de 6 carreaux de large sur 4 de haut, avec sous le bord inférieur sept points A à G. Un arbre vert clair est au coin supérieur au-dessus de B, un arbre vert foncé est sur la verticale de F, une ligne en dessous du bord supérieur ; un grillage en pointillé relie les deux arbres.",
+        "imageUrl": "q02_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "B"
+  },
+  "correction": {
+    "markdown": "Il y a 4×6=24 carreaux au total. Si on partage en deux cela fait 24÷2=12 carreaux pour chaque partie.\n\nLe grillage déjà posé partage un rectangle de 4 carreaux en deux. Il y a donc l'équivalent de 2 carreaux de part et d'autre.\n\nSi le second grillage va jusqu'à F, il y a donc 2+4=6 carreaux à droite. Il en manque donc 6.\n\nSi le second grillage va à un autre point on partage un autre rectangle (dont l'un des côtés fait 3) en deux parties.\n\nPour obtenir 6 il faut faire 3×4=12 et 12÷2=6.\n\nL'autre côté du rectangle fait donc 4 et on arrive au point B.\n\n![figure](figure:2021-qf-2-corr-grid)\n\nIl faut relier l'arbre gris foncé **au point B**.",
+    "figures": [
+      {
+        "id": "2021-qf-2-corr-grid",
+        "description": "Le quadrillage avec les arbres, le grillage entre les deux arbres et le second grillage reliant l'arbre foncé au point B. Une des deux parties est coloriée en vert ; des étiquettes indiquent « 2 carreaux », « 2 carreaux », « 6 carreaux », « 6 carreaux », « 4 carreaux » et « 4 carreaux » pour les différentes zones.",
+        "imageUrl": "q02_corr-grid.png"
+      }
+    ]
+  }
+}

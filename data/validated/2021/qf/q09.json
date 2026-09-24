@@ -1,0 +1,50 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300.5,
+        "y": 172.6
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-9",
+  "number": 9,
+  "title": "Une suite incertaine",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un jeu de cartes ordinaire comprend 52 cartes de quatre couleurs (coeur, pique, carreau et trèfle), et de 13 valeurs : dans l'ordre 2, 3, 4, 5, 6, 7, 8, 9, 10, valet, dame, roi et as.\n\n**Combien de cartes peut-on tirer au maximum d'un jeu de 52 cartes sans que l'on obtienne 5 cartes dont les valeurs se suivent (quelles que soient leurs couleurs) ?**\n\nAttention : Dans l'échelle des valeurs des cartes, l'as suit le roi, mais il n'est pas suivi par le 2."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 44
+  },
+  "correction": {
+    "markdown": "On peut avoir 4 cartes dont les valeurs se suivent mais pas 5.\n\nOn peut prendre par exemple tous les 2, tous les 3, tous les 4, tous les 5, aucun 6, tous les 7, tous les 8, tous les 9, tous les 10, aucun valet, toutes les dames, tous les rois et tous les as.\n\nAu total cela fait 52-4-4=44 car on enlève les 4 six et les 4 valets.\n\nAu maximum, on peut tirer **44 cartes**."
+  }
+}

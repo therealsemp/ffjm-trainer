@@ -1,0 +1,65 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 528.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-7",
+  "number": 7,
+  "title": "Le télésiège",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Les sièges de ce télésiège sont régulièrement espacés le long d'un câble formant une boucle fermée, et ils sont numérotés dans l'ordre, à partir de 1 jusqu'au dernier siège situé à côté du siège n° 1 et dont le numéro correspond au nombre total de sièges.\n\n![figure](figure:2021-qf-7-chairlift)\n\nLorsque le siège n° 28 est en bas du télésiège, le siège n°8, qui monte, croise le siège n° 17, qui descend.\n\n**Combien le télésiège compte-t-il de sièges ?**",
+    "figures": [
+      {
+        "id": "2021-qf-7-chairlift",
+        "description": "Schéma d'une portion de la boucle du télésiège : le siège 28 en bas, le siège 8 sur le brin qui monte (flèche vers le haut) et le siège 17 sur le brin qui descend (flèche vers le bas), les sièges 8 et 17 se croisant.",
+        "imageUrl": "q07_fig-chairlift.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 31
+  },
+  "correction": {
+    "markdown": "On appelle N le nombre de sièges.\n\nComme 8<17, les numéros vont dans l'ordre croissant de 17 à 28 d'un côté, puis vont de 28 à N et de 1 à 8 de l'autre côté.\n\n28-17=11. Il y a donc 11 sièges de 17 à 27.\n\nDe 1 à 8 il y a 8 sièges. 11-8=3. Il y a donc 3 sièges de 29 à N.\n\nCes trois sièges sont donc 29, 30 et 31.\n\nIl y a donc au total **31 sièges**.\n\nVoici le détail des sièges de haut en bas :\n\n![figure](figure:2021-qf-7-corr-seats)",
+    "figures": [
+      {
+        "id": "2021-qf-7-corr-seats",
+        "description": "Deux colonnes de cases numérotées représentant les sièges de haut en bas : à gauche 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 31, 30, 29 ; à droite 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 ; le siège 28 en bas entre les deux colonnes.",
+        "imageUrl": "q07_corr-seats.png"
+      }
+    ]
+  }
+}

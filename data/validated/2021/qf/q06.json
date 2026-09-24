@@ -1,0 +1,65 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 482.7
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-6",
+  "number": 6,
+  "title": "Le multiple de l'année",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**A l'aide de ces cinq jetons, formez un nombre multiple de 2021.**\n\n![figure](figure:2021-qf-6-tokens)",
+    "figures": [
+      {
+        "id": "2021-qf-6-tokens",
+        "description": "Cinq jetons bleus portant les chiffres 7, 7, 7, 7 et 4.",
+        "imageUrl": "q06_fig-tokens.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 74777
+  },
+  "correction": {
+    "markdown": "Si le nombre finit par 4 alors le quotient de ce nombre par 2021 finit aussi par 4 car 4×1=4.\n\nSi le nombre finit par 7 alors le quotient de ce nombre par 2021 finit aussi par 7 car 7×1=7.\n\nSi le nombre commence par 4 alors le quotient de ce nombre par 2021 commence par 2 car 2×2021=4042.\n\nSi le nombre commence par 7 alors le quotient de ce nombre par 2021 commence par 3 car 3×2021=6063.\n\nCe quotient est donc 27, 34 ou 37.\n\n![figure](figure:2021-qf-6-corr-multiplications)\n\nLe dernier nombre est le bon.\n\nLe multiple est donc **74 777**.",
+    "figures": [
+      {
+        "id": "2021-qf-6-corr-multiplications",
+        "description": "Trois multiplications posées : 2021 × 27 = 14147 + 40420 = 54567 ; 2021 × 34 = 8084 + 60630 = 68714 ; 2021 × 37 = 14147 + 60630 = 74777.",
+        "imageUrl": "q06_corr-multiplications.png"
+      }
+    ]
+  }
+}

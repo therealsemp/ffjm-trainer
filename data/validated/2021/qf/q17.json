@@ -1,0 +1,46 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 572.9,
+        "y": 381.1
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 17,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-17",
+  "number": 17,
+  "title": "Cinq points et des plans",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "On choisit cinq points dans l'espace tels que trois quelconques d'entre eux ne soient jamais alignés et que quatre quelconques d'entre eux ne soient jamais dans un même plan.\n\n**Si l'on considère tous les plans contenant chacun trois de ces cinq points et les intersections de tous ces plans pris deux à deux, combien de droites obtiendra-t-on, au maximum ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 25
+  },
+  "correction": {
+    "markdown": "Trois points définissent un plan. Pour choisir 3 points parmi 5 on a \\( \\dfrac{5 \\times 4}{2} = 10 \\) plans différents.\n\nSi on choisit 2 plans parmi ces 10 on a le choix entre deux plans qui possèdent 1 seul point en commun et deux plans qui possèdent deux points en commun.\n\nDans le premier cas, on choisit 1 point parmi 5 puis 2 points parmi les 4 restants pour déterminer le premier plan, le deuxième plan est déterminé par les deux points restants et le premier point choisi mais on peut intervertir les deux plans (on divise par 2).\n\nOn a donc \\( 5 \\times \\dfrac{4 \\times 3}{2 \\times 2} = 5 \\times 3 = 15 \\) droites différentes au maximum.\n\nDans le deuxième cas on choisit 2 points parmi 5. Quel que soient le 3ᵉ point choisi pour le premier plan et le 4ᵉ point choisi pour le deuxième plan, on obtient la droite passant par ces deux premiers points.\n\nOn a donc \\( \\dfrac{5 \\times 4}{2} = 10 \\) droites en plus\n\n15+10=25.\n\nAu maximum on aura **25 droites**."
+  }
+}

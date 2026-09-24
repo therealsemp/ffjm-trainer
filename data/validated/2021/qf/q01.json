@@ -1,0 +1,66 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "qf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/qf/2021_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 24.5
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/qf/2021_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 28.5,
+          "y": 35.5
+        }
+      }
+    ]
+  },
+  "id": "2021-qf-1",
+  "number": 1,
+  "title": "Les engrenages",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "On fait tourner la roue noire dans le sens des aiguilles d'une montre.\n\n![figure](figure:2021-qf-1-gears)\n\n**Combien de roues jaunes tourneront dans le même sens que la roue noire ?**",
+    "figures": [
+      {
+        "id": "2021-qf-1-gears",
+        "description": "Un engrenage : une rangée horizontale formée de la roue noire (à gauche) suivie de quatre roues jaunes, et une roue jaune supplémentaire au-dessus et au-dessous de la première et de la troisième roue jaune de la rangée (huit roues jaunes en tout).",
+        "imageUrl": "q01_fig-gears.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "Deux roues qui se touchent tournent dans le sens inverse l'une de l'autre.\n\nPar conséquent les roues jaunes tournent dans le sens inverse des aiguilles d'une montre et les roues marrons tournent dans le sens des aiguilles d'une montre.\n\n![figure](figure:2021-qf-1-corr-gears)\n\nPar conséquent il y a 6 roues qui tournent dans le même sens que la roue noire.\n\nLa réponse est donc **6 roues**.",
+    "figures": [
+      {
+        "id": "2021-qf-1-corr-gears",
+        "description": "Le même engrenage colorié : la roue noire (avec une flèche indiquant le sens des aiguilles d'une montre), la première et la troisième roue de la rangée après la noire en jaune, et les six autres roues en marron.",
+        "imageUrl": "q01_corr-gears.png"
+      }
+    ]
+  }
+}

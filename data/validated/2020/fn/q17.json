@@ -1,0 +1,50 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 306,
+        "y": 311
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 315,
+          "y": 180
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-17",
+  "number": 17,
+  "title": "La forêt triangulaire",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Cette forêt a la forme d'un triangle équilatéral. Trois routes parallèles passent respectivement par chacun de ses trois sommets. Deux de ces routes sont espacées de 2 km et la troisième est espacée de 5 km et de 7 km des deux premières (voir la figure).\n\n![figure](figure:2020-fn-17-foret)\n\n**Quelle est la longueur du côté de la forêt ?**\n\nOn donnera la réponse en kilomètres. Si nécessaire, on prendra 1,414 pour \\(\\sqrt{2}\\) ; 1,732 pour \\(\\sqrt{3}\\) ; 2,236 pour \\(\\sqrt{5}\\) ; 3,6056 pour \\(\\sqrt{13}\\), et on arrondira au mètre le plus proche.",
+    "figures": [
+      {
+        "id": "2020-fn-17-foret",
+        "description": "Trois droites horizontales parallèles ; un triangle équilatéral gris a un sommet sur chacune. La droite du haut et celle du milieu sont espacées de 2 km, la droite du milieu et celle du bas de 5 km (cotes fléchées à gauche).",
+        "imageUrl": "q17_fig-foret.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "7,211"
+  }
+}

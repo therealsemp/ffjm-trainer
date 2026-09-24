@@ -1,0 +1,56 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 343
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 166
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-3",
+  "number": 3,
+  "title": "De 1 à 15",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias écrit les nombres de 1 à 15 dans les cases de ce damier, de telle sorte qu'il n'y ait jamais deux nombres impairs dans deux cases qui se touchent par un côté. Il additionne les nombres écrits dans les cases grises.\n\n![figure](figure:2020-fn-3-damier)\n\n**Combien va-t-il trouver ?**",
+    "figures": [
+      {
+        "id": "2020-fn-3-damier",
+        "description": "Un damier rectangulaire de 5 colonnes sur 3 lignes (15 cases), dont les cases alternent gris et blanc : les quatre coins sont gris, soit 8 cases grises et 7 cases blanches (la case centrale est blanche).",
+        "imageUrl": "q03_fig-damier.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "64"
+  }
+}

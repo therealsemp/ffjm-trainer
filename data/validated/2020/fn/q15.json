@@ -1,0 +1,52 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 306,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 315,
+          "y": 83
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-15",
+  "number": 15,
+  "title": "Ma part d'étoile",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "**Quel pourcentage de l'aire du carré représente l'aire de l'étoile qui est inscrite dedans ?**\n\n![figure](figure:2020-fn-15-etoile)\n\nOn donnera le résultat en % et on l'arrondira éventuellement à l'unité la plus proche.",
+    "figures": [
+      {
+        "id": "2020-fn-15-etoile",
+        "description": "Un carré dont le milieu de chaque côté est indiqué par des marques de codage (//, =) montrant deux moitiés égales. Une étoile grise à huit branches est inscrite dedans : ses pointes sont les quatre sommets du carré et les milieux des quatre côtés.",
+        "imageUrl": "q15_fig-etoile.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "60"
+  }
+}

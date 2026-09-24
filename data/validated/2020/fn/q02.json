@@ -1,0 +1,49 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 224
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 125
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-2",
+  "number": 2,
+  "title": "Les deux maisons",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Léa et Léo habitent dans des maisons situées dans la même rue. Chaque maison a un numéro à deux chiffres. La différence entre les numéros des deux maisons est égale à 20 et la somme des numéros des deux maisons est égale à 120. La maison de Léa a un numéro plus grand que celui de la maison de Léo.\n\n**Quel est le numéro de la maison de Léa ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "70"
+  }
+}

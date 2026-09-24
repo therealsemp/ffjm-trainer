@@ -1,0 +1,53 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 38,
+        "y": 390
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 708
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-13",
+  "number": 13,
+  "title": "La condition d'égalité",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Les triangles ABC et ADE sont rectangles en A et isométriques. L'aire du quadrilatère ADFB est égale à la somme des aires des triangles CFD et BFE.\n\n![figure](figure:2020-fn-13-triangles)\n\n**Quel est le rapport de la longueur AB sur la longueur AC ?** On donnera la réponse sous la forme d'une fraction irréductible.\n\nNote : La figure n'est pas à l'échelle.",
+    "figures": [
+      {
+        "id": "2020-fn-13-triangles",
+        "description": "Deux triangles rectangles en A (angle droit marqué en A, en haut) : ABC avec B sur le côté droit et C en bas à gauche, ADE avec D sur le côté gauche et E en bas à droite. Les segments [DE] et [BC] se coupent en F ; D est sur [AC] et B sur [AE].",
+        "imageUrl": "q13_fig-triangles.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1/2"
+  }
+}

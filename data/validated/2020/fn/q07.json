@@ -1,0 +1,55 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 128
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 332
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-7",
+  "number": 7,
+  "title": "Balade en forêt",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Zoé décide d'aller faire des promenades dans la forêt près de chez elle : ci-contre un petit croquis des chemins possibles avec leur longueur en hectomètres.\n\n![figure](figure:2020-fn-7-chemins)\n\nElle désire faire des circuits sans repasser deux fois sur le même chemin lors d'une balade, mais elle ne parcourt pas forcément tous les chemins lors d'une sortie. Au cours d'un même circuit, elle peut passer deux fois par un même carrefour, y compris celui du départ.\n\n**Si chaque jour elle désire parcourir une distance différente, combien de jours lui faudra-t-il pour épuiser toutes les possibilités ?**",
+    "figures": [
+      {
+        "id": "2020-fn-7-chemins",
+        "description": "Croquis de chemins reliant quatre carrefours, avec leurs longueurs en hectomètres. Le carrefour du haut, marqué « départ et arrivée », porte une boucle de 15 vers le carrefour situé juste en dessous (relié aussi par un chemin droit de 2), un chemin courbe de 10 et un chemin droit de 7 vers le carrefour en bas à droite. Le carrefour intermédiaire est relié par un chemin de 3 au carrefour en bas à gauche, lui-même relié au carrefour en bas à droite par un chemin droit de 4 et par une grande boucle de 20.",
+        "imageUrl": "q07_fig-chemins.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "11 jours : (16, 17, 19, 29, 32, 34, 35, 41, 45, 48, 58 hm)"
+  }
+}

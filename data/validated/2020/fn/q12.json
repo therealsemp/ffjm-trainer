@@ -1,0 +1,53 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 38,
+        "y": 285
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 667
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-12",
+  "number": 12,
+  "title": "Le rapport géométrique",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Les côtés d'un losange sont partagés par quarts, et on a inscrit dedans un rectangle selon le dessin ci-contre.\n\n![figure](figure:2020-fn-12-losange)\n\n**Quel est le rapport de l'aire du rectangle sur l'aire du losange ?**\n\nOn donnera sa valeur avec trois chiffres après la virgule.",
+    "figures": [
+      {
+        "id": "2020-fn-12-losange",
+        "description": "Un losange allongé horizontalement dont chaque côté est partagé en quatre parts égales par de petits points. Un rectangle gris est inscrit dedans, ses quatre sommets situés sur les points au premier quart des côtés en partant des sommets gauche et droit du losange.",
+        "imageUrl": "q12_fig-losange.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "0,375"
+  }
+}

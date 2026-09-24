@@ -1,0 +1,56 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 449
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 208
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-4",
+  "number": 4,
+  "title": "Les allumettes",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a posé 10 allumettes devant elle. Elle propose à Mathias le jeu suivant : à tour de rôle, on peut ôter 1 allumette, 2 allumettes ou 3 allumettes. Celui qui prend la dernière allumette gagne. Mathilde joue la première.\n\n![figure](figure:2020-fn-4-allumettes)\n\n**Combien d'allumettes doit-elle prendre pour être sûre de gagner, quel que soit le jeu de Mathias ?**",
+    "figures": [
+      {
+        "id": "2020-fn-4-allumettes",
+        "description": "Dix allumettes dessinées côte à côte, verticales, bâton jaune et tête rouge.",
+        "imageUrl": "q04_fig-allumettes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2"
+  }
+}

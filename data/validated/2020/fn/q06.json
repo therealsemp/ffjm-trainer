@@ -1,0 +1,55 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 713
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 290
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-6",
+  "number": 6,
+  "title": "Empilement de dés",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias décide d'empiler quatre dés normaux. comme sur la figure ci-contre. On rappelle que sur un dé normal, la somme des nombres situés sur des faces opposées est toujours égale à 7.\n\n![figure](figure:2020-fn-6-des)\n\nLes quatre dés sont posés sur une table. Les faces en contact avec la table et les faces entre deux cubes ne sont pas visibles. **Quelle est la somme des nombres visibles, au maximum ?**",
+    "figures": [
+      {
+        "id": "2020-fn-6-des",
+        "description": "Empilement de quatre dés vu en perspective : trois dés sont visibles (un en haut, deux en bas côte à côte), chacun montrant un 1 sur sa face avant ; le quatrième, sous le dé du haut, est caché.",
+        "imageUrl": "q06_fig-des.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "59"
+  }
+}

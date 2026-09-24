@@ -1,0 +1,47 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 38,
+        "y": 166
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 597
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-11",
+  "number": 11,
+  "title": "Le nombre magique",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde a trouvé un nombre à 4 chiffres, qui ne contient pas de 0. Le chiffre des centaines de ce nombre est le double de celui des milliers, et le chiffre des unités est le double de celui des dizaines. De plus, en divisant ce nombre par la somme de ses chiffres, on obtient un nombre entier.\n\n**Quel est le nombre de Mathilde ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "10 solutions : 1212, 1224, 1236, 2412, 2424, 2448, 3612, 3636, 4824, 4848"
+  }
+}

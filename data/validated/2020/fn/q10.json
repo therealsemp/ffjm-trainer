@@ -1,0 +1,64 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 38,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 498
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-10",
+  "number": 10,
+  "title": "Morpion",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathias pose des pions sur cette grille rectangulaire de 7 cases sur 4.\n\n![figure](figure:2020-fn-10-grille)\n\nIl s'interdit de placer des pions dans 3 cases placées côte à côte en ligne, en colonne ou en diagonale.\n\n**Combien pourra-t-il placer de pions, au maximum ?**",
+    "figures": [
+      {
+        "id": "2020-fn-10-grille",
+        "description": "Une grille rectangulaire vide de 7 colonnes sur 4 lignes.",
+        "imageUrl": "q10_fig-grille.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "16"
+  },
+  "correction": {
+    "markdown": "16 pions exemple :\n\n![figure](figure:2020-fn-10-corr-exemple)",
+    "figures": [
+      {
+        "id": "2020-fn-10-corr-exemple",
+        "description": "La grille de 7 colonnes sur 4 lignes avec 16 cases grisées numérotées de 1 à 16 (les pions placés). Ligne 1 : colonnes 1, 2, 4, 6, 7. Ligne 2 : colonnes 1 et 7. Ligne 3 : colonnes 2, 3, 5, 6. Ligne 4 : colonnes 1, 2, 4, 6, 7.",
+        "imageUrl": "q10_corr-exemple.png"
+      }
+    ]
+  }
+}

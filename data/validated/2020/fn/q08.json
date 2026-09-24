@@ -1,0 +1,55 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 337
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 401
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-8",
+  "number": 8,
+  "title": "Partage équitable",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "![figure](figure:2020-fn-8-jetons)\n\nMathias a trouvé huit jetons d'un jeu de loto, numérotés de 1 à 8. Il demande à Mathilde de séparer ces jetons en deux groupes tels que la somme des numéros de chaque groupe soit la même. Mathilde trouve immédiatement une solution : 1 + 2 + 3 + 4 + 8 = 5 + 6 + 7 = 18.\n\nLa boîte de jetons contient également tous les jetons numérotés de 9 à 20. Mathilde demande alors à Mathias :\n\n**Si j'ajoute successivement à tes huit jetons le jeton 9, puis le 10, puis le 11, etc, jusqu'à 20, dans l'ordre et sans sauter de numéro, dans combien de cas aurai-je un nombre de jetons où l'on pourra faire un partage en deux groupes de même somme ?**\n\nNote : On ne comptera les cas qu'à partir de 9 jetons.",
+    "figures": [
+      {
+        "id": "2020-fn-8-jetons",
+        "description": "Huit jetons ronds de loto alignés, numérotés de 1 à 8.",
+        "imageUrl": "q08_fig-jetons.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "6 solutions : 11, 12, 15, 16, 19 ou 20"
+  }
+}

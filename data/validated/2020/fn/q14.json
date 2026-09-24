@@ -1,0 +1,46 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 38,
+        "y": 535
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 750
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-14",
+  "number": 14,
+  "title": "En ajoutant 20",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Mathilde a écrit un nombre ayant au plus six chiffres.\n\nMathias a écrit 20 devant le nombre de Mathilde et a obtenu un premier nombre A. Il a ensuite écrit successivement un 2 puis un 0 à droite du nombre de Mathilde et a ainsi obtenu un second nombre B. Les nombres A et B ont donc deux chiffres de plus que le nombre choisi par Mathilde.\n\nMathilde fait remarquer à Mathias que des deux nombres A et B, l'un est égal aux 2/5 de l'autre.\n\n**Quel était le nombre initial choisi par Mathilde ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "5128"
+  }
+}

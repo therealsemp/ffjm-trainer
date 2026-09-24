@@ -1,0 +1,49 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 568
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 249
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-5",
+  "number": 5,
+  "title": "Qui a volé l'orange ?",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Le marchand interroge quatre garnements pour savoir qui lui a pris une orange.\n\n« C'est Alice » dit Maël.\n\n« Non, c'est Fanny » dit Alice.\n\n« En tout cas, ce n'est pas moi » dit Kevin.\n\n« Alice est une menteuse » dit enfin Fanny.\n\nUn seul enfant a menti.\n\n**Qui a volé l'orange ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "Alice"
+  }
+}

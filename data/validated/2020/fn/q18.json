@@ -1,0 +1,50 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 306,
+        "y": 496
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 315,
+          "y": 221
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-18",
+  "number": 18,
+  "title": "Carrés petits et grands",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Dans la figure ci-contre, on compte 32 carrés dessinés : 18 petits et des plus grands.\n\n![figure](figure:2020-fn-18-grille)\n\nDans un rectangle bien plus grand composé lui aussi de petits carrés tous de même dimension, il y a au total 1365 carrés, quelle que soit leur taille.\n\n**Combien ce rectangle compte-t-il de petits carrés ?**",
+    "figures": [
+      {
+        "id": "2020-fn-18-grille",
+        "description": "Un rectangle quadrillé de 6 colonnes sur 3 lignes, soit 18 petits carrés.",
+        "imageUrl": "q18_fig-grille.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions : 247, 297 et 1365"
+  }
+}

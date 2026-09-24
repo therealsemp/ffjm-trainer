@@ -1,0 +1,47 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 657
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 90,
+          "y": 456
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-9",
+  "number": 9,
+  "title": "Maths en jean",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un jean est composé de 0,6 m² de tissu et de deux trous dont l'aire totale est égale à 20 % de celle de tissu.\n\nChaque lavage use le jean, et 10 cm² de tissu sont remplacés par 10 cm² de trou.\n\n**Après combien de lavages y aura-t-il autant de surface de trous que de surface de tissu ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "240"
+  }
+}

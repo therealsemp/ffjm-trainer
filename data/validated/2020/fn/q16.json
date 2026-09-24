@@ -1,0 +1,45 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "fn",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/fn/2020_fn_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 306,
+        "y": 166
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/fn/2020_fn_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 315,
+          "y": 125
+        }
+      }
+    ]
+  },
+  "id": "2020-fn-16",
+  "number": 16,
+  "title": "Douze diviseurs",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Le nombre 2020 admet 12 diviseurs dont le 7ème est un nombre premier lorsqu'on écrit ces diviseurs dans l'ordre croissant.\n\n**Quelle année future du 21ème siècle admettra 12 diviseurs, et pour laquelle, lorsque ces diviseurs sont rangés dans l'ordre croissant, le 7ème sera un nombre premier ?**\n\nNote : il peut évidemment y avoir des nombres premiers avant le 7ème diviseur."
+  },
+  "answer": {
+    "type": "open",
+    "value": "5 solutions : 2034, 2044, 2060, 2068, 2076"
+  }
+}

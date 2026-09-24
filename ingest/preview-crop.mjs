@@ -10,6 +10,7 @@
 
 import { createCanvas } from "@napi-rs/canvas"
 import { readFileSync, writeFileSync } from "node:fs"
+import { PDFJS_OPTIONS } from "./pdfjs-options.mjs"
 
 const SCALE = 3
 
@@ -20,7 +21,7 @@ const pageNum = parseInt(pageArg, 10)
 const [x, y, w, h] = [xArg, yArg, wArg, hArg].map(Number)
 
 const data = new Uint8Array(readFileSync(pdfPath))
-const doc = await pdfjsLib.getDocument({ data }).promise
+const doc = await pdfjsLib.getDocument({ data, ...PDFJS_OPTIONS }).promise
 const page = await doc.getPage(pageNum)
 const viewport = page.getViewport({ scale: SCALE })
 

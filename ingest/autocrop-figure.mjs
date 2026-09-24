@@ -25,6 +25,7 @@
 
 import { createCanvas } from "@napi-rs/canvas"
 import { readFileSync, writeFileSync } from "node:fs"
+import { PDFJS_OPTIONS } from "./pdfjs-options.mjs"
 
 const OUTPUT_SCALE = 3 // matches crop-figure.mjs / preview-crop.mjs
 const DETECT_SCALE = 6 // internal render scale used for ink-boundary detection
@@ -42,7 +43,7 @@ const [x, y, w, h] = [xArg, yArg, wArg, hArg].map(Number)
 const margin = marginArg ? parseFloat(marginArg) : DEFAULT_MARGIN
 
 const data = new Uint8Array(readFileSync(pdfPath))
-const doc = await pdfjsLib.getDocument({ data }).promise
+const doc = await pdfjsLib.getDocument({ data, ...PDFJS_OPTIONS }).promise
 const page = await doc.getPage(pageNum)
 const viewport = page.getViewport({ scale: DETECT_SCALE })
 

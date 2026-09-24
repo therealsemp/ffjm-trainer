@@ -1,0 +1,64 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 725
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 459
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-9",
+  "number": 9,
+  "title": "Toujours plus petit",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde désire créer une mosaïque qui donne une idée de l'infini. Elle dessine sur le sol un grand rectangle de 8 m sur 4 m et y inscrit un losange dont les sommets sont les milieux des côtés du rectangle, puis elle inscrit dans ce losange un second rectangle dont les sommets sont les milieux des côtés du losange, et ainsi de suite en alternant losanges et rectangles. Elle s'arrête dès qu'il a inscrit une figure ayant une surface plus petite qu'un dm².\n\n![figure](figure:2021-sf-9-mosaic)\n\n**Combien de losanges Mathilde a-t-elle dû dessiner ?**",
+    "figures": [
+      {
+        "id": "2021-sf-9-mosaic",
+        "description": "Un rectangle dans lequel est inscrit un losange (sommets aux milieux des côtés du rectangle), lui-même contenant un second rectangle (sommets aux milieux des côtés du losange), puis un second losange ; les sommets sont marqués de points.",
+        "imageUrl": "q09_fig-mosaic.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "Le premier rectangle mesure 8x4=32 m² soit 3200 dm². Notons R1=3200.\n\nSi on découpe ce rectangle en 4, on voit que chaque quart du losange est exactement la moitié de chaque quart du rectangle\n\n![figure](figure:2021-sf-9-corr-rectangle)\n\nLa surface du premier losange vaut donc la moitié de celle du rectangle : L1=1600\n\nDe même la surface du second rectangle vaut la moitié de celle du premier losange : R2=800.\n\nOn a donc : L2=400, R3=200, L3=100, R4=50, L4=25, R5=12,5, L5=6,25, R6=3,125, L6~1,56 et R7 sera plus petit que 1.\n\n**On a donc tracé 6 losanges.**",
+    "figures": [
+      {
+        "id": "2021-sf-9-corr-rectangle",
+        "description": "Le rectangle découpé en quatre quarts par ses deux médianes, avec le losange inscrit : dans chaque quart, un côté du losange partage le petit rectangle en deux triangles égaux.",
+        "imageUrl": "q09_corr-rectangle.png"
+      }
+    ]
+  }
+}

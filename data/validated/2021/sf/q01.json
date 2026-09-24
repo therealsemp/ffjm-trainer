@@ -1,0 +1,66 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 80
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 94
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-1",
+  "number": 1,
+  "title": "Les carrés",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a dessiné onze carrés sur son cahier. Elle décide d'effacer certains d'entre eux afin que les côtés des carrés restants ne se coupent jamais.\n\n![figure](figure:2021-sf-1-squares)\n\n**Combien doit-elle en effacer, au minimum ?**",
+    "figures": [
+      {
+        "id": "2021-sf-1-squares",
+        "description": "Onze carrés de tailles et d'orientations diverses dessinés en noir, dont les côtés se chevauchent et se coupent en de nombreux points.",
+        "imageUrl": "q01_fig-squares.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 4
+  },
+  "correction": {
+    "markdown": "![figure](figure:2021-sf-1-corr-squares)\n\nRegardons les carrés ayant le plus d'intersections avec d'autres carrés.\n\nLe carré vert coupe 8 autres carrés. Il est évident qu'il faut le supprimer car sinon il faut supprimer 8 carrés.\n\nUne fois enlevé, le carré bleu coupe 7 autres carrés. Il faut donc aussi l'effacer sinon il faut enlever 7 carrés.\n\nCes 2 carrés enlevés, il reste 2 zones à traiter : en haut à gauche. Soit on enlève les 2 petits carrés soit le grand en rouge. Pour minimiser, on choisit cette option.\n\nIl reste enfin la zone de droite dans laquelle le petit carré orange coupe 2 autres carrés. C'est aussi lui qu'il faut supprimer.\n\nAprès ces 4 suppressions, aucun carré (noir) ne coupe un autre carré.\n\n**Il faut donc supprimer 4 carrés au minimum.**",
+    "figures": [
+      {
+        "id": "2021-sf-1-corr-squares",
+        "description": "La figure de l'énoncé où quatre carrés sont colorés : un grand carré rouge en haut à gauche, un carré vert au centre, un grand carré bleu incliné et un petit carré orange à droite ; les sept autres carrés restent en noir.",
+        "imageUrl": "q01_corr-squares.png"
+      }
+    ]
+  }
+}

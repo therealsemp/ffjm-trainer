@@ -1,0 +1,56 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 488
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 43,
+          "y": 549
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-13",
+  "number": 13,
+  "title": "Jouer à la loterie",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Alix joue volontiers à la loterie à numéros où il faut remplir une grille de 6 nombres au hasard choisis parmi les nombres de 1 à 42.\n\n![figure](figure:2021-sf-13-grid)\n\nSur la grille, les nombres seront rangés en ordre croissant. Il joue chaque fois en écrivant 6 nombres dont l'écriture comporte les 10 chiffres de 0 à 9, chacun utilisé une fois et une seule, comme par exemple 5, 7, 18, 26, 39, 40.\n\n**Combien de grilles différentes peut-il ainsi composer ?**",
+    "figures": [
+      {
+        "id": "2021-sf-13-grid",
+        "description": "Une grille de loterie : une rangée de six cases vides.",
+        "imageUrl": "q13_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 60
+  },
+  "correction": {
+    "markdown": "Il faut écrire 6 nombres compris entre 1 et 42 avec 10 chiffres différents. Chaque nombre aura au moins 1 chiffre et il faut distribuer les 4 chiffres restants. Il y a donc 4 nombres de 2 chiffres (car tous plus petits que 43) et 2 nombres de 1 chiffre.\n\nComme tous les nombres doivent être plus petits de 43 et aucun ne commencent par 0, il y a 1 nombre commençant par 1, un commençant par 2, 1 par 3 et 1 par 4.\n\nLe nombre commençant par 4 ne peut avoir comme 2ème chiffre que 0 car 1 et 2 sont déjà pris et les autres donneraient un nombre trop grand. Il y a donc forcément 40 dans la grille.\n\nPour le chiffre des unités de 1x, 2y et 3z et pour les 2 nombres à 1 chiffre, on a les 5 choix suivants : 5, 6, 7, 8, 9.\n\nIl y a donc 5 choix pour 1x, 4 choix pour 2y et 3 choix pour 3z.\n\nIl n'y a par contre plus aucun choix pour les nombres à 1 chiffre (en raison de l'ordre croissant de la grille).\n\n**Il y a donc au total : 5x4x3=60 grilles possibles**"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 361
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 250
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-8",
+  "number": 8,
+  "title": "Les pièces de puzzle",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias a reçu en cadeau un puzzle comportant un grand nombre de pièces qui sont toutes réalisées à partir d'un carré de même dimension.\n\n![figure](figure:2021-sf-8-piece)\n\nLes quatre pièces des angles présentent deux côtés plats, comme l'exemple représenté, mais peuvent aussi avoir deux creux ou deux bosses. Les autres pièces des bords présentent toutes un seul côté plat. Aucune pièce intérieure ne présente de côté plat, chaque côté ayant un creux ou une bosse. Les creux et les bosses sont de mêmes dimensions et placés aux milieux des côtés. Pour trier les pièces de son puzzle, Mathias fait des piles, chaque pile comprenant des pièces qui se superposent parfaitement, chaque pièce pouvant être posée indifféremment à l'endroit ou à l'envers.\n\n**Lorsqu'il aura tout trié, combien de piles Mathias obtiendra-t-il, au maximum ?**",
+    "figures": [
+      {
+        "id": "2021-sf-8-piece",
+        "description": "Une pièce de puzzle d'angle (photo d'une façade de cathédrale) avec deux côtés plats (en haut, étiqueté « côté plat », et à gauche), un creux sur le côté droit (étiqueté « creux ») et une bosse en bas (étiquetée « bosse »).",
+        "imageUrl": "q08_fig-piece.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 15
+  },
+  "correction": {
+    "markdown": "Examinons les formes possibles.\n\nPour chaque coin : 2 creux, 2 bosses, 1 creux et 1 bosse (peu importe la position relative puisqu'on peut les retourner pour les empiler). Il y **3 formes possibles**.\n\nPour chaque pièce de côté : 3 creux, 3 bosses, 2 possibilités pour 2 creux et 1 bosse (la bosse près du bord droit ou la bosse en face du bord droit) et 2 possibilités pour 2 bosses et 1 creux (le creux près du bord droit ou le creux en face du bord droit). Il y a **6 formes possibles**.\n\nPour les pièces du centre, les formes possibles sont : 4 creux, 4 bosses, 1 creux et 3 bosses (peu importe la position du creux il suffit de tourner pour superposer), 1 bosse et 3 creux (idem). Il reste les pièces avec 2 bosses et 2 creux. Il y a 2 configurations possibles : 2 creux face à face ou côte à côte. Il y a donc **6 formes possibles** pour les pièces du centre.\n\nIl y a donc au total 15 formes différentes possibles au maximum et donc **15 piles au maximum**."
+  }
+}

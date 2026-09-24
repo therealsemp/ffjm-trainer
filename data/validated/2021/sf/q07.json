@@ -1,0 +1,51 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 231
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 55
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-7",
+  "number": 7,
+  "title": "Les années suiveuses",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Une année suiveuse est une année dont le millésime est formé de deux nombres entiers qui se suivent comme 78 ou 2021. Mathilde additionne les nombres des années suiveuses depuis l'an 12 jusqu'à l'an 2021.\n\n**Quel sera son résultat ?**\n\nNote : L'écriture d'un nombre entier à plusieurs chiffres ne commence jamais par un 0."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 17990
+  },
+  "correction": {
+    "markdown": "La première année suiveuse est 12, soit 1 suivi par 2. La suivante sera 2 suivi par 3, …\n\nÉcrivons donc les années suiveuses dans l'ordre :\n\n12, 23, 34, 45, 56, 67, 78, 89, 910 (à ne pas oublier), 1011, 1112, 1213, 1314, 1415, 1516, 1617, 1718, 1819, 1920, 2021 qui est la dernière autorisée.\n\nIl ne reste qu'à faire la somme.\n\nPour réduire les calculs, on peut voir que le début c'est 11+1, 2x11+1, …, 8x11=1 soit 11(1+2+…+8)+8 soit 11\\*8\\*9/2+8=36\\*11+8=396+8=404. Puis que la fin vaut 10x101+1+11x101+1+…+20x101+1 soit 101(10+11+…20)+11=101x11x15+11=101x165+11=16676.\n\nIl reste à calculer 16676+910+404=17990.\n\n**La réponse est 17990.**"
+  }
+}

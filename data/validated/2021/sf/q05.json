@@ -1,0 +1,66 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 642
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 43,
+          "y": 310
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-5",
+  "number": 5,
+  "title": "Le partage de la tablette",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias a une tablette de chocolat rectangulaire de 4 carrés sur 5.\n\n![figure](figure:2021-sf-5-tablet)\n\nIl désire la partager avec ses trois copains en gardant un morceau pour lui. Chacun doit recevoir un morceau d'un seul tenant et tous les morceaux doivent avoir la même forme et des carrés entiers de chocolat. **Combien de formes différentes peuvent avoir les morceaux que chacun des garçons reçoit ?**\n\nPour comparer deux formes, on peut retourner un morceau.",
+    "figures": [
+      {
+        "id": "2021-sf-5-tablet",
+        "description": "Une grille rectangulaire de 4 rangées de 5 carrés.",
+        "imageUrl": "q05_fig-tablet.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 3
+  },
+  "correction": {
+    "markdown": "La tablette fait 20 carrés. Si on veut la partager en 4 sans couper de carré, chaque morceau fera 5 carrés se touchant par un bord entier. C'est-à-dire, ce que l'on appelle un pentamino.\n\nIl existe 12 pentaminos différents :\n\n![figure](figure:2021-sf-5-corr-pentominos)\n\nIl faut ensuite voir pour chacun d'entre eux, si on peut recouvrir un rectangle de 4x5 avec 4 pentaminos identiques au retournement prêt.\n\nSeuls les pentaminos L P et I permettent de le faire.\n\n**La réponse est donc 3.**",
+    "figures": [
+      {
+        "id": "2021-sf-5-corr-pentominos",
+        "description": "Les 12 pentaminos, chacun étiqueté par sa lettre : L, T, V, N, X, Z, P, F, W, I, Y, U.",
+        "imageUrl": "q05_corr-pentominos.png"
+      }
+    ]
+  }
+}

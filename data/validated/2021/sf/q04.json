@@ -1,0 +1,59 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 502
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 43,
+          "y": 203
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-4",
+  "number": 4,
+  "title": "Un dé à huit faces",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "La figure représente le patron d'un dé à huit faces, sur lequel on veut inscrire les nombres de 1 à 8, et la forme de ce dé une fois assemblé.\n\n![figure](figure:2021-sf-4-die)\n\nLorsque le dé sera assemblé, la somme des nombres situés sur deux faces opposées devra toujours être la même.\n\n**Quel nombre sera écrit sur la face grisée ?**",
+    "figures": [
+      {
+        "id": "2021-sf-4-die",
+        "description": "À gauche, le patron d'un octaèdre formé de huit triangles équilatéraux : un triangle marqué 1 en haut, sous lui un triangle marqué 2 au milieu d'une rangée de cinq triangles, et en bas deux triangles dont celui de droite est grisé. À droite, l'octaèdre assemblé.",
+        "imageUrl": "q04_fig-die.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 7
+  },
+  "correction": {
+    "markdown": "La somme des chiffres de 1 à 8 vaut 36.\n\nIl y a 4 paires de faces opposés 2 à 2 et cela représente toutes les faces. Comme la somme sera la même pour chaque paire de faces opposées, celle-ci vaut 9 Le plus difficile est ensuite de voir que la face grise sera en face de la face portant le chiffre 2. On peut éventuellement reproduire le patron et le découper.\n\n**Le nombre sur la face grise sera donc le 7 (9-2).**"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 320
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 498
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-3",
+  "number": 3,
+  "title": "Les pièces du labyrinthe",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Chacune des salles de ce labyrinthe contient 1, 2, 3 ou 4 pièces d'or comme le montre la figure.\n\n![figure](figure:2021-sf-3-maze)\n\nUne fois entré dans ce labyrinthe (flèche en haut à gauche), vous ne pouvez vous déplacer que vers la droite ou vers le bas. Vous devez ramasser toutes les pièces d'or des salles que vous traversez. **Combien de chemins différents vous permettent de ramasser au total exactement 21 pièces d'or avant de sortir (flèche en bas à droite) ?**",
+    "figures": [
+      {
+        "id": "2021-sf-3-maze",
+        "description": "Grille de 4 rangées de 6 salles. Chaque salle de la 1re rangée contient 1 pièce, de la 2e rangée 2 pièces, de la 3e rangée 3 pièces, de la 4e rangée 4 pièces. Une flèche d'entrée pointe vers la salle en haut à gauche, une flèche de sortie part de la salle en bas à droite.",
+        "imageUrl": "q03_fig-maze.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "Comme on ne peut qu'aller vers la droite ou vers le bas, il suffit pour décrire le trajet de dire combien de cases on parcourt sur la rangée du haut (a) puis on descend d'une rangée, combien de cases sur la deuxième rangée (b), …\n\nDe même avec ces conditions de déplacement, on va traverser exactement 6 cases horizontales et 3 verticales. Le nombre de cases totales parcourues est donc : a+b+c+d=9 (1). Le nombre de pièces ramassées sera : a+2b+3c+4d=21 (1). En soustrayant la première équation de la seconde on obtient :\n\nb+2c+3d=12 (3)\n\na, b, c et d sont des entiers valant au moins 1 et au plus 6 a priori. Vu l'équation (3) d vaut au plus 3 et c au plus 4.\n\n**Essai avec d=3**\n\nb+2c=3 ce qui impose b=1 et c=1 donc a=4. Cela donne la solution **1+1+1+1+2+3+4+4+4**\n\n**Essai avec d=2**\n\nb+2c=6\n\nc=1, b=4 donc a=2. Cela donne la solution **1+1+2+2+2+2+3+4+4**\n\nc=2, b=2 donc a=3. Cela donne la solution **1+1+1+2+2+3+3+4+4**\n\nPas d'autre solution pour d=2 car à partir de c=3, b devient négatif ou nul.\n\n**Essai avec d=1**\n\nb+2c=9, c peut varier a priori de 1 à 4.\n\nc=1, b=7 (Impossible)\n\nc=2, b=5 donc a=1. Cela donne la solution **1+2+2+2+2+2+3+3+4**\n\nc=3, b=3 donc a=2. Cela donne la solution **1+1+2+2+2+3+3+3+4**\n\nc=4, b=1 donc a=3. Cela donne la solution **1+1+1+2+3+3+3+3+4**\n\nToutes les solutions sont différentes (par construction).\n\n**Il a donc 6 chemins différents.**"
+  }
+}

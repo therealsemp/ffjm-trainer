@@ -1,0 +1,50 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 140
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 711
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-10",
+  "number": 10,
+  "title": "Huit diviseurs",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Lisa s'amuse à faire la somme des nombres de 1 à 21 et constate que le nombre obtenu possède huit diviseurs.\n\n**Quel est le plus petit nombre possédant exactement huit diviseurs ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 24
+  },
+  "correction": {
+    "markdown": "On peut essayer à la main, en sautant tous les nombres premiers pour gagner du temps.\n\nOn peut gagner plus de temps en éliminant aussi les carrés de nombres premiers (3 diviseurs) et les produits de 2 nombres premiers (4 diviseurs).\n\nIl suffit alors de chercher les diviseurs de 8, 12, 16, 18, 20, 24.\n\nSinon, 8 admet lui-même les décompositions dont les facteurs sont plus grands que 1 suivantes :\n\n2x4 ou 2x2x2\n\nLes nombres ayant 8 diviseurs sont donc de la forme \\(p.q^3\\) ou p.q.r avec p, q, r premiers.\n\nLe plus petit du premier type est \\(3.2^3=24\\) et le plus petit du second type 2.3.5=30.\n\n**Le plus petit nombre ayant 8 diviseurs est donc 24.**"
+  }
+}

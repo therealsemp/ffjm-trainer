@@ -1,0 +1,57 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 215
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 43,
+          "y": 145
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-11",
+  "number": 11,
+  "title": "Ficelle cadeau",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Emil veut offrir à son amie une boîte contenant 225 cm³ de chocolat. La boîte doit être un parallélépipède rectangle dont toutes les arêtes mesurent des nombres entiers de centimètres strictement plus grands que 1 cm, les faces du dessus et du dessous étant carrées. Il désire mettre une belle ficelle autour, placée comme le montre le dessin qui ne respecte pas forcément les proportions de la boîte.\n\n![figure](figure:2021-sf-11-gift)\n\n**Sachant que le nœud utilise 25 cm de ficelle, quelle sera alors la longueur à utiliser pour emballer le paquet ?**",
+    "figures": [
+      {
+        "id": "2021-sf-11-gift",
+        "description": "Une boîte-cadeau en forme de parallélépipède rectangle, plus haute que large, entourée d'une ficelle qui passe une fois sur chaque face latérale et sur les faces du dessus et du dessous, avec un gros nœud sur le dessus.",
+        "imageUrl": "q11_fig-gift.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : 81 cm ou 137 cm"
+  },
+  "correction": {
+    "markdown": "Notons c le côté du carré et l la longueur de la boite.\n\nLe volume de la boite vaut \\(c^2.l=225\\)\n\nOr 225 vaut \\(3^2\\)x\\(5^2\\).\n\nD'après l'unicité de la décomposition en facteurs premiers, c=3 ou c=5. On pourrait avoir c=15 mais alors l vaut 1 ce qui est exclu par l'énoncé (et c=1 est aussi exclu).\n\nAvec ces notations, la longueur de la ficelle vaut 2c pour chaque face carrée, l pour chaque face rectangulaire et 25 pour le nœud (à ne pas oublier), soit 4(c+l)+25.\n\nPour c=3, l vaut 25 et la longueur 4x28+25=137cm.\n\nPour c=5, l vaut 9 et la longueur 4x14+25=81 cm.\n\n**Il y a donc 2 solutions : 81 et 137 cm.**"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 607
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 8,
+        "position": {
+          "x": 43,
+          "y": 55
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-18",
+  "number": 18,
+  "title": "Le partage du jardin",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Dans la ville de Mathville, il y a un jardin triangulaire ABC dont les côtés mesurent AB = 36 m, AC = 38 m et BC = 60 m. Le jardinier responsable désire construire une barrière rectiligne DE qui relie les côtés AB et BC (D est sur le côté AB et E sur le côté BC) de façon que les deux parties du jardin ainsi délimitées par la barrière aient la même aire et également le même périmètre. **A quelle distance de B sont situées les deux extrémités de la barrière ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "BD = 27 m et BE = 40 m"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2021-sf-18-corr-triangle)\n\nLes périmètres sont égaux :\n\nx+y+DE=DE+(36-x)+(60-y) ⇔ x+y=67\n\nS=x.y.sinα / 2\n\nS+S'=36.60.sinα / 2\n\nLes surfaces S et S' sont égales :\n\nxy=36.60-xy ⇔ x.y = 1080\n\nOn connait la somme et le produit de x et de y.\n\nIls sont solutions de \\(X^2\\)-67X+1080=0.\n\n\\(Δ=67^2-4 \\times 1080=169=13^2\\)\n\nx et y valent donc \\(\\frac{67 \\pm 13}{2}\\) = 27 et 40\n\nEt de façon évidente x qui est inférieur à 36 ne peut valoir 40.\n\n**Donc x=27 et y=40.**",
+    "figures": [
+      {
+        "id": "2021-sf-18-corr-triangle",
+        "description": "Le triangle ABC (AB=36, AC=38, BC=60) avec la barrière DE, D sur AB et E sur BC. BD est noté x, BE est noté y, l'angle en B est noté α ; la partie BDE a pour aire S, l'autre partie (quadrilatère ADEC) a pour aire S'.",
+        "imageUrl": "q18_corr-triangle.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 63
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 43,
+          "y": 576
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-6",
+  "number": 6,
+  "title": "Une lampe au plafond",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un plafond carré est recouvert de quatre plaques carrées identiques et de quatre plaques rectangulaires identiques qui ne laissent qu'un petit carré libre (en gris) pour suspendre une lampe.\n\n![figure](figure:2021-sf-6-ceiling)\n\n**En arrangeant les huit plaques de différentes façons, sans chevauchement, sur le plafond, combien y a-t-il d'endroits différents où l'on peut suspendre la lampe ?**",
+    "figures": [
+      {
+        "id": "2021-sf-6-ceiling",
+        "description": "Un grand carré pavé par quatre plaques carrées et quatre plaques rectangulaires étroites disposées en moulinet autour d'un petit carré gris central.",
+        "imageUrl": "q06_fig-ceiling.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 9
+  },
+  "correction": {
+    "markdown": "La lampe peut aussi être au centre des cotés ou dans les coins.\n\n![figure](figure:2021-sf-6-corr-ceiling-1)\n\n![figure](figure:2021-sf-6-corr-ceiling-2)\n\nEn comptant le centre, **cela fait 9 positions possibles**.",
+    "figures": [
+      {
+        "id": "2021-sf-6-corr-ceiling-1",
+        "description": "Un arrangement des huit plaques où le petit carré gris se trouve au milieu du côté droit du plafond.",
+        "imageUrl": "q06_corr-ceiling-1.png"
+      },
+      {
+        "id": "2021-sf-6-corr-ceiling-2",
+        "description": "Un arrangement des huit plaques où le petit carré gris se trouve dans le coin inférieur droit du plafond.",
+        "imageUrl": "q06_corr-ceiling-2.png"
+      }
+    ]
+  }
+}

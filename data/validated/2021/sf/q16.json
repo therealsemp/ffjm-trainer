@@ -1,0 +1,87 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 230
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 43,
+          "y": 55
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-16",
+  "number": 16,
+  "title": "Le carré kryptonien",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Un carré magique vient de nous parvenir de la planète Krypton.\n\n![figure](figure:2021-sf-16-square)\n\nCe carré contient neuf nombres entiers tous différents écrits dans un système de numération de position semblable au nôtre (nombres écrits de gauche à droite) mais dont la base n'est pas forcément décimale. La somme des nombres écrits dans chaque ligne, chaque colonne et chacune des grandes diagonales est toujours la même. En comparant avec d'autres textes kryptoniens, on a pu établir que ![figure](figure:2021-sf-16-sym-zero) correspond à notre chiffre 0, que ![figure](figure:2021-sf-16-sym-nine) = 9 et que ![figure](figure:2021-sf-16-sym-consec) représentent trois nombres entiers consécutifs écrits en ordre croissant. **Quelle est la somme des neuf nombres écrits dans ce carré ?**\n\nOn écrira cette somme en base 10.",
+    "figures": [
+      {
+        "id": "2021-sf-16-square",
+        "description": "Un carré 3×3 dont les neuf cases contiennent des nombres écrits avec des symboles kryptoniens (traits verticaux combinés à des chevrons, et un petit cercle), un ou deux symboles par case.",
+        "imageUrl": "q16_fig-square.png"
+      },
+      {
+        "id": "2021-sf-16-sym-zero",
+        "description": "Le symbole kryptonien en forme de petit cercle.",
+        "imageUrl": "q16_fig-sym-zero.png"
+      },
+      {
+        "id": "2021-sf-16-sym-nine",
+        "description": "Le symbole kryptonien valant 9 : une double paire de chevrons superposés, barrée d'un trait vertical.",
+        "imageUrl": "q16_fig-sym-nine.png"
+      },
+      {
+        "id": "2021-sf-16-sym-consec",
+        "description": "Trois symboles kryptoniens côte à côte (formes de chevrons sur un trait vertical), représentant trois nombres consécutifs en ordre croissant.",
+        "imageUrl": "q16_fig-sym-consec.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 117
+  },
+  "correction": {
+    "markdown": "Pour plus de commodité j'utilise des lettres usuelles et je remplace les valeurs déjà connues. Je note aussi α la base de numération utilisée. Je note en italique souligné \\(\\underline{ab}\\) le nombre obtenu en juxtaposant les chiffres a et b dans cette base, ce qui vaut aα+b. L'existence d'un symbole valant 9 nous indique que la base vaut au moins 10.\n\n![figure](figure:2021-sf-16-corr-letters)\n\nf, c et b représentent 3 chiffres croissants : c = f+1, b = f+2\n\nEn passant en base 10 et en utilisant tous les nombres ci-dessus, le carré devient :\n\n![figure](figure:2021-sf-16-corr-base10)\n\nComme c'est un carré magique, la somme de chaque ligne, chaque colonne et chaque diagonale est la même.\n\n(1) et (2) donnent : 2f+d+3=f+9 ⇔ f+d=6\n\n(2) et (7) donnent : n+2=9 ⇔ **n=7**\n\n(2) et (5) donnent : h+1=9 ⇔ **h=8**\n\n(6) donne la valeur commune V=2α+6+7=2α+13\n\n(1)=V donne 2αa+2f+d+3=2αa+13 ⇔ 2f+d=10, or f+d=6 donc **f=4** et **d=2**\n\n(8)=V donne : g+d=13 donc **g=11**\n\n(4)=V donne : f+g+11=2αa+13 ⇔ αa=13 donc **α=13** et **a=1**\n\n**c = f+1=5, b = f+2=6**\n\nLe carré magique est donc écrit en base 13 et vaut dans cette base (à gauche) et en base 10 à droite :\n\n![figure](figure:2021-sf-16-corr-solution)\n\nLa valeur commune des lignes, colonnes et diagonales est donc : 39.\n\n**La somme des neufs nombres est 117.**",
+    "figures": [
+      {
+        "id": "2021-sf-16-corr-letters",
+        "description": "Le carré réécrit avec des lettres : première ligne ab (souligné), c, ad (souligné) ; deuxième ligne 9, a0 (souligné), af (souligné) ; troisième ligne g, ah (souligné), n.",
+        "imageUrl": "q16_corr-letters.png"
+      },
+      {
+        "id": "2021-sf-16-corr-base10",
+        "description": "Le carré en base 10 : première ligne αa+f+2, f+1, αa+d ; deuxième ligne 9, αa, αa+f ; troisième ligne g, αa+h, n. À droite, les sommes des lignes : 2αa+2f+d+3 (1), 2αa+f+9 (2), αa+g+h+n (3), et en haut à droite la diagonale 2αa+g+d (8). En dessous, les sommes des colonnes : αa+f+g+11 (4), 2αa+f+h+1 (5), 2αa+d+f+n (6), et la diagonale 2αa+f+n+2 (7).",
+        "imageUrl": "q16_corr-base10.png"
+      },
+      {
+        "id": "2021-sf-16-corr-solution",
+        "description": "À gauche, le carré en base 13 : 16 (souligné), 5, 12 (souligné) / 9, 10 (souligné), 14 (souligné) / 11, 18 (souligné), 7. À droite, le même carré en base 10 : 19, 5, 15 / 9, 13, 17 / 11, 21, 7.",
+        "imageUrl": "q16_corr-solution.png"
+      }
+    ]
+  }
+}

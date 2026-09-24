@@ -1,0 +1,56 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 387
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 43,
+          "y": 325
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-12",
+  "number": 12,
+  "title": "Diagonales",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Jean dessine un pentagone régulier et trace toutes ses diagonales. Celles-ci délimitent onze régions à l'intérieur du pentagone.\n\n![figure](figure:2021-sf-12-pentagon)\n\n**Combien de régions obtiendra-t-il s'il dessine un heptagone régulier et toutes ses diagonales ?**\n\nUn heptagone est un polygone à 7 côtés.",
+    "figures": [
+      {
+        "id": "2021-sf-12-pentagon",
+        "description": "Un pentagone régulier avec ses cinq diagonales formant une étoile ; les onze régions intérieures sont numérotées de 1 à 11.",
+        "imageUrl": "q12_fig-pentagon.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 50
+  },
+  "correction": {
+    "markdown": "Je n'ai pas trouvé d'autre solution simple que de tracer l'heptagone.\n\nPour le faire, il faut connaitre l'angle entre 2 côtés consécutifs.\n\nDans un polygone régulier à n côtés, la somme des angles formés par chaque paire de côtés consécutifs vaut 180(n-2). 180 pour un triangle, 360 pour un carré, …\n\nIl y a ici 7 côtés, donc la somme des 7 angles fait 5x180=900° et l'angle fait donc environ 128°.\n\nOn peut donc le construire avec un rapporteur en partant d'un côté de base de 5 cm par exemple, cela permet d'avoir une figure permettant de tracer suffisamment précisément toutes les diagonales (4 depuis chaque sommet). Pour éviter l'accumulation de l'erreur sur l'angle construire symétriquement de chaque côté du côté de base.\n\nUne fois toutes les diagonales tracées, numéroter chaque région comme sur la figure. On en trouve 50.\n\n(Il existe une formule pour le nombre de diagonale n(n-3) : n-3 depuis chaque sommet mais je n'en connais pas pour le nombre de régions de façon générale.)\n\n**Il y a 50 régions intérieurs définies par les diagonales d'un heptagone régulier.**"
+  }
+}

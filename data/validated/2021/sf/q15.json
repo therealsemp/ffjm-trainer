@@ -1,0 +1,55 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 43,
+          "y": 382
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-15",
+  "number": 15,
+  "title": "Le robot",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Un robot avance en spirale sur un quadrillage de la manière suivante.\n\n![figure](figure:2021-sf-15-spiral)\n\nIl fait des pas de 50 cm. En partant d'un point A, il avance d'un pas vers l'est puis tourne de 90° à gauche et avance de 2 pas vers le nord, puis tourne de 90° et avance de 3 pas vers l'ouest, tourne de 90° et avance de 4 pas vers le sud et ainsi de suite. Dans chaque nouvelle direction il fait un pas de plus que dans la direction précédente. **Après avoir parcouru 2080 pas, à quelle distance de son point de départ se trouve-t-il ?**\n\nSi nécessaire, on prendra 1,414 pour √2 et on donnera la réponse en centimètres arrondira au cm le plus proche.",
+    "figures": [
+      {
+        "id": "2021-sf-15-spiral",
+        "description": "Le début du trajet en spirale carrée du robot sur un quadrillage : partant du point A, un pas vers l'est, deux vers le nord, trois vers l'ouest, quatre vers le sud, cinq vers l'est, puis la montée vers le nord qui se prolonge en pointillés.",
+        "imageUrl": "q15_fig-spiral.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 2262
+  },
+  "correction": {
+    "markdown": "La forme du parcours est une « spirale » carrée.\n\nJ'appelle \\(BD_n\\) le nombre de pas faits lorsque le robot est pour la nième fois dans un « coin » en Bas à Droite, c'est-à-dire au moment où il change de direction vers le nord. \\(BD_1=1\\). \\(BD_2=1+2+3+4+5=15\\).\n\nOn voit que \\(BD_n\\) =Somme des nombres de 1 à 4n-3.\n\n\\(HD_n\\) lorsqu'il est pour la nième fois en Haut à Droite. \\(HD_1=3\\).\n\nIdem pour \\(HG_n\\) (\\(HG_1=6\\)) et \\(BG_n\\) (\\(BG_1=10\\)).\n\nSi on note \\(T_n\\) le nième nombre triangulaire (\\(T_n=1+2+…+n=n(n+1)/2\\)), on a \\(BD_n=T_{4n-3}\\), \\(HD_n=T_{4n-2}\\), \\(HG_n=T_{4n-1}\\) et \\(BG_n=T_{4n}\\).\n\nJ'essaye ensuite de localiser sur quelle portion de trajet sera le robot après 2080 pas. Le fait de n'avoir que √2 me fait penser qu'il sera dans un coin ou au droit de la position de départ. A voir.\n\nJe vais donc encadrer 2080 par 2 nombres triangulaires. Je cherche le plus grand n tel que \\(T_n\\) ≤ 2080 soit n(n+1) ≤ 4160. Pour avoir une approximation je vais chercher vers √4160. Or \\(4096=2^{12}\\) donc je calcule \\(T_{64}\\) (\\(64=2^6\\)) qui vaut 32\\*65=2080.\n\n\\(T_{64}\\) vaut exactement \\(BG_{16}\\). Au bout de 2080 pas le robot est pour la 16ème fois exactement dans le coin en bas à gauche (sud-ouest), en train de tourner vers l'est. Il est donc à 32 petites diagonales vers le sud-ouest du point de départ. Chaque petite diagonale mesure 50√2 cm. Le robot est donc à 32\\*50\\*√2 cm. En prenant √2=1,414, on trouve : 2262,4 cm.\n\n**Arrondie au cm le plus proche la distance est donc : 2262 cm.**"
+  }
+}

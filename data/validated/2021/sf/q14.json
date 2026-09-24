@@ -1,0 +1,49 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 616
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 43,
+          "y": 55
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-14",
+  "number": 14,
+  "title": "Partage équitable",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "On considère l'ensemble E = {1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8}. Il est possible de le partager en deux sous-ensembles \\(E_1\\) = {1 ; 2 ; 3 ; 4 ; 8} et \\(E_2\\) = {5 ; 6 ; 7}, tels que la somme des éléments de \\(E_1\\) égale la somme des éléments de \\(E_2\\).\n\n**Si on considère l'ensemble E des nombres qui vont de 1 à *n*, où *n* peut prendre toutes les valeurs de 1 à 21, pour quelle(s) valeur(s) de *n* peut-on partager l'ensemble E en deux sous-ensembles \\(E_1\\) et \\(E_2\\), telle que la somme des éléments de \\(E_1\\) soit égale à la somme des éléments de \\(E_2\\) ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "10 solutions : 3, 4, 7, 8, 11, 12, 15, 16, 19 ou 20"
+  },
+  "correction": {
+    "markdown": "On peut calculer la somme des nombres pour chacun des ensembles. Une condition nécessaire pour pouvoir partager en 2 sous-ensembles est que la somme soit paire. Cela exclut par exemple {1,2,3,4,5}.\n\nOn peut vérifier que c'est une condition suffisante pour pouvoir partager l'ensemble en 2 comme demandé.\n\nAjoutons les nombres de l'ensemble en partant du plus grand jusqu'au moment où avec un nombre de plus, on dépasserait la moitié de la somme. La valeur manquante pour atteindre la moitié est plus petite que le dernier nombre ajouté, puisqu'elle est plus petite que le nombre qu'on n'a pas ajouté qui est plus petit que le dernier nombre ajouté. Il suffit de compléter l'ensemble avec ce nombre qui est encore forcément disponible.\n\nVoici un exemple : on considère l'ensemble { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }. La somme des nombres fait 66. Si on veut partager en 2 sous-ensembles dont la somme des éléments est identique, cette somme doit faire 33. On prend les nombres 11, 10, 9. Cela fait 30. Je ne peux pas ajouter le 8 sinon je dépasse 33. Le nombre qui me manque est forcément plus petit que 9 (sinon j'aurais pu ajouter 8). Il est donc dans les éléments restants. Je prends le 3 (ou le 1 et le 2). J'ai donc deux sous-ensembles {11, 10, 9, 3 } et de {1, 2, 4, 5, 6, 7, 8 } qui répondent au problème.\n\nIl reste donc à trouver les ensembles dont la somme des nombres est paire.\n\nS1 = 1, S2 = 3, **S3 = 6** (S3+3), **S4 = 10** (S4+4), S5=15, S6=21, **S7=28, S8=36**, S9, 45, S10=55, **S11=66, S12=78**, S13=91, S14=105, **S15=120, S16=136**, S17=153, S18=171, **S19=190, S20=210**, S21=231.\n\n**Il y a donc 10 solutions : 3, 4, 7, 8, 11, 12, 15, 16, 19 et 20.**"
+  }
+}

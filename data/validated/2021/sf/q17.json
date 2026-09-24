@@ -1,0 +1,53 @@
+{
+  "year": 2021,
+  "champNumber": 35,
+  "phase": "sf",
+  "examTitle": "35e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2021/sf/2021_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 439
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2021/sf/2021_sf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 43,
+          "y": 55
+        }
+      }
+    ]
+  },
+  "id": "2021-sf-17",
+  "number": 17,
+  "title": "Quatre petits cubes",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Adelaïde peint en vert les six faces d'un parallélépipède rectangle de dimensions 2 × 2 × 1 cm, puis le découpe en quatre cubes de 1 cm de côté.\n\n![figure](figure:2021-sf-17-block)\n\nSa petite soeur Sophie prend les quatre cubes puis, sans tenir compte des faces peintes, les assemble aléatoirement et les colle entre eux de façon à reconstituer un parallélépipède de dimensions 2 × 2 × 1 cm. **Quelle est la probabilité que la surface visible peinte en vert sur les six faces du nouveau parallélépipède soit égale à 12 cm² ?**",
+    "figures": [
+      {
+        "id": "2021-sf-17-block",
+        "description": "Un parallélépipède rectangle de 2 × 2 × 1 formé de quatre petits cubes, vu en perspective.",
+        "imageUrl": "q17_fig-block.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "601/3456"
+  },
+  "correction": {
+    "markdown": "16 petites faces sont visibles dans le parallélépipède reconstitué. On cherche combien de parallélépipèdes présentent 12 faces peintes et donc 4 non peintes parmi tous les parallélépipèdes.\n\nDans un parallélépipède, un petit cube peut prendre 24 orientations différentes : chacune des 6 faces en bas par exemple et pour chacun de ses 6 cas, il y 4 rotations de 90° qui représentent chacune une configuration différente. Il y a donc \\(24^4\\) parallélépipèdes différents.\n\nChaque petit cube a exactement 4 faces peintes et 2 non peintes (les 2 qui touchent les autres cubes au moment de la peinture).\n\nUn petit cube peut « apporter » 0, 1 ou 2 faces non peintes dans le parallélépipède reconstitué.\n\nLa discussion ci-dessous est pour le cube arrière gauche, mais le résultat est vrai pour chacun des 4 cubes en raison des symétries.\n\nIl n'y a que **2 orientations qui apportent 0 face non peinte** : lorsque les 2 faces non peintes sont vers l'avant et vers la droite, la face du bas pouvant être échangée avec la face haute.\n\n**10 orientations contribuent à 2 faces non peintes visibles** :\n\nIl y a 4 choix pour la première face non peinte :\n\nVers l'arrière : 3 orientations sont alors possibles pour la seconde face non peinte : dessus, gauche, bas.\n\nVers la gauche : 2 orientations possibles : dessus ou dessous (ne pas compter 2ème face vers l'arrière déjà comptée ci-dessus).\n\nVers l'avant : non car sinon cachée et impossible de faire 2 faces visibles.\n\nVers la droite : non pour la même raison.\n\nIl y a donc 5 orientations et 5 autres en échangeant la face haute et la face basse.\n\nIl y a donc 24-2-10=**12 orientations contribuant à 1 face non peinte visible**.\n\nPour avoir exactement 4 faces non peintes visibles dans le parallélépipède reconstitué, il y a 3 possibilités :\n\n- 2 cubes apportent 2 faces non peintes et 2 autres 0. Il y a 6 façons de choisir 2 cubes parmi 4. Il y a donc 6x10x10x2x2 parallélépipèdes de ce type.\n- 1 cube apporte 2 faces non peintes, 2 cubes en apportent 1 et le dernier en apporte 0. Il y a 4 façons de choisir celui qui en apporte 2 et 3 celui qui en apporte 0. Il y a donc 4x3x10x2x12x12 parallélépipèdes de ce type.\n- Les 4 cubes apportent chacun 1 face visible. Il y a donc 12x12x12x12 parallélépipèdes de ce type.\n\nLa probabilité est donc : \\(\\frac{6 \\times 10 \\times 10 \\times 2 \\times 2 + 4 \\times 3 \\times 10 \\times 2 \\times 12 \\times 12 + 12 \\times 12 \\times 12 \\times 12}{24 \\times 24 \\times 24 \\times 24} = \\frac{5 \\times 5 + 5 \\times 6 \\times 12 + 6 \\times 6 \\times 6}{2 \\times 12 \\times 12 \\times 12} = \\mathbf{\\frac{601}{3456}}\\)"
+  }
+}

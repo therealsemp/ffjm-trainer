@@ -14,12 +14,13 @@ import { useEffect, useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
+import { SessionRankCard } from "../components/SessionRankCard"
 import { StatsSummary } from "../components/StatsSummary"
 import { trainingSessionService } from "../services/trainingSessionService"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 
 export function TrainingRecapPage() {
-  const { session, sessionStats, sessionComplete, discardSession } = useTrainingSession()
+  const { session, sessionStats, sessionOutcomes, sessionComplete, discardSession } = useTrainingSession()
   const navigate = useNavigate()
   // Captured once at mount, before the effect below clears it — read
   // directly from storage rather than through context state, so it's
@@ -42,6 +43,8 @@ export function TrainingRecapPage() {
     return <Navigate to={sessionComplete ? "/entrainement/configuration" : "/entrainement"} replace />
   }
 
+  const skipped = session.levels.reduce((total, tier) => total + sessionStats[tier].skipped, 0)
+
   function handleNewSession() {
     discardSession()
     navigate("/entrainement/configuration")
@@ -54,9 +57,18 @@ export function TrainingRecapPage() {
         Session terminée !
       </h1>
       <p className="text-brand-muted">Bravo, tu as terminé ta session d'entraînement. Voici ton bilan.</p>
-      <p className="text-brand-muted">Niveaux : {session.levels.join(", ")}</p>
 
-      <StatsSummary stats={sessionStats} levels={session.levels} />
+      {/* Story 2.7: the rank is the centerpiece; the per-level breakdown
+          (Story 2.6) stays below it. */}
+      {session.targetCount !== null && (
+        <SessionRankCard outcomes={sessionOutcomes} target={session.targetCount} skipped={skipped} />
+      )}
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-xl font-bold">Détail par niveau</h2>
+        <p className="text-brand-muted">Niveaux : {session.levels.join(", ")}</p>
+        <StatsSummary stats={sessionStats} levels={session.levels} />
+      </section>
 
       <Button type="button" onClick={handleNewSession}>
         Nouvelle session d'entraînement

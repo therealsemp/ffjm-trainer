@@ -32,3 +32,10 @@ export interface TrainingSession {
   // `false` wherever read.
   includeWithoutDetailedCorrection?: boolean
 }
+
+// Story 2.7 — a completed targeted session's rank, highest first.
+export type Rank = "S+" | "S" | "A" | "B" | "C" | "D"
+
+// Lifetime number of completed sessions obtained per rank (Story 1.5).
+// Partial: a rank never obtained is simply absent, not stored as 0.
+export type RankCounts = Partial<Record<Rank, number>>

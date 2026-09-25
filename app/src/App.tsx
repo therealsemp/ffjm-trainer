@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { ProfileProvider } from "./services/ProfileContext"
 import { ThemeProvider } from "./services/ThemeContext"
@@ -15,6 +16,14 @@ import { ArchiveSelectionPage } from "./pages/ArchiveSelectionPage"
 import { ArchiveQuestionPage } from "./pages/ArchiveQuestionPage"
 import { ArchiveSummaryPage } from "./pages/ArchiveSummaryPage"
 
+// Development-only visual check page (every end-of-session rank case, see
+// Story 2.7's QA notes). `import.meta.env.DEV` is statically false in a
+// production build, so both this route and the page's chunk are dropped
+// from the deployed site entirely.
+const DevGalleryPage = import.meta.env.DEV
+  ? lazy(() => import("./pages/DevGalleryPage").then((module) => ({ default: module.DevGalleryPage })))
+  : null
+
 export function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -24,6 +33,16 @@ export function App() {
             <Routes>
               <Route path="/" element={<RootRedirect />} />
               <Route path="/profil/creation" element={<ProfileCreationPage />} />
+              {DevGalleryPage && (
+                <Route
+                  path="/dev/rangs"
+                  element={
+                    <Suspense fallback={null}>
+                      <DevGalleryPage />
+                    </Suspense>
+                  }
+                />
+              )}
               <Route element={<AppLayout />}>
                 <Route path="/accueil" element={<HomePage />} />
                 <Route path="/compte" element={<AccountPage />} />

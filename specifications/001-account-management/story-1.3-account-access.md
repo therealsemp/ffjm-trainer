@@ -35,7 +35,7 @@ User with an active profile on this device
 ### Scenario 3: Confirming the reset
 - **Given** the reset confirmation pop-up is displayed
 - **When** the user activates "Confirm reset"
-- **Then** the profile cookie and all associated data are erased — including any in-progress training session (Story 2.5) and the profile's lifetime statistics (Story 1.5)
+- **Then** the profile cookie and all associated data are erased — including any in-progress training session (Story 2.5) and the profile's lifetime statistics (Story 1.5), per-rank session counts included (Story 2.7)
 - **And** the user is redirected to the profile creation page (Story 1.2)
 
 ### Scenario 4: Cancelling the reset

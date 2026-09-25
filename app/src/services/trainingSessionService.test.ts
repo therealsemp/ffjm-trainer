@@ -126,3 +126,67 @@ describe("trainingSessionService — just-completed flag", () => {
     expect(trainingSessionService.getJustCompleted()).toBe(false)
   })
 })
+
+describe("trainingSessionService — rank counts (Story 2.7)", () => {
+  function completeTargetedSession(found: number, notFound: number) {
+    trainingSessionService.startSession(["CE"], found + notFound, false)
+    for (let i = 0; i < found; i++) trainingSessionService.recordFound("CE")
+    for (let i = 0; i < notFound; i++) trainingSessionService.recordNotFound("CE")
+    return trainingSessionService.completeSession(trainingSessionService.getActiveSession()!)
+  }
+
+  test("empty before any session is ranked", () => {
+    expect(trainingSessionService.getRankCounts()).toEqual({})
+  })
+
+  test("completeSession returns the rank, counts it, and sets the just-completed flag", () => {
+    expect(completeTargetedSession(7, 3)).toBe("A")
+    expect(trainingSessionService.getRankCounts()).toEqual({ A: 1 })
+    expect(trainingSessionService.getJustCompleted()).toBe(true)
+  })
+
+  test("skipped questions don't affect the rank", () => {
+    trainingSessionService.startSession(["CE"], 5, false)
+    for (let i = 0; i < 6; i++) trainingSessionService.recordSkip("CE")
+    for (let i = 0; i < 5; i++) trainingSessionService.recordFound("CE")
+    expect(trainingSessionService.completeSession(trainingSessionService.getActiveSession()!)).toBe("S")
+  })
+
+  test("counts accumulate across sessions, per rank", () => {
+    completeTargetedSession(10, 0)
+    completeTargetedSession(7, 3)
+    completeTargetedSession(6, 4)
+    expect(trainingSessionService.getRankCounts()).toEqual({ "S+": 1, A: 2 })
+  })
+
+  test("an unlimited session is never ranked", () => {
+    trainingSessionService.startSession(["CE"], null, false)
+    trainingSessionService.recordFound("CE")
+    expect(trainingSessionService.completeSession(trainingSessionService.getActiveSession()!)).toBeNull()
+    expect(trainingSessionService.getRankCounts()).toEqual({})
+  })
+
+  test("starting or clearing a session leaves rank counts untouched", () => {
+    completeTargetedSession(5, 0)
+    trainingSessionService.clearSession()
+    trainingSessionService.startSession(["CE"], 10, false)
+    expect(trainingSessionService.getRankCounts()).toEqual({ S: 1 })
+  })
+
+  test("resetGlobalStats clears rank counts too", () => {
+    completeTargetedSession(5, 0)
+    trainingSessionService.resetGlobalStats()
+    expect(trainingSessionService.getRankCounts()).toEqual({})
+  })
+
+  test.each([
+    ["not an object", "oops"],
+    ["an array", ["S"]],
+    ["an unknown rank", { Z: 1 }],
+    ["a negative count", { A: -1 }],
+    ["a non-integer count", { A: 1.5 }],
+  ])("a stored value that is %s is treated as empty", (_label, value) => {
+    window.localStorage.setItem("ffjm-trainer:trainingRankCounts", JSON.stringify(value))
+    expect(trainingSessionService.getRankCounts()).toEqual({})
+  })
+})

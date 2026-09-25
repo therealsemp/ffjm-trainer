@@ -11,12 +11,13 @@ import { useTrainingSession } from "../services/TrainingSessionContext"
 import { CATEGORY_OPTIONS } from "../types/profile"
 import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
+import { RankCountsSummary } from "../components/RankCountsSummary"
 import { StatsSummary } from "../components/StatsSummary"
 import { ThemeToggle } from "../components/ThemeToggle"
 
 export function AccountPage() {
   const { profile, resetProfile, setSoundEnabled } = useProfile()
-  const { globalStats, resetTrainingData } = useTrainingSession()
+  const { globalStats, rankCounts, resetTrainingData } = useTrainingSession()
   const navigate = useNavigate()
   const dialogRef = useRef<HTMLDialogElement>(null)
 
@@ -68,6 +69,7 @@ export function AccountPage() {
         {hasAnyStats ? (
           <>
             <p className="text-sm text-brand-muted">Cumulées depuis la création de ton profil.</p>
+            <RankCountsSummary counts={rankCounts} />
             <StatsSummary stats={globalStats} />
           </>
         ) : (

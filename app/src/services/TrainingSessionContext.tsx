@@ -4,13 +4,15 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react"
 import { trainingSessionService } from "./trainingSessionService"
 import type { Tier } from "../types/question"
-import type { QuestionOutcome, Stats, TrainingSession } from "../types/trainingSession"
+import type { QuestionOutcome, RankCounts, Stats, TrainingSession } from "../types/trainingSession"
 
 interface TrainingSessionContextValue {
   session: TrainingSession | null
   sessionStats: Stats
   sessionOutcomes: QuestionOutcome[]
   globalStats: Stats
+  // Lifetime number of completed sessions per rank (Story 2.7/1.5).
+  rankCounts: RankCounts
   // Whether the active session reached its target question count (always
   // false for an unlimited session, or when there's no active session).
   sessionComplete: boolean
@@ -22,7 +24,8 @@ interface TrainingSessionContextValue {
   recordNotFound: (tier: Tier) => boolean
   // Story 2.5 "start a new session": session + its own stats only.
   discardSession: () => void
-  // Story 1.3 profile reset: session, its stats, and the lifetime stats.
+  // Story 1.3 profile reset: session, its stats, and the lifetime stats
+  // (per-rank counts included).
   resetTrainingData: () => void
 }
 
@@ -35,16 +38,27 @@ export function TrainingSessionProvider({ children }: { children: ReactNode }) {
     trainingSessionService.getSessionOutcomes(),
   )
   const [globalStats, setGlobalStats] = useState<Stats>(() => trainingSessionService.getGlobalStats())
+  const [rankCounts, setRankCounts] = useState<RankCounts>(() => trainingSessionService.getRankCounts())
 
   const value = useMemo<TrainingSessionContextValue>(() => {
     function record(action: (tier: Tier) => void, tier: Tier): boolean {
+      // Only the action that *crosses* the target completes the session —
+      // one recorded on an already-complete session (shouldn't happen, the
+      // question page redirects away, but cheap to guard) must not save its
+      // rank a second time.
+      const wasComplete =
+        session !== null && trainingSessionService.isComplete(session, trainingSessionService.getSessionOutcomes().length)
       action(tier)
       const newOutcomes = trainingSessionService.getSessionOutcomes()
       setSessionStats(trainingSessionService.getSessionStats())
       setSessionOutcomes(newOutcomes)
       setGlobalStats(trainingSessionService.getGlobalStats())
-      const completed = session !== null && trainingSessionService.isComplete(session, newOutcomes.length)
-      if (completed) trainingSessionService.markJustCompleted()
+      const completed =
+        !wasComplete && session !== null && trainingSessionService.isComplete(session, newOutcomes.length)
+      if (completed) {
+        trainingSessionService.completeSession(session)
+        setRankCounts(trainingSessionService.getRankCounts())
+      }
       return completed
     }
 
@@ -53,6 +67,7 @@ export function TrainingSessionProvider({ children }: { children: ReactNode }) {
       sessionStats,
       sessionOutcomes,
       globalStats,
+      rankCounts,
       sessionComplete: session !== null && trainingSessionService.isComplete(session, sessionOutcomes.length),
       startSession: (levels, targetCount, includeWithoutDetailedCorrection) => {
         trainingSessionService.startSession(levels, targetCount, includeWithoutDetailedCorrection)
@@ -78,9 +93,10 @@ export function TrainingSessionProvider({ children }: { children: ReactNode }) {
         setSessionStats(trainingSessionService.getSessionStats())
         setSessionOutcomes(trainingSessionService.getSessionOutcomes())
         setGlobalStats(trainingSessionService.getGlobalStats())
+        setRankCounts(trainingSessionService.getRankCounts())
       },
     }
-  }, [session, sessionStats, sessionOutcomes, globalStats])
+  }, [session, sessionStats, sessionOutcomes, globalStats, rankCounts])
 
   return <TrainingSessionContext.Provider value={value}>{children}</TrainingSessionContext.Provider>
 }

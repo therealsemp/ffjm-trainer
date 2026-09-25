@@ -5,21 +5,28 @@ import type { Stats, TierStats } from "../types/trainingSession"
 interface StatsSummaryProps {
   stats: Stats
   // When given (a session's own levels), only those rows are shown, even
-  // at zero. Otherwise (lifetime stats), only tiers with any activity —
-  // showing all 6 at zero for a profile that never trained isn't useful.
+  // at zero. Otherwise (lifetime stats), only tiers with any found/not
+  // found answer — showing all 6 at zero for a profile that never trained
+  // isn't useful.
   levels?: Tier[]
 }
 
-// Status colors (found/not found), plus the neutral "skipped" — see
-// index.css for why plain green/orange was rejected (colorblind-unsafe).
+// Status colors (found/not found) — see index.css for why plain
+// green/orange was rejected (colorblind-unsafe). Skipped questions are
+// deliberately left out of the per-level bars and figures (they're mostly
+// questions already done before, so they say nothing about a level's
+// success); they only appear in the overall totals above (Story 2.3).
 const SEGMENTS = [
-  { key: "skipped", label: "Ignorées", color: "var(--color-brand-muted)" },
   { key: "found", label: "Trouvées", color: "var(--color-status-good)" },
   { key: "notFound", label: "Non trouvées", color: "var(--color-status-warning)" },
 ] as const
 
+function answeredCount(counts: TierStats): number {
+  return counts.found + counts.notFound
+}
+
 function TierBar({ tier, counts, maxTotal }: { tier: Tier; counts: TierStats; maxTotal: number }) {
-  const total = counts.skipped + counts.found + counts.notFound
+  const total = answeredCount(counts)
   const barWidthPercent = maxTotal > 0 ? (total / maxTotal) * 100 : 0
   const visibleSegments = SEGMENTS.filter((segment) => counts[segment.key] > 0)
 
@@ -40,18 +47,15 @@ function TierBar({ tier, counts, maxTotal }: { tier: Tier; counts: TierStats; ma
           </div>
         )}
       </div>
-      <span className="w-24 shrink-0 text-right text-sm text-brand-muted whitespace-nowrap">
-        {counts.skipped} · {counts.found} · {counts.notFound}
+      <span className="w-16 shrink-0 text-right text-sm text-brand-muted whitespace-nowrap">
+        {counts.found} · {counts.notFound}
       </span>
     </div>
   )
 }
 
 export function StatsSummary({ stats, levels }: StatsSummaryProps) {
-  const tiers = levels ?? TIER_ORDER.filter((tier) => {
-    const tierStats = stats[tier]
-    return tierStats.skipped + tierStats.found + tierStats.notFound > 0
-  })
+  const tiers = levels ?? TIER_ORDER.filter((tier) => answeredCount(stats[tier]) > 0)
 
   const totals = tiers.reduce(
     (acc, tier) => ({
@@ -62,7 +66,7 @@ export function StatsSummary({ stats, levels }: StatsSummaryProps) {
     { skipped: 0, found: 0, notFound: 0 },
   )
 
-  const maxTotal = Math.max(0, ...tiers.map((tier) => stats[tier].skipped + stats[tier].found + stats[tier].notFound))
+  const maxTotal = Math.max(0, ...tiers.map((tier) => answeredCount(stats[tier])))
 
   return (
     <div className="flex flex-col gap-4">

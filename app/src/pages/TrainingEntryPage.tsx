@@ -4,11 +4,11 @@ import { Flame } from "lucide-react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
-import { StatsSummary } from "../components/StatsSummary"
+import { SessionProgressBar } from "../components/SessionProgressBar"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 
 export function TrainingEntryPage() {
-  const { session, sessionStats, sessionOutcomes, sessionComplete, discardSession } = useTrainingSession()
+  const { session, sessionOutcomes, sessionComplete, discardSession } = useTrainingSession()
   const navigate = useNavigate()
 
   if (!session) return <Navigate to="/entrainement/configuration" replace />
@@ -35,15 +35,18 @@ export function TrainingEntryPage() {
           <Button to="/entrainement/question">Reprendre</Button>
         </div>
         <p className="text-brand-muted">Niveaux : {session.levels.join(", ")}</p>
+        {/* Kept compact on purpose (Story 2.5): just where the session
+            stands, with the same progress bar as the question screen — the
+            detailed stats stay one tap away once resumed (Story 2.3). */}
         <p className="text-brand-muted">
-          Objectif :{" "}
-          {session.targetCount !== null ? `${sessionOutcomes.length} / ${session.targetCount} questions` : "sans limite"}
+          Progression :{" "}
+          {session.targetCount !== null
+            ? `${sessionOutcomes.length} / ${session.targetCount} questions`
+            : `${sessionOutcomes.length} ${sessionOutcomes.length > 1 ? "questions répondues" : "question répondue"} (sans limite)`}
         </p>
-
-        <div className="flex flex-col gap-4 border-t border-brand-line pt-4">
-          <h3 className="font-semibold">Statistiques de la session</h3>
-          <StatsSummary stats={sessionStats} levels={session.levels} />
-        </div>
+        {session.targetCount !== null && (
+          <SessionProgressBar outcomes={sessionOutcomes} target={session.targetCount} />
+        )}
       </div>
 
       <button

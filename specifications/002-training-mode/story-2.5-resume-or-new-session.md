@@ -30,7 +30,9 @@ User with an active profile
 - **And** an unfinished session is saved for their profile (no target count, or a target not yet reached)
 - **When** the page loads
 - **Then** two options are offered: "Resume current session" and "Start a new session"
-- **And** the saved session's characteristics and statistics are displayed next to the resume option (selected levels, target question count or "no limit", number of skipped/found/not-found questions)
+- **And** the saved session's characteristics are displayed next to the resume option, kept compact: the selected levels, and a "Progression" line (answered questions out of the target, e.g. "7 / 10 questions", or the number of answered questions for a "no limit" session)
+- **And** for a session with a target, its progress bar (the same one shown on the question screen, Story 2.2: one segment per question of the target, colored found / not found once answered) is shown under that line
+- **And** the detailed statistics (skipped/found/not-found totals and per-level breakdown) are not shown on this screen: they stay available from the question screen once resumed (Story 2.3)
 
 ### Scenario 2bis: Existing session already completed
 - **Given** the user accesses training mode

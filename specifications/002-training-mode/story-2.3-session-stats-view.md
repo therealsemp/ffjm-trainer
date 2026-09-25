@@ -15,6 +15,7 @@ User in an active training session
 - Statistics are accessed via an icon that is permanently visible while a question is displayed (Story 2.2).
 - Viewing happens in a popup/modal, without leaving the current question screen.
 - The statistics displayed are for the current session only (not the profile's overall history).
+- Display rule for the per-level breakdown (shared by Stories 1.5, 2.3 and 2.6): the per-level bars and the per-level figures next to them show **found / not found only**, never skipped questions. Skipping is mostly used for a question already done before, not because it's hard, so it says nothing about a level's success; the skipped total is still shown once, as an overall figure. The stored counters themselves are unchanged (skipped is still counted per level, Story 2.4); only the display leaves it out.
 
 ## Acceptance criteria
 
@@ -26,7 +27,7 @@ User in an active training session
 
 ### Scenario 2: Content displayed in the popup
 - **Given** the statistics popup is open
-- **Then** it displays: the levels selected for the session, the total number of skipped questions, the total number of completed questions (found + not found), the overall found/not-found breakdown, and the skipped/found/not-found breakdown per selected level
+- **Then** it displays: the levels selected for the session, the total number of skipped questions, the total number of completed questions (found + not found), the overall found/not-found breakdown, and the found/not-found breakdown per selected level (skipped questions are not shown per level)
 
 ### Scenario 3: Closing the popup
 - **Given** the statistics popup is open

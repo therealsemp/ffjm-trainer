@@ -15,7 +15,7 @@ User with an active profile
 - These are **cumulative, lifetime counters** for this profile — the sum of every training session ever run on this device, not just the current/most recent one. They are tracked independently of any single session's own statistics (Story 2.3): every self-assessment action (skip/found/not found) increments both the current session's counters and these lifetime counters at the same time (see Story 2.4).
 - Displayed on the "My account" page (Story 1.3), not a separate page.
 - Starting a new training session (Story 2.5) never resets these — only deleting the profile does (Story 1.3).
-- Content: total number of questions skipped, found, and not found, overall and broken down per level (tier) — the same shape as Story 2.3's session-scoped view, just summed over every session instead of one.
+- Content: total number of questions skipped, found, and not found overall, and the found/not-found breakdown per level (tier), skipped left out of the per-level part (see Story 2.3's display rule) — the same shape as Story 2.3's session-scoped view, just summed over every session instead of one. A level where every question was skipped (nothing found or not found) doesn't get a row.
 - Content also includes the **number of completed sessions obtained per rank** (Story 2.7), a lifetime counter as well: one compact badge per rank showing the rank letter only (no label) and how many sessions got it. Only ranks obtained at least once are shown (a rank never obtained, e.g. S+, is simply absent rather than shown at zero), ordered from highest (S+) to lowest (D). If no session has been ranked yet (no targeted session ever completed), this part is not shown at all.
 - If the profile has never done any training, this section shows an empty/placeholder state rather than a wall of zeros.
 
@@ -24,7 +24,7 @@ User with an active profile
 ### Scenario 1: Viewing statistics after some training
 - **Given** the user has completed at least one question (skipped, found, or not found) in any training session, ever
 - **When** they are on the "My account" page
-- **Then** the lifetime totals are visible: total skipped, total found, total not found, and the breakdown per level
+- **Then** the lifetime totals are visible: total skipped, total found, total not found, and the found/not-found breakdown per level
 
 ### Scenario 2: No training done yet
 - **Given** the user has never skipped, found, or not-found a single question in any session

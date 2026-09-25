@@ -47,12 +47,14 @@ export function AccountPage() {
         </p>
       </section>
 
-      <section className="flex flex-col gap-2">
+      {/* Each top-level block after the identity one is separated by a thin
+          rule, same as the reset block at the bottom. */}
+      <section className="flex flex-col gap-2 border-t border-brand-line pt-6">
         <h2 className="text-xl font-bold">Thème</h2>
         <ThemeToggle />
       </section>
 
-      <section className="flex flex-col gap-2">
+      <section className="flex flex-col gap-2 border-t border-brand-line pt-6">
         <h2 className="text-xl font-bold">Sons</h2>
         <button
           type="button"
@@ -64,13 +66,18 @@ export function AccountPage() {
         </button>
       </section>
 
-      <section className="flex flex-col gap-2">
+      <section className="flex flex-col gap-2 border-t border-brand-line pt-6">
         <h2 className="text-xl font-bold">Statistiques des entraînements</h2>
         {hasAnyStats ? (
           <>
             <p className="text-sm text-brand-muted">Cumulées depuis la création de ton profil.</p>
-            <RankCountsSummary counts={rankCounts} />
-            <StatsSummary stats={globalStats} />
+            <div className="flex flex-col gap-6">
+              <RankCountsSummary counts={rankCounts} />
+              <div className="flex flex-col gap-3">
+                <h3 className="font-semibold">Questions rencontrées</h3>
+                <StatsSummary stats={globalStats} />
+              </div>
+            </div>
           </>
         ) : (
           <p className="text-brand-muted">

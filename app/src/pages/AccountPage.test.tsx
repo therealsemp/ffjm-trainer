@@ -40,7 +40,8 @@ describe("AccountPage — sessions per rank (Story 1.5)", () => {
     completeSession(3, 5)
     completeSession(10, 10)
     renderPage()
-    expect(screen.getByRole("heading", { name: "Sessions par rang" })).toBeInTheDocument()
+    expect(screen.getByRole("heading", { name: "Rangs obtenus" })).toBeInTheDocument()
+    expect(screen.getByRole("heading", { name: "Questions rencontrées" })).toBeInTheDocument()
     expect(screen.getAllByRole("listitem").map((item) => item.textContent)).toEqual([
       "S+1 session",
       "A2 sessions",
@@ -52,6 +53,7 @@ describe("AccountPage — sessions per rank (Story 1.5)", () => {
     trainingSessionService.recordFound("CE")
     renderPage()
     expect(screen.getByText("Cumulées depuis la création de ton profil.")).toBeInTheDocument()
-    expect(screen.queryByRole("heading", { name: "Sessions par rang" })).not.toBeInTheDocument()
+    expect(screen.queryByRole("heading", { name: "Rangs obtenus" })).not.toBeInTheDocument()
+    expect(screen.getByRole("heading", { name: "Questions rencontrées" })).toBeInTheDocument()
   })
 })

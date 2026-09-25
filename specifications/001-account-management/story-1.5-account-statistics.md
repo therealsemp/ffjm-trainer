@@ -17,6 +17,7 @@ User with an active profile
 - Starting a new training session (Story 2.5) never resets these — only deleting the profile does (Story 1.3).
 - Content: total number of questions skipped, found, and not found overall, and the found/not-found breakdown per level (tier), skipped left out of the per-level part (see Story 2.3's display rule) — the same shape as Story 2.3's session-scoped view, just summed over every session instead of one. A level where every question was skipped (nothing found or not found) doesn't get a row.
 - Content also includes the **number of completed sessions obtained per rank** (Story 2.7), a lifetime counter as well: one compact badge per rank showing the rank letter only (no label) and how many sessions got it. Only ranks obtained at least once are shown (a rank never obtained, e.g. S+, is simply absent rather than shown at zero), ordered from highest (S+) to lowest (D). If no session has been ranked yet (no targeted session ever completed), this part is not shown at all.
+- Layout: the section has two sub-parts under small subheadings of the same level (visually lighter than the section title), separated by spacing only: **"Rangs obtenus"** (the per-rank counts, first) and **"Questions rencontrées"** (the question totals and per-level breakdown; "rencontrées" rather than "répondues" since the totals include skipped questions). The "cumulated since profile creation" note is shown once, for both. When no rank has been obtained yet, only "Questions rencontrées" is shown.
 - If the profile has never done any training, this section shows an empty/placeholder state rather than a wall of zeros.
 
 ## Acceptance criteria
@@ -34,7 +35,8 @@ User with an active profile
 ### Scenario 3: Sessions per rank
 - **Given** the user has completed, over time, 2 targeted sessions ranked A, 1 ranked S and 1 ranked C, and never obtained any other rank
 - **When** they are on the "My account" page
-- **Then** they see one badge each for S (1), A (2) and C (1), in that order, showing only the rank letter and the count
+- **Then** under a "Rangs obtenus" heading, they see one badge each for S (1), A (2) and C (1), in that order, showing only the rank letter and the count
+- **And** the question statistics follow under their own "Questions rencontrées" subheading
 - **And** no badge is shown for S+, B or D
 
 ### Scenario 4: No ranked session yet

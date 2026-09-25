@@ -17,6 +17,7 @@ User with an active profile on this device
 - The "My account" entry point lives in a persistent header, visible on every page once a profile is active (not just the home page). Pages reached before a profile exists (detection/redirection, profile creation) have no header, since there is nothing to link to yet.
 - The theme control (Story 1.4) lives on this "My account" page only — never in the header.
 - The page also shows the profile's lifetime training statistics — see Story 1.5.
+- The page's top-level blocks (identity, theme, sound, statistics, reset) are separated from one another by a thin horizontal rule.
 
 ## Acceptance criteria
 

@@ -12,7 +12,7 @@ export function RankCountsSummary({ counts }: { counts: RankCounts }) {
 
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="font-bold">Sessions par rang</h3>
+      <h3 className="font-semibold">Rangs obtenus</h3>
       <ul className="flex flex-wrap gap-2">
         {obtained.map((rank) => {
           const count = counts[rank] ?? 0

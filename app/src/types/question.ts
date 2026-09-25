@@ -24,6 +24,10 @@ export interface QuestionMetadata {
   year: number
   phase: Phase
   number: number
+  // Same value as the full `Question.title` (absent when the question has
+  // none), copied here so listing screens (edition summary, favorites,
+  // mistakes) can show titles without fetching each question's content.
+  title?: string
   tier: Tier
   categories: CategoryCode[]
   // False for a question whose only source was a results-only solution PDF

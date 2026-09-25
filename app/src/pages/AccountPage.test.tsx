@@ -1,9 +1,12 @@
 import { render, screen } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
 import { MemoryRouter } from "react-router-dom"
 import { beforeEach, describe, expect, test } from "vitest"
 import { AccountPage } from "./AccountPage"
 import { ProfileProvider } from "../services/ProfileContext"
+import { QuestionListsProvider } from "../services/QuestionListsContext"
 import { profileService } from "../services/profileService"
+import { questionListsService } from "../services/questionListsService"
 import { ThemeProvider } from "../services/ThemeContext"
 import { trainingSessionService } from "../services/trainingSessionService"
 import { TrainingSessionProvider } from "../services/TrainingSessionContext"
@@ -14,9 +17,11 @@ function renderPage() {
     <MemoryRouter>
       <ThemeProvider>
         <ProfileProvider>
-          <TrainingSessionProvider>
-            <AccountPage />
-          </TrainingSessionProvider>
+          <QuestionListsProvider>
+            <TrainingSessionProvider>
+              <AccountPage />
+            </TrainingSessionProvider>
+          </QuestionListsProvider>
         </ProfileProvider>
       </ThemeProvider>
     </MemoryRouter>,
@@ -55,5 +60,18 @@ describe("AccountPage — sessions per rank (Story 1.5)", () => {
     expect(screen.getByText("Cumulées depuis la création de ton profil.")).toBeInTheDocument()
     expect(screen.queryByRole("heading", { name: "Rangs obtenus" })).not.toBeInTheDocument()
     expect(screen.getByRole("heading", { name: "Questions rencontrées" })).toBeInTheDocument()
+  })
+})
+
+describe("AccountPage — profile reset (Story 1.3)", () => {
+  test("also erases favorites and the mistakes list", async () => {
+    const user = userEvent.setup()
+    questionListsService.toggleFavorite("2025-qf-1")
+    questionListsService.recordMistake("2025-qf-2")
+    renderPage()
+    await user.click(screen.getByRole("button", { name: "Réinitialiser mon profil" }))
+    await user.click(screen.getByRole("button", { name: "Confirmer la réinitialisation" }))
+    expect(questionListsService.getFavorites()).toEqual([])
+    expect(questionListsService.getMistakes()).toEqual([])
   })
 })

@@ -7,6 +7,7 @@ import { Volume2, VolumeX } from "lucide-react"
 import { useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { useProfile } from "../services/ProfileContext"
+import { useQuestionLists } from "../services/QuestionListsContext"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 import { CATEGORY_OPTIONS } from "../types/profile"
 import { Button } from "../components/Button"
@@ -18,6 +19,7 @@ import { ThemeToggle } from "../components/ThemeToggle"
 export function AccountPage() {
   const { profile, resetProfile, setSoundEnabled } = useProfile()
   const { globalStats, rankCounts, resetTrainingData } = useTrainingSession()
+  const { resetQuestionLists } = useQuestionLists()
   const navigate = useNavigate()
   const dialogRef = useRef<HTMLDialogElement>(null)
 
@@ -30,6 +32,7 @@ export function AccountPage() {
   function handleConfirmReset() {
     dialogRef.current?.close()
     resetTrainingData()
+    resetQuestionLists()
     resetProfile()
     navigate("/profil/creation", { replace: true })
   }

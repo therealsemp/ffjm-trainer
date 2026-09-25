@@ -1,28 +1,22 @@
 // Story 3.4 — edition summary, listing every question's title and level,
-// each a direct link to that question (Story 3.2). Titles live only in a
-// question's full content, not the lightweight manifest, so this page
-// fetches every question of the edition in full (small JSON files, and
-// only done once, when the summary is opened).
+// each a direct link to that question (Story 3.2). Titles are in the
+// lightweight manifest, so no question file is fetched here.
 
 import { useEffect, useState } from "react"
 import { Link, Navigate, useParams } from "react-router-dom"
 import { PageContainer } from "../components/PageContainer"
 import { questionMetadataService } from "../services/questionMetadataService"
-import { questionService } from "../services/questionService"
-import { PHASE_LABELS, type Phase, type Question } from "../types/question"
+import { PHASE_LABELS, type Phase, type QuestionMetadata } from "../types/question"
 
 export function ArchiveSummaryPage() {
   const params = useParams<{ year: string; phase: string }>()
   const year = Number(params.year)
   const phase = params.phase as Phase
 
-  const [editionQuestions, setEditionQuestions] = useState<Question[] | null>(null)
+  const [editionQuestions, setEditionQuestions] = useState<QuestionMetadata[] | null>(null)
 
   useEffect(() => {
-    void questionMetadataService
-      .getEditionQuestions(year, phase)
-      .then((metadata) => Promise.all(metadata.map((q) => questionService.getQuestion(q.id))))
-      .then(setEditionQuestions)
+    void questionMetadataService.getEditionQuestions(year, phase).then(setEditionQuestions)
   }, [year, phase])
 
   if (!params.year || !params.phase) return <Navigate to="/archives" replace />

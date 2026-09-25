@@ -12,23 +12,27 @@ User with an active profile, on the home page
 **so that** I'm reminded they exist and can open them in one tap.
 
 ## Context / Business rules
-- The home page keeps its two main cards ("S'entraîner", "Consulter les archives") unchanged, and gets two smaller cards below them, side by side: "Mes favoris" (bookmark icon) and "Mes erreurs".
+- The home page keeps its two main cards ("S'entraîner", "Consulter les archives") unchanged, and gets two more cards below them, stacked vertically on the same model (large icon, title, short description): "Mes favoris" (bookmark icon) and "Mes erreurs".
 - Each card leads to its page (Stories 4.3 and 4.4).
-- Each card shows how many questions its list holds (e.g. "5 questions", "1 question"), counting only questions that still exist in the app's data. When the list is empty, it says so instead of showing zero (e.g. "Aucune pour l'instant"), and the card stays usable (it leads to the page's empty state).
-- The two cards stay side by side on a phone; their content is short enough to fit.
+- A card is shown **only when its list holds at least one question**: an empty list has no card on the home page (its page stays reachable by its address, showing its empty state).
+- Each card's description ends with how many questions its list holds (e.g. "5 questions.", "1 question."), counting only questions that still exist in the app's data (a list holding only questions no longer in the data counts as empty, so gets no card).
 
 ## Acceptance criteria
 
 ### Scenario 1: Entries shown with their counts
 - **Given** the user has 5 favorites and 7 mistakes
 - **When** they open the home page
-- **Then** below the two main cards, a "Mes favoris" card shows "5 questions" and a "Mes erreurs" card shows "7 questions"
+- **Then** below the two main cards, and on the same model, a "Mes favoris" card mentions "5 questions" and a "Mes erreurs" card mentions "7 questions"
 
 ### Scenario 2: Empty lists
 - **Given** the user has no favorites and no mistakes
 - **When** they open the home page
-- **Then** both cards show that their list is empty
-- **And** tapping either one still opens its page
+- **Then** only the two main cards are shown, with no "Mes favoris" or "Mes erreurs" card
+
+### Scenario 2bis: Only one list has questions
+- **Given** the user has mistakes but no favorites
+- **When** they open the home page
+- **Then** the "Mes erreurs" card is shown, and no "Mes favoris" card
 
 ### Scenario 3: Opening a list
 - **When** the user taps "Mes favoris" (respectively "Mes erreurs")
@@ -39,4 +43,5 @@ User with an active profile, on the home page
 
 ## QA notes
 - Check the counts match the number of rows on each page.
-- Check the layout on a narrow phone screen (both cards side by side, nothing cut off).
+- Check a card appears as soon as its list gets its first question, and disappears once it's empty again (e.g. last favorite removed, last mistake found).
+- Check the four cards read as one consistent set on a narrow phone screen.

@@ -1,11 +1,15 @@
-// Landing page once a profile exists, linking to the two main modes:
-// training and archive consultation.
+// Landing page once a profile exists: four stacked cards of the same model,
+// the two main modes (training and archive consultation), then the two
+// question lists (Story 4.6), each with its current count — a list's card
+// only appears once that list holds at least one question.
 
-import { Archive, Dumbbell } from "lucide-react"
-import type { ReactNode } from "react"
+import { Archive, Bookmark, CircleX, Dumbbell } from "lucide-react"
+import { useEffect, useState, type ReactNode } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { PageContainer } from "../components/PageContainer"
 import { useProfile } from "../services/ProfileContext"
+import { useQuestionLists } from "../services/QuestionListsContext"
+import { questionMetadataService } from "../services/questionMetadataService"
 import { CATEGORY_OPTIONS } from "../types/profile"
 
 // Home-page-only greeting nicknames, keyed by profile name (case-insensitive).
@@ -74,8 +78,32 @@ function HomeActionCard({
   )
 }
 
+// Story 4.6 — counts only questions still present in the data (a listed
+// question removed since is ignored); null while the manifest loads.
+function useExistingCount(questionIds: string[]): number | null {
+  const [count, setCount] = useState<number | null>(null)
+  const idsKey = questionIds.join("|")
+  useEffect(() => {
+    let cancelled = false
+    void questionMetadataService.getExistingByIds(idsKey === "" ? [] : idsKey.split("|")).then((existing) => {
+      if (!cancelled) setCount(existing.length)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [idsKey])
+  return count
+}
+
+function countLabel(count: number): string {
+  return `${count} ${count > 1 ? "questions" : "question"}.`
+}
+
 export function HomePage() {
   const { profile } = useProfile()
+  const { favorites, mistakes } = useQuestionLists()
+  const favoritesCount = useExistingCount(favorites.map((entry) => entry.questionId))
+  const mistakesCount = useExistingCount(mistakes.map((entry) => entry.questionId))
 
   if (!profile) return <Navigate to="/profil/creation" replace />
 
@@ -99,6 +127,24 @@ export function HomePage() {
           title="Consulter les archives"
           description="Parcours les épreuves complètes des éditions précédentes, question par question."
         />
+        {/* Hidden while counting (null) and when empty: no card leading to
+            an empty list. */}
+        {favoritesCount !== null && favoritesCount > 0 && (
+          <HomeActionCard
+            to="/favoris"
+            icon={<Bookmark size={40} />}
+            title="Mes favoris"
+            description={`Les questions que tu as mises de côté avec le signet. ${countLabel(favoritesCount)}`}
+          />
+        )}
+        {mistakesCount !== null && mistakesCount > 0 && (
+          <HomeActionCard
+            to="/erreurs"
+            icon={<CircleX size={40} />}
+            title="Mes erreurs"
+            description={`Les questions que tu n'as pas trouvées en entraînement, jusqu'à ce que tu les trouves. ${countLabel(mistakesCount)}`}
+          />
+        )}
       </div>
     </PageContainer>
   )

@@ -3,8 +3,8 @@
 // validated tree (so a question's full content is fetchable at
 // /data/{year}/{phase}/qNN.json — figures copied as-is, question JSON
 // stripped of fields the app never reads, see below) plus a flat metadata
-// manifest, questions.json (id/year/phase/number/tier/categories only, no
-// content) that the app loads once to drive listing/weighted-draw logic
+// manifest, questions.json (id/year/phase/number/tier/categories/title
+// only, no content) that the app loads once to drive listing/weighted-draw logic
 // without fetching every question. See docs/technical-architecture.md
 // ("Accès aux données").
 //
@@ -60,6 +60,10 @@ function build() {
             year: question.year,
             phase: question.phase,
             number: question.number,
+            // Denormalized for listing screens (edition summary, favorites,
+            // mistakes), which would otherwise fetch every listed question's
+            // full file just to show its title.
+            title: question.title,
             tier: question.tier,
             categories: question.categories,
             hasDetailedCorrection: question.correction !== undefined,

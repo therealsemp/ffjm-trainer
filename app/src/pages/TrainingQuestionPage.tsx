@@ -6,11 +6,13 @@ import { useEffect, useRef, useState, type MouseEvent } from "react"
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom"
 import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
+import { QuestionHeader } from "../components/QuestionHeader"
 import { RichContent } from "../components/RichContent"
 import { SessionProgressBar } from "../components/SessionProgressBar"
 import { StatsSummary } from "../components/StatsSummary"
 import { useProfile } from "../services/ProfileContext"
 import { questionMetadataService } from "../services/questionMetadataService"
+import { useQuestionLists } from "../services/QuestionListsContext"
 import { questionService } from "../services/questionService"
 import { playSound } from "../services/soundEffects"
 import { trainingSessionService } from "../services/trainingSessionService"
@@ -39,6 +41,7 @@ function SelfAssessmentButtons({ onFound, onNotFound }: { onFound: () => void; o
 export function TrainingQuestionPage() {
   const { profile } = useProfile()
   const { session, sessionStats, sessionOutcomes, recordSkip, recordFound, recordNotFound } = useTrainingSession()
+  const { recordMistake, clearMistake } = useQuestionLists()
   const navigate = useNavigate()
   // Captured once at mount, not read reactively from context: a session
   // that's already complete when this page is first reached (stale link,
@@ -115,7 +118,10 @@ export function TrainingQuestionPage() {
   // The answer that completes the session plays no answer sound: the recap
   // plays the rank's own sound instead (Story 2.7), rather than two sounds
   // back to back.
+  // Story 4.1: every self-assessment, the completing one included, also
+  // updates the profile's mistakes list; skipping never does.
   function handleFound() {
+    clearMistake(question!.id)
     const completed = recordFound(question!.tier)
     if (completed) {
       navigate("/entrainement/recap")
@@ -125,6 +131,7 @@ export function TrainingQuestionPage() {
     void drawNext(session!.levels)
   }
   function handleNotFound() {
+    recordMistake(question!.id)
     const completed = recordNotFound(question!.tier)
     if (completed) {
       navigate("/entrainement/recap")
@@ -136,14 +143,10 @@ export function TrainingQuestionPage() {
 
   return (
     <PageContainer wide>
-      <div className="flex flex-col gap-1">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex flex-wrap items-center gap-2">
-            {question.title && <h1 className="text-2xl font-bold">{question.title}</h1>}
-            <span className="rounded-full border-2 border-brand-gold px-2.5 py-0.5 text-sm font-bold whitespace-nowrap">
-              Niveau {question.tier}
-            </span>
-          </div>
+      <QuestionHeader
+        question={question}
+        subtitle={`${question.year} · ${PHASE_LABELS[question.phase]}`}
+        actions={
           <button
             type="button"
             onClick={() => statsDialogRef.current?.showModal()}
@@ -153,11 +156,8 @@ export function TrainingQuestionPage() {
           >
             <ChartColumn size={18} />
           </button>
-        </div>
-        <p className="text-sm text-brand-muted">
-          {question.year} · {PHASE_LABELS[question.phase]}
-        </p>
-      </div>
+        }
+      />
 
       {session.targetCount !== null && (
         <div className="-my-2">

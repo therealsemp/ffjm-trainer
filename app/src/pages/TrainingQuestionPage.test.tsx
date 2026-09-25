@@ -4,6 +4,8 @@ import { MemoryRouter, Route, Routes } from "react-router-dom"
 import { beforeEach, describe, expect, test, vi } from "vitest"
 import { TrainingQuestionPage } from "./TrainingQuestionPage"
 import { ProfileProvider } from "../services/ProfileContext"
+import { QuestionListsProvider } from "../services/QuestionListsContext"
+import { questionListsService } from "../services/questionListsService"
 import { playSound } from "../services/soundEffects"
 import { trainingSessionService } from "../services/trainingSessionService"
 import { TrainingSessionProvider } from "../services/TrainingSessionContext"
@@ -77,13 +79,15 @@ function renderPage(
   return render(
     <MemoryRouter initialEntries={[`/?q=${question.id}`]}>
       <ProfileProvider>
-        <TrainingSessionProvider>
-          <Routes>
-            <Route path="/" element={<TrainingQuestionPage />} />
-            <Route path="/entrainement/recap" element={<div>Récapitulatif</div>} />
-            <Route path="/entrainement/configuration" element={<div>Configuration</div>} />
-          </Routes>
-        </TrainingSessionProvider>
+        <QuestionListsProvider>
+          <TrainingSessionProvider>
+            <Routes>
+              <Route path="/" element={<TrainingQuestionPage />} />
+              <Route path="/entrainement/recap" element={<div>Récapitulatif</div>} />
+              <Route path="/entrainement/configuration" element={<div>Configuration</div>} />
+            </Routes>
+          </TrainingSessionProvider>
+        </QuestionListsProvider>
       </ProfileProvider>
     </MemoryRouter>,
   )
@@ -123,11 +127,13 @@ describe("TrainingQuestionPage — standard flow", () => {
     render(
       <MemoryRouter initialEntries={["/?q=q1"]}>
         <ProfileProvider>
-          <TrainingSessionProvider>
-            <Routes>
-              <Route path="/" element={<TrainingQuestionPage />} />
-            </Routes>
-          </TrainingSessionProvider>
+          <QuestionListsProvider>
+            <TrainingSessionProvider>
+              <Routes>
+                <Route path="/" element={<TrainingQuestionPage />} />
+              </Routes>
+            </TrainingSessionProvider>
+          </QuestionListsProvider>
         </ProfileProvider>
       </MemoryRouter>,
     )
@@ -205,6 +211,47 @@ describe("TrainingQuestionPage — answer sounds (Story 1.6 / 2.7)", () => {
   })
 })
 
+describe("TrainingQuestionPage — mistakes and favorites (Stories 4.1 / 4.2)", () => {
+  test("'Je n'avais pas trouvé' records the question in the mistakes list", async () => {
+    const user = userEvent.setup()
+    renderPage(baseQuestion(), { targetCount: 5 })
+    await screen.findByText("Voici l'énoncé.")
+    await user.click(screen.getByRole("button", { name: "Vérifier ma réponse" }))
+    await user.click(screen.getAllByRole("button", { name: "Je n'avais pas trouvé" })[0])
+    expect(questionListsService.getMistakes().map((entry) => entry.questionId)).toEqual([baseQuestion().id])
+  })
+
+  test("'J'avais trouvé' removes it from the mistakes list, even when completing the session", async () => {
+    const user = userEvent.setup()
+    questionListsService.recordMistake(baseQuestion().id)
+    renderPage(baseQuestion(), { targetCount: 1 })
+    await screen.findByText("Voici l'énoncé.")
+    await user.click(screen.getByRole("button", { name: "Vérifier ma réponse" }))
+    await user.click(screen.getAllByRole("button", { name: "J'avais trouvé" })[0])
+    expect(await screen.findByText("Récapitulatif")).toBeInTheDocument()
+    expect(questionListsService.getMistakes()).toEqual([])
+  })
+
+  test("skipping leaves the mistakes list untouched", async () => {
+    const user = userEvent.setup()
+    questionListsService.recordMistake(baseQuestion().id)
+    renderPage(baseQuestion())
+    await screen.findByText("Voici l'énoncé.")
+    await user.click(screen.getByRole("button", { name: /Ignorer/ }))
+    expect(questionListsService.getMistakes()).toHaveLength(1)
+  })
+
+  test("the bookmark toggles the favorite without affecting the session", async () => {
+    const user = userEvent.setup()
+    renderPage(baseQuestion(), { targetCount: 5 })
+    await screen.findByText("Voici l'énoncé.")
+    await user.click(screen.getByRole("button", { name: "Ajouter aux favoris" }))
+    expect(questionListsService.isFavorite(baseQuestion().id)).toBe(true)
+    expect(screen.getByText("Voici l'énoncé.")).toBeInTheDocument()
+    expect(trainingSessionService.getSessionOutcomes()).toEqual([])
+  })
+})
+
 describe("TrainingQuestionPage — edge cases", () => {
   test("an answer with no value shows a fallback link to the correction's own figure instead", async () => {
     const user = userEvent.setup()
@@ -231,12 +278,14 @@ describe("TrainingQuestionPage — edge cases", () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <ProfileProvider>
-          <TrainingSessionProvider>
-            <Routes>
-              <Route path="/" element={<TrainingQuestionPage />} />
-              <Route path="/entrainement/configuration" element={<div>Configuration</div>} />
-            </Routes>
-          </TrainingSessionProvider>
+          <QuestionListsProvider>
+            <TrainingSessionProvider>
+              <Routes>
+                <Route path="/" element={<TrainingQuestionPage />} />
+                <Route path="/entrainement/configuration" element={<div>Configuration</div>} />
+              </Routes>
+            </TrainingSessionProvider>
+          </QuestionListsProvider>
         </ProfileProvider>
       </MemoryRouter>,
     )
@@ -249,13 +298,15 @@ describe("TrainingQuestionPage — edge cases", () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <ProfileProvider>
-          <TrainingSessionProvider>
-            <Routes>
-              <Route path="/" element={<TrainingQuestionPage />} />
-              <Route path="/entrainement/recap" element={<div>Récapitulatif</div>} />
-              <Route path="/entrainement/configuration" element={<div>Configuration</div>} />
-            </Routes>
-          </TrainingSessionProvider>
+          <QuestionListsProvider>
+            <TrainingSessionProvider>
+              <Routes>
+                <Route path="/" element={<TrainingQuestionPage />} />
+                <Route path="/entrainement/recap" element={<div>Récapitulatif</div>} />
+                <Route path="/entrainement/configuration" element={<div>Configuration</div>} />
+              </Routes>
+            </TrainingSessionProvider>
+          </QuestionListsProvider>
         </ProfileProvider>
       </MemoryRouter>,
     )

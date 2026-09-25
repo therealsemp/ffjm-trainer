@@ -111,6 +111,18 @@ export const questionMetadataService = {
     return entry
   },
 
+  // Epic 4 lists: the metadata of each id that still exists in the data,
+  // in the given order — ids unknown to the manifest (question removed or
+  // renamed since it was listed) are silently dropped (Stories 4.1/4.2).
+  async getExistingByIds(ids: string[]): Promise<QuestionMetadata[]> {
+    const manifest = await loadManifest()
+    const byId = new Map(manifest.map((question) => [question.id, question]))
+    return ids.flatMap((id) => {
+      const entry = byId.get(id)
+      return entry ? [entry] : []
+    })
+  },
+
   // The FFJM "number of solutions" instruction (see functional-spec.md)
   // applies whenever a question's tier is strictly above CM.
   isAboveCM(tier: Tier): boolean {

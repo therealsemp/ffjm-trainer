@@ -4,6 +4,7 @@ import { MemoryRouter, Route, Routes } from "react-router-dom"
 import { beforeEach, describe, expect, test, vi } from "vitest"
 import { ArchiveQuestionPage } from "./ArchiveQuestionPage"
 import { ProfileProvider } from "../services/ProfileContext"
+import { QuestionListsProvider } from "../services/QuestionListsContext"
 import { profileService } from "../services/profileService"
 import type { Question, QuestionMetadata } from "../types/question"
 
@@ -59,9 +60,11 @@ function renderPage(number: number, edition: QuestionMetadata[], questions: Reco
   return render(
     <MemoryRouter initialEntries={[`/archives/2025/qf/${number}`]}>
       <ProfileProvider>
-        <Routes>
-          <Route path="/archives/:year/:phase/:number" element={<ArchiveQuestionPage />} />
-        </Routes>
+        <QuestionListsProvider>
+          <Routes>
+            <Route path="/archives/:year/:phase/:number" element={<ArchiveQuestionPage />} />
+          </Routes>
+        </QuestionListsProvider>
       </ProfileProvider>
     </MemoryRouter>,
   )
@@ -137,6 +140,17 @@ describe("ArchiveQuestionPage — standard flow", () => {
   })
 })
 
+describe("ArchiveQuestionPage — favorites (Story 4.2)", () => {
+  test("the bookmark next to the title toggles the favorite", async () => {
+    const user = userEvent.setup()
+    const edition = [metadata(1)]
+    renderPage(1, edition, { 1: question(1) })
+    await screen.findByText("Énoncé 1.")
+    await user.click(screen.getByRole("button", { name: "Ajouter aux favoris" }))
+    expect(screen.getByRole("button", { name: "Retirer des favoris" })).toBeInTheDocument()
+  })
+})
+
 describe("ArchiveQuestionPage — edge cases", () => {
   test("an answer with no value hides the 'Réponse' box entirely, showing only the explanation", async () => {
     const user = userEvent.setup()
@@ -165,10 +179,12 @@ describe("ArchiveQuestionPage — edge cases", () => {
     render(
       <MemoryRouter initialEntries={["/archives/2025/qf/1"]}>
         <ProfileProvider>
-          <Routes>
-            <Route path="/archives/:year/:phase/:number" element={<ArchiveQuestionPage />} />
-            <Route path="/archives" element={<div>Liste des archives</div>} />
-          </Routes>
+          <QuestionListsProvider>
+            <Routes>
+              <Route path="/archives/:year/:phase/:number" element={<ArchiveQuestionPage />} />
+              <Route path="/archives" element={<div>Liste des archives</div>} />
+            </Routes>
+          </QuestionListsProvider>
         </ProfileProvider>
       </MemoryRouter>,
     )
@@ -180,10 +196,12 @@ describe("ArchiveQuestionPage — edge cases", () => {
     render(
       <MemoryRouter initialEntries={["/archives/2025/qf/99"]}>
         <ProfileProvider>
-          <Routes>
-            <Route path="/archives/:year/:phase/:number" element={<ArchiveQuestionPage />} />
-            <Route path="/archives" element={<div>Liste des archives</div>} />
-          </Routes>
+          <QuestionListsProvider>
+            <Routes>
+              <Route path="/archives/:year/:phase/:number" element={<ArchiveQuestionPage />} />
+              <Route path="/archives" element={<div>Liste des archives</div>} />
+            </Routes>
+          </QuestionListsProvider>
         </ProfileProvider>
       </MemoryRouter>,
     )

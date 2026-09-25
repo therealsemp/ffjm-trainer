@@ -35,3 +35,14 @@ Update this file whenever a story's implementation state changes. Values: `Not s
 | 3.2 — Edition navigation | Done | New `/archives/:year/:phase/:number` route (`ArchiveQuestionPage`), `questionMetadataService.getEditionQuestions()` returns the edition sorted by `number` (the official order). Position shown as "Question K/N"; Previous/Next are plain text links (not buttons) to `number ± 1`, laid out left/right (`justify-between`), hidden at the bounds, shown above the statement and again below the answer once revealed. Out-of-category warning compares `question.categories` to the active profile's category. Figures are tap-to-zoom, wide tables scroll in their own container — both shared with 2.2 via `RichContent`. |
 | 3.3 — Answer display | Done | A single `showAnswers` boolean local to `ArchiveQuestionPage`, defaulting to hidden — persists across Previous/Next/summary-jump since the same component instance stays mounted (only the route params change), matching "stays in effect for following questions" without extra plumbing. Rendered as an actual toggle switch (track + sliding knob), not a button, so its on/off state reads unambiguously. Deliberately does *not* show the "number of solutions" instruction that training mode (2.2) does — archive consultation isn't about attempting the question under contest conditions. Updated: no "Explication détaillée" section when `question.correction` is absent (see 2.2) — the answer box (when it has a value) still shows on its own. |
 | 3.4 — Edition summary and direct navigation | Done | Dedicated page (`/archives/:year/:phase/sommaire`, `ArchiveSummaryPage`) listing every question's title/tier for the edition, linked from a labeled "Sommaire" control next to the title (an earlier icon-only version wasn't clear enough); each entry links straight to that question. Titles live only in a question's full content (not the lightweight manifest), so the page fetches every question of the edition in full via `questionService.getQuestion`, in parallel. (A first version used a `<dialog>` popup, but an unconditional `flex` utility class on it defeated the native `dialog:not([open]) { display: none }` rule, so it never actually hid — switched to a plain page instead.) |
+
+## EPIC 4 — Favorites and mistakes
+
+| Story | Status | Notes |
+|---|---|---|
+| 4.1 — Recording mistakes | Not started | |
+| 4.2 — Adding and removing a favorite | Not started | |
+| 4.3 — "Mes favoris" page | Not started | |
+| 4.4 — "Mes erreurs" page | Not started | |
+| 4.5 — Consulting a question from a list | Not started | |
+| 4.6 — Home page entries | Not started | |

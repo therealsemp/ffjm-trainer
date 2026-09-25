@@ -17,6 +17,7 @@ User browsing a selected edition
 - A question whose `categories` does not include the active profile's category is outside what that profile actually plays — it stays visible, but with a warning (e.g. "This question isn't part of your category (CM)"), since browsing always shows the full edition.
 - This story does not cover showing or hiding answers (see Story 3.3), which applies on top of this navigation.
 - Besides Previous/Next, a question can also be reached directly from the edition's summary (Story 3.4); both ways of arriving at a question behave identically here.
+- A bookmark next to the question's title lets the user add it to (or remove it from) their favorites (Story 4.2).
 
 ## Acceptance criteria
 

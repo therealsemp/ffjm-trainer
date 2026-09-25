@@ -10,9 +10,9 @@ import { useProfile } from "../services/ProfileContext"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 import { CATEGORY_OPTIONS } from "../types/profile"
 import { Button } from "../components/Button"
+import { StatsSummary } from "../components/StatsSummary"
 import { PageContainer } from "../components/PageContainer"
 import { RankCountsSummary } from "../components/RankCountsSummary"
-import { StatsSummary } from "../components/StatsSummary"
 import { ThemeToggle } from "../components/ThemeToggle"
 
 export function AccountPage() {

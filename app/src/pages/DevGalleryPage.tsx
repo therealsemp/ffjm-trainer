@@ -7,11 +7,12 @@
 
 import { useState } from "react"
 import { Button } from "../components/Button"
+import { StatsSummary } from "../components/StatsSummary"
 import { PageContainer } from "../components/PageContainer"
 import { RankCountsSummary } from "../components/RankCountsSummary"
 import { SessionRankCard } from "../components/SessionRankCard"
 import { ThemeToggle } from "../components/ThemeToggle"
-import type { QuestionOutcome, RankCounts } from "../types/trainingSession"
+import type { QuestionOutcome, RankCounts, Stats } from "../types/trainingSession"
 
 // `found` successes spread evenly across `target` answers, so the dots look
 // like a plausible session rather than all greens then all oranges.
@@ -48,6 +49,36 @@ const RANK_COUNTS_EXAMPLES: { title: string; counts: RankCounts }[] = [
   { title: "Quelques rangs obtenus (sans S+)", counts: { S: 1, A: 2, C: 1 } },
   { title: "Tous les rangs", counts: { "S+": 3, S: 5, A: 12, B: 8, C: 2, D: 1 } },
   { title: "Aucun rang (rien n'est affiché)", counts: {} },
+]
+
+function statsOf(partial: Partial<Stats>): Stats {
+  const empty = { skipped: 0, found: 0, notFound: 0 }
+  return { CE: empty, CM: empty, C1: empty, C2: empty, "L1/GP": empty, "L2/HC": empty, ...partial }
+}
+
+const GLOBAL_STATS_EXAMPLES: { title: string; stats: Stats }[] = [
+  {
+    title: "Cas de la capture d'écran (CE très majoritaire)",
+    stats: statsOf({
+      CE: { skipped: 0, found: 14, notFound: 1 },
+      CM: { skipped: 0, found: 0, notFound: 2 },
+      C1: { skipped: 0, found: 2, notFound: 0 },
+      C2: { skipped: 0, found: 2, notFound: 0 },
+      "L1/GP": { skipped: 0, found: 1, notFound: 0 },
+    }),
+  },
+  {
+    title: "Tous les niveaux, volumes variés, avec questions passées",
+    stats: statsOf({
+      CE: { skipped: 3, found: 40, notFound: 6 },
+      CM: { skipped: 5, found: 31, notFound: 14 },
+      C1: { skipped: 1, found: 12, notFound: 12 },
+      C2: { skipped: 0, found: 8, notFound: 15 },
+      "L1/GP": { skipped: 2, found: 3, notFound: 9 },
+      "L2/HC": { skipped: 7, found: 1, notFound: 4 },
+    }),
+  },
+  { title: "Une seule question", stats: statsOf({ C1: { skipped: 0, found: 1, notFound: 0 } }) },
 ]
 
 export function DevGalleryPage() {
@@ -88,6 +119,16 @@ export function DevGalleryPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="flex flex-col gap-6">
+        <h2 className="text-2xl font-bold">Compte : questions rencontrées</h2>
+        {GLOBAL_STATS_EXAMPLES.map((example) => (
+          <div key={example.title} className="flex flex-col gap-2 rounded-xl border border-dashed border-brand-line p-4">
+            <p className="text-sm text-brand-muted">{example.title}</p>
+            <StatsSummary stats={example.stats} />
+          </div>
+        ))}
       </section>
 
       <section className="flex flex-col gap-6">

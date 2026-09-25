@@ -1,0 +1,46 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 573,
+        "y": 133
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 4,
+        "position": {
+          "x": 46,
+          "y": 608
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-15",
+  "number": 15,
+  "title": "Aidez Dédé",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "André, dit Dédé, possède six dés identiques. Chacun d'eux porte le nombre 1 sur une face, le nombre 2 sur deux faces et le nombre 3 sur trois faces.\n\nDédé lance ses six dés, quelle idée !\n\n**Quelle est la probabilité pour que le total des points présentés par les six dés soit égal à 12 ?** On donnera la réponse sous la forme d'une fraction irréductible.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1321/11664"
+  }
+}

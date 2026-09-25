@@ -1,0 +1,50 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 151
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 46,
+          "y": 489
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-2",
+  "number": 2,
+  "title": "Sans les chiffres de l'année",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias écrit la suite des nombres entiers dont l'écriture ne comporte aucun des chiffres 2, 0, 1 ou 9 :\n\n**3, 4, 5, 6, 7, 8, 33, 34, …**\n\n**Quel sera le 29ᵉ nombre qu'il écrira ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 67
+  }
+}

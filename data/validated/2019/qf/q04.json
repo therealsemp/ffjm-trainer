@@ -1,0 +1,50 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 296
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 46,
+          "y": 785
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-4",
+  "number": 4,
+  "title": "Les crayons",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a deux crayons de moins qu'Alice qui a deux fois plus de crayons que Julie.\n\nJulie a trois crayons de moins que Mathilde.\n\n**Combien Mathilde a-t-elle de crayons ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 8
+  }
+}

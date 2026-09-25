@@ -1,0 +1,49 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 519
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 2,
+        "position": {
+          "x": 46,
+          "y": 510
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-7",
+  "number": 7,
+  "title": "Des billes de toutes les couleurs",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Dans un sac, il y a 15 billes blanches, 15 noires, 6 rouges et 5 vertes. **Combien de billes, au minimum, faut-il sortir sans les regarder pour être certain d'avoir sorti au moins 10 billes de la même couleur ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 30
+  }
+}

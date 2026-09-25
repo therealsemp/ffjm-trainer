@@ -1,0 +1,49 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 437
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 2,
+        "position": {
+          "x": 46,
+          "y": 361
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-6",
+  "number": 6,
+  "title": "Le nombre mystérieux",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathilde a choisi un nombre. Elle lui a ajouté la somme de ses chiffres et elle a obtenu un deuxième nombre. Elle a ensuite ajouté à ce deuxième nombre la somme de ses chiffres et elle a obtenu un résultat égal à 60.\n\n**Quel était le premier nombre choisi par Mathilde ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 42
+  }
+}

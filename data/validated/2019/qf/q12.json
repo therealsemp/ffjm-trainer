@@ -1,0 +1,47 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 300,
+        "y": 426
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 3,
+        "position": {
+          "x": 46,
+          "y": 793
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-12",
+  "number": 12,
+  "title": "Dissection d'un rectangle",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Un rectangle dont la base mesure 9 cm a été partagé en quatre rectangles plus petits par deux droites perpendiculaires. Le plus petit de ces rectangles a une aire mesurant au moins 7 cm², le suivant a une aire mesurant au moins 9 cm², le troisième a une aire mesurant au moins 12 cm² et le quatrième a une aire mesurant au moins 15 cm².\n\n**Quelle est, au minimum, l'aire du rectangle partagé ?**\n\nOn donnera la réponse en cm² arrondie au centième.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "43,2"
+  }
+}

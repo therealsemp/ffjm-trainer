@@ -1,0 +1,56 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 225
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 46,
+          "y": 642
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-3",
+  "number": 3,
+  "title": "Le solide",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Toutes les faces de ces solides sont horizontales ou verticales.\n\n![figure](figure:2019-qf-3-fig-solides)\n\n**Le cube représenté à gauche possède six faces, mais combien le solide de droite en possède-t-il ?**",
+    "figures": [
+      {
+        "id": "2019-qf-3-fig-solides",
+        "description": "À gauche, un petit cube en perspective. À droite, un solide en forme de « h » : une haute colonne verticale, d'où part vers la droite un bras horizontal qui redescend en un pied vertical plus court.",
+        "imageUrl": "q03_fig-solides.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 12
+  }
+}

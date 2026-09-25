@@ -1,0 +1,50 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 28,
+        "y": 366
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 2,
+        "position": {
+          "x": 46,
+          "y": 169
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-5",
+  "number": 5,
+  "title": "Le sac de billes",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Un sac contient moins de 100 billes. On peut partager en parts égales ces billes entre deux, trois ou cinq enfants, mais on ne peut pas les partager en parts égales entre quatre enfants.\n\n**Combien le sac contient-il de billes, au minimum ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 30
+  }
+}

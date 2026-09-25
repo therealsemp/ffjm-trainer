@@ -1,0 +1,44 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "qf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/qf/2019_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 573,
+        "y": 428
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/qf/2019_qf_solution.pdf",
+        "page": 5,
+        "position": {
+          "x": 46,
+          "y": 727
+        }
+      }
+    ]
+  },
+  "id": "2019-qf-18",
+  "number": 18,
+  "title": "La suite de Mathias",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Une suite de Mathias est une suite constituée uniquement de 1 et de 2. On écrit une suite dans laquelle un même chiffre n'est jamais écrit plus de deux fois consécutivement, par exemple 12112212211211… Ensuite on écrit une seconde suite avec les nombres d'éléments identiques qu'on lit successivement dans la première suite : 112212212…. Enfin , on applique le même procédé à cette seconde suite pour obtenir une troisième suite : 22121…\n\nMathias a trouvé une suite commençant par un 1, telle que\n\n- sa seconde suite est différente de la première ;\n- sa troisième suite est identique à la première.\n\n**Quels sont les 19ᵉ, 20ᵉ, 21ᵉ et 22ᵉ chiffres de la première suite de Mathias ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "open",
+    "value": "2112 ou 2121"
+  }
+}

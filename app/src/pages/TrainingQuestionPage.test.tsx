@@ -4,6 +4,7 @@ import { MemoryRouter, Route, Routes } from "react-router-dom"
 import { beforeEach, describe, expect, test, vi } from "vitest"
 import { TrainingQuestionPage } from "./TrainingQuestionPage"
 import { ProfileProvider } from "../services/ProfileContext"
+import { playSound } from "../services/soundEffects"
 import { trainingSessionService } from "../services/trainingSessionService"
 import { TrainingSessionProvider } from "../services/TrainingSessionContext"
 import type { Question } from "../types/question"
@@ -91,6 +92,7 @@ function renderPage(
 beforeEach(() => {
   window.localStorage.clear()
   getQuestion.mockReset()
+  vi.mocked(playSound).mockClear()
 })
 
 describe("TrainingQuestionPage — standard flow", () => {
@@ -179,6 +181,27 @@ describe("TrainingQuestionPage — standard flow", () => {
     await user.click(screen.getByRole("button", { name: "Vérifier ma réponse" }))
     await user.click(screen.getAllByRole("button", { name: "J'avais trouvé" })[0])
     expect(await screen.findByText("Récapitulatif")).toBeInTheDocument()
+  })
+})
+
+describe("TrainingQuestionPage — answer sounds (Story 1.6 / 2.7)", () => {
+  test("an answer that doesn't complete the session plays its sound", async () => {
+    const user = userEvent.setup()
+    renderPage(baseQuestion(), { targetCount: 5 })
+    await screen.findByText("Voici l'énoncé.")
+    await user.click(screen.getByRole("button", { name: "Vérifier ma réponse" }))
+    await user.click(screen.getAllByRole("button", { name: "J'avais trouvé" })[0])
+    expect(playSound).toHaveBeenCalledExactlyOnceWith("ok")
+  })
+
+  test("the answer that completes the session plays no answer sound (the recap plays the rank's)", async () => {
+    const user = userEvent.setup()
+    renderPage(baseQuestion(), { targetCount: 1 })
+    await screen.findByText("Voici l'énoncé.")
+    await user.click(screen.getByRole("button", { name: "Vérifier ma réponse" }))
+    await user.click(screen.getAllByRole("button", { name: "J'avais trouvé" })[0])
+    expect(await screen.findByText("Récapitulatif")).toBeInTheDocument()
+    expect(playSound).not.toHaveBeenCalled()
   })
 })
 

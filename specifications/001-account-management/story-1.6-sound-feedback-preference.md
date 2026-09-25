@@ -12,7 +12,7 @@ User with an active profile
 **so that** I can train quietly (or keep the audio feedback) depending on where I am.
 
 ## Context / Business rules
-- A short sound effect plays when the user self-assesses a question during training (Story 2.2): one sound for "I found it", a different one for "I didn't find it".
+- A short sound effect plays when the user self-assesses a question during training (Story 2.2): one sound for "I found it", a different one for "I didn't find it". The end-of-session screen also plays a sound depending on the rank obtained (Story 2.7); the same preference turns it on or off.
 - This is a per-profile preference (unlike the theme, Story 1.4, which is device-level): it's stored as part of the profile itself, so resetting the profile (Story 1.3) also resets this preference back to its default.
 - Default, with no explicit choice, is **enabled** — this also covers a profile created before this preference existed (no stored value at all), so a pre-existing profile keeps playing sounds after this feature ships, rather than going silent unexpectedly.
 - The setting is reachable only from the "My account" page (Story 1.3), next to the theme control.
@@ -29,7 +29,7 @@ User with an active profile
 - **Given** the user is on the sound setting control, currently "on"
 - **When** they turn it off
 - **Then** the control immediately reflects "off"
-- **And** self-assessing a question during training no longer plays any sound
+- **And** self-assessing a question during training no longer plays any sound, nor does the end-of-session screen (Story 2.7)
 - **And** this choice is saved
 
 ### Scenario 3: Turning sounds back on
@@ -51,7 +51,7 @@ User with an active profile
 ## Out of scope
 - Volume control or muting individual sounds separately.
 - Custom/uploadable sounds.
-- Sound effects for actions other than self-assessment (e.g. skip, session start).
+- Sound effects for actions other than self-assessment and session completion (e.g. skip, session start).
 
 ## QA notes
 - Verify a profile stored before this feature existed (no `soundEnabled` field) plays sounds by default.

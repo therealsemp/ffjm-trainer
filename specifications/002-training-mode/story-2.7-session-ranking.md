@@ -40,7 +40,7 @@ User who has just completed a training session with a target question count
 - The medal appears with a short entrance animation, and every rank gets a halo, getting smaller rank by rank (largest and continuously pulsing for S+, smallest for D) rather than disappearing below the top ranks. Higher ranks are more festive (sparkles for S and S+, continuous shimmer for S+). When the user's system asks for reduced motion, the animation is not played and the rank is shown directly in its final state.
 - A graphical recap of the session's answers explains the letter: one dot per answered question, in the order they were answered, colored found / not found (same status colors as the in-session progress bar, Story 2.2). The dots are laid out in fixed rows, never free wrapping: rows of 10 on wide screens and rows of 5 on narrow ones (a 5-question session is a single row of 5). The block of dots is centered as a whole, while an incomplete last row (e.g. 15 = 10 + 5) stays left-aligned under the full row above it.
 - A discreet counter shows how many questions were skipped during the session (e.g. "3 questions passées"), only when there is at least one. It is informational only: it has no bearing on the rank.
-- No sound is played for the rank (Story 1.6's sound feedback is not extended to this screen).
+- A short sound plays once when the end-of-session screen appears, chosen by the rank obtained, unless the user has turned sounds off (Story 1.6). There is **one sound file per rank** (six in all): several ranks may use the same sound, but that grouping is decided only by which audio file each rank points to, so any rank can get its own sound later without changing the rule. The self-assessment that completes the session does **not** play its usual found/not-found sound (Story 2.2): only the rank's sound is heard, never two sounds back to back. The sound is not replayed when the end-of-session screen can't be shown again anyway (reload, navigation, Story 2.6).
 
 ### Saving
 - The number of completed sessions obtained per rank is saved as a lifetime counter for the profile (see Story 2.4 for when it's saved, Story 1.5 for where it's shown). Only this per-rank count is kept, not a history of individual sessions.
@@ -84,7 +84,14 @@ User who has just completed a training session with a target question count
 - **Given** a "No limit" session, or a targeted session discarded before reaching its target
 - **Then** no rank is ever computed or saved for it
 
-### Scenario 8: Reduced motion
+### Scenario 8: Rank sound
+- **Given** sounds are enabled (Story 1.6)
+- **When** the user self-assesses the question that completes the session
+- **Then** no found/not-found sound plays for that answer
+- **And** the end-of-session screen plays the sound of the rank obtained, once
+- **And** with sounds turned off, no sound plays at all
+
+### Scenario 9: Reduced motion
 - **Given** the user's system requests reduced motion
 - **When** the end-of-session screen is displayed
 - **Then** the rank is shown directly, without its entrance animation
@@ -92,7 +99,6 @@ User who has just completed a training session with a target question count
 ## Out of scope
 - Taking the questions' level/tier into account in the rank.
 - A history of past sessions and their ranks (only per-rank counters are kept, see Story 1.5).
-- Sound feedback for the rank.
 - Any social/sharing feature around a rank.
 - Reworking the shared statistics component (`StatsSummary`, used by Stories 1.5 and 2.3), planned separately later.
 

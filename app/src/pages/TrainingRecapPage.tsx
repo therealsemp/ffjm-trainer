@@ -10,17 +10,21 @@
 // shouldn't be greeted with the same recap the next time they open the app.
 
 import { PartyPopper } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 import { Button } from "../components/Button"
 import { PageContainer } from "../components/PageContainer"
 import { SessionRankCard } from "../components/SessionRankCard"
 import { StatsSummary } from "../components/StatsSummary"
+import { useProfile } from "../services/ProfileContext"
+import { computeRankFromOutcomes } from "../services/sessionRank"
+import { playRankSound } from "../services/soundEffects"
 import { trainingSessionService } from "../services/trainingSessionService"
 import { useTrainingSession } from "../services/TrainingSessionContext"
 
 export function TrainingRecapPage() {
   const { session, sessionStats, sessionOutcomes, sessionComplete, discardSession } = useTrainingSession()
+  const { profile } = useProfile()
   const navigate = useNavigate()
   // Captured once at mount, before the effect below clears it — read
   // directly from storage rather than through context state, so it's
@@ -30,6 +34,19 @@ export function TrainingRecapPage() {
   useEffect(() => {
     trainingSessionService.clearJustCompleted()
   }, [])
+
+  // Story 2.7: the rank's sound, once, on arrival right after finishing
+  // (the completing answer itself stayed silent, see TrainingQuestionPage).
+  // Allowed by browsers' autoplay rules since it follows the user's click
+  // on that last answer. The ref keeps React StrictMode's double effect run
+  // (development) from playing it twice.
+  const rankSoundPlayed = useRef(false)
+  const soundEnabled = profile?.soundEnabled ?? true
+  useEffect(() => {
+    if (rankSoundPlayed.current || !justCompleted || !soundEnabled || session?.targetCount == null) return
+    rankSoundPlayed.current = true
+    playRankSound(computeRankFromOutcomes(sessionOutcomes, session.targetCount))
+  }, [justCompleted, soundEnabled, session, sessionOutcomes])
 
   if (!session) return <Navigate to="/entrainement/configuration" replace />
   // The flag takes priority over `sessionComplete`: right on the render

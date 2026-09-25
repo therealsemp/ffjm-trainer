@@ -112,17 +112,26 @@ export function TrainingQuestionPage() {
   }
   const soundEnabled = profile?.soundEnabled ?? true
 
+  // The answer that completes the session plays no answer sound: the recap
+  // plays the rank's own sound instead (Story 2.7), rather than two sounds
+  // back to back.
   function handleFound() {
-    if (soundEnabled) playSound("ok")
     const completed = recordFound(question!.tier)
-    if (completed) navigate("/entrainement/recap")
-    else void drawNext(session!.levels)
+    if (completed) {
+      navigate("/entrainement/recap")
+      return
+    }
+    if (soundEnabled) playSound("ok")
+    void drawNext(session!.levels)
   }
   function handleNotFound() {
-    if (soundEnabled) playSound("ko")
     const completed = recordNotFound(question!.tier)
-    if (completed) navigate("/entrainement/recap")
-    else void drawNext(session!.levels)
+    if (completed) {
+      navigate("/entrainement/recap")
+      return
+    }
+    if (soundEnabled) playSound("ko")
+    void drawNext(session!.levels)
   }
 
   return (

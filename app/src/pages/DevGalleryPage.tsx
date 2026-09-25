@@ -12,6 +12,8 @@ import { PageContainer } from "../components/PageContainer"
 import { RankCountsSummary } from "../components/RankCountsSummary"
 import { SessionRankCard } from "../components/SessionRankCard"
 import { ThemeToggle } from "../components/ThemeToggle"
+import { RANK_ORDER } from "../services/sessionRank"
+import { playRankSound } from "../services/soundEffects"
 import type { QuestionOutcome, RankCounts, Stats } from "../types/trainingSession"
 
 // `found` successes spread evenly across `target` answers, so the dots look
@@ -104,6 +106,18 @@ export function DevGalleryPage() {
           </label>
         </div>
       </header>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-2xl font-bold">Sons de fin de session</h2>
+        <p className="text-sm text-brand-muted">Un fichier par rang (public/audio/session-*.mp3).</p>
+        <div className="flex flex-wrap gap-2">
+          {RANK_ORDER.map((rank) => (
+            <Button key={rank} type="button" onClick={() => playRankSound(rank)}>
+              Son {rank}
+            </Button>
+          ))}
+        </div>
+      </section>
 
       <section className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold">Fin de session</h2>

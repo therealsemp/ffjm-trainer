@@ -15,7 +15,7 @@ User with an active profile
 - These are **cumulative, lifetime counters** for this profile — the sum of every training session ever run on this device, not just the current/most recent one. They are tracked independently of any single session's own statistics (Story 2.3): every self-assessment action (skip/found/not found) increments both the current session's counters and these lifetime counters at the same time (see Story 2.4).
 - Displayed on the "My account" page (Story 1.3), not a separate page.
 - Starting a new training session (Story 2.5) never resets these — only deleting the profile does (Story 1.3).
-- Content: total number of questions skipped, found, and not found overall, and the found/not-found breakdown per level (tier), skipped left out of the per-level part (see Story 2.3's display rule) — the same shape as Story 2.3's session-scoped view, just summed over every session instead of one. A level where every question was skipped (nothing found or not found) doesn't get a row.
+- Content: total number of questions skipped, found, and not found overall, and the found/not-found breakdown per level (tier), skipped left out of the per-level part — displayed with the same statistics layout as Story 2.3's session-scoped view (success rate / found / not found tiles, discreet answered/skipped line, absolute-length bars per level), just summed over every session instead of one. A level where every question was skipped (nothing found or not found) doesn't get a row.
 - Content also includes the **number of completed sessions obtained per rank** (Story 2.7), a lifetime counter as well: one compact badge per rank showing the rank letter only (no label) and how many sessions got it. Only ranks obtained at least once are shown (a rank never obtained, e.g. S+, is simply absent rather than shown at zero), ordered from highest (S+) to lowest (D). If no session has been ranked yet (no targeted session ever completed), this part is not shown at all.
 - Layout: the section has two sub-parts under small subheadings of the same level (visually lighter than the section title), separated by spacing only: **"Rangs obtenus"** (the per-rank counts, first) and **"Questions rencontrées"** (the question totals and per-level breakdown; "rencontrées" rather than "répondues" since the totals include skipped questions). The "cumulated since profile creation" note is shown once, for both. When no rank has been obtained yet, only "Questions rencontrées" is shown.
 - If the profile has never done any training, this section shows an empty/placeholder state rather than a wall of zeros.
@@ -25,7 +25,7 @@ User with an active profile
 ### Scenario 1: Viewing statistics after some training
 - **Given** the user has completed at least one question (skipped, found, or not found) in any training session, ever
 - **When** they are on the "My account" page
-- **Then** the lifetime totals are visible: total skipped, total found, total not found, and the found/not-found breakdown per level
+- **Then** the lifetime totals are visible: success rate, total found and total not found (as tiles), total answered and skipped (as a discreet line), and the found/not-found breakdown per level
 
 ### Scenario 2: No training done yet
 - **Given** the user has never skipped, found, or not-found a single question in any session

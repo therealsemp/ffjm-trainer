@@ -1,0 +1,52 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 561
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 36,
+          "y": 708
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-9",
+  "number": 9,
+  "title": "Des pommes",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde a plus d'une pomme mais moins de deux cents pommes dans un caddie. Si on remplit des cagettes à raison de 12 pommes par cagette, il lui en reste une en trop. Si elle mettait 14 pommes par cagette ou 21 pommes par cagette, dans chaque cas il lui en resterait aussi une en trop. **Combien y a-t-il de pommes dans le caddie de Mathilde ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : 85 ou 169"
+  },
+  "correction": {
+    "markdown": "Si Mathilde avait une pomme de moins, son nombre de pommes serait divisible par 12, 14 et 21.\n\nIl serait donc divisible aussi par le PPCM de 12, 14 et 21.\n\n12=2x2x3, 14=2x7 et 21=3x7 donc PPCM(12,14,21) = 2x2x3x7 = 84\n\nMathilde aurait donc, avec une pomme de moins, 84 ou 168 pommes (pour rester plus petit que 199).\n\nIl y a donc 2 solutions : Il y a 85 ou 169 pommes dans le caddie de Mathilde.",
+    "figures": []
+  }
+}

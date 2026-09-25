@@ -1,0 +1,51 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 349
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 36,
+          "y": 49
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-13",
+  "number": 13,
+  "title": "Une baguette à couper",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Anaïs a une baguette de 20 cm de long et désire la couper en trois morceaux pour en faire les côtés d'un triangle isocèle qui ne soit pas aplati. Chaque morceau mesure un nombre entier de centimètres.\n\n**Combien de triangles différents peut-elle construire ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 4
+  },
+  "correction": {
+    "markdown": "On cherche 3 nombres entiers a, b, c dont 2 sont égaux (triangle isocèle) et dont la somme fait 20.\n\nOn va choisir que b et c sont égaux. On cherche donc **a + 2b = 20**.\n\nLa condition pour pouvoir construire un triangle est que chaque nombre doit être strictement plus PETIT que la somme des 2 autres.\n\nOn doit donc avoir : a < b + c = 2b, b < a + c ⇔ a > 0 (n'apporte rien) et c < a + b idem.\n\nLa condition intéressante est donc a < 2b.\n\nDonc 20 = a + 2b < 2b + 2b donc 4b > 20 et b > 5.\n\nDonc b ne peut donc valoir que : 6, 7, 8 ou 9.\n\nChacun de ces cas donne une solution : (6, 6, 8), (7, 7, 6), (8, 8, 4) et (9, 9, 2).\n\nElle peut donc construire **4 triangles différents**.",
+    "figures": []
+  }
+}

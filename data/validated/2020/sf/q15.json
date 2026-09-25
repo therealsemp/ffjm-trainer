@@ -1,0 +1,50 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 587
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 36,
+          "y": 49
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-15",
+  "number": 15,
+  "title": "Pile ou face",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Vous lancez dix fois une pièce d'un euro et vous notez à chaque fois si elle retombe du côté “pile” ou du côté “face”.\n\n**Quelle est la probabilité pour que vous obteniez exactement autant de “pile” que de “face” ?**\n\nOn donnera la réponse sous la forme d'une fraction irréductible. On suppose que la pièce est parfaitement équilibrée.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "63/256"
+  },
+  "correction": {
+    "markdown": "On note les 10 tirages dans l'ordre avec pour chaque tirage P ou F. Par ex :. PPPFPFFPFF.\n\nLes tirages qui répondent à la question ont 5 P et 5 F.\n\nIls sont entièrement déterminés par la position des 5 P parmi les 10 positions possibles (les autres positions sont forcément des F).\n\nIl y a donc \\(\\binom{10}{5}\\) = 252 combinaisons favorables (choix de 5 parmi 10).\n\nIl y a 2 possibilités pour chaque tirage, sur 10 tirages successifs et indépendants, donc \\(2^{10}\\) =1024 combinaisons possible. La probabilité est donc 252/1024.\n\nLa solution qui est la fraction irréductible est donc **63 : 256**.",
+    "figures": []
+  }
+}

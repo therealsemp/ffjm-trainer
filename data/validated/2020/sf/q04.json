@@ -1,0 +1,66 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 526
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 36,
+          "y": 494
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-4",
+  "number": 4,
+  "title": "Une pizza mal coupée",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias a voulu couper une pizza avec un grand couteau. En trois coups, il a coupé la pizza en 7 parts, très inégales.\n\n![figure](figure:2020-sf-4-pizza)\n\n**S'il effectue une quatrième coupe en ligne droite, combien obtiendra-t-il de parts, au maximum ?**",
+    "figures": [
+      {
+        "id": "2020-sf-4-pizza",
+        "description": "Un cercle (la pizza) traversé par trois segments droits qui se croisent, le découpant en 7 parts inégales.",
+        "imageUrl": "q04_fig-pizza.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 11
+  },
+  "correction": {
+    "markdown": "Tous les essais montrent qu'une nouvelle coupe traverse au maximum 4 régions.\n\nChaque fois qu'une coupe traverse une région, elle coupe la région en 2 et ajoute donc une part au total.\n\nOn peut donc ajouter au maximum 4 parts et donc avoir **11 parts au maximum**.\n\nVoici deux exemples de découpage.\n\n![figure](figure:2020-sf-4-corr-pizza)",
+    "figures": [
+      {
+        "id": "2020-sf-4-corr-pizza",
+        "description": "La pizza de l'énoncé avec ses trois coupes, et deux exemples de quatrième coupe : une droite verte en haut et une droite rouge plus bas, chacune traversant 4 régions.",
+        "imageUrl": "q04_corr-pizza.png"
+      }
+    ]
+  }
+}

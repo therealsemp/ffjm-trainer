@@ -1,0 +1,60 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 212
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 90,
+          "y": 83
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-17",
+  "number": 17,
+  "title": "Projet immobilier",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "![figure](figure:2020-sf-17-terrain)\n\nDans un terrain en forme de triangle rectangle isocèle, Archie Tekte envisage de construire un musée, qui comprendra trois bâtiments rectangulaires disposés comme sur la figure. Les dimensions de ces bâtiments ne sont pas encore définies, mais ils occuperont une surface maximale et les contacts entre les bâtiments ou avec le bord du terrain correspondront à ceux du dessin. Les surfaces non bâties seront herborisées. Le terrain a une aire de 2020 m².\n\n**Quelle sera l'aire totale des zones herborisées ?**\n\nSi besoin est, on prendra 1,414 pour √2 et on arrondira au m² le plus proche.",
+    "figures": [
+      {
+        "id": "2020-sf-17-terrain",
+        "description": "Un triangle rectangle isocèle (angle droit en bas à gauche) contenant trois rectangles blancs : un rectangle incliné le long de l'hypoténuse, un rectangle vertical contre le bord gauche et un rectangle horizontal contre le bord inférieur ; les zones restantes, triangulaires, sont grisées.",
+        "imageUrl": "q17_fig-terrain.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 505
+  },
+  "correction": {
+    "markdown": "![figure](figure:2020-sf-17-corr-terrain)\n\nLa superficie des zones herborisées est égale au quart de la somme de carrés : \\(a^2 + b^2 + c^2 + d^2\\) (voir la figure de droite)\n\nOr la somme des carrés de quatre nombres de somme constante est minimale lorsque ces quatre nombre sont égaux. On doit donc avoir \\(a = b = c = d\\) pour que la superficie des zones herborisées soit minimale et celle-ci représente alors **le quart** de la surface du terrain triangulaire, soit **505 m²**.",
+    "figures": [
+      {
+        "id": "2020-sf-17-corr-terrain",
+        "description": "Deux copies du terrain triangulaire. À gauche, les zones herborisées colorées en bleu et vert, avec des flèches indiquant le déplacement de deux d'entre elles. À droite, après réarrangement, les zones herborisées forment quatre triangles rectangles isocèles colorés le long de l'hypoténuse, dont les hypoténuses sont notées a, b, c et d.",
+        "imageUrl": "q17_corr-terrain.png"
+      }
+    ]
+  }
+}

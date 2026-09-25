@@ -1,0 +1,54 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 397
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 36,
+          "y": 404
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-3",
+  "number": 3,
+  "title": "Faites 33",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde remarque qu'en additionnant le numéro de sa maison et celui de la maison de son cousin Mathis, elle obtient 33.\n\nOn sait que le numéro de la maison de Mathilde est plus petit que celui de la maison de Mathis, mais ceci ne permet pas de connaître les deux numéros.\n\n**Combien existe-t-il de possibilités ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 16
+  },
+  "correction": {
+    "markdown": "Aucune maison n'a le numéro 0.\n\nLe numéro de la maison de Mathilde peut aller de 1 à 16. S'il atteint ou dépasse 17, le numéro de la maison de Mathis sera au plus 16 et donc plus petit que celui de Mathilde.\n\n**Il y a donc 16 possibilités** : de 1 à 16 pour la maison de Mathilde et de 32 à 17 pour celle de Mathis.",
+    "figures": []
+  }
+}

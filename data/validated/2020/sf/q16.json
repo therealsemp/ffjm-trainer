@@ -1,0 +1,50 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 36,
+          "y": 204
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-16",
+  "number": 16,
+  "title": "Vacances en Syldavie",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Adélaïde passe ses vacances en Syldavie. Dans ce pays, les pièces de monnaie n'ont plus cours et il n'existe que quatre sortes de billets de banque, qui valent respectivement 63, 77, 99 et 239 couronnes.\n\nAdelaïde, qui veut offrir à sa sœur Sophie un cadeau d'une valeur de 2020 couronnes, paie la somme exacte en billets et le nombre de chaque type de billet est impair.\n\n**Combien de billets de chaque valeur va-t-elle utiliser ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : 13 billets de 63, 5 de 77, 1 de 99 et 3 de 239 ; ou 15 billets de 63, 7 de 77, 3 de 99 et 1 de 239"
+  },
+  "correction": {
+    "markdown": "On cherche 4 nombres a,b,c,d entiers, positifs et impairs tels que 63a+77b+99c+239d=2020.\n\nd vaut au plus 7 (9 x 239 = 2151 > 2020) et donc 1, 3, 5 ou 7.\n\n**Cas d=7** : 63a + 77b + 99c = 347 ⇔ 7(9a+11b) = 347 - 99c\n\nc vaut 1 ou 3. Si c vaut 1, 7(9a+11b)=248 n'est pas divisible par 7. Si c vaut 3, 7(9a+11b)=50 qui n'est pas divisible par 7. Il n'y a pas de solution pour d=7.\n\n**Cas d=5** : 63a + 77b + 99c = 825 ⇔ 11(7b+9c) = 825 - 63a\n\n825 est divisible par 11 (75x11). Donc 63a doit être divisible par 11. Or 63 et 11 sont premiers entre eux donc a doit être divisible par 11, impair et 63a doit être < 825. Donc a ne peut valoir que 11.\n\nOn a alors 7b+9c = 11x(75-63) : 11 = 12. Ce qui ne donne aucune solution.\n\n**Cas d=3** : 63a + 77b + 99c = 1303 ⇔ 11(7b+9c) = 1303 - 63a\n\n1303 = 118 x 11 + 5. On cherche donc a tel que 63a soit congru à 5 modulo 11 pour que 1303 - 63a soit divisible par 11. Comme 63 et 11 sont premiers entre eux, les autres valeurs de a se déduisent en ajoutant 11.\n\nConstruisons un tableau des valeurs de 63a modulo 11. 63 étant congru à 8 modulo 11, il suffit d'ajouter 16 à 63a lorsqu'on ajoute 2 à a.\n\n| **a** | 1 | 3 | 5 | 7 | 9 | 11 | 13 | 15 | 17 | 19 | 21 | 23 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| **63a [11]** | 8 | 24=2 | 18=7 | 23=1 | 17=6 | 22=0 | 16=5 | 10 | 20=4 | 20=9 | 25=3 | 19=8 |\n\na vaut donc 13, 35, 57, … Mais 35*63 est de l'ordre de 2000 déjà bien plus grand que 1303.\n\nSeul 13 peut convenir. Pour a=13, 1303 - 63a = 484 = 44 x 11, donc 7b + 9c = 44.\n\nc ne peut valoir que 1 ou 3 (5 est déjà trop grand). Pour c=3, 7b=17 ne donne pas de solution.\n\nPour c = 1, 7b = 35 et donc b=5 donne la solution **13,5,1,3**\n\n**Cas d=1** : 63a + 77b + 99c = 1781 ⇔ 11(7b+9c) = 1781 – 63a\n\n1781 = 161 x 11 + 10 (poser la division). On cherche donc a tel que 63a soit congru à 10 modulo 11 pour que 1781 - 63a soit divisible par 11. On utilise le tableau ci-dessus. a vaut donc 15, 37, 59, …\n\nOr 37 x 63 est plus grand que 2000.\n\nSeul 15 peut convenir. Pour a=15, 1781 - 63a = 836, donc 7b + 9c = 76.\n\nc ne peut valoir que 1, 3, 5 ou 7. Pour c=1, 5, ou 7, 76 – 9c n'est pas divisible par 7 (67, 31, 13).\n\nPour c = 3, 7b = 49 et donc b = 7 donne la solution **15,7,3,1**\n\n**Il y a donc 2 solutions : 13,5,1,3 et 15,7,3,1**",
+    "figures": []
+  }
+}

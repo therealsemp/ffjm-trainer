@@ -1,0 +1,52 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 36,
+          "y": 224
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-11",
+  "number": 11,
+  "title": "Les calendriers d'Amélie",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "La jeune Amélie a un stock de calendriers de 2020 qui n'ont pas été vendus en début d'année.\n\n**Existe-t-il une année future du 21ᵉ siècle où l'on pourrait les remettre en vente en ne changeant que le millésime (numéro de l'année) ? Si oui, laquelle ?**\n\nOn rappelle que le 21ᵉ siècle va du 1ᵉʳ janvier 2001 au 31 décembre 2100 et que les années bissextiles du 21ᵉ siècle sont celles dont le millésime est multiple de 4, mais n'est pas multiple de 100.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : 2048 ou 2076"
+  },
+  "correction": {
+    "markdown": "Si on regarde un jour fixe de l'année, par exemple le 21 mars, le jour de la semaine se décale d'un jour les années non bissextiles et de 2 jours les années bissextiles.\n\nPour pouvoir réutiliser le calendrier, il faut que les jours de la semaine tombent comme en 2020.\n\nIl faut donc que le décalage des jours soit un multiple de 7.\n\nD'autre part, on ne pourra réutiliser le calendrier de 2020 (année bissextile) qu'une autre année bissextile.\n\nOn cherche donc les années bissextiles qui ont un écart qui est un multiple de 7 par rapport à 2020.\n\nToutes les 4 années, le décalage des jours de la semaine est de 5 jours.\n\nLe plus petit multiple de 5 qui est aussi un multiple de 7 est 35 (car 5 et 7 sont premiers entre eux).\n\nLe plus petit décalage de jours multiple de 7 se produit toutes les 7x4 = 28 années.\n\nIl y a donc 2 solutions : on pourra réutiliser le calendrier de 2020 en 2048 et 2076.\n\n(Il aurait fallu exclure 2100 si il avait fait partie de la liste car 2100 est bien au 21ᵉᵐᵉ siècle mais n'est pas une année bissextile).",
+    "figures": []
+  }
+}

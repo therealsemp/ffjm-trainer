@@ -1,0 +1,64 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 337
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 36,
+          "y": 391
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-8",
+  "number": 8,
+  "title": "Répétition générale",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un chiffre est toujours représenté par le même symbole.\n\n![figure](figure:2020-sf-8-equation)\n\nUn symbole représente toujours le même chiffre. Les quatre symboles remplacent quatre chiffres différents.\n\n**Quel nombre est représenté par ![figure](figure:2020-sf-8-number) ?**",
+    "figures": [
+      {
+        "id": "2020-sf-8-equation",
+        "description": "L'opération codée par des symboles de cartes : trèfle trèfle × carreau carreau = cœur cœur pique pique.",
+        "imageUrl": "q08_fig-equation.png"
+      },
+      {
+        "id": "2020-sf-8-number",
+        "description": "Le nombre codé cœur cœur pique pique.",
+        "imageUrl": "q08_fig-number.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 3388
+  },
+  "correction": {
+    "markdown": "L'écriture ♣♣ est le nombre qui vaut 11 x ♣ que je note 11♣. À noter que ♣ et ♦ sont interchangeables.\n\nL'égalité s'écrit donc : 11♣ x 11 ♦ = 11 x 100 ♥ + 11 ♠ ⇔ 11♣♦ = 100♥+♠\n\nDonc 100♥+♠ est divisible par 11.\n\n♥ et ♠ étant des chiffres, le critère de divisibilité par 11 nous dit que ♥+♠ =0 (impossible) ou ♥+♠ = 11 (22 est aussi impossible). Chacun varie donc entre 2 et 9 (1 impossible sinon l'autre vaut 10 qui n'est pas un chiffre).\n\nDans ce cas, ♣♦ = 100♥+♠ : 11 doit pouvoir s'écrire comme produit de 2 nombres à un chiffre, différents et différents de ♥ et ♠. Le tableau suivant liste les cas possibles.\n\n| ♥ | ♠ | 100♥+♠ : 11 | ♣,♦ | ♥♥♠♠ |\n|---|---|---|---|---|\n| 2 | 9 | 19 | Imp. | |\n| 3 | 8 | 28 | 4,7 | 3388 |\n| 4 | 7 | 37 | Imp. | |\n| 5 | 6 | 46 | Imp. | |\n| 6 | 5 | 55 | Imp. | |\n| 7 | 4 | 64 | Imp. (8,8 pas ≠) | |\n| 8 | 3 | 73 | Imp. | |\n| 9 | 2 | 92 | Imp. | |\n\nIl n'y a donc qu'une seule solution : **♥♥♠♠ = 3388**",
+    "figures": []
+  }
+}

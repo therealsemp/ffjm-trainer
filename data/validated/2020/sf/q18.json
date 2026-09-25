@@ -1,0 +1,48 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 442
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 90,
+          "y": 83
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-18",
+  "number": 18,
+  "title": "Des carrés farceurs",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Mathias a trouvé des nombres remarquables. Lorsqu'il calcule le carré d'un tel nombre entier, puis qu'il remplace son premier chiffre par ce chiffre augmenté de 1, si ce premier chiffre est compris entre 1 et 8, ou par 0 si c'est un 9 en supprimant les 0 éventuellement écrits après ce 9 jusqu'au premier chiffre non nul ou au chiffre des unités, il obtient ainsi des nombres qui sont encore des carrés d'entiers. C'est le cas par exemple avec les nombres 24, 45 ou 95.\n\n**Quel nombre à trois chiffres jouit de cette propriété ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "9 solutions : 105, 240, 300, 305, 450, 585, 950, 975 ou 985"
+  },
+  "correction": {
+    "markdown": "On peut distinguer quatre cas :\n\n| | |\n|---|---|\n| \\(100 \\le n \\le 299\\) | \\(10\\,000 \\le n^2 \\le 89\\,401\\) |\n| \\(300 \\le n \\le 316\\) | \\(90\\,000 \\le n^2 \\le 99\\,856\\) |\n| \\(317 \\le n \\le 948\\) | \\(100\\,489 \\le n^2 \\le 898\\,704\\) |\n| \\(949 \\le n \\le 999\\) | \\(900\\,601 \\le n^2 \\le 998\\,001\\) |\n\n**1ᵉʳ cas : \\(100 \\le n \\le 299\\).**\n\nOn cherche \\(k\\) et \\(n\\) tels que \\((n + k)^2 = n^2 + 10\\,000\\). On doit alors avoir \\(2nk + k^2 = 10\\,000\\), soit \\(k(2n + k) = 10\\,000\\).\n\nNous cherchons donc des décompositions de 10 000 sous la forme \\(a \\times b\\) dans lesquelles \\(a < b\\), \\(b - a\\) pair et \\(100 \\le (b - a)/2 \\le 299\\).\n\nSeuls les deux produits 20 × 500 et 40 × 250 conviennent et conduisent chacun à une solution :\n\n20 × (20 + 2 × 240) donne **\\(n\\) = 240** ; 40 × (40 + 2 × 105) donne **\\(n\\) = 105**.\n\n**2ᵉ cas : \\(300 \\le n \\le 316\\).**\n\nOn cherche \\(k\\) et \\(n\\) tels que \\((n - k)^2 = n^2 - 90\\,000\\). On doit alors avoir \\(2nk - k^2 = 90\\,000\\), soit \\(k(2n - k) = 90\\,000\\).\n\nNous cherchons donc des décompositions de 90 000 sous la forme \\(a \\times b\\) dans lesquelles \\(a < b\\), \\(b + a\\) pair et \\(300 \\le (b + a)/2 \\le 316\\).\n\nDeux décompositions conviennent : 300 × 300 et 250 × 360, qui donnent les solutions **\\(n\\) = 300 et \\(n\\) = 305**.\n\n**3ᵉ cas : \\(317 \\le n \\le 948\\).**\n\nOn cherche \\(k\\) et \\(n\\) tels que \\((n + k)^2 = n^2 + 100\\,000\\). On doit alors avoir \\(2nk + k^2 = 100\\,000\\), soit \\(k(2n + k) = 100\\,000\\).\n\nNous cherchons donc des décompositions de 100 000 sous la forme \\(a \\times b\\) dans lesquelles \\(a < b\\), \\(b - a\\) pair et \\(317 \\le (b - a)/2 \\le 948\\).\n\nSeuls les deux produits 100 × 1000 et 80 × 1250 conviennent, qui conduisent aux deux solutions **\\(n\\) = 450** et **\\(n\\) = 585**.\n\n**4ᵉ cas : \\(949 \\le n \\le 999\\).**\n\nOn cherche \\(k\\) et \\(n\\) tels que \\((n - k)^2 = n^2 - 900\\,000\\). On doit alors avoir \\(2nk - k^2 = 900\\,000\\), soit \\(k(2n - k) = 900\\,000\\).\n\nNous cherchons donc des décompositions de 900 000 sous la forme \\(a \\times b\\) dans lesquelles \\(b + a\\) pair et \\(949 \\le (b + a)/2 \\le 999\\).\n\nTrois décompositions conviennent : 900 × 1000, 750 × 1200 et 720 × 1250, qui conduisent aux solutions **\\(n\\) = 950, \\(n\\) = 975** et **\\(n\\) = 985**.\n\nLe problème a donc **9 solutions : 105, 240, 300, 305, 450, 585, 950, 975, 985.**",
+    "figures": []
+  }
+}

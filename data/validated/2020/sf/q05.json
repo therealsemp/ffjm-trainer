@@ -1,0 +1,66 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 642
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 36,
+          "y": 585
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-5",
+  "number": 5,
+  "title": "De 1 à 8",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde veut placer les nombres de 1 à 8 dans cette grille de telle sorte que :\n\n- la somme des deux nombres de chaque colonne soit toujours la même ;\n- la somme des quatre nombres de chaque rangée soit toujours la même.\n\n![figure](figure:2020-sf-5-grid)\n\nLes nombres 1, 2 et 3 sont déjà placés. A vous de placer 4, 5, 6, 7 et 8. **Quel nombre ira dans la case grisée ?**",
+    "figures": [
+      {
+        "id": "2020-sf-5-grid",
+        "description": "Une grille de 2 rangées et 4 colonnes : 1 dans la case en haut à gauche ; sur la rangée du bas, la deuxième case est grisée, puis 2 et 3 dans les deux dernières cases.",
+        "imageUrl": "q05_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 5
+  },
+  "correction": {
+    "markdown": "![figure](figure:2020-sf-5-corr-grids)\n\nEn plaçant tous les nombres de 1 à 8 dans le tableau, la somme totale des nombres fera\n\n1+2+3+4+5+6+7+8=36\n\nLa somme sur chaque colonne fera donc 36 : 4 = 9.\n\nCela nous permet de placer le 8 en dessous du 1, le 7 au-dessus du 2, le 6 au-dessus du 3.\n\nIl reste le 5 et le 4 à placer dans la colonne avec la case grise.\n\nLa somme pour chaque ligne doit faire 36 : 2 = 18. La ligne du bas contient déjà 8, 2 et 3 qui font 13. Le 5 va donc sur la ligne du bas et le 4 en haut. On vérifie la somme des nombres de la ligne du haut : 1+4+7+6=18.\n\nLa case grisée contient donc le nombre 5.",
+    "figures": [
+      {
+        "id": "2020-sf-5-corr-grids",
+        "description": "Deux grilles 2×4 : à gauche la grille de l'énoncé (1 en haut à gauche, case grisée, 2 et 3) ; à droite la grille complétée, rangée du haut 1, 4, 7, 6 et rangée du bas 8, 5 (case grisée), 2, 3.",
+        "imageUrl": "q05_corr-grids.png"
+      }
+    ]
+  }
+}

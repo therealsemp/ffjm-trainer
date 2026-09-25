@@ -1,0 +1,58 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 680
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 36,
+          "y": 49
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-10",
+  "number": 10,
+  "title": "Diagonales",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathias a dessiné un pentagone irrégulier et constate que les diagonales se coupent en 5 points à l'intérieur du pentagone.\n\n![figure](figure:2020-sf-10-pentagon)\n\n**Combien de points d'intersection de diagonales y aura-t-il au maximum s'il dessine un heptagone irrégulier ?**\n\nUn heptagone est un polygone à 7 côtés.",
+    "figures": [
+      {
+        "id": "2020-sf-10-pentagon",
+        "description": "Un pentagone irrégulier avec ses cinq diagonales tracées ; leurs 5 points d'intersection intérieurs sont marqués par de petits cercles.",
+        "imageUrl": "q10_fig-pentagon.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 35
+  },
+  "correction": {
+    "markdown": "Chaque intersection provient du choix de 2 diagonales. Chaque diagonale provient du choix de 2 sommets. Chaque intersection provient donc du choix de 4 sommets et chaque choix différent de 4 sommets donne une intersection différente dans le meilleur des cas.\n\nDans le meilleur des cas, il y a donc \\(\\binom{7}{4}\\) = 35 intersections.\n\nOn arrive effectivement à construire une telle configuration (partir sur un octogone régulier, remplacer 2 côtés par un seul et modifier un peu la tailler des côtés. 3 diagonales peuvent se croiser en tout petit triangle, mais il y a bien 3 intersections).\n\nAvec 5, on trouve bien \\(\\binom{5}{4}\\) = 5 intersections.\n\n**Il y a au maximum 35 intersections.**",
+    "figures": []
+  }
+}

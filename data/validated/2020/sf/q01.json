@@ -1,0 +1,66 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 80
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 36,
+          "y": 88
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-1",
+  "number": 1,
+  "title": "Leurs chiffres préférés",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde et Mathias ont pour chiffres fétiches le 5 et le 7. Ils ont réalisé ces deux chiffres à l'aide de petits carrés identiques.\n\n![figure](figure:2020-sf-1-digits)\n\n**Si on place le 7 sur le 5 de façon à cacher le plus grand nombre possible de carrés gris, combien de ces petits carrés gris resteront visibles ?**\n\nOn a le droit de tourner ou de retourner le 7 avant de le placer sur le 5.",
+    "figures": [
+      {
+        "id": "2020-sf-1-digits",
+        "description": "Un chiffre 5 formé de petits carrés gris (13 carrés) et, à sa droite, un chiffre 7 formé de petits carrés blancs à contour noir (8 carrés).",
+        "imageUrl": "q01_fig-digits.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 7
+  },
+  "correction": {
+    "markdown": "Voici les 2 combinaisons possibles (avec le 7 à l'endroit et le 7 à l'envers) de la façon qui couvre le plus de carrés. Juste pour vérification, avec le 7 incliné, on ne peut pas couvrir plus de carrés.\n\n![figure](figure:2020-sf-1-corr-digits)\n\nLe plus petit nombre de carrés gris encore visibles est donc 7 (sur la première image)",
+    "figures": [
+      {
+        "id": "2020-sf-1-corr-digits",
+        "description": "Quatre figures côte à côte : le 5 en carrés gris sur lequel le 7 est posé (cases du 7 en jaune pâle), dans deux positions différentes, puis les deux mêmes placements avec le 5 retourné ; les cases grises restées visibles sont celles non recouvertes par le 7.",
+        "imageUrl": "q01_corr-digits.png"
+      }
+    ]
+  }
+}

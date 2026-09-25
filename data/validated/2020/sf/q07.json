@@ -1,0 +1,53 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 193
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 36,
+          "y": 154
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-7",
+  "number": 7,
+  "title": "Les puzzles",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un créateur de puzzles fabrique deux types de puzzles. Dans un panneau de bois, il peut fabriquer ou bien 100 exemplaires du premier modèle, ou bien 80 exemplaires du second modèle. Dans chaque cas, le panneau entier est découpé et il n'y a pas de pertes. La différence de masse entre les puzzles des deux types est de 50 grammes.\n\n**Quelle est la masse en kg du panneau de bois ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 20
+  },
+  "correction": {
+    "markdown": "Version CM :\n\nIl a 2 catégories de puzzles :\n\n- les gros : on peut en fabriquer 80 dans le panneau\n- les petits : on peut en fabriquer 100 dans le même panneau.\n\nImaginons qu'on puisse transformer chaque gros puzzle en petit. De chaque gros puzzle, on en fait un petit et on récupère une petite partie (une chute) de bois. On a donc 80 chutes qui permettent de créer 20 nouveaux petits puzzles pour arriver à 100 petits puzzles. Il faut donc 4 chutes pour faire un petit puzzle.\n\nChaque chute pèse 50 grammes. Donc chaque petit puzzle pèse 4x50=200 grammes.\n\nOr un panneau permet d'en faire 100 et pèse donc 100x200=20.000 g = 20 kg\n\nUn panneau de bois pèse 20 kg.\n\nVersion GP :\n\nP est le poids du panneau, g le poids des gros puzzles, q le poids des petits.\n\nPar hypothèse : P=80g=100q ⇔ 4g=5q et g-q=50\n\nOn en tire : 4(50+q)=5q ⇔ q=200 et donc P=100q=20.000",
+    "figures": []
+  }
+}

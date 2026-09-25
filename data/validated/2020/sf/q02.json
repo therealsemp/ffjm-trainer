@@ -1,0 +1,60 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 32,
+        "y": 238
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 36,
+          "y": 270
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-2",
+  "number": 2,
+  "title": "Les pendules",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "![figure](figure:2020-sf-2-clocks)\n\nOn a pris les photos de ces cinq pendules au même instant. Sur chacune d'elles, les deux premiers chiffres correspondent à l'heure et les deux derniers aux minutes. L'une avançait de 10 minutes, une autre avançait de 5 minutes, une troisième retardait de 15 minutes, et une quatrième était en panne. Une seule indiquait l'heure exacte.\n\n**Quelle heure était-il ?**",
+    "figures": [
+      {
+        "id": "2020-sf-2-clocks",
+        "description": "Cinq afficheurs de pendule numérique côte à côte, chiffres blancs sur fond gris foncé : 09 50, 10 15, 10 00, 10 10 et 10 05.",
+        "imageUrl": "q02_fig-clocks.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "10h05"
+  },
+  "correction": {
+    "markdown": "Une des pendules avance de 10 minutes. Or celle qui a l'heure la plus en avance indique 10h15. L'heure réelle est donc au plus 10h05.\n\nUne des pendules retarde de 15 minutes. Or celle qui a l'heure la plus en retard indique 9h50. L'heure réelle est donc au moins 10h05.\n\nL'heure exacte est donc 10h05.\n\nCelle qui indique 10h10 est celle qui avance de 5 minutes et celle qui indique 10h00 est celle qui est en panne.",
+    "figures": []
+  }
+}

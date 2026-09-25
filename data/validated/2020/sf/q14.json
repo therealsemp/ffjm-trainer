@@ -1,0 +1,68 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 442
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 36,
+          "y": 228
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-14",
+  "number": 14,
+  "title": "Laby-sept",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Dans ce labyrinthe, on additionne les points de toutes les cases que l'on traverse. On peut passer d'une case à une autre si elles ont un côté en commun. On ne doit pas passer deux fois par la même case. **Dessinez un parcours qui permette d'obtenir exactement 2020 points.**\n\n![figure](figure:2020-sf-14-maze)",
+    "figures": [
+      {
+        "id": "2020-sf-14-maze",
+        "description": "Une grille de 5 rangées et 4 colonnes de nombres : 187 207 237 187 / 237 187 237 207 / 207 187 187 237 / 187 207 207 187 / 207 187 237 207. Une flèche « Entrée » pointe sur la case grisée 237 de la première rangée (3e colonne) et une flèche « Sortie » part de la case grisée 207 en bas à droite.",
+        "imageUrl": "q14_fig-maze.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "Entrée (1re rangée, 3e colonne), puis 1re rangée 2e colonne, 2e colonne vers le bas jusqu'à la 3e rangée, 3e rangée 1re colonne, 4e rangée de la 1re à la 4e colonne, puis sortie par la case en bas à droite : 237 + 207 + 187 + 187 + 207 + 187 + 207 + 207 + 187 + 207 = 2020"
+  },
+  "correction": {
+    "markdown": "Tous les nombres se terminent par 7. Pour que la somme se termine par 0, il faut donc que la somme comprenne 10 ou 20 nombres. Avec 20 nombres (toute la grille), la somme serait supérieure à 20 x 187 > 2020. Il faut donc passer par 10 cases.\n\nPour simplifier, je vais remplacer tous les nombres de la grille par leur valeur moins 187 et diviser par 10.\n\nLa somme devra donc faire (2020-10*187) : 10=15\n\nLa grille devient :\n\n![figure](figure:2020-sf-14-corr-grid-1)\n\nLes cases de départ et d'arrivée apportent déjà 7 des 15 points.\n\nOn ne peut pas passer par une seconde case de 5 points. Sinon la somme ferait 12 et on ne pourrait pas atteindre 15. Les cases de 5 points (B-I, B-III, C-IV et E-III) sont donc barrées ci-dessus.\n\nOn ne peut pas partir vers la droite de la grille au début (route barrée par B-III et C-IV) donc A-IV et B-IV sont barrées. De même B-I est barrée (cul de sac).\n\nOn est donc obligé de passer par A-II et B-II et C-II. La somme fait 9 et 5 cases sont utilisées.\n\nEn raison des cases barrées, l'arrivée se fait par D-IV et D-III. La somme fait 11 et 7 cases sont utilisées.\n\nIl n'est pas possible de passer par C-III, sinon le chemin est trop court (8 cases). C-III est donc barré.\n\nIl reste sur la partie blanche ci-dessus à tracer un chemin de 3 cases et de 4 points. Donc 2 cases de 2 et 1 case de 0 joignant C-II à D-III.\n\n**Il n'y a qu'une possibilité** : C-I, D-I, D-II qui donne la solution :\n\n![figure](figure:2020-sf-14-corr-grid-2)",
+    "figures": [
+      {
+        "id": "2020-sf-14-corr-grid-1",
+        "description": "La grille transformée (valeur moins 187, divisée par 10), colonnes I à IV et rangées A à E : A 0 2 5 0 / B 5 0 5 2 / C 2 0 0 5 / D 0 2 2 0 / E 2 0 5 2. Les cases A-I, A-IV, B-I, B-III, B-IV, C-III, C-IV et E-III sont barrées d'une croix ; les cases déjà imposées du chemin sont grisées.",
+        "imageUrl": "q14_corr-grid-1.png"
+      },
+      {
+        "id": "2020-sf-14-corr-grid-2",
+        "description": "La même grille avec le chemin solution entièrement grisé : A-III, A-II, B-II, C-II, C-I, D-I, D-II, D-III, D-IV, E-IV ; les cases barrées restent marquées d'une croix.",
+        "imageUrl": "q14_corr-grid-2.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "year": 2020,
+  "champNumber": 34,
+  "phase": "sf",
+  "examTitle": "34e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2020/sf/2020_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 221
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2020/sf/2020_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 36,
+          "y": 431
+        }
+      }
+    ]
+  },
+  "id": "2020-sf-12",
+  "number": 12,
+  "title": "Tétraèdre",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Ben aimerait construire un « dé » sur un tétraèdre régulier. Sur chaque face il doit y avoir un nombre de 1 à 9 avec les trois conditions suivantes :\n\n- les quatre nombres sont tous différents,\n- la somme des 4 nombres doit être égale à 20,\n- les nombres situés sur deux faces qui se touchent ne doivent pas être des nombres consécutifs.\n\n**Trouvez quatre nombres à utiliser pour construire ce dé ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 solutions : (1, 3, 7, 9), (1, 4, 6, 9) ou (2, 4, 6, 8)"
+  },
+  "correction": {
+    "markdown": "Dans un tétraèdre, chaque face touche toutes les autres (il suffit par exemple de considérer la face du dessous d'un tétraèdre posé sur une table pour visualiser).\n\nLa dernière condition devient donc : 2 nombres ne doivent jamais être consécutifs.\n\nSi le plus petit nombre est égal à 3 ou plus, la combinaison sera supérieure ou égale à 3,5,7,9 dont la somme fait déjà 24, ce qui est impossible. Le plus petit nombre vaut donc 1 ou 2.\n\n**Cas 1** : Le plus petit nombre vaut 2.\n\nLes autres font au minimum 4 6 8. La somme fait 20. **2,4,6,8** est donc une bonne réponse et la seule commençant par 2.\n\n**Cas 2** : Le plus petit nombre vaut 1.\n\nOn va regarder les différentes combinaisons commençant par (1,X)\n\nPour (1,3), la plus petite combinaison est 1, 3, 5, 7 dont la somme fait 16. Il y a donc 4 à répartir sur 5, 7 : (5,11) est impossible, (6,10) aussi, (7,9) est solution et (8,8) ne convient pas.\n\nCela donne une première solution : **1,3,7,9**\n\nPour (1,4), la plus petite combinaison est 1,4,6,8, la somme fait déjà 19. Il faut ajouter 1, la seule possibilité est sur le dernier nombre (sinon on ajoute au moins 1+1=2). Cela donne la solution **1,4,6,9**.\n\nPour (1,5), la plus petite combinaison est 1,5,7,9. La somme est déjà trop grande. Il n'y a pas d'autres solutions commençant par 1.\n\nEn conclusion, il y a **3 solutions : (1,3,7,9), (1,4,6,9), (2,4,6,8)**",
+    "figures": []
+  }
+}

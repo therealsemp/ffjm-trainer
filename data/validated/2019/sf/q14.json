@@ -1,0 +1,49 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 487
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 20,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-14",
+  "number": 14,
+  "title": "Retournons les nombres",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le « retourné » de 12, c'est-à-dire 21, a pour carré 441, qui est le « retourné » du carré de 12, égal à 144.\n\n**Trouvez un nombre de trois chiffres, différent de son retourné, et tel que le carré de son retourné soit égal au retourné de son carré.**\n\nNote : Le premier chiffre d'un nombre de trois chiffres ou de son retourné ne doit jamais être un 0."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "10 solutions : 102, 103, 112, 113, 122, 201, 211, 221, 301 ou 311"
+  },
+  "correction": {
+    "markdown": "Calculons les carrés des multiples de 100 pour situer les résultats.\n\n| | | |\n|---|---|---|\n| 100²=10 000 | 400²=160 000 | 1000²=1 000 000 |\n| 200²=40 000 | 500²=250 000 | |\n| 300²=90 000 | 600²=360 000 | |\n| | 700²=490 000 | |\n| | 800²=640 000 | |\n| | 900²=810 000 | |\n\nSoit les chiffres des centaines et des unités sont parmi {1,2,3} et le carré a 5 chiffres. Soit ils sont parmi {4,5,6,7,8,9} et le carré a 6 chiffres.\n\n1A2² finit par un 4 et 2A1² finit par un 1 donc en retournant le nombre :\n\n1A2² commence par un 1 et 2A1² commence par un 4.\n\nOn cherche les carrés ne dépassant pas ces limites.\n\n102²=10 404 et 201²=40 401. Cela fonctionne (car il n'y a pas de retenue).\n\n112²=12 544 et 211²=44 521. Cela fonctionne donc deux autres solutions.\n\n122²=14 884 et 221²=48 841. Cela fonctionne donc deux autres solutions.\n\n132²=17 424 et 231²=53 361. On a dépassé 50 000 donc on s'arrête.\n\n1A3² finit par un 9 et 3A1² finit par un 1 donc en retournant le nombre :\n\n1A3² commence par un 1 et 3A1² commence par un 9.\n\nOn cherche les carrés ne dépassant pas ces limites.\n\n103²=10 609 et 301²=90 601. Cela fonctionne donc deux autres solutions.\n\n113²=12 769 et 311²=96 721. Cela fonctionne donc deux autres solutions.\n\n123²=15 129 et 321²=103 041. On a dépassé 100 000 donc on s'arrête.\n\n2A3² finit par un 9 et 3A2² finit par un 4 donc en retournant le nombre :\n\n2A3² commence par un 4 et 3A2² commence par un 9.\n\nOn cherche les carrés ne dépassant pas ces limites.\n\n203²=41 209 et 302²=91 204. Cela ne fonctionne pas.\n\n213²=45 369 et 312²=97 344. Cela ne fonctionne pas.\n\n322>321 donc 322² dépasse 100 000 donc on s'arrête.\n\n4AB² commence par un 6 car BA4² finit par un 6.\n\nOr, 4AB²<250 000. Pas de solution.\n\n5AB² commence par un 5 car BA5² finit par un 5.\n\nOr, 5AB²<360 000. Pas de solution.\n\n6AB² commence par un 6 car BA6² finit par un 6.\n\nOr, 6AB²<490 000. Pas de solution.\n\n7AB² commence par un 9 car BA7² finit par un 9.\n\nOr, 7AB²<640 000. Pas de solution.\n\n8AB² commence par un 4 car BA8² finit par un 4.\n\nOr, 8AB²>640 000. Pas de solution.\n\nIl y a donc **10 solutions** : 102 ; 201 ; 112 ; 211 ; 122 ; 221 ; 103 ; 301 ; 113 ; 311.\n\nSi on les classe par ordre croissant cela donne :\n\n**102 ; 103 ; 112 ; 113 ; 122 ; 201 ; 211 ; 221 ; 301 et 311.**"
+  }
+}

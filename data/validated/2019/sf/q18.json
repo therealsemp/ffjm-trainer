@@ -1,0 +1,46 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 624
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 28,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-18",
+  "number": 18,
+  "title": "Les entiers de l'année",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "**Trouvez trois entiers positifs a, b et c strictement plus petits que 50 tels que \\(20/19 = (a^3 + b^3)/(a^3 + c^3)\\).**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 solutions : (13 ; 7 ; 6), (26 ; 14 ; 12) ou (39 ; 21 ; 18)"
+  },
+  "correction": {
+    "markdown": "Cherchons une égalité produit à partir de l'égalité de départ.\n\n\\[\\frac{a^3+b^3}{a^3+c^3}=\\frac{20}{19}.\\quad 20a^3+20c^3=19a^3+19b^3.\\quad a^3+20c^3=19b^3.\\quad a^3+c^3=19(b^3-c^3).\\]\n\n\\[(a+c)(a^2-ac+c^2)=19(b-c)(b^2+bc+c^2).\\]\n\nSupposons, vu la taille des nombres, que 19 divise (a+c) donc (a+c)=19k et que (b-c)=k.\n\na=19k-c et b=k+c.\n\n(19k-c)²-(19k-c)c+c²=(k+c)²+(k+c)c+c².\n\n361k²+c²-38kc-19kc+c²+c²=k²+c²+2kc+c²+c².\n\n361k²-57kc=k²+3kc.\n\n360k²=60kc.\n\n6k=c.\n\nAvec k=1, c=6, b=1+6=7, a=19×1-6=13. On a une solution (13;7;6).\n\nAvec k=2, c=6×2=12, b=2+12=14, a=19×2-12=26. On a une solution (26;14;12).\n\nAvec k=3, c=6×3=18, b=3+18=21, a=19×3-18=39. On a une solution (39;21;18).\n\nAvec k=4, c=6×4=24, b=4+24=28, a=19×4-24=52>50. On s'arrête là.\n\na=1, b=-1 et c=-1 est aussi une réponse à l'égalité de départ.\n\nA+20B=19C est l'équation d'un plan passant par (0;0;0), (1 ;-1 ;-1) et (13;7;6)\n\nLes solutions sont donc de la forme : \\(a^3=13^3x+y.\\quad b^3=7^3x-y.\\quad c^3=6^3x-y.\\)"
+  }
+}

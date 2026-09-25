@@ -1,0 +1,69 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-11",
+  "number": 11,
+  "title": "Le triangle de l'année",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Les disques de ce triangle contiennent les nombres de 12 à 20. Les nombres 12, 19 et 20 sont déjà placés. La somme des quatre nombres situés sur un même côté du triangle est toujours la même. **A vous de placer les autres.**\n\n![figure](figure:2019-sf-11-triangle)\n\nNote : les signes « < » sur les côtés du triangle indiquent des relations d'inégalités entre deux nombres voisins.",
+    "figures": [
+      {
+        "id": "2019-sf-11-triangle",
+        "description": "Un triangle avec quatre disques par côté (neuf disques en tout) : 12 au sommet du haut, 20 au sommet en bas à gauche, 19 sur le côté droit juste au-dessus du sommet en bas à droite (vide). Des signes « < » sont dessinés entre deux disques voisins sur chaque côté : sur le côté gauche, entre les deux disques du milieu ; sur le côté droit, entre le disque 19 et le disque au-dessus ; sur la base, entre les deux disques du milieu.",
+        "imageUrl": "q11_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "Côté gauche (de 12 à 20) : 12, 14, 18, 20 ; base (de 20 à droite) : 20, 13, 15, 16 ; côté droit (de 16 à 12) : 16, 19, 17, 12"
+  },
+  "correction": {
+    "markdown": "Désignons par des lettres les nombres manquants.\n\nDésignons par S la somme commune.\n\nOn a :\n\nS=A+B+32=C+D+E+20=E+F+31.\n\nD'autre part :\n\nA+B+C+D+E+F=13+14+15+16+17+18\n\nA+B+C+D+E+F=31×3=93.\n\n![figure](figure:2019-sf-11-corr-letters)\n\nSi E=13 alors S=A+B+32=C+D+33=E+F+31.\n\nEn additionnant les trois écritures on obtient 3S=A+B+C+D+E+F+96=93+96.\n\nDonc, en divisant par 3, S=31+32=63 et F=63-31-13=32-13=19 ce qui est faux.\n\nSi E=14 alors, de même, 3S=93+97 mais 97 n'est pas divisible par 3.\n\nSi E=15 alors, de même, 3S=93+98 mais 98 n'est pas divisible par 3.\n\nSi E=16 alors, de même, 3S=93+99. Donc S=31+33=64. F=64-31-16=33-16=17.\n\nA+B=64-32=32. C+D=64-20-16=28. Et il nous reste 13, 14, 15 et 18.\n\nSi D=18 alors C=28-18=10 ce qui est impossible. Donc B=18, A=32-18=14, D=15 et C=28-15=13 ce qui nous donne une solution.\n\nSi E=17 alors, de même, 3S=93+100 mais 100 n'est pas divisible par 3.\n\nSi E=18 alors, de même, 3S=93+101 mais 101 n'est pas divisible par 3.\n\nNous avons **1 solution** :\n\n![figure](figure:2019-sf-11-corr-solution)",
+    "figures": [
+      {
+        "id": "2019-sf-11-corr-letters",
+        "description": "Le triangle de l'énoncé avec les disques vides étiquetés : A et B sur le côté gauche (A près du 12), C et D sur la base (C près du 20), E au sommet en bas à droite, F sur le côté droit entre le 12 et le 19.",
+        "imageUrl": "q11_corr-letters.png"
+      },
+      {
+        "id": "2019-sf-11-corr-solution",
+        "description": "Le triangle complété, les nombres ajoutés en rouge : côté gauche 12, 14, 18, 20 ; base 20, 13, 15, 16 ; côté droit 16, 19, 17, 12.",
+        "imageUrl": "q11_corr-solution.png"
+      }
+    ]
+  }
+}

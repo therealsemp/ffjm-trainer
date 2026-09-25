@@ -1,0 +1,50 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 418
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-9",
+  "number": 9,
+  "title": "Options à la carte",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Dans la classe de Mathilde, chaque élève doit choisir au moins deux options. Les options proposées sont :\n\n- 1\\. jeux mathématiques\n- 2\\. jeux de langage\n- 3\\. jeux de stratégie.\n\nTous les élèves ont choisi deux options, excepté deux élèves qui se sont inscrits aux trois options ; 18 élèves ont choisi l'option 1, 22 élèves l'option 2 et 26 élèves l'option 3.\n\n**Combien la classe de Mathilde compte-t-elle d'élèves ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 32
+  },
+  "correction": {
+    "markdown": "On enlève les deux élèves qui ont choisi les trois options.\n\nIl reste 16 élèves qui ont choisi l'option 1, 20 pour l'option 2 et 24 pour l'option 3.\n\nAu total cela fait 16+20+24=60 options choisies par des élèves ayant pris 2 options.\n\nOn fait 60÷2=30. Donc 30 élèves ont pris deux options.\n\n30+2=32. Il y a **32 élèves** dans cette classe."
+  }
+}

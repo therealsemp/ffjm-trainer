@@ -1,0 +1,59 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 303
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-3",
+  "number": 3,
+  "title": "Les gommettes",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Clément a fabriqué une construction en collant huit cubes, comme sur le dessin. Il a ensuite collé une gommette sur chaque face carrée, y compris sur le dessous de sa construction.\n\n![figure](figure:2019-sf-3-cubes)\n\n**Combien de gommettes a-t-il utilisé en tout ?**",
+    "figures": [
+      {
+        "id": "2019-sf-3-cubes",
+        "description": "Une construction de huit cubes vue en perspective : une rangée du bas de cubes, surmontée de cubes en escalier ; chaque face visible porte une gommette ronde noire.",
+        "imageUrl": "q03_fig-cubes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 28
+  },
+  "correction": {
+    "markdown": "Comptons le nombre de gommettes posées dans chaque direction :\n\n- Devant on en met 5 ;\n- Derrière on en met 5 ;\n- En haut on en met 5 ;\n- En bas on en met 5 ;\n- À gauche on en met 4 ;\n- À droite on en met 4.\n\n5+5+5+5+4+4=28. On a posé **28 gommettes**."
+  }
+}

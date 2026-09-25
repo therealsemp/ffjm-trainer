@@ -1,0 +1,50 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 586
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 10,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-10",
+  "number": 10,
+  "title": "Les six amis",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Aline : “Dominique est plus âgé qu'Edouard”.\n\nBertrand : “Aline est plus âgée qu'Edouard”.\n\nClaude : “François est plus âgé qu'Edouard”.\n\nDominique : “Bertrand est plus jeune que moi”.\n\nEdouard : “Claude est plus vieux que François”.\n\nFrançois : “Seuls deux d'entre vous sont plus jeunes que moi”.\n\nTous ceux qui sont plus âgés qu'Edouard ont menti, les autres ayant tous dit la vérité (y compris Edouard).\n\n**Classez ces six amis, qui ont des âges tous différents, du plus jeune au plus âgé.**\n\nOn notera chacun d'eux par son initiale."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : B<D<F<E<A<C ou B<D<F<E<C<A"
+  },
+  "correction": {
+    "markdown": "Désignons par les initiales chacun des âges des six amis.\n\nEdouard dit la vérité donc C>F.\n\nSi Claude dit la vérité alors C>F>E. Comme C>E alors Claude ment. Il y a une contradiction. Donc Claude ment et F<E ce qui veut dire que François dit vrai.\n\nSi Bertrand dit vrai, alors A>E donc Aline ment et D<E.\n\nD'où Dominique dit vrai et B<D<E<A et B<D<E<C.\n\nMais on ne sait pas lequel des deux entre A et C est plus âgé.\n\nIl reste à placer François qui dit vrai donc il y a deux plus jeunes que lui : cela ne peut être que Bertrand et Dominique. Donc B<D<F<E<A et B<D<F<E<C.\n\nOn trouve deux solutions : B<D<F<E<A<C et B<D<F<E<C<A.\n\nSi Bertrand ment, alors A<E et A dit vrai. Par conséquent D>E et D ment. Il n'y a donc qu' Aline et François, plus jeunes qu'Edouard. Donc François ne peut pas avoir deux personnes plus jeunes que lui.\n\nIl y a **2 solutions** : **B<D<F<E<A<C** et **B<D<F<E<C<A**."
+  }
+}

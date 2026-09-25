@@ -1,0 +1,60 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 494
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 27,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-17",
+  "number": 17,
+  "title": "Quatre triangles dans un carré",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Mathilde a calé quatre triangles équilatéraux dans une boîte carrée de côté 20 cm. **Quelle est l'aire du petit carré central ?**\n\n![figure](figure:2019-sf-17-square)\n\nOn donnera la réponse en cm², arrondie au dixième le plus proche et si besoin est, on prendra 1,732 pour \\(\\sqrt{3}\\).",
+    "figures": [
+      {
+        "id": "2019-sf-17-square",
+        "description": "Un carré dans lequel quatre triangles équilatéraux gris sont disposés en moulinet, chacun appuyé sur un côté du carré et touchant le côté suivant ; au centre, entre les quatre triangles, un petit carré blanc incliné.",
+        "imageUrl": "q17_fig-square.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "28,8"
+  },
+  "correction": {
+    "markdown": "Prouvons d'abord que les triangles blancs sont isocèles.\n\n![figure](figure:2019-sf-17-corr-square)\n\n\\[\\widehat{ABD}=\\widehat{ABC}-\\widehat{FBC}=180-60=120°.\\]\n\n\\[\\widehat{BAD}=\\widehat{BAE}-\\widehat{DAE}=90-60=30°.\\]\n\n\\[\\widehat{ADB}=180-\\widehat{ABD}-\\widehat{BAD}=180-120-30=30°.\\]\n\nDonc ABD est isocèle en B.\n\nPosons x le côté des triangles équilatéraux.\n\nAB=20-x. BD=20-x. AD=x.\n\nAppliquons le théorème de Pythagore généralisée au triangle ABD :\n\n\\[AD^2=AB^2+BD^2-2\\times AB\\times BD\\times\\cos(120°).\\]\n\n\\[x^2=(20-x)^2+(20-x)^2-2\\times(20-x)^2\\times(-0{,}5).\\]\n\n\\[x^2=(20-x)^2\\times(1+1+1).\\]\n\n\\[x=(20-x)\\sqrt{3}=20\\sqrt{3}-x\\sqrt{3}.\\]\n\n\\[x(\\sqrt{3}+1)=20\\sqrt{3}.\\]\n\n\\[x(\\sqrt{3}+1)(\\sqrt{3}-1)=20\\sqrt{3}(\\sqrt{3}-1).\\]\n\n\\[x(3-1)=20\\times 3-20\\sqrt{3}.\\]\n\n\\[2x=60-20\\sqrt{3}.\\]\n\n\\[x=30-10\\sqrt{3}.\\]\n\nDonc \\(DF=x-(20-x)=2x-20=60-20\\sqrt{3}-20.\\)\n\n\\[DF=40-20\\sqrt{3}=20(2-\\sqrt{3}).\\]\n\n\\[DF^2=400(4+3-2\\times 2\\sqrt{3})=400(7-4\\sqrt{3}).\\]\n\n\\[DF^2\\approx 400(7-4\\times 1{,}732)\\approx 400(7-6{,}928)\\]\n\n\\[DF^2\\approx 400\\times 0{,}072\\approx 28{,}8\\ \\text{cm}^2.\\]\n\nLa solution est **28,8 cm²**.",
+    "figures": [
+      {
+        "id": "2019-sf-17-corr-square",
+        "description": "Le carré de l'énoncé avec des points nommés : A au coin en haut à gauche, C au coin en haut à droite, B sur le côté du haut (sommet d'un triangle gris), E sur le côté gauche, D et F deux sommets du petit carré central.",
+        "imageUrl": "q17_corr-square.png"
+      }
+    ]
+  }
+}

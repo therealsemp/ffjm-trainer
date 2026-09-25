@@ -1,0 +1,82 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 221
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 13,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-12",
+  "number": 12,
+  "title": "Carré magique à trous",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Dans ce carré, les nombres de 1 à 15 occupent les cases blanches (1, 2, 8 et 15 sont déjà placés). La somme des trois nombres écrits dans chaque ligne, dans chaque colonne et dans la diagonale fléchée est toujours la même.\n\n![figure](figure:2019-sf-12-grid)\n\n**Complétez les cases vides.**",
+    "figures": [
+      {
+        "id": "2019-sf-12-grid",
+        "description": "Un damier de 5×5 cases, dix cases noires et quinze blanches, trois cases blanches par ligne et par colonne. Sont déjà placés : 1 dans la 5ᵉ case de la 2ᵉ ligne, 2 et 15 dans les deux premières cases de la 3ᵉ ligne, 8 dans la 1ʳᵉ case de la 5ᵉ ligne. Une flèche grise traverse la diagonale du coin en bas à gauche vers le coin en haut à droite.",
+        "imageUrl": "q12_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "Si on fait la somme des 5 lignes, on fait la somme des nombres de 1 à 15.\n\nEn la calculant cela donne (15×16)÷2=15×8.\n\nLa somme magique est donc 15×8÷5=3×8=24.\n\nOn peut commencer à remplir :\n\nLa 1ère colonne donne le nombre 24-8-2=24-10=14.\n\nLa 3ᵉ ligne donne le nombre 24-2-15=24-17=7.\n\nLa 2ᵉ ligne donne le nombre 24-14-1=10-1=9.\n\nAppelons a le nombre en haut à droite.\n\n![figure](figure:2019-sf-12-corr-step1)\n\nCherchons une somme de 3 nombres dont 1 dont le résultat est 24, on trouve : 1+13+10=24 et 1+12+11=24. Donc il y a 4 cas : a=10, a=11, a=12 ou a=13.\n\nSi a=10 alors la 5ᵉ colonne nous donne le nombre 13,\n\nLa diagonale nous donne 24-10-8=14-8=6,\n\nLa 4ᵉ ligne nous donne 24-13-6=11-6=5,\n\nLa 3ᵉ colonne nous donne 24-9-5=24-14=10 ce qui est impossible car on a déjà un 10.\n\n![figure](figure:2019-sf-12-corr-step2)\n\nSi a=11 alors la 5ᵉ colonne nous donne le nombre 12,\n\nLa diagonale nous donne 24-11-8=13-8=5,\n\nLa 4ᵉ ligne nous donne 24-12-5=12-5=7, ce qui est impossible car on a déjà un 7.\n\n![figure](figure:2019-sf-12-corr-step3)\n\nSi a=12 alors la 5ᵉ colonne nous donne le nombre 11,\n\nLa diagonale nous donne 24-12-8=24-20=4,\n\nLa 4ᵉ ligne nous donne 24-4-11=20-11=9, ce qui est impossible car on a déjà un 9.\n\n![figure](figure:2019-sf-12-corr-step4)\n\nSi a=13 alors la 5ᵉ colonne nous donne le nombre 10,\n\nLa diagonale nous donne 24-13-8=11-8=3,\n\nLa 4ᵉ ligne nous donne 24-10-3=14-3=11,\n\nLa 3ᵉ colonne nous donne 24-9-11=24-20=4,\n\nLa 5ᵉ ligne nous donne 24-8-4=24-12=12,\n\nLa 2ᵉ colonne nous donne 24-15-3=24-18=6,\n\nLa 4ᵉ colonne nous donne 24-7-12=24-19=5.\n\n![figure](figure:2019-sf-12-corr-step5)\n\nOn peut vérifier sur la 1ère ligne que 6+5+13=11+13=24.\n\nNous avons **1 solution**.",
+    "figures": [
+      {
+        "id": "2019-sf-12-corr-step1",
+        "description": "Le damier avec les premières cases remplies : 14 dans la 1ʳᵉ case de la 2ᵉ ligne, 9 dans sa 3ᵉ case, 7 dans la 4ᵉ case de la 3ᵉ ligne, et la lettre a dans la case en haut à droite.",
+        "imageUrl": "q12_corr-step1.png"
+      },
+      {
+        "id": "2019-sf-12-corr-step2",
+        "description": "Le cas a=10, nombres ajoutés en rouge : 10 en haut à droite, 6 et 5 dans les 2ᵉ et 3ᵉ cases de la 4ᵉ ligne, 13 dans sa 5ᵉ case, et 10 dans la 3ᵉ case de la 5ᵉ ligne (doublon).",
+        "imageUrl": "q12_corr-step2.png"
+      },
+      {
+        "id": "2019-sf-12-corr-step3",
+        "description": "Le cas a=11, nombres ajoutés en rouge : 11 en haut à droite, 5 et 7 dans les 2ᵉ et 3ᵉ cases de la 4ᵉ ligne, 12 dans sa 5ᵉ case.",
+        "imageUrl": "q12_corr-step3.png"
+      },
+      {
+        "id": "2019-sf-12-corr-step4",
+        "description": "Le cas a=12, nombres ajoutés en rouge : 12 en haut à droite, 4 et 9 dans les 2ᵉ et 3ᵉ cases de la 4ᵉ ligne, 11 dans sa 5ᵉ case.",
+        "imageUrl": "q12_corr-step4.png"
+      },
+      {
+        "id": "2019-sf-12-corr-step5",
+        "description": "Le cas a=13, damier complet, nombres ajoutés en rouge. 1ʳᵉ ligne : 6, 5, 13 ; 2ᵉ ligne : 14, 9, 1 ; 3ᵉ ligne : 2, 15, 7 ; 4ᵉ ligne : 3, 11, 10 ; 5ᵉ ligne : 8, 4, 12.",
+        "imageUrl": "q12_corr-step5.png"
+      }
+    ]
+  }
+}

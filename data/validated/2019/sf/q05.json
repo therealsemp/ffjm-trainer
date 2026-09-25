@@ -1,0 +1,66 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 533
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-5",
+  "number": 5,
+  "title": "Les cubes de Mathias",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias range ses cubes dans une boîte dont le fond est incliné en V comme le montre la figure.\n\n![figure](figure:2019-sf-5-cubes)\n\nL'épaisseur de la boîte ne permet de placer qu'une couche de cubes. Il y a cinq façons de ranger quatre cubes, représentées sur la figure.\n\n**De combien de façons peut-on ranger cinq cubes ?**",
+    "figures": [
+      {
+        "id": "2019-sf-5-cubes",
+        "description": "Cinq fonds de boîte en V (bords en pointillés), chacun contenant quatre cubes (carrés inclinés à 45°) rangés d'une façon différente : les quatre dans un bras, trois dans un bras et un dans l'autre, deux et deux, etc.",
+        "imageUrl": "q05_fig-cubes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 7
+  },
+  "correction": {
+    "markdown": "Essayons de dessiner toutes les formes :\n\n![figure](figure:2019-sf-5-corr-shapes)\n\nOn trouve **7 formes**.",
+    "figures": [
+      {
+        "id": "2019-sf-5-corr-shapes",
+        "description": "Les sept façons de ranger cinq cubes dans le V, dessinées comme des assemblages de carrés inclinés à 45° : cinq cubes dans le bras gauche, cinq dans le bras droit, quatre et un, un et quatre, puis trois arrangements avec des cubes empilés au creux du V.",
+        "imageUrl": "q05_corr-shapes.png"
+      }
+    ]
+  }
+}

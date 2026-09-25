@@ -1,0 +1,64 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 188
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 8,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-8",
+  "number": 8,
+  "title": "Découpage",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**En suivant les lignes du quadrillage, découpez cette figure en deux parties superposables.**\n\n![figure](figure:2019-sf-8-grid)\n\nIl est nécessaire de retourner l'une des deux parties pour la superposer avec l'autre.",
+    "figures": [
+      {
+        "id": "2019-sf-8-grid",
+        "description": "Une figure en escalier tracée sur un quadrillage en pointillés, d'environ 10 carreaux de large sur 9 de haut : un grand bloc central, une petite excroissance d'un carreau en bas à gauche, et une colonne qui monte en haut à droite avec un carreau en retrait.",
+        "imageUrl": "q08_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "Les creux A et B semblent se correspondre. De plus les lignes 1 et 2 font toutes les deux 6 de côté. Essayons de débuter ici.\n\n![figure](figure:2019-sf-8-corr-cut)\n\n*Remarque* : dans un découpage en 2 parties, on partage le contour de la figure initiale en deux lignes de même longueur. Ici le périmètre fait 40 donc les deux lignes font 20. Cela permet, si on ne sait pas où démarrer, de savoir que, si on part d'un point, alors on sait où la ligne de partage finit.",
+    "figures": [
+      {
+        "id": "2019-sf-8-corr-cut",
+        "description": "La figure de l'énoncé avec la ligne de découpe tracée en rouge le long du quadrillage. Deux creux du contour sont étiquetés A (à gauche) et B (en bas à droite), et deux bords sont étiquetés 1 (le bord du haut) et 2 (le bord de droite).",
+        "imageUrl": "q08_corr-cut.png"
+      }
+    ]
+  }
+}

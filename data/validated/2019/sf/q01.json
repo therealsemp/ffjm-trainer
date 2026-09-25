@@ -1,0 +1,75 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 79
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-1",
+  "number": 1,
+  "title": "Le tampon de l'année",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Avec ce tampon, Théo a imprimé ![figure](figure:2019-sf-1-483) . **Quelle dessin voit-on sur un autre tampon qui permet, lui, d'imprimer ![figure](figure:2019-sf-1-2019) ?**\n\n![figure](figure:2019-sf-1-stamp)",
+    "figures": [
+      {
+        "id": "2019-sf-1-stamp",
+        "description": "Photo d'un tampon encreur vu de biais : sur sa face, en relief, les chiffres 483 dessinés en segments droits (style afficheur digital), à l'envers comme sur un vrai tampon.",
+        "imageUrl": "q01_fig-stamp.png"
+      },
+      {
+        "id": "2019-sf-1-483",
+        "description": "Le nombre 483 écrit en segments droits, style afficheur digital.",
+        "imageUrl": "q01_fig-483.png"
+      },
+      {
+        "id": "2019-sf-1-2019",
+        "description": "Le nombre 2019 écrit en segments droits, style afficheur digital.",
+        "imageUrl": "q01_fig-2019.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "La figure qui apparaît sur le tampon est obtenu après un retournement au dessus de la figure de départ. Il ne reste plus qu'à faire de même avec le 2019.\n\n![figure](figure:2019-sf-1-corr-digits)",
+    "figures": [
+      {
+        "id": "2019-sf-1-corr-digits",
+        "description": "En haut, les dessins des tampons : à gauche le dessin du tampon de 483 (noir), à droite, en rouge, le dessin cherché pour 2019. Une ligne horizontale les sépare de leurs impressions, en bas : 483 et 2019 en segments droits. Chaque dessin du haut est le symétrique de l'impression du bas par rapport à la ligne horizontale.",
+        "imageUrl": "q01_corr-digits.png"
+      }
+    ]
+  }
+}

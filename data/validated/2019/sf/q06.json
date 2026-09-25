@@ -1,0 +1,51 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 677
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-6",
+  "number": 6,
+  "title": "Le calcul de l'année",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**6 × *aaa* + 7 × *a* = 2019**\n\nIci, la lettre *a* représente toujours le même chiffre. Dans ce calcul, *a* est donc un nombre à un seul chiffre et *aaa* un nombre à trois chiffres identiques.\n\n**Que vaut *a* ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 3
+  },
+  "correction": {
+    "markdown": "Quand on calcule 6×400 on trouve 2400 qui est supérieur à 2019.\n\nLe chiffre a est donc plus petit que 4.\n\nEssayons avec 3 on trouve (6×333)+(7×3)= 1998+21=2019.\n\nLe chiffre a est donc **3**."
+  }
+}

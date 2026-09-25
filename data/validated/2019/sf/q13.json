@@ -1,0 +1,61 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 343
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 18,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-13",
+  "number": 13,
+  "title": "Le cryptarithme de l'année",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Comme dans tout cryptarithme, deux lettres différentes remplacent toujours deux chiffres différents, deux chiffres différents sont toujours remplacés par deux lettres différentes et l'écriture d'aucun nombre ne commence par un 0.\n\n**DIX + NEUF = 19 × UN**\n\nDe plus, ici aucune lettre ne remplace le chiffre 6 ni le chiffre 9. **Combien vaut DEUX ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : 4082 ou 4087"
+  },
+  "correction": {
+    "markdown": "On calcule la table de 19 (qui est 20-1).\n\n19×10=190.\n\n19×20=380.\n\n19×30=570.\n\n19×40=760.\n\n19×50=950.\n\n19×60=1140.\n\n19×70=1330.\n\n19×80=1520.\n\n19×90=1710.\n\n19×100=1900.\n\n![figure](figure:2019-sf-13-corr-additions-1)\n\nCela signifie que le résultat commence par 1 donc N=1 et que U est supérieur à 5 donc U=7 ou U=8 (car 6 et 9 sont interdits).\n\nSi U=8, alors le résultat est 1520+19=1539.\n\nDe plus la somme de deux chiffres est entre 0 et 18.\n\nDonc X+F=9 (pas de retenue) et I+8=13 donc I=5.\n\n1+D+E=5 donc D+E=4 et il reste comme chiffres 0,2,3,4,7.\n\nLa seule possibilité est 0+4=4. Or D≠0, donc D=4 et E=0.\n\nIl reste comme chiffres 2,3,7. Donc X=2 et F=7 ou X=7 et F=2.\n\nIl y a donc deux façons d'obtenir 1539 :\n\n![figure](figure:2019-sf-13-corr-additions-2)\n\nPour écrire DEUX, il y a **2 solutions** : **4082 et 4087**.",
+    "figures": [
+      {
+        "id": "2019-sf-13-corr-additions-1",
+        "description": "Deux additions posées en colonnes, avec les retenues 0, 1, 0 écrites en petit au-dessus. À gauche : DIX + 1E7F = 1349. À droite : DIX + 1E8F = 1539.",
+        "imageUrl": "q13_corr-additions-1.png"
+      },
+      {
+        "id": "2019-sf-13-corr-additions-2",
+        "description": "Trois additions posées en colonnes : DIX + NEUF = 1539 ; 452 + 1087 = 1539 ; 457 + 1082 = 1539, ces deux dernières avec les retenues 0, 1, 0 écrites en petit au-dessus.",
+        "imageUrl": "q13_corr-additions-2.png"
+      }
+    ]
+  }
+}

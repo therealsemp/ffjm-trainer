@@ -1,0 +1,58 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-7",
+  "number": 7,
+  "title": "Les timbres de Mathias",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias achète au bureau de poste une bande de trois timbres valant 1, 2 et 3 ludics.\n\n![figure](figure:2019-sf-7-stamps)\n\nPour la ranger dans son petit porte-monnaie, il la plie en trois, sans qu'aucun des timbres ne soit lui-même plié.\n\n**De combien de façons différentes peut-il faire ce pliage ?** Note : Le verso des timbres n'est pas autocollant.",
+    "figures": [
+      {
+        "id": "2019-sf-7-stamps",
+        "description": "Une bande de trois timbres dentelés côte à côte : le premier (1) avec un profil de femme, le deuxième (2) avec un cerf bondissant, le troisième (3) avec un coq.",
+        "imageUrl": "q07_fig-stamps.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 6
+  },
+  "correction": {
+    "markdown": "Si les plis autour du deuxième timbre sont différents, on a deux possibilités :\n\n- On replie le 1 devant et le 3 derrière ;\n- On replie le 3 devant et le 1 derrière.\n\nSi les plis autour du deuxième timbre sont tous les deux vers l'avant, on a deux possibilités :\n\n- On replie d'abord le 1 puis le 3 par dessus ;\n- On replie d'abord le 3 puis le 1 par dessus.\n\nSi les plis autour du deuxième timbre sont tous les deux vers l'arrière, on a deux possibilités :\n\n- On replie d'abord le 1 puis le 3 par dessus ;\n- On replie d'abord le 3 puis le 1 par dessus.\n\nCela fait au total **6 façons** de plier ces timbres."
+  }
+}

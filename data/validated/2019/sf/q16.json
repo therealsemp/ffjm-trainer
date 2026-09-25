@@ -1,0 +1,62 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 293
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 26,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-16",
+  "number": 16,
+  "title": "La forêt triangulaire",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Cette forêt a la forme d'un triangle ABC telle que AB = 2AC et dont l'angle de sommet A mesure 120°.\n\n![figure](figure:2019-sf-16-triangle)\n\nUn chemin rectiligne AM traverse la forêt selon la bissectrice de l'angle Â. Ce chemin a une longueur égale à 2019 mètres.\n\n**Quelle est la longueur du côté [BC] ?**\n\nOn arrondira la réponse au mètre le plus proche et on prendra si nécessaire 2,646 pour \\(\\sqrt{7}\\).",
+    "figures": [
+      {
+        "id": "2019-sf-16-triangle",
+        "description": "Un triangle ABC très aplati, B à gauche, A en haut, C à droite. Le segment AM part de A et coupe [BC] en M ; il partage l'angle en A en deux angles de 60° marqués chacun.",
+        "imageUrl": "q16_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 8013
+  },
+  "correction": {
+    "markdown": "Construisons D tel que C est le milieu de [AD], E au milieu de [AB], et H à l'intersection de (AM) et de [BD].\n\nComme AB=2 AC alors BE=EA=AC=CD et AB=AD donc ABD est isocèle en A.\n\nPar conséquent la droite (AM), bissectrice du triangle est en même temps hauteur, médiane et médiatrice du triangle.\n\nComme c'est la médiane, \\(AM=\\frac{2}{3}AH\\) et AH = 1,5 × AM = 1,5 × 2019 =3028,5 m.\n\nComme c'est la hauteur, AHD est rectangle en H et \\(\\cos(60°)=\\frac{AH}{AD}=\\frac{1}{2}\\).\n\nDonc AD=2 AH et donc AC=AH=3028,5 m.\n\nD'après le théorème de Pythagore généralisé dans le triangle ABC on a :\n\n\\[BC^2=AC^2+AB^2-2\\times AC\\times AB\\cos(120°)=AC^2+(2\\,AC)^2-2\\times AC\\times(2\\,AC)\\times(-0{,}5)\\]\n\n\\[=AC^2+4\\,AC^2+2\\,AC^2=7\\,AC^2.\\]\n\nDonc\n\n\\[BC=AC\\times\\sqrt{7}\\approx 3028{,}5\\times 2{,}646\\approx 8013{,}411.\\]\n\n![figure](figure:2019-sf-16-corr-triangle)\n\nLa solution est **8013 m**.",
+    "figures": [
+      {
+        "id": "2019-sf-16-corr-triangle",
+        "description": "Le triangle ABD isocèle en A, de base [BD] horizontale, H au pied de la hauteur issue de A (angle droit marqué). E est le milieu de [AB] et C le milieu de [AD] (petits traits égaux sur les quatre demi-côtés). Le triangle ABC est tracé en bleu, la bissectrice [AM] en rouge avec la mention 2019 ; M est l'intersection de (AH), (BC) et (DE). Les deux angles de 60° en A sont marqués.",
+        "imageUrl": "q16_corr-triangle.png"
+      }
+    ]
+  }
+}

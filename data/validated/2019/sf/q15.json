@@ -1,0 +1,55 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 25,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-15",
+  "number": 15,
+  "title": "Le tourne-disques",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Mathilde joue avec la platine du vieux tourne-disque de son grand-père. Celle-ci est décorée d'un carré dont les sommets ne sont pas distinguables. Avec son appareil photo à déclenchement automatique, Mathilde prend des photos de la platine qui tourne à la vitesse constante de 33 tours par minute, à des intervalles d'exactement une seconde entre deux photos successives. Le dessin montre de façon approximative les trois premières photos numérotées 0, 1 et 2, superposées.\n\n![figure](figure:2019-sf-15-turntable)\n\n**Quel sera le numéro de la première photo où le carré se superposera parfaitement avec celui de la photo numéro 0 ?**",
+    "figures": [
+      {
+        "id": "2019-sf-15-turntable",
+        "description": "Un disque vu de dessus avec un petit cercle au centre. Trois carrés inscrits se superposent, légèrement tournés les uns par rapport aux autres ; un carré gris épais et deux carrés noirs dont les sommets sont marqués de petits ronds sur le bord du disque. Au-dessus du disque, les numéros 2, 1 et 0 repèrent les photos correspondantes.",
+        "imageUrl": "q15_fig-turntable.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 5
+  },
+  "correction": {
+    "markdown": "On fait 33 tours en 1 minute soit 60 secondes.\n\nDonc on fait 11 tours en 20 secondes (c'est de la proportionnalité).\n\nMais le carré est invariant tous les quarts de tours.\n\nOn fait alors 11 quarts de tours en un quart de 20 secondes soit en 5 secondes.\n\nLe carré se superposera avec celui de la photo n°0 avec la photo n°5.\n\nLa réponse est **5**."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "year": 2019,
+  "champNumber": 33,
+  "phase": "sf",
+  "examTitle": "33e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2019/sf/2019_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 173
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2019/sf/2019_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2019-sf-2",
+  "number": 2,
+  "title": "Partage sans casse !",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Alice, Bob et Cédric se partagent équitablement du chocolat. Voici les sept morceaux à distribuer. Alice prend le morceau A, Bob le morceau B et Cédric le morceau C\n\n![figure](figure:2019-sf-2-pieces)\n\n**Sans casser aucun morceau, continuez et proposez une répartition équitable.**",
+    "figures": [
+      {
+        "id": "2019-sf-2-pieces",
+        "description": "Sept morceaux de chocolat quadrillés, étiquetés A à G. En haut : A (2 carrés en colonne), B (carré de 2×2), C (rectangle de 3×2), D (carré de 2×2). En bas : E (3 carrés en L), F (9 carrés : une rangée de 4 surmontée d'une rangée de 5 décalée d'un carré vers la gauche), G (5 carrés : une rangée de 3 surmontée de 2 carrés à droite).",
+        "imageUrl": "q02_fig-pieces.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "Alice : A et F ; Bob : B, D et E ; Cédric : C et G"
+  },
+  "correction": {
+    "markdown": "Quand on compte le nombre total de carrés on trouve 33.\n\nOr 33=3×11. Donc chacun en aura 11.\n\nLe morceau F de 9 carrés ne peut être pris que par Alice qui en a seulement 2.\n\n2+9=11 donc c'est complet pour Alice.\n\nCédric en a déjà 6. 11-6=5. Il lui en manque 5. C'est la taille du morceau G.\n\nBob prend les deux autres : on a bien 4+4+3=11."
+  }
+}

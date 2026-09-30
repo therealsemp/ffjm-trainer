@@ -1,0 +1,48 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 573,
+        "y": 492
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 14,
+        "position": {
+          "x": 45,
+          "y": 65
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-18",
+  "number": 18,
+  "title": "Somme des cubes",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Mathias adore jouer avec les nombres. Il choisit un premier nombre, calcule la somme des cubes de ses chiffres et écrit le résultat qui sera son deuxième nombre. Il recommence ensuite avec ce deuxième nombre, puis recommence encore et encore jusqu'à ce qu'il tombe sur un nombre déjà écrit.\n\nAinsi, s'il part de 1012, il écrit : 1012 ; 10 ; 1 ; 1 et il s'arrête.\n\n**Quel est le plus petit nombre supérieur à 2018 qui lui permettra de s'arrêter sur le nombre 1 ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2101"
+  },
+  "correction": {
+    "markdown": "On observe qu'une permutation (changement d'ordre) des chiffres de l'exemple proposé 1012, restera une valeur qui arrêtera le calcul : 112, 1021,1102, 1120, 1201, 1210, 2011, 2101, 2110\n\nQuel est le plus petit nombre, mais plus grand que 2018, que l'on peut écrire avec 1, 0, 1 et 2 ?\n\n**Il s'agit de 2101**\n\nVérification\n\n1ère itération : \\(2^3 + 1^3 + 0 + 1^3\\) = 8 + 1 + 0 + 1 = 10\n\n2ème itération : \\(1^3\\) + 0 = 1 --> FIN\n\nPeut-on faire mieux ?\n\nIl faut tester les cas de 2019 à 2100 à la main ou à l'aide d'un programme --> voir le programme sous scratch. Cela fait 83 = 82 + 1 cas (car 2100 - 2019 = 82)\n\nAprès test : pas de solution plus petite.",
+    "figures": []
+  }
+}

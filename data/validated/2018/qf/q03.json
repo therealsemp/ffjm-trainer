@@ -1,0 +1,66 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 28,
+        "y": 174
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 60,
+          "y": 57
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-3",
+  "number": 3,
+  "title": "À la maternelle",
+  "coefficient": 3,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "La maîtresse a distribué à chaque enfant d’un groupe une feuille avec ces trois symboles et trois feutres de trois couleurs différentes (un bleu, un rouge et un jaune). Elle leur donne la consigne de colorier l’intérieur de chaque symbole avec une couleur de façon que deux symboles d’une même feuille ne soient jamais de la même couleur. Les enfants se sont appliqués et ont respecté la consigne. Seuls deux enfants du groupe ont des dessins identiques, les autres étant tous différents.\n\n![figure](figure:2018-qf-3-symbols)\n\n**Combien le groupe compte-t-il d’enfants, au maximum ?**",
+    "figures": [
+      {
+        "id": "2018-qf-3-symbols",
+        "description": "Une feuille grise portant trois symboles blancs : un carré, un triangle et un rond.",
+        "imageUrl": "q03_fig-symbols.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "7"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-3-corr-colorings)\n\nIl y a au maximum 6 façons différentes de colorier le dessin.\n\nAvec un groupe de 7 enfants, deux auront obligatoirement le même coloriage.\n\n**Le groupe d'élèves comporte au maximum 7 enfants**",
+    "figures": [
+      {
+        "id": "2018-qf-3-corr-colorings",
+        "description": "Tableau à trois colonnes (Rond, Carré, Triangle) et six lignes, chaque ligne donnant une attribution différente de trois couleurs distinctes (rouge, vert, bleu) aux trois symboles.",
+        "imageUrl": "q03_corr-colorings.png"
+      }
+    ]
+  }
+}

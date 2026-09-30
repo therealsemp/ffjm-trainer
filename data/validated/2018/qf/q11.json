@@ -1,0 +1,58 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 300,
+        "y": 380
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 59,
+          "y": 53
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-11",
+  "number": 11,
+  "title": "Le bateau",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un bateau, après avoir effectué la moitié de son trajet, a augmenté sa vitesse de 25% en raison de la menace d’une tempête. Il est alors arrivé au port une demi heure plus tôt que prévu.\n\n**Combien de temps ce bateau a navigué ?** On donnera la réponse en heures et minutes, éventuellement arrondie à la minute la plus proche.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "4 h 30 min"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-11-corr-diagram)\n\nSur le parcours AM : Vitesse \\(V_1\\) , distance D , temps \\(T_1\\)\n\nSur le parcours MB : Vitesse \\(V_2\\) , distance D , temps \\(T_2\\)\n\nPar définition Vitesse = \\(\\dfrac{\\text{Distance}}{\\text{Temps}}\\) donc V = \\(\\dfrac{D}{T}\\) et T = \\(\\dfrac{D}{V}\\)\n\n- Si le bateau garde la vitesse \\(V_1\\) sur tout le trajet AB, en posant Temps total \\(T_0 = T_1 + T_2\\)  \n  on a \\(V_1 = \\dfrac{2D}{T}\\) donc **\\(T_0 = \\dfrac{2D}{V_1}\\) (1)**\n- si le bateau augmente sa vitesse de 25 % sur la 2ème moitié du parcours  \n  \\(V_2 = 1{,}25\\, V_1 = \\dfrac{5}{4} V_1\\)\n\net **\\(T_1 = \\dfrac{D}{V_1}\\) (2)** \\(T_2 = \\dfrac{D}{V_2} = \\dfrac{D}{(5/4)\\, V_1} = \\dfrac{4D}{5V_1}\\) **= T2 (3)**\n\nLe nouveau temps total de parcours T du bateau sur le trajet AB est plus court d'une demi-heure que \\(T_0\\) :\n\n\\(T = T_1 + T_2 = T_0 - 0{,}5\\) En utilisant les 2 égalités (1), (2) et (3) on a alors :\n\n\\[\\frac{D}{V_1} + \\frac{4D}{5V_1} = \\frac{2D}{V_1} - 0{,}5\\]\n\nOn observe que l'on obtient 3 fois le même rapport \\(\\dfrac{D}{V_1} = T_1\\)\n\nOn peut donc écrire \\(T_1 + \\dfrac{4}{5} T_1 = 2 T_1 - 0{,}5\\) que l'on arrange en multipliant toute l'égalité par 5 :\n\npour obtenir \\(5 T_1 + 4 T_1 = 10 T_1 - 2{,}5\\) c'est-à-dire \\(9 T_1 = 10 T_1 - 2{,}5\\) qui devient **\\(T_1 = 2{,}5 = \\dfrac{5}{2}\\) (4)**\n\nOn trouve alors avec (3) \\(T_2 = \\dfrac{4}{5} T_1 = \\dfrac{4}{5} \\times \\dfrac{5}{2} = \\dfrac{4}{2} = 2\\)\n\n**Au final T = \\(T_1 + T_2\\) = 2,5 + 2 = 4,5 heures = 4h 30 min**\n\nOn vérifie que \\(T_0\\) = T + 0,5 = 4,5 + 0,5 = 5 heures\n\nMais aussi par (1) \\(T_0 = 2 \\times T_1\\) = 2 * 2,5 = 5 heures ok !\n\n*Pour bien comprendre, prenons un exemple*\n\nSi D = 50 km et \\(V_1\\) = 20 km/h le demi trajet durerait 50/20 = 2,5 heures, comme trouvé en (4).\n\nEn gardant la même vitesse sur la 2ème moitié du trajet, le temps total serait de 5h.\n\nEn augmentant la vitesse de 25 % on effectuerait la 2ème partie du trajet à 1,25 * 20 = 25/km/h\n\nLa durée de la 2ème partie du trajet serait alors de 50/25 = 2h, soit au total 2,5 + 2h = 4,5 h\n\nCe trajet est bien plus court d'une 1/2 heure !",
+    "figures": [
+      {
+        "id": "2018-qf-11-corr-diagram",
+        "description": "Schéma du trajet : segment de A (départ) à B (arrivée) avec M (mi-parcours) au milieu ; sur la première moitié vitesse V₁, distance D, temps T₁ ; sur la seconde vitesse V₂, distance D, temps T₂ ; un bateau et une flèche indiquant le sens.",
+        "imageUrl": "q11_corr-diagram.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 641
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 17,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-6",
+  "number": 6,
+  "title": "Collage",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "La classe de Julien dispose de 274 gommettes qui sont des triangles gris et de 323 gommettes qui sont des triangles noirs. Les élèves réalisent le plus grand nombre possible de sapins semblables au modèle. Avec les gommettes restantes, Julien veut faire un collage pour sa maîtresse.\n\n![figure](figure:2018-sf-6-tree)\n\n**Combien de gommettes des deux couleurs Julien utilisera-t-il pour le collage destiné à la maîtresse ?**",
+    "figures": [
+      {
+        "id": "2018-sf-6-tree",
+        "description": "Le sapin modèle : un grand triangle formé de 6 triangles noirs et 3 triangles gris (pointe en bas), posé sur un tronc de 2 triangles gris empilés.",
+        "imageUrl": "q06_fig-tree.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "5 triangles noirs et 9 triangles gris"
+  },
+  "correction": {
+    "markdown": "Pour faire un sapin il faut 6 triangles noirs et 5 triangles gris.\n\n![figure](figure:2018-sf-6-corr-divisions)\n\nOn peut donc réaliser 53 sapins et il nous reste 5 triangles noirs.\n\n54-53=1 donc il nous reste (1×5)+4=9 triangles gris.\n\nIl reste, pour le collage destiné à la maîtresse, **5 triangles noirs et 9 triangles gris**.",
+    "figures": [
+      {
+        "id": "2018-sf-6-corr-divisions",
+        "description": "Deux divisions posées : 323 divisé par 6 donne 53, reste 5 ; 274 divisé par 5 donne 54, reste 4.",
+        "imageUrl": "q06_corr-divisions.png"
+      }
+    ]
+  }
+}

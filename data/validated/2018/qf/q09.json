@@ -1,0 +1,58 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 300,
+        "y": 202
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 87,
+          "y": 47
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-9",
+  "number": 9,
+  "title": "Le club de basket",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Dans ce club de basket, il y avait exactement 40 % de garçons. Six nouveaux garçons se sont inscrits et il y a maintenant autant de garçons que de filles. **Combien ce club compte-t-il maintenant d’inscrits (filles et garçons) ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "36"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-9-corr-venn)\n\nSoit G le nombre de garçons\n\nSoit F le nombre de filles\n\nSoit N = F + G le nombre initial d’inscrits au club\n\nIl y a 40 % de garçons, donc \\(\\dfrac{G}{N}\\) = 0,4 c'est-à-dire \\(\\dfrac{G}{G + F}\\) = 0,4\n\nOn en déduit (produit en croix) que G = 0,4 (G + F) = 0,4 G + 0,4 F\n\nD'où G - 0,4 G = 0,6 G = 0,4 F soit en multipliant par 10 l'égalité : 6 G = 4F\n\nAu final on obtient en divisant par 4 : F = \\(\\dfrac{6}{4}\\) G = \\(\\dfrac{3}{2}\\) G = 1,5 G\n\nOn retient **F = 1,5 G (1)**\n\nMais par ailleurs, après les nouvelles inscriptions **G + 6 = F (2)**\n\nEn regroupant les deux équations (1) et (2) F = 1,5 G = G + 6\n\nAlors en multipliant par 2 la nouvelle égalité : 3 G = 2 G + 12, c'est-à-dire 3 G - 2G = G = 12\n\nAu final G = 12 et et donc F = G + 6 = 12 + 6 = 18\n\nLe nombre d'inscrits au club de basket est initialement égal à N = 12 + 18 = 30 puis passe à **N = 36**",
+    "figures": [
+      {
+        "id": "2018-qf-9-corr-venn",
+        "description": "Ellipse N partagée par une courbe en deux parties : G (garçons) à gauche et F (filles) à droite.",
+        "imageUrl": "q09_corr-venn.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 134
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 56,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-16",
+  "number": 16,
+  "title": "La grande sœur énervante",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Sophie aime les grands nombres et adore effectuer les multiplications. Elle a multiplié 173 par un nombre à neuf chiffres et elle a obtenu un résultat à 11 chiffres. Mais Adelaïde, la grande sœur énervante, a effacé douze chiffres du calcul de sa sœur.\n\n![figure](figure:2018-sf-16-multiplication)\n\n**Par quel nombre 173 est-il multiplié ?**",
+    "figures": [
+      {
+        "id": "2018-sf-16-multiplication",
+        "description": "La multiplication à trous : 173 × _ _ _ _ _ _ _ _ _ = _ 2017 _ 2018 _ (neuf chiffres effacés pour le multiplicateur, trois dans le résultat).",
+        "imageUrl": "q16_fig-multiplication.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "5 solutions : 185 072 371, 185 071 793, 416 288 556, 474 089 134 ou 474 088 556"
+  },
+  "correction": {
+    "markdown": "Appelons le nombre final A2017B2018C et écrivons la table de 173.\n\n| × | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| 173 | 0 | 173 | 346 | 519 | 692 | 865 | 1038 | 1211 | 1384 | 1557 |\n\nSi on fixe A on peut débuter la division par 173.\nSi A=1, on prend 1201 et le quotient n'aurait que 8 chiffres.\nSi A=2, le quotient débute par 1272 avec 6 ou 7 après.\nSi A=3, le quotient débute par 1850 avec 6 ou 7 après.\nSi A=4, le quotient débute par 24287.\nSi A=5, le quotient débute par 3006 avec 7 ou 8 après.\nSi A=6, le quotient débute par 3584 avec 7 ou 8 après.\nSi A=7, le quotient débute par 41628.\nSi A=8, le quotient débute par 4740 avec 8 ou 9 après.\nSi A=9, le quotient débute par 53189.\nRemarque le 5ᵉ chiffre est 6,7,8 ou 9.\n\nSi on fixe C on peut débuter la division par 173 par la droite. En effet il n'y a dans la table de 173 qu'un seul nombre qui se termine par 0,1,2,3,…\nSi C=0, le quotient finit par 22660.\nSi C=1, le quotient finit par 05897.\nSi C=2, le quotient finit par 89134.\nSi C=3, le quotient finit par 72371.\nSi C=4, le quotient finit par 55608.\nSi C=5, le quotient finit par 38845.\nSi C=6, le quotient finit par 22082.\nSi C=7, le quotient finit par 05319.\nSi C=8, le quotient finit par 88556.\nSi C=9, le quotient finit par 71793.\n\nOn compare les deux listes pour obtenir un nombre à 9 chiffres. Le 5ᵉ chiffre trouvé dans les deux cas nous impose que c'est l'un des nombres suivants :\n127272371\n127271793\n185072371\n185071793\n242872371\n242871793\n300672371\n300671793\n358472371\n358471793\n300689134\n300688556\n358489134\n358488556\n416289134\n416288556\n474089134\n474088556\nCela nous fait 18 nombres à tester ou du moins ceux dont on hésitait entre 2 possibilités.\n\nPour tester ou vérifier les calculs, on peut multiplier ces nombres par 173.\n127272371×173=22018120183 Non\n127271793×173=22018020189 Non\n185072371×173=32017520183 OK\n185071793×173=32017420189 OK\n242872371×173=42016920183 Non\n242871793×173=42016820189 Non\n300672371×173=52016320183 Non\n300671793×173=52016220189 Non\n358472371×173=62015720183 Non\n358471793×173=62015620189 Non\n300689134×173=52019220182 Non\n300688556×173=52019120188 Non\n358489134×173=62018620182 Non\n358488556×173=62018520188 Non\n416289134×173=72018020182 Non\n416288556×173=72017920188 OK\n474089134×173=82017420182 OK\n474088556×173=82017320188 OK\n\nAu final on trouve **5 solutions** :\n**185 072 371**×173=3 2017 5 2018 3\n**185 071 793**×173=3 2017 4 2018 9\n**416 288 556**×173=7 2017 9 2018 8\n**474 089 134**×173=8 2017 4 2018 2\n**474 088 556**×173=8 2017 3 2018 8"
+  }
+}

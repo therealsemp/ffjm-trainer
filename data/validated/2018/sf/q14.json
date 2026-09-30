@@ -1,0 +1,49 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 443
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 51,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-14",
+  "number": 14,
+  "title": "Le calcul de Mathilde",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Mathilde s'est lancée dans ce gigantesque calcul : \\(2 \\times 4 - 6 \\times 8 + 10 \\times 12 - \\ldots + 2018 \\times 2020\\), dans lequel figurent tous les nombres pairs de 2 à 2020 et où les produits de deux nombres pairs consécutifs sont alternativement soustraits et ajoutés.\n\n**Quel résultat obtiendra-t-elle ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 2042216
+  },
+  "correction": {
+    "markdown": "2×4-6×8+10×12-14×16+...+2018×2020 = 4 (1×2-3×4+5×6-7×8+...+1009×1010).\n\n1×2+5×6+...+1009×1010 = \\(\\displaystyle\\sum_{i=0}^{252}(4i+1)(4i+2)=\\sum_{i=0}^{252}(16i^2+4i+8i+2)=16\\sum_{i=0}^{252}i^2+12\\sum_{i=0}^{252}i+2\\times 253\\)\n\n(-1)×0+3×4+7×8+...+1007×108= \\(\\displaystyle\\sum_{i=0}^{252}(4i-1)(4i)=\\sum_{i=0}^{252}(16i^2-4i)=16\\sum_{i=0}^{252}i^2-4\\sum_{i=0}^{252}i\\)\n\nLe premier calcul moins le deuxième donne \\(\\displaystyle(12+4)\\sum_{i=0}^{252}i+2\\times 253=16\\times\\frac{252\\times 253}{2}+2\\times 253\\)\n\n= 8×252×253+2×253=2×253(4×252+1)=506×1009.\n\nLe calcul final donne 4×506×1009=2024×1009=2 042 216.\n\nLa réponse est **2 042 216**."
+  }
+}

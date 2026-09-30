@@ -1,0 +1,71 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 28,
+        "y": 312
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 53,
+          "y": 483
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-4",
+  "number": 4,
+  "title": "La coccinelle",
+  "coefficient": 4,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Une coccinelle se déplace sur les treize cases grisées d’un circuit. Le premier déplacement se fait dans le sens de la flèche. Elle se déplace d’une case par seconde et quand elle a le choix, elle peut aller d’un côté ou de l’autre, mais elle ne revient jamais en arrière. **Marquez d’une croix toutes les cases sur lesquelles elle peut se trouver après exactement 11 secondes.**\n\n![figure](figure:2018-qf-4-circuit)",
+    "figures": [
+      {
+        "id": "2018-qf-4-circuit",
+        "description": "Grille de 3 lignes sur 5 colonnes dont 13 cases sont grisées (en jaune pâle) ; les 2e et 4e cases de la ligne du milieu sont blanches (hors circuit). La coccinelle est dans la case en haut à gauche, avec une flèche vers la droite.",
+        "imageUrl": "q04_fig-circuit.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "4 cases : les 2e et 4e cases de la ligne du haut, les 1re et 3e cases de la ligne du milieu"
+  },
+  "correction": {
+    "markdown": "Pour un trajet de 11 déplacements, il y 6 chemins possibles, amenant à 4 cases finales distinctes (en jaune)\n\n![figure](figure:2018-qf-4-corr-steps)\n\n![figure](figure:2018-qf-4-corr-paths)",
+    "figures": [
+      {
+        "id": "2018-qf-4-corr-steps",
+        "description": "La grille 3×5 (cases hors circuit en noir) avec, dans chaque case, les numéros des secondes auxquelles la coccinelle peut s'y trouver selon les différents chemins (en noir, rouge et bleu). Les quatre cases atteintes à la 11e seconde sont en jaune : 2e et 4e cases de la ligne du haut, 1re et 3e cases de la ligne du milieu.",
+        "imageUrl": "q04_corr-steps.png"
+      },
+      {
+        "id": "2018-qf-4-corr-paths",
+        "description": "La même grille avec les chemins possibles tracés en noir, bleu et rouge (traits pleins et pointillés) aboutissant aux quatre cases jaunes.",
+        "imageUrl": "q04_corr-paths.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 573
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 55,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-15",
+  "number": 15,
+  "title": "Le code de Picsou",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "L'accès du coffre fort de l'Oncle Picsou est protégé par un numéro de code que Picsou a malheureusement oublié. Il sait seulement que le nombre N correspondant à ce numéro ne commence pas par un zéro, qu'il se termine par 2, 0, 1, 8 dans cet ordre de gauche à droite et que si on enlève ces quatre derniers chiffres, on obtient un nouveau nombre qui est aussi un diviseur de N.\n\n**Quel peut être le code du coffre de l'Oncle Picsou ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "4 solutions : 12 018, 22 018, 10 092 018 ou 20 182 018"
+  },
+  "correction": {
+    "markdown": "Le code s'écrit A×10⁴+2018.\nA divise A×10⁴+2018 donc A divise 2018.\nOr 2018=2×1009 donc les diviseurs de 2018 sont 1, 2, 1009 et 2018.\n\nIl y a donc **4 solutions : 12 018, 22 018, 10 092 018 et 20 182 018**."
+  }
+}

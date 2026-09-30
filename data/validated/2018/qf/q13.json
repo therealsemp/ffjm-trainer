@@ -1,0 +1,57 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 573,
+        "y": 32
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 48,
+          "y": 59
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-13",
+  "number": 13,
+  "title": "Un multiple singulier",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "**Quel est le plus petit multiple de 2018 dont l’écriture décimale commence par 1111… ?**\n\nRépondez 0 si vous pensez qu’un tel multiple n’existe pas.",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1111918"
+  },
+  "correction": {
+    "markdown": "Soit k un nombre entier à n chiffres dont l'écriture en base 10 est \\(a_1 a_2 a_3 a_4 \\ldots a_n\\) tel que\n\n![figure](figure:2018-qf-13-corr-multiplication)\n\nL'algorithme classique pour faire une multiplication commence par la droite (en débutant par les unités).\n\nMais ici, il faut commencer par la gauche (par les poids forts), en cherchant à s 'approcher le plus d'un nombre commençant par 1111.\n\n- 2018 x 5 = 100 90 mais 2018 x 6 = 12 108 --> trop grand\n- 2018 * 55 = 110 990 mais 2018 x 56 = 113 008 --> trop grand\n- 2018 * 551 = 111 191 8 mais 2018 x 552 = 1113 936 --> trop grand\n\n**Une réponse possible est k = 551**\n\nY a t-il une autre solution plus petite que k = 551 ?\n\nIl suffit de tester tous les cas de 1 à 551 sur un tableur --> non, pas d'autre solution !",
+    "figures": [
+      {
+        "id": "2018-qf-13-corr-multiplication",
+        "description": "Multiplication posée : 2018 × a₁ a₂ a₃ a₄ … aₙ = 1 1 1 1 …",
+        "imageUrl": "q13_corr-multiplication.png"
+      }
+    ]
+  }
+}

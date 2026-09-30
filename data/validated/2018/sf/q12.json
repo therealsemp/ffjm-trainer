@@ -1,0 +1,67 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 178
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 45,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-12",
+  "number": 12,
+  "title": "A vos ciseaux !",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "**Découpez ce polygone en seulement trois morceaux de façon à pouvoir reconstituer un carré plein.**\n\n![figure](figure:2018-sf-12-polygon)",
+    "figures": [
+      {
+        "id": "2018-sf-12-polygon",
+        "description": "Un polygone irrégulier grisé tracé sur un quadrillage (les carreaux sont marqués en pointillés), formé de 61 carreaux.",
+        "imageUrl": "q12_fig-polygon.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "Il y a 61 carrés donc le côté n'est pas un nombre entier.\nC'est l'hypoténuse d'un triangle rectangle dont les autres côtés sont entiers.\nD'après le théorème de Pythagore on a 61=A²+B².\nOr les premiers carrés sont 1, 4, 9, 16, 25, 36, 49, 64.\nOn trouve que 61=25+36=5²+6².\nCherchons à placer à partir d'un point 5 carreaux horizontalement et 6 carreaux verticalement et dans une autre direction 6 carreaux horizontalement et 5 carreaux verticalement. On trouve la disposition suivante :\n\n![figure](figure:2018-sf-12-corr-cut)\n\nAprès découpage on obtient notre carré :\n\n![figure](figure:2018-sf-12-corr-square)",
+    "figures": [
+      {
+        "id": "2018-sf-12-corr-cut",
+        "description": "Le polygone avec les deux traits de découpe : deux segments obliques partant d'un même point du bord supérieur, l'un descendant vers la gauche (5 carreaux horizontalement pour 6 verticalement), l'autre descendant vers la droite (6 carreaux horizontalement pour 5 verticalement).",
+        "imageUrl": "q12_corr-cut.png"
+      },
+      {
+        "id": "2018-sf-12-corr-square",
+        "description": "Les trois morceaux réassemblés en un carré posé sur la pointe (ses côtés sont les traits de découpe obliques).",
+        "imageUrl": "q12_corr-square.png"
+      }
+    ]
+  }
+}

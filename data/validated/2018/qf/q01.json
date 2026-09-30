@@ -1,0 +1,71 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 28,
+        "y": 32
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 40,
+          "y": 93
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-1",
+  "number": 1,
+  "title": "Quatre nombres à placer",
+  "coefficient": 1,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**Placez les nombres 1, 2, 3 et 4 dans les disques** de telle sorte que chaque nombre écrit dans un petit carré soit égal au total des deux nombres auxquels il est relié par un trait.\n\n![figure](figure:2018-qf-1-triangle)",
+    "figures": [
+      {
+        "id": "2018-qf-1-triangle",
+        "description": "Triangle formé de trois disques aux sommets et d'un disque au milieu de la base, relié au sommet du haut. Des petits carrés sur les traits : 4 (sommet haut – bas gauche), 5 (sommet haut – milieu de la base), 7 (sommet haut – bas droite), 3 (bas gauche – milieu), 6 (milieu – bas droite).",
+        "imageUrl": "q01_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 en haut, 1 en bas à gauche, 2 en bas au milieu, 4 en bas à droite"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-1-corr-labels)\n\nSoient x, y, z, t quatre nombres entiers tels que {x, y, z, t} ={1 ; 2 ; 3 ; 4}\n\nOn a\n\n- x + y = 4 donc **x = 3** et y =1 **ou** x = 1 et y =3 (x = 2 et y = 2 impossible !)\n- x + t = 7 donc **x = 3** et t =4 **ou** x = 4 et y = 3\n- x + z = 5 donc **x =3** et z= 2 **ou** x =2 et z = 3 (**ou** x = 1 et z = 4 **ou** x =4 et z = 5 )\n\nSeule solution possible **x = 3 y = 1 z = 2 t = 4**\n\nVérification sur les 2 autres équations\n\n- y + z = 1 + 2 = 3 --> ok\n- z+ t = 2 + 4 = 6 --> ok\n\n![figure](figure:2018-qf-1-corr-solved)",
+    "figures": [
+      {
+        "id": "2018-qf-1-corr-labels",
+        "description": "Le triangle de l'énoncé avec les disques nommés : x en haut, y en bas à gauche, z au milieu de la base, t en bas à droite.",
+        "imageUrl": "q01_corr-labels.png"
+      },
+      {
+        "id": "2018-qf-1-corr-solved",
+        "description": "Le triangle complété : 3 en haut, 1 en bas à gauche, 2 au milieu de la base, 4 en bas à droite.",
+        "imageUrl": "q01_corr-solved.png"
+      }
+    ]
+  }
+}

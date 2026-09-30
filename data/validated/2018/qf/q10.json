@@ -1,0 +1,52 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 300,
+        "y": 267
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 77,
+          "y": 445
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-10",
+  "number": 10,
+  "title": "Loterie",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Dans une loterie, on a vendu 10 000 billets numérotés de 0000 à 9999. Le tirage au sort se fait de la manière suivante :\n\n- on tire au sort un nombre à trois chiffres ;\n- tous les billets dont le numéro contient tous les chiffres du nombre tiré sont gagnants\n\nOn a tiré au sort le nombre 116. Les billets gagnants seront donc tous les billets contenant au moins deux 1 et au moins un 6 et seulement ceux-là. **Combien y aura-t- il de gagnants ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "106"
+  },
+  "correction": {
+    "markdown": "Il y a 3 façons différentes de placer les chiffres 1, 1 et 6 : 116 ou 161 ou 611\n\nPour chacun de ces 3 nombres, il y a 4 façons d'intercaler un 4ème nombre, avant, après, entre 2 chiffres :\n\nx 1 x 1 x 6 x\n\nx 1 x 6 x 1 x\n\nx 6 x 1 x 1 x\n\nMais le nombre x à 10 valeurs possibles de 0 à 9 .\n\nCe qui donne au total 3 x 4 x 10 = **120 numéros de billets de loto gagnants**\n\n***Mais attention***, ce dénombrement donne des doublons (on compte plusieurs fois le même billet) !\n\nOn en dénombre 14 :\n\n- 1116 , 1161, 1611, 6111 apparaissent 3 fois\n- 1166, 1616, 1661, 6116, 6161, 6611 apparaissent 2 fois\n\n**Il y a donc 106 numéros de billets de loto différents gagnants**",
+    "figures": []
+  }
+}

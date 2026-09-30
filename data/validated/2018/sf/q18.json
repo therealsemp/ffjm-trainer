@@ -1,0 +1,70 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 437
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 63,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-18",
+  "number": 18,
+  "title": "Quatre triangles pour un carré",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "On découpe un carré en quatre triangles comme sur la figure, qui ne respecte pas les proportions.\n\n![figure](figure:2018-sf-18-square)\n\nLe carré a pour côté un nombre entier de centimètres. Les quatre triangles sont deux à deux différents et tous leurs côtés mesurent des nombres entiers de centimètres.\n\n**Quelle est, au minimum, l'aire du carré ?**\n\nOn donnera la réponse en centimètres carrés.",
+    "figures": [
+      {
+        "id": "2018-sf-18-square",
+        "description": "Un carré découpé en quatre triangles par trois segments en zigzag : du coin inférieur gauche à un point du côté supérieur, de ce point à un point du côté inférieur, puis de ce point au coin supérieur droit.",
+        "imageUrl": "q18_fig-square.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 576
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-sf-18-corr-cut)\n\nEn fait le carré est partagé en 6 triangles rectangles,\ndont les côtés sont entiers, et dont le côté du carré\nest le plus grand côté de l'angle droit.\nIl y a au moins 2 triangles de ce type différents (ceux aux extrémités).\nCherchons des triplets pythagoriciens avec ces contraintes.\nIls sont de la forme A=k(u²-v²), B=2kuv, C=k(u²+v²)\navec u et v premiers entre eux et de parité différente.\n\n| k | u | v | A | B | C |\n|---|---|---|---|---|---|\n| 1 | 2 | 1 | 3 | 4 | 5 |\n| 2 | 2 | 1 | 6 | 8 | 10 |\n| 1 | 3 | 2 | 5 | 12 | 13 |\n| 3 | 2 | 1 | 9 | 12 | 15 |\n| 1 | 4 | 1 | 8 | 15 | 17 |\n| 4 | 2 | 1 | 12 | 16 | 20 |\n| 1 | 4 | 3 | 7 | 24 | 25 |\n| 5 | 2 | 1 | 15 | 20 | 25 |\n| 2 | 3 | 2 | 10 | 24 | 26 |\n\n12 semble être un bon candidat au côté du carré.\nMais le troisième triangle a pour côté 2 ce qui ne va pas.\n\n![figure](figure:2018-sf-18-corr-twelve)\n\nPoursuivons notre liste.\n\n24 semble être un bon candidat au côté du carré.\nLe troisième triangle a pour côté 7 ce qui fonctionne.\n\n![figure](figure:2018-sf-18-corr-twentyfour)\n\nL'aire de ce carré est de 24×24=576.\n\nL'aire est de **576 cm²**.",
+    "figures": [
+      {
+        "id": "2018-sf-18-corr-cut",
+        "description": "Le carré de l'énoncé (en bleu) avec ses trois segments en zigzag (en rouge) et deux hauteurs verticales en pointillés, issues des sommets situés sur les côtés, qui partagent la figure en 6 triangles rectangles.",
+        "imageUrl": "q18_corr-cut.png"
+      },
+      {
+        "id": "2018-sf-18-corr-twelve",
+        "description": "Essai avec un carré de côté 12 : les triangles d'extrémité et les pointillés verticaux, le troisième triangle se retrouvant avec un côté de 2.",
+        "imageUrl": "q18_corr-twelve.png"
+      },
+      {
+        "id": "2018-sf-18-corr-twentyfour",
+        "description": "La solution avec un carré de côté 24 : le zigzag et les deux pointillés verticaux partageant le carré en triangles rectangles à côtés entiers.",
+        "imageUrl": "q18_corr-twentyfour.png"
+      }
+    ]
+  }
+}

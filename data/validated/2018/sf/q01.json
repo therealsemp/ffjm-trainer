@@ -1,0 +1,81 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 79
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-1",
+  "number": 1,
+  "title": "Triangles emmêlés",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**Combien de triangles entièrement dessinés peut-on compter sur cette figure** (y compris le grand triangle) ?\n\n![figure](figure:2018-sf-1-triangle)",
+    "figures": [
+      {
+        "id": "2018-sf-1-triangle",
+        "description": "Un grand triangle traversé par un segment horizontal reliant ses deux côtés vers le milieu de la hauteur, et par deux segments partant du milieu de la base et remontant jusqu'à ce segment horizontal, en formant un V.",
+        "imageUrl": "q01_fig-triangle.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 7
+  },
+  "correction": {
+    "markdown": "On peut compter 3 triangles composés d'un morceau,\n\n![figure](figure:2018-sf-1-corr-one)\n\n2 triangles composés de deux morceaux,\n\n![figure](figure:2018-sf-1-corr-two)\n\n1 triangle composé de trois morceaux,\n\n![figure](figure:2018-sf-1-corr-three)\n\net 1 triangle composé de six morceaux.\n\n![figure](figure:2018-sf-1-corr-six)\n\nEn tout il y a **7 triangles**.",
+    "figures": [
+      {
+        "id": "2018-sf-1-corr-one",
+        "description": "La figure avec, en bleu, les trois triangles composés d'un seul morceau : le triangle pointe en bas au centre et les deux petits triangles situés de part et d'autre, sous le segment horizontal.",
+        "imageUrl": "q01_corr-one.png"
+      },
+      {
+        "id": "2018-sf-1-corr-two",
+        "description": "La figure avec, en bleu, les deux triangles composés de deux morceaux, dans les coins inférieurs gauche et droit du grand triangle.",
+        "imageUrl": "q01_corr-two.png"
+      },
+      {
+        "id": "2018-sf-1-corr-three",
+        "description": "La figure avec, en bleu, le triangle du haut composé de trois morceaux (au-dessus du segment horizontal).",
+        "imageUrl": "q01_corr-three.png"
+      },
+      {
+        "id": "2018-sf-1-corr-six",
+        "description": "La figure entièrement coloriée en bleu : le grand triangle, composé de six morceaux.",
+        "imageUrl": "q01_corr-six.png"
+      }
+    ]
+  }
+}

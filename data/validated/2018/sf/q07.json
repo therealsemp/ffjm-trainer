@@ -1,0 +1,65 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 62
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 18,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-7",
+  "number": 7,
+  "title": "Les dix chiffres",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias a écrit une addition dans laquelle apparaissent les dix chiffres de 0 à 9. Pour le taquiner, Mathilde lui a effacé sept chiffres.\n\n![figure](figure:2018-sf-7-addition)\n\n**Quel est le résultat de l'addition de Mathias ?**",
+    "figures": [
+      {
+        "id": "2018-sf-7-addition",
+        "description": "Une addition posée à trous : 4 _ _ + _ _ 7 = _ _ 8 _.",
+        "imageUrl": "q07_fig-addition.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 1089
+  },
+  "correction": {
+    "markdown": "Quand on additionne deux chiffres,\non a une retenue de 0 ou de 1.\nDonc tout à gauche on a une retenue de 1,\net le chiffre en bas à gauche est 1.\n\nLa somme de deux chiffres ne peut pas être 18\ncar 18=9+9 ou 18=9+8+1(retenue) et 8 est déjà utilisé.\nDonc la retenue au dessus du 4 est 0.\n\nLe 0 ne peut pas être placé en dessous du 4 sinon on aurait 4+0=4 qui est utilisé.\nLe 0 ne peut pas être placé au dessus du 8 sinon on aurait 8+0=8\nou 7+0+1 (retenue)=8 mais 7 et 8 sont déjà placés.\nLe 0 ne peut pas être placé au dessus du 7 sinon on aurait 0+7=7 qui est utilisé.\nPar conséquent le 0 est sur la ligne du bas.\n\nEn dessous du 4 il faut un nombre supérieur à 5 à cause de la retenue :\nil reste 6 ou 9 avec 4+6=10 ou 4+9=13.\nSi le 0 est en dessous de 7 il faut 3+7=10 et 4+9=13 donc le 3 serait utilisé 2 fois.\nDonc le 0 est à côté du 1. Et le 6 est au dessus car 4+6=10.\n\nLe 9 n'est pas au dessus de 8 sinon on aurait une retenue, ni au dessus du 7\nsinon 9+7=16 et 6 est déjà utilisé. Donc le 9 est au dessous du 7 et 2 au dessus.\nIl reste 5 et 3, interchangeables qui font bien 8. Le nombre est donc **1089**.\n\n![figure](figure:2018-sf-7-corr-addition)",
+    "figures": [
+      {
+        "id": "2018-sf-7-corr-addition",
+        "description": "L'addition complétée, avec les retenues 1, 0, 0 au-dessus : 452 + 637 = 1089 (les chiffres retrouvés en rouge).",
+        "imageUrl": "q07_corr-addition.png"
+      }
+    ]
+  }
+}

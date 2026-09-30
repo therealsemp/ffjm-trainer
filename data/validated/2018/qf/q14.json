@@ -1,0 +1,63 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 573,
+        "y": 83
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 9,
+        "position": {
+          "x": 50,
+          "y": 392
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-14",
+  "number": 14,
+  "title": "Le petit bois",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le petit bois derrière chez moi est un carré de 90 m de côté. Deux allées le traversent : l’une selon une diagonale du carré, l’autre joignant un sommet à un point situé aux 2/3 d’un côté, comme l’indique la figure. Ces deux allées partagent le bois en quatre parcelles.\n\n![figure](figure:2018-qf-14-wood)\n\n**Quelle est l’aire de la plus grande de ces quatre parcelles ?**\n\nOn donnera la réponse en mètres carrés et on arrondira éventuellement au m² le plus proche.",
+    "figures": [
+      {
+        "id": "2018-qf-14-wood",
+        "description": "Carré de 90 m de côté, le côté droit étant partagé en trois segments de 30 m. Une diagonale va du coin haut gauche au coin bas droit ; une autre allée va du coin bas gauche au point du côté droit situé à 30 m du haut. Les quatre parcelles sont colorées en vert et en bleu.",
+        "imageUrl": "q14_fig-wood.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2970"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-14-corr-geogebra)\n\nVoir modélisation sur géogébra\n\nOn observe que :\n\n- \\(T_3 + T_4 = T_{DCM}\\) = 90 x 60 / 2 = 90 x 30 = 2 700 m² **(1)**\n- \\(T_1 + T_4 = T_{ADC}\\) = 90 x 90 / 2 = 8100/2 = 4 050 m² **(2)**\n\nOn en déduit que T1 > T3\n\n- Sachant que (MC) // (AD) et que AHC et DHM sont alignés dans cet ordre, on peut appliquer le théorème de Thalès dans les triangles T1 et T3. Sachant que AD = 90 et MC = 60, on peut écrire :\n\n\\[\\frac{AO}{OC} = \\frac{DO}{OM} = \\frac{AD}{MC} = \\frac{90}{60} = 1{,}5\\]\n\nOn en déduit que AO = 1,5 OC **(4)**\n\nDO = 1,5 OM **(5)**\n\nConséquence : \\(T_1 = 1{,}5^2\\, T_3\\)\n\n**\\(T_1 = 2{,}25\\, T_3\\) (3)**\n\nCar les triangles \\(T_1\\) et \\(T_3\\) sont agrandissement l'un de l'autre avec un facteur 1,5 pour les longueurs et de 1,5² pour les aires. (résultat de cours de 3ème)\n\nEn soustrayant les relations (2) et (1) on obtient : \\(T_1 + T_4 - (T_3 + T_4) = T_1 - T_3\\) = 4050 - 2700 = 1350\n\nOn peut écrire \\(T_1 = 1350 + T_3\\)\n\nEn regroupant cette dernière relation avec (3), on obtient : \\(2{,}25\\, T_3 = 1350 + T_3\\)\n\nC'est-à-dire \\(1{,}25\\, T_3 = \\dfrac{5}{4} T_3 = 1350\\) Soit finalement \\(T_3 = \\dfrac{1350 \\times 4}{5}\\) = 270 x4 = 1080\n\n1er résultat : \\(T_3\\) = 1 080 m²\n\nLes autres surfaces en découlent grâce aux relations précédemment trouvées :\n\npar (3) : \\(T_1 = 2{,}25\\, T_3\\) = 2,25 x 1080 = 2430 \\(T_1\\) = 2 430 m²\n\npar (1) \\(T_4 = 2\\,700 - T_3\\) = 2 700 - 1 080 = 1620 \\(T_4\\) = 1 620 m²\n\nEnfin \\(T_2\\)= surface du carré - \\(T_1 - T_3 - T_4\\) = 90² - 2 430 - 1 080 - 1620 = 8 100 - 5130 = 2970\n\n\\(T_2\\) = 2 970 m²\n\nRéponse à la question posée : **la plus grande parcelle est \\(T_2\\) et sa surface vaut \\(T_2\\) = 2 970 m²**\n\n*Travail complémentaire : calcul de toutes les longueurs des parcelles*\n\n- En appliquant le théorème de Pythagore au triangle rectangle ABC, rectangle en B, on trouve :  \n  AC² = AB² + BC² = 90² + 90² = 2 x 90²  \n  D'où \\(AC = 90\\sqrt{2}\\) **(6)**\n- En appliquant le théorème de Pythagore au triangle rectangle DMC, rectangle en C, on trouve :  \n  DM² = DC² + CM² = 90² + 60² = (30 x 3 )² + (30 x 2)² = 30² x 9 + 30² x 4 = 30² x (9+4) =30² x 13  \n  D'où \\(DM = 30\\sqrt{13}\\) **(7)**\n\nMais on sait aussi que\n\n- \\(AO + OC = AC = 90\\sqrt{2}\\) par (6)\n- \\(DO + OM = DM = 30\\sqrt{13}\\) par (7)\n\nPar conséquent\n\n- en utilisant la relation (4), on trouve : \\(1{,}5\\, OC + OC = 90\\sqrt{2}\\)  \n  c'est-à-dire \\(2{,}5\\, OC = \\dfrac{5}{2} OC = 90\\sqrt{2}\\) soit \\(OC = \\dfrac{90 \\times 2}{5}\\sqrt{2} = 36\\sqrt{2}\\)  \n  Au final **\\(OC = 36\\sqrt{2}\\) ≈ 50,911 ok !** et **\\(AO = 54\\sqrt{2}\\) ≈ 76,367 ok !** (par différence avec \\(AC = 90\\sqrt{2}\\))\n- en utilisant la relation (5), on trouve : \\(1{,}5\\, OM + OM = 30\\sqrt{13}\\)  \n  c'est-à-dire \\(2{,}5\\, OM = \\dfrac{5}{2} OM = 30\\sqrt{13}\\) soit \\(OM = \\dfrac{30 \\times 2}{5}\\sqrt{13} = 12\\sqrt{13}\\)  \n  Au final **\\(OM = 12\\sqrt{13}\\) ≈ 43,266 ok !** et **\\(OD = 18\\sqrt{13}\\) ≈ 64,899 ok !** (par différence avec \\(DM = 30\\sqrt{13}\\))",
+    "figures": [
+      {
+        "id": "2018-qf-14-corr-geogebra",
+        "description": "Figure GeoGebra : carré ABCD de côté 90, M sur [BC] avec BM = 30 et MC = 60, O intersection de [AC] et [DM]. Parcelles T₁ = 2430 (gauche), T₂ = 2970 (haut), T₃ = 1080 (droite), T₄ = 1620 (bas). Longueurs OA = 76.37, OM = 43.27, DO = 64.9, OC = 50.91.",
+        "imageUrl": "q14_corr-geogebra.png"
+      }
+    ]
+  }
+}

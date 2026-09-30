@@ -1,0 +1,57 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 300,
+        "y": 470
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 8,
+        "position": {
+          "x": 59,
+          "y": 47
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-12",
+  "number": 12,
+  "title": "Course automobile",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Deux automobilistes sont partis simultanément l’un d’Arithméville vers Géocity et l’autre de Géocity vers Arithméville, ces deux villes étant éloignées de 200 km. Ils ont roulé à des vitesses constantes différentes s'exprimant par des nombres entiers de km/h dont la différence est un multiple de 7. Après deux heures de déplacement la distance entre la voiture la plus rapide et Géocity était cinq fois plus petite que celle entre la voiture la plus lente et Arithméville. **Quelle est la vitesse de la voiture la plus rapide ?** On donnera la réponse en km/h.",
+    "figures": []
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 86 ou 93 km/h"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-12-corr-diagram)\n\n\\(V_1\\), \\(V_2\\) et k sont des nombres entiers non nuls\n\nAu bout de 2 h :\n\n- distance parcourue par la voiture 1 : \\(d_1 = 2 V_1\\) **(1)**\n- distance parcourue par la voiture 2 : \\(d_2 = 2 V_2\\) **(2)**\n\n**Cas 1 : \\(V_2 > V_1\\) :**\n\nAlors \\(V_2 - V_1 = 7k\\) (la différence de vitesse est un multiple de 7)\n\net \\(d_2 = \\dfrac{d_1}{5}\\) alors par (1) et (2) on a \\(2 V_2 = \\dfrac{2}{5} V_1\\) soit \\(V_2 = \\dfrac{1}{5} V_1\\)\n\nC'est-à-dire \\(V_2 < V_1\\) il y a contradiction avec l'hypothèse du cas 1 --> impossible\n\n**Cas 2 : \\(V_1 > V_2\\) :**\n\nAlors \\(V_1 - V_2 = 7k\\) **(3)**\n\net \\(200 - d_1 = \\dfrac{200 - d_2}{5}\\) c'est-à-dire en multipliant par 5 : \\(1000 - 5 d_1 = 200 - d_2\\)\n\nD'où \\(5d_1 = 1000 - 200 + d_2\\) soit \\(5d_1 = 800 + d_2\\)\n\nEn utilisant (1), et (2), on obtient : \\(10 V_1 = 800 + 2V_2\\) ce qui se simplifie en **\\(5V_1 = 400 + V_2\\) (4)**\n\nOr par (3) \\(V_1 = V_2 + 7k\\)\n\nEn regroupant (3) et (4) : \\(5 (V_2 + 7k) = 400 + V_2\\) ce qui s'écrit \\(5 V_2 + 35k = 400 + V_2\\)\n\net se simplifie en \\(4 V_2 = 400 - 35 k\\) ou encore \\(V_2 = \\dfrac{400 - 35 k}{4} = 100 - \\dfrac{35 k}{4}\\)\n\nPour obtenir une valeur entière de \\(V_2\\) il faut que k soit un multiple de 4 (car 35 = 7 x 5 ne l'est pas).\n\n- si k= 4 \\(V_2\\) = 100 - 35 = 65 donc par (3) \\(V_1\\) = 7k + \\(V_2\\) = 7 * 4 + 65 = 28 + 65 = 93\n- si k = 8 \\(V_2\\) = 100 - 35 x 2 = 100 -70 = 30 donc \\(V_1\\) = 7k + \\(V_2\\) = 7 * 8 + 30 = 56 + 30 = 86\n- si k =12 \\(V_2\\) = 100 - 35 x 3 = 100- 105 < 0 -->impossible\n- si k> 12 \\(V_2\\) < 0 --> impossible\n\n**Il y a donc 2 solutions : la voiture la plus rapide roule à 86 km/ ou 93 km/h**",
+    "figures": [
+      {
+        "id": "2018-qf-12-corr-diagram",
+        "description": "Schéma : segment de A (Arithméville) à G (Géocity), d = AG = 200 km. La voiture 1 part de A à la vitesse V₁ et a parcouru d₁ ; la voiture 2 part de G à la vitesse V₂ et a parcouru d₂. Flèches indiquant les distances restantes 200 − d₂ (en rouge) et 200 − d₁ (en bleu).",
+        "imageUrl": "q12_corr-diagram.png"
+      }
+    ]
+  }
+}

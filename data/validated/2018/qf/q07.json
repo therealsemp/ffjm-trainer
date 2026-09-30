@@ -1,0 +1,59 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 28,
+        "y": 531
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 45,
+          "y": 53
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-7",
+  "number": 7,
+  "title": "Le livre de Mathilde",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathilde a reçu pour son anniversaire un livre ayant 225 pages qui compte trois chapitres. La somme des chiffres des numéros des deux premières pages du deuxième chapitre est égale à 18. Par un curieux hasard, la somme des chiffres des numéros de deux dernières pages de ce même deuxième chapitre (qui compte plus de 2 pages) est aussi égale à 18.\n\n**Quel est le nombre des pages du 2ᵉ chapitre de ce livre ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "92"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-7-corr-pages)\n\nSoient a et b les numéros des deux premières pages du 2ème chapitre du livre\n\nSoient e et f les numéros des deux dernières pages du 2ème chapitre du livre\n\nCes nombres sont tous plus petits que 225.\n\nComme les numéros des pages se suivent : b = a+1 et de même f= e+1\n\nLa page n°a peut s'écrire avec 1, 2 ou 3 chiffres\n\nSi on note u le nombre d'unités, d le nombre de dizaines et c le nombre de centaines, on peut écrire\n\na = 100 c + 10 d + u\n\nb = 100 c + 10 d + (u+1)\n\nPar ailleurs, on notera S(a,b) la somme des chiffres qui composent l'écriture de a et de b\n\n*Cas n°1* a s'écrit avec 1 seul chiffre (a<10)\n\n- si a = 9 alors la page suivante b = 10 et a + b = 9 + 10 = 19 ≠ 18 --> **impossible**\n- si a < 9 alors a = u et b = u + 1 (sans retenue car b < 10)  \n  Donc S(a,b) = 2 u + 1 qui est impair donc ≠ 18 qui est pair --> **impossible**\n\n*Cas n°2* a s'écrit avec 2 chiffres (9 < a < 99)\n\n- si a = 99 alors b = 100 et S(a,b) = 9 + 9 + 1+ 0 + 0 = 19 ≠ 18 --> **impossible**\n- si a < 99  \n  a = 10 d + u  \n  b = 10 d + (u+1)\n  - si u=9 alors a = 10 **d** + **9** et b = 10 **(d+1)** + 0 (à cause de la retenue)  \n    Donc S(a,b) = **d** + **9** + **d + 1** = 10 + 2 d = 18  \n    On en déduit que d = 4 (car 10 + 2 * 4 = 18)  \n    Conclusion d = 4 et u = 9 d'où a = 49 et b = 50\n  - si ≠ 9 alors a = 10 **d** + **u** et b = 10 d + (u+1)  \n    S(a,b) = **d** + **u** + **d** +**u** + **1**  \n    = 2 (d + u) +1 impair --> **impossible**\n\n*Cas n°3* a s'écrit avec 3 chiffres (99 < a < 225)\n\n- si u=9 a = 100 **c** + 10 **d** + **9**  \n  b = 100 **c** + 10 **(d+1)** + 0 ( d<3 car n°page <225, donc d+1 sans retenue)\n\nDonc S(a,b) = **c** + **d** + **9** + **c** + **d** +**1** = 2 (c +d) + 10 = 18\n\nOn en déduit que 2 (c+ d ) = 18 - 10 = 8 et finalement que c + d = 4\n\n*Conclusion*\n\n- c = 0 et d = 4 --> **impossible car on retombe sur un nombre a avec 2 chiffres**\n- ou c = 1 et d = 3 --> a = 139 et b =140\n- ou c = 2 et d = 2 --> **impossible car sinon a =229 et b= 230 qui sont > 225**\n- ou c = 3 et d =1 --> **impossible car le nombre de pages < 225 (centaine <3)**\n\nLe même raisonnement amène une étude des cas similaires pour les 2 dernières pages e et f du chapitre 2.\n\nMais comme e et f sont supérieurs à a et b, il ne reste qu'une seule possibilité :\n\n**1ère page du chapitre n°2 : a = 49 dernière page du chapitre n° 2 : f = 140**\n\nNombre de pages du chapitre n° 2 : 140 - 49 = 91\n\ndonc page n°49 + 91 pages = pages n° 140\n\nSoit au total 92 pages (**et pas 91, piège !!**)\n\n**Le chapitre n°2 de ce livre contient 92 pages**",
+    "figures": [
+      {
+        "id": "2018-qf-7-corr-pages",
+        "description": "Schéma des pages du livre : chapitre n°1 (pages …), chapitre n°2 commençant par les pages a et b et se terminant par les pages e et f, chapitre n°3 (pages …).",
+        "imageUrl": "q07_corr-pages.png"
+      }
+    ]
+  }
+}

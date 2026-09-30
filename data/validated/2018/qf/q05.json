@@ -1,0 +1,60 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 28,
+        "y": 413
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 57
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-5",
+  "number": 5,
+  "title": "L'anniversaire",
+  "coefficient": 5,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "« Avant-hier je n’avais encore que 8 ans, mais à la fin de l’année, j’aurai déjà 10 ans » dit le jeune Mathis.\n\n**Quel jour de l'année Mathis fête-t-il son anniversaire ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "31 décembre"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-5-corr-timeline)\n\nMathis à 9 ans le jour où il parle, 8 ans 2 jours avant et 10 ans avant la fin de l'année en cours.\n\nOn a donc 365 +2 = 367 jours à cheval sur 3 années civiles.\n\n- Si Mathis parle le 2 janvier, son anniversaire, l'année civile précédente, ne peut être que le 31 décembre. Mais le dernier jour de ses 8 ans est alors le 30 décembre, 3 jours avant le 2 janvier --> contradiction.\n- Si Mathis parle le 1er janvier, deux jours avant soit le 30 décembre, il avait encore 8 ans, alors son anniversaire ne peut être que le 31 décembre.",
+    "figures": [
+      {
+        "id": "2018-qf-5-corr-timeline",
+        "description": "Frise chronologique : en bleu les années civiles N-1, N, N+1 séparées par les 1er janvier ; en noir l'axe du temps avec le 2 janvier, « jour où Mathis parle » ; en rouge les périodes « 8 ans », « 9 ans », « 10 ans » séparées par les anniversaires du 31 décembre, avec « 2 jours » en vert entre l'anniversaire et le jour où Mathis parle.",
+        "imageUrl": "q05_corr-timeline.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 382
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-4",
+  "number": 4,
+  "title": "En faire tout un cube",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Alex a réalisé ce grand cube plein à l'aide de petits cubes tous identiques.\n\n![figure](figure:2018-sf-4-alex)\n\nCathy veut réaliser le même cube. Voici le début de sa construction.\n\n![figure](figure:2018-sf-4-cathy)\n\n**Combien de petits cubes lui manque-t-il pour réaliser le même cube qu'Alex ?**",
+    "figures": [
+      {
+        "id": "2018-sf-4-alex",
+        "description": "Le grand cube d'Alex, de 3 petits cubes de côté.",
+        "imageUrl": "q04_fig-alex.png"
+      },
+      {
+        "id": "2018-sf-4-cathy",
+        "description": "Le début de la construction de Cathy : un assemblage de quelques petits cubes (une colonne de deux cubes à gauche, et des cubes posés à côté).",
+        "imageUrl": "q04_fig-cathy.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 21
+  },
+  "correction": {
+    "markdown": "Pour le grand cube : À chaque étage il y a 9 cubes et il y a 3 étages.\n9×3=27. Le grand cube est composé de 27 petits cubes.\n\nLe début de la construction est composée de 6 petits cubes.\n27-6=21.\n\nIl manque **21 petits cubes**."
+  }
+}

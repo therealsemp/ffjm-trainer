@@ -1,0 +1,65 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 158
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 25,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-8",
+  "number": 8,
+  "title": "La bande des dix",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**Placez les nombres de 1 à 9 dans les disques vides** de telle sorte que la somme de trois nombres alignés soit toujours égale à 18.\n\n![figure](figure:2018-sf-8-disks)\n\nSur le bulletin-réponse, on écrira seulement dans l'ordre les trois nombres écrits dans les disques grisés.",
+    "figures": [
+      {
+        "id": "2018-sf-8-disks",
+        "description": "Un réseau de 10 disques reliés par des segments formant des alignements de trois disques : une rangée de 3 disques en haut, une rangée du milieu de 3 disques grisés, une rangée du bas de 3 disques dont celui de gauche contient déjà 10, plus un disque entre la rangée du haut et celle du milieu, à gauche.",
+        "imageUrl": "q08_fig-disks.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "8, 6, 4"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-sf-8-corr-disks)\n\n1+2+3+4+5+6+7+8+9+10=55.\nQuand on additionne les trois alignements horizontaux,\nCela donne 3×18=54 et 55-54=1.\n1 se place au dessus du 10.\n18-10-1=7 qui se place au dessus du 1.\n4 n'est aligné ni avec 1 (car 4+1+13=18) ni avec 10 (car 4+10+4=18).\nIl reste donc une seule place pour ce chiffre.\nConsidérons le nombre à côté du 7. Il fait partie de 4 alignements.\nQuand on additionne ces quatre alignements on trouve 4×18=72.\nOn a compté 1 fois chaque nombre de 1 à 9 sauf ce nombre qui est compté 4 fois soit 3 de plus.\n1+2+3+4+5+6+7+8+9=45. 72-45=27. et 27÷3=9. Ce nombre est 9.\n18-1-9=8. On place le 8.\n18-7-9=2. On place le 2.\n18-10-2=6. On place le 6.\n18-9-6=3. On place le 3.\n18-9-4=5. On place le 5.\nOn vérifie le dernier alignement 10+3+5=18. Les trois nombres sont **8, 6 et 4**.",
+    "figures": [
+      {
+        "id": "2018-sf-8-corr-disks",
+        "description": "Le réseau complété : rangée du haut 7, 9, 2 ; disque intermédiaire 1 ; rangée du milieu (grisée) 8, 6, 4 ; rangée du bas 10, 3, 5.",
+        "imageUrl": "q08_corr-disks.png"
+      }
+    ]
+  }
+}

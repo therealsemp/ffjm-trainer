@@ -1,0 +1,61 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 299
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 48,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-13",
+  "number": 13,
+  "title": "Les aiguilles s'échangent",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Vous avez regardé votre montre entre 15h et 16h et gardé en tête son image, quand maintenant en la regardant entre 18h et 19h vous vous apercevez que les positions des deux aiguilles (les heures, les minutes) ont été exactement échangées.\n\n**Quelle heure est-il ?**\n\nOn donnera la réponse en heure, minutes, secondes et on arrondira à la seconde la plus proche."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "18 h 17 min 37 s"
+  },
+  "correction": {
+    "markdown": "Il était 15 h N min et il est maintenant 18 h P min.\nL'aiguille des heures parcourt 30° par heure car 30×12=360.\nL'aiguille des minutes parcourt 360° par heure.\nÀ 15 h N min, l'angle de l'aiguille des heures est de 90+(N/60)×30=90+N/2 °\net l'angle de l'aiguille des minutes est de (N/60)×360=6N °.\nÀ 18 h P min, l'angle de l'aiguille des heures est de 180+P/2 °\net l'angle de l'aiguille des minutes est de 6P °.\n6P=90+N/2 donc N=12P-180.\n6N=180+P/2 donc 12N=360+P.\n12(12P-180)=360+P.\n144P-12×180=2×180+P.\n143P=14×180=2520.\nOn divise 2520 par 143 :\n\n![figure](figure:2018-sf-13-corr-div1)\n\n89×60=5340.\nOn divise 5340 par 143 :\n\n![figure](figure:2018-sf-13-corr-div2)\n\nIl y a 1 solution et il est maintenant **18 h 17 min 37 s** environ.",
+    "figures": [
+      {
+        "id": "2018-sf-13-corr-div1",
+        "description": "Division posée : 2520 divisé par 143 donne 17, reste 89.",
+        "imageUrl": "q13_corr-div1.png"
+      },
+      {
+        "id": "2018-sf-13-corr-div2",
+        "description": "Division posée : 5340 divisé par 143 donne 37, reste 49.",
+        "imageUrl": "q13_corr-div2.png"
+      }
+    ]
+  }
+}

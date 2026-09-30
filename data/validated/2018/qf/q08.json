@@ -1,0 +1,70 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 300,
+        "y": 77
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 57,
+          "y": 327
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-8",
+  "number": 8,
+  "title": "Les triminos",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un trimino est un assemblage de trois petits carrés. On pose des triminos rectangulaires sur une grille carrée de 4 cases sur 4 (voir la figure où un premier trimino est posé). Chaque trimino doit recouvrir exactement trois carrés de la grille dont au moins un carré vide. Il peut donc éventuellement recouvrir d’une case ou de deux cases un trimino déjà posé. **En comptant le trimino déjà posé, combien de triminos rectangulaires peut-on poser, au maximum, en respectant la règle ?**\n\n![figure](figure:2018-qf-8-grid)",
+    "figures": [
+      {
+        "id": "2018-qf-8-grid",
+        "description": "Grille de 4 cases sur 4 ; un trimino rectangulaire orange recouvre les trois premières cases de la ligne du haut.",
+        "imageUrl": "q08_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "12"
+  },
+  "correction": {
+    "markdown": "Il existe deux formes pour les triminos\n\n![figure](figure:2018-qf-8-corr-shapes)\n\nSeule la forme rectangulaire sera ici utilisée.\n\nVoir le cas général de ces objets : les polyominos : https://fr.wikipedia.org/wiki/Polyomino\n\nUne fois posé le 1ᵉʳ rectangle, il reste dans la grille carrée 4 * 4 - 3 = 16 - 3 = 13 cases de libres\n\nSi on optimise au maximum la pose des triminos suivants, en recouvrant (si c'est possible) à chaque fois 2 cases déjà pavées, on en utilisera une case libre à chaque pose. On pourrait donc mettre 13 nouveaux triminos rectangles , soit 14 au total.\n\nMais cela n'est pas possible au moins 2 fois, on va alors consommer 2 cases de libre -Voir (1) et (2)\n\n![figure](figure:2018-qf-8-corr-solution)\n\n**Voici une solution avec 12 triminos rectangulaires**, soit le maximum possible.",
+    "figures": [
+      {
+        "id": "2018-qf-8-corr-shapes",
+        "description": "Les deux formes de trimino : trois carrés alignés, et trois carrés en L.",
+        "imageUrl": "q08_corr-shapes.png"
+      },
+      {
+        "id": "2018-qf-8-corr-solution",
+        "description": "Douze grilles 4×4 montrant pas à pas la pose de 12 triminos rectangulaires numérotés de 1 à 12 (le dernier posé en orange à chaque étape) ; les étapes 3 et 4 sont marquées (1) et (2).",
+        "imageUrl": "q08_corr-solution.png"
+      }
+    ]
+  }
+}

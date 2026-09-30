@@ -1,0 +1,67 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 573,
+        "y": 206
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 48,
+          "y": 65
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-15",
+  "number": 15,
+  "title": "La pyramide de Mick Erinos",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Dans la pyramide de Mick Erinos, chaque brique contient un nombre entier positif, et à partir du premier étage un nombre égal à la somme des deux nombres inscrits dans les briques sur lesquelles elle est posée. La somme de tous les nombres inscrits dans la pyramide vaut 2018. **Quel est le nombre écrit dans la brique grise ?**\n\n![figure](figure:2018-qf-15-pyramid)",
+    "figures": [
+      {
+        "id": "2018-qf-15-pyramid",
+        "description": "Pyramide de briques à 5 étages (5, 4, 3, 2 et 1 briques). Rangée du bas : 17, 44, (vide), (vide), 32. La brique centrale du 3e étage (en partant du bas) est grise et marquée « ? ».",
+        "imageUrl": "q15_fig-pyramid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "4 solutions : 135, 144, 153 ou 162"
+  },
+  "correction": {
+    "markdown": "Modélisation sur tableur\n\n![figure](figure:2018-qf-15-corr-model)\n\nLa valeur de la cellule centrale se calcule avec la formule **S = 44 + 2a +b**\n\nLa somme de toute les cellules de cette pyramide de nombres est égale à : 19 a +14 b + 861 = 2018\n\nOn arrive à l'équation (diophantienne : entière avec plus d'inconnues que d'équations) :\n\n\\[a = \\frac{1157 - 14\\, b}{19}\\]\n\nIl suffit de vérifier à l'aide d'un tableur pour quelles valeurs entières de b , le nombre a est aussi un entier positif. On trouve :\n\n- **pour b = 8 a = 55** = (1157 -14 x 8)/1955 = 1045/19 on trouve S = 44 + 8 + 2 x 55 = 162\n- **pour b= 27 a = 41** on trouve S = 44 + 27 + 2 x 41 = 153\n- **pour b = 46 a = 27** on trouve S = 44 + 46 + 2 x 27 = 144\n- **pour b = 65 a = 13** on trouve S = 44 + 65 + 2 x 13 = 135\n\n**Il y a donc 4 solutions : 135 - 144 - 153 - 162**\n\nVérification sur un exemple\n\n![figure](figure:2018-qf-15-corr-check)",
+    "figures": [
+      {
+        "id": "2018-qf-15-corr-model",
+        "description": "Pyramide modélisée sur tableur. Rangée du bas : 17, 44, a, b, 32 ; puis 61, 44+a, a + b, 32 + b ; puis 105 + a, 44 + 2a + b (case centrale surlignée en jaune), 32 + a + 2b ; puis 149 + 3a +b, 76 + 3a +3b ; au sommet 225 +6a + 4b.",
+        "imageUrl": "q15_corr-model.png"
+      },
+      {
+        "id": "2018-qf-15-corr-check",
+        "description": "Pyramide de vérification avec a = 55 et b = 8. Rangée du bas : 17, 44, 55, 8, 32 ; puis 61, 99, 63, 40 ; puis 160, 162 (en jaune), 103 ; puis 322, 265 ; au sommet 587. « Total des cellules = 2018 ».",
+        "imageUrl": "q15_corr-check.png"
+      }
+    ]
+  }
+}

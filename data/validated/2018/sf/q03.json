@@ -1,0 +1,59 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 267
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 10,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-3",
+  "number": 3,
+  "title": "Partage",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Liv coupe son gâteau. Il donne 4 coups de couteau comme indiqué en pointillés sur le dessin.\n\n![figure](figure:2018-sf-3-cake)\n\n**En combien de morceaux aura-t-il découpé son gâteau ?**",
+    "figures": [
+      {
+        "id": "2018-sf-3-cake",
+        "description": "Un gâteau roulé (cylindre couché) avec un couteau. Trois coupes verticales en pointillés le partagent en tranches, et une coupe horizontale en pointillés le traverse sur toute sa longueur ; sur la face droite, une coupe verticale en pointillés croise la coupe horizontale.",
+        "imageUrl": "q03_fig-cake.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": 12
+  },
+  "correction": {
+    "markdown": "On a coupé 3 tranches de gâteau et dans chaque tranche il y a 4 morceaux (voir le côté droit du gâteau).\n3×4=12.\n\nIl y a **12 morceaux**."
+  }
+}

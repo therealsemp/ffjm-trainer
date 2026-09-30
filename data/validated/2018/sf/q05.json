@@ -1,0 +1,59 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 497
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 13,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-5",
+  "number": 5,
+  "title": "Duo de fleurs",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Soline a commencé ce tableau. Elle utilise seulement deux sortes de fleurs, l'une à quatre pétales et l'autre à trois pétales. Une fois terminé, elle veut avoir 10 fleurs et 33 pétales.\n\n![figure](figure:2018-sf-5-table)\n\n**Combien utilise-t-elle de fleurs de chaque sorte ?**",
+    "figures": [
+      {
+        "id": "2018-sf-5-table",
+        "description": "Un tableau (cadre rectangulaire) contenant deux fleurs : une fleur claire à quatre pétales et une fleur grise à trois pétales.",
+        "imageUrl": "q05_fig-table.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 fleurs à 4 pétales et 7 fleurs à 3 pétales"
+  },
+  "correction": {
+    "markdown": "Les 10 fleurs ont au moins 3 pétales soit au total 10×3=30 pétales.\n33-30=3. Il y a 3 pétales en plus (un par fleur),\nc'est à dire qu'il y a 3 fleurs à 4 pétales.\n10-3=7. Il y a 7 fleurs à 3 pétales.\n\nVérification : 3+7=10 fleurs et (3×4)+(7×3)=12+21=33 pétales.\n\nIl y a **3 fleurs à 4 pétales et 7 fleurs à 3 pétales**."
+  }
+}

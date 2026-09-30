@@ -1,0 +1,67 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 573,
+        "y": 318
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 12,
+        "position": {
+          "x": 53,
+          "y": 57
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-16",
+  "number": 16,
+  "title": "Le terrain du père Fide",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Le père Fide possède un terrain quadrilatéral. Ce terrain possède deux côtés perpendiculaires de 100 mètres de long, deux angles opposés droits et deux autres angles dont l’un mesure le double de l’autre. **Quelle est, en m², éventuellemnt arrondie à l’entier le plus proche, l’aire du terrain du Père Fide ?**\n\n![figure](figure:2018-qf-16-field)",
+    "figures": [
+      {
+        "id": "2018-qf-16-field",
+        "description": "Quadrilatère avec un côté vertical gauche de 100 m et un côté horizontal bas de 100 m formant un angle droit en bas à gauche ; un deuxième angle droit au sommet en haut à droite du petit côté supérieur ; l'angle en haut à gauche est marqué 2â et l'angle en bas à droite â.",
+        "imageUrl": "q16_fig-field.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "7500"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2018-qf-16-corr-circle)\n\nVoir modélisation géogébra\n\n*Rappel de la propriété de 4ème :*\n\nLe centre du cerce circonscrit à un triangle rectangle ABC, est le milieu O de son hypoténuse.\n\nOn peut ici appliquer cette propriété aux triangles ABC et ADC rectangle en B et D.\n\nOn remarque qu'ils ont la même hypoténuse AC.\n\nDonc c'est le même cercle qui passe par les points A, B, C et D !\n\nOn dit que ces 4 points sont cocycliques.\n\n(par conséquence R = OA = OB = OC = OD)\n\nDans un quadrilatère, la somme des angles intérieurs vaut toujours 360° (2 x 180° car on peut découper ABCD en deux triangles ABC et ACD)\n\nMais comme on a déjà deux angles droits, soit 2 x 90 = 180°, il reste 180° pour les 2 angles opposés restants α et β. Ces deux angles sont donc supplémentaires.\n\n*Remarque*\n\nOn vient de redémontrer, dans un cas particulier, la propriété classique suivante : quatre points sont cocycliques, si le quadrilatère non croisé qu'ils forment, a deux angles opposés complémentaires (leur somme fait 180°).\n\nEn résumé, on vient de démontrer que **α + β = 180° (1)**\n\nMais de plus l'énoncé nous dit qu'un des deux angles vaut le double de son angle opposé,\n\nsoit **β = 2 α (2)** ( ou α = 2 β ce qui donnerait un dessin symétrique)\n\nOn regroupant ces deux équations on obtient : α + 2 α = 180° soit 3 α = 180° et donc α = 60°\n\nPar conséquent β = 180 - 60 = 120°\n\nOn vient de prouver que **α = 60° et β = 120°**\n\nNotons l'aire du terrain \\(T = T_1 + T_2\\)\n\n\\(T_1\\) est un triangle rectangle isocèle\n\n- donc on peut calculer la valeur des angles BAC = BCA = 45°\n- son aire vaut la moitié d'un rectangle :  \n  \\(T_1\\) = 100 x 100 /2 = 5 000 **\\(T_1\\) = 5 000 m²**\n- son hypoténuse AC se calcule par application du théorème de Pythagore :  \n  AC² = AB² + BC² = 100² + 100² = 2 x 100²  \n  \\(AC = 100\\sqrt{2}\\)\n\n![figure](figure:2018-qf-16-corr-triangle)\n\n*Calcul de l'aire de \\(T_2\\)*\n\nAngle ADC = β - BCA = 120 - 45 = 75 °\n\nPar application des formules de trigonométrie :\n\nDC = AC x cos (75)\n\nOn a vu que \\(AC = 100\\sqrt{2}\\)\n\nA la calculatrice (collège) : \\(\\cos 75 = \\dfrac{\\sqrt{6} + \\sqrt{2}}{4}\\)\n\nD'où \\(DC = 100\\sqrt{2} \\times \\dfrac{\\sqrt{6} + \\sqrt{2}}{4} = 100 \\times \\dfrac{\\sqrt{12} + \\sqrt{4}}{4} = 25 \\times \\sqrt{3 * 4} + 2 = 25 \\times 2\\sqrt{3} + 2\\)\n\nDe même AD = AC x sin (75)\n\nA la calculatrice (collège) : \\(\\cos 75 = \\dfrac{\\sqrt{6} - \\sqrt{2}}{4}\\)\n\nD'où \\(AD = 100\\sqrt{2} \\times \\dfrac{\\sqrt{6} - \\sqrt{2}}{4} = 100 \\times \\dfrac{2\\sqrt{3} - 2}{4} = 25 \\times (2\\sqrt{3} - 2)\\)\n\nOn peut enfin calculer l'aire du triangle rectangle\n\n\\(T_2 = \\dfrac{AD \\times DC}{2} = \\dfrac{25 * 25}{2} \\times (2\\sqrt{3} - 2) \\times 2\\sqrt{3} + 2\\)\n\nOn utilise l'identité remarquable (a +b) x (a-b) = a ² - b²\n\n\\(T_1 = \\dfrac{625}{2} \\times (2\\sqrt{3})^2 - 2^2 = \\dfrac{625 * (4 * 3 - 4)}{2} = \\dfrac{625 * 8}{2}\\) **= 2 500 = \\(T_1\\)**\n\nAu final \\(T = T_1 + T_2\\) = 2 500 + 5 000 = 7 000\n\n**La surface totale du terrain est de T = 7 500 m²**",
+    "figures": [
+      {
+        "id": "2018-qf-16-corr-circle",
+        "description": "Figure GeoGebra : quadrilatère ABCD inscrit dans un cercle de centre O (milieu de [AC]). AB = BC = 100, angle droit en B et en D. Triangle ABC (T₁ = 5000, en rose), triangle ADC (T₂ = 2500, en bleu clair), α = 60° en A, β = 120° en C, AD = 136.6, DC = 36.6.",
+        "imageUrl": "q16_corr-circle.png"
+      },
+      {
+        "id": "2018-qf-16-corr-triangle",
+        "description": "Triangle ADC rectangle en D, avec un angle de 15° en A et de 75° en C.",
+        "imageUrl": "q16_corr-triangle.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 28,
+        "y": 466
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 40,
+          "y": 389
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-6",
+  "number": 6,
+  "title": "Suite",
+  "coefficient": 6,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Le premier terme d’une suite est 718.\n\nChaque terme suivant est égal à la somme des chiffres du terme précédent multipliée par 13.\n\n**Quel est le 2018ᵉ terme de cette suite ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "91"
+  },
+  "correction": {
+    "markdown": "On calcule les premiers termes de cette suite de nombre\n\n\\(U_1\\) = 718\n\n\\(U_2\\) = (7+1+8) * 13 = 16 * 13 = 208\n\n\\(U_3\\) = (2 + 0 + 8) * 13 = 10 * 13 = 130\n\n\\(U_4\\) = (1 + 3 +0) * 13 = 4 * 13 = 52\n\n\\(U_5\\) = (5 + 2) * 13 = 7 * 13 = 91\n\n\\(U_6\\) = (9 + 1) * 13 = 130\n\n\\(U_7\\) = (1 + 3) * 13 = 4 * 13 = 52\n\n\\(U_8\\) = (5+2) * 13 = 7 * 13 = 91\n\n\\(U_9\\) = (9+1) * 13 = 10 * 13 = 130\n\n.... etc....\n\nOn tombe sur un cycle de 3 valeurs 52 - 91 - 130 qui se répète à partir du rang 3\n\nDonc \\(U_3 = U_6 = U_9 = ... = U_{3n}\\) = 130\n\nLes rangs d'indices multiples de 3 donnent tous la valeur 130 à cette suite\n\nOr 2018 = 3 * 672 + 2 = 2016 + 2 Donc \\(U_{2016}\\) = 130 et par conséquent \\(U_{2017}\\) = 52 puis \\(U_{2018}\\) = 91\n\n**Le 2018ᵉ terme de la suite a pour valeur 91**\n\n*Remarque*\n\nAvec un autre terme de départ \\(U_1\\), cette suite pourrait avoir un point fixe égal à 195.\n\nEn effet, s'il existe un rang n tel que \\(U_n\\) = 195 alors pour le terme suivant de la suite\n\n\\(U_{n+1}\\) = (1+9+5) * 13 = 15 * 13 = 195 La suite devient alors constante à 195 !",
+    "figures": []
+  }
+}

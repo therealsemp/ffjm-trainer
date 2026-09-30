@@ -1,0 +1,48 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "qf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale individuels",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/qf/2018_qf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 573,
+        "y": 429
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/qf/2018_qf_solution-detailed.pdf",
+        "page": 13,
+        "position": {
+          "x": 52,
+          "y": 540
+        }
+      }
+    ]
+  },
+  "id": "2018-qf-17",
+  "number": 17,
+  "title": "Successeur et double",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Le nombre 2018 est le double d’un nombre premier, 1009, et le successeur d’un autre nombre premier, 2017.\n\n**Quelle sera la prochaine année dont le numéro sera à la fois double et successeur d’un nombre premier ?**",
+    "figures": []
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2138"
+  },
+  "correction": {
+    "markdown": "Voir le programme sur Scratch (langage vu de la 5ème à la 3ème).\n\nIl faut exploiter une liste au format CSV (base de sonnées) des nombres 1ers < 10 000\n\n**On trouve l'année 2138.**\n\n2138/2 = 1069 est un nombre 1ᵉʳ\n\n2138 - 1 = 2137 est un nombre 1ᵉʳ\n\n*Complément*\n\nSolutions suivantes :\n\n- 2342 : 2342/2 = 1171 nombre 1ᵉʳ, 2342-1 = 2341 nombre 1ᵉʳ\n- 2474 : 2474/2= 1237 nombre 1ᵉʳ, 2474 - 1 = 2473 nombre 1ᵉʳ",
+    "figures": []
+  }
+}

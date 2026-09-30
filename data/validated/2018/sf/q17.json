@@ -1,0 +1,46 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 293
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 62,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-17",
+  "number": 17,
+  "title": "Les sept dés",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "On lance simultanément sept dés classiques (ayant chacun six faces numérotées de 1 à 6).\n\n**Quelle est la probabilité pour que les six valeurs possibles (1, 2, 3, 4, 5 et 6) apparaissent sur les faces supérieures de ces sept dés** (l'une des valeurs étant évidemment répétée) **?**\n\nOn donnera la réponse sous la forme d'une fraction irréductible."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "35/648"
+  },
+  "correction": {
+    "markdown": "Chaque dé ayant 6 faces, il y a 6⁷ combinaisons.\nLes bonnes combinaisons sont les permutations de\n1123456, 1223456, 1233456, 1234456, 1234556 ou de 1234566.\nPour chacune d'entre elles il y a 7 !/2 ! permutations\npuisqu'un chiffre est répété 2 fois.\nLa probabilité est donc de :\n\n\\[\\frac{6}{6^7}\\times\\frac{7!}{2!}=\\frac{6\\times 7\\times 6\\times 5\\times 4\\times 3\\times 2}{2\\times 6\\times 6\\times 6\\times 6\\times 6\\times 6\\times 6}=\\frac{7\\times 5\\times 4}{2\\times 6\\times 6\\times 6\\times 6}=\\frac{7\\times 5\\times 4}{2\\times 2\\times 3\\times 6\\times 6\\times 6}=\\frac{7\\times 5}{3\\times 6\\times 6\\times 6}=\\frac{35}{18\\times 36}=\\frac{35}{648}.\\]\n\nLa probabilité est donc de **35/648**."
+  }
+}

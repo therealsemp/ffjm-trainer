@@ -1,0 +1,67 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 682
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 41,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-11",
+  "number": 11,
+  "title": "Les tramways",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathias et Mathilde se donnent toujours rendez-vous à la même station de tramway. Les tramways passent à des intervalles rigoureusement réguliers, qui sont les mêmes chaque jour.\n\nMercredi, Mathias est arrivé en avance ; il a attendu 12 minutes et 10 secondes et il a vu passer 5 tramways.\n\nJeudi, il était à l'heure mais Mathilde était en retard de 20 minutes, et Mathias a vu passer 6 tramways.\n\nVendredi, Mathilde était à l'heure, mais Mathias était en avance d'exactement 30 minutes.\n\n**Combien Mathias a-t-il vu passer de tramways avant l'arrivée de Mathilde ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 solutions : 9, 10 ou 11"
+  },
+  "correction": {
+    "markdown": "En 12 min 10 s, Mathias a vu 5 tramways.\nAu maximum, on a le graphique suivant :\n\n![figure](figure:2018-sf-11-corr-max)\n\n12 min 10 s divisé par 4 cela donne un peu plus que 3 min 2 s.\nAu minimum, on a le graphique suivant :\n\n![figure](figure:2018-sf-11-corr-min)\n\n12 min 10 s divisé par 6 cela donne un peu plus de 2 min 1 s.\nDonc l'intervalle entre deux tramways est entre 2 min 1 s et 3 min 3 s.\n\nEn 20 min, Mathias a vu 6 tramways.\nAu maximum, on a 20 min divisé par 5 cela donne 4 min.\nAu minimum, on a 20 min divisé par 7 cela donne un peu plus de 2 min 51 s.\nDonc l'intervalle entre deux tramways est entre 2 min 51 s et 3 min 3 s.\n\nOn est autour de 3 min par intervalle, soit environ 10 tramways en 30 min.\n30 min divisé par 10 cela donne 3 min.\n30 min divisé par 11 cela donne un peu plus de 2 min 43 s < 2 min 51 s.\n30 min divisé par 9 cela donne 3 min 20 s > 3 min 3 s.\n\nLa division par 10 donne trois graphique possibles :\n\n![figure](figure:2018-sf-11-corr-ten)\n\nIl y a **3 solutions : 9, 10 et 11**.",
+    "figures": [
+      {
+        "id": "2018-sf-11-corr-max",
+        "description": "Un segment de temps découpé en 4 intervalles égaux, avec un trait vertical à chaque extrémité et à chaque séparation : 5 passages, dont un au début et un à la fin.",
+        "imageUrl": "q11_corr-max.png"
+      },
+      {
+        "id": "2018-sf-11-corr-min",
+        "description": "Un segment de temps découpé en 6 intervalles par 5 traits verticaux intérieurs, sans trait aux extrémités : 5 passages, aucun au début ni à la fin.",
+        "imageUrl": "q11_corr-min.png"
+      },
+      {
+        "id": "2018-sf-11-corr-ten",
+        "description": "Trois segments de 30 min découpés en 10 intervalles égaux : le premier avec des traits aux deux extrémités (11 passages), le deuxième avec un trait au début seulement (10 passages), le troisième sans trait aux extrémités (9 passages).",
+        "imageUrl": "q11_corr-ten.png"
+      }
+    ]
+  }
+}

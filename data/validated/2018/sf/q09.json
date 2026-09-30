@@ -1,0 +1,50 @@
+{
+  "year": 2018,
+  "champNumber": 32,
+  "phase": "sf",
+  "examTitle": "32e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2018/sf/2018_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 418
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2018/sf/2018_sf_solution-detailed.pdf",
+        "page": 35,
+        "position": {
+          "x": 106,
+          "y": 84
+        }
+      }
+    ]
+  },
+  "id": "2018-sf-9",
+  "number": 9,
+  "title": "La suite de Mathias",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathias a écrit quatre nombres entiers tous différents, strictement plus grands que 1 et strictement plus petits que 10. Il continue sa suite de telle sorte que la somme de quatre nombres écrits consécutivement dans la suite soit toujours égale à 18.\n\nLe premier nombre écrit est un 2 et le septième est un 4.\n\n**Quel peut être le 2018e ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "4 solutions : 3, 5, 7 ou 9"
+  },
+  "correction": {
+    "markdown": "Prenons des lettres pour se repérer : 2-A-B-C-D-E-4.\n\\(2+\\underline{A+B+C}=\\underline{A+B+C}+D=18\\). Donc D=2.\n\\(\\underline{C+D+E}+4=B+\\underline{C+D+E}=18\\). Donc B=4.\nOn obtient la suite 2-A-4-C-2-A-4.\nLes termes de rang impair sont donc successivement 2 et 4.\nA+C=18-2-4=12.\nOr 12=9+3 (ok). 12=8+4 (non 4 est déjà utilisé). 12=7+5 (ok). 12=6+6 (non).\nPar conséquent les termes de rang pair sont donc alternativement 9 et 3 ou bien 7 et 5. Le 2018ᵉ terme peut être l'un de ces quatre nombres.\n\nIl y a **4 solutions : 3, 5, 7 et 9**."
+  }
+}

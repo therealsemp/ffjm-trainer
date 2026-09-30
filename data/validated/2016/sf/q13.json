@@ -1,0 +1,56 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 126
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 19,
+        "position": {
+          "x": 213,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-13",
+  "number": 13,
+  "title": "Le rectangle modifié",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "On a diminué la longueur d'un rectangle d'un certain pourcentage et on a augmenté sa largeur du même pourcentage. Ce pourcentage s'exprime par un nombre entier de pourcents.\n\nAprès ces modifications, l'aire du rectangle a diminué de moins de 2 %.\n\n**Quel était, au maximum, le pourcentage de diminution de la longueur et d'augmentation de la largeur ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "14"
+  },
+  "correction": {
+    "markdown": "- On cherche le plus grand entier p tel que (1 - p/100)(1 + p/100) > 0,98\n- 1 – \\((p/100)^2\\) > 0,98\n- \\((p/100)^2\\) < 0,02\n- p/100 < 0,1414…\n\n![figure](figure:2016-sf-13-corr-rectangles)\n\n- Réponse : **14 %**",
+    "figures": [
+      {
+        "id": "2016-sf-13-corr-rectangles",
+        "description": "Un rectangle de côtés L et l, puis le rectangle modifié de côtés L (1 - p/100) et l (1 + p/100).",
+        "imageUrl": "q13_corr-rectangles.png"
+      }
+    ]
+  }
+}

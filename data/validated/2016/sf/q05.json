@@ -1,0 +1,81 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 481
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 255,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-5",
+  "number": 5,
+  "title": "Auto-référence",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "**Ecrivez un nombre sur chacun des six pointillés pour que les cinq comptages soient vrais.**\n\nTout nombre écrit dans le cadre doit être compté, c’est-à-dire écrit au moins une fois à droite après un mot « fois ».\n\n![figure](figure:2016-sf-5-fig-frame)",
+    "figures": [
+      {
+        "id": "2016-sf-5-fig-frame",
+        "description": "Cadre contenant : « Dans ce cadre, il y a / ... fois 2 / ... fois 0 / ... fois 1 / ... fois 6 / ... fois ... ».",
+        "imageUrl": "q05_fig-frame.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 fois 2, 1 fois 0, 3 fois 1, 1 fois 6, 3 fois 3"
+  },
+  "correction": {
+    "markdown": "- Tout nombre écrit est compté, il n’y a pas de 0 à gauche\n\n- S’il y a deux 0 (à droite)\n- Il y a au moins trois 2\n- D’où une contradiction\n\n![figure](figure:2016-sf-5-corr-frame-1)\n\n- S’il y a deux 6\n- Le second 6 est à droite\n- Il y a au moins trois 2\n- D’où une contradiction\n\n![figure](figure:2016-sf-5-corr-frame-2)\n\n- Il y a au moins trois 1\n- C’est le nombre en bas à droite\n\n- Si c’est 4\n- Le quatrième 1 est en haut (à gauche)\n- D’où une contradiction\n\n![figure](figure:2016-sf-5-corr-frame-3)\n\n- Il n’y pas trois 2, il y en a deux\n- Il y a trois 3\n\n- *Note : la réponse est unique*\n\n![figure](figure:2016-sf-5-corr-frame-4)",
+    "figures": [
+      {
+        "id": "2016-sf-5-corr-frame-1",
+        "description": "Cadre : « ... fois 2 / 2 fois 0 / ... fois 1 / ... fois 6 / 2 fois 0 », les 2 et le dernier 0 en rouge.",
+        "imageUrl": "q05_corr-frame-1.png"
+      },
+      {
+        "id": "2016-sf-5-corr-frame-2",
+        "description": "Cadre : « ... fois 2 / 1 fois 0 / ... fois 1 / 2 fois 6 / 2 fois 6 », les 2 et le dernier 6 en rouge.",
+        "imageUrl": "q05_corr-frame-2.png"
+      },
+      {
+        "id": "2016-sf-5-corr-frame-3",
+        "description": "Cadre : « 1 fois 2 / 1 fois 0 / 4 fois 1 / 1 fois 6 / ... fois 4 », le premier 1, le 4 et le dernier 4 en rouge.",
+        "imageUrl": "q05_corr-frame-3.png"
+      },
+      {
+        "id": "2016-sf-5-corr-frame-4",
+        "description": "Cadre solution sur fond vert : « 2 fois 2 / 1 fois 0 / 3 fois 1 / 1 fois 6 / 3 fois 3 », le premier 2 et le dernier 3 en bleu.",
+        "imageUrl": "q05_corr-frame-4.png"
+      }
+    ]
+  }
+}

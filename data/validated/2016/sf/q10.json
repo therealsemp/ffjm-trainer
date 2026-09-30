@@ -1,0 +1,64 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 553
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 14,
+        "position": {
+          "x": 277,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-10",
+  "number": 10,
+  "title": "Coloriage",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Sur un damier de 6 cases sur 6 cases, Mathias colorie certaines cases avec la contrainte suivante : deux cases coloriées ne doivent jamais se toucher, même par un sommet.\n\n![figure](figure:2016-sf-10-fig-grid)\n\n**Combien de cases Mathias pourra-t-il colorier, au maximum ?**",
+    "figures": [
+      {
+        "id": "2016-sf-10-fig-grid",
+        "description": "Damier vide de 6 cases sur 6 cases.",
+        "imageUrl": "q10_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "9"
+  },
+  "correction": {
+    "markdown": "- Dans un carré 2x2, il y au plus une case coloriée\n- Le damier est divisible en 9 carrés 2x2\n- Il y a au plus 9 cases coloriées\n\n- C’est possible\n\n![figure](figure:2016-sf-10-corr-grid)\n\n- Réponse : **9 cases**",
+    "figures": [
+      {
+        "id": "2016-sf-10-corr-grid",
+        "description": "Damier 6×6 avec 9 cases coloriées en vert : colonnes 2, 4 et 6 des lignes 2, 4 et 6.",
+        "imageUrl": "q10_corr-grid.png"
+      }
+    ]
+  }
+}

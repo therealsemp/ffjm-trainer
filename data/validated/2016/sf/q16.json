@@ -1,0 +1,60 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 495
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 22,
+        "position": {
+          "x": 220,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-16",
+  "number": 16,
+  "title": "Le pâté de maisons",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Un pâté de maisons a la forme d'un rectangle ABCD de périmètre 2016 mètres. Mathilde et Mathias partent tous les deux du sommet A, Mathilde en marchant à vitesse constante et Mathias en courant à vitesse constante, en sens inverse l'un de l'autre. Mathias arrive en B à l'instant précis où Mathilde arrive en D.\n\nIls continuent, chacun maintenant sa vitesse, et se rencontrent au milieu du côté [CD] 7 minutes et 13 secondes après leur départ.\n\n**Quelles sont, en mètres, les dimensions du pâté de maisons ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "AB = 672 ; AD = 336"
+  },
+  "correction": {
+    "markdown": "- Le rapport de la vitesse de Mathias à celle de Mathilde est L/l\n\n![figure](figure:2016-sf-16-corr-rect-1)\n\n- Quand ils se rencontrent, (L + l + L/2)/(l + L/2) = L/l\n- L = 2l\n\n- L = 2016/3 = 672 et l = 672/2 = 336\n\n![figure](figure:2016-sf-16-corr-rect-2)\n\n- Réponse : **AB = 672 ; AD = 336**",
+    "figures": [
+      {
+        "id": "2016-sf-16-corr-rect-1",
+        "description": "Rectangle ABCD, AB = L, BC = l : flèche orange de A à B (Mathias), flèche bleue de A à D (Mathilde).",
+        "imageUrl": "q16_corr-rect-1.png"
+      },
+      {
+        "id": "2016-sf-16-corr-rect-2",
+        "description": "Même rectangle : Mathias (orange) parcourt A→B→C puis la moitié de CD, Mathilde (bleu) A→D puis la moitié de DC ; ils se rencontrent au milieu de [CD].",
+        "imageUrl": "q16_corr-rect-2.png"
+      }
+    ]
+  }
+}

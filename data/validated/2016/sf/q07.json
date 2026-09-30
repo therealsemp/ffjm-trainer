@@ -1,0 +1,51 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 60
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 11,
+        "position": {
+          "x": 305,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-7",
+  "number": 7,
+  "title": "Le jeu",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Dans un jeu, chaque participant a 16 points au départ et répond à 16 questions.\n\nS’il répond juste, il gagne 1 point.\n\nS’il répond faux, il perd 1 point.\n\nJewel termine avec 20 points.\n\n**Combien de réponses fausses a-t-elle données ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "6"
+  },
+  "correction": {
+    "markdown": "- Quand on passe d’une ligne à la suivante, on perd 2 points à la fin du jeu\n\n| Réponses justes | Réponses fausses | Points à la fin du jeu |\n| --- | --- | --- |\n| 16 | 0 | 32 |\n| 15 | 1 | 30 |\n| 14 | 2 | 28 |\n| 13 | 3 | 26 |\n| 12 | 4 | 24 |\n| 11 | 5 | 22 |\n| **10** | **6** | **20** |\n| 9 | 7 | 18 |\n| … | … | … |\n\n- Réponse : **6 réponses fausses**\n\n- *Note pour les plus grands : 16 – F + (16 – F) = 20 donne F = 6*"
+  }
+}

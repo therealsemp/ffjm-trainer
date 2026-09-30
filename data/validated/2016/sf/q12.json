@@ -1,0 +1,56 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 60
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 16,
+        "position": {
+          "x": 236,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-12",
+  "number": 12,
+  "title": "Produit maximal",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "En utilisant chacun des chiffres 0,1,2,3,4,5,6,7,8,9 une fois et une seule, **formez deux nombres de cinq chiffres afin que leur produit soit maximal**."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "96420 x 87531"
+  },
+  "correction": {
+    "markdown": "- Dans chacun des deux nombres, les chiffres décroissent de gauche à droite\n\n- On coupe chacun des deux nombres en deux nombres dont ceux à droite (\\(\\underline{a}\\) et \\(\\underline{b}\\)) ont le même nombre de chiffres p\n- Soit \\(\\underline{Aa}\\ \\underline{Bb}\\) le produit maximal, \\(\\underline{Aa}\\) commençant par 9\n- \\(\\underline{Aa}\\ \\underline{Bb} > \\underline{Ab}\\ \\underline{Ba}\\) si, et seulement si, en éliminant les termes symétriques,\n\n  \\(\\underline{A}\\ \\underline{b}\\ 10^p + \\underline{a}\\ \\underline{B}\\ 10^p > \\underline{A}\\ \\underline{a}\\ 10^p + \\underline{b}\\ \\underline{B}\\ 10^p\\)\n\n  \\((\\underline{A} - \\underline{B})\\ (\\underline{b} - \\underline{a})\\ 10^p > 0\\)\n\n  \\(\\underline{b} > \\underline{a}\\)\n- Pour p de 1 à 4, \\(\\underline{b}\\) est supérieur à \\(\\underline{a}\\)\n\n- Le chiffre des unités de \\(\\underline{Bb}\\) n’est pas 0 (p = 1)\n\n- \\(\\underline{Aa}\\) ne commence pas par 98 (p = 4)\n\n- \\(\\underline{Aa}\\) ne commence pas par 97 (p = 4)\n\n![figure](figure:2016-sf-12-corr-patterns)\n\n- Selon le chiffre qui suit 9, il y a quatre cas à examiner\n\n  96..0 x 875.. (p = 3 interdit 96**5**.0),\n\n  95..0 x 876.., 94..0 x 8765. et 93210 x 87654\n\n- (x+α)(y-β) – xy = αy – βx – αβ > 0 si, et seulement si, α/β > x/(y – β)\n- x/(y – β) < 96420/87531 ≈ 1,1 (p = 2 interdit 96.**3**0)\n- α/β ≥ 10\n- On maximise \\(\\underline{Aa}\\) et on minimise \\(\\underline{Bb}\\)\n\n- Réponse : **96420 x 87531**",
+    "figures": [
+      {
+        "id": "2016-sf-12-corr-patterns",
+        "description": "Quatre paires de motifs de chiffres, en face des trois remarques : « 9…. / ….0 », « 98..0 / ..... », « 97..0 / 8.… », puis « 9...0 / 87… » ; les chiffres interdits sont en rouge.",
+        "imageUrl": "q12_corr-patterns.png"
+      }
+    ]
+  }
+}

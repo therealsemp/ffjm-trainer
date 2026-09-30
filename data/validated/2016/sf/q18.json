@@ -1,0 +1,58 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 252
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 24,
+        "position": {
+          "x": 276,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-18",
+  "number": 18,
+  "title": "Le prisme",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Un prisme droit en bois possède des bases hexagonales régulières dont chacune des douze arêtes mesure 5 cm.\n\nCe prisme est posé sur l'une de ses bases.\n\nUne fourmi part d'un sommet de la base inférieure et se dirige sur la surface du prisme vers le sommet de la base supérieure tel que le sommet de départ et le sommet d'arrivée soient situés aux extrémités d'une grande diagonale du prisme.\n\nLa fourmi peut parcourir la distance minimale en empruntant quatre chemins différents.\n\n**Quelle est la hauteur du prisme ?**\n\nSi nécessaire, on prendra 1,732 pour \\(\\sqrt{3}\\) et on donnera le résultat en millimètres, arrondi au millimètre le plus proche."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "72"
+  },
+  "correction": {
+    "markdown": "- Il y a 3 chemins candidats, plus les mêmes par l’arrière\n- On déplie pour qu’ils soient des lignes droites\n- Le problème devient : pour quelle hauteur AB, parmi les trois distances \\(AE_1\\), \\(AE_2\\) et \\(AE_3\\), deux sont-elles ex æquo au minimum ?\n\n![figure](figure:2016-sf-18-corr-prism)\n\n![figure](figure:2016-sf-18-corr-unfolded)\n\n- Si \\(AE_1 = AE_2\\), A est sur la médiatrice de \\((E_1,E_2)\\) en bas à gauche, en dessous de la médiatrice de \\((E_2,E_3)\\), \\(AE_3 < AE_2\\) et on n’est pas au minimum\n- Si \\(AE_2 = AE_3\\), A est en dessus de la médiatrice \\((E_1,E_2)\\), \\(AE_1 < AE_2\\) et on n’est pas au minimum\n\n- \\(AE_1 = AE_3\\)\n- \\((a\\sqrt{3} + AB)^2 + a^2 = AB^2 + (3a)^2\\)\n- \\(AB = 5\\sqrt{3}/6\\ a\\) (a = 5 cm)\n\n- Réponse : **7,2 mm**",
+    "figures": [
+      {
+        "id": "2016-sf-18-corr-prism",
+        "description": "Prisme hexagonal dessiné à main levée : trois chemins (rouge, bleu, vert) du sommet A de la base inférieure au sommet E opposé de la base supérieure, passant par B, C ou D.",
+        "imageUrl": "q18_corr-prism.png"
+      },
+      {
+        "id": "2016-sf-18-corr-unfolded",
+        "description": "Patron déplié sur un réseau de triangles équilatéraux : l'arête verticale AB, et les segments droits AE1 (rouge), AE2 (bleu) et AE3 (vert) vers les trois images E1, E2, E3 du sommet d'arrivée.",
+        "imageUrl": "q18_corr-unfolded.png"
+      }
+    ]
+  }
+}

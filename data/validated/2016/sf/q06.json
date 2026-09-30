@@ -1,0 +1,65 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 653
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 10,
+        "position": {
+          "x": 290,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-6",
+  "number": 6,
+  "title": "Le jardin",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Un jardin de largeur constante entoure une maison rectangulaire.\n\nLe périmètre extérieur (maison plus jardin) mesure 32 mètres de plus que le périmètre intérieur (maison).\n\n![figure](figure:2016-sf-6-fig-garden)\n\n**Quelle est, en mètres, la largeur du jardin dessiné en gris ?**",
+    "figures": [
+      {
+        "id": "2016-sf-6-fig-garden",
+        "description": "Rectangle blanc « intérieur » entouré d'une bande grise « extérieur » ; une double flèche marquée « ? » indique la largeur de la bande.",
+        "imageUrl": "q06_fig-garden.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "4"
+  },
+  "correction": {
+    "markdown": "- Pour passer du périmètre intérieur au périmètre extérieur, on ajoute 8 fois la largeur du jardin\n- 32/8 = 4\n\n![figure](figure:2016-sf-6-corr-garden)\n\n- Réponse : **4 mètres**",
+    "figures": [
+      {
+        "id": "2016-sf-6-corr-garden",
+        "description": "Le jardin gris autour de la maison : les côtés intérieurs (flèches bleues) sont prolongés aux quatre coins par deux segments orange numérotés 1 à 8, chacun de la largeur du jardin.",
+        "imageUrl": "q06_corr-garden.png"
+      }
+    ]
+  }
+}

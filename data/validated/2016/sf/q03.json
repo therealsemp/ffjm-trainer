@@ -1,0 +1,52 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 248
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 299,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-3",
+  "number": 3,
+  "title": "Le mur",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Trois ouvriers maçons construisent un mur en huit jours.\n\n**Combien aurait-il fallu d'ouvriers pour construire ce mur en six jours ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "4"
+  },
+  "correction": {
+    "markdown": "| Ouvriers | Mur | Jours |\n| --- | --- | --- |\n| 3 | 1 | 8 |\n| x4 = 12 | 1 | /4 = 2 |\n| /3 = 4 | 1 | x3 = 6 |\n\n- Réponse : **4 ouvriers**"
+  }
+}

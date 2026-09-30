@@ -1,0 +1,50 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 449
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 13,
+        "position": {
+          "x": 202,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-9",
+  "number": 9,
+  "title": "Le nombre de Mathilde",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde a écrit un nombre sur une feuille de papier.\n\nMathias, pour s’amuser, ajoute un 0 à la droite des chiffres écrits par Mathilde.\n\nAprès l’ajout de Mathias, le nombre écrit a augmenté de 2016.\n\n**Quel était le premier nombre écrit par Mathilde ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "224"
+  },
+  "correction": {
+    "markdown": "- \\(\\underline{M0}\\) = M + 2016\n- 10M = M + 2016\n- 9M = 2016\n- M = 224\n\n- Réponse : **224**"
+  }
+}

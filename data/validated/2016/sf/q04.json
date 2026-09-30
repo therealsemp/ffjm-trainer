@@ -1,0 +1,59 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 334
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 221,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-4",
+  "number": 4,
+  "title": "Le chemin de l’école",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Lorsque Mathilde va à l'école en bus et qu'elle revient à pied, son trajet aller-retour dure 1 heure.\n\nEn revanche, si elle fait l'aller et le retour en bus, cela ne lui prend que 24 minutes au total.\n\n**Combien de temps lui prendrait son trajet aller-retour à pied ?**\n\nSi nécessaire, la réponse est attendue en heures et en minutes (au plus 59)."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1 h 36 min"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2016-sf-4-corr-bus)\n\n- Un aller ou un retour en bus dure 24/2 = 12 minutes\n\n- Un aller ou un retour à pied dure 60 – 12 = 48 minutes\n- 2x48 = 96 minutes\n- 96 – 60 = 36 minutes\n\n- Réponse : **1 h 36 min**",
+    "figures": [
+      {
+        "id": "2016-sf-4-corr-bus",
+        "description": "En haut : un bus puis Mathilde à pied, « 1 heure ». En bas : deux bus, « 24 minutes ».",
+        "imageUrl": "q04_corr-bus.png"
+      }
+    ]
+  }
+}

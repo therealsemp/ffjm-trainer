@@ -1,0 +1,52 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 35,
+        "y": 178
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 225,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-2",
+  "number": 2,
+  "title": "Trois nombres pairs",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Trois nombres pairs qui se suivent (comme 6, 8 et 10 par exemple) ont pour somme 72.\n\n**Quel est le plus petit d'entre eux ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "22"
+  },
+  "correction": {
+    "markdown": "- 6 + 8 + 10 = 24, 8 + 10 + 12 = 30, etc.\n\n- Quand le plus petit nombre augmente de 2, la somme augmente de 6\n- Pour augmenter la somme de 72 – 30 = 42, il faut augmenter le plus petit nombre de (42/6)x2 = 7x2 = 14\n- 8 + 14 = 22\n\n- *On vérifie que 22 + 24 + 26 = 72*\n\n- Réponse : **22**\n\n- *Note pour les plus grands : on enlève 2 à 72/3 = 24 (nombre au milieu)*"
+  }
+}

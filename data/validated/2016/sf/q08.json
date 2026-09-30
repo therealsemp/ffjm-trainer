@@ -1,0 +1,51 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 178
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 12,
+        "position": {
+          "x": 278,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-8",
+  "number": 8,
+  "title": "Les bidons",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "L'oncle de Mathilde cultive des oliviers.\n\nIl a récolté 223 litres d'huile d'olive avec lesquels il remplit à ras bord des bidons de 10 litres et des bidons de 17 litres.\n\n**Combien a-t-il rempli de bidons de 10 litres sachant qu'il ne lui reste plus d'huile en dehors des bidons pleins ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "7"
+  },
+  "correction": {
+    "markdown": "- Pour obtenir 223 moins un multiple de 10, il faut un multiple de 17 se terminant par 3\n- Le facteur se termine par 9\n- 17x19 = 323 > 223\n- Le facteur est 9\n\n- 17x9 = 153\n- 223 – 153 = 70\n\n- Réponse : **7 bidons** de 10 litres"
+  }
+}

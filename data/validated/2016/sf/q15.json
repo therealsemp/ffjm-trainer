@@ -1,0 +1,48 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 403
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 21,
+        "position": {
+          "x": 194,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-15",
+  "number": 15,
+  "title": "Trois nombres premiers",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Le produit de trois nombres premiers est égal à 11 fois leur somme.\n\n**Quels sont ces trois nombres, dans l’ordre croissant ?**\n\nOn rappelle qu'un nombre premier est un nombre admettant exactement deux diviseurs : 1 et lui-même."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : (2 ; 11 ; 13) ou (3 ; 7 ; 11)"
+  },
+  "correction": {
+    "markdown": "- Un des nombres premiers est divisible par 11, c’est 11\n- On cherche x et y premiers avec x ≤ y tels que 11xy = 11(11 + x + y) soit xy = 11 + x + y\n- (x-1)(y-1) = 12\n\n- Si x-1 = 1 soit x = 2, y-1 = 12 soit y = 13\n- Si x-1 = 2 soit x = 3, y-1 = 6 soit y = 7\n- Si x-1 = 3, alors x = 4 non premier\n\n- **2** réponses : **(2; 11; 13) ou (3; 7; 11)**"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 258
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 20,
+        "position": {
+          "x": 226,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-14",
+  "number": 14,
+  "title": "Les deux nombres",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "*a* et *b* sont deux nombres entiers positifs.\n\nParmi les quatre affirmations:\n\n1) *a* + 1 est divisible par *b* ;\n2) *a* = 2*b* + 5 ;\n3) *a* + *b* est divisible par 3 ;\n4) *a* + 7*b* est un nombre premier,\n\ntrois sont vraies et une seule est fausse.\n\n**Trouvez les nombres *a* et *b*.**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : (a = 9 ; b = 2) ou (a = 17 ; b = 6)"
+  },
+  "correction": {
+    "markdown": "- Si 3) et 4) sont vraies, alors le nombre premier a + 7b = (a+b) + 6b, divisible par 3, est 3\n- a = 3 et b = 0, 2) est fausse et 1) n’a pas de sens\n\n- 1\\) et 2) sont vraies\n- b divise a+1 = 2b+6, b divise 6\n\n- Si b = 1, a = 7, 3) (3 divise 8)et 4) (14 est premier) sont fausses\n- Si b = 2, a = 9, 3) (3 divise 11) est fausse et 4) (23 est premier) est vraie\n- Si b = 3, a = 11, 3) (3 divise 14) et 4) (32 est premier) sont fausses\n- Si b = 6, a = 17, 3) (3 divise 23) est fausse et 4) (59 est premier) est vraie\n\n- **2** réponses : **(a=9; b=2) ou (a=17; b=6)**"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 305,
+        "y": 672
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 15,
+        "position": {
+          "x": 225,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-11",
+  "number": 11,
+  "title": "Le parallélépipède",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Avec 18 cubes identiques d'arête 5 cm, Mathias construit un parallélépipède rectangle dont une arête mesure 15 cm.\n\n**Quelle est, en cm², la surface totale des faces de ce parallélépipède rectangle ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : 1050 ou 1350"
+  },
+  "correction": {
+    "markdown": "- Le long de l’arête mesurant 15 cm, il y a 15/5 = 3 cubes\n- 18/3 = 6\n- 6 = 1x6 ou 6 = 2x3 donne deux parallélépipèdes (1x3x6 et 2x3x3)\n\n![figure](figure:2016-sf-11-corr-cuboid-1)\n\n- 2x(3 + 6 + 18)x5\\(^2\\) = 2x27x25 = 1350\n- 2x(6 + 6 + 9)x5\\(^2\\) = 2x21x25 = 1050\n\n![figure](figure:2016-sf-11-corr-cuboid-2)\n\n- **2** réponses : **1050 ou 1350 cm\\(^2\\)**",
+    "figures": [
+      {
+        "id": "2016-sf-11-corr-cuboid-1",
+        "description": "Parallélépipède de 1×3×6 cubes, cotes 15, 30 et 5.",
+        "imageUrl": "q11_corr-cuboid-1.png"
+      },
+      {
+        "id": "2016-sf-11-corr-cuboid-2",
+        "description": "Parallélépipède de 2×3×3 cubes (deux couches bleue et orange), cotes 15, 15 et 10.",
+        "imageUrl": "q11_corr-cuboid-2.png"
+      }
+    ]
+  }
+}

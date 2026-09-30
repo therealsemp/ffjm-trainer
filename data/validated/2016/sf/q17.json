@@ -1,0 +1,46 @@
+{
+  "year": 2016,
+  "champNumber": 30,
+  "phase": "sf",
+  "examTitle": "30e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2016/sf/2016_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 60
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2016/sf/2016_sf_solution-detailed.pdf",
+        "page": 23,
+        "position": {
+          "x": 218,
+          "y": 99
+        }
+      }
+    ]
+  },
+  "id": "2016-sf-17",
+  "number": 17,
+  "title": "Les coups d'éponge",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Sur un grand tableau sont écrits les nombres entiers naturels non nuls de 1 à 2016 : 1, 2, .., 2016.\n\nTout d'abord, on efface tous les nombres impairs.\n\nEnsuite, des nombres restants, on efface tous les nombres situés en position paire (le 2e nombre restant écrit, le 4e, le 6e, etc.).\n\nAprès, on efface de nouveau les nombres situés en position impaire (le 1er nombre restant écrit, le 3e, le 5e etc ...) et on continue ce processus en effaçant alternativement les nombres écrits en position impaire et ceux restants en position paire jusqu'au moment où il ne restera qu’un seul nombre.\n\n**Quel sera ce nombre ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1366"
+  },
+  "correction": {
+    "markdown": "| Après l’opération N° | Il reste | Avec |\n| --- | --- | --- |\n| 1 | 2 + 2k | 0 ≤ k ≤ 1007 |\n| 2 | 2 + 4k | 0 ≤ k ≤ 503 |\n| 3 | 2 + 4 + 8k | 0 ≤ k ≤ 251 |\n| 4 | 2 + 4 + 16k | 0 ≤ k ≤ 125 |\n| 5 | 2 + 4 + 16 + 32k | 0 ≤ k ≤ 62 |\n| 6 | 2 + 4 + 16 + 64k | 0 ≤ k ≤ 31 |\n| 7 | 2 + 4 + 16 + 64 + 128k | 0 ≤ k ≤ 15 |\n| 8 | 2 + 4 + 16 + 64 + 256k | 0 ≤ k ≤ 7 |\n| 9 | 2 + 4 + 16 + 64 + 256 + 512k | 0 ≤ k ≤ 3 |\n| 10 | 2 + 4 + 16 + 64 + 256 + 1024k | 0 ≤ k ≤ 1 |\n| 11 | 2 + 4 + 16 + 64 + 256 + 1024 | |\n\n- Réponse : **1366**"
+  }
+}

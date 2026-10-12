@@ -72,14 +72,31 @@ export function TrainingQuestionPage() {
     correctionEndRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
-  async function drawNext(levels: Tier[]) {
+  // Never draws a question already acted on in this session (Story 2.2) —
+  // the caller records the current one as seen before calling this. Once
+  // every question of the selected levels has been seen, a new round
+  // starts, only keeping `lastQuestionId` out so it doesn't come right back.
+  async function drawNext(levels: Tier[], lastQuestionId: string | null = null) {
     let id = forcedQuestionId
     if (!id) {
-      const tier = questionMetadataService.pickWeightedTier(levels)
-      const metadata = await questionMetadataService.pickRandomQuestionInTier(
-        tier,
-        session?.includeWithoutDetailedCorrection ?? false,
+      const includeWithoutDetailedCorrection = session?.includeWithoutDetailedCorrection ?? false
+      let metadata = await questionMetadataService.pickNextQuestion(
+        levels,
+        includeWithoutDetailedCorrection,
+        trainingSessionService.getSeenQuestionIds(),
       )
+      if (!metadata) {
+        trainingSessionService.startNewSeenRound(lastQuestionId)
+        metadata =
+          (await questionMetadataService.pickNextQuestion(
+            levels,
+            includeWithoutDetailedCorrection,
+            trainingSessionService.getSeenQuestionIds(),
+          )) ??
+          // A single-question pool: repeating it is the only option left.
+          (await questionMetadataService.pickNextQuestion(levels, includeWithoutDetailedCorrection, []))
+      }
+      if (!metadata) throw new Error("No question available for the selected levels")
       id = metadata.id
     }
     const full = await questionService.getQuestion(id)
@@ -110,8 +127,8 @@ export function TrainingQuestionPage() {
   const basePath = `${import.meta.env.BASE_URL}data/${question.year}/${question.phase}`
 
   function handleSkip() {
-    recordSkip(question!.tier)
-    void drawNext(session!.levels)
+    recordSkip(question!.tier, question!.id)
+    void drawNext(session!.levels, question!.id)
   }
   const soundEnabled = profile?.soundEnabled ?? true
 
@@ -122,23 +139,23 @@ export function TrainingQuestionPage() {
   // updates the profile's mistakes list; skipping never does.
   function handleFound() {
     clearMistake(question!.id)
-    const completed = recordFound(question!.tier)
+    const completed = recordFound(question!.tier, question!.id)
     if (completed) {
       navigate("/entrainement/recap")
       return
     }
     if (soundEnabled) playSound("ok")
-    void drawNext(session!.levels)
+    void drawNext(session!.levels, question!.id)
   }
   function handleNotFound() {
     recordMistake(question!.id)
-    const completed = recordNotFound(question!.tier)
+    const completed = recordNotFound(question!.tier, question!.id)
     if (completed) {
       navigate("/entrainement/recap")
       return
     }
     if (soundEnabled) playSound("ko")
-    void drawNext(session!.levels)
+    void drawNext(session!.levels, question!.id)
   }
 
   return (
@@ -210,7 +227,7 @@ export function TrainingQuestionPage() {
           onClick={handleSkip}
           className="flex cursor-pointer items-center gap-1 rounded-lg border border-brand-line px-4 py-2 font-semibold hover:bg-brand-surface"
         >
-          Ignorer
+          Déjà fait
           <ChevronsRight size={18} />
         </button>
       </div>

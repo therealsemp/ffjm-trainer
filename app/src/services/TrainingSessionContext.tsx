@@ -17,11 +17,13 @@ interface TrainingSessionContextValue {
   // false for an unlimited session, or when there's no active session).
   sessionComplete: boolean
   startSession: (levels: Tier[], targetCount: number | null, includeWithoutDetailedCorrection: boolean) => void
-  recordSkip: (tier: Tier) => void
+  // Each action also marks the question as seen, so the session never
+  // draws it again (Story 2.2).
+  recordSkip: (tier: Tier, questionId: string) => void
   // Return whether that action completed the session, so the caller can
   // stop drawing new questions and show the recap instead.
-  recordFound: (tier: Tier) => boolean
-  recordNotFound: (tier: Tier) => boolean
+  recordFound: (tier: Tier, questionId: string) => boolean
+  recordNotFound: (tier: Tier, questionId: string) => boolean
   // Story 2.5 "start a new session": session + its own stats only.
   discardSession: () => void
   // Story 1.3 profile reset: session, its stats, and the lifetime stats
@@ -41,7 +43,7 @@ export function TrainingSessionProvider({ children }: { children: ReactNode }) {
   const [rankCounts, setRankCounts] = useState<RankCounts>(() => trainingSessionService.getRankCounts())
 
   const value = useMemo<TrainingSessionContextValue>(() => {
-    function record(action: (tier: Tier) => void, tier: Tier): boolean {
+    function record(action: (tier: Tier) => void, tier: Tier, questionId: string): boolean {
       // Only the action that *crosses* the target completes the session —
       // one recorded on an already-complete session (shouldn't happen, the
       // question page redirects away, but cheap to guard) must not save its
@@ -49,6 +51,7 @@ export function TrainingSessionProvider({ children }: { children: ReactNode }) {
       const wasComplete =
         session !== null && trainingSessionService.isComplete(session, trainingSessionService.getSessionOutcomes().length)
       action(tier)
+      trainingSessionService.markQuestionSeen(questionId)
       const newOutcomes = trainingSessionService.getSessionOutcomes()
       setSessionStats(trainingSessionService.getSessionStats())
       setSessionOutcomes(newOutcomes)
@@ -75,11 +78,11 @@ export function TrainingSessionProvider({ children }: { children: ReactNode }) {
         setSessionStats(trainingSessionService.getSessionStats())
         setSessionOutcomes(trainingSessionService.getSessionOutcomes())
       },
-      recordSkip: (tier) => {
-        record(trainingSessionService.recordSkip, tier)
+      recordSkip: (tier, questionId) => {
+        record(trainingSessionService.recordSkip, tier, questionId)
       },
-      recordFound: (tier) => record(trainingSessionService.recordFound, tier),
-      recordNotFound: (tier) => record(trainingSessionService.recordNotFound, tier),
+      recordFound: (tier, questionId) => record(trainingSessionService.recordFound, tier, questionId),
+      recordNotFound: (tier, questionId) => record(trainingSessionService.recordNotFound, tier, questionId),
       discardSession: () => {
         trainingSessionService.clearSession()
         setSession(null)

@@ -111,6 +111,44 @@ describe("trainingSessionService — recording actions", () => {
   })
 })
 
+describe("trainingSessionService — seen questions (Story 2.2)", () => {
+  test("starting a session resets the seen list", () => {
+    trainingSessionService.startSession(["CE"], 10, false)
+    trainingSessionService.markQuestionSeen("a")
+    trainingSessionService.startSession(["CE"], 10, false)
+    expect(trainingSessionService.getSeenQuestionIds()).toEqual([])
+  })
+
+  test("marking a question seen records it once, in order", () => {
+    trainingSessionService.startSession(["CE"], 10, false)
+    trainingSessionService.markQuestionSeen("a")
+    trainingSessionService.markQuestionSeen("b")
+    trainingSessionService.markQuestionSeen("a")
+    expect(trainingSessionService.getSeenQuestionIds()).toEqual(["a", "b"])
+  })
+
+  test("a session stored before the seen list existed reads as nothing seen", () => {
+    trainingSessionService.startSession(["CE"], 10, false)
+    window.localStorage.removeItem("ffjm-trainer:trainingSessionSeenQuestions")
+    expect(trainingSessionService.getSeenQuestionIds()).toEqual([])
+  })
+
+  test("a new round keeps only the last question", () => {
+    trainingSessionService.startSession(["CE"], null, false)
+    trainingSessionService.markQuestionSeen("a")
+    trainingSessionService.markQuestionSeen("b")
+    trainingSessionService.startNewSeenRound("b")
+    expect(trainingSessionService.getSeenQuestionIds()).toEqual(["b"])
+  })
+
+  test("clearSession removes the seen list", () => {
+    trainingSessionService.startSession(["CE"], 10, false)
+    trainingSessionService.markQuestionSeen("a")
+    trainingSessionService.clearSession()
+    expect(trainingSessionService.getSeenQuestionIds()).toEqual([])
+  })
+})
+
 describe("trainingSessionService — just-completed flag", () => {
   test("defaults to false, can be set and cleared", () => {
     expect(trainingSessionService.getJustCompleted()).toBe(false)

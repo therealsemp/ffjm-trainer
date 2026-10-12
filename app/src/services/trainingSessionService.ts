@@ -7,7 +7,8 @@ import { storage } from "./storage"
 // Independent keys, not one nested object: a session's own counters
 // and the lifetime ones share the exact same shape (Stats) and the same
 // increment logic, but have different reset triggers — starting a new
-// session wipes SESSION_STATS_KEY/SESSION_OUTCOMES_KEY only, never
+// session wipes SESSION_STATS_KEY/SESSION_OUTCOMES_KEY/
+// SESSION_SEEN_QUESTIONS_KEY only, never
 // GLOBAL_STATS_KEY, which only a profile reset clears. RANK_COUNTS_KEY is
 // lifetime too (same reset trigger as GLOBAL_STATS_KEY), but kept separate
 // rather than folded into it: it counts sessions per rank, not questions
@@ -15,6 +16,9 @@ import { storage } from "./storage"
 const SESSION_KEY = "trainingSession"
 const SESSION_STATS_KEY = "trainingSessionStats"
 const SESSION_OUTCOMES_KEY = "trainingSessionOutcomes"
+// Ids of the questions already acted on (skipped or self-assessed) in the
+// current session, so the draw never offers them again (Story 2.2).
+const SESSION_SEEN_QUESTIONS_KEY = "trainingSessionSeenQuestions"
 const SESSION_JUST_COMPLETED_KEY = "trainingSessionJustCompleted"
 const GLOBAL_STATS_KEY = "trainingGlobalStats"
 const RANK_COUNTS_KEY = "trainingRankCounts"
@@ -28,6 +32,10 @@ function isValidSession(value: unknown): value is TrainingSession {
 
 function isValidOutcomes(value: unknown): value is QuestionOutcome[] {
   return Array.isArray(value)
+}
+
+function isValidSeenQuestions(value: unknown): value is string[] {
+  return Array.isArray(value) && value.every((id) => typeof id === "string")
 }
 
 function isValidStats(value: unknown): value is Stats {
@@ -78,6 +86,13 @@ function appendOutcome(outcome: QuestionOutcome): void {
   storage.set(SESSION_OUTCOMES_KEY, [...getSessionOutcomes(), outcome] satisfies QuestionOutcome[])
 }
 
+// Missing for a session started before this key existed — read as "nothing
+// seen yet" rather than as an invalid session.
+function getSeenQuestionIds(): string[] {
+  const stored = storage.get<string[]>(SESSION_SEEN_QUESTIONS_KEY)
+  return isValidSeenQuestions(stored) ? stored : []
+}
+
 export const trainingSessionService = {
   getActiveSession(): TrainingSession | null {
     const stored = storage.get<TrainingSession>(SESSION_KEY)
@@ -95,6 +110,20 @@ export const trainingSessionService = {
   getSessionOutcomes,
 
   getRankCounts,
+
+  getSeenQuestionIds,
+
+  markQuestionSeen(questionId: string): void {
+    const seen = getSeenQuestionIds()
+    if (!seen.includes(questionId)) storage.set(SESSION_SEEN_QUESTIONS_KEY, [...seen, questionId] satisfies string[])
+  },
+
+  // Every question of the session's levels has been seen (only reachable in
+  // an unlimited session): start a new round, keeping only the question
+  // just acted on so it isn't drawn again immediately (Story 2.2).
+  startNewSeenRound(lastQuestionId: string | null): void {
+    storage.set(SESSION_SEEN_QUESTIONS_KEY, (lastQuestionId ? [lastQuestionId] : []) satisfies string[])
+  },
 
   // Whether the session has reached its target question count — always
   // false for an unlimited (targetCount: null) session.
@@ -139,6 +168,7 @@ export const trainingSessionService = {
     storage.set(SESSION_KEY, { levels, targetCount, includeWithoutDetailedCorrection } satisfies TrainingSession)
     storage.set(SESSION_STATS_KEY, createEmptyStats())
     storage.set(SESSION_OUTCOMES_KEY, [] satisfies QuestionOutcome[])
+    storage.set(SESSION_SEEN_QUESTIONS_KEY, [] satisfies string[])
     storage.remove(SESSION_JUST_COMPLETED_KEY)
   },
 
@@ -162,6 +192,7 @@ export const trainingSessionService = {
     storage.remove(SESSION_KEY)
     storage.remove(SESSION_STATS_KEY)
     storage.remove(SESSION_OUTCOMES_KEY)
+    storage.remove(SESSION_SEEN_QUESTIONS_KEY)
     storage.remove(SESSION_JUST_COMPLETED_KEY)
   },
 

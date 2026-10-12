@@ -78,8 +78,8 @@ export const questionMetadataService = {
   },
 
   // Weighted random pick among `levels`, renormalized over just those
-  // levels (Story 2.2). Assumes `levels` is non-empty — Story 2.1 requires
-  // at least one selected level before a session can start.
+  // levels (Story 2.2). Assumes `levels` is non-empty — pickNextQuestion
+  // only calls it with at least one tier that still has questions.
   pickWeightedTier(levels: Tier[]): Tier {
     const total = levels.reduce((sum, tier) => sum + TIER_COEFFICIENTS[tier], 0)
     let roll = Math.random() * total
@@ -90,15 +90,30 @@ export const questionMetadataService = {
     return levels[levels.length - 1]
   },
 
-  // Uniform random pick among every question of a given tier. Excludes
+  // Story 2.2's draw: a weighted tier pick, then a uniform pick among that
+  // tier's questions, never one of `excludedIds` (already seen in the
+  // session). A tier with nothing left is dropped from the tier pick, so
+  // the weights renormalize over the remaining ones; null once every
+  // selected tier is exhausted (the caller starts a new round). Excludes
   // questions with no detailed correction unless explicitly included
   // (Story 2.1's toggle) — off by default, since those have no worked
   // explanation to learn from.
-  async pickRandomQuestionInTier(tier: Tier, includeWithoutDetailedCorrection = false): Promise<QuestionMetadata> {
+  async pickNextQuestion(
+    levels: Tier[],
+    includeWithoutDetailedCorrection: boolean,
+    excludedIds: string[],
+  ): Promise<QuestionMetadata | null> {
     const manifest = await loadManifest()
-    const pool = manifest.filter(
-      (question) => question.tier === tier && (includeWithoutDetailedCorrection || question.hasDetailedCorrection),
-    )
+    const excluded = new Set(excludedIds)
+    const pools = new Map<Tier, QuestionMetadata[]>()
+    for (const question of manifest) {
+      if (!levels.includes(question.tier) || excluded.has(question.id)) continue
+      if (!includeWithoutDetailedCorrection && !question.hasDetailedCorrection) continue
+      pools.set(question.tier, [...(pools.get(question.tier) ?? []), question])
+    }
+    const availableLevels = levels.filter((tier) => pools.has(tier))
+    if (availableLevels.length === 0) return null
+    const pool = pools.get(questionMetadataService.pickWeightedTier(availableLevels))!
     return pool[Math.floor(Math.random() * pool.length)]
   },
 

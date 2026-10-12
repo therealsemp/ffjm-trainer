@@ -13,7 +13,7 @@ System (triggered by the user's actions during a session)
 
 ## Context / Business rules
 - Saving is local (the same storage mechanism as the profile: browser/device).
-- Saving happens after every action on a question: "Skip", "I found it", "I didn't find it".
+- Saving happens after every action on a question: "Already done" (label "Déjà fait", which counts the question as skipped), "I found it", "I didn't find it".
 - The saved data allows statistics to be resumed identically (but not the precise display state of the last question, see Story 2.5).
 - Every action updates **two** independent sets of counters at once: the current session's own (reset when a new session starts, Story 2.5) and the profile's lifetime cumulative total (never reset by a new session — see Story 1.5). Both are saved together, from the same action, so they never drift apart.
 - When an action completes a targeted session (Story 2.6), the session's rank (Story 2.7) is computed and the profile's lifetime per-rank counter (number of completed sessions per rank, see Story 1.5) is incremented and saved, in the same step as that last action. It is saved exactly once per completed session, never when the end-of-session screen is displayed or reloaded. This per-rank counter is stored separately from the per-level question counters (it counts sessions, not questions).
@@ -27,9 +27,9 @@ System (triggered by the user's actions during a session)
 
 ## Acceptance criteria
 
-### Scenario 1: Saving after "Skip"
+### Scenario 1: Saving after "Already done"
 - **Given** a question is displayed
-- **When** the user activates "Skip"
+- **When** the user activates "Already done"
 - **Then** the session's skipped-questions counter (global and for the relevant level) is incremented and saved
 - **And** the profile's lifetime skipped-questions counter (global and for the relevant level, Story 1.5) is incremented and saved
 

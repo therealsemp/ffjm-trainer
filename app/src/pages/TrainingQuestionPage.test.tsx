@@ -29,8 +29,7 @@ vi.mock("../services/questionMetadataService", async (importOriginal) => {
     ...actual,
     questionMetadataService: {
       ...actual.questionMetadataService,
-      pickWeightedTier: vi.fn(() => "CE"),
-      pickRandomQuestionInTier: vi.fn(async () => ({
+      pickNextQuestion: vi.fn(async () => ({
         id: "unused-fallback-id",
         year: 2025,
         phase: "qf",
@@ -44,6 +43,7 @@ vi.mock("../services/questionMetadataService", async (importOriginal) => {
 })
 
 import { questionService } from "../services/questionService"
+import { questionMetadataService } from "../services/questionMetadataService"
 
 const getQuestion = vi.mocked(questionService.getQuestion)
 
@@ -68,7 +68,11 @@ function baseQuestion(overrides: Partial<Question> = {}): Question {
 // page already offers for exactly this kind of deterministic testing.
 function renderPage(
   question: Question,
-  { targetCount = null, includeWithoutDetailedCorrection = false }: { targetCount?: number | null; includeWithoutDetailedCorrection?: boolean } = {},
+  {
+    targetCount = null,
+    includeWithoutDetailedCorrection = false,
+    forced = true,
+  }: { targetCount?: number | null; includeWithoutDetailedCorrection?: boolean; forced?: boolean } = {},
 ) {
   getQuestion.mockResolvedValue(question)
   trainingSessionService.startSession(
@@ -77,7 +81,7 @@ function renderPage(
     includeWithoutDetailedCorrection,
   )
   return render(
-    <MemoryRouter initialEntries={[`/?q=${question.id}`]}>
+    <MemoryRouter initialEntries={[forced ? `/?q=${question.id}` : "/"]}>
       <ProfileProvider>
         <QuestionListsProvider>
           <TrainingSessionProvider>
@@ -159,11 +163,11 @@ describe("TrainingQuestionPage — standard flow", () => {
     expect(screen.getByText(/Règlement officiel FFJM/)).toBeInTheDocument()
   })
 
-  test("'Ignorer' draws the next question without revealing the answer", async () => {
+  test("'Déjà fait' draws the next question without revealing the answer", async () => {
     const user = userEvent.setup()
     renderPage(baseQuestion())
     await screen.findByText("Voici l'énoncé.")
-    await user.click(screen.getByRole("button", { name: /Ignorer/ }))
+    await user.click(screen.getByRole("button", { name: /Déjà fait/ }))
     await waitFor(() => expect(getQuestion).toHaveBeenCalledTimes(2))
     expect(screen.queryByText(/Réponse :/)).not.toBeInTheDocument()
   })
@@ -187,6 +191,34 @@ describe("TrainingQuestionPage — standard flow", () => {
     await user.click(screen.getByRole("button", { name: "Vérifier ma réponse" }))
     await user.click(screen.getAllByRole("button", { name: "J'avais trouvé" })[0])
     expect(await screen.findByText("Récapitulatif")).toBeInTheDocument()
+  })
+})
+
+describe("TrainingQuestionPage — no repeat within a session (Story 2.2)", () => {
+  test("the draw after an action excludes the question just acted on", async () => {
+    const user = userEvent.setup()
+    const pickNextQuestion = vi.mocked(questionMetadataService.pickNextQuestion)
+    pickNextQuestion.mockClear()
+    renderPage(baseQuestion(), { forced: false })
+    await screen.findByText("Voici l'énoncé.")
+    expect(pickNextQuestion).toHaveBeenLastCalledWith(expect.anything(), false, [])
+    await user.click(screen.getByRole("button", { name: /Déjà fait/ }))
+    await waitFor(() => expect(pickNextQuestion).toHaveBeenCalledTimes(2))
+    expect(pickNextQuestion).toHaveBeenLastCalledWith(expect.anything(), false, [baseQuestion().id])
+  })
+
+  test("once every question has been seen, a new round starts without the last one", async () => {
+    const user = userEvent.setup()
+    const pickNextQuestion = vi.mocked(questionMetadataService.pickNextQuestion)
+    renderPage(baseQuestion(), { forced: false })
+    await screen.findByText("Voici l'énoncé.")
+    trainingSessionService.markQuestionSeen("other-id")
+    pickNextQuestion.mockClear()
+    pickNextQuestion.mockResolvedValueOnce(null)
+    await user.click(screen.getByRole("button", { name: /Déjà fait/ }))
+    await waitFor(() => expect(pickNextQuestion).toHaveBeenCalledTimes(2))
+    expect(pickNextQuestion).toHaveBeenLastCalledWith(expect.anything(), false, [baseQuestion().id])
+    expect(trainingSessionService.getSeenQuestionIds()).toEqual([baseQuestion().id])
   })
 })
 
@@ -237,7 +269,7 @@ describe("TrainingQuestionPage — mistakes and favorites (Stories 4.1 / 4.2)", 
     questionListsService.recordMistake(baseQuestion().id)
     renderPage(baseQuestion())
     await screen.findByText("Voici l'énoncé.")
-    await user.click(screen.getByRole("button", { name: /Ignorer/ }))
+    await user.click(screen.getByRole("button", { name: /Déjà fait/ }))
     expect(questionListsService.getMistakes()).toHaveLength(1)
   })
 

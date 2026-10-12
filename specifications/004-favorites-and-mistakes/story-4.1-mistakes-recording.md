@@ -15,7 +15,7 @@ System (triggered by the user's self-assessments during training)
 - The mistakes list is fed **only** by self-assessments in training mode (Story 2.2). Archive consultation (Epic 3) has no self-assessment and never changes it.
 - "I didn't find it" on a question adds it to the list, with the date of that mistake. If the question is already in the list, it isn't duplicated: its date is simply replaced by the new one (so it moves back to the top of the list, Story 4.4).
 - "I found it" on a question that is in the list removes it from the list. On a question that isn't in the list, it does nothing.
-- "Skip" never changes the list.
+- "Already done" (skipping, label "Déjà fait", Story 2.2) never changes the list.
 - This applies to every training session, targeted or "No limit", including the self-assessment that completes a session.
 - One entry per question, holding only the question's identity and the date of its latest mistake. No mistake counter, no history of successive attempts: the list only reflects each question's latest status.
 - The list holds at most **100 questions**. Adding a 101st one removes the question whose latest mistake is the oldest.

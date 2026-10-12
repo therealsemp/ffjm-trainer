@@ -14,7 +14,7 @@ User with an active profile
 ## Context / Business rules
 - Only one session can be saved at a time (for the device's active profile).
 - Starting a new session permanently deletes the existing saved session, **including its own statistics** — but never the profile's lifetime statistics (Story 1.5), which are separate and keep accumulating regardless of how many sessions get discarded.
-- Resuming a session always displays a new question drawn at random directly (no restoring the precise display state of the last question viewed, see Story 2.2/2.4).
+- Resuming a session always displays a new question drawn at random directly (no restoring the precise display state of the last question viewed, see Story 2.2/2.4). The questions already acted on in the session stay excluded from the draw (Story 2.2); starting a new session resets that exclusion.
 - A session that has already reached its target question count (Story 2.1/2.6) is never offered as resumable: accessing training mode with such a session (via this screen) goes straight to session configuration (Story 2.1), skipping the resume/new-session choice below entirely — the recap (Story 2.6) is reached only right after finishing, never by navigating back here.
 
 ## Acceptance criteria

@@ -78,13 +78,13 @@ describe("isAboveCM", () => {
   })
 })
 
-describe("pickRandomQuestionInTier", () => {
-  test("only returns a question from the requested tier", async () => {
+describe("pickNextQuestion", () => {
+  test("only returns a question from the requested levels", async () => {
     mockManifest([Q({ id: "a", tier: "CE" }), Q({ id: "b", tier: "CM" }), Q({ id: "c", tier: "CE" })])
     const { questionMetadataService } = await import("./questionMetadataService")
     for (let i = 0; i < 10; i++) {
-      const picked = await questionMetadataService.pickRandomQuestionInTier("CE")
-      expect(["a", "c"]).toContain(picked.id)
+      const picked = await questionMetadataService.pickNextQuestion(["CE"], false, [])
+      expect(["a", "c"]).toContain(picked?.id)
     }
   })
 
@@ -95,8 +95,8 @@ describe("pickRandomQuestionInTier", () => {
     ])
     const { questionMetadataService } = await import("./questionMetadataService")
     for (let i = 0; i < 10; i++) {
-      const picked = await questionMetadataService.pickRandomQuestionInTier("CE")
-      expect(picked.id).toBe("with-correction")
+      const picked = await questionMetadataService.pickNextQuestion(["CE"], false, [])
+      expect(picked?.id).toBe("with-correction")
     }
   })
 
@@ -108,9 +108,33 @@ describe("pickRandomQuestionInTier", () => {
     const { questionMetadataService } = await import("./questionMetadataService")
     const seen = new Set<string>()
     for (let i = 0; i < 30; i++) {
-      seen.add((await questionMetadataService.pickRandomQuestionInTier("CE", true)).id)
+      seen.add((await questionMetadataService.pickNextQuestion(["CE"], true, []))!.id)
     }
     expect(seen).toEqual(new Set(["with-correction", "without-correction"]))
+  })
+
+  test("never returns an excluded (already seen) question", async () => {
+    mockManifest([Q({ id: "a", tier: "CE" }), Q({ id: "b", tier: "CE" }), Q({ id: "c", tier: "CE" })])
+    const { questionMetadataService } = await import("./questionMetadataService")
+    for (let i = 0; i < 20; i++) {
+      const picked = await questionMetadataService.pickNextQuestion(["CE"], false, ["a", "c"])
+      expect(picked?.id).toBe("b")
+    }
+  })
+
+  test("a level with nothing left is dropped from the draw", async () => {
+    mockManifest([Q({ id: "ce", tier: "CE" }), Q({ id: "cm", tier: "CM" })])
+    const { questionMetadataService } = await import("./questionMetadataService")
+    for (let i = 0; i < 20; i++) {
+      const picked = await questionMetadataService.pickNextQuestion(["CE", "CM"], false, ["ce"])
+      expect(picked?.id).toBe("cm")
+    }
+  })
+
+  test("returns null once every selected level is exhausted", async () => {
+    mockManifest([Q({ id: "ce", tier: "CE" }), Q({ id: "cm", tier: "CM" })])
+    const { questionMetadataService } = await import("./questionMetadataService")
+    expect(await questionMetadataService.pickNextQuestion(["CE"], false, ["ce"])).toBeNull()
   })
 })
 

@@ -1,0 +1,59 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 45
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 2,
+        "position": {
+          "x": 43,
+          "y": 340
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 200
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-7",
+  "number": 7,
+  "title": "La crème ne compte pas pour du beurre",
+  "coefficient": 7,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Le lait donne en moyenne le sixième de son poids de crème, et la crème le quart de son poids en beurre. **Quel poids total de beurre, en grammes, obtient-on avec le lait donné du 1er mars au 31 mai inclus par deux vaches produisant chaque jour l’une 8 litres et l’autre 10 litres de lait ?** Un litre de lait pèse 1,03 kg."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "71070"
+  },
+  "correction": {
+    "markdown": "Du 1er mars au 31 mai inclus il y a 92 jours.\n\nLes vaches produisent à elles deux 18 litres de lait par jour, soit 18 × 1,03 × 92 = 1705,68 kg pendant la période considérée.\n\nCela représente \\(\\frac{1}{6} \\times \\frac{1}{4} \\times 1705{,}68 = 71{,}07\\ kg = 71070\\ g\\).\n\nOn obtient en tout **71070 grammes** de beurre."
+  }
+}

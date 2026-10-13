@@ -1,0 +1,53 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 43,
+        "y": 469
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 573
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-13",
+  "number": 13,
+  "title": "Le cadran numérique",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "![figure](figure:2015-sf-13-fig-digits)\n\nMathilde a inventé un jeu. Elle possède un cadran numérique sur lequel est inscrit un nombre. Quand elle soustrait le nombre de barrettes allumées de ce nombre, elle en trouve un deuxième. En répétant l’opération sur ce deuxième nombre, elle trouve le nombre 2015.\n\n**Quel était le premier nombre de Mathilde ?**\n\nExemple : En partant de 11 qui s’affiche avec 4 barrettes, 11 – 4 = 7. 7 s’affiche avec 3 barrettes, 7 – 3 = 4.",
+    "figures": [
+      {
+        "id": "2015-sf-13-fig-digits",
+        "description": "Les chiffres 0 à 9 en affichage à 7 barrettes : 0 (6 barrettes), 1 (2), 2 (5), 3 (5), 4 (4), 5 (5), 6 (6, avec la barrette du haut), 7 (3), 8 (7), 9 (6, avec la barrette du bas).",
+        "imageUrl": "q13_fig-digits.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2057"
+  }
+}

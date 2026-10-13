@@ -1,0 +1,70 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 576,
+        "y": 239
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 7,
+        "position": {
+          "x": 43,
+          "y": 78
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 632
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-16",
+  "number": 16,
+  "title": "Tourne hexagone",
+  "coefficient": 16,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "On duplique un hexagone régulier et on tourne le second de 30° autour du centre, de façon à obtenir un dodécagone régulier, en rouge sur la figure. L’aire de chacun des deux hexagones est 56 cm².\n\n**Quelle est, en cm² et arrondie au plus près, l’aire du dodécagone ?** Si nécessaire, on prendra 1,732 pour √3.\n\n![figure](figure:2013-qf-16-hexagons)",
+    "figures": [
+      {
+        "id": "2013-qf-16-hexagons",
+        "description": "Deux hexagones réguliers jaunes superposés, le second tourné de 30° autour du centre ; leur intersection, un dodécagone régulier, est en rouge.",
+        "imageUrl": "q16_fig-hexagons.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "52"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2013-qf-16-corr-dodecagon)\n\nNotons r le rayon du cercle dans lequel est inscrit le dodécagone et a la longueur des côtés égaux des triangles isocèles jaunes.\n\nAire d’un hexagone = 56 = 6 × Aire d’un triangle équilatéral de côté r = \\(6 \\times \\frac{\\sqrt{3}}{4} r^2\\).\n\nD’où \\(r^2 = \\frac{112\\sqrt{3}}{9}\\).\n\nChaque petit triangle isocèle de côté a et d’angles à la base de 30° a pour base \\(\\sqrt{3}a\\) et pour hauteur \\(\\frac{1}{2}a\\) (s’obtient avec cos et sin).\n\nD’où r = 2a + \\(\\sqrt{3}a\\), i. e. \\(a^2 = \\frac{r^2}{(2+\\sqrt{3})^2} = \\frac{112\\sqrt{3}}{9(2+\\sqrt{3})^2}\\).\n\nAire du dodécagone\n\n= Aire d’un hexagone – 6 × Aire d’un petit triangle isocèle de côté a\n\n= \\(56 - 6 \\times \\frac{1}{2} \\times \\frac{1}{2}a \\times \\sqrt{3}a\\)\n\n= \\(56 - \\frac{56}{(2+\\sqrt{3})^2}\\)\n\n= \\(56 \\times (4\\sqrt{3} - 6)\\) (après passage des racines au numérateur)\n\n≈ 56 × (4 × 1,732 – 6)\n\n≈ 52 cm².\n\nL’aire du dodécagone est d’environ **52 cm²**. **1 solution**.",
+    "figures": [
+      {
+        "id": "2013-qf-16-corr-dodecagon",
+        "description": "Figure de la correction : les deux hexagones inscrits dans un cercle de rayon r, le dodécagone colorié ; un rayon r avec un angle de 60° au centre ; en haut, un petit triangle isocèle de côtés a, d'angle au sommet 120° et d'angles à la base 30°.",
+        "imageUrl": "q16_corr-dodecagon.png"
+      }
+    ]
+  }
+}

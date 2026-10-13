@@ -1,0 +1,47 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 304,
+        "y": 419
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 379
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-9",
+  "number": 9,
+  "title": "Les deux villages",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Alphavillage et Betabled sont deux villages distants l’un de l’autre de 10 kilomètres.\n\nPlusieurs routes nationales rectilignes passent à proximité de ces deux villages. Chacune d’elles passe au plus près à exactement 2 km d’Alphavillage et à exactement 3 km de Betabled.\n\n**Quel est le nombre de ces routes nationales, au maximum ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "4"
+  }
+}

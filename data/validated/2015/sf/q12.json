@@ -1,0 +1,53 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 43,
+        "y": 310
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 541
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-12",
+  "number": 12,
+  "title": "Les lunettes",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "![figure](figure:2015-sf-12-fig-glasses)\n\nLes deux octogones réguliers accolés représentent les verres d'une paire de lunettes. La partie teintée des verres est en gris sur le dessin. L'aire totale des deux verres est 24 cm².\n\n**Quelle est celle de la partie teintée, en cm² ?**",
+    "figures": [
+      {
+        "id": "2015-sf-12-fig-glasses",
+        "description": "Deux octogones réguliers accolés par un côté vertical, avec deux branches de lunettes. Dans chaque octogone, la partie haute (trapèze au-dessus du segment joignant les extrémités hautes des deux côtés verticaux) est grisée.",
+        "imageUrl": "q12_fig-glasses.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "6"
+  }
+}

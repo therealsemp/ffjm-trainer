@@ -1,0 +1,55 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 304,
+        "y": 59
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 290
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-6",
+  "number": 6,
+  "title": "La pendule",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Sur cette pendule, les chiffres de 0 à 9 sont représentés comme l’indique le dessin.\n\n![figure](figure:2013-sf-6-fig-digits)\n\nDepuis qu’elle est en dérangement, la pendule n’affiche plus qu’un seul chiffre et toutes les secondes, un tiret allumé s’éteint ou un tiret éteint s’allume.\n\nLa pendule affiche 0 au départ. Au bout de cinq secondes, elle a affiché successivement six chiffres tous différents, y compris le 0 initial.\n\n**Quel est le dernier chiffre qu’elle affiche ?**",
+    "figures": [
+      {
+        "id": "2013-sf-6-fig-digits",
+        "description": "Les dix chiffres de 0 à 9 en affichage à sept segments (segments allumés en noir, éteints en blanc). 0 : six segments extérieurs ; 1 : les deux segments de droite ; 2 : haut, haut droite, milieu, bas gauche, bas ; 3 : haut, haut droite, milieu, bas droite, bas ; 4 : haut gauche, haut droite, milieu, bas droite ; 5 : haut, haut gauche, milieu, bas droite, bas ; 6 : tous sauf haut droite ; 7 : haut, haut droite, bas droite ; 8 : les sept segments ; 9 : tous sauf bas gauche.",
+        "imageUrl": "q06_fig-digits.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "3"
+  }
+}

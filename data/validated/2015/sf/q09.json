@@ -1,0 +1,64 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 312,
+        "y": 567
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 345
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-9",
+  "number": 9,
+  "title": "Le musée",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Mathilde et Mathias visitent un musée. Celui-ci comprend seize pièces disposées en carré comme l'indique la figure ci-contre.\n\n![figure](figure:2015-sf-9-fig-museum)\n\n**Combien existe-t-il de parcours différents permettant d'aller de l'entrée à la sortie en passant exactement une fois dans chaque pièce ?**",
+    "figures": [
+      {
+        "id": "2015-sf-9-fig-museum",
+        "description": "Plan carré de 4 × 4 pièces ; chaque mur intérieur est percé d'une porte en son milieu. L'entrée (flèche « Entrée ») est par le bas de la pièce en bas à gauche, la sortie (flèche « Sortie ») par la droite de la pièce de la 2e rangée en partant du haut, dans la colonne de droite.",
+        "imageUrl": "q09_fig-museum.png"
+      }
+    ]
+  },
+  "correction": {
+    "markdown": "4 parcours différents :\n\n![figure](figure:2015-sf-9-corr-paths)",
+    "figures": [
+      {
+        "id": "2015-sf-9-corr-paths",
+        "description": "Les 4 parcours différents, chacun tracé en trait épais sur le plan du musée.",
+        "imageUrl": "q09_corr-paths.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "4"
+  }
+}

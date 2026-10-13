@@ -1,0 +1,73 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 282
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 540
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 136
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-3",
+  "number": 3,
+  "title": "Un arbre, une parcelle",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "La figure représente quatre arbres fruitiers dans un terrain.\n\n**Découpez ce terrain selon les lignes du quadrillage.** Les parcelles doivent avoir la même forme (peuvent être superposées). Il doit y avoir un arbre et un seul dans chaque parcelle.\n\n![figure](figure:2014-sf-3-fig-field)",
+    "figures": [
+      {
+        "id": "2014-sf-3-fig-field",
+        "description": "Terrain quadrillé de 20 carreaux : deux rangées du haut de 4 carreaux, deux rangées du bas de 6 carreaux (le terrain dépasse à droite en bas). Quatre arbres : rangée 1 colonne 2, rangée 2 colonne 4, rangée 4 colonne 2, rangée 4 colonne 5.",
+        "imageUrl": "q03_fig-field.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2014-sf-3-corr-parcels)\n\nIl y a vingt carreaux. Chaque parcelle doit en occuper cinq.",
+    "figures": [
+      {
+        "id": "2014-sf-3-corr-parcels",
+        "description": "Le terrain découpé en quatre parcelles de cinq carreaux de même forme, coloriées en vert, gris, bleu et orange ; chaque parcelle contient un arbre, marqué A.",
+        "imageUrl": "q03_corr-parcels.png"
+      }
+    ]
+  }
+}

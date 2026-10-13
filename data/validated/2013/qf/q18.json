@@ -1,0 +1,68 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 576,
+        "y": 437
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-2.pdf",
+        "page": 1,
+        "position": {
+          "x": 180,
+          "y": 160
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 733
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-18",
+  "number": 18,
+  "title": "Cinq quarts de pizza",
+  "coefficient": 18,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Un livreur de pizzas à domicile a décidé d’optimiser la boite qu’il utilise pour les transporter. Elle contient entièrement et sans recouvrement cinq quarts de pizza identiques (en rouge), dont on négligera l’épaisseur. La figure représente cette boite, carrée, vue du dessus. La figure est symétrique par rapport à l’axe vertical et tous les contacts sont parfaits. Le rayon d’un quart de pizza est 16 cm. **Quelle est au minimum, en cm² et arrondi au plus près, l’aire du fond de la boite ?** Si nécessaire, on prendra 3,317 pour √11 ; 3,606 pour √13 ; 3,873 pour √15; 4,123 pour √17 ; 4,359 pour √19.\n\n![figure](figure:2013-qf-18-box)",
+    "figures": [
+      {
+        "id": "2013-qf-18-box",
+        "description": "Boîte carrée vue du dessus contenant cinq quarts de pizza rouges : un dans chaque coin (centré sur le coin) et un au centre, pointe vers le bas, ses deux côtés droits touchant les quarts du bas et son arc touchant les quarts du haut.",
+        "imageUrl": "q18_fig-box.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1109"
+  },
+  "correction": {
+    "markdown": "**Une résolution analytique :**\n\n![figure](figure:2013-qf-18-corr-analytic)\n\nLes points \\(J\\) et \\(K\\) désignent des contacts tangentiels entre un arc de cercle et un segment. L’hypothèse faite sur la symétrie de la figure et ses contacts implique que les droites \\((DJ)\\) et \\((AK)\\) se coupent en un point \\(O\\) tel que le triangle \\(AOD\\) soit isocèle rectangle en \\(O\\). Par conséquent les coordonnées du point \\(J\\) sont \\((\\sqrt{2}/2, \\sqrt{2}/2)\\) dans le repère orthogonal \\((D;\\vec{i},\\vec{j})\\) où les vecteurs \\(\\vec{i}\\) et \\(\\vec{j}\\) ont pour longueur 16 cm. Nous désignons par \\(a\\) l’abscisse inconnue du point \\(A\\) dans ce repère.\n\nL’hypothèse de symétrie implique que le point \\(I\\) a pour coordonnées \\((a/2, y_I)\\) et puisque \\(I\\) appartient à la tangente au quart de cercle inférieur gauche d’équation \\(y = -x + \\sqrt{2}\\), s’ensuit que \\(y_I = \\sqrt{2} - a/2\\). Nous en déduisons que\n\n\\[\\overrightarrow{IC} = -\\frac{a}{2}\\vec{i} + (\\frac{3a}{2} - \\sqrt{2})\\vec{j}.\\]\n\nLe quart de cercle supérieur gauche étant tangent à celui occupant le milieu de la boîte, nous avons \\(IC^2 = (2 \\times 16)^2\\) si bien que\n\n\\[4 = IC^2/16^2 = \\|\\overrightarrow{IC}\\|^2/16^2 = \\frac{5}{2}a^2 - 3\\sqrt{2}a + 2.\\]\n\nAinsi \\(a\\) est la solution positive de l’équation \\(\\frac{5}{2}a^2 - 3\\sqrt{2}a - 2 = 0\\), c’est-à-dire\n\n\\[a = \\frac{\\sqrt{2}(3 + \\sqrt{19})}{5}.\\]\n\nPar conséquent, l’aire du fond de la boîte exprimée en cm² est\n\n\\[(16a)^2 = 1024\\frac{14 + 3\\sqrt{19}}{25} = 4096\\frac{14 + 3\\sqrt{19}}{100} \\approx 40{,}96 \\times (14 + 3 \\times 4{,}359) \\approx 1109,\\]\n\nles deux approximations se basant sur les indications de l’énoncé. □",
+    "figures": [
+      {
+        "id": "2013-qf-18-corr-analytic",
+        "description": "Figure de la correction : la boîte carrée ABCD (D en bas à gauche, A en bas à droite, B en haut à droite, C en haut à gauche) avec les cinq quarts de cercle ; points de contact J et K entre le quart central et les quarts inférieurs, sommet I du quart central, point O intersection des droites (DJ) et (AK) en pointillés ; vecteurs unitaires i et j (en rouge) issus de D.",
+        "imageUrl": "q18_corr-analytic.png"
+      }
+    ]
+  }
+}

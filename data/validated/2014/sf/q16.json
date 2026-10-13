@@ -1,0 +1,70 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 61
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 43,
+          "y": 308
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 693
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-16",
+  "number": 16,
+  "title": "Art moderne",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Le grand rectangle de la figure représente un tableau du peintre Rec Tangle.\n\nLa longueur et la largeur du petit rectangle blanc au centre mesurent respectivement 20 et 14 décimètres.\n\nLa longueur et la largeur de chaque petit rectangle gris mesurent des nombres entiers non nuls de décimètres.\n\nLes aires des quatre petits rectangles gris sont identiques.\n\n**Au minimum, quelle est, en dm², l’aire d’un petit rectangle gris ?**\n\nNote : la figure ne respecte pas les longueurs et les largeurs.\n\nÉventuellement, un rectangle peut être carré.\n\n![figure](figure:2014-sf-16-fig-painting)",
+    "figures": [
+      {
+        "id": "2014-sf-16-fig-painting",
+        "description": "Grand rectangle formé de quatre rectangles gris disposés en moulinet autour d'un rectangle blanc central de 20 dm sur 14 dm : un en haut à gauche, un à droite, un en bas à droite, un à gauche.",
+        "imageUrl": "q16_fig-painting.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "210"
+  },
+  "correction": {
+    "markdown": "(une assertion utilisée (en bleu ciel) mériterait d’être démontrée)\n\nVoici un schéma sur lequel sont définies les différentes variables :\n\n![figure](figure:2014-sf-16-corr-variables)\n\nPuisque les aires des quatre rectangles gris doivent être égales, on a la chaîne d’égalité suivante :\n\n20a + ca = 14d + ad = 20b + db = 14c + bc.\n\nLes solutions doivent être des entiers naturels non nuls et la quantité 20a + ca doit être minimale.\n\nSi l’on suppose que a = b et c = d (*condition nécessaire ?*), le problème se ramène à résoudre l’équation :\n\n20a + ac = 14c + ac, d’où l’on tire a = \\(\\frac{7}{10}\\) c.\n\nPlus a est petit, plus c est petit et plus l’aire à minimaliser est petite.\n\nOn choisit c = 10 (pour que a soit entier) et donc a = 7 et l’aire cherchée est égale à **210 dm²**.",
+    "figures": [
+      {
+        "id": "2014-sf-16-corr-variables",
+        "description": "Schéma du tableau avec les dimensions : rectangle du haut (20 + c) × a, rectangle de droite d × (14 + a), rectangle du bas (20 + d) × b, rectangle de gauche c × (14 + b), autour du rectangle central 20 × 14.",
+        "imageUrl": "q16_corr-variables.png"
+      }
+    ]
+  }
+}

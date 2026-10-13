@@ -1,0 +1,63 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 576,
+        "y": 140
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 6,
+        "position": {
+          "x": 43,
+          "y": 555
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 604
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-15",
+  "number": 15,
+  "title": "La sphère entre les deux cubes",
+  "coefficient": 15,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "La figure représente un grand cube qui contient une sphère, laquelle sphère contient un petit cube (en jaune).\n\nLe volume du grand cube est 504 cm³.\n\n**Quel est au maximum, en cm³ et arrondie au plus près, le volume du petit cube ?** Si nécessaire, on prendra 1,414 pour √2 et 1,732 pour √3.\n\n![figure](figure:2013-qf-15-cubes)",
+    "figures": [
+      {
+        "id": "2013-qf-15-cubes",
+        "description": "Grand cube (en perspective) contenant une sphère grise, laquelle contient un petit cube jaune.",
+        "imageUrl": "q15_fig-cubes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "97"
+  },
+  "correction": {
+    "markdown": "Il faut que la sphère touche toutes les faces du cube, que les huit sommets du petit cube touchent la sphère et que les deux cubes aient le même centre.\n\nNotons a la longueur du côté du grand cube et b la longueur du côté du petit cube.\n\na³ = 504.\n\nLe diamètre de la sphère est égal à a.\n\nLa grande diagonale du petit cube est égale à √3 b et à a.\n\nDonc b = \\(\\frac{\\sqrt{3}a}{3}\\).\n\nDonc b³ = \\(\\frac{\\sqrt{3}a^3}{9} = \\frac{\\sqrt{3} \\times 504}{9} = 56\\sqrt{3} \\approx 56 \\times 1{,}732 \\approx 97\\ cm^3\\).\n\nAu maximum, le volume du cube est égal à **97 cm³**."
+  }
+}

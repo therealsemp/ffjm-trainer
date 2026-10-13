@@ -1,0 +1,71 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 408
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 609
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 344
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-12",
+  "number": 12,
+  "title": "Le nombre du Mage Hic",
+  "coefficient": 12,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le Mage Hic remplit une grille 3 × 3 avec tous les nombres de 1 à 9 (cases vertes). Puis il calcule les produits des trois nombres de chaque ligne et de chaque colonne (cases grises). Enfin, il additionne ces six produits pour obtenir « son » nombre (en bas et à droite), 450 dans l’exemple donné. **Sur toutes les grilles possibles (il y en a 362 880), quel est, au minimum, le nombre du Mage Hic ?**\n\n![figure](figure:2013-qf-12-grid)",
+    "figures": [
+      {
+        "id": "2013-qf-12-grid",
+        "description": "Exemple de grille 3 × 3 : cases vertes 2, 9, 4 / 7, 5, 3 / 6, 1, 8 ; produits des lignes (cases grises à droite) 72, 105, 48 ; produits des colonnes (cases grises en bas) 84, 45, 96 ; total 450 en bas à droite.",
+        "imageUrl": "q12_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "436"
+  },
+  "correction": {
+    "markdown": "Plusieurs configurations permettent d’accéder au nombre minimum qui est **436** :\n\n![figure](figure:2013-qf-12-corr-grid)\n\nOn s’en convainc grâce au programme suivant rédigé en Maple :\n\n```\n> restart:\n> total:= 1000:liste:=NULL:\n> for a from 1 to 9 do:\n> for b from 1 to 9 do:if b<>a then:\n> for c from 1 to 9 do:if c<>a and c<>b then:\n> for d from 1 to 9 do:if d<>a and d<>b and d<>c then:\n> for e from 1 to 9 do:if e<>a and e<>b and e<>c and e<>d then:\n> for f from 1 to 9 do:if f<>a and f<>b and f<>c and f<>d and f<>e\nthen:\n> for g from 1 to 9 do:if g<>a and g<>b and g<>c and g<>d and g<>e and\ng<>f then:\n> for h from 1 to 9 do:if h<>a and h<>b and h<>c and h<>d and h<>e and\nh<>f and h<>g then:\n> for i from 1 to 9 do:if i<>a and i<>b and i<>c and i<>d and i<>e and\ni<>f and i<>g and i<>h then:\n> if a*b*c+d*e*f+g*h*i+a*d*g+b*e*h+c*f*i<=total then\ntotal:=a*b*c+d*e*f+g*h*i+a*d*g+b*e*h+c*f*i:\nliste:=[a,b,c,d,e,f,g,h,i,total]:\n> fi:\n> fi:od:fi:od:fi:od:fi:od:fi:od:fi:od:fi:od:fi:od:od:liste;    #Autres\nsol. ne seront pas affichées ; on ne veut que le min.#\n```\n\n[9, 6, 1, 4, 3, 7, 2, 5, 8, 436]",
+    "figures": [
+      {
+        "id": "2013-qf-12-corr-grid",
+        "description": "Grille réalisant le minimum : cases vertes 1, 6, 9 / 8, 5, 2 / 7, 3, 4 ; produits des lignes 54, 80, 84 ; produits des colonnes 56, 90, 72 ; total 436.",
+        "imageUrl": "q12_corr-grid.png"
+      }
+    ]
+  }
+}

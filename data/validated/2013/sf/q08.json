@@ -1,0 +1,48 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 304,
+        "y": 263
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 349
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-8",
+  "number": 8,
+  "title": "La somme de l’année",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias écrit tous les nombres à quatre chiffres utilisant un 2, un 0, un 1 et un 3. Il additionne ensuite tous ces nombres.\n\n**Quel résultat obtient-il ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "38664"
+  }
+}

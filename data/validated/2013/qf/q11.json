@@ -1,0 +1,58 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 349
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 368
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 316
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-11",
+  "number": 11,
+  "title": "Distance de freinage",
+  "coefficient": 11,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "La distance de freinage d'un scooter, lorsqu'il est lancé à vitesse constante, est proportionnelle au carré de cette vitesse.\n\n**Si la vitesse du scooter croît de 100%, de combien croît sa distance de freinage, en % ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "300"
+  },
+  "correction": {
+    "markdown": "df = kv², avec df la distance de freinage, k le coefficient de proportionnalité et v la vitesse constante.\n\nNotons df’ la distance de freinage lorsque la vitesse est doublée (croît de 100 %).\n\ndf’ = k × (2v)²\n\ndf’ = 4kv²\n\ndf’ = 4df\n\ndf’ = \\((1 + \\frac{300}{100})\\) × df.\n\nLa distance de freinage croît de **300 %** lorsque la vitesse est doublée. **1 solution**."
+  }
+}

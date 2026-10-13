@@ -1,0 +1,64 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 43,
+        "y": 47
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 484
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-11",
+  "number": 11,
+  "title": "Le 15 magique",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "![figure](figure:2015-sf-11-fig-fifteen)\n\nMathilde a écrit les nombres de 0 à 19 dans les vingt cases qui forment ce 15 magique.\n\nSi on additionne les nombres inscrits dans chacun des six alignements d'au moins trois cases accolées, on obtient toujours une somme égale à 43.\n\nDe plus, les nombres de la barre verticale du 1 sont rangés en ordre croissant de haut en bas.\n\n**Complétez les cases dont les nombres ont été effacés.**",
+    "figures": [
+      {
+        "id": "2015-sf-11-fig-fifteen",
+        "description": "Le nombre 15 dessiné en cases. Le 1 : barre verticale de 5 cases (3, 6, vide, vide, vide de haut en bas) avec une case 0 à gauche du 6. Le 5 : ligne du haut (vide, 4, vide, 17), une case vide sous la première, ligne du milieu (vide, 1, vide, 19), une case vide sous le 19, ligne du bas (2, vide, 14, vide). Des flèches grises indiquent les six alignements.",
+        "imageUrl": "q11_fig-fifteen.png"
+      }
+    ]
+  },
+  "correction": {
+    "markdown": "1 solution :\n\n![figure](figure:2015-sf-11-corr-grid)",
+    "figures": [
+      {
+        "id": "2015-sf-11-corr-grid",
+        "description": "La grille remplie : barre du 1 (de haut en bas) 3, 6, 9, 12, 13 avec le 0 donné à gauche du 6 ; dans le 5, ligne du haut 15, 4, 7, 17, case sous le 15 : 10, ligne du milieu 18, 1, 5, 19, case sous le 19 : 8, ligne du bas 2, 11, 14, 16.",
+        "imageUrl": "q11_corr-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "1 solution"
+  }
+}

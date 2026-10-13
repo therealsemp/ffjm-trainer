@@ -1,0 +1,59 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 304,
+        "y": 169
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 74
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 359
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-8",
+  "number": 8,
+  "title": "La pagination",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Les pages d'un livre sont numérotées 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13... Un chiffre qui apparaît dans le numéro de la dernière page apparaît au total 20 fois dans l’ensemble des numéros des pages du livre. Si le livre comptait treize pages de moins, alors le même chiffre ne serait utilisé que 14 fois au total.\n\n**Combien le livre compte-t-il de pages ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "98"
+  },
+  "correction": {
+    "markdown": "On se convainc facilement que la seule possibilité est de compter les huit dans un livre de 98 pages.\n\nLe huit apparaît alors vingt fois (8, 18, 28, 38, 48, 58, 68, 78, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 98).\n\nSi l’on retire treize pages, le livre comporte alors 85 pages et le huit n’apparaît plus que quatorze fois (8, 18, 28, 38, 48, 58, 68, 78, 80, 81, 82, 83, 84, 85).\n\nLe livre compte bien **98 pages**."
+  }
+}

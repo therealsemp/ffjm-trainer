@@ -1,0 +1,56 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 43,
+        "y": 231
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 111
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-2",
+  "number": 2,
+  "title": "La boîte à crayons",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias s'est fabriqué une boîte à crayons en carton en forme de prisme avec 5 rectangles (les côtés) et un pentagone (le fond).\n\nIl décide de peindre les six faces (les côtés et le fond) de telle sorte que deux faces ayant un côté commun ne soient jamais de la même couleur.\n\n![figure](figure:2015-sf-2-fig-prism)\n\n**Combien de couleurs devra-t-il utiliser au minimum ?**",
+    "figures": [
+      {
+        "id": "2015-sf-2-fig-prism",
+        "description": "Prisme droit à base pentagonale, ouvert en haut, dessiné en perspective (arêtes cachées en pointillés).",
+        "imageUrl": "q02_fig-prism.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "4"
+  }
+}

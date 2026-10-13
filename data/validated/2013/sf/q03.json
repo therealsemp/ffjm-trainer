@@ -1,0 +1,56 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 342
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 134
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-3",
+  "number": 3,
+  "title": "Les moutons",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Le père de Mathias dispose de 14 barrières d’un mètre chacune avec lesquelles il veut réaliser un enclos fermé pour ses moutons. Chaque barrière doit être placée entre deux points espacés d’un mètre dans le réseau représenté sur le dessin. Chaque mouton doit pouvoir disposer d’une surface d’herbe correspondant à celle d’un petit carré du réseau.\n\n![figure](figure:2013-sf-3-fig-network)\n\n**Combien de moutons, au maximum, le père de Mathias pourra-t-il mettre dans son enclos ?**",
+    "figures": [
+      {
+        "id": "2013-sf-3-fig-network",
+        "description": "Réseau de points disposés en 5 rangées de 6 points, espacés de 1 m horizontalement et verticalement (indications « 1 m » entre les deux premiers points de la rangée du haut et entre les deux premières rangées).",
+        "imageUrl": "q03_fig-network.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "12"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 312,
+        "y": 177
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 667
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-16",
+  "number": 16,
+  "title": "Des pions sur l’échiquier",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "**Quel est le nombre minimum de pions qu'il faut placer sur un échiquier (de 8 cases sur 8) afin que chaque droite passant par le centre d'une case quelconque et parallèle soit à un coté soit à une des deux diagonales de l’échiquier rencontre au moins un pion ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "16"
+  }
+}

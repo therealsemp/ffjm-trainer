@@ -1,0 +1,46 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 43,
+        "y": 647
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 604
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-14",
+  "number": 14,
+  "title": "La division de Mathias",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "En divisant 100’000 par un nombre entier à 3 chiffres tous différents, Mathias obtient un quotient et un reste entiers.\n\nLe quotient s'écrit avec les mêmes chiffres que le diviseur, mais ceux-ci sont écrits dans l'ordre inverse.\n\n**Quel est le diviseur ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "2 solutions : 175 et 571"
+  }
+}

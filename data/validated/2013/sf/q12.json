@@ -1,0 +1,46 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 59
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 467
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-12",
+  "number": 12,
+  "title": "Par 5 et par 6",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "987 a une somme des chiffres divisible par 6 : 9 + 8 + 7 = 6 × 4\n\n988 a une somme des chiffres divisible par 5 : 9 + 8 + 8 = 5 × 5.\n\n**Quels sont les deux plus petits nombres entiers positifs consécutifs tels que le plus petit a une somme des chiffres divisible par 6 et le plus grand une somme des chiffres divisible par 5 ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "189 et 190"
+  }
+}

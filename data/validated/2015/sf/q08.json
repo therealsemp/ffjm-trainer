@@ -1,0 +1,48 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 312,
+        "y": 301
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 288
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-8",
+  "number": 8,
+  "title": "Une addition et une multiplication",
+  "coefficient": 8,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "Mathias écrit la suite de calculs suivante :\n\n1×(2+3) = 5\n\n2×(3+4)=14\n\n3×(4+5)=27, etc...\n\nDans chaque ligne, on multiplie le nombre correspondant au numéro de la ligne par la somme des deux nombres suivants.\n\n**Combien de lignes de calcul Mathias aura-t-il écrites lorsqu'il atteindra ou dépassera 2015 ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "31"
+  }
+}

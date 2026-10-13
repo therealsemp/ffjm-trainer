@@ -1,0 +1,58 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 304,
+        "y": 469
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 516
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 422
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-10",
+  "number": 10,
+  "title": "Le terrain du Père Sifleur",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Le Père Sifleur possède un terrain en forme de trapèze rectangle. Ce trapèze rectangle se décompose en un rectangle et un triangle rectangle isocèle accolés par un côté. Le rectangle, dont les côtés mesurent des nombres entiers de décamètres, a une aire égale à 1200 m².\n\n**Quelle est, en m², l'aire totale du terrain du Père Sifleur ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "6 solutions : 1250, 1400, 1650, 2000, 3000 et 8400"
+  },
+  "correction": {
+    "markdown": "Notons l et L la largeur et la longueur du rectangle. Le triangle rectangle isocèle a ses deux côtés égaux de longueur l.\n\nl × L = 1200 et l et L sont des multiples de 10.\n\nPar ailleurs, l’aire du trapèze est égale à \\(\\frac{(L + L + l) \\times l}{2}\\).\n\nVoici toutes les combinaisons possibles :\n\n| l | L | Aire |\n|---|---|---|\n| 10 | 120 | **1250** |\n| 20 | 60 | **1400** |\n| 30 | 40 | **1650** |\n| 40 | 30 | **2000** |\n| 60 | 20 | **3000** |\n| 120 | 10 | **8400** |\n\nOn obtient **six valeurs possibles** pour l’aire du trapèze."
+  }
+}

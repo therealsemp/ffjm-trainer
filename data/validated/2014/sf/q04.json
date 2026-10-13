@@ -1,0 +1,78 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 378
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 704
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 188
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-4",
+  "number": 4,
+  "title": "Les allumettes de l'année",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "On a disposé 20 allumettes comme sur la figure. Après avoir supprimé 3 allumettes, on peut lire les chiffres 2, 0, 1 et 4. Chaque allumette appartient à un seul chiffre et il ne doit pas y avoir d’allumette dans le 0.\n\n![figure](figure:2014-sf-4-fig-matches)\n\n**Barrez les trois allumettes à supprimer.**\n\nOn peut tourner la feuille pour lire chaque chiffre. La figure ci-contre illustre l'écriture des chiffres avec des allumettes. On ne tiendra pas compte du sens des allumettes.\n\n![figure](figure:2014-sf-4-fig-digits)",
+    "figures": [
+      {
+        "id": "2014-sf-4-fig-matches",
+        "description": "Disposition des 20 allumettes : un carré en haut au centre, posé sur deux rangées de trois carrés.",
+        "imageUrl": "q04_fig-matches.png"
+      },
+      {
+        "id": "2014-sf-4-fig-digits",
+        "description": "Les chiffres 2, 0, 1 et 4 écrits avec des allumettes.",
+        "imageUrl": "q04_fig-digits.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2014-sf-4-corr-matches)\n\nLes allumettes à supprimer apparaissent en rouge sur le dessin.",
+    "figures": [
+      {
+        "id": "2014-sf-4-corr-matches",
+        "description": "Schéma de la disposition des allumettes, chaque chiffre tracé d'une couleur : vert (rectangle vertical formé du carré du haut et du carré central de la rangée du milieu), bleu (à droite), noir (à gauche), jaune (deux allumettes alignées en bas à gauche). Les trois allumettes à supprimer en rouge : les deux allumettes horizontales du haut de la rangée du milieu, au-dessus de son carré de gauche et de son carré central, et l'allumette verticale la plus à droite de la rangée du bas.",
+        "imageUrl": "q04_corr-matches.png"
+      }
+    ]
+  }
+}

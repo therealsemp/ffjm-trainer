@@ -1,0 +1,74 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 27,
+        "y": 332
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 583
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 114
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-4",
+  "number": 4,
+  "title": "Les trois triangles",
+  "coefficient": 4,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde dispose de trois triangles identiques en fil de fer. Elle en pose deux sur la table, ce qui crée 7 régions fermées.\n\n**Combien obtiendra-t-elle de régions fermées, au maximum, en posant le troisième triangle ?**\n\n![figure](figure:2013-qf-4-triangles)",
+    "figures": [
+      {
+        "id": "2013-qf-4-triangles",
+        "description": "Deux triangles identiques en fil de fer (traits rouges) superposés, délimitant 7 régions fermées numérotées de 1 à 7 (la région 4 au centre).",
+        "imageUrl": "q04_fig-triangles.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "19"
+  },
+  "correction": {
+    "markdown": "On trouve semble-t-il au maximum **19 régions** fermées (voir dessin).\n\n![figure](figure:2013-qf-4-corr-star)",
+    "figures": [
+      {
+        "id": "2013-qf-4-corr-star",
+        "description": "Trois triangles superposés formant une étoile à neuf branches, délimitant 19 régions fermées numérotées de 1 à 19 (la région 19 au centre).",
+        "imageUrl": "q04_corr-star.png"
+      }
+    ]
+  }
+}

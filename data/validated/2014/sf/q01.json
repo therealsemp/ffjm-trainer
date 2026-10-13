@@ -1,0 +1,67 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 78
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 146
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 78
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-1",
+  "number": 1,
+  "title": "Faire cent",
+  "coefficient": 1,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "![figure](figure:2014-sf-1-fig-digits)\n\nEn plaçant les quatre signes d'addition entre certains chiffres parmi les chiffres de 1 à 7, sans en changer l’ordre, **formez un calcul dont le résultat est égal à 100.**",
+    "figures": [
+      {
+        "id": "2014-sf-1-fig-digits",
+        "description": "La ligne « 1 2 3 4 5 6 7 + + + + » en gros caractères.",
+        "imageUrl": "q01_fig-digits.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1 + 23 + 4 + 5 + 67 ou 1 + 2 + 34 + 56 + 7"
+  },
+  "correction": {
+    "markdown": "**1 + 23 + 4 + 5 + 67 = 100**."
+  }
+}

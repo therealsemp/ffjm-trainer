@@ -1,0 +1,59 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 27,
+        "y": 524
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 2,
+        "position": {
+          "x": 43,
+          "y": 119
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 172
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-6",
+  "number": 6,
+  "title": "La brosse des maths",
+  "coefficient": 6,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "La brosse à dents de Mathilde comporte 4 rangées de 12 touffes contenant chacune 10 poils de nylon. Mathilde se brosse les dents trois fois pas jour et, à chaque brossage, sa brosse perd 3 poils. On estime que lorsqu'il reste moins de 250 poils sur la brosse au début du brossage, celui-ci n'est plus efficace. **Après combien de jours d'utilisation Mathilde doit-elle remplacer sa brosse à dents ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "25"
+  },
+  "correction": {
+    "markdown": "Total de poils = 4 × 12 × 10 = 480.\n\nChaque jour la brosse perd 9 poils.\n\nSoit le dernier jour au soir duquel il reste suffisamment de poils.\n\n480 – 9n ≥ 250, soit n ≤ 25,555555.....\n\nAu soir du 25ème jour, il reste assez de poils (255). Le lendemain il n’y en a plus assez pour finir la journée.\n\nMathilde doit renouveler sa brosse après **25 jours** d’utilisation."
+  }
+}

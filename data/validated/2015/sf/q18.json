@@ -1,0 +1,61 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 312,
+        "y": 415
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 731
+        }
+      },
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 70,
+          "y": 107
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-18",
+  "number": 18,
+  "title": "Les deux échiquiers",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Deux échiquiers identiques (de 8 cases sur 8) ont des cases noires et des cases transparentes disposées en damier de la façon habituelle. Les cases des deux échiquiers sont des carrés de 5 cm de côté.\n\nOn place ces deux échiquiers exactement l'un sur l'autre et on fait tourner l'un des deux échiquiers de 45 degrés autour de son centre.\n\n**Quelle sera l'aire totale noire apparente en cm² ?**\n\nSi nécessaire, on prendra 1,414 pour √2."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1269"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2015-sf-18-corr-chessboards)\n\nVoici les deux échiquiers après rotation.\n\nDistinguons l'octogone intérieur et les 8 triangles extérieurs.\n\nVu que les diagonales des échiquiers sont des axes de symétrie, les 3/4 de la surface de l'octogone apparaissent en noir : la moitié provenant de l'échiquier supérieur et un quart (la \"moitié de la moitié\") provenant de l'échiquier inférieur.\n\nVu les axes de symétrie et la non-superposition, la moitié de la surface des 8 triangles extérieurs est noire.\n\nL'aire totale noire apparente représente donc :\n\n3/4 de l'octogone + 4 triangles = 3/4 d'un échiquier + 1 triangle.\n\nL'échiquier a une surface totale de 64 cases x 25 cm² = 1.600 cm².\n\nUn triangle extérieur est un triangle rectangle isocèle. Sa hauteur est égale à 4 x 5 x (1,414 - 1) et sa surface est égale à [4 x 5 x (1,414 - 1)]² ≈ 69 cm².\n\nL'aire totale noire apparente est donc de (3/4 x 1.600) + 69 ≈ **1.269 cm²**.",
+    "figures": [
+      {
+        "id": "2015-sf-18-corr-chessboards",
+        "description": "Contours des deux échiquiers superposés : un carré et le même carré tourné de 45° autour de son centre, formant une étoile à huit branches (octogone intérieur et 8 petits triangles extérieurs).",
+        "imageUrl": "q18_corr-chessboards.png"
+      }
+    ]
+  }
+}

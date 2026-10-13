@@ -1,0 +1,60 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 27,
+        "y": 259
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 218
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 85
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-3",
+  "number": 3,
+  "title": "Deux menteurs sur trois",
+  "coefficient": 3,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Abel : « Pendant ces vacances, j’ai lu au moins quatre livres ».\n\nBéatrice : « Non, tu en as lu moins de quatre ! ».\n\nCamille : « Je dirais qu’Abel en a lu au moins deux ».\n\nUn seul des trois amis n’a pas menti.\n\n**Combien Abel a-t-il lu de livres, sachant qu’il en a lu au moins un ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "1"
+  },
+  "correction": {
+    "markdown": "Notons a, b et c les nombres de livres lus par chacun.\n\nA affirme que a ≥ 4.\n\nB affirme que a < 4.\n\nC affirme que a ≥ 2.\n\nOn sait que a ≥ 1.\n\nDressons un tableau de vérité :\n\n|  | Cas 1 | Cas 2 | Cas 3 |\n| --- | --- | --- | --- |\n| A | V | F | F |\n| B | F | V | F |\n| C | F | F | V |\n| Conséquences | a ≥ 4 et a ≥ 4 et a < 2 | a < 4 et a < 4 et a < 2 | a ≥ 4 et a < 4 et a < 2 |\n\nSeul le cas 2 est possible. a < 2 et a ≥ 1, donc a = 1.\n\nAbel a lu **1 livre**."
+  }
+}

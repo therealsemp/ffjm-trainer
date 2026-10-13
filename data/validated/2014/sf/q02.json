@@ -1,0 +1,74 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 150
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 215
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 109
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-2",
+  "number": 2,
+  "title": "Avec 3 carrés",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "En rapprochant ces deux carrés horizontalement sans les tourner et en les faisant se chevaucher partiellement, on obtient une figure sur laquelle apparaissent trois carrés entièrement dessinés.\n\n**Combien de carrés obtiendrait-on, au maximum, en rapprochant les trois carrés ci-contre horizontalement sans les tourner ?**\n\n![figure](figure:2014-sf-2-fig-squares)",
+    "figures": [
+      {
+        "id": "2014-sf-2-fig-squares",
+        "description": "En haut : deux carrés posés sur la pointe, avec des flèches indiquant qu'on les rapproche horizontalement. Au milieu : les deux carrés se chevauchant, les trois carrés obtenus numérotés 1, 2 et 3 (le 3 étant le petit carré de l'intersection). En bas : trois carrés identiques posés sur la pointe, avec des flèches vers celui du milieu.",
+        "imageUrl": "q02_fig-squares.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "8"
+  },
+  "correction": {
+    "markdown": "![figure](figure:2014-sf-2-corr-squares)\n\nEn imbriquant trois grands carrés, on obtient **8 carrés** de tailles diverses.",
+    "figures": [
+      {
+        "id": "2014-sf-2-corr-squares",
+        "description": "Trois grands carrés identiques posés sur la pointe, imbriqués (chacun décalé horizontalement d'un quart de diagonale par rapport au précédent), formant 8 carrés de tailles diverses.",
+        "imageUrl": "q02_corr-squares.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 506
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 4,
+        "position": {
+          "x": 43,
+          "y": 394
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 373
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-13",
+  "number": 13,
+  "title": "Le serpent de l’année",
+  "coefficient": 13,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "**Ecrivez un nombre de 1 à 25 dans chaque case du serpent**.\n\n20 et 13 sont déjà placés, tous les autres nombres doivent être utilisés.\n\nLa somme des deux nombres écrits dans deux cases voisines (se touchant par un côté, mais pas seulement par un coin) doit toujours être le carré d’un nombre entier.\n\n![figure](figure:2013-qf-13-snake)",
+    "figures": [
+      {
+        "id": "2013-qf-13-snake",
+        "description": "Serpent de 25 cases en créneaux (3 cases en bas à gauche, montée de 2 cases, 4 cases en haut, descente, 4 cases en bas, montée, 4 cases en haut, descente, puis 6 cases en bas). Le 20 est placé dans la 5e case (début du premier créneau du haut) et le 13 dans la 20e case (début de la dernière ligne du bas).",
+        "imageUrl": "q13_fig-snake.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open",
+    "value": "3 solutions (dans l'ordre des cases) : 18, 7, 9, 16, 20, 5, 11, 25, 24, 1, 8, 17, 19, 6, 10, 15, 21, 4, 12, 13, 3, 22, 14, 2, 23 ; 18, 7, 9, 16, 20, 5, 11, 25, 24, 1, 8, 17, 19, 6, 10, 15, 21, 4, 12, 13, 23, 2, 14, 22, 3 ; 18, 7, 9, 16, 20, 5, 11, 25, 24, 1, 8, 17, 19, 6, 3, 22, 14, 2, 23, 13, 12, 4, 21, 15, 10"
+  },
+  "correction": {
+    "markdown": "Les carrés atteignables sont 4, 9, 16, 25, 36 et 49.\n\nAprès avoir longuement testé tous les cas de proche en proche, on trouve **trois solutions** :\n\n![figure](figure:2013-qf-13-corr-snakes)",
+    "figures": [
+      {
+        "id": "2013-qf-13-corr-snakes",
+        "description": "Les trois serpents solutions. Lecture case par case : 18, 7, 9, 16, 20, 5, 11, 25, 24, 1, 8, 17, 19, 6, 10, 15, 21, 4, 12, 13, 3, 22, 14, 2, 23 ; puis 18, 7, 9, 16, 20, 5, 11, 25, 24, 1, 8, 17, 19, 6, 10, 15, 21, 4, 12, 13, 23, 2, 14, 22, 3 ; puis 18, 7, 9, 16, 20, 5, 11, 25, 24, 1, 8, 17, 19, 6, 3, 22, 14, 2, 23, 13, 12, 4, 21, 15, 10.",
+        "imageUrl": "q13_corr-snakes.png"
+      }
+    ]
+  }
+}

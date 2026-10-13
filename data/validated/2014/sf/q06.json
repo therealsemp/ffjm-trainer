@@ -1,0 +1,66 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 654
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 2,
+        "position": {
+          "x": 43,
+          "y": 275
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 302
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-6",
+  "number": 6,
+  "title": "Les sapins",
+  "coefficient": 6,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "L'aire du petit sapin à gauche est 8 cm². L'aire du sapin au milieu est 15 cm². Tous les triangles sont égaux entre eux et tous les rectangles sont égaux entre eux.\n\n**Quelle est, en cm², l'aire du grand sapin à droite ?**\n\nNote: la figure ne respecte pas les longueurs.\n\n![figure](figure:2014-sf-6-fig-trees)",
+    "figures": [
+      {
+        "id": "2014-sf-6-fig-trees",
+        "description": "Trois sapins gris de tailles croissantes (2, 3 et 4 étages), découpés en pointillés en petits triangles rectangles et en rectangles.",
+        "imageUrl": "q06_fig-trees.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "24"
+  },
+  "correction": {
+    "markdown": "Notons t l’aire d’un petit triangle rectangle et r l’aire d’un petit rectangle.\n\nLes deux premiers sapins donnent le système suivant :\n\n\\[ \\begin{cases} 4t + r = 8 \\\\ 6t + 3r = 15 \\end{cases} \\Leftrightarrow \\begin{cases} 4t + r = 8 \\\\ 2t + r = 5 \\end{cases}. \\]\n\nD’où 2t = 3 ⇔ t = 1,5 cm².\n\nD’où r = 2 cm².\n\nD’où l’aire du grand sapin : 8t + 6r = 8 × 1,5 + 6 × 2 = 12 + 12 = **24 cm²**."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 496
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 163
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-4",
+  "number": 4,
+  "title": "Calculatrice en dérangement",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Sur cette calculatrice, il n’y a plus que trois touches qui fonctionnent : la touche « + », la touche « × » et la touche « 5 ». Lorsqu’on appuie sur la touche « 5 », la calculatrice calcule automatiquement et affiche le résultat de la dernière opération entrée.\n\nLa calculatrice affiche 5. Après avoir appuyé quatre fois sur une des touches « + » ou « × » et sur la touche 5, la calculatrice affiche 100.\n\n**Quels sont les trois résultats intermédiaires affichés par la calculatrice ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "10, 15 et 20"
+  }
+}

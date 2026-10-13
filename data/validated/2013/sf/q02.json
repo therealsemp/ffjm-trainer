@@ -1,0 +1,56 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 34,
+        "y": 198
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 104
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-2",
+  "number": 2,
+  "title": "Les pyramides",
+  "coefficient": 2,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathilde a trouvé dans le grenier de son grand-père dix pyramides en bois à base carrée de côtés 10 centimètres. Ces pyramides ont toutes une hauteur égale à 5 centimètres. Mathilde dispose d’une boîte en forme de cube de 10 centimètres d’arête. Elle range un certain nombre de pyramides dans la boîte et referme celle-ci.\n\n![figure](figure:2013-sf-2-fig-pyramid-cube)\n\n**Combien Mathilde a-t-elle pu ranger de pyramides, au maximum ?**",
+    "figures": [
+      {
+        "id": "2013-sf-2-fig-pyramid-cube",
+        "description": "À gauche, une pyramide à base carrée (côté de base « 10 cm ») ; à droite, une boîte cubique ouverte, couvercle relevé (arête « 10 cm »).",
+        "imageUrl": "q02_fig-pyramid-cube.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "6"
+  }
+}

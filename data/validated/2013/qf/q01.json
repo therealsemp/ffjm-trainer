@@ -1,0 +1,67 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 27,
+        "y": 15
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 1,
+        "position": {
+          "x": 43,
+          "y": 80
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 28
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-1",
+  "number": 1,
+  "title": "La spirale",
+  "coefficient": 1,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Cette spirale, composée de cinq morceaux, tourne dans le sens inverse de celui des aiguilles d'une montre, en allant de l'intérieur vers l'extérieur. **Combien faut-il déplacer de morceaux de cette spirale, au minimum, pour obtenir une spirale qui tourne dans le sens des aiguilles d'une montre, en allant de l'intérieur vers l'extérieur ?**\n\n![figure](figure:2013-qf-1-spiral)",
+    "figures": [
+      {
+        "id": "2013-qf-1-spiral",
+        "description": "Spirale rouge formée de cinq morceaux (des arcs de cercle concentriques, coupés en une moitié gauche et une moitié droite), avec à gauche une flèche courbe indiquant le sens de rotation (sens inverse des aiguilles d'une montre de l'intérieur vers l'extérieur).",
+        "imageUrl": "q01_fig-spiral.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "2"
+  },
+  "correction": {
+    "markdown": "**Deux** (descendre les deux morceaux de droite d’un cran vers le bas)."
+  }
+}

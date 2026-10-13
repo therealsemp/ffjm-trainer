@@ -1,0 +1,70 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 43,
+        "y": 646
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 201
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-5",
+  "number": 5,
+  "title": "Le circuit",
+  "coefficient": 5,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "![figure](figure:2015-sf-5-fig-example)\n\nDans l'exemple à gauche, on a tracé un circuit fermé passant exactement une fois par le centre de chacune des huit cases carrées du quadrillage.\n\n![figure](figure:2015-sf-5-fig-grid)\n\n**Faites de même avec les 18 cases de la figure de droite dans laquelle 3 segments du circuit sont déjà tracés.**",
+    "figures": [
+      {
+        "id": "2015-sf-5-fig-example",
+        "description": "Exemple : quadrillage de 8 cases (2 cases en haut à droite au-dessus d'une rangée de 3 cases et d'une rangée de 3 cases) parcouru par un circuit fermé gris passant par le centre de chaque case.",
+        "imageUrl": "q05_fig-example.png"
+      },
+      {
+        "id": "2015-sf-5-fig-grid",
+        "description": "Quadrillage de 18 cases : une rangée de 2 cases en haut à droite, puis 4 rangées de 4 cases. Trois segments gris déjà tracés : un coude reliant le centre de la case (3e rangée, 2e colonne) à celui de la case à sa droite et à celui de la case en dessous, et un segment vertical reliant les centres des cases (4e rangée, 3e colonne) et (5e rangée, 3e colonne).",
+        "imageUrl": "q05_fig-grid.png"
+      }
+    ]
+  },
+  "correction": {
+    "markdown": "![figure](figure:2015-sf-5-corr-circuit)",
+    "figures": [
+      {
+        "id": "2015-sf-5-corr-circuit",
+        "description": "Solution : le quadrillage de 18 cases parcouru par un circuit fermé en trait épais, passant une fois par le centre de chaque case.",
+        "imageUrl": "q05_corr-circuit.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  }
+}

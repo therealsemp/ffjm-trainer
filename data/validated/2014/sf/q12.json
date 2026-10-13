@@ -1,0 +1,70 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 61
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 43,
+          "y": 74
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 512
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-12",
+  "number": 12,
+  "title": "Cinq carrés pour en faire un",
+  "coefficient": 12,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Mathieu vient de trouver cette planche dans le grenier de son grand-père. Il veut la découper et réassembler les morceaux, à plat, pour reconstituer un grand carré avec ces morceaux. De plus, il veut couper la planche en un nombre minimal de morceaux.\n\n**Dessinez son découpage.**\n\n![figure](figure:2014-sf-12-fig-plank)",
+    "figures": [
+      {
+        "id": "2014-sf-12-fig-plank",
+        "description": "Planche grise formée de cinq carrés égaux (délimités en pointillés) : deux carrés en haut à gauche, trois carrés en bas.",
+        "imageUrl": "q12_fig-plank.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  },
+  "correction": {
+    "markdown": "Notons a la longueur du côté d’un des cinq petits carrés. Le grand carré final aura une aire de 5a² et ses côtés auront donc pour longueur \\(\\sqrt{5}\\) a², ce qui correspond à la longueur de l’hypoténuse d’un triangle rectangle de petits côtés a et 2a.\n\nD’où la construction, avec les parties découpées en gris et, en vert, l’emplacement où il faut les recoller :\n\n![figure](figure:2014-sf-12-corr-cut)\n\nL’unicité reste à déterminer…",
+    "figures": [
+      {
+        "id": "2014-sf-12-corr-cut",
+        "description": "La planche découpée selon deux segments : un triangle gris à gauche (du coin supérieur gauche de la planche au milieu du bord inférieur) et un triangle gris en bas à droite (du milieu du bord inférieur au coin supérieur droit de la partie basse). En vert, les emplacements où recoller ces deux triangles (au-dessus et à droite) pour former un grand carré incliné.",
+        "imageUrl": "q12_corr-cut.png"
+      }
+    ]
+  }
+}

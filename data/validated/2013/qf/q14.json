@@ -1,0 +1,71 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 576,
+        "y": 45
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 5,
+        "position": {
+          "x": 43,
+          "y": 36
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 575
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-14",
+  "number": 14,
+  "title": "Recouvrement de triangles",
+  "coefficient": 14,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "On découpe un triangle équilatéral en deux morceaux selon une hauteur. On retourne un des deux morceaux, et on le glisse de façon à obtenir la figure. L’aire du triangle équilatéral était 600 cm². **Quelle est, en cm² et arrondie au plus près si nécessaire, l’aire du recouvrement des deux morceaux, en rouge sur la figure ?**\n\n![figure](figure:2013-qf-14-triangles)",
+    "figures": [
+      {
+        "id": "2013-qf-14-triangles",
+        "description": "Les deux morceaux (demi-triangles équilatéraux rectangles) : l'un posé avec son côté de l'angle droit horizontal, l'autre retourné et glissé, leur recouvrement coloré en rose.",
+        "imageUrl": "q14_fig-triangles.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "125"
+  },
+  "correction": {
+    "markdown": "Notons a la longueur du côté du triangle équilatéral de départ. La hauteur du triangle équilatéral est égale à \\(\\frac{\\sqrt{3}}{2}\\) a, donc son aire est égale à \\(\\frac{a \\times \\frac{\\sqrt{3}}{2} a}{2} = 600\\). On ne déduit a² = \\(\\frac{2400\\sqrt{3}}{3}\\).\n\nAire rouge = Aire de OPR – Aire de PNT.\n\nAire de OPR = Aire de PRS – Aire de ORS = \\(\\frac{1}{2} \\times \\frac{a}{2} \\times \\frac{\\sqrt{3}}{2} a - \\frac{1}{2} \\times \\frac{a}{2} \\times \\frac{\\sqrt{3}}{2} \\times \\frac{a}{2} = \\frac{\\sqrt{3}a^2}{16}\\).\n\nAire de PNT :\n\nPythagore dans MNO, du fait que O est facilement le centre du cercle circonscrit à PRS et RQM et donc que MN = \\(\\frac{\\sqrt{3}}{4} a\\) et MO = \\(\\frac{1}{2} a\\), donne NO = \\(\\frac{a}{4}\\).\n\nD’où NP = OP – NO = \\(\\frac{1}{2} a - \\frac{1}{4} a = \\frac{1}{4} a\\).\n\nOn en déduit Aire de PNT = \\(\\frac{1}{2} \\times \\frac{a}{4} \\times \\frac{a}{4} \\times \\tan(30^\\circ) = \\frac{\\sqrt{3}a^2}{6 \\times 16}\\).\n\nD’où Aire rouge = \\(\\frac{\\sqrt{3}a^2}{16} - \\frac{\\sqrt{3}a^2}{6 \\times 16} = \\frac{5\\sqrt{3}a^2}{96} = \\frac{5 \\times 2400}{96} =\\) **125 cm²**. **1 solution**.\n\n![figure](figure:2013-qf-14-corr-circle)",
+    "figures": [
+      {
+        "id": "2013-qf-14-corr-circle",
+        "description": "Figure de la correction : cercle passant par S, R, Q, P, M, de centre O ; segments SP (vertical, passant par O et N), MQ (horizontal, passant par N et T), SR, RQ, MR (passant par O), RP (passant par T) ; angles marqués 60°, 30°, 120° et angles droits en N, Q et R ; le quadrilatère ONTR (recouvrement) est colorié.",
+        "imageUrl": "q14_corr-circle.png"
+      }
+    ]
+  }
+}

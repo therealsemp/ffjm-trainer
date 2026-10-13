@@ -1,0 +1,45 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 407
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 557
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-15",
+  "number": 15,
+  "title": "Le carré autour du triangle",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Un triangle équilatéral de côté 10 centimètres est tracé sur le cahier de Mathias. Celui-ci construit alors un carré dont les côtés passent par les trois sommets du triangle.\n\n**Combien mesure le côté du carré, au minimum ?**\n\nSi besoin est, on prendra 1,414 pour √2 et 1,732 pour √3, et on arrondira la réponse exprimée en centimètres au centième le plus proche."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "9,66"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 302,
+        "y": 264
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 175
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 287
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-10",
+  "number": 10,
+  "title": "La pendule",
+  "coefficient": 10,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Une pendule possède une grande aiguille (minutes) de longueur 75 mm et une petite aiguille (heures) de longueur 60 mm.\n\n**Quelle est la longueur totale du trajet parcouru par les extrémités des deux aiguilles pendant une durée de 7 heures ?**\n\nOn pourra prendre 22/7 pour π et on donnera la réponse en centimètres, arrondie au cm le plus proche."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "352"
+  },
+  "correction": {
+    "markdown": "En sept heures :\n\nLa grande aiguille parcourt 7 tours complets d’un disque de rayon 75.\n\nLa petite aiguille parcourt \\(\\frac{7}{12}\\) d’un tour d’un disque de rayon 60.\n\nLa longueur totale parcourue par les extrémités des deux aiguilles est :\n\n\\(2\\pi \\times 75 \\times 7 + 2\\pi \\times 60 \\times \\frac{7}{12} = (1050 + 70)\\pi = 1120\\pi \\approx 1120 \\times \\frac{22}{7} \\approx 3520\\ \\text{mm} \\approx\\) **352 cm**. **1 solution**."
+  }
+}

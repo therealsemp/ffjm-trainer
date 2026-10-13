@@ -1,0 +1,50 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 312,
+        "y": 720
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 453
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-10",
+  "number": 10,
+  "title": "Division",
+  "coefficient": 10,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "On divise un nombre à deux chiffres par la somme de ses chiffres.\n\n**Quel est le plus grand reste que l'on peut obtenir ?**"
+  },
+  "correction": {
+    "markdown": "15 est le plus grand reste (\\(79 = 4 \\times 16 + 15\\))"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "15"
+  }
+}

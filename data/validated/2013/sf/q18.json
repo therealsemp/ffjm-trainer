@@ -1,0 +1,61 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 155
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 150,
+          "y": 85
+        }
+      },
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 645
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-18",
+  "number": 18,
+  "title": "Le chemin de l’école",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "![figure](figure:2013-sf-18-fig-map)\n\nLorsqu'elle se rend à l'école, Mathilde marche toujours à 4,5 km/h. Mathilde a élaboré une stratégie qui lui permet de partir le plus tard possible de chez elle tout en n'arrivant jamais après 8 h 30 à l'école. Pour ceci, elle a remarqué que les feux à piétons des deux passages protégés de l'avenue où se trouve son école étaient verts pendant 15 s puis rouges pendant 45 s. De plus ils sont synchronisés (ils ont la même couleur au même moment) et visibles depuis n'importe quel point de l'avenue. En revanche, l'horaire auquel ils démarrent le matin n'étant pas fixe, il n'est pas possible de savoir à l'avance l'heure à laquelle ils passeront au vert et Mathilde ne découvre l’état des feux qu’à l’instant où elle arrive à l’intersection de la rue de sa maison et de la rue de l’école.\n\n**Quelle est, en moyenne, l'heure à laquelle arrive Mathilde à l'école, sachant qu'une fois qu'elle est sortie de chez elle, elle essaie toujours d'arriver le plus tôt possible à l'école ?**\n\nOn donnera une réponse arrondie à la seconde la plus proche.",
+    "figures": [
+      {
+        "id": "2013-sf-18-fig-map",
+        "description": "Plan : la « Maison de Mathilde » (point noir) en haut à gauche, reliée par une rue verticale de 20 m à une avenue horizontale de 10 m de large ; deux passages piétons (zébras) traversent l'avenue, le premier à 10 m du débouché de la rue, le second 100 m plus loin ; l'« Ecole » (point noir) est sur le trottoir d'en face, au niveau du second passage.",
+        "imageUrl": "q18_fig-map.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "8 h 29 min 41 s"
+  },
+  "correction": {
+    "markdown": "Notons d'abord que, dans tous les cas de figure, Mathilde parcourt au moins 140 m., ce qui correspond à une durée de 140 x 3600 / 4500 = 112 sec.\n\nLorsque Mathilde se présente devant le premier feu, nous distinguerons 4 possibilités (avec leurs probabilités respectives) :\n\n- (1) le feu est vert (15/60)\n- (2) le feu est rouge depuis 0 à 25 sec. (25/60)\n- (3) le feu est rouge depuis 25 à 40 sec. (15/60)\n- (4) le feu est rouge depuis 40 à 45 sec. (5/60)\n\nSelon le cas, Mathilde a intérêt à adopter les attitudes suivantes :\n\n- (1) Elle traverse au premier feu et la durée du trajet sera de 112 sec.\n- (2) Elle continue son chemin vers le deuxième feu et lorsqu'elle arrivera au deuxième feu, vu qu'elle parcourt les 100 m. entre les deux feux en 80 sec., le deuxième feu sera rouge depuis 20 à 45 sec. Elle devra donc attendre de 0 à 25 sec. La durée moyenne du trajet sera donc de 112 + 12,5 = 124,5 sec. avec un maximum de 112 + 25 = 137 sec.\n- (3) Elle continue son chemin vers le deuxième feu et lorsqu'elle arrivera au deuxième feu, ce feu sera vert. Elle n'attendra pas et la durée totale du trajet sera de 112 sec.\n- (4) Elle continue son chemin vers le deuxième feu. Mais si elle va jusqu'au deuxième feu, ce feu sera rouge depuis 0 à 5 sec. Dans ce cas, pour minimiser l'attente, elle a intérêt à rebrousser chemin dès qu'elle constate que les feux deviennent verts, soit après 0 à 5 sec. La durée moyenne du trajet sera donc de 112 + 5 = 117 sec. avec un maximum de 112 + 10 = 122 sec.\n\nLa durée maximale du trajet est donc de 137 sec. Elle doit partir à 8h 27' 43'' au plus tard.\n\nLa durée moyenne du trajet est de\n\n[(112 x 15) + (124,5 x 25) + (112 x 15) + (117 x 5)] / 60 ≈ 118 sec.\n\nEn moyenne, elle arrivera donc à l'école à 8h 29' 41''."
+  }
+}

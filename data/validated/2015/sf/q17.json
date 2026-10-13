@@ -1,0 +1,54 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 312,
+        "y": 295
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 699
+        }
+      },
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution-detailed.pdf",
+        "page": 1,
+        "position": {
+          "x": 70,
+          "y": 107
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-17",
+  "number": 17,
+  "title": "Le parallélépipède",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "On dispose d'un certain nombre de petits cubes identiques.\n\nEn collant tous ces cubes, on réalise un parallélépipède rectangle plein. On peint 3 faces du parallélépipède ayant un sommet commun. Exactement la moitié des cubes utilisés ont au moins une face peinte.\n\n**Combien y a-t-il de petits cubes ?**"
+  },
+  "answer": {
+    "type": "open",
+    "value": "5 solutions : 120, 144, 168, 180 ou 240"
+  },
+  "correction": {
+    "markdown": "Désignons par a, b et c les 3 côtés du parallélipipède, avec a ≤ b ≤ c.\n\nLe nombre de cubes non-peints est égal à (a - 1)(b - 1)(c - 1). De plus, comme le nombre de cubes peints est égal à abc/2 , le nombre de cubes non-peints est aussi égal à abc/2. On a donc 2(a - 1)(b - 1)(c - 1) = abc.\n\nExaminons les valeurs successives de a.\n\nSi a = 1, on a 0 = bc, impossible.\n\nSi a = 2, on a (b - 1)(c - 1) = bc, impossible.\n\nSi a = 3, on a 4(b - 1)(c -1) = 3bc\n\n- si b = 3, on a c = - 8, à rejeter\n- si b = 4, on a c = 0,5 à rejeter\n- si b = 5, on a c = 16 solution n° 1 avec **abc = 240**\n- si b = 6, on a c = 10 solution n° 2 avec **abc = 180**\n- si b = 7, on a c = 8 solution n° 3 avec **abc = 168**\n- si b > 7, on a c < 8 à rejeter vu que b ≤ c\n\nSi a = 4, on a 3(b - 1)(c - 1) = 2bc\n\n- si b = 4, on a c = 9 solution n° 4 avec **abc = 144**\n- si b = 5, on a c = 6 solution n° 5 avec **abc = 120**\n- si b > 5, on a c < 6 à rejeter vu que b ≤ c\n\nSi a = 5, on a 8(b - 1)(c - 1) = 5bc\n\n- si b > 4, on a c < 6 à rejeter car a = b = c = 5 ne convient pas\n\nSi a > 5, b > 5 et c > 5, alors on a 32/25 < 2(a -1)(b -1)/ab < 2 et 1 < c/(c - 1) < 5/4 et, comme 5/4 < 32/25, on ne peut avoir 2(a-1)(b - 1)(c - 1) = abc."
+  }
+}

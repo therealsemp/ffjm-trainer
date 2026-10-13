@@ -1,0 +1,56 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 505
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 6,
+        "position": {
+          "x": 43,
+          "y": 102
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 662
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-15",
+  "number": 15,
+  "title": "Division par 11",
+  "coefficient": 15,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Mathilde vient de diviser un nombre à trois chiffres par 11. Surprise ! Le quotient, qui est exact, est égal à la somme des carrés des chiffres du nombre de départ.\n\n**Quel était ce nombre ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "2 solutions : 550 et 803"
+  },
+  "correction": {
+    "markdown": "A l’aide de MAPLE (à la main ?), on trouve **deux solutions** :\n\n```\n> restart:liste:=NULL:\n> for a from 1 to 9 do:\n> for b from 0 to 9 do:\n> for c from 0 to 9 do:\n> if 100*a+10*b+c=11*(a^2+b^2+c^2) then liste:=liste,[a,b,c] fi:\n> od:od:od:liste;\n```\n\n[5, 5, 0], [8, 0, 3]\n\nLes solutions sont **550** et **803**."
+  }
+}

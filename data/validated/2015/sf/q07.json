@@ -1,0 +1,64 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 312,
+        "y": 196
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 258
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-7",
+  "number": 7,
+  "title": "Découpage",
+  "coefficient": 7,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CM",
+  "statement": {
+    "markdown": "**Découpez la figure ci-contre en 4 parties superposables en suivant les lignes du quadrillage.**\n\nOn peut retourner et tourner les morceaux.\n\n![figure](figure:2015-sf-7-fig-shape)",
+    "figures": [
+      {
+        "id": "2015-sf-7-fig-shape",
+        "description": "Figure de 24 triangles équilatéraux sur un quadrillage triangulaire (lignes intérieures en pointillés) : deux pointes en haut, une rangée de 8 triangles, une rangée de 9 triangles débordant à gauche, et une rangée de 5 triangles en bas.",
+        "imageUrl": "q07_fig-shape.png"
+      }
+    ]
+  },
+  "correction": {
+    "markdown": "![figure](figure:2015-sf-7-corr-cut)",
+    "figures": [
+      {
+        "id": "2015-sf-7-corr-cut",
+        "description": "Solution : la figure découpée en 4 pièces identiques de 6 triangles, contours des pièces tracés.",
+        "imageUrl": "q07_corr-cut.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "open"
+  }
+}

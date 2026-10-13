@@ -1,0 +1,43 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 517
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 756
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-18",
+  "number": 18,
+  "title": "L'année porte-bonheur",
+  "coefficient": 18,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "Les termes n° 1, 2, 3 et 4 d’une suite sont respectivement \\(13^0\\), \\(13^1\\), \\(13^2\\) et 2014. Ensuite, chaque terme de la suite est toujours égal à la somme des quatre précédents.\n\nLe terme n° 5 de la suite est ainsi \\(13^0 + 13^1 + 13^2 + 2014 = 13^3\\).\n\n**Quel est le nombre de chiffres du terme n° 2014 de la suite ?**\n\nSi nécessaire, log étant le logarithme décimal, on prendra 0,285 pour log (1,928) et 0,942 pour log (8,748)."
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "576"
+  }
+}

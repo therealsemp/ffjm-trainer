@@ -1,0 +1,57 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 349
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 43,
+          "y": 586
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 630
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-14",
+  "number": 14,
+  "title": "Une suite arithmétique",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le premier terme d'une suite est \\(a_1 = 20\\).\n\nLe deuxième terme est \\(a_2 = 14\\).\n\nEnsuite, chaque terme de la suite est donné en fonction des deux précédents par la relation :\n\n\\[ a_{p+2} = \\frac{1 + a_{p+1}}{a_p} \\]\n\nAinsi; \\(a_3 = 3/4\\), etc.\n\n**Quel est le 2014e terme, \\(a_{2014}\\) ?**\n\nSi la réponse n'est pas entière, alors on la donnera sous la forme d'une fraction irréductible."
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1/8"
+  },
+  "correction": {
+    "markdown": "(trouvé, mais en quoi est-ce une suite arithmétique ??)\n\nCalculons les premiers termes de la suite (les détails du calcul fractionnaire élémentaire ne sont pas données) :\n\n\\(a_1 = 20\\).\n\n\\(a_2 = 14\\).\n\n\\(a_3 = \\frac{3}{4}\\).\n\n\\(a_4 = \\frac{1}{8}\\).\n\n\\(a_5 = \\frac{3}{4}\\).\n\n\\(a_6 = 20\\).\n\n\\(a_7 = 14\\).\n\nOn retrouve les mêmes termes indéfiniment avec une périodicité de cinq termes.\n\n2014 = 402 × 5 + 4. D’où **\\(a_{2014} = a_4 = \\frac{1}{8}\\)**."
+  }
+}

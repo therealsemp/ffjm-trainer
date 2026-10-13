@@ -1,0 +1,72 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 304,
+        "y": 565
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 4,
+        "position": {
+          "x": 43,
+          "y": 102
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 453
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-11",
+  "number": 11,
+  "title": "Échange",
+  "coefficient": 11,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Sur ce mini-damier, les mouvements autorisés sont :\n\n- le déplacement d’un pion vers une case adjacente à condition que cette case soit libre ;\n- le saut par dessus un pion situé dans une case adjacente à condition que la case située juste au-delà du pion sauté soit libre.\n\nDeux cases sont adjacentes si elles ont un côté commun.\n\n**En combien de mouvements, au minimum, peut-on échanger les pions blancs et les pions noirs ?**\n\n![figure](figure:2014-sf-11-fig-board)",
+    "figures": [
+      {
+        "id": "2014-sf-11-fig-board",
+        "description": "Mini-damier de 7 cases posé sur la pointe : 3 pions blancs dans les cases de gauche, 3 pions noirs dans les cases de droite, la case centrale libre.",
+        "imageUrl": "q11_fig-board.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "15"
+  },
+  "correction": {
+    "markdown": "Voici une possibilité, en **quinze mouvements**, mais est-elle optimale (oui d’après la réponse officielle) ?\n\n![figure](figure:2014-sf-11-corr-moves)",
+    "figures": [
+      {
+        "id": "2014-sf-11-corr-moves",
+        "description": "Seize états successifs du damier (Départ, puis Mouvement 1 à Mouvement 15), en trois colonnes ; chaque état est une grille de 7 cases (2 en haut, 3 au milieu, 2 en bas, décalées) où b désigne un pion blanc et n un pion noir. Départ : b b / b _ n / n n ; Mouvement 15 : n n / n _ b / b b.",
+        "imageUrl": "q11_corr-moves.png"
+      }
+    ]
+  }
+}

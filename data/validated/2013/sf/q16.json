@@ -1,0 +1,45 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 515
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 586
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-16",
+  "number": 16,
+  "title": "Les deux nombres",
+  "coefficient": 16,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "L1/GP",
+  "statement": {
+    "markdown": "Deux nombres entiers positifs non nuls sont tels que :\n\n- la différence de leurs carrés est un cube ;\n- la différence de leurs cubes est un carré.\n\n**Que vaut le plus grand de ces deux nombres, sachant qu’il est inférieur à 20 ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "1 solution : 10"
+  }
+}

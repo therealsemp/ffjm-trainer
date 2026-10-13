@@ -1,0 +1,58 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 304,
+        "y": 361
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 3,
+        "position": {
+          "x": 43,
+          "y": 240
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 390
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-9",
+  "number": 9,
+  "title": "Un nombre prometteur",
+  "coefficient": 9,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C1",
+  "statement": {
+    "markdown": "Un nombre entier plus petit que 2014 et strictement plus grand que 0 a les propriétés suivantes :\n\n- si l'on soustrait 6 de ce nombre, le résultat est divisible par 6 ;\n- si l'on soustrait 7 de ce nombre, le résultat est divisible par 7 ;\n- si l'on soustrait 8 de ce nombre, le résultat est divisible par 8 ;\n- si l'on soustrait 9 de ce nombre, le résultat est divisible par 9.\n\n**Quel est ce nombre ?**"
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "3 solutions : 504, 1008 et 1512"
+  },
+  "correction": {
+    "markdown": "Soit n le nombre cherché. On sait que 0 < n ≤ 2014.\n\n6 divise n – 6.\n\n7 divise n – 7.\n\n8 divise n – 8.\n\n9 divise n – 9.\n\nPar conséquent, 6, 7, 8 et 9 divisent n. Donc ppcm(6, 7, 8, 9) | n.\n\nOr ppcm(6, 7, 8, 9) = 504.\n\nDonc n = 504k, avec k ∊ ℕ*.\n\nL’encadrement de départ est respecté lorsque k = 1, 2 ou 3.\n\nDonc il y a **trois solutions** : **504**, **1008** et **1512**."
+  }
+}

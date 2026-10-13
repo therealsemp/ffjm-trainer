@@ -1,0 +1,49 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 43,
+        "y": 521
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 174
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-4",
+  "number": 4,
+  "title": "La tombola",
+  "coefficient": 4,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Lors de la fête de l'école de Mathilde et Mathias, une tombola est organisée. Cent tickets ont été imprimés ; quarante d'entre eux portent l'inscription \"*bon pour un petit lot*\", un ticket indique \"*gros lot*\" et les autres mentionnent \"*perdant*\".\n\n**Combien de tickets devrait-on acheter pour être certain de gagner au moins un lot ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "60"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "year": 2015,
+  "champNumber": 29,
+  "phase": "sf",
+  "examTitle": "29e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2015/sf/2015_sf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 43,
+        "y": 378
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2015/sf/2015_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 71,
+          "y": 143
+        }
+      }
+    ]
+  },
+  "id": "2015-sf-3",
+  "number": 3,
+  "title": "Le médicament",
+  "coefficient": 3,
+  "coefficientSource": "explicit",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Mathias est malade. Il doit prendre 36 gouttes d'un médicament mélangées dans un grand verre d'eau.\n\nIl boit la moitié du verre, mais refuse de boire le reste en disant que le goût est trop amer. Sa mère complète alors le verre avec du jus d'orange, mélange bien le tout et demande à Mathias de boire le contenu du verre.\n\nMathias boit à nouveau la moitié du verre, puis jette le reste dans l'évier. **Combien de gouttes du médicament a-t-il absorbées au total ?**"
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "27"
+  }
+}

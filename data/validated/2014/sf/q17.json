@@ -1,0 +1,61 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 303,
+        "y": 277
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 7,
+        "position": {
+          "x": 43,
+          "y": 60
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 725
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-17",
+  "number": 17,
+  "title": "La bipyramide",
+  "coefficient": 17,
+  "coefficientSource": "explicit",
+  "categories": [
+    "L2",
+    "HC"
+  ],
+  "tier": "L2/HC",
+  "statement": {
+    "markdown": "La figure à gauche représente une bipyramide.\n\nOn compte 2 sommets dont partent 5 arêtes, et 5 sommets dont partent 4 arêtes.\n\nLes 15 arêtes ont toutes la même longueur, 19 millimètres.\n\nLa bipyramide est une pierre précieuse.\n\nOn peut la découper en 5 tétraèdres identiques (figure à droite) dont cinq des six arêtes sont celles de la bipyramide.\n\n![figure](figure:2014-sf-17-fig-bipyramid)\n\n**Quelle est, en millimètres arrondis au plus près, la longueur de la sixième arête d’un tétraèdre, celle qui est différente des cinq autres ?**\n\nSi nécessaire, on prendra 0,95 pour cos (π/10).\n\nNote : la figure ne respecte pas les longueurs.",
+    "figures": [
+      {
+        "id": "2014-sf-17-fig-bipyramid",
+        "description": "À gauche : une bipyramide à base pentagonale (deux pyramides accolées par leur base pentagonale, arêtes cachées en pointillés). À droite : un des cinq tétraèdres identiques, allongé verticalement.",
+        "imageUrl": "q17_fig-bipyramid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "20"
+  },
+  "correction": {
+    "markdown": "Le pentagone central est régulier du fait de l’égalité de longueur de toutes les arêtes du solide.\n\nNotons O son centre et calculons le rayon R du cercle de centre O contenant tous les sommets du pentagone :\n\nR = \\(\\frac{19}{2\\sin(\\frac{\\pi}{5})}\\) mm (on retrouve aisément ce résultat à l’aide d’un cercle trigonométrique).\n\nNotons h la hauteur de la pyramide supérieure.\n\nD’après Pythagore, h² + R² = 19², d’où :\n\nLongueur de la sixième arête du tétraèdre = 2h = \\(38\\sqrt{1 - \\frac{1}{4\\sin^2(\\frac{\\pi}{5})}}\\) = 19,97778… ≈ **20 mm**.\n\nIl me semble que ce n’était pas calculable à la main…"
+  }
+}

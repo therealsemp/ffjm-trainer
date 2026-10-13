@@ -1,0 +1,67 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "qf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Quarts de finale",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/qf/2013_qf_statement.pdf",
+      "page": 1,
+      "position": {
+        "x": 27,
+        "y": 406
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution-detailed-1.pdf",
+        "page": 2,
+        "position": {
+          "x": 43,
+          "y": 36
+        }
+      },
+      {
+        "path": "../../../raw/2013/qf/2013_qf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 198,
+          "y": 143
+        }
+      }
+    ]
+  },
+  "id": "2013-qf-5",
+  "number": 5,
+  "title": "Les dominos",
+  "coefficient": 5,
+  "coefficientSource": "derived-from-number",
+  "categories": [
+    "CE",
+    "CM",
+    "C1",
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "CE",
+  "statement": {
+    "markdown": "Avec les 10 dominos portant 0 point, 1 point, 2 points ou 3 points, on peut former des chaînes en juxtaposant les demi-dominos portant le même nombre de points. Voici un exemple :\n\n![figure](figure:2013-qf-5-dominoes)\n\nAprès avoir ôté un certain nombre de ces 10 dominos, on ne peut plus former aucune chaîne ouverte de 5 dominos en respectant la règle de juxtaposition.\n\n**Combien de dominos ont été enlevés, au minimum ?**",
+    "figures": [
+      {
+        "id": "2013-qf-5-dominoes",
+        "description": "Exemple de chaîne de six dominos juxtaposés : 0-0, 0-1, 1-1, 1-2, 2-3, 3-3.",
+        "imageUrl": "q05_fig-dominoes.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "4"
+  },
+  "correction": {
+    "markdown": "Il faut enlever au minimum **quatre dominos** (on est bloqué lorsqu’il reste 0 – 0, 1 – 1, 2 – 2, 3 – 3, 1 – 3 et 2 – 0 par exemple). Mais comment le prouver à moins de faire une liste complète ?"
+  }
+}

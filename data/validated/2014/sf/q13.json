@@ -1,0 +1,71 @@
+{
+  "year": 2014,
+  "champNumber": 28,
+  "phase": "sf",
+  "examTitle": "28e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2014/sf/2014_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 193
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution-detailed.pdf",
+        "page": 5,
+        "position": {
+          "x": 43,
+          "y": 406
+        }
+      },
+      {
+        "path": "../../../raw/2014/sf/2014_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 60,
+          "y": 567
+        }
+      }
+    ]
+  },
+  "id": "2014-sf-13",
+  "number": 13,
+  "title": "Les neuf jetons",
+  "coefficient": 13,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "On dispose de neuf jetons : trois jetons portant le chiffre 1, trois autres portant le chiffre 2 et trois portant le chiffre 3, disposés comme sur le dessin dans un carré 3 × 3.\n\nOn a le droit d'échanger les positions de deux pions quelconques de la grille.\n\n**Combien d'échanges, au minimum, seront nécessaires pour obtenir une grille dans laquelle les sommes des nombres sur chacune des trois lignes, des trois colonnes et des deux diagonales soient toutes égales à 6 ?**\n\n![figure](figure:2014-sf-13-fig-grid)",
+    "figures": [
+      {
+        "id": "2014-sf-13-fig-grid",
+        "description": "Grille 3 × 3 de jetons : chaque ligne contient 1, 2, 3 de gauche à droite (colonne de 1, colonne de 2, colonne de 3).",
+        "imageUrl": "q13_fig-grid.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-numeric",
+    "value": "3"
+  },
+  "correction": {
+    "markdown": "Il semble que **trois échanges** suffisent :\n\n![figure](figure:2014-sf-13-corr-swaps)",
+    "figures": [
+      {
+        "id": "2014-sf-13-corr-swaps",
+        "description": "Quatre grilles : État initial (1 2 3 / 1 2 3 / 1 2 3) ; Mouvement 1 (1 2 1 / 1 2 3 / 3 2 3, les deux cases échangées en vert) ; Mouvement 2 (1 3 1 / 1 2 3 / 3 2 2, cases échangées en orange) ; Mouvement 3 (2 3 1 / 1 2 3 / 3 1 2, cases échangées en bleu).",
+        "imageUrl": "q13_corr-swaps.png"
+      }
+    ]
+  }
+}

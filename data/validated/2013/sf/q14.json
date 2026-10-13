@@ -1,0 +1,53 @@
+{
+  "year": 2013,
+  "champNumber": 27,
+  "phase": "sf",
+  "examTitle": "27e Championnat International des Jeux Mathématiques et Logiques — Demi-finales",
+  "sourceFiles": {
+    "statement": {
+      "path": "../../../raw/2013/sf/2013_sf_statement.pdf",
+      "page": 2,
+      "position": {
+        "x": 35,
+        "y": 263
+      }
+    },
+    "detailedSolutions": [
+      {
+        "path": "../../../raw/2013/sf/2013_sf_solution.pdf",
+        "page": 1,
+        "position": {
+          "x": 93,
+          "y": 527
+        }
+      }
+    ]
+  },
+  "id": "2013-sf-14",
+  "number": 14,
+  "title": "Le tour du Mage Hic",
+  "coefficient": 14,
+  "coefficientSource": "explicit",
+  "categories": [
+    "C2",
+    "L1",
+    "GP",
+    "L2",
+    "HC"
+  ],
+  "tier": "C2",
+  "statement": {
+    "markdown": "Le chapeau du Mage Hic est un cône de révolution dont la base est un disque de rayon 27 centimètres et dont la hauteur mesure 70 centimètres.\n\n![figure](figure:2013-sf-14-fig-cone)\n\nAprès avoir prononcé la bonne formule magique, le Mage Hic fait apparaître un cube à l’intérieur du cône.\n\n**Combien mesure l’arête du cube, au maximum ?**\n\nSi besoin est, on prendra 1,414 pour √2 et on arrondira au millimètre le plus proche.",
+    "figures": [
+      {
+        "id": "2013-sf-14-fig-cone",
+        "description": "Cône de révolution (vu en perspective, base elliptique) contenant un cube grisé posé sur sa base.",
+        "imageUrl": "q14_fig-cone.png"
+      }
+    ]
+  },
+  "answer": {
+    "type": "exact-text",
+    "value": "247 mm"
+  }
+}

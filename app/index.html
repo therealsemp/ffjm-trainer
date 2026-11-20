@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Story 5.1: installable on Android (PWA, manifest only, no service
+         worker). The two theme-color metas color the installed app's status
+         bar per system theme; statusBarColor.ts overrides both when the user
+         forces a theme (Story 1.4). Keep in sync with STATUS_BAR_COLORS. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#2955a6" media="(prefers-color-scheme: light)" data-scheme="light" />
+    <meta name="theme-color" content="#0f1b2d" media="(prefers-color-scheme: dark)" data-scheme="dark" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

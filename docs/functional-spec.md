@@ -35,5 +35,5 @@ Explicitement écarté ou reporté à une itération future :
 ## Contraintes
 
 - Aucun coût d'infrastructure toléré à court terme : projet personnel/familial.
-- Doit rester simple à utiliser sur ordinateur comme sur mobile (site web responsive, pas d'app native).
+- Doit rester simple à utiliser sur ordinateur comme sur mobile (site web responsive, pas d'app native ; installable sur l'écran d'accueil Android depuis Chrome, sans store, voir Story 5.1).
 - Interface exclusivement en français, sans option de changement de langue : le public (FFJM) est francophone. Pas de gestion multilingue à prévoir.

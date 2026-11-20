@@ -22,7 +22,8 @@ Ce choix découle directement de la contrainte fonctionnelle « pas de comptes, 
 - Justification : écosystème le plus large et le mieux documenté pour un stack neuf, export statique trivial, large choix de librairies pour le rendu enrichi.
 - Rendu des maths : **KaTeX**.
 - Figures géométriques : **SVG** inline en priorité ; repli sur image (PNG/JPEG extraite du PDF source) quand la figure est trop complexe pour être vectorisée simplement.
-- Responsive : un seul site, adapté à l'écran (pas d'app mobile native, pas de PWA en v1).
+- Responsive : un seul site, adapté à l'écran (pas d'app mobile native).
+- **Installable sur Android (PWA minimale, Story 5.1)** : un manifeste web (`app/public/manifest.webmanifest`, `display: standalone`, `start_url`/`scope` sur le chemin GitHub Pages `/ffjm-trainer/`, icônes 192/512 + variante `maskable`) suffit pour que Chrome Android propose l'installation (WebAPK), sans passer par un store. **Pas de service worker**, volontairement : pas de mode hors ligne, et surtout pas de cache applicatif à gérer en plus du cache HTTP et du cache mémoire du manifeste de questions — une app installée charge toujours la dernière version publiée, sans risque de rester bloquée sur une ancienne. Couleur de la barre de statut via deux `<meta name="theme-color">` (clair/sombre, par `media`), tenues à jour par `ThemeContext` quand l'utilisateur force un thème (Story 1.4). iOS hors périmètre.
 
 ## Couche applicative (`/app`)
 
